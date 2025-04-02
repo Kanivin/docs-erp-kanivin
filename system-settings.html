@@ -19,7 +19,7 @@
 	<div class="wiki-content">
 		<p><strong>System Setting contains settings for system-wide configuration of the account.</strong></p>
 
-<p>You can localize ERPNext to use particular timezone, date, number or currency format, and also set global session expiry via System Settings.</p>
+<p>You can localize KanivinERP to use particular timezone, date, number or currency format, and also set global session expiry via System Settings.</p>
 
 <p>To open System Settings, go to:</p>
 
@@ -44,9 +44,9 @@
 <ul>
 <li><strong>Country</strong>: You can set the default country here, this will be fetched when creating new addresses. If your company has multiple branches in different countries, choose the head office location.</li>
 <li><strong>Time Zone</strong>: Sets time automatically based on the time zone.</li>
-<li><strong>Language</strong>: Sets the global language for the ERPNext account. Then language will be changed in all the menus, transactions, masters, etc.</li>
+<li><strong>Language</strong>: Sets the global language for the KanivinERP account. Then language will be changed in all the menus, transactions, masters, etc.</li>
 <li><strong>Disable Document Sharing</strong>: Disables share access for all users across the system (except Administrator) to make sure access is only given via permissions. Users will only be able to view who the document is shared with and not share the document itself. Additionally, assigning a document to a user will be <strong>blocked</strong> if the assignee does have access to the document.</li>
-<li><strong>Enable Onboarding:</strong> It facilitates the onboarding process for new users. This feature typically provides a series of guided steps and helpful prompts to introduce new users to the ERPNext system, helping them to understand and utilize its features effectively.</li>
+<li><strong>Enable Onboarding:</strong> It facilitates the onboarding process for new users. This feature typically provides a series of guided steps and helpful prompts to introduce new users to the KanivinERP system, helping them to understand and utilize its features effectively.</li>
 </ul>
 
 <p><img src="/files/Screenshot 2024-05-27 at 10.39.34 AM.png" alt="Screenshot 2024-05-27 at 10.39.34 AM" class="screenshot">  </p>
@@ -110,8 +110,8 @@
       </a></h3>
 
 <ul>
-<li><strong>Allow Login using Mobile Number</strong>: By checking the 'Allow Login using Mobile Number' checkbox, you can log in to ERPNext using a valid mobile number set in your User account.</li>
-<li><strong>Allow Login using User Name</strong>: Allow user login via their username set in the <a href="/erpnext/v13/user/manual/en/setting-up/users-and-permissions/adding-users">User master</a>.</li>
+<li><strong>Allow Login using Mobile Number</strong>: By checking the 'Allow Login using Mobile Number' checkbox, you can log in to KanivinERP using a valid mobile number set in your User account.</li>
+<li><strong>Allow Login using User Name</strong>: Allow user login via their username set in the <a href="/KanivinERP/v13/user/manual/en/setting-up/users-and-permissions/adding-users">User master</a>.</li>
 <li><strong>Login with email link:</strong> Allow users to log in without a password, using a login link sent to their email.</li>
 <li><strong>Login with email link expiry (in minutes):</strong> Indicates the duration in minutes for which login via email link will be active.</li>
 </ul>
@@ -146,7 +146,7 @@
 <li><strong>Bypass restricted IP Address check If Two Factor Auth Enabled</strong>: If checked, all users can log in with Two Factor Authentication regardless if their IP is restricted or not.</li>
 <li><strong>Two Factor Authentication method</strong>: Select the authentication method to be used - OTP App, SMS, or email.</li>
 <li><strong>Expiry time of QR Code Image Page</strong>: Expiry time for QRCode image if "OTP App" is selected in the method.</li>
-<li><strong>OTP Issuer Name:</strong> It refers to the entity responsible for providing or issuing the OTPs used for authentication within the ERPNext system.</li>
+<li><strong>OTP Issuer Name:</strong> It refers to the entity responsible for providing or issuing the OTPs used for authentication within the KanivinERP system.</li>
 </ul>
 
 <p><img src="/files/Screenshot 2024-05-27 at 11.08.39 AM.png" alt="Screenshot 2024-05-27 at 11.08.39 AM" class="screenshot">  </p>
@@ -185,7 +185,7 @@
 <ul>
 <li><strong>Email Footer Address</strong>: Organization name, address, and other details can be added here. This will be set as default in all outgoing mails.</li>
 <li><strong>Disable Standard Email Footer</strong>: If ticked, the standard email footer will be disabled for outgoing emails.</li>
-<li><strong>Hide footer in auto-email reports</strong>: If ticked, footers will be hidden in <a href="/erpnext/v13/user/manual/en/setting-up/email/auto-email-reports">Auto Email reports</a>.</li>
+<li><strong>Hide footer in auto-email reports</strong>: If ticked, footers will be hidden in <a href="/KanivinERP/v13/user/manual/en/setting-up/email/auto-email-reports">Auto Email reports</a>.</li>
 <li><strong>Include Web View Link in Email</strong>: When you turn on <em>Attach Document Print</em> for a new email, the system attaches a PDF or HTML version of your document to the email. If you also enable <em>Include Web View Link in Email</em> in the <strong>System Settings</strong>, a link will be added to the email, allowing the recipient to view the document online as a webpage.</li>
 <li><strong>Welcome Email Template:</strong> Predefined template for welcome email can be set from the list of available templates.</li>
 <li><strong>Reset Password Template:</strong> Predefined template for the password reset activity can be set from the list of available templates.</li>
@@ -233,11 +233,11 @@
       </a></h3>
 
 <ul>
-<li><strong>Number of Backups:</strong> In ERPNext you can backup the database as well as your files. Database backups are created automatically while file backups need to be downloaded explicitly.</li>
+<li><strong>Number of Backups:</strong> In KanivinERP you can backup the database as well as your files. Database backups are created automatically while file backups need to be downloaded explicitly.</li>
 </ul>
 
 <p>This field shows the number of backups after which older ones will be deleted. By default, 3 backups are saved over 24 hours. New backups are automatically created every few hours and the newest backup will overwrite the oldest one. For a backup of files, click on the Download Files Backup button in the Download Backups form.
-* <strong>Encrypt Backups:</strong> When this option is enabled, ERPNext will encrypt the backup files before storing them. Encryption ensures that even if the backup files are accessed by unauthorized parties, the data within those files remains unreadable without the appropriate decryption key.</p>
+* <strong>Encrypt Backups:</strong> When this option is enabled, KanivinERP will encrypt the backup files before storing them. Encryption ensures that even if the backup files are accessed by unauthorized parties, the data within those files remains unreadable without the appropriate decryption key.</p>
 
 <p><img src="/files/Screenshot 2024-05-27 at 11.25.31 AM.png" alt="Screenshot 2024-05-27 at 11.25.31 AM" class="screenshot">  </p>
 
@@ -265,9 +265,9 @@
       </a></h3>
 
 <ol>
-<li><a href="/erpnext/v13/user/manual/en/setting-up/company-setup">Company Setup</a></li>
-<li><a href="/erpnext/v13/user/manual/en/setting-up/settings/global-defaults">Global Defaults</a></li>
-<li><a href="/erpnext/v13/user/manual/en/setting-up/settings/show-hide-modules">Show or Hide Modules</a></li>
+<li><a href="/KanivinERP/v13/user/manual/en/setting-up/company-setup">Company Setup</a></li>
+<li><a href="/KanivinERP/v13/user/manual/en/setting-up/settings/global-defaults">Global Defaults</a></li>
+<li><a href="/KanivinERP/v13/user/manual/en/setting-up/settings/show-hide-modules">Show or Hide Modules</a></li>
 </ol>
 
 	</div>
@@ -294,7 +294,7 @@
                     </del><ins class="diffmod">
 		</ins><p><strong><ins class="diffmod">System Setting contains settings for system-wide configuration of the account.</ins></strong></p><ins class="diffmod">
 
-</ins><p><ins class="diffmod">You can localize ERPNext to use particular timezone, date, number or currency format, and also set global session expiry via System Settings.</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod">You can localize KanivinERP to use particular timezone, date, number or currency format, and also set global session expiry via System Settings.</ins></p><ins class="diffmod">
 
 </ins><p><ins class="diffmod">To open System Settings, go to:</ins></p><ins class="diffmod">
 
@@ -321,9 +321,9 @@
 </ins><ul><ins class="diffmod">
 </ins><li><strong><ins class="diffmod">Country</ins></strong><ins class="diffmod">: You can set the default country here, this will be fetched when creating new addresses. If your company has multiple branches in different countries, choose the head office location.</ins></li><ins class="diffmod">
 </ins><li><strong><ins class="diffmod">Time Zone</ins></strong><ins class="diffmod">: Sets time automatically based on the time zone.</ins></li><ins class="diffmod">
-</ins><li><strong><ins class="diffmod">Language</ins></strong><ins class="diffmod">: Sets the global language for the ERPNext account. Then language will be changed in all the menus, transactions, masters, etc.</ins></li><ins class="diffmod">
+</ins><li><strong><ins class="diffmod">Language</ins></strong><ins class="diffmod">: Sets the global language for the KanivinERP account. Then language will be changed in all the menus, transactions, masters, etc.</ins></li><ins class="diffmod">
 </ins><li><strong><ins class="diffmod">Disable Document Sharing</ins></strong><ins class="diffmod">: Disables share access for all users across the system (except Administrator) to make sure access is only given via permissions. Users will only be able to view who the document is shared with and not share the document itself. Additionally, assigning a document to a user will be </ins><strong><ins class="mod"><ins class="diffmod">blocked</ins></ins></strong><ins class="diffmod">&nbsp;if the assignee does have access to the document.</ins></li><ins class="diffmod">
-</ins><li><strong><ins class="diffmod">Enable Onboarding:</ins></strong><ins class="diffmod">&nbsp;It facilitates the onboarding process for new users. This feature typically provides a series of guided steps and helpful prompts to introduce new users to the ERPNext system, helping them to understand and utilize its features effectively.</ins></li><ins class="diffmod">
+</ins><li><strong><ins class="diffmod">Enable Onboarding:</ins></strong><ins class="diffmod">&nbsp;It facilitates the onboarding process for new users. This feature typically provides a series of guided steps and helpful prompts to introduce new users to the KanivinERP system, helping them to understand and utilize its features effectively.</ins></li><ins class="diffmod">
 </ins></ul><ins class="diffmod">
 
 </ins><p><ins class="diffmod"><img src="/files/Screenshot 2024-05-27 at 10.39.34 AM.png" alt="Screenshot 2024-05-27 at 10.39.34 AM" class="screenshot">  </ins></p><ins class="diffmod">
@@ -387,8 +387,8 @@
       </ins></a></h3><ins class="diffmod">
 
 </ins><ul><ins class="diffmod">
-</ins><li><strong><ins class="diffmod">Allow Login using Mobile Number</ins></strong><ins class="diffmod">: By checking the 'Allow Login using Mobile Number' checkbox, you can log in to ERPNext using a valid mobile number set in your User account.</ins></li><ins class="diffmod">
-</ins><li><strong><ins class="diffmod">Allow Login using User Name</ins></strong><ins class="diffmod">: Allow user login via their username set in the </ins><a href="/erpnext/v13/user/manual/en/setting-up/users-and-permissions/adding-users"><ins class="diffmod">User master</ins></a><ins class="diffmod">.</ins></li><ins class="diffmod">
+</ins><li><strong><ins class="diffmod">Allow Login using Mobile Number</ins></strong><ins class="diffmod">: By checking the 'Allow Login using Mobile Number' checkbox, you can log in to KanivinERP using a valid mobile number set in your User account.</ins></li><ins class="diffmod">
+</ins><li><strong><ins class="diffmod">Allow Login using User Name</ins></strong><ins class="diffmod">: Allow user login via their username set in the </ins><a href="/KanivinERP/v13/user/manual/en/setting-up/users-and-permissions/adding-users"><ins class="diffmod">User master</ins></a><ins class="diffmod">.</ins></li><ins class="diffmod">
 </ins><li><strong><ins class="diffmod">Login with email link:</ins></strong><ins class="diffmod">&nbsp;Allow users to log in without a password, using a login link sent to their email.</ins></li><ins class="diffmod">
 </ins><li><strong><ins class="diffmod">Login with email link expiry (in minutes):</ins></strong><ins class="diffmod">&nbsp;Indicates the duration in minutes for which login via email link will be active.</ins></li><ins class="diffmod">
 </ins></ul><ins class="diffmod">
@@ -423,7 +423,7 @@
 </ins><li><strong><ins class="diffmod">Bypass restricted IP Address check If Two Factor Auth Enabled</ins></strong><ins class="diffmod">: If checked, all users can log in with Two Factor Authentication regardless if their IP is restricted or not.</ins></li><ins class="diffmod">
 </ins><li><strong><ins class="diffmod">Two Factor Authentication method</ins></strong><ins class="diffmod">: Select the authentication method to be used - OTP App, SMS, or email.</ins></li><ins class="diffmod">
 </ins><li><strong><ins class="diffmod">Expiry time of QR Code Image Page</ins></strong><ins class="diffmod">: Expiry time for QRCode image if "OTP App" is selected in the method.</ins></li><ins class="diffmod">
-</ins><li><strong><ins class="diffmod">OTP Issuer Name:</ins></strong><ins class="diffmod">&nbsp;It refers to the entity responsible for providing or issuing the OTPs used for authentication within the ERPNext system.</ins></li><ins class="diffmod">
+</ins><li><strong><ins class="diffmod">OTP Issuer Name:</ins></strong><ins class="diffmod">&nbsp;It refers to the entity responsible for providing or issuing the OTPs used for authentication within the KanivinERP system.</ins></li><ins class="diffmod">
 </ins></ul><ins class="diffmod">
 
 </ins><p><ins class="diffmod"><img src="/files/Screenshot 2024-05-27 at 11.08.39 AM.png" alt="Screenshot 2024-05-27 at 11.08.39 AM" class="screenshot">  </ins></p><ins class="diffmod">
@@ -462,7 +462,7 @@
 </ins><ul><ins class="diffmod">
 </ins><li><strong><ins class="diffmod">Email Footer Address</ins></strong><ins class="diffmod">: Organization name, address, and other details can be added here. This will be set as default in all outgoing mails.</ins></li><ins class="diffmod">
 </ins><li><strong><ins class="diffmod">Disable Standard Email Footer</ins></strong><ins class="diffmod">: If ticked, the standard email footer will be disabled for outgoing emails.</ins></li><ins class="diffmod">
-</ins><li><strong><ins class="diffmod">Hide footer in auto-email reports</ins></strong><ins class="diffmod">: If ticked, footers will be hidden in </ins><a href="/erpnext/v13/user/manual/en/setting-up/email/auto-email-reports"><ins class="diffmod">Auto Email reports</ins></a><ins class="diffmod">.</ins></li><ins class="diffmod">
+</ins><li><strong><ins class="diffmod">Hide footer in auto-email reports</ins></strong><ins class="diffmod">: If ticked, footers will be hidden in </ins><a href="/KanivinERP/v13/user/manual/en/setting-up/email/auto-email-reports"><ins class="diffmod">Auto Email reports</ins></a><ins class="diffmod">.</ins></li><ins class="diffmod">
 </ins><li><strong><ins class="diffmod">Include Web View Link in Email</ins></strong><ins class="diffmod">: When you turn on </ins><em><ins class="mod"><ins class="diffmod">Attach Document Print</ins></ins></em><ins class="diffmod">&nbsp;for a new email, the system attaches a PDF or HTML version of your document to the email. If you also enable </ins><em><ins class="mod"><ins class="diffmod">Include Web View Link in Email</ins></ins></em><ins class="diffmod">&nbsp;in the </ins><strong><ins class="mod"><ins class="diffmod">System Settings</ins></ins></strong><ins class="diffmod">, a link will be added to the email, allowing the recipient to view the document online as a webpage.</ins></li><ins class="diffmod">
 </ins><li><strong><ins class="diffmod">Welcome Email Template:</ins></strong><ins class="diffmod">&nbsp;Predefined template for welcome email can be set from the list of available templates.</ins></li><ins class="diffmod">
 </ins><li><strong><ins class="diffmod">Reset Password Template:</ins></strong><ins class="diffmod">&nbsp;Predefined template for the password reset activity can be set from the list of available templates.</ins></li><ins class="diffmod">
@@ -510,11 +510,11 @@
       </ins></a></h3><ins class="diffmod">
 
 </ins><ul><ins class="diffmod">
-</ins><li><strong><ins class="diffmod">Number of Backups:</ins></strong><ins class="diffmod">&nbsp;In ERPNext you can backup the database as well as your files. Database backups are created automatically while file backups need to be downloaded explicitly.</ins></li><ins class="diffmod">
+</ins><li><strong><ins class="diffmod">Number of Backups:</ins></strong><ins class="diffmod">&nbsp;In KanivinERP you can backup the database as well as your files. Database backups are created automatically while file backups need to be downloaded explicitly.</ins></li><ins class="diffmod">
 </ins></ul><ins class="diffmod">
 
 </ins><p><ins class="diffmod">This field shows the number of backups after which older ones will be deleted. By default, 3 backups are saved over 24 hours. New backups are automatically created every few hours and the newest backup will overwrite the oldest one. For a backup of files, click on the Download Files Backup button in the Download Backups form.
-* </ins><strong><ins class="mod"><ins class="diffmod">Encrypt Backups:</ins></ins></strong><ins class="diffmod">&nbsp;When this option is enabled, ERPNext will encrypt the backup files before storing them. Encryption ensures that even if the backup files are accessed by unauthorized parties, the data within those files remains unreadable without the appropriate decryption key.</ins></p><ins class="diffmod">
+* </ins><strong><ins class="mod"><ins class="diffmod">Encrypt Backups:</ins></ins></strong><ins class="diffmod">&nbsp;When this option is enabled, KanivinERP will encrypt the backup files before storing them. Encryption ensures that even if the backup files are accessed by unauthorized parties, the data within those files remains unreadable without the appropriate decryption key.</ins></p><ins class="diffmod">
 
 </ins><p><ins class="diffmod"><img src="/files/Screenshot 2024-05-27 at 11.25.31 AM.png" alt="Screenshot 2024-05-27 at 11.25.31 AM" class="screenshot">  </ins></p><ins class="diffmod">
 
@@ -542,9 +542,9 @@
       </ins></a></h3><ins class="diffmod">
 
 </ins><ol><ins class="diffmod">
-</ins><li><a href="/erpnext/v13/user/manual/en/setting-up/company-setup"><ins class="diffmod">Company Setup</ins></a></li><ins class="diffmod">
-</ins><li><a href="/erpnext/v13/user/manual/en/setting-up/settings/global-defaults"><ins class="diffmod">Global Defaults</ins></a></li><ins class="diffmod">
-</ins><li><a href="/erpnext/v13/user/manual/en/setting-up/settings/show-hide-modules"><ins class="diffmod">Show or Hide Modules</ins></a></li><ins class="diffmod">
+</ins><li><a href="/KanivinERP/v13/user/manual/en/setting-up/company-setup"><ins class="diffmod">Company Setup</ins></a></li><ins class="diffmod">
+</ins><li><a href="/KanivinERP/v13/user/manual/en/setting-up/settings/global-defaults"><ins class="diffmod">Global Defaults</ins></a></li><ins class="diffmod">
+</ins><li><a href="/KanivinERP/v13/user/manual/en/setting-up/settings/show-hide-modules"><ins class="diffmod">Show or Hide Modules</ins></a></li><ins class="diffmod">
 </ins></ol><ins class="diffmod">
 
 	</ins></div>
@@ -576,7 +576,7 @@
                         <label class="text-muted text-xs" for="pageRoute">Route</label>
                         <div class="flex align-items-center">
                             <div class="text-sm wiki-space-route-block" title="Wiki Space route (can't be modified)">
-                                erpnext/
+                                KanivinERP/
                             </div>
                             <input value="user/manual/en/system-settings" type="text" id="pageRoute" name="pageRoute" class="form-control" style="border-top-left-radius: 0; border-bottom-left-radius: 0;">
                         </div>
