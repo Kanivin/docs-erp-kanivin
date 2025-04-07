@@ -9,7 +9,7 @@
 		</div>
 	</div>
 	<div class="d-flex justify-content-between align-items-center">
-		<h1 class="wiki-title" id="subcontracting-in-erpnext">Subcontracting in KanivinERP<a class="no-underline" href="#subcontracting-in-erpnext" aria-hidden="true">
+		<h1 class="wiki-title" id="subcontracting-in-kanivinerp">Subcontracting in KanivinERP<a class="no-underline" href="#subcontracting-in-kanivinerp" aria-hidden="true">
         <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
           <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
           <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
@@ -86,9 +86,9 @@
 
 <p><img src="/files/2b1Rvbr.png" alt="" class="screenshot">  </p>
 
-<p>To learn more about Buying module, please check out our documentation <a href="https://erpnext.com/docs/user/manual/en/buying">here</a>.</p>
+<p>To learn more about Buying module, please check out our documentation <a href="https://kanivinerp.com/docs/user/manual/en/buying">here</a>.</p>
 
-<p>Here are more details about <a href="/erpnext/user/manual/en/subcontracting">Subcontracting</a></p>
+<p>Here are more details about <a href="/kanivinerp/user/manual/en/subcontracting">Subcontracting</a></p>
 </div>
 	<input value="c17dfiqg98" class="d-none" name="wiki-page-name">
 	<div class="modal revisions-modal fade" id="revisionsModal" tabindex="-1" role="dialog" aria-labelledby="revisionsModalTitle" aria-hidden="true">
@@ -464,9 +464,9 @@
 
 <p><img src="/files/2b1Rvbr.png" alt="" class="screenshot">  </p>
 
-<p>To learn more about Buying module, please check out our documentation <a href="https://erpnext.com/docs/user/manual/en/buying">here</a>.</p>
+<p>To learn more about Buying module, please check out our documentation <a href="https://kanivinerp.com/docs/user/manual/en/buying">here</a>.</p>
 
-<p>Here are more details about <a href="/erpnext/user/manual/en/subcontracting">Subcontracting</a></p>
+<p>Here are more details about <a href="/kanivinerp/user/manual/en/subcontracting">Subcontracting</a></p>
 </div>
             </div>
             <div class="modal-footer d-flex justify-content-between">
@@ -781,7 +781,7 @@
                         <label class="text-muted text-xs" for="pageRoute">Route</label>
                         <div class="flex align-items-center">
                             <div class="text-sm wiki-space-route-block" title="Wiki Space route (can't be modified)">
-                                erpnext/
+                                kanivinerp/
                             </div>
                             <input value="user/manual/en/introduction" type="text" id="pageRoute" name="pageRoute" class="form-control" style="border-top-left-radius: 0; border-bottom-left-radius: 0;">
                         </div>
@@ -998,57 +998,15 @@
 </div>
 <div class="wiki-footer d-print-none">
 	<div class="forward-back">
-		<a href="/erpnext/user/manual/en/track-semi-finished-goods" class="btn left footer-prev-page-link">
+		<a href="/kanivinerp/user/manual/en/track-semi-finished-goods" class="btn left footer-prev-page-link">
 			<p>Previous Page</p>
 			<p class="footer-prev-page">Track Semi-Finished Goods</p>
 		</a>
-		<a href="/erpnext/stock-reservation-for-work-order" class="btn pull-right right footer-next-page-link">
+		<a href="/kanivinerp/stock-reservation-for-work-order" class="btn pull-right right footer-next-page-link">
 			<p>Next Page</p>
 			<p class="footer-next-page">Stock Reservation for Work Order																																																																														</p>
 		</a>
 		
 	</div>
 </div>
-
-<script type="text/javascript" src="/assets/frappe/js/lib/jquery/jquery.min.js"></script>
-<script>
-	/** // const patchNewCode = `<h1>{{ patch_new_title }}</h1>{{ patch_new_code }}`;
-	// const patchNewCode = {title: `{{ patch_new_title }}`, content: `{{ patch_new_code }}`} **/
-	const patchNewCode = `{{ patch_new_title }},{{ patch_new_code }}`
-	const wikiSearchScope = `erpnext`;
-</script>
-
-<script type="text/javascript" src="/assets/wiki/dist/js/wiki.bundle.JRT7MXFG.js"></script>
-
-<script>
-	var wikiPageName = `c17dfiqg98`;
-	function getSidebarItems() {
-		let side = {};
-
-		let items = $($(".doc-sidebar .web-sidebar").get(0))
-			.children(".sidebar-items")
-			.children("ul")
-			.not(".hidden")
-			.children("li");
-
-		items.each(function (item) {
-			name = $(this).children(".collapsible").children("span.sidebar-group-title, span.text-sm").text();
-			side[name] = [];
-
-			$(this).children(".list-unstyled").children(".sidebar-item").each(function (item) {
-				side[name].push({
-					name: $(this).data('name'),
-					type: $(this).data('type'),
-					new: $(this).data('new'),
-					title: $(this).data('title'),
-					group_name: $(this).data('groupName'),
-				});
-			});
-		});
-
-		return side;
-	}
-
-	const render_wiki = new RenderWiki();
-	frappe.ready(() => render_wiki.setup_search(wikiSearchScope))
-</script><script>{ { script } }</script></main>
+</main>
