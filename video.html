@@ -1,0 +1,259 @@
+<main><div class="from-markdown markdown ">
+	<div class="alert alert-warning admin-banner hide" role="alert">
+		<div class="d-flex justify-content-between align-items-center">
+			<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+			<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+		</div>
+	</div>
+	<div class="d-flex justify-content-between align-items-center">
+		<h1 class="wiki-title" id="video">Video
+<a class="no-underline" href="#video" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h1>
+	</div>
+	<div class="wiki-content"><p><strong>Videos can be added from both Vimeo and YouTube, using the Video DocType.</strong></p>
+
+<p>You can add Videos with their URLs, descriptions, thumbnails, etc. Some of its uses are to maintain educational course material and to track personal YouTube video engagement.</p>
+
+<p>To access Videos, go to:</p>
+
+<blockquote>
+  <p>Home &gt; Tools &gt; Video</p>
+</blockquote>
+
+<h2 id="1-how-to-create-a-new-video">1. How to create a new Video<a class="no-underline" href="#1-how-to-create-a-new-video" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h2>
+
+<ol>
+<li>Go to the Video list and click on New.</li>
+<li>Enter the title for the Video.</li>
+<li>Select the Provider. The default Video Provider is YouTube.</li>
+<li>Enter the URL to access the Video.</li>
+<li>You can optionally add a publishing date and duration of the Video in days-hours-minutes-seconds.</li>
+<li>You must also add some description for it.</li>
+<li>Save.</li>
+</ol>
+
+<p>After Saving, you will get a provision to add an image/thumbnail for the Video.
+<img src="/files/video-after-save.png" alt="Video" class="screenshot"></p>
+
+<p>You can also watch the Video in the Document itself after saving it.
+<img src="/files/video-watch.gif" alt="Video" class="screenshot"></p>
+
+<h2 id="2-features">2. Features<a class="no-underline" href="#2-features" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h2>
+
+<h3 id="21-tracking-video-analytics-via-youtube">2.1 Tracking Video Analytics via YouTube<a class="no-underline" href="#21-tracking-video-analytics-via-youtube" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>YouTube Video statistics can be tracked and analysed. This is useful to track the view count and engagement of a Video you published.</p>
+
+<p>For this you must first enable YouTube Tracking in <strong>Video Settings</strong>:</p>
+
+<blockquote>
+  <p>Video Settings &gt; Enable YouTube Tracking</p>
+</blockquote>
+
+<p>Once you enable this, the <strong>API Key</strong> and <strong>Frequency</strong> fields will be visible.
+<img src="/files/video-settings.png" alt="Video" class="screenshot"></p>
+
+<p><strong>API Key</strong> : You can generate an API Key in your <a href="https://console.developers.google.com/">Google Developers Console</a>. You can refer to the <a href="https://developers.google.com/youtube/v3/getting-started">YouTube Data API Documentation</a> for steps to generate the same.</p>
+
+<p><strong>Frequency</strong>: You can choose how often the system must automatically update your statistics. The available options are every 30 minutes, 1 hour, 6 hours and Daily (once everyday).</p>
+
+<p>Apart from automatic updation, the statistics are updated on Save. So, all the Videos created/updated <strong>after</strong> enabling YouTube tracking, will have statistics updated on Save.
+<img src="/files/video-stats.png" alt="Video" class="screenshot"></p>
+
+<h3 id="22-youtube-interactions-report">2.2 YouTube Interactions Report<a class="no-underline" href="#22-youtube-interactions-report" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>The YouTube Interactions Report provides a consolidated view of all the videos' engagements. The bar chart provides visual analysis of Likes vs Views.</p>
+
+<p>You can filter the report data by the Published Date range.
+<img src="/files/youtube-interactions.png" alt="Video" class="screenshot"></p>
+
+<blockquote>
+  <p><strong>Note</strong> : The quota for the number of <strong>non-billable</strong> requests to the YouTube Data API is 10,000 requests as of September 2020. KanivinERPNext automatically updates upto 50 videos in 1 request. Similarly, for 100 videos it would take 2 requests.  </p>
+</blockquote>
+
+<p>Assuming 100 videos are updated <strong>every hour</strong> (frequency = 1 hour):  </p>
+
+<p>&gt;
+- 2 requests will be sent per hour  </p>
+
+<ul>
+<li>48 requests will be sent per a day  </li>
+</ul>
+
+<blockquote>
+  <p>Please set the frequency accordingly.</p>
+</blockquote>
+</div>
+	<input value="c17dfiqg98" class="d-none" name="wiki-page-name">
+	<div class="modal revisions-modal fade" id="revisionsModal" tabindex="-1" role="dialog" aria-labelledby="revisionsModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="d-flex flex-column">
+                    <h5 class="modal-title revision-title" id="introduction">Introduction<a class="no-underline" href="#introduction" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a><a class="no-underline" href="#introduction" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a><a class="no-underline" href="#introduction" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a><a class="no-underline" href="#introduction" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a><a class="no-underline" href="#introduction" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a><a class="no-underline" href="#introduction" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a><a class="no-underline" href="#introduction" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h5>
+                    <span class="small text-muted revision-time">palkan edited 2 months ago</span>
+                </div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="revision-content wiki-content"><p><strong>Videos can be added from both Vimeo and YouTube, using the Video DocType.</strong></p>
+
+<p>You can add Videos with their URLs, descriptions, thumbnails, etc. Some of its uses are to maintain educational course material and to track personal YouTube video engagement.</p>
+
+<p>To access Videos, go to:</p>
+
+<blockquote>
+  <p>Home &gt; Tools &gt; Video</p>
+</blockquote>
+
+<h2 id="1-how-to-create-a-new-video">1. How to create a new Video<a class="no-underline" href="#1-how-to-create-a-new-video" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h2>
+
+<ol>
+<li>Go to the Video list and click on New.</li>
+<li>Enter the title for the Video.</li>
+<li>Select the Provider. The default Video Provider is YouTube.</li>
+<li>Enter the URL to access the Video.</li>
+<li>You can optionally add a publishing date and duration of the Video in days-hours-minutes-seconds.</li>
+<li>You must also add some description for it.</li>
+<li>Save.</li>
+</ol>
+
+<p>After Saving, you will get a provision to add an image/thumbnail for the Video.
+<img src="/files/video-after-save.png" alt="Video" class="screenshot"></p>
+
+<p>You can also watch the Video in the Document itself after saving it.
+<img src="/files/video-watch.gif" alt="Video" class="screenshot"></p>
+
+<h2 id="2-features">2. Features<a class="no-underline" href="#2-features" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h2>
+
+<h3 id="21-tracking-video-analytics-via-youtube">2.1 Tracking Video Analytics via YouTube<a class="no-underline" href="#21-tracking-video-analytics-via-youtube" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>YouTube Video statistics can be tracked and analysed. This is useful to track the view count and engagement of a Video you published.</p>
+
+<p>For this you must first enable YouTube Tracking in <strong>Video Settings</strong>:</p>
+
+<blockquote>
+  <p>Video Settings &gt; Enable YouTube Tracking</p>
+</blockquote>
+
+<p>Once you enable this, the <strong>API Key</strong> and <strong>Frequency</strong> fields will be visible.
+<img src="/files/video-settings.png" alt="Video" class="screenshot"></p>
+
+<p><strong>API Key</strong> : You can generate an API Key in your <a href="https://console.developers.google.com/">Google Developers Console</a>. You can refer to the <a href="https://developers.google.com/youtube/v3/getting-started">YouTube Data API Documentation</a> for steps to generate the same.</p>
+
+<p><strong>Frequency</strong>: You can choose how often the system must automatically update your statistics. The available options are every 30 minutes, 1 hour, 6 hours and Daily (once everyday).</p>
+
+<p>Apart from automatic updation, the statistics are updated on Save. So, all the Videos created/updated <strong>after</strong> enabling YouTube tracking, will have statistics updated on Save.
+<img src="/files/video-stats.png" alt="Video" class="screenshot"></p>
+
+<h3 id="22-youtube-interactions-report">2.2 YouTube Interactions Report<a class="no-underline" href="#22-youtube-interactions-report" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>The YouTube Interactions Report provides a consolidated view of all the videos' engagements. The bar chart provides visual analysis of Likes vs Views.</p>
+
+<p>You can filter the report data by the Published Date range.
+<img src="/files/youtube-interactions.png" alt="Video" class="screenshot"></p>
+
+<blockquote>
+  <p><strong>Note</strong> : The quota for the number of <strong>non-billable</strong> requests to the YouTube Data API is 10,000 requests as of September 2020. KanivinERPNext automatically updates upto 50 videos in 1 request. Similarly, for 100 videos it would take 2 requests.  </p>
+</blockquote>
+
+<p>Assuming 100 videos are updated <strong>every hour</strong> (frequency = 1 hour):  </p>
+
+<p>&gt;
+- 2 requests will be sent per hour  </p>
+
+<ul>
+<li>48 requests will be sent per a day  </li>
+</ul>
+
+<blockquote>
+  <p>Please set the frequency accordingly.</p>
+</blockquote>
+</div>
+
+</div>
+</main>

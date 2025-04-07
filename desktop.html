@@ -1,0 +1,78 @@
+<main><div class="from-markdown markdown ">
+	<div class="alert alert-warning admin-banner hide" role="alert">
+		<div class="d-flex justify-content-between align-items-center">
+			<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+			<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+		</div>
+	</div>
+	<div class="d-flex justify-content-between align-items-center">
+		<h1 class="wiki-title" id="desktop">Desktop
+<a class="no-underline" href="#desktop" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h1>
+	</div>
+	<div class="wiki-content"><p><strong>The moment a User logs into the system they will be able to see a Home Screen wherein all the Modules and Domains will be listed in the form of cards.</strong></p>
+
+<p>Their cards are a replacement to the erstwhile Module icons which were present in KanivinERPNext versions before version 12.</p>
+
+<p><img src="/files/desktop.png" alt="New Desktop" class="screenshot"></p>
+
+<p>These cards can be classified into four categories, namely:</p>
+
+<ul>
+<li><strong>Modules</strong>: These are all the domain agnostic modules available in KanivinERPNext that are common to all types of businesses. Modules like Human Resources, CRM, Buying, Selling, etc. are put under this category.</li>
+<li><strong>Domains</strong>: This is where you can find all domain-specific modules like Education and Manufacturing. You can learn more about all industry-specific modules <a href="/erpnext/v13/user/manual/en#3-industry-specific-modules">here</a>.</li>
+<li><strong>Places</strong>: Places is where you can find features that are not industry-specific and are not required in day to day operations of your company. Features like Website, Dashboards, and Marketplace can be found here.</li>
+<li><strong>Administration</strong>: Here you can find modules related to your KanivinERPNext setup and administration.</li>
+</ul>
+
+<p>These cards allow better navigation with shortcut items in the drop-down menu. You can customize this drop-down to add or remove links to various DocType for that module.</p>
+
+<p><img src="/files/desktop-dropdown.png" alt="Desktop Dropdown" class="screenshot"></p>
+
+<p>You can reorder as well as show or hide these module cards.</p>
+
+<p><img src="/files/drag-and-drop.gif" alt="Drag and Drop" class="screenshot"></p>
+
+<h2 id="module-page">Module Page<a class="no-underline" href="#module-page" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h2>
+
+<p>Clicking on any module card will take you to the module page. Here the user can navigate through all the doctypes, reports, and settings associated with a particular module.</p>
+
+<p>For example, here is how the Accounting module page looks like.</p>
+
+<p><img src="/files/accounts-module-page.png" alt="Accounts Module" class="screenshot"></p>
+
+<h3 id="navigating-the-page">Navigating the page<a class="no-underline" href="#navigating-the-page" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>Some links of these modules may be marked grey, clicking on these links won't open any new page. They are marked so because there is a dependent document that needs to be created first. For example, you will need to build a Sales Invoice before accessing the sales register. Hovering on any of these links will show a pop-up guiding the user to the dependent document.</p>
+
+<p><img src="/files/module-link-hover.png" alt="Muted Link in Module Page" class="screenshot"></p>
+
+<p>You shall also notice a color indicator before some of the links. These indicators are used to inform the user if any open or urgent documents need to be looked at.</p>
+
+<p><img src="/files/color-indicator.png" alt="Color Indicators" class="screenshot"></p>
+
+<ul>
+<li>The <strong>red</strong> indicator in the above example indicated that there are open or overdue tasks on the list.</li>
+<li>Similarly, a <strong>blue</strong> indicator would mean that there are no open tasks.</li>
+<li>An <strong>orange</strong> indicator means that the report has not been accessed or no document is created in the corresponding doctype.</li>
+</ul>
+</div>
+</div>
+</main>
