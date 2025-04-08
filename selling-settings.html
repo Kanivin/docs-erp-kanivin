@@ -1,0 +1,587 @@
+<main><div class="from-markdown markdown ">
+	<div class="alert alert-warning admin-banner hide" role="alert">
+		<div class="d-flex justify-content-between align-items-center">
+			<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+			<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+		</div>
+	</div>
+	<div class="d-flex justify-content-between align-items-center">
+		<h1 class="wiki-title" id="selling-settings">Selling Settings<a class="no-underline" href="#selling-settings" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h1>
+	</div>
+	<div class="wiki-content"><p>Selling Settings is where you can define properties and validations which will be applied to the masters and transactions involved in the sales cycle.</p>
+
+<p>To access Selling Settings, go to:</p>
+
+<blockquote>
+  <p>Home &gt; Selling &gt; Settings &gt; Selling Settings</p>
+</blockquote>
+
+<h2 id="customer-defaults">Customer Defaults<a class="no-underline" href="#customer-defaults" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h2>
+
+<p><img src="/files/Screenshot 2024-08-29 at 12.29.37 PM.png" alt="Screenshot 2024-08-29 at 12.29.37 PM" class="screenshot">  </p>
+
+<h3 id="1-customer-naming-by">1. Customer Naming By<a class="no-underline" href="#1-customer-naming-by" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>When a customer is saved, a unique ID is generated for that Customer.</p>
+
+<p>By default, Customer ID is generated based on Customer Name.</p>
+
+<p>If you wish to save Customer using a naming series, in the field Customer Naming Series, set value as "Naming Series". Example of Customer ID's saved in Naming Series - "CUST00001, CUST00002, CUST00003..." and so on.</p>
+
+<h3 id="2-default-customer-group">2. Default Customer Group<a class="no-underline" href="#2-default-customer-group" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>Select a default Customer Group which will be auto-updated when creating a new Customer.</p>
+
+<p>Quotations can be created for the Customers as well as for the Leads. When converting a Quotation into a Sales Order, which is created for a Lead, the system attempts to convert that Lead into a Customer. While creating Customer in the backend, the value for Customer Group is picked from Selling Settings. If no default values are found for Customer Group, then you will receive a validation message asking for the Customer Group. You can also manually convert a Lead into a Customer.</p>
+
+<h3 id="3-default-territory">3. Default Territory<a class="no-underline" href="#3-default-territory" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>Select a default Territory which will be auto-updated when creating a new Customer.</p>
+
+<p>Quotations can be created for the Customers as well as for the Leads. When converting a Quotation into a Sales Order, which is created for a Lead, the system attempts to convert that Lead into a Customer. While creating Customer in the backend, the value for Territory is picked from Selling Settings. If no default values are found for Territory, then you will receive a validation message asking for the Territory. You can also manually convert a Lead into a Customer.</p>
+
+<h2 id="item-price-settings">Item Price Settings<a class="no-underline" href="#item-price-settings" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h2>
+
+<p><img src="/files/Screenshot 2024-08-29 at 12.36.53 PM.png" alt="Screenshot 2024-08-29 at 12.36.53 PM" class="screenshot">  </p>
+
+<h3 id="1-default-price-list">1. Default Price List<a class="no-underline" href="#1-default-price-list" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>Price List set in this field will be auto-updated in the Price List field of sales transactions like Quotation, Sales Order, Delivery Note, and Sales Invoice.</p>
+
+<h3 id="2-maintain-same-rate-throughout-sales-cycle">2. Maintain Same Rate Throughout Sales Cycle<a class="no-underline" href="#2-maintain-same-rate-throughout-sales-cycle" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>It ensures that the same rate is maintained throughout the sales process. Once enabled, KanivinERP will validate whether an Item's price is changing in a Delivery Note or Sales Invoice created from a Sales Order.</p>
+
+<h3 id="3-action-if-same-rate-is-not-maintained-throughout-sales-cycle">3. Action if Same Rate is Not Maintained Throughout Sales Cycle<a class="no-underline" href="#3-action-if-same-rate-is-not-maintained-throughout-sales-cycle" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>You can configure the action that system should take if the same rate is not maintained in the "Action If Same Rate is Not Maintained Throughout Sales Cycle" field:</p>
+
+<ul>
+<li><strong>Stop</strong>: KanivinERP will stop you from changing the price by throwing a validation error.</li>
+<li><strong>Warn</strong>: The system will let you save the transaction but warn you with a message if the rate is changed.</li>
+</ul>
+
+<p><strong>Note:</strong> This field will only be visible if <a href="/erpnext/v13/user/manual/en/selling/selling-settings#2-maintain-same-rate-throughout-sales-cycle">Maintain Same Rate Throughout Sales Cycle</a> is enabled.</p>
+
+<h3 id="4-role-allowed-to-override-stop-action">4. Role Allowed to Override Stop Action<a class="no-underline" href="#4-role-allowed-to-override-stop-action" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>Allow users to add role to override "Stop" action for <a href="/erpnext/v13/user/manual/en/selling/selling-settings#2-maintain-same-rate-throughout-sales-cycle">Maintain Same Rate Throughout Sales Cycle</a>, if <a href="/erpnext/v13/user/manual/en/selling/selling-settings#3-action-if-same-rate-is-not-maintained-throughout-sales-cycle">Action if Same Rate is Not Maintained</a> was set to Stop.</p>
+
+<p><strong>Note:</strong> This field will only be visible if 'Maintain Same Rate Throughout Sales Cycle' is enabled and 'Action if Same Rate is Not Maintained' is set to Stop.</p>
+
+<h3 id="5-allow-user-to-edit-price-list-rate-in-transactions">5. Allow User to Edit Price List Rate in Transactions<a class="no-underline" href="#5-allow-user-to-edit-price-list-rate-in-transactions" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>The item table in sale transactions has a field called Price List Rate. This field is non-editable by default in all the sales transactions. This is to ensure that the price of an item is fetched from Item Price record and the user is not able to edit it.</p>
+
+<p>If you need the Item Price fetched from Price List of an item to be editable, you should uncheck this field.</p>
+
+<h3 id="6-validate-selling-price-for-item-against-purchase-rate-or-valuation-rate">6. Validate Selling Price for Item Against Purchase Rate or Valuation Rate<a class="no-underline" href="#6-validate-selling-price-for-item-against-purchase-rate-or-valuation-rate" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>When making sales, it's important to know that you're not making losses. Enabling this validation will validate the item's Selling Price with its valuation/buying price. If an item's selling price is found to be less than it's buying price, then you will get a prompt when this checkbox is ticked.</p>
+
+<h3 id="7-calculate-product-bundle-price-based-on-child-items-rates">7. Calculate Product Bundle Price based on Child Items' Rates<a class="no-underline" href="#7-calculate-product-bundle-price-based-on-child-items-rates" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>Enabling this will do the following:</p>
+
+<ul>
+<li>Make the Rate column of all Packed/Bundle Items tables editable.</li>
+<li>Calculate the prices of all <a href="/erpnext/v13/user/manual/en/selling/product-bundle">Product Bundles</a> in the Items table, based on the prices of its Child Items, specified in the Packed/Bundle Items table.</li>
+</ul>
+
+<p><strong>Note:</strong> If this is enabled, updating the rate of the Product Bundle in the Items table will not change its price. It will get reset to the price based on its Child Items on saving the doc.</p>
+
+<h3 id="8-allow-negative-rate-for-items">8. Allow Negative Rate for Items<a class="no-underline" href="#8-allow-negative-rate-for-items" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>Enable this option to permit the use of negative rates for items in sales transactions. This setting is useful for applying substantial discounts, processing refunds or returns, and handling special promotional pricing.</p>
+
+<h2 id="transaction-settings">Transaction Settings<a class="no-underline" href="#transaction-settings" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h2>
+
+<p><img src="/files/Screenshot 2024-08-29 at 12.41.21 PM.png" alt="Screenshot 2024-08-29 at 12.41.21 PM" class="screenshot">  </p>
+
+<h3 id="1-is-sales-order-required-for-sales-invoice--delivery-note-creation">1. Is Sales Order Required for Sales Invoice &amp; Delivery Note Creation?<a class="no-underline" href="#1-is-sales-order-required-for-sales-invoice--delivery-note-creation" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>If you wish to make Sales Order creation mandatory before the creation of a Sales Invoice or a Delivery Note, then you should set the 'Sales Order Required' field as 'Yes'. By default, this will be 'No'.</p>
+
+<p>This configuration can be overridden for a particular customer by enabling the "Allow Sales Invoice Creation Without Sales Order" checkbox in customer master.</p>
+
+<h3 id="2-is-delivery-note-required-for-sales-invoice-creation">2. Is Delivery Note Required for Sales Invoice Creation?<a class="no-underline" href="#2-is-delivery-note-required-for-sales-invoice-creation" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>To make Delivery Note creation as mandatory before Sales Invoice creation, you should set this field as 'Yes'. By default, this will be 'No'.</p>
+
+<p>This configuration can be overridden for a particular customer by enabling the "Allow Sales Invoice Creation Without Delivery Note" checkbox in customer master</p>
+
+<h3 id="3-sales-update-frequency">3. Sales Update Frequency<a class="no-underline" href="#3-sales-update-frequency" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>The frequency at which project progress and company transaction details will be updated. By default it is for Each Transaction, you can also set it to Daily or Monthly if you have a lot of transactions every day.</p>
+
+<h3 id="4-blanket-order-allowance-">4. Blanket Order Allowance (%)<a class="no-underline" href="#4-blanket-order-allowance-" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>It indicates the percentage one is allowed to sell beyond the Blanket Order quantity</p>
+
+<h3 id="5-allow-item-to-be-added-multiple-times-in-a-transaction">5. Allow Item to be Added Multiple Times in a Transaction<a class="no-underline" href="#5-allow-item-to-be-added-multiple-times-in-a-transaction" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>This is a validation check which prevents an item from being added multiple times in the same transaction when unchecked. In some cases, this might be an explicit need if so check this box.</p>
+
+<h3 id="6-allow-multiple-sales-orders-against-a-customers-purchase-order">6. Allow Multiple Sales Orders Against a Customer's Purchase Order<a class="no-underline" href="#6-allow-multiple-sales-orders-against-a-customers-purchase-order" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>When creating a Sales Order, you can update the Purchase Order ID and Date received from the Customer. You can create only one Sales Order against the Customer's PO No. and Date. However, if you wish to allow the creation of multiple Sales Orders against the same PO No. of the Customer, tick the checkbox "Allow multiple Sales Orders against a Customer's Purchase Order".</p>
+
+<h3 id="7-allow-sales-order-creation-for-expired-quotation">7. Allow Sales Order Creation For Expired Quotation<a class="no-underline" href="#7-allow-sales-order-creation-for-expired-quotation" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>This allows creation of sales orders from quotations that have passed their expiration date, providing flexibility in processing orders despite outdated quotes.</p>
+
+<h3 id="8-dont-reserve-sales-order-qty-on-sales-return">8. Don't Reserve Sales Order Qty on Sales Return<a class="no-underline" href="#8-dont-reserve-sales-order-qty-on-sales-return" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>It prevents the automatic reservation of stock quantities from sales orders when processing sales returns.</p>
+
+<h3 id="9-hide-customers-tax-id-from-sales-transactions">9. Hide Customer's Tax ID from Sales Transactions<a class="no-underline" href="#9-hide-customers-tax-id-from-sales-transactions" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>As per the statutory requirement, most of the Customers have unique Tax ID assigned to them. They also need to have this tax ID fetched in the selling transactions. However, if you don't wish to use this functionality, you can disable by checking this property.</p>
+
+<h3 id="10-enable-discount-accounting-for-selling">10. Enable Discount Accounting for Selling<a class="no-underline" href="#10-enable-discount-accounting-for-selling" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>Once enabled, additional ledger entries will be made for discounts in a separate Discount Account</p>
+</div>
+	<input value="v843htibpt" class="d-none" name="wiki-page-name">
+	<div class="modal revisions-modal fade" id="revisionsModal" tabindex="-1" role="dialog" aria-labelledby="revisionsModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="d-flex flex-column">
+                    <h5 class="modal-title revision-title" id="support-issues">Support Issues<a class="no-underline" href="#support-issues" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a><a class="no-underline" href="#support-issues" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a><a class="no-underline" href="#support-issues" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a><a class="no-underline" href="#support-issues" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a><a class="no-underline" href="#support-issues" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a><a class="no-underline" href="#support-issues" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a><a class="no-underline" href="#support-issues" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a><a class="no-underline" href="#support-issues" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a><a class="no-underline" href="#support-issues" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h5>
+                    <span class="small text-muted revision-time">administrator edited 4 months ago</span>
+                </div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="revision-content wiki-content"><p>Selling Settings is where you can define properties and validations which will be applied to the masters and transactions involved in the sales cycle.</p>
+
+<p>To access Selling Settings, go to:</p>
+
+<blockquote>
+  <p>Home &gt; Selling &gt; Settings &gt; Selling Settings</p>
+</blockquote>
+
+<h2 id="customer-defaults">Customer Defaults<a class="no-underline" href="#customer-defaults" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h2>
+
+<p><img src="/files/Screenshot 2024-08-29 at 12.29.37 PM.png" alt="Screenshot 2024-08-29 at 12.29.37 PM" class="screenshot">  </p>
+
+<h3 id="1-customer-naming-by">1. Customer Naming By<a class="no-underline" href="#1-customer-naming-by" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>When a customer is saved, a unique ID is generated for that Customer.</p>
+
+<p>By default, Customer ID is generated based on Customer Name.</p>
+
+<p>If you wish to save Customer using a naming series, in the field Customer Naming Series, set value as "Naming Series". Example of Customer ID's saved in Naming Series - "CUST00001, CUST00002, CUST00003..." and so on.</p>
+
+<h3 id="2-default-customer-group">2. Default Customer Group<a class="no-underline" href="#2-default-customer-group" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>Select a default Customer Group which will be auto-updated when creating a new Customer.</p>
+
+<p>Quotations can be created for the Customers as well as for the Leads. When converting a Quotation into a Sales Order, which is created for a Lead, the system attempts to convert that Lead into a Customer. While creating Customer in the backend, the value for Customer Group is picked from Selling Settings. If no default values are found for Customer Group, then you will receive a validation message asking for the Customer Group. You can also manually convert a Lead into a Customer.</p>
+
+<h3 id="3-default-territory">3. Default Territory<a class="no-underline" href="#3-default-territory" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>Select a default Territory which will be auto-updated when creating a new Customer.</p>
+
+<p>Quotations can be created for the Customers as well as for the Leads. When converting a Quotation into a Sales Order, which is created for a Lead, the system attempts to convert that Lead into a Customer. While creating Customer in the backend, the value for Territory is picked from Selling Settings. If no default values are found for Territory, then you will receive a validation message asking for the Territory. You can also manually convert a Lead into a Customer.</p>
+
+<h2 id="item-price-settings">Item Price Settings<a class="no-underline" href="#item-price-settings" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h2>
+
+<p><img src="/files/Screenshot 2024-08-29 at 12.36.53 PM.png" alt="Screenshot 2024-08-29 at 12.36.53 PM" class="screenshot">  </p>
+
+<h3 id="1-default-price-list">1. Default Price List<a class="no-underline" href="#1-default-price-list" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>Price List set in this field will be auto-updated in the Price List field of sales transactions like Quotation, Sales Order, Delivery Note, and Sales Invoice.</p>
+
+<h3 id="2-maintain-same-rate-throughout-sales-cycle">2. Maintain Same Rate Throughout Sales Cycle<a class="no-underline" href="#2-maintain-same-rate-throughout-sales-cycle" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>It ensures that the same rate is maintained throughout the sales process. Once enabled, KanivinERP will validate whether an Item's price is changing in a Delivery Note or Sales Invoice created from a Sales Order.</p>
+
+<h3 id="3-action-if-same-rate-is-not-maintained-throughout-sales-cycle">3. Action if Same Rate is Not Maintained Throughout Sales Cycle<a class="no-underline" href="#3-action-if-same-rate-is-not-maintained-throughout-sales-cycle" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>You can configure the action that system should take if the same rate is not maintained in the "Action If Same Rate is Not Maintained Throughout Sales Cycle" field:</p>
+
+<ul>
+<li><strong>Stop</strong>: KanivinERP will stop you from changing the price by throwing a validation error.</li>
+<li><strong>Warn</strong>: The system will let you save the transaction but warn you with a message if the rate is changed.</li>
+</ul>
+
+<p><strong>Note:</strong> This field will only be visible if <a href="/erpnext/v13/user/manual/en/selling/selling-settings#2-maintain-same-rate-throughout-sales-cycle">Maintain Same Rate Throughout Sales Cycle</a> is enabled.</p>
+
+<h3 id="4-role-allowed-to-override-stop-action">4. Role Allowed to Override Stop Action<a class="no-underline" href="#4-role-allowed-to-override-stop-action" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>Allow users to add role to override "Stop" action for <a href="/erpnext/v13/user/manual/en/selling/selling-settings#2-maintain-same-rate-throughout-sales-cycle">Maintain Same Rate Throughout Sales Cycle</a>, if <a href="/erpnext/v13/user/manual/en/selling/selling-settings#3-action-if-same-rate-is-not-maintained-throughout-sales-cycle">Action if Same Rate is Not Maintained</a> was set to Stop.</p>
+
+<p><strong>Note:</strong> This field will only be visible if 'Maintain Same Rate Throughout Sales Cycle' is enabled and 'Action if Same Rate is Not Maintained' is set to Stop.</p>
+
+<h3 id="5-allow-user-to-edit-price-list-rate-in-transactions">5. Allow User to Edit Price List Rate in Transactions<a class="no-underline" href="#5-allow-user-to-edit-price-list-rate-in-transactions" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>The item table in sale transactions has a field called Price List Rate. This field is non-editable by default in all the sales transactions. This is to ensure that the price of an item is fetched from Item Price record and the user is not able to edit it.</p>
+
+<p>If you need the Item Price fetched from Price List of an item to be editable, you should uncheck this field.</p>
+
+<h3 id="6-validate-selling-price-for-item-against-purchase-rate-or-valuation-rate">6. Validate Selling Price for Item Against Purchase Rate or Valuation Rate<a class="no-underline" href="#6-validate-selling-price-for-item-against-purchase-rate-or-valuation-rate" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>When making sales, it's important to know that you're not making losses. Enabling this validation will validate the item's Selling Price with its valuation/buying price. If an item's selling price is found to be less than it's buying price, then you will get a prompt when this checkbox is ticked.</p>
+
+<h3 id="7-calculate-product-bundle-price-based-on-child-items-rates">7. Calculate Product Bundle Price based on Child Items' Rates<a class="no-underline" href="#7-calculate-product-bundle-price-based-on-child-items-rates" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>Enabling this will do the following:</p>
+
+<ul>
+<li>Make the Rate column of all Packed/Bundle Items tables editable.</li>
+<li>Calculate the prices of all <a href="/erpnext/v13/user/manual/en/selling/product-bundle">Product Bundles</a> in the Items table, based on the prices of its Child Items, specified in the Packed/Bundle Items table.</li>
+</ul>
+
+<p><strong>Note:</strong> If this is enabled, updating the rate of the Product Bundle in the Items table will not change its price. It will get reset to the price based on its Child Items on saving the doc.</p>
+
+<h3 id="8-allow-negative-rate-for-items">8. Allow Negative Rate for Items<a class="no-underline" href="#8-allow-negative-rate-for-items" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>Enable this option to permit the use of negative rates for items in sales transactions. This setting is useful for applying substantial discounts, processing refunds or returns, and handling special promotional pricing.</p>
+
+<h2 id="transaction-settings">Transaction Settings<a class="no-underline" href="#transaction-settings" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h2>
+
+<p><img src="/files/Screenshot 2024-08-29 at 12.41.21 PM.png" alt="Screenshot 2024-08-29 at 12.41.21 PM" class="screenshot">  </p>
+
+<h3 id="1-is-sales-order-required-for-sales-invoice--delivery-note-creation">1. Is Sales Order Required for Sales Invoice &amp; Delivery Note Creation?<a class="no-underline" href="#1-is-sales-order-required-for-sales-invoice--delivery-note-creation" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>If you wish to make Sales Order creation mandatory before the creation of a Sales Invoice or a Delivery Note, then you should set the 'Sales Order Required' field as 'Yes'. By default, this will be 'No'.</p>
+
+<p>This configuration can be overridden for a particular customer by enabling the "Allow Sales Invoice Creation Without Sales Order" checkbox in customer master.</p>
+
+<h3 id="2-is-delivery-note-required-for-sales-invoice-creation">2. Is Delivery Note Required for Sales Invoice Creation?<a class="no-underline" href="#2-is-delivery-note-required-for-sales-invoice-creation" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>To make Delivery Note creation as mandatory before Sales Invoice creation, you should set this field as 'Yes'. By default, this will be 'No'.</p>
+
+<p>This configuration can be overridden for a particular customer by enabling the "Allow Sales Invoice Creation Without Delivery Note" checkbox in customer master</p>
+
+<h3 id="3-sales-update-frequency">3. Sales Update Frequency<a class="no-underline" href="#3-sales-update-frequency" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>The frequency at which project progress and company transaction details will be updated. By default it is for Each Transaction, you can also set it to Daily or Monthly if you have a lot of transactions every day.</p>
+
+<h3 id="4-blanket-order-allowance-">4. Blanket Order Allowance (%)<a class="no-underline" href="#4-blanket-order-allowance-" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>It indicates the percentage one is allowed to sell beyond the Blanket Order quantity</p>
+
+<h3 id="5-allow-item-to-be-added-multiple-times-in-a-transaction">5. Allow Item to be Added Multiple Times in a Transaction<a class="no-underline" href="#5-allow-item-to-be-added-multiple-times-in-a-transaction" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>This is a validation check which prevents an item from being added multiple times in the same transaction when unchecked. In some cases, this might be an explicit need if so check this box.</p>
+
+<h3 id="6-allow-multiple-sales-orders-against-a-customers-purchase-order">6. Allow Multiple Sales Orders Against a Customer's Purchase Order<a class="no-underline" href="#6-allow-multiple-sales-orders-against-a-customers-purchase-order" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>When creating a Sales Order, you can update the Purchase Order ID and Date received from the Customer. You can create only one Sales Order against the Customer's PO No. and Date. However, if you wish to allow the creation of multiple Sales Orders against the same PO No. of the Customer, tick the checkbox "Allow multiple Sales Orders against a Customer's Purchase Order".</p>
+
+<h3 id="7-allow-sales-order-creation-for-expired-quotation">7. Allow Sales Order Creation For Expired Quotation<a class="no-underline" href="#7-allow-sales-order-creation-for-expired-quotation" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>This allows creation of sales orders from quotations that have passed their expiration date, providing flexibility in processing orders despite outdated quotes.</p>
+
+<h3 id="8-dont-reserve-sales-order-qty-on-sales-return">8. Don't Reserve Sales Order Qty on Sales Return<a class="no-underline" href="#8-dont-reserve-sales-order-qty-on-sales-return" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>It prevents the automatic reservation of stock quantities from sales orders when processing sales returns.</p>
+
+<h3 id="9-hide-customers-tax-id-from-sales-transactions">9. Hide Customer's Tax ID from Sales Transactions<a class="no-underline" href="#9-hide-customers-tax-id-from-sales-transactions" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>As per the statutory requirement, most of the Customers have unique Tax ID assigned to them. They also need to have this tax ID fetched in the selling transactions. However, if you don't wish to use this functionality, you can disable by checking this property.</p>
+
+<h3 id="10-enable-discount-accounting-for-selling">10. Enable Discount Accounting for Selling<a class="no-underline" href="#10-enable-discount-accounting-for-selling" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>Once enabled, additional ledger entries will be made for discounts in a separate Discount Account</p>
+</div>
+            </div>
+          </main>

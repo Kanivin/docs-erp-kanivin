@@ -1,0 +1,950 @@
+<main><div class="from-markdown markdown ">
+	<div class="alert alert-warning admin-banner hide" role="alert">
+		<div class="d-flex justify-content-between align-items-center">
+			<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+			<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+		</div>
+	</div>
+	<div class="d-flex justify-content-between align-items-center">
+		<h1 class="wiki-title" id="delivery-note">Delivery Note
+<a class="no-underline active" href="#delivery-note" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h1>
+	</div>
+	<div class="wiki-content"><p><strong>A Delivery Note is made when a shipment is shipped from the company’s Warehouse to the customer.</strong></p>
+
+<p>A copy of the Delivery Note is usually sent with the transporter. The Delivery
+Note contains the list of Items that are sent in the shipment and updates the
+inventory. The Delivery Note is an optional step and a Sales Invoice can be created directly from a Sales Order.</p>
+
+<p>To access the Delivery Note list, go to:</p>
+
+<blockquote>
+  <p>Home &gt; Stock &gt; Stock Transactions &gt; Delivery Note</p>
+</blockquote>
+
+<p><img src="/files/delivery-note-flow.png" alt="Delivery Note flow" class="screenshot"></p>
+
+<h2 id="1-prerequisites">1. Prerequisites<a class="no-underline" href="#1-prerequisites" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h2>
+
+<p>Before creating and using a Delivery Note, it is advised that you create the following first:</p>
+
+<ul>
+<li><a href="/erpnext/v13/user/manual/en/selling/sales-order">Sales Order</a></li>
+</ul>
+
+<blockquote>
+  <p>Note: From version-13 onwards we have introduced immutable ledger which changes the rules for cancellation of stock entries and posting backdated stock transactions in KanivinERP. <a href="/erpnext/v13/user/manual/en/accounts/articles/immutable-ledger-in-erpnext">Learn more here</a>.</p>
+</blockquote>
+
+<h2 id="2-how-to-create-a-delivery-note">2. How to create a Delivery Note<a class="no-underline" href="#2-how-to-create-a-delivery-note" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h2>
+
+<p>The entry of the Delivery Note is very similar to a Purchase Receipt. It is usually created from a “Submitted” Sales Order (that is not shipped) by clicking on Create &gt; Delivery.</p>
+
+<p>To create a Delivery Note _manually_ (not recommended), follow these steps:</p>
+
+<ol>
+<li>Go to the Delivery Note list, click on New.</li>
+<li>The Customer and Item details can be fetched by clicking on 'Get Items from &gt; Sales Order'.</li>
+<li>The UOM and Rates will be fetched automatically.</li>
+<li><p>Save and Submit.</p>
+
+<p><img src="/files/delivery-note.png" alt="Delivery Note" class="screenshot"></p></li>
+</ol>
+
+<p>To fetch Items from a Sales Order, click on Get Items from &gt; Sales Order. This will open a popup from where you can search for Sales Orders and select one.</p>
+
+<p>You will notice that all the information about unshipped Items and other details are carried over from your Sales Order if you create the Delivery Note from there.</p>
+
+<p>You can also edit the posting date and time, the current date and time are set when you create the Delivery Note.</p>
+
+<h3 id="21-statuses">2.1 Statuses<a class="no-underline" href="#21-statuses" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>These are the statuses a Delivery Note can be in:</p>
+
+<ul>
+<li><strong>Draft</strong>: A draft is saved but yet to be submitted to the system.</li>
+<li><strong>To Bill</strong>: Yet to be billed using a <a href="/erpnext/v13/user/manual/en/accounts/sales-invoice">Sales Invoice</a>.</li>
+<li><strong>Completed</strong>: Submitted and sent all the Items.</li>
+<li><strong>Return Issued</strong>: All the Items have been returned.</li>
+<li><strong>Cancelled</strong>: Cancelled the Delivery Note.</li>
+<li><strong>Closed</strong>: The purpose of the Close is to manage short-closing. For example, your Customer ordered for 20 qty but closed at 15 qty. The remaining 5 is not to be sent or billed.</li>
+</ul>
+
+<h3 id="22-partial-deliveries">2.2 Partial Deliveries<a class="no-underline" href="#22-partial-deliveries" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>When you create a Delivery Note from a Sales Order, the quantities can be changed. So if the Sales Order contains 10 Items to be delivered and you're delivering only 5 this week and the remaining next week, then you can create 2 Delivery Notes in two weeks.</p>
+
+<h3 id="23-from-pick-list">2.3 From Pick List<a class="no-underline" href="#23-from-pick-list" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>You can create Delivery Notes in bulk, from Pick Lists also. From a submitted Pick List, click on Create -&gt; Delivery Note. </p>
+
+<p><img src="/files/Screenshot 2021-12-29 at 12.28.06 PM.png" alt="" class="screenshot"></p>
+
+<p>This would create separate Delivery Notes for Sales Orders, grouped by Customer.
+If a Pick List Item is not linked to a Sales Order(added manually by user), a separate DN would be created for all those items as well.</p>
+
+<h2 id="3-related-actions">3. Related Actions<a class="no-underline" href="#3-related-actions" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h2>
+
+<h3 id="31-customer-purchase-order-details">3.1 Customer Purchase Order Details<a class="no-underline" href="#31-customer-purchase-order-details" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>You can enter the Customer's Purchase Order number here for Reference.</p>
+
+<h3 id="32-address-and-contact">3.2 Address and Contact<a class="no-underline" href="#32-address-and-contact" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<ul>
+<li><strong>Shipping Address</strong>: The Customer's address where the Items will be shipped.</li>
+<li><strong>Contact Person</strong>: If the Customer is an organization, add the Contact person in this field.</li>
+</ul>
+
+<p>For India, the following details can be added for GST:</p>
+
+<ul>
+<li>Customer GSTIN</li>
+<li>Place of Supply</li>
+<li>Billing Address GSTIN</li>
+<li>Company GSTIN</li>
+<li>Company Address Name</li>
+</ul>
+
+<p><a href="/erpnext/v13/user/manual/en/CRM/contact">Contacts</a> and <a href="/erpnext/v13/user/manual/en/CRM/address">Addresses</a> are stored separately so that you can attach multiple Contacts or Addresses to the customer.</p>
+
+<h3 id="33-currency-and-price-list">3.3 Currency and Price List<a class="no-underline" href="#33-currency-and-price-list" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>You can set the currency in which the Deliver Note is to be sent. This is usually fetched if set in the Sales Order. If you set a Pricing List, then the item prices will be fetched from that list. Ticking on Ignore Pricing Rule will ignore the Pricing Rules set in Accounts &gt; Pricing Rule.</p>
+
+<p>Read about <a href="/erpnext/v13/user/manual/en/stock/price-lists">Price Lists</a>
+and <a href="/erpnext/v13/user/manual/en/accounts/articles/managing-transactions-in-multiple-currency">Multi-Currency Transactions</a>
+to know more.</p>
+
+<h3 id="34-warehouses">3.4 Warehouses<a class="no-underline" href="#34-warehouses" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<ul>
+<li><strong>Set Source Warehouse</strong>: This is where the Items will be sourced from to send to the Customer.</li>
+<li><strong>To Warehouse</strong>: In a regular Sales scenario, the Item exits your Warehouse and reaches the Customer. However, if you wish to retain sample stock, enter a Warehouse here.</li>
+</ul>
+
+<h3 id="35-items-table">3.5 Items Table<a class="no-underline" href="#35-items-table" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<ul>
+<li><p><strong>Barcode</strong>: You can track Items using <a href="/erpnext/v13/user/manual/en/stock/articles/track-items-using-barcode">barcodes</a>.</p></li>
+<li><p>The Item Code, name, description, Image, and Manufacturer will be fetched from the <a href="/erpnext/v13/user/manual/en/stock/item">Item master</a>.</p></li>
+<li><p><strong>Scan Barcode</strong>: You can add Items in the Items table by scanning their barcodes if you have a barcode scanner. Read documentation for <a href="/erpnext/v13/user/manual/en/stock/articles/track-items-using-barcode">tracking items using barcode</a> to know more.</p></li>
+<li><p><strong>Discount and Margin</strong>: You can apply a discount on individual Items percentage-wise or the total amount of the Item. Read <a href="/erpnext/v13/user/manual/en/selling/articles/applying-discount">Applying Discount</a> for more details.</p></li>
+<li><p><strong>Rate</strong>: The Rate is fetched if set in the <a href="/erpnext/v13/user/manual/en/stock/price-lists">Price List</a> and the total Amount is calculated.</p></li>
+<li><p><strong>Item Tax Template</strong>: You can set an Item Tax Template to apply a specific Tax amount to this particular Item. To know more, visit <a href="/erpnext/v13/user/manual/en/accounts/item-tax-template">this page</a>.</p></li>
+<li><p>The Item Weight details per unit and Weight UOM are fetched if set in the Item master.</p></li>
+<li><p><strong>Warehouse and Reference</strong>: The Warehouse from which the Items are sent to the Customer is shown. Also, a Sales Order will be shown if this Delivery Note was the creation flow: 'Sales Order &gt; Deliver Note'.</p></li>
+<li><p><strong>Batch No and Serial No</strong>: If your Item is serialized or batched, you will have to enter <a href="/erpnext/v13/user/manual/en/stock/serial-no">Serial Number</a> and <a href="/erpnext/v13/user/manual/en/stock/batch">Batch</a> in the Items table. You are allowed to enter multiple Serial Numbers in one row (each on a separate line) and you must enter the same number of Serial Numbers as the quantity.</p>
+
+<p>The 'Available Qty at From Warehouse', 'Available Batch Qty at From Warehouse', and 'Installed Qty' will be shown. To know more about installation, visit the <a href="/erpnext/v13/user/manual/en/stock/installation-note">Installation Note</a> page.</p>
+
+<p><strong>Note</strong>: The Item has to be serialized or batched for these features to work. If the Item is serialized a popup will appear where you can enter the Serial Numbers.</p></li>
+<li><p>Expense Account is the account from which the amount will be debited. Ticking on 'Allow Zero Valuation Rate' will allow submitting the Delivery Note even if the Valuation Rate of the Item is 0. This can be a sample item or due to a mutual understanding with your Supplier.</p></li>
+<li><p>Accounting Dimensions help to tag each transaction with different Dimensions without the need for creating new Cost Centers. You need to create Accounting Dimensions first, to know more, visit <a href="/erpnext/v13/user/manual/en/accounts/accounting-dimensions">this page</a>.</p></li>
+<li><p><strong>Page Break</strong> will create a page break just before this Item when printing.</p></li>
+</ul>
+
+<h3 id="36-tracking-quality-inspection">3.6 Tracking Quality Inspection<a class="no-underline" href="#36-tracking-quality-inspection" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>If for certain Items, it is mandatory to record Quality Inspections (if you have set it in your Item master), you will need to update the “Quality Inspection" field. The system will only allow you to “Submit” the
+Delivery Note if you update the “Quality Inspection”.</p>
+
+<p>After enabling Inspection Criteria in the <a href="/erpnext/v13/user/manual/en/stock/item#216-inspection-criteria">Item form</a> for Sales and attaching a Quality Inspection Template there, Quality Inspections can be recorded in Delivery Notes.</p>
+
+<h3 id="37-taxes-and-charges">3.7 Taxes and Charges<a class="no-underline" href="#37-taxes-and-charges" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>The Taxes and Charges will be fetched from the <a href="/erpnext/v13/user/manual/en/buying/purchase-order">Sales Order</a>.</p>
+
+<p>Visit the <a href="/erpnext/v13/user/manual/en/selling/sales-taxes-and-charges-template">Sales Taxes and Charges Template</a> page to know more about taxes.</p>
+
+<p>The total taxes and charges will be displayed below the table.</p>
+
+<p>To add taxes automatically via a Tax Category, visit <a href="/erpnext/v13/user/manual/en/accounts/tax-category">this page</a>.</p>
+
+<p>Make sure to mark all your taxes in the Taxes and Charges table correctly for an accurate valuation.</p>
+
+<h4 id="shipping-rule">Shipping Rule<a class="no-underline" href="#shipping-rule" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h4>
+
+<p>A Shipping Rule helps set the cost of shipping an Item. The cost will usually increase with the distance of shipping. To know more, visit the <a href="/erpnext/v13/user/manual/en/selling/shipping-rule">Shipping Rule</a> page.</p>
+
+<h3 id="38-additional-discount">3.8 Additional Discount<a class="no-underline" href="#38-additional-discount" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>Any additional discounts to the whole order can be set in this section. This discount could be based on the Grand Total i.e., post tax/charges or Net total i.e., pre tax/charges. The additional discount can be applied as a percentage or an amount.
+Read <a href="/erpnext/v13/user/manual/en/selling/articles/applying-discount">Applying Discount</a> for more details.</p>
+
+<h3 id="39-terms-and-conditions">3.9 Terms and Conditions<a class="no-underline" href="#39-terms-and-conditions" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>In Sales/Purchase transactions there might be certain Terms and Conditions based on which the Supplier provides goods or services to the Customer. You can apply the Terms and Conditions to transactions to transactions and they will appear when printing the document. To know about Terms and Conditions, <a href="/erpnext/v13/user/manual/en/setting-up/print/terms-and-conditions">click here</a></p>
+
+<h3 id="310-transporter-information">3.10 Transporter Information<a class="no-underline" href="#310-transporter-information" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>If you outsource transporting Items to their delivery location, the transporter details can be added. This is not the same as <a href="/erpnext/v13/user/manual/en/selling/articles/drop-shipping">drop shipping</a>.</p>
+
+<ul>
+<li><strong>Transporter</strong>: The Supplier who will transport the Item to your Customer. The transporter feature should be enabled in the Supplier master to select the <a href="/erpnext/v13/user/manual/en/buying/supplier">Supplier</a> here.</li>
+<li><strong>Driver</strong>: You can add a Driver here who will drive the mode of transport.</li>
+</ul>
+
+<p><img src="/files/delivery-note-transport.png" alt="Delivery Note Transport" class="screenshot"></p>
+
+<p>The following details can be recorded:</p>
+
+<ul>
+<li>Distance in km</li>
+<li>Mode of Transport whether road, air, rail, or ship.</li>
+</ul>
+
+<p>For India, GST:</p>
+
+<ul>
+<li>GST Transporter ID</li>
+<li>Transport Receipt No</li>
+<li>Vehicle No
+The GST Vehicle Type can be changed</li>
+</ul>
+
+<p>The Transport Receipt Date and Driver Name will be fetched.</p>
+
+<h3 id="311-more-information">3.11 More Information<a class="no-underline" href="#311-more-information" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>The Delivery Note can be linked to the following for tracking purposes:</p>
+
+<ul>
+<li><a href="/erpnext/v13/user/manual/en/projects/project">Project</a></li>
+<li><a href="/erpnext/v13/user/manual/en/CRM/campaign">Campaign</a></li>
+<li><a href="/erpnext/v13/user/manual/en/CRM/lead_source">Source</a></li>
+</ul>
+
+<h3 id="311-printing-settings">3.11 Printing Settings<a class="no-underline" href="#311-printing-settings" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<h4 id="letterhead">Letterhead<a class="no-underline" href="#letterhead" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h4>
+
+<p>You can print your Delivery Note on your company's letterhead. Know more <a href="/erpnext/v13/user/manual/en/setting-up/print/letter-head">here</a>.</p>
+
+<p>'Group same items' will group the same items added multiple times in the Items table. This can be seen when your print.</p>
+
+<h4 id="print-headings">Print Headings<a class="no-underline" href="#print-headings" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h4>
+
+<p>Purchase Receipt headings can also be changed when printing the document. You can do this by selecting a <strong>Print Heading</strong>. To create new Print Headings go to: Home &gt; Settings &gt; Printing &gt; Print Heading. Know more <a href="/erpnext/v13/user/manual/en/setting-up/print/print-headings">here</a>.</p>
+
+<p>There are additional checkboxes for printing the Delivery Note without the amount, this might be useful when the Item is of high value. You can also group the same Items in one row when printing.</p>
+
+<h3 id="312-status">3.12 Status<a class="no-underline" href="#312-status" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>The status of the document and installation percentage is shown here. Any additional instructions for delivery can be entered here.</p>
+
+<h3 id="313-commission">3.13 Commission<a class="no-underline" href="#313-commission" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>If the sale took place via one of your Sales Partners, you can add their commission details here. This is usually fetched from the Sales Order.</p>
+
+<h3 id="314-sales-team">3.14 Sales Team<a class="no-underline" href="#314-sales-team" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p><strong>Sales Persons:</strong> KanivinERP allows you to add multiple Sales Persons who may have worked on this deal.</p>
+
+<p>This is usually fetched from a Sales Order, for example:</p>
+
+<p><img src="/files/so-sales-team.png" alt="Sales Team in Sales Order" class="screenshot"></p>
+
+<h3 id="315-shipping-packets-or-items-with-product-bundle">3.15 Shipping Packets or Items with Product Bundle<a class="no-underline" href="#315-shipping-packets-or-items-with-product-bundle" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>If you are shipping Items that have a <a href="/erpnext/v13/user/manual/en/selling/product-bundle">Product Bundle</a>, KanivinERP will automatically create a “Packing List” table for you based on the sub-Items in that Item.</p>
+
+<p>If your Items are serialized, then for Product Bundle type of Items, you will have
+to update the Serial Number in the “Packing List” table.</p>
+
+<h3 id="316-packing-items-into-cases-for-container-shipment">3.16 Packing Items into Cases, for Container Shipment<a class="no-underline" href="#316-packing-items-into-cases-for-container-shipment" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>If you are doing making the delivery via container shipment or by weight, then you can use the Packing
+Slip to break up your Delivery Note into smaller units. To know more about a Packing Slip, visit <a href="/erpnext/v13/user/manual/en/stock/packing-slip">this page</a>.
+go to:</p>
+
+<p>You can create multiple Packing Slips for your Delivery Note and KanivinERP will
+ensure that the quantities in the Packing Slip do not exceed the quantities in
+the Delivery Note. Note that you can create a Packing Slip from a Delivery Note only when the Delivery Note is in the Draft stage.</p>
+
+<h3 id="317-after-submitting">3.17 After Submitting<a class="no-underline" href="#317-after-submitting" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>When the Delivery Note is submitted, a Stock Ledger Entry is made for each Item and stock is updated. Pending
+Quantity in the Sales Order is updated (if applicable).</p>
+
+<p>The Dashboard will show the following options:</p>
+
+<ul>
+<li><a href="/erpnext/v13/user/manual/en/stock/installation-note">Installation Note</a></li>
+<li><a href="/erpnext/v13/user/manual/en/stock/sales-return">Sales Return</a></li>
+<li><a href="/erpnext/v13/user/manual/en/stock/delivery-trip">Delivery Trip</a></li>
+<li><a href="/erpnext/v13/user/manual/en/accounts/sales-invoice">Sales Invoice</a></li>
+</ul>
+
+<p><img src="/files/delivery-note-submit.png" alt="Delivery Note after submit" class="screenshot"></p>
+
+<blockquote>
+  <p>Tip: To disallow the creation of Delivery Notes without a Sales Order against it:</p>
+</blockquote>
+
+<h3 id="318-returning-a-sales-order">3.18 Returning a Sales Order<a class="no-underline" href="#318-returning-a-sales-order" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>Once you've delivered a Sales Order using a Delivery Note, you can create a return entry in case the <a href="/erpnext/v13/user/manual/en/CRM/customer">Customer</a> returns the Item. To know more, visit the <a href="/erpnext/v13/user/manual/en/stock/sales-return">Sales Return</a> page.</p>
+
+<h3 id="319-skipping-delivery-note">3.19 Skipping Delivery Note<a class="no-underline" href="#319-skipping-delivery-note" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>If you don't want to create a Delivery Note after a Sales Order and directly want to create a Sales Invoice, enable the feature for it in <a href="/erpnext/v13/user/manual/en/selling/selling-settings#32-delivery-note-required">Selling Settings</a>.</p>
+
+<h3 id="4-related-topics">4. Related Topics<a class="no-underline" href="#4-related-topics" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<ol>
+<li><a href="/erpnext/v13/user/manual/en/stock/warehouse">Warehouse</a></li>
+<li><a href="/erpnext/v13/user/manual/en/stock/articles/delivery-note-stock-error">Delivery Note Stock Error</a></li>
+<li><a href="/erpnext/v13/user/manual/en/stock/articles/material-transfer-from-delivery-note">Material Transfer From Delivery Note and Purchase Receipt</a></li>
+<li><a href="/erpnext/v13/user/manual/en/stock/installation-note">Installation Note</a></li>
+<li><a href="/erpnext/v13/user/manual/en/stock/delivery-trip">Delivery Trip</a></li>
+</ol>
+</div>
+	<input value="v843htibpt" class="d-none" name="wiki-page-name">
+	<div class="modal revisions-modal fade" id="revisionsModal" tabindex="-1" role="dialog" aria-labelledby="revisionsModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="d-flex flex-column">
+                    <h5 class="modal-title revision-title" id="support-issues">Support Issues<a class="no-underline" href="#support-issues" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a><a class="no-underline" href="#support-issues" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a><a class="no-underline" href="#support-issues" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a><a class="no-underline" href="#support-issues" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a><a class="no-underline" href="#support-issues" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a><a class="no-underline" href="#support-issues" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a><a class="no-underline" href="#support-issues" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h5>
+                    <span class="small text-muted revision-time">administrator edited 4 months ago</span>
+                </div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="revision-content wiki-content"><p><strong>A Delivery Note is made when a shipment is shipped from the company’s Warehouse to the customer.</strong></p>
+
+<p>A copy of the Delivery Note is usually sent with the transporter. The Delivery
+Note contains the list of Items that are sent in the shipment and updates the
+inventory. The Delivery Note is an optional step and a Sales Invoice can be created directly from a Sales Order.</p>
+
+<p>To access the Delivery Note list, go to:</p>
+
+<blockquote>
+  <p>Home &gt; Stock &gt; Stock Transactions &gt; Delivery Note</p>
+</blockquote>
+
+<p><img src="/files/delivery-note-flow.png" alt="Delivery Note flow" class="screenshot"></p>
+
+<h2 id="1-prerequisites">1. Prerequisites<a class="no-underline" href="#1-prerequisites" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h2>
+
+<p>Before creating and using a Delivery Note, it is advised that you create the following first:</p>
+
+<ul>
+<li><a href="/erpnext/v13/user/manual/en/selling/sales-order">Sales Order</a></li>
+</ul>
+
+<blockquote>
+  <p>Note: From version-13 onwards we have introduced immutable ledger which changes the rules for cancellation of stock entries and posting backdated stock transactions in KanivinERP. <a href="/erpnext/v13/user/manual/en/accounts/articles/immutable-ledger-in-erpnext">Learn more here</a>.</p>
+</blockquote>
+
+<h2 id="2-how-to-create-a-delivery-note">2. How to create a Delivery Note<a class="no-underline" href="#2-how-to-create-a-delivery-note" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h2>
+
+<p>The entry of the Delivery Note is very similar to a Purchase Receipt. It is usually created from a “Submitted” Sales Order (that is not shipped) by clicking on Create &gt; Delivery.</p>
+
+<p>To create a Delivery Note _manually_ (not recommended), follow these steps:</p>
+
+<ol>
+<li>Go to the Delivery Note list, click on New.</li>
+<li>The Customer and Item details can be fetched by clicking on 'Get Items from &gt; Sales Order'.</li>
+<li>The UOM and Rates will be fetched automatically.</li>
+<li><p>Save and Submit.</p>
+
+<p><img src="/files/delivery-note.png" alt="Delivery Note" class="screenshot"></p></li>
+</ol>
+
+<p>To fetch Items from a Sales Order, click on Get Items from &gt; Sales Order. This will open a popup from where you can search for Sales Orders and select one.</p>
+
+<p>You will notice that all the information about unshipped Items and other details are carried over from your Sales Order if you create the Delivery Note from there.</p>
+
+<p>You can also edit the posting date and time, the current date and time are set when you create the Delivery Note.</p>
+
+<h3 id="21-statuses">2.1 Statuses<a class="no-underline" href="#21-statuses" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>These are the statuses a Delivery Note can be in:</p>
+
+<ul>
+<li><strong>Draft</strong>: A draft is saved but yet to be submitted to the system.</li>
+<li><strong>To Bill</strong>: Yet to be billed using a <a href="/erpnext/v13/user/manual/en/accounts/sales-invoice">Sales Invoice</a>.</li>
+<li><strong>Completed</strong>: Submitted and sent all the Items.</li>
+<li><strong>Return Issued</strong>: All the Items have been returned.</li>
+<li><strong>Cancelled</strong>: Cancelled the Delivery Note.</li>
+<li><strong>Closed</strong>: The purpose of the Close is to manage short-closing. For example, your Customer ordered for 20 qty but closed at 15 qty. The remaining 5 is not to be sent or billed.</li>
+</ul>
+
+<h3 id="22-partial-deliveries">2.2 Partial Deliveries<a class="no-underline" href="#22-partial-deliveries" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>When you create a Delivery Note from a Sales Order, the quantities can be changed. So if the Sales Order contains 10 Items to be delivered and you're delivering only 5 this week and the remaining next week, then you can create 2 Delivery Notes in two weeks.</p>
+
+<h3 id="23-from-pick-list">2.3 From Pick List<a class="no-underline" href="#23-from-pick-list" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>You can create Delivery Notes in bulk, from Pick Lists also. From a submitted Pick List, click on Create -&gt; Delivery Note. </p>
+
+<p><img src="/files/Screenshot 2021-12-29 at 12.28.06 PM.png" alt="" class="screenshot"></p>
+
+<p>This would create separate Delivery Notes for Sales Orders, grouped by Customer.
+If a Pick List Item is not linked to a Sales Order(added manually by user), a separate DN would be created for all those items as well.</p>
+
+<h2 id="3-related-actions">3. Related Actions<a class="no-underline" href="#3-related-actions" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h2>
+
+<h3 id="31-customer-purchase-order-details">3.1 Customer Purchase Order Details<a class="no-underline" href="#31-customer-purchase-order-details" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>You can enter the Customer's Purchase Order number here for Reference.</p>
+
+<h3 id="32-address-and-contact">3.2 Address and Contact<a class="no-underline" href="#32-address-and-contact" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<ul>
+<li><strong>Shipping Address</strong>: The Customer's address where the Items will be shipped.</li>
+<li><strong>Contact Person</strong>: If the Customer is an organization, add the Contact person in this field.</li>
+</ul>
+
+<p>For India, the following details can be added for GST:</p>
+
+<ul>
+<li>Customer GSTIN</li>
+<li>Place of Supply</li>
+<li>Billing Address GSTIN</li>
+<li>Company GSTIN</li>
+<li>Company Address Name</li>
+</ul>
+
+<p><a href="/erpnext/v13/user/manual/en/CRM/contact">Contacts</a> and <a href="/erpnext/v13/user/manual/en/CRM/address">Addresses</a> are stored separately so that you can attach multiple Contacts or Addresses to the customer.</p>
+
+<h3 id="33-currency-and-price-list">3.3 Currency and Price List<a class="no-underline" href="#33-currency-and-price-list" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>You can set the currency in which the Deliver Note is to be sent. This is usually fetched if set in the Sales Order. If you set a Pricing List, then the item prices will be fetched from that list. Ticking on Ignore Pricing Rule will ignore the Pricing Rules set in Accounts &gt; Pricing Rule.</p>
+
+<p>Read about <a href="/erpnext/v13/user/manual/en/stock/price-lists">Price Lists</a>
+and <a href="/erpnext/v13/user/manual/en/accounts/articles/managing-transactions-in-multiple-currency">Multi-Currency Transactions</a>
+to know more.</p>
+
+<h3 id="34-warehouses">3.4 Warehouses<a class="no-underline" href="#34-warehouses" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<ul>
+<li><strong>Set Source Warehouse</strong>: This is where the Items will be sourced from to send to the Customer.</li>
+<li><strong>To Warehouse</strong>: In a regular Sales scenario, the Item exits your Warehouse and reaches the Customer. However, if you wish to retain sample stock, enter a Warehouse here.</li>
+</ul>
+
+<h3 id="35-items-table">3.5 Items Table<a class="no-underline" href="#35-items-table" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<ul>
+<li><p><strong>Barcode</strong>: You can track Items using <a href="/erpnext/v13/user/manual/en/stock/articles/track-items-using-barcode">barcodes</a>.</p></li>
+<li><p>The Item Code, name, description, Image, and Manufacturer will be fetched from the <a href="/erpnext/v13/user/manual/en/stock/item">Item master</a>.</p></li>
+<li><p><strong>Scan Barcode</strong>: You can add Items in the Items table by scanning their barcodes if you have a barcode scanner. Read documentation for <a href="/erpnext/v13/user/manual/en/stock/articles/track-items-using-barcode">tracking items using barcode</a> to know more.</p></li>
+<li><p><strong>Discount and Margin</strong>: You can apply a discount on individual Items percentage-wise or the total amount of the Item. Read <a href="/erpnext/v13/user/manual/en/selling/articles/applying-discount">Applying Discount</a> for more details.</p></li>
+<li><p><strong>Rate</strong>: The Rate is fetched if set in the <a href="/erpnext/v13/user/manual/en/stock/price-lists">Price List</a> and the total Amount is calculated.</p></li>
+<li><p><strong>Item Tax Template</strong>: You can set an Item Tax Template to apply a specific Tax amount to this particular Item. To know more, visit <a href="/erpnext/v13/user/manual/en/accounts/item-tax-template">this page</a>.</p></li>
+<li><p>The Item Weight details per unit and Weight UOM are fetched if set in the Item master.</p></li>
+<li><p><strong>Warehouse and Reference</strong>: The Warehouse from which the Items are sent to the Customer is shown. Also, a Sales Order will be shown if this Delivery Note was the creation flow: 'Sales Order &gt; Deliver Note'.</p></li>
+<li><p><strong>Batch No and Serial No</strong>: If your Item is serialized or batched, you will have to enter <a href="/erpnext/v13/user/manual/en/stock/serial-no">Serial Number</a> and <a href="/erpnext/v13/user/manual/en/stock/batch">Batch</a> in the Items table. You are allowed to enter multiple Serial Numbers in one row (each on a separate line) and you must enter the same number of Serial Numbers as the quantity.</p>
+
+<p>The 'Available Qty at From Warehouse', 'Available Batch Qty at From Warehouse', and 'Installed Qty' will be shown. To know more about installation, visit the <a href="/erpnext/v13/user/manual/en/stock/installation-note">Installation Note</a> page.</p>
+
+<p><strong>Note</strong>: The Item has to be serialized or batched for these features to work. If the Item is serialized a popup will appear where you can enter the Serial Numbers.</p></li>
+<li><p>Expense Account is the account from which the amount will be debited. Ticking on 'Allow Zero Valuation Rate' will allow submitting the Delivery Note even if the Valuation Rate of the Item is 0. This can be a sample item or due to a mutual understanding with your Supplier.</p></li>
+<li><p>Accounting Dimensions help to tag each transaction with different Dimensions without the need for creating new Cost Centers. You need to create Accounting Dimensions first, to know more, visit <a href="/erpnext/v13/user/manual/en/accounts/accounting-dimensions">this page</a>.</p></li>
+<li><p><strong>Page Break</strong> will create a page break just before this Item when printing.</p></li>
+</ul>
+
+<h3 id="36-tracking-quality-inspection">3.6 Tracking Quality Inspection<a class="no-underline" href="#36-tracking-quality-inspection" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>If for certain Items, it is mandatory to record Quality Inspections (if you have set it in your Item master), you will need to update the “Quality Inspection" field. The system will only allow you to “Submit” the
+Delivery Note if you update the “Quality Inspection”.</p>
+
+<p>After enabling Inspection Criteria in the <a href="/erpnext/v13/user/manual/en/stock/item#216-inspection-criteria">Item form</a> for Sales and attaching a Quality Inspection Template there, Quality Inspections can be recorded in Delivery Notes.</p>
+
+<h3 id="37-taxes-and-charges">3.7 Taxes and Charges<a class="no-underline" href="#37-taxes-and-charges" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>The Taxes and Charges will be fetched from the <a href="/erpnext/v13/user/manual/en/buying/purchase-order">Sales Order</a>.</p>
+
+<p>Visit the <a href="/erpnext/v13/user/manual/en/selling/sales-taxes-and-charges-template">Sales Taxes and Charges Template</a> page to know more about taxes.</p>
+
+<p>The total taxes and charges will be displayed below the table.</p>
+
+<p>To add taxes automatically via a Tax Category, visit <a href="/erpnext/v13/user/manual/en/accounts/tax-category">this page</a>.</p>
+
+<p>Make sure to mark all your taxes in the Taxes and Charges table correctly for an accurate valuation.</p>
+
+<h4 id="shipping-rule">Shipping Rule<a class="no-underline" href="#shipping-rule" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h4>
+
+<p>A Shipping Rule helps set the cost of shipping an Item. The cost will usually increase with the distance of shipping. To know more, visit the <a href="/erpnext/v13/user/manual/en/selling/shipping-rule">Shipping Rule</a> page.</p>
+
+<h3 id="38-additional-discount">3.8 Additional Discount<a class="no-underline" href="#38-additional-discount" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>Any additional discounts to the whole order can be set in this section. This discount could be based on the Grand Total i.e., post tax/charges or Net total i.e., pre tax/charges. The additional discount can be applied as a percentage or an amount.
+Read <a href="/erpnext/v13/user/manual/en/selling/articles/applying-discount">Applying Discount</a> for more details.</p>
+
+<h3 id="39-terms-and-conditions">3.9 Terms and Conditions<a class="no-underline" href="#39-terms-and-conditions" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>In Sales/Purchase transactions there might be certain Terms and Conditions based on which the Supplier provides goods or services to the Customer. You can apply the Terms and Conditions to transactions to transactions and they will appear when printing the document. To know about Terms and Conditions, <a href="/erpnext/v13/user/manual/en/setting-up/print/terms-and-conditions">click here</a></p>
+
+<h3 id="310-transporter-information">3.10 Transporter Information<a class="no-underline" href="#310-transporter-information" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>If you outsource transporting Items to their delivery location, the transporter details can be added. This is not the same as <a href="/erpnext/v13/user/manual/en/selling/articles/drop-shipping">drop shipping</a>.</p>
+
+<ul>
+<li><strong>Transporter</strong>: The Supplier who will transport the Item to your Customer. The transporter feature should be enabled in the Supplier master to select the <a href="/erpnext/v13/user/manual/en/buying/supplier">Supplier</a> here.</li>
+<li><strong>Driver</strong>: You can add a Driver here who will drive the mode of transport.</li>
+</ul>
+
+<p><img src="/files/delivery-note-transport.png" alt="Delivery Note Transport" class="screenshot"></p>
+
+<p>The following details can be recorded:</p>
+
+<ul>
+<li>Distance in km</li>
+<li>Mode of Transport whether road, air, rail, or ship.</li>
+</ul>
+
+<p>For India, GST:</p>
+
+<ul>
+<li>GST Transporter ID</li>
+<li>Transport Receipt No</li>
+<li>Vehicle No
+The GST Vehicle Type can be changed</li>
+</ul>
+
+<p>The Transport Receipt Date and Driver Name will be fetched.</p>
+
+<h3 id="311-more-information">3.11 More Information<a class="no-underline" href="#311-more-information" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>The Delivery Note can be linked to the following for tracking purposes:</p>
+
+<ul>
+<li><a href="/erpnext/v13/user/manual/en/projects/project">Project</a></li>
+<li><a href="/erpnext/v13/user/manual/en/CRM/campaign">Campaign</a></li>
+<li><a href="/erpnext/v13/user/manual/en/CRM/lead_source">Source</a></li>
+</ul>
+
+<h3 id="311-printing-settings">3.11 Printing Settings<a class="no-underline" href="#311-printing-settings" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<h4 id="letterhead">Letterhead<a class="no-underline" href="#letterhead" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h4>
+
+<p>You can print your Delivery Note on your company's letterhead. Know more <a href="/erpnext/v13/user/manual/en/setting-up/print/letter-head">here</a>.</p>
+
+<p>'Group same items' will group the same items added multiple times in the Items table. This can be seen when your print.</p>
+
+<h4 id="print-headings">Print Headings<a class="no-underline" href="#print-headings" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h4>
+
+<p>Purchase Receipt headings can also be changed when printing the document. You can do this by selecting a <strong>Print Heading</strong>. To create new Print Headings go to: Home &gt; Settings &gt; Printing &gt; Print Heading. Know more <a href="/erpnext/v13/user/manual/en/setting-up/print/print-headings">here</a>.</p>
+
+<p>There are additional checkboxes for printing the Delivery Note without the amount, this might be useful when the Item is of high value. You can also group the same Items in one row when printing.</p>
+
+<h3 id="312-status">3.12 Status<a class="no-underline" href="#312-status" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>The status of the document and installation percentage is shown here. Any additional instructions for delivery can be entered here.</p>
+
+<h3 id="313-commission">3.13 Commission<a class="no-underline" href="#313-commission" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>If the sale took place via one of your Sales Partners, you can add their commission details here. This is usually fetched from the Sales Order.</p>
+
+<h3 id="314-sales-team">3.14 Sales Team<a class="no-underline" href="#314-sales-team" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p><strong>Sales Persons:</strong> KanivinERP allows you to add multiple Sales Persons who may have worked on this deal.</p>
+
+<p>This is usually fetched from a Sales Order, for example:</p>
+
+<p><img src="/files/so-sales-team.png" alt="Sales Team in Sales Order" class="screenshot"></p>
+
+<h3 id="315-shipping-packets-or-items-with-product-bundle">3.15 Shipping Packets or Items with Product Bundle<a class="no-underline" href="#315-shipping-packets-or-items-with-product-bundle" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>If you are shipping Items that have a <a href="/erpnext/v13/user/manual/en/selling/product-bundle">Product Bundle</a>, KanivinERP will automatically create a “Packing List” table for you based on the sub-Items in that Item.</p>
+
+<p>If your Items are serialized, then for Product Bundle type of Items, you will have
+to update the Serial Number in the “Packing List” table.</p>
+
+<h3 id="316-packing-items-into-cases-for-container-shipment">3.16 Packing Items into Cases, for Container Shipment<a class="no-underline" href="#316-packing-items-into-cases-for-container-shipment" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>If you are doing making the delivery via container shipment or by weight, then you can use the Packing
+Slip to break up your Delivery Note into smaller units. To know more about a Packing Slip, visit <a href="/erpnext/v13/user/manual/en/stock/packing-slip">this page</a>.
+go to:</p>
+
+<p>You can create multiple Packing Slips for your Delivery Note and KanivinERP will
+ensure that the quantities in the Packing Slip do not exceed the quantities in
+the Delivery Note. Note that you can create a Packing Slip from a Delivery Note only when the Delivery Note is in the Draft stage.</p>
+
+<h3 id="317-after-submitting">3.17 After Submitting<a class="no-underline" href="#317-after-submitting" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>When the Delivery Note is submitted, a Stock Ledger Entry is made for each Item and stock is updated. Pending
+Quantity in the Sales Order is updated (if applicable).</p>
+
+<p>The Dashboard will show the following options:</p>
+
+<ul>
+<li><a href="/erpnext/v13/user/manual/en/stock/installation-note">Installation Note</a></li>
+<li><a href="/erpnext/v13/user/manual/en/stock/sales-return">Sales Return</a></li>
+<li><a href="/erpnext/v13/user/manual/en/stock/delivery-trip">Delivery Trip</a></li>
+<li><a href="/erpnext/v13/user/manual/en/accounts/sales-invoice">Sales Invoice</a></li>
+</ul>
+
+<p><img src="/files/delivery-note-submit.png" alt="Delivery Note after submit" class="screenshot"></p>
+
+<blockquote>
+  <p>Tip: To disallow the creation of Delivery Notes without a Sales Order against it:</p>
+</blockquote>
+
+<h3 id="318-returning-a-sales-order">3.18 Returning a Sales Order<a class="no-underline" href="#318-returning-a-sales-order" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>Once you've delivered a Sales Order using a Delivery Note, you can create a return entry in case the <a href="/erpnext/v13/user/manual/en/CRM/customer">Customer</a> returns the Item. To know more, visit the <a href="/erpnext/v13/user/manual/en/stock/sales-return">Sales Return</a> page.</p>
+
+<h3 id="319-skipping-delivery-note">3.19 Skipping Delivery Note<a class="no-underline" href="#319-skipping-delivery-note" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>If you don't want to create a Delivery Note after a Sales Order and directly want to create a Sales Invoice, enable the feature for it in <a href="/erpnext/v13/user/manual/en/selling/selling-settings#32-delivery-note-required">Selling Settings</a>.</p>
+
+<h3 id="4-related-topics">4. Related Topics<a class="no-underline" href="#4-related-topics" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<ol>
+<li><a href="/erpnext/v13/user/manual/en/stock/warehouse">Warehouse</a></li>
+<li><a href="/erpnext/v13/user/manual/en/stock/articles/delivery-note-stock-error">Delivery Note Stock Error</a></li>
+<li><a href="/erpnext/v13/user/manual/en/stock/articles/material-transfer-from-delivery-note">Material Transfer From Delivery Note and Purchase Receipt</a></li>
+<li><a href="/erpnext/v13/user/manual/en/stock/installation-note">Installation Note</a></li>
+<li><a href="/erpnext/v13/user/manual/en/stock/delivery-trip">Delivery Trip</a></li>
+</ol>
+</div>
+            </div>
+          </main>

@@ -1,0 +1,366 @@
+<main><div class="from-markdown markdown ">
+	<div class="alert alert-warning admin-banner hide" role="alert">
+		<div class="d-flex justify-content-between align-items-center">
+			<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+			<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+		</div>
+	</div>
+	<div class="d-flex justify-content-between align-items-center">
+		<h1 class="wiki-title" id="personal-data-deletion">Personal Data Deletion
+<a class="no-underline" href="#personal-data-deletion" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h1>
+	</div>
+	<div class="wiki-content"><p>As a part of GDPR compliance, KanivinERP has Personal Data Deletion.</p>
+
+<p>Personal data deletion tool enables a user to delete their account and anonymize all the personally identifiable data a user has generated while using KanivinERP. That is, personally identifiable information will be randomized. This includes personally identifiable data from your user account like: username, full name, birth date, phone numbers, mobile numbers, location, interests, bio, email signature, Email, Contact, Address, Communication, etc. It also includes data from Leads and Opportunities, the details you have saved like phone numbers, mobile numbers, fax, website, and name.</p>
+
+<p>However, this excludes data that is required by law to be maintained by a business.</p>
+
+<h2 id="1-how-to-request-account-deletion">1. How to request account deletion<a class="no-underline" href="#1-how-to-request-account-deletion" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h2>
+
+<ol>
+<li>To begin deleting users account and personally identifiable data, you need to visit [host-name]/request-for-account-deletion (e.g. example.erpnext.com/request-for-account-deletion) in the URL field.</li>
+</ol>
+
+<p><img src="/files/Screenshot 2021-12-01 at 8.53.14 PM.png" alt="Request for Account Deletion" class="screenshot"></p>
+
+<ol start="2">
+<li><p>Enter the email associated with your KanivinERP account. After submitting your request, you will receive a success response.</p>
+
+<p><img src="/files/deletion-request-success.png" alt="Deletion Request Success" class="screenshot"></p></li>
+<li><p>This will send an email with a verification link to delete data to the email address associated with the user.</p>
+
+<p><img src="/files/verification-email.png" alt="Verification Email" class="screenshot"></p></li>
+<li><p>Once the user clicks on the verification link. A confirmation message will be displayed.
+<img src="/files/confirmed-verification.png" alt="Confirmed Verification" class="screenshot"></p></li>
+</ol>
+
+<h2 id="2-how-deleting-users-personal-data-works">2. How deleting user's personal data works<a class="no-underline" href="#2-how-deleting-users-personal-data-works" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h2>
+
+<p>The request to delete data is recorded in the doctype "Personal Data Deletion Request".</p>
+
+<p><img src="/files/personal-data-deletion-request-doctype.png" alt="Personal Data Download Request Doctype" class="screenshot"></p>
+
+<p>This doctype maintains three states of status to complete the process of removal of user data.</p>
+
+<h3 id="21-pending-verification">2.1 Pending Verification<a class="no-underline" href="#21-pending-verification" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>This status indicates that the user has requested data deletion via the web-form. However, verification of this request is still pending. Search for Personal Data Deletion Request from the search bar.</p>
+
+<p><img src="/files/pending-verification.png" alt="Pending Verification" class="screenshot"></p>
+
+<h3 id="22-pending-approval">2.2 Pending Approval<a class="no-underline" href="#22-pending-approval" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>This indicates that the user has verified the request via email. This enables the option of "Delete Data" for System Managers.</p>
+
+<p><img src="/files/pending-approval.png" alt="Pending Approval" class="screenshot"></p>
+
+<h3 id="23-deleted">2.3 Deleted<a class="no-underline" href="#23-deleted" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>This indicates that the System Manager has clicked on the "Delete Data" button. This means that the user's personally identifiable data has been anonymized.</p>
+
+<p><img src="/files/deleted-user.png" alt="Deleted User" class="screenshot"></p>
+
+<h3 id="3-setting-sla-for-personal-data-deletion-request">3. Setting SLA for Personal Data Deletion Request.<a class="no-underline" href="#3-setting-sla-for-personal-data-deletion-request" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>You can also set an SLA for Personal Data Deletion Request through Website Settings. This will appear on the web form description.</p>
+
+<ul>
+<li>Go to Website Settings</li>
+<li>Scroll to the section called Account Deletion Settings</li>
+<li>In the <strong>Account Deletion SLA (Days)</strong> field set the number of days within which users request for Account Deletion will be fulfilled.</li>
+<li>If you enable <strong>Show Account Deletion link in My Account page</strong>, the form link will be visible to users on the My Account Page of the website</li>
+</ul>
+
+<p><img src="/files/Screenshot 2021-12-01 at 8.50.39 PM.png" alt="Account Deletion Settings" class="screenshot"></p>
+
+<h3 id="4-related-topics">4. Related Topics<a class="no-underline" href="#4-related-topics" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<ol>
+<li><a href="/erpnext/v13/user/manual/en/setting-up/personal-data-download">Personal Data Download</a></li>
+</ol>
+</div>
+	<input value="8cbudrvsnj" class="d-none" name="wiki-page-name">
+	<div class="modal revisions-modal fade" id="revisionsModal" tabindex="-1" role="dialog" aria-labelledby="revisionsModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="d-flex flex-column">
+                    <h5 class="modal-title revision-title" id="personal-data-deletion">Personal Data Deletion
+<a class="no-underline" href="#personal-data-deletion" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a><a class="no-underline" href="#personal-data-deletion" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a><a class="no-underline" href="#personal-data-deletion" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a><a class="no-underline" href="#personal-data-deletion" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a><a class="no-underline" href="#personal-data-deletion" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a><a class="no-underline" href="#personal-data-deletion" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a><a class="no-underline" href="#personal-data-deletion" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a><a class="no-underline" href="#personal-data-deletion" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a><a class="no-underline" href="#personal-data-deletion" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a><a class="no-underline" href="#personal-data-deletion" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a><a class="no-underline" href="#personal-data-deletion" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a><a class="no-underline" href="#personal-data-deletion" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a><a class="no-underline" href="#personal-data-deletion" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a><a class="no-underline" href="#personal-data-deletion" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a><a class="no-underline" href="#personal-data-deletion" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a><a class="no-underline" href="#personal-data-deletion" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a><a class="no-underline" href="#personal-data-deletion" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a><a class="no-underline" href="#personal-data-deletion" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a><a class="no-underline" href="#personal-data-deletion" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a><a class="no-underline" href="#personal-data-deletion" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a><a class="no-underline" href="#personal-data-deletion" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a><a class="no-underline" href="#personal-data-deletion" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a><a class="no-underline" href="#personal-data-deletion" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a><a class="no-underline" href="#personal-data-deletion" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h5>
+                    <span class="small text-muted revision-time">administrator edited 4 months ago</span>
+                </div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="revision-content wiki-content"><p>As a part of GDPR compliance, KanivinERP has Personal Data Deletion.</p>
+
+<p>Personal data deletion tool enables a user to delete their account and anonymize all the personally identifiable data a user has generated while using KanivinERP. That is, personally identifiable information will be randomized. This includes personally identifiable data from your user account like: username, full name, birth date, phone numbers, mobile numbers, location, interests, bio, email signature, Email, Contact, Address, Communication, etc. It also includes data from Leads and Opportunities, the details you have saved like phone numbers, mobile numbers, fax, website, and name.</p>
+
+<p>However, this excludes data that is required by law to be maintained by a business.</p>
+
+<h2 id="1-how-to-request-account-deletion">1. How to request account deletion<a class="no-underline" href="#1-how-to-request-account-deletion" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h2>
+
+<ol>
+<li>To begin deleting users account and personally identifiable data, you need to visit [host-name]/request-for-account-deletion (e.g. example.erpnext.com/request-for-account-deletion) in the URL field.</li>
+</ol>
+
+<p><img src="/files/Screenshot 2021-12-01 at 8.53.14 PM.png" alt="Request for Account Deletion" class="screenshot"></p>
+
+<ol start="2">
+<li><p>Enter the email associated with your KanivinERP account. After submitting your request, you will receive a success response.</p>
+
+<p><img src="/files/deletion-request-success.png" alt="Deletion Request Success" class="screenshot"></p></li>
+<li><p>This will send an email with a verification link to delete data to the email address associated with the user.</p>
+
+<p><img src="/files/verification-email.png" alt="Verification Email" class="screenshot"></p></li>
+<li><p>Once the user clicks on the verification link. A confirmation message will be displayed.
+<img src="/files/confirmed-verification.png" alt="Confirmed Verification" class="screenshot"></p></li>
+</ol>
+
+<h2 id="2-how-deleting-users-personal-data-works">2. How deleting user's personal data works<a class="no-underline" href="#2-how-deleting-users-personal-data-works" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h2>
+
+<p>The request to delete data is recorded in the doctype "Personal Data Deletion Request".</p>
+
+<p><img src="/files/personal-data-deletion-request-doctype.png" alt="Personal Data Download Request Doctype" class="screenshot"></p>
+
+<p>This doctype maintains three states of status to complete the process of removal of user data.</p>
+
+<h3 id="21-pending-verification">2.1 Pending Verification<a class="no-underline" href="#21-pending-verification" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>This status indicates that the user has requested data deletion via the web-form. However, verification of this request is still pending. Search for Personal Data Deletion Request from the search bar.</p>
+
+<p><img src="/files/pending-verification.png" alt="Pending Verification" class="screenshot"></p>
+
+<h3 id="22-pending-approval">2.2 Pending Approval<a class="no-underline" href="#22-pending-approval" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>This indicates that the user has verified the request via email. This enables the option of "Delete Data" for System Managers.</p>
+
+<p><img src="/files/pending-approval.png" alt="Pending Approval" class="screenshot"></p>
+
+<h3 id="23-deleted">2.3 Deleted<a class="no-underline" href="#23-deleted" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>This indicates that the System Manager has clicked on the "Delete Data" button. This means that the user's personally identifiable data has been anonymized.</p>
+
+<p><img src="/files/deleted-user.png" alt="Deleted User" class="screenshot"></p>
+
+<h3 id="3-setting-sla-for-personal-data-deletion-request">3. Setting SLA for Personal Data Deletion Request.<a class="no-underline" href="#3-setting-sla-for-personal-data-deletion-request" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>You can also set an SLA for Personal Data Deletion Request through Website Settings. This will appear on the web form description.</p>
+
+<ul>
+<li>Go to Website Settings</li>
+<li>Scroll to the section called Account Deletion Settings</li>
+<li>In the <strong>Account Deletion SLA (Days)</strong> field set the number of days within which users request for Account Deletion will be fulfilled.</li>
+<li>If you enable <strong>Show Account Deletion link in My Account page</strong>, the form link will be visible to users on the My Account Page of the website</li>
+</ul>
+
+<p><img src="/files/Screenshot 2021-12-01 at 8.50.39 PM.png" alt="Account Deletion Settings" class="screenshot"></p>
+
+<h3 id="4-related-topics">4. Related Topics<a class="no-underline" href="#4-related-topics" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<ol>
+<li><a href="/erpnext/v13/user/manual/en/setting-up/personal-data-download">Personal Data Download</a></li>
+</ol>
+</div>
+            </div>
+          </main>
