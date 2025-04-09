@@ -1,0 +1,170 @@
+<main><div class="from-markdown markdown ">
+	<div class="alert alert-warning admin-banner hide" role="alert">
+		<div class="d-flex justify-content-between align-items-center">
+			<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+			<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+		</div>
+	</div>
+	<div class="d-flex justify-content-between align-items-center">
+		<h1 class="wiki-title" id="google-settings">Google Settings<a class="no-underline active" href="#google-settings" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h1>
+	</div>
+	<div class="wiki-content">
+		<p>To enable Google Integrations, KanivinERP needs access to the API through which the data will be synced which is achieved using OAuth 2.0 Authentication Protocol.</p>
+
+<h2 id="how-to-set-up-google-settings">How to set up Google Settings<a class="no-underline active" href="#how-to-set-up-google-settings" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h2>
+
+<h3 id="for-google-calendar-google-contacts-google-drive-and-google-indexing">For Google Calendar, Google Contacts, Google Drive and Google Indexing<a class="no-underline active" href="#for-google-calendar-google-contacts-google-drive-and-google-indexing" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>In order to allow a synchronization with any of the above mentioned services, you need to authorize KanivinERP to get data from Google. Following is an example for setting up Google Contacts Integration</p>
+
+<ol>
+<li>Create a new project on Google Cloud Platform and generate new OAuth 2.0 credentials. <img src="/files/google_contacts_project_creation.gif" alt="" class="screenshot"></li>
+</ol>
+
+<ul>
+<li><p>Enable API Access in API Library for the Integration you wish to integrate.</p>
+
+<ul>
+<li>Google Calendar: <strong>Calendar API</strong></li>
+<li>Google Contacts: <strong>People API</strong></li>
+<li>Google Drive: <strong>Drive API</strong></li>
+<li>Google Indexing: <strong>Indexing API</strong><img src="/files/api.gif" alt="" class="screenshot"></li>
+</ul></li>
+<li>In <strong>API &amp; Services &gt; Credentials</strong> create a new Credential and select <strong>Create OAuth client ID</strong></li>
+<li>Select Application Type <strong>Web Application</strong></li>
+<li>Add <code>https://{yoursite}</code> to Authorized JavaScript origins.</li>
+<li>Add <code>https://{yoursite}?cmd=frappe.integrations.doctype.google_calendar.google_calendar.google_callback</code> as an authorized redirect URI for Google Calendar.</li>
+<li>Add <code>https://{yoursite}/api/method/frappe.integrations.google_oauth.callback</code> as an authorized redirect URI for rest of the services.</li>
+</ul>
+
+<p><img src="/files/google_contacts_oauth.gif" alt="" class="screenshot">
+* Add your Client ID and Client Secret in the Google Settings in <strong>Home &gt; Integrations &gt; Google Services &gt; Google Settings</strong></p>
+
+<h3 id="for-google-maps">For Google Maps<a class="no-underline" href="#for-google-maps" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<blockquote>
+  <p>Setting the <em>API Key</em> is only required if you want to use the Directions API, for example in KanivinERP's <strong>Delivery Trip</strong>. For the other features, this is not required.</p>
+</blockquote>
+
+<p>In order to allow a synchronization with Google Maps you need to generate an API key as Google Maps doesn't need access to data from Google.</p>
+
+<ol>
+<li>Create a new project on Google Cloud Platform and generate new API Key.</li>
+</ol>
+
+<ul>
+<li>Enable API Access in API Library for the Directions API and then add the API Key in the Google Settings in <strong>Home &gt; Integrations &gt; Google Services &gt; Google Settings</strong>. <img src="/files/api_key.gif" alt="" class="screenshot"></li>
+</ul>
+
+	</div>
+	<input value="s7t98j4o7m" class="d-none" name="wiki-page-name">
+	<div class="modal revisions-modal fade" id="revisionsModal" tabindex="-1" role="dialog" aria-labelledby="revisionsModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="d-flex flex-column">
+                    <h5 class="modal-title revision-title" id="google-settings">Google Settings<a class="no-underline active" href="#google-settings" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h5>
+                    <span class="small text-muted revision-time">administrator edited 4 months ago</span>
+                </div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="revision-content wiki-content"><del class="diffmod">
+                    </del><ins class="diffmod">
+		</ins><p><ins class="diffmod">To enable Google Integrations, KanivinERP needs access to the API through which the data will be synced which is achieved using OAuth 2.0 Authentication Protocol.</ins></p><ins class="diffmod">
+
+</ins><h2 id="how-to-set-up-google-settings"><ins class="diffmod">How to set up Google Settings</ins><a class="no-underline active" href="#how-to-set-up-google-settings" aria-hidden="true"><ins class="diffmod">
+        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
+          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+        </ins></svg><ins class="diffmod">
+      </ins></a></h2><ins class="diffmod">
+
+</ins><h3 id="for-google-calendar-google-contacts-google-drive-and-google-indexing"><del class="diffmod">No</del><ins class="diffmod">For</ins> <del class="diffmod">Revisions</del><ins class="diffmod">Google Calendar, Google Contacts, Google Drive and Google Indexing</ins><a class="no-underline active" href="#for-google-calendar-google-contacts-google-drive-and-google-indexing" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3><del class="diffmod">
+
+                </del><ins class="diffmod">
+
+</ins><p><ins class="diffmod">In order to allow a synchronization with any of the above mentioned services, you need to authorize KanivinERP to get data from Google. Following is an example for setting up Google Contacts Integration</ins></p><ins class="diffmod">
+
+</ins><ol><ins class="diffmod">
+</ins><li><ins class="diffmod">Create a new project on Google Cloud Platform and generate new OAuth 2.0 credentials. <img src="/files/google_contacts_project_creation.gif" alt="" class="screenshot"></ins></li><ins class="diffmod">
+</ins></ol><ins class="diffmod">
+
+</ins><ul><ins class="diffmod">
+</ins><li><p><ins class="diffmod">Enable API Access in API Library for the Integration you wish to integrate.</ins></p><ins class="diffmod">
+
+</ins><ul><ins class="diffmod">
+</ins><li><ins class="diffmod">Google Calendar: </ins><strong><ins class="mod"><ins class="diffmod">Calendar API</ins></ins></strong></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Google Contacts: </ins><strong><ins class="mod"><ins class="diffmod">People API</ins></ins></strong></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Google Drive: </ins><strong><ins class="mod"><ins class="diffmod">Drive API</ins></ins></strong></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Google Indexing: </ins><strong><ins class="mod"><ins class="diffmod">Indexing API</ins></ins></strong><ins class="diffmod"><img src="/files/api.gif" alt="" class="screenshot"></ins></li><ins class="diffmod">
+</ins></ul></li><ins class="diffmod">
+</ins><li><ins class="diffmod">In </ins><strong><ins class="mod"><ins class="diffmod">API &amp; Services &gt; Credentials</ins></ins></strong><ins class="diffmod">&nbsp;create a new Credential and select </ins><strong><ins class="mod"><ins class="diffmod">Create OAuth client ID</ins></ins></strong></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Select Application Type </ins><strong><ins class="mod"><ins class="diffmod">Web Application</ins></ins></strong></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Add </ins><code><ins class="diffmod">https://{yoursite}</ins></code><ins class="diffmod">&nbsp;to Authorized JavaScript origins.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Add </ins><code><ins class="diffmod">https://{yoursite}?cmd=frappe.integrations.doctype.google_calendar.google_calendar.google_callback</ins></code><ins class="diffmod">&nbsp;as an authorized redirect URI for Google Calendar.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Add </ins><code><ins class="diffmod">https://{yoursite}/api/method/frappe.integrations.google_oauth.callback</ins></code><ins class="diffmod">&nbsp;as an authorized redirect URI for rest of the services.</ins></li><ins class="diffmod">
+</ins></ul><ins class="diffmod">
+
+</ins><p><ins class="diffmod"><img src="/files/google_contacts_oauth.gif" alt="" class="screenshot">
+* Add your Client ID and Client Secret in the Google Settings in </ins><strong><ins class="mod"><ins class="diffmod">Home &gt; Integrations &gt; Google Services &gt; Google Settings</ins></ins></strong></p><ins class="diffmod">
+
+</ins><h3 id="for-google-maps"><ins class="diffmod">For Google Maps</ins><a class="no-underline" href="#for-google-maps" aria-hidden="true"><ins class="diffmod">
+        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
+          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+        </ins></svg><ins class="diffmod">
+      </ins></a></h3><ins class="diffmod">
+
+</ins><blockquote><ins class="diffmod">
+  </ins><p><ins class="diffmod">Setting the </ins><em><ins class="mod"><ins class="diffmod">API Key</ins></ins></em><ins class="diffmod">&nbsp;is only required if you want to use the Directions API, for example in KanivinERP's </ins><strong><ins class="mod"><ins class="diffmod">Delivery Trip</ins></ins></strong><ins class="diffmod">. For the other features, this is not required.</ins></p><ins class="diffmod">
+</ins></blockquote><ins class="diffmod">
+
+</ins><p><ins class="diffmod">In order to allow a synchronization with Google Maps you need to generate an API key as Google Maps doesn't need access to data from Google.</ins></p><ins class="diffmod">
+
+</ins><ol><ins class="diffmod">
+</ins><li><ins class="diffmod">Create a new project on Google Cloud Platform and generate new API Key.</ins></li><ins class="diffmod">
+</ins></ol><ins class="diffmod">
+
+</ins><ul><ins class="diffmod">
+</ins><li><ins class="diffmod">Enable API Access in API Library for the Directions API and then add the API Key in the Google Settings in </ins><strong><ins class="mod"><ins class="diffmod">Home &gt; Integrations &gt; Google Services &gt; Google Settings</ins></ins></strong><ins class="diffmod">. <img src="/files/api_key.gif" alt="" class="screenshot"></ins></li><ins class="diffmod">
+</ins></ul><ins class="diffmod">
+
+	</ins></div>
+            </div>
+         </main>

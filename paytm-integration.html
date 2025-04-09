@@ -1,0 +1,158 @@
+<main><div class="from-markdown markdown ">
+	<div class="alert alert-warning admin-banner hide" role="alert">
+		<div class="d-flex justify-content-between align-items-center">
+			<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+			<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+		</div>
+	</div>
+	<div class="d-flex justify-content-between align-items-center">
+		<h1 class="wiki-title" id="paytm-integration">Paytm Integration
+<a class="no-underline" href="#paytm-integration" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h1>
+	</div>
+	<div class="wiki-content">
+		<p><strong>Paytm integration allows processing transactions with the payment gateway provider Paytm.</strong></p>
+
+<p>Paytm Integration facilitates processing of payments between Paytm payment portal and KanivinERP. Your customers can choose to pay from any credit/debit card, UPI, Netbanking, Paytm Wallet.</p>
+
+<p>To set up Paytm, go to:</p>
+
+<blockquote>
+  <p>Integrations &gt; Payments &gt; Paytm Settings</p>
+</blockquote>
+
+<h2 id="1how-to-get-your-paytm-api-credentials">1.How to get your Paytm API credentials?<a class="no-underline" href="#1how-to-get-your-paytm-api-credentials" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h2>
+
+<ol>
+<li>In order to activate your API credentials, you need to log in to your Paytm account.</li>
+<li>Then, open the Developer Settings option in the sidebar.</li>
+<li>Choose API Keys option, it should display a two types of API details (Test/Production).</li>
+<li>Details mentioned in the Production API details are the credentials that you are supposed to use in Paytm Settings.</li>
+</ol>
+
+<p><img src="/files/paytm_credentials.png" alt="Razorpay Settings" class="screenshot"></p>
+
+<h2 id="2setting-up-paytm">2.Setting up Paytm<a class="no-underline" href="#2setting-up-paytm" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h2>
+
+<p>To enable Paytm payment service, you need to configure all the mandatory parameters which you received from the Paytm. If you want to use staging environment of the integration, you can select the staging option and use the test API developer credentials provided by Paytm.
+<img src="/files/paytm_settings.png" alt="Razorpay Settings" class="screenshot"></p>
+
+<p>On enabling the Paytm integration in KanivinERP, the system will create a Payment Gateway record and an Account Head in Chart of Account with the Account type as Bank as seen in the following screenshot.</p>
+
+<p><img src="/files/paytm_coa.png" alt="Stripe COA" class="screenshot"></p>
+
+<p>Also, it will create a Payment Gateway Account entry. Payment Gateway Account is the configuration hub from where you can set Account Heads and the default Payment Request email template for requesting payments from customers.</p>
+
+<p><img src="/files/payment_gateway_account_paytm.png" alt="Payment Gateway Account" class="screenshot"></p>
+
+<p>After configuring Payment Gateway Account, you will be able to accept online payments via Paytm.</p>
+
+<h2 id="3supporting-transaction-currencies">3.Supporting transaction currencies<a class="no-underline" href="#3supporting-transaction-currencies" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h2>
+
+<p>Paytm will only work for the Company which has INR (Indian Rupee) as Company Currency.</p>
+
+	</div>
+	<input value="uld44bq7k4" class="d-none" name="wiki-page-name">
+	<div class="modal revisions-modal fade" id="revisionsModal" tabindex="-1" role="dialog" aria-labelledby="revisionsModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="d-flex flex-column">
+                    <h5 class="modal-title revision-title" id="paytm-integration">Paytm Integration
+<a class="no-underline" href="#paytm-integration" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h5>
+                    <span class="small text-muted revision-time">administrator edited 4 months ago</span>
+                </div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="revision-content wiki-content"><del class="diffmod">
+                    </del><h3 id="no-revisions"><del class="diffmod">No</del><ins class="diffmod">
+		</ins><p><strong><ins class="diffmod">Paytm</ins> <del class="diffmod">Revisions</del><ins class="diffmod">integration allows processing transactions with the payment gateway provider Paytm.</ins></strong></p><ins class="diffmod">
+
+</ins><p><ins class="diffmod">Paytm Integration facilitates processing of payments between Paytm payment portal and KanivinERP. Your customers can choose to pay from any credit/debit card, UPI, Netbanking, Paytm Wallet.</ins></p><ins class="diffmod">
+
+</ins><p><ins class="diffmod">To set up Paytm, go to:</ins></p><ins class="diffmod">
+
+</ins><blockquote><ins class="diffmod">
+  </ins><p><ins class="diffmod">Integrations &gt; Payments &gt; Paytm Settings</ins></p><ins class="diffmod">
+</ins></blockquote><ins class="diffmod">
+
+</ins></h3><h2 id="1how-to-get-your-paytm-api-credentials"><ins class="diffmod">1.How to get your Paytm API credentials?</ins><a class="no-underline" href="#1how-to-get-your-paytm-api-credentials" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h2><del class="diffmod">
+
+                </del><ins class="diffmod">
+
+</ins><ol><ins class="diffmod">
+</ins><li><ins class="diffmod">In order to activate your API credentials, you need to log in to your Paytm account.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Then, open the Developer Settings option in the sidebar.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Choose API Keys option, it should display a two types of API details (Test/Production).</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Details mentioned in the Production API details are the credentials that you are supposed to use in Paytm Settings.</ins></li><ins class="diffmod">
+</ins></ol><ins class="diffmod">
+
+</ins><p><ins class="diffmod"><img src="/files/paytm_credentials.png" alt="Razorpay Settings" class="screenshot"></ins></p><ins class="diffmod">
+
+</ins><h2 id="2setting-up-paytm"><ins class="diffmod">2.Setting up Paytm</ins><a class="no-underline" href="#2setting-up-paytm" aria-hidden="true"><ins class="diffmod">
+        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
+          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+        </ins></svg><ins class="diffmod">
+      </ins></a></h2><ins class="diffmod">
+
+</ins><p><ins class="diffmod">To enable Paytm payment service, you need to configure all the mandatory parameters which you received from the Paytm. If you want to use staging environment of the integration, you can select the staging option and use the test API developer credentials provided by Paytm.
+<img src="/files/paytm_settings.png" alt="Razorpay Settings" class="screenshot"></ins></p><ins class="diffmod">
+
+</ins><p><ins class="diffmod">On enabling the Paytm integration in KanivinERP, the system will create a Payment Gateway record and an Account Head in Chart of Account with the Account type as Bank as seen in the following screenshot.</ins></p><ins class="diffmod">
+
+</ins><p><ins class="diffmod"><img src="/files/paytm_coa.png" alt="Stripe COA" class="screenshot"></ins></p><ins class="diffmod">
+
+</ins><p><ins class="diffmod">Also, it will create a Payment Gateway Account entry. Payment Gateway Account is the configuration hub from where you can set Account Heads and the default Payment Request email template for requesting payments from customers.</ins></p><ins class="diffmod">
+
+</ins><p><ins class="diffmod"><img src="/files/payment_gateway_account_paytm.png" alt="Payment Gateway Account" class="screenshot"></ins></p><ins class="diffmod">
+
+</ins><p><ins class="diffmod">After configuring Payment Gateway Account, you will be able to accept online payments via Paytm.</ins></p><ins class="diffmod">
+
+</ins><h2 id="3supporting-transaction-currencies"><ins class="diffmod">3.Supporting transaction currencies</ins><a class="no-underline" href="#3supporting-transaction-currencies" aria-hidden="true"><ins class="diffmod">
+        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
+          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+        </ins></svg><ins class="diffmod">
+      </ins></a></h2><ins class="diffmod">
+
+</ins><p><ins class="diffmod">Paytm will only work for the Company which has INR (Indian Rupee) as Company Currency.</ins></p><ins class="diffmod">
+
+	</ins></div>
+            </div>
+           </main>

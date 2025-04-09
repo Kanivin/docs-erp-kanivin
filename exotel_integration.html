@@ -1,0 +1,226 @@
+<main><div class="from-markdown markdown ">
+	<div class="alert alert-warning admin-banner hide" role="alert">
+		<div class="d-flex justify-content-between align-items-center">
+			<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+			<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+		</div>
+	</div>
+	<div class="d-flex justify-content-between align-items-center">
+		<h1 class="wiki-title" id="exotel-integration">Exotel Integration
+<a class="no-underline" href="#exotel-integration" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h1>
+	</div>
+	<div class="wiki-content">
+		<p>This integration allows you to integrate Exotel into your KanivinERP account. Leads and their phone numbers captured via Exotel can be saved directly to your KanivinERP.</p>
+
+<h2 id="1-features">1. Features<a class="no-underline" href="#1-features" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h2>
+
+<ul>
+<li>Track incoming calls in your KanivinERP account.</li>
+<li>Shows existing lead/customer information pop-up to employees when an incoming call is received.</li>
+</ul>
+
+<h2 id="2-how-to-setup">2. How to setup<a class="no-underline" href="#2-how-to-setup" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h2>
+
+<h3 id="21-setup-your-exotel-account">2.1 Setup your Exotel account<a class="no-underline" href="#21-setup-your-exotel-account" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<ul>
+<li>Login to your Exotel account and go to App Bazar.</li>
+<li>Create a new App for a new flow.</li>
+<li>Setup the flow as you wish it to be.</li>
+<li>In your connect API under "Create popup..." and paste following URL:
+<code>https://&lt;your-site&gt;/api/method/erpnext.erpnext_integrations.exotel_integration.handle_incoming_call</code></li>
+</ul>
+
+<p><img src="/files/connect_applet.png" alt="Connect Applet" class="screenshot">
+<img src="/files/create_popup_section.png" alt="Call Popup Section" class="screenshot"></p>
+
+<blockquote>
+  <p><strong>Note:</strong> Replace <code>&lt;your-site&gt;</code> in URL with your site name. For example, if the site name is <strong>frappe.erpnext.com</strong> then the URL will be:
+  <code>https://frappe.erpnext.com/api/method/erpnext.erpnext_integrations.exotel_integration.handle_incoming_call</code></p>
+</blockquote>
+
+<ul>
+<li>After that add a Passthru applet under "After Call Conversation ends" and paste following URL:
+<code>https://&lt;your-site&gt;/api/method/erpnext.erpnext_integrations.exotel_integration.handle_end_call</code></li>
+</ul>
+
+<p><img src="/files/after_conversation_ends_section.png" alt="After Conversation Ends Section" class="screenshot"></p>
+
+<p><img src="/files/passthru_end_call.png" alt="After call ends section" class="screenshot"></p>
+
+<blockquote>
+  <p><strong>Note:</strong> Make sure to check "Make Passthru Async".</p>
+</blockquote>
+
+<ul>
+<li>Similary, add a Passthru applet under "If nobody answers..." section and paste following URL:
+<code>https://&lt;your-site&gt;/api/method/erpnext.erpnext_integrations.exotel_integration.handle_missed_call</code></li>
+</ul>
+
+<p><img src="/files/no_response.png" alt="No Response Section" class="screenshot"></p>
+
+<p><img src="/files/passthru_missed_call.png" alt="After call ends section" class="screenshot"></p>
+
+<blockquote>
+  <p><strong>Note:</strong> Make sure to check "Make Passthru Async".</p>
+</blockquote>
+
+<ul>
+<li>Save the flow.</li>
+<li>Now assign this newly created app to your ExoPhone from which you receive your business calls.</li>
+</ul>
+
+<h3 id="22-setup-in-erpnext">2.2 Setup in KanivinERP<a class="no-underline" href="#22-setup-in-erpnext" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<ul>
+<li>From Awesome Bar, go to 'Exotel Settings'.</li>
+<li>Set your "Exotel SID" and "Exotel Token". You can find your Exotel API key and token on your <a href="https://my.exotel.com/apisettings/site#api-credentials">Exotel Dashboard</a>.</li>
+<li>Go to Communication Medium.</li>
+<li>Add your ExoPhone and schedule that number. Based on this schedule employees will receive the popup.</li>
+</ul>
+
+	</div>
+	<input value="g2vjc44s85" class="d-none" name="wiki-page-name">
+	<div class="modal revisions-modal fade" id="revisionsModal" tabindex="-1" role="dialog" aria-labelledby="revisionsModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="d-flex flex-column">
+                    <h5 class="modal-title revision-title" id="exotel-integration">Exotel Integration
+<a class="no-underline" href="#exotel-integration" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h5>
+                    <span class="small text-muted revision-time">administrator edited 4 months ago</span>
+                </div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="revision-content wiki-content"><del class="diffmod">
+                    </del><ins class="diffmod">
+		</ins><p><ins class="diffmod">This integration allows you to integrate Exotel into your KanivinERP account. Leads and their phone numbers captured via Exotel can be saved directly to your KanivinERP.</ins></p><ins class="diffmod">
+
+</ins><h2 id="1-features"><ins class="diffmod">1. Features</ins><a class="no-underline" href="#1-features" aria-hidden="true"><ins class="diffmod">
+        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
+          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+        </ins></svg><ins class="diffmod">
+      </ins></a></h2><ins class="diffmod">
+
+</ins><ul><ins class="diffmod">
+</ins><li><ins class="diffmod">Track incoming calls in your KanivinERP account.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Shows existing lead/customer information pop-up to employees when an incoming call is received.</ins></li><ins class="diffmod">
+</ins></ul><ins class="diffmod">
+
+</ins><h2 id="2-how-to-setup"><ins class="diffmod">2. How to setup</ins><a class="no-underline" href="#2-how-to-setup" aria-hidden="true"><ins class="diffmod">
+        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
+          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+        </ins></svg><ins class="diffmod">
+      </ins></a></h2><ins class="diffmod">
+
+</ins><h3 id="21-setup-your-exotel-account"><del class="diffmod">No</del><ins class="diffmod">2.1</ins> <del class="diffmod">Revisions</del><ins class="diffmod">Setup your Exotel account</ins><a class="no-underline" href="#21-setup-your-exotel-account" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3><del class="diffmod">
+
+                </del><ins class="diffmod">
+
+</ins><ul><ins class="diffmod">
+</ins><li><ins class="diffmod">Login to your Exotel account and go to App Bazar.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Create a new App for a new flow.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Setup the flow as you wish it to be.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">In your connect API under "Create popup..." and paste following URL:
+</ins><code><ins class="diffmod">https://&lt;your-site&gt;/api/method/erpnext.erpnext_integrations.exotel_integration.handle_incoming_call</ins></code></li><ins class="diffmod">
+</ins></ul><ins class="diffmod">
+
+</ins><p><ins class="diffmod"><img src="/files/connect_applet.png" alt="Connect Applet" class="screenshot">
+<img src="/files/create_popup_section.png" alt="Call Popup Section" class="screenshot"></ins></p><ins class="diffmod">
+
+</ins><blockquote><ins class="diffmod">
+  </ins><p><strong><ins class="diffmod">Note:</ins></strong><ins class="diffmod">&nbsp;Replace </ins><code><ins class="diffmod">&lt;your-site&gt;</ins></code><ins class="diffmod">&nbsp;in URL with your site name. For example, if the site name is </ins><strong><ins class="mod"><ins class="diffmod">frappe.erpnext.com</ins></ins></strong><ins class="diffmod">&nbsp;then the URL will be:
+  </ins><code><ins class="diffmod">https://frappe.erpnext.com/api/method/erpnext.erpnext_integrations.exotel_integration.handle_incoming_call</ins></code></p><ins class="diffmod">
+</ins></blockquote><ins class="diffmod">
+
+</ins><ul><ins class="diffmod">
+</ins><li><ins class="diffmod">After that add a Passthru applet under "After Call Conversation ends" and paste following URL:
+</ins><code><ins class="diffmod">https://&lt;your-site&gt;/api/method/erpnext.erpnext_integrations.exotel_integration.handle_end_call</ins></code></li><ins class="diffmod">
+</ins></ul><ins class="diffmod">
+
+</ins><p><ins class="diffmod"><img src="/files/after_conversation_ends_section.png" alt="After Conversation Ends Section" class="screenshot"></ins></p><ins class="diffmod">
+
+</ins><p><ins class="diffmod"><img src="/files/passthru_end_call.png" alt="After call ends section" class="screenshot"></ins></p><ins class="diffmod">
+
+</ins><blockquote><ins class="diffmod">
+  </ins><p><strong><ins class="diffmod">Note:</ins></strong><ins class="diffmod">&nbsp;Make sure to check "Make Passthru Async".</ins></p><ins class="diffmod">
+</ins></blockquote><ins class="diffmod">
+
+</ins><ul><ins class="diffmod">
+</ins><li><ins class="diffmod">Similary, add a Passthru applet under "If nobody answers..." section and paste following URL:
+</ins><code><ins class="diffmod">https://&lt;your-site&gt;/api/method/erpnext.erpnext_integrations.exotel_integration.handle_missed_call</ins></code></li><ins class="diffmod">
+</ins></ul><ins class="diffmod">
+
+</ins><p><ins class="diffmod"><img src="/files/no_response.png" alt="No Response Section" class="screenshot"></ins></p><ins class="diffmod">
+
+</ins><p><ins class="diffmod"><img src="/files/passthru_missed_call.png" alt="After call ends section" class="screenshot"></ins></p><ins class="diffmod">
+
+</ins><blockquote><ins class="diffmod">
+  </ins><p><strong><ins class="diffmod">Note:</ins></strong><ins class="diffmod">&nbsp;Make sure to check "Make Passthru Async".</ins></p><ins class="diffmod">
+</ins></blockquote><ins class="diffmod">
+
+</ins><ul><ins class="diffmod">
+</ins><li><ins class="diffmod">Save the flow.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Now assign this newly created app to your ExoPhone from which you receive your business calls.</ins></li><ins class="diffmod">
+</ins></ul><ins class="diffmod">
+
+</ins><h3 id="22-setup-in-erpnext"><ins class="diffmod">2.2 Setup in KanivinERP</ins><a class="no-underline" href="#22-setup-in-erpnext" aria-hidden="true"><ins class="diffmod">
+        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
+          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+        </ins></svg><ins class="diffmod">
+      </ins></a></h3><ins class="diffmod">
+
+</ins><ul><ins class="diffmod">
+</ins><li><ins class="diffmod">From Awesome Bar, go to 'Exotel Settings'.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Set your "Exotel SID" and "Exotel Token". You can find your Exotel API key and token on your </ins><a href="https://my.exotel.com/apisettings/site#api-credentials"><ins class="diffmod">Exotel Dashboard</ins></a><ins class="diffmod">.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Go to Communication Medium.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Add your ExoPhone and schedule that number. Based on this schedule employees will receive the popup.</ins></li><ins class="diffmod">
+</ins></ul><ins class="diffmod">
+
+	</ins></div>
+            </div>
+           </main>

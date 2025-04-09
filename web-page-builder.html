@@ -1,0 +1,198 @@
+<main><div class="from-markdown markdown ">
+	<div class="alert alert-warning admin-banner hide" role="alert">
+		<div class="d-flex justify-content-between align-items-center">
+			<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+			<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+		</div>
+	</div>
+	<div class="d-flex justify-content-between align-items-center">
+		<h1 class="wiki-title" id="web-page-builder">Web Page Builder
+<a class="no-underline" href="#web-page-builder" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h1>
+	</div>
+	<div class="wiki-content">
+		<blockquote>
+  <p>Introduced in Version 13</p>
+</blockquote>
+
+<p><strong>Page Builder lets you quickly create web pages from pre-configured web templates.</strong></p>
+
+<h2 id="1-how-to-create-a-page-using-page-builder">1. How to create a page using Page Builder<a class="no-underline" href="#1-how-to-create-a-page-using-page-builder" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h2>
+
+<ol>
+<li>Follow the steps to <a href="/erpnext/v13/user/manual/en/website/web-page">create a Web Page</a>.</li>
+<li>Enable full width by ticking the "Full Width" checkbox.</li>
+<li>Select Content Type as <strong>Page Builder</strong>.</li>
+<li>Click on Add Row in the Page Building Blocks Table.</li>
+<li>Select a Web Template.</li>
+<li>Click on the <strong>Edit Values</strong> button.</li>
+<li>Enter values in the dialog and click on Submit.</li>
+<li>Click on Save.</li>
+<li>The web page will be published only when <strong>Published</strong> is ticked.</li>
+</ol>
+
+<p><img src="/files/new-web-page-with-page-builder.png" alt="New Web Page with Page Builder" class="screenshot">
+_New Web Page with Page Builder_</p>
+
+<p><img src="/files/page-builder-edit-values-dialog.png" alt="Page Builder Edit Values Dialog" class="screenshot">
+_Page Builder Edit Values Dialog_</p>
+
+<p>View your Web Page by clicking on <strong>See on Website</strong> in the sidebar.</p>
+
+<p><img src="/files/web-page-with-page-builder-preview.png" alt="Web Page" class="screenshot">
+_Web Page with Page Builder_</p>
+
+<h3 id="11-add-sections">1.1 Add Sections<a class="no-underline" href="#11-add-sections" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>You can add more sections to your page by adding more rows in the Page Building Blocks
+table. The framework comes with a great set of Web Templates for you to create
+all sorts of pages.</p>
+
+<p><img src="/files/web-page-with-more-sections.png" alt="More Sections" class="screenshot">
+_Web Page with another section_</p>
+
+<p><img src="/files/web-page-with-more-sections-preview.png" alt="More Sections - Preview" class="screenshot">
+_Web Page with another section - Preview_</p>
+
+<h3 id="12-section-options">1.2 Section Options<a class="no-underline" href="#12-section-options" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>If you click to expand a row in the Page Building Blocks table, you have the
+following additional options:</p>
+
+<ul>
+<li><strong>Add Container</strong>: If checked, the web template will be rendered in a centered constrained box.</li>
+<li><strong>Add Space on Top</strong>: If checked, it will add a decent amount of space above the section.</li>
+<li><strong>Add Space on Bottom</strong>: If checked, it will add a decent amount of space below the section.</li>
+<li><strong>Add Gray Background</strong>: If checked, it will add a gray background to the section.</li>
+<li><strong>Hide Block</strong>: If checked, it will hide the section block.</li>
+<li><strong>CSS Class</strong>: Add any CSS class and style it in the CSS field in the Style section.</li>
+</ul>
+
+<p><img src="/files/page-builder-section-options.png" alt="Section Options" class="screenshot">
+_Section Options_</p>
+
+	</div>
+	<input value="kt7dkvffad" class="d-none" name="wiki-page-name">
+	<div class="modal revisions-modal fade" id="revisionsModal" tabindex="-1" role="dialog" aria-labelledby="revisionsModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="d-flex flex-column">
+                    <h5 class="modal-title revision-title" id="web-page-builder">Web Page Builder
+<a class="no-underline" href="#web-page-builder" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h5>
+                    <span class="small text-muted revision-time">administrator edited 4 months ago</span>
+                </div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="revision-content wiki-content"><del class="diffmod">
+                    </del><ins class="diffmod">
+		</ins><blockquote><ins class="diffmod">
+  </ins><p><ins class="diffmod">Introduced in Version 13</ins></p><ins class="diffmod">
+</ins></blockquote><ins class="diffmod">
+
+</ins><p><strong><ins class="diffmod">Page Builder lets you quickly create web pages from pre-configured web templates.</ins></strong></p><ins class="diffmod">
+
+</ins><h2 id="1-how-to-create-a-page-using-page-builder"><ins class="diffmod">1. How to create a page using Page Builder</ins><a class="no-underline" href="#1-how-to-create-a-page-using-page-builder" aria-hidden="true"><ins class="diffmod">
+        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
+          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+        </ins></svg><ins class="diffmod">
+      </ins></a></h2><ins class="diffmod">
+
+</ins><ol><ins class="diffmod">
+</ins><li><ins class="diffmod">Follow the steps to </ins><a href="/erpnext/v13/user/manual/en/website/web-page"><ins class="diffmod">create a Web Page</ins></a><ins class="diffmod">.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Enable full width by ticking the "Full Width" checkbox.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Select Content Type as </ins><strong><ins class="mod"><ins class="diffmod">Page Builder</ins></ins></strong><ins class="diffmod">.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Click on Add Row in the Page Building Blocks Table.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Select a Web Template.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Click on the </ins><strong><ins class="mod"><ins class="diffmod">Edit Values</ins></ins></strong><ins class="diffmod">&nbsp;button.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Enter values in the dialog and click on Submit.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Click on Save.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">The web page will be published only when </ins><strong><ins class="mod"><ins class="diffmod">Published</ins></ins></strong><ins class="diffmod">&nbsp;is ticked.</ins></li><ins class="diffmod">
+</ins></ol><ins class="diffmod">
+
+</ins><p><ins class="diffmod"><img src="/files/new-web-page-with-page-builder.png" alt="New Web Page with Page Builder" class="screenshot">
+_New Web Page with Page Builder_</ins></p><ins class="diffmod">
+
+</ins><p><ins class="diffmod"><img src="/files/page-builder-edit-values-dialog.png" alt="Page Builder Edit Values Dialog" class="screenshot">
+_Page Builder Edit Values Dialog_</ins></p><ins class="diffmod">
+
+</ins><p><ins class="diffmod">View your Web Page by clicking on </ins><strong><ins class="mod"><ins class="diffmod">See on Website</ins></ins></strong><ins class="diffmod">&nbsp;in the sidebar.</ins></p><ins class="diffmod">
+
+</ins><p><ins class="diffmod"><img src="/files/web-page-with-page-builder-preview.png" alt="Web Page" class="screenshot">
+_Web Page with Page Builder_</ins></p><ins class="diffmod">
+
+</ins><h3 id="11-add-sections"><del class="diffmod">No</del><ins class="diffmod">1.1</ins> <del class="diffmod">Revisions</del><ins class="diffmod">Add Sections</ins><a class="no-underline" href="#11-add-sections" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3><del class="diffmod">
+
+                </del><ins class="diffmod">
+
+</ins><p><ins class="diffmod">You can add more sections to your page by adding more rows in the Page Building Blocks
+table. The framework comes with a great set of Web Templates for you to create
+all sorts of pages.</ins></p><ins class="diffmod">
+
+</ins><p><ins class="diffmod"><img src="/files/web-page-with-more-sections.png" alt="More Sections" class="screenshot">
+_Web Page with another section_</ins></p><ins class="diffmod">
+
+</ins><p><ins class="diffmod"><img src="/files/web-page-with-more-sections-preview.png" alt="More Sections - Preview" class="screenshot">
+_Web Page with another section - Preview_</ins></p><ins class="diffmod">
+
+</ins><h3 id="12-section-options"><ins class="diffmod">1.2 Section Options</ins><a class="no-underline" href="#12-section-options" aria-hidden="true"><ins class="diffmod">
+        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
+          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+        </ins></svg><ins class="diffmod">
+      </ins></a></h3><ins class="diffmod">
+
+</ins><p><ins class="diffmod">If you click to expand a row in the Page Building Blocks table, you have the
+following additional options:</ins></p><ins class="diffmod">
+
+</ins><ul><ins class="diffmod">
+</ins><li><strong><ins class="diffmod">Add Container</ins></strong><ins class="diffmod">: If checked, the web template will be rendered in a centered constrained box.</ins></li><ins class="diffmod">
+</ins><li><strong><ins class="diffmod">Add Space on Top</ins></strong><ins class="diffmod">: If checked, it will add a decent amount of space above the section.</ins></li><ins class="diffmod">
+</ins><li><strong><ins class="diffmod">Add Space on Bottom</ins></strong><ins class="diffmod">: If checked, it will add a decent amount of space below the section.</ins></li><ins class="diffmod">
+</ins><li><strong><ins class="diffmod">Add Gray Background</ins></strong><ins class="diffmod">: If checked, it will add a gray background to the section.</ins></li><ins class="diffmod">
+</ins><li><strong><ins class="diffmod">Hide Block</ins></strong><ins class="diffmod">: If checked, it will hide the section block.</ins></li><ins class="diffmod">
+</ins><li><strong><ins class="diffmod">CSS Class</ins></strong><ins class="diffmod">: Add any CSS class and style it in the CSS field in the Style section.</ins></li><ins class="diffmod">
+</ins></ul><ins class="diffmod">
+
+</ins><p><ins class="diffmod"><img src="/files/page-builder-section-options.png" alt="Section Options" class="screenshot">
+_Section Options_</ins></p><ins class="diffmod">
+
+	</ins></div>
+            </div>
+           </main>

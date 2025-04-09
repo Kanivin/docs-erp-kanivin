@@ -1,0 +1,352 @@
+<main><div class="from-markdown markdown ">
+	<div class="alert alert-warning admin-banner hide" role="alert">
+		<div class="d-flex justify-content-between align-items-center">
+			<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+			<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+		</div>
+	</div>
+	<div class="d-flex justify-content-between align-items-center">
+		<h1 class="wiki-title" id="warranty-claim">Warranty Claim<a class="no-underline" href="#warranty-claim" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h1>
+	</div>
+	<div class="wiki-content">
+		<p><strong>A Warranty Claim is when a Customer claims free repairs within the Warranty Period of the item/service you're providing.</strong></p>
+
+<p>If you are selling Items under warranty or if you have sold and extended service contract like the Annual Maintenance Contract (AMC), your Customer may contact you about an issue or a break-down of the product and provide you the Serial No of this Item.</p>
+
+<p>To access the Warranty Claim list, go to:</p>
+
+<blockquote>
+  <p>Home &gt; Support &gt; Warranty &gt; Warranty Claim</p>
+</blockquote>
+
+<h2 id="1-prerequisites">1. Prerequisites<a class="no-underline" href="#1-prerequisites" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h2>
+
+<p>Before creating and using Warranty Claim, it is advised that you create the following first:</p>
+
+<ul>
+<li><a href="/erpnext/v13/user/manual/en/CRM/customer">Customer</a></li>
+<li><a href="/erpnext/v13/user/manual/en/stock/serial-no">Serial Number</a></li>
+<li><a href="/erpnext/v13/user/manual/en/stock/item">Item</a></li>
+</ul>
+
+<h2 id="2-how-to-create-warranty-claim">2. How to Create Warranty Claim<a class="no-underline" href="#2-how-to-create-warranty-claim" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h2>
+
+<ol>
+<li>Go to the Warranty Claim list, click on New.</li>
+<li>Select a Customer.</li>
+<li>Select the Serial Number of the Item on which Warranty Claim is to be recorded. The system will then automatically fetch the Serial No’s details and indicate whether this is under warranty or AMC.</li>
+<li>Enter a description of the Issue. User can upload and image and create a table.</li>
+<li>Save. <img src="/files/warranty-claim.png" alt="Warranty Claim" class="screenshot"></li>
+</ol>
+
+<h3 id="21-additional-options-when-creating-a-warranty-claim">2.1 Additional Options when Creating a Warranty Claim<a class="no-underline" href="#21-additional-options-when-creating-a-warranty-claim" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<ul>
+<li><p><strong>Status</strong>: While creating a Warranty Claim, the status will be set as "Open". User can change the status to:</p>
+
+<ul>
+<li>Work In Progress: Fix/repairs are being done on the Item.</li>
+<li>Closed: The repairs have been done and the Warranty Claim is now closed.</li>
+<li>Cancelled: The Warranty Claim was invalid, and the claim was closed.</li>
+</ul></li>
+<li><strong>Issue Date</strong>: While creating the Warranty Claim, the current date will be captured. This field is editable.</li>
+</ul>
+
+<h2 id="3-features">3 Features<a class="no-underline" href="#3-features" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h2>
+
+<h3 id="31-item-and-warranty-details">3.1 Item and Warranty Details:<a class="no-underline" href="#31-item-and-warranty-details" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>Once a Serial Number is selected, the following details about the Item will be fetched:</p>
+
+<ul>
+<li>Item Code</li>
+<li>Item Name</li>
+<li>Item Description</li>
+</ul>
+
+<p>The details about Warranty/AMC will be fetched according to the Serial Number.</p>
+
+<ul>
+<li><strong>Warranty / AMC Status:</strong> The possible options are "Under Warranty", "Out of Warranty", "Under AMC", or "Out of AMC". The status can be changed to Out of Warranty/AMC if the Item has been tampered with or Warranty is void depending on your terms of service.</li>
+<li>Warranty Expiry Date</li>
+<li>AMC Expiry date</li>
+</ul>
+
+<p><img src="/files/warranty-serial.png" alt="Warranty Serial" class="screenshot"></p>
+
+<h3 id="32-resolution">3.2 Resolution<a class="no-underline" href="#32-resolution" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<ul>
+<li><strong>Resolution Date:</strong> When the warranty or AMC is Closed, current date and time will be fetched in resolution Date field automatically. This field is also editable.</li>
+<li><strong>Resolved By:</strong> Set the Email ID of the User who has resolved the Warranty Claim. The email ID is linked with <a href="/erpnext/v13/user/manual/en/setting-up/users-and-permissions/adding-users">User</a> created in the system.</li>
+<li><strong>Resolved Details:</strong> This is a text field. User can enter details about the Warranty or AMC claim. A User can also upload the image, enter or create a table.</li>
+</ul>
+
+<p><img src="/files/warranty-resolution.png" alt="Warranty Resolution" class="screenshot"></p>
+
+<h3 id="33-customer-details">3.3 Customer Details<a class="no-underline" href="#33-customer-details" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>The following details of the <a href="/erpnext/v13/user/manual/en/CRM/customer">Customer</a> will be fetched:</p>
+
+<ul>
+<li>Customer Name</li>
+<li>Contact Person</li>
+<li>Territory</li>
+<li>Customer Group</li>
+<li>Customer Address</li>
+</ul>
+
+<p><strong>Service Address:</strong> User can enter the Service Address if it is different from Customer Address.</p>
+
+<p><img src="/files/warranty-customer.png" alt="Warranty Customer" class="screenshot">  </p>
+
+<h3 id="34-more-information">3.4 More Information<a class="no-underline" href="#34-more-information" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<ul>
+<li><strong>Company:</strong> The Warranty or AMC is created from the company will be selected automatically.</li>
+<li><strong>Raised By:</strong> User can enter the Name of the person who has raised the Warranty or AMC in case the Customer is an organization.</li>
+<li><strong>From Company:</strong> User can enter the name of the company from which the warranty or AMC has been created.</li>
+</ul>
+
+<p>If a Customer visit is required to address the issue, you can create a new Maintenance Visit record from this.</p>
+
+<h2 id="4-related-topics">4. Related Topics<a class="no-underline" href="#4-related-topics" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h2>
+
+<ol>
+<li><a href="/erpnext/v13/user/manual/en/support/issue">Issue</a></li>
+<li><a href="/erpnext/v13/user/manual/en/support/maintenance-visit">Maintenance Visit</a></li>
+</ol>
+
+	</div>
+	<input value="s3lpcm87he" class="d-none" name="wiki-page-name">
+	<div class="modal revisions-modal fade" id="revisionsModal" tabindex="-1" role="dialog" aria-labelledby="revisionsModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="d-flex flex-column">
+                    <h5 class="modal-title revision-title" id="warranty-claim">Warranty Claim<a class="no-underline" href="#warranty-claim" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h5>
+                    <span class="small text-muted revision-time">administrator edited 4 months ago</span>
+                </div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="revision-content wiki-content"><del class="diffmod">
+                    </del><h3 id="no-revisions"><ins class="diffmod">
+		</ins><p><strong><ins class="diffmod">A Warranty Claim is when a Customer claims free repairs within the Warranty Period of the item/service you're providing.</ins></strong></p><ins class="diffmod">
+
+</ins><p><ins class="diffmod">If you are selling Items under warranty or if you have sold and extended service contract like the Annual Maintenance Contract (AMC), your Customer may contact you about an issue or a break-down of the product and provide you the Serial </ins>No <del class="diffmod">Revisions</del><ins class="diffmod">of this Item.</ins></p><ins class="diffmod">
+
+</ins><p><ins class="diffmod">To access the Warranty Claim list, go to:</ins></p><ins class="diffmod">
+
+</ins><blockquote><ins class="diffmod">
+  </ins><p><ins class="diffmod">Home &gt; Support &gt; Warranty &gt; Warranty Claim</ins></p><ins class="diffmod">
+</ins></blockquote><ins class="diffmod">
+
+</ins></h3><h2 id="1-prerequisites"><ins class="diffmod">1. Prerequisites</ins><a class="no-underline" href="#1-prerequisites" aria-hidden="true"><ins class="diffmod">
+        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
+          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+        </ins></svg><ins class="diffmod">
+      </ins></a></h2><ins class="diffmod">
+
+</ins><p><ins class="diffmod">Before creating and using Warranty Claim, it is advised that you create the following first:</ins></p><ins class="diffmod">
+
+</ins><ul><ins class="diffmod">
+</ins><li><a href="/erpnext/v13/user/manual/en/CRM/customer"><ins class="diffmod">Customer</ins></a></li><ins class="diffmod">
+</ins><li><a href="/erpnext/v13/user/manual/en/stock/serial-no"><ins class="diffmod">Serial Number</ins></a></li><ins class="diffmod">
+</ins><li><a href="/erpnext/v13/user/manual/en/stock/item"><ins class="diffmod">Item</ins></a></li><ins class="diffmod">
+</ins></ul><ins class="diffmod">
+
+</ins><h2 id="2-how-to-create-warranty-claim"><ins class="diffmod">2. How to Create Warranty Claim</ins><a class="no-underline" href="#2-how-to-create-warranty-claim" aria-hidden="true"><ins class="diffmod">
+        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
+          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+        </ins></svg><ins class="diffmod">
+      </ins></a></h2><ins class="diffmod">
+
+</ins><ol><ins class="diffmod">
+</ins><li><ins class="diffmod">Go to the Warranty Claim list, click on New.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Select a Customer.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Select the Serial Number of the Item on which Warranty Claim is to be recorded. The system will then automatically fetch the Serial No’s details and indicate whether this is under warranty or AMC.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Enter a description of the Issue. User can upload and image and create a table.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Save. <img src="/files/warranty-claim.png" alt="Warranty Claim" class="screenshot"></ins></li><ins class="diffmod">
+</ins></ol><ins class="diffmod">
+
+</ins><h3 id="21-additional-options-when-creating-a-warranty-claim"><ins class="diffmod">2.1 Additional Options when Creating a Warranty Claim</ins><a class="no-underline" href="#21-additional-options-when-creating-a-warranty-claim" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3><del class="diffmod">
+
+                </del><ins class="diffmod">
+
+</ins><ul><ins class="diffmod">
+</ins><li><p><strong><ins class="diffmod">Status</ins></strong><ins class="diffmod">: While creating a Warranty Claim, the status will be set as "Open". User can change the status to:</ins></p><ins class="diffmod">
+
+</ins><ul><ins class="diffmod">
+</ins><li><ins class="diffmod">Work In Progress: Fix/repairs are being done on the Item.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Closed: The repairs have been done and the Warranty Claim is now closed.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Cancelled: The Warranty Claim was invalid, and the claim was closed.</ins></li><ins class="diffmod">
+</ins></ul></li><ins class="diffmod">
+</ins><li><strong><ins class="diffmod">Issue Date</ins></strong><ins class="diffmod">: While creating the Warranty Claim, the current date will be captured. This field is editable.</ins></li><ins class="diffmod">
+</ins></ul><ins class="diffmod">
+
+</ins><h2 id="3-features"><ins class="diffmod">3 Features</ins><a class="no-underline" href="#3-features" aria-hidden="true"><ins class="diffmod">
+        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
+          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+        </ins></svg><ins class="diffmod">
+      </ins></a></h2><ins class="diffmod">
+
+</ins><h3 id="31-item-and-warranty-details"><ins class="diffmod">3.1 Item and Warranty Details:</ins><a class="no-underline" href="#31-item-and-warranty-details" aria-hidden="true"><ins class="diffmod">
+        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
+          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+        </ins></svg><ins class="diffmod">
+      </ins></a></h3><ins class="diffmod">
+
+</ins><p><ins class="diffmod">Once a Serial Number is selected, the following details about the Item will be fetched:</ins></p><ins class="diffmod">
+
+</ins><ul><ins class="diffmod">
+</ins><li><ins class="diffmod">Item Code</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Item Name</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Item Description</ins></li><ins class="diffmod">
+</ins></ul><ins class="diffmod">
+
+</ins><p><ins class="diffmod">The details about Warranty/AMC will be fetched according to the Serial Number.</ins></p><ins class="diffmod">
+
+</ins><ul><ins class="diffmod">
+</ins><li><strong><ins class="diffmod">Warranty / AMC Status:</ins></strong><ins class="diffmod">&nbsp;The possible options are "Under Warranty", "Out of Warranty", "Under AMC", or "Out of AMC". The status can be changed to Out of Warranty/AMC if the Item has been tampered with or Warranty is void depending on your terms of service.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Warranty Expiry Date</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">AMC Expiry date</ins></li><ins class="diffmod">
+</ins></ul><ins class="diffmod">
+
+</ins><p><ins class="diffmod"><img src="/files/warranty-serial.png" alt="Warranty Serial" class="screenshot"></ins></p><ins class="diffmod">
+
+</ins><h3 id="32-resolution"><ins class="diffmod">3.2 Resolution</ins><a class="no-underline" href="#32-resolution" aria-hidden="true"><ins class="diffmod">
+        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
+          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+        </ins></svg><ins class="diffmod">
+      </ins></a></h3><ins class="diffmod">
+
+</ins><ul><ins class="diffmod">
+</ins><li><strong><ins class="diffmod">Resolution Date:</ins></strong><ins class="diffmod">&nbsp;When the warranty or AMC is Closed, current date and time will be fetched in resolution Date field automatically. This field is also editable.</ins></li><ins class="diffmod">
+</ins><li><strong><ins class="diffmod">Resolved By:</ins></strong><ins class="diffmod">&nbsp;Set the Email ID of the User who has resolved the Warranty Claim. The email ID is linked with </ins><a href="/erpnext/v13/user/manual/en/setting-up/users-and-permissions/adding-users"><ins class="diffmod">User</ins></a><ins class="diffmod">&nbsp;created in the system.</ins></li><ins class="diffmod">
+</ins><li><strong><ins class="diffmod">Resolved Details:</ins></strong><ins class="diffmod">&nbsp;This is a text field. User can enter details about the Warranty or AMC claim. A User can also upload the image, enter or create a table.</ins></li><ins class="diffmod">
+</ins></ul><ins class="diffmod">
+
+</ins><p><ins class="diffmod"><img src="/files/warranty-resolution.png" alt="Warranty Resolution" class="screenshot"></ins></p><ins class="diffmod">
+
+</ins><h3 id="33-customer-details"><ins class="diffmod">3.3 Customer Details</ins><a class="no-underline" href="#33-customer-details" aria-hidden="true"><ins class="diffmod">
+        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
+          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+        </ins></svg><ins class="diffmod">
+      </ins></a></h3><ins class="diffmod">
+
+</ins><p><ins class="diffmod">The following details of the </ins><a href="/erpnext/v13/user/manual/en/CRM/customer"><ins class="diffmod">Customer</ins></a><ins class="diffmod">&nbsp;will be fetched:</ins></p><ins class="diffmod">
+
+</ins><ul><ins class="diffmod">
+</ins><li><ins class="diffmod">Customer Name</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Contact Person</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Territory</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Customer Group</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Customer Address</ins></li><ins class="diffmod">
+</ins></ul><ins class="diffmod">
+
+</ins><p><strong><ins class="diffmod">Service Address:</ins></strong><ins class="diffmod">&nbsp;User can enter the Service Address if it is different from Customer Address.</ins></p><ins class="diffmod">
+
+</ins><p><ins class="diffmod"><img src="/files/warranty-customer.png" alt="Warranty Customer" class="screenshot">  </ins></p><ins class="diffmod">
+
+</ins><h3 id="34-more-information"><ins class="diffmod">3.4 More Information</ins><a class="no-underline" href="#34-more-information" aria-hidden="true"><ins class="diffmod">
+        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
+          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+        </ins></svg><ins class="diffmod">
+      </ins></a></h3><ins class="diffmod">
+
+</ins><ul><ins class="diffmod">
+</ins><li><strong><ins class="diffmod">Company:</ins></strong><ins class="diffmod">&nbsp;The Warranty or AMC is created from the company will be selected automatically.</ins></li><ins class="diffmod">
+</ins><li><strong><ins class="diffmod">Raised By:</ins></strong><ins class="diffmod">&nbsp;User can enter the Name of the person who has raised the Warranty or AMC in case the Customer is an organization.</ins></li><ins class="diffmod">
+</ins><li><strong><ins class="diffmod">From Company:</ins></strong><ins class="diffmod">&nbsp;User can enter the name of the company from which the warranty or AMC has been created.</ins></li><ins class="diffmod">
+</ins></ul><ins class="diffmod">
+
+</ins><p><ins class="diffmod">If a Customer visit is required to address the issue, you can create a new Maintenance Visit record from this.</ins></p><ins class="diffmod">
+
+</ins><h2 id="4-related-topics"><ins class="diffmod">4. Related Topics</ins><a class="no-underline" href="#4-related-topics" aria-hidden="true"><ins class="diffmod">
+        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
+          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+        </ins></svg><ins class="diffmod">
+      </ins></a></h2><ins class="diffmod">
+
+</ins><ol><ins class="diffmod">
+</ins><li><a href="/erpnext/v13/user/manual/en/support/issue"><ins class="diffmod">Issue</ins></a></li><ins class="diffmod">
+</ins><li><a href="/erpnext/v13/user/manual/en/support/maintenance-visit"><ins class="diffmod">Maintenance Visit</ins></a></li><ins class="diffmod">
+</ins></ol><ins class="diffmod">
+
+	</ins></div>
+            </div>
+        </main>

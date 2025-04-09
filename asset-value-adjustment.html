@@ -1,0 +1,164 @@
+<main><div class="from-markdown markdown ">
+	<div class="alert alert-warning admin-banner hide" role="alert">
+		<div class="d-flex justify-content-between align-items-center">
+			<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+			<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+		</div>
+	</div>
+	<div class="d-flex justify-content-between align-items-center">
+		<h1 class="wiki-title" id="asset-value-adjustment">Asset Value Adjustment
+<a class="no-underline" href="#asset-value-adjustment" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h1>
+	</div>
+	<div class="wiki-content">
+		<p><strong>If the value of an Asset changed suddenly due to any damages, it can be recorded using Asset Value Adjustment.</strong></p>
+
+<p>In case of fixed asset management, sometimes the value of an asset needs some adjustment. For example, if a laptop gets damaged for some reason, and its value will be dropped instantly. And in that case, we have to readjust the value of the asset.</p>
+
+<p>To access the Asset Value Adjustment, go to:</p>
+
+<blockquote>
+  <p>Home &gt; Assets &gt; Maintenance &gt; Asset Value Adjustment</p>
+</blockquote>
+
+<h2 id="1-prerequisites">1. Prerequisites<a class="no-underline" href="#1-prerequisites" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h2>
+
+<p>Before creating and using Asset Value Adjustment, it is advised to create the following first:</p>
+
+<ol>
+<li><a href="/erpnext/v13/user/manual/en/asset/asset">Asset</a></li>
+<li>Enable 'Calculate Depreciation' in the Asset form</li>
+</ol>
+
+<h2 id="2-how-to-create-an-asset-value-adjustment">2. How to create an Asset Value Adjustment<a class="no-underline" href="#2-how-to-create-an-asset-value-adjustment" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h2>
+
+<ol>
+<li>Go to the Asset Value Adjustment list, click on New.</li>
+<li>Select an Asset whose value is to be adjusted.</li>
+<li>Select a date.</li>
+<li>Enter the current and new value of the asset.</li>
+<li>Save and Submit.</li>
+</ol>
+
+<p><img src="/files/asset-value-adjustment.png" alt="Asset" class="screenshot"></p>
+
+<p>On saving the system will book a "Gain/Loss on asset revaluation" and adjust the valuation of the asset.
+You can change the cost center and add a finance book.</p>
+
+<p>On submitting, a Journal Entry is created under the 'Accumulated Depreciations' account.</p>
+
+<h3 id="3-related-topics">3. Related Topics<a class="no-underline" href="#3-related-topics" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<ol>
+<li><a href="/erpnext/v13/user/manual/en/asset/asset-depreciation">Asset Depreciation</a></li>
+<li><a href="/erpnext/v13/user/manual/en/asset/scrapping-an-asset">Scrapping an Asset</a></li>
+</ol>
+
+	</div>
+	<input value="6m1g8798lo" class="d-none" name="wiki-page-name">
+	<div class="modal revisions-modal fade" id="revisionsModal" tabindex="-1" role="dialog" aria-labelledby="revisionsModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="d-flex flex-column">
+                    <h5 class="modal-title revision-title" id="asset-value-adjustment">Asset Value Adjustment
+<a class="no-underline" href="#asset-value-adjustment" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h5>
+                    <span class="small text-muted revision-time">administrator edited 4 months ago</span>
+                </div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="revision-content wiki-content"><del class="diffmod">
+                    </del><ins class="diffmod">
+		</ins><p><strong><ins class="diffmod">If the value of an Asset changed suddenly due to any damages, it can be recorded using Asset Value Adjustment.</ins></strong></p><ins class="diffmod">
+
+</ins><p><ins class="diffmod">In case of fixed asset management, sometimes the value of an asset needs some adjustment. For example, if a laptop gets damaged for some reason, and its value will be dropped instantly. And in that case, we have to readjust the value of the asset.</ins></p><ins class="diffmod">
+
+</ins><p><ins class="diffmod">To access the Asset Value Adjustment, go to:</ins></p><ins class="diffmod">
+
+</ins><blockquote><ins class="diffmod">
+  </ins><p><ins class="diffmod">Home &gt; Assets &gt; Maintenance &gt; Asset Value Adjustment</ins></p><ins class="diffmod">
+</ins></blockquote><ins class="diffmod">
+
+</ins><h2 id="1-prerequisites"><ins class="diffmod">1. Prerequisites</ins><a class="no-underline" href="#1-prerequisites" aria-hidden="true"><ins class="diffmod">
+        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
+          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+        </ins></svg><ins class="diffmod">
+      </ins></a></h2><ins class="diffmod">
+
+</ins><p><ins class="diffmod">Before creating and using Asset Value Adjustment, it is advised to create the following first:</ins></p><ins class="diffmod">
+
+</ins><ol><ins class="diffmod">
+</ins><li><a href="/erpnext/v13/user/manual/en/asset/asset"><ins class="diffmod">Asset</ins></a></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Enable 'Calculate Depreciation' in the Asset form</ins></li><ins class="diffmod">
+</ins></ol><ins class="diffmod">
+
+</ins><h2 id="2-how-to-create-an-asset-value-adjustment"><ins class="diffmod">2. How to create an Asset Value Adjustment</ins><a class="no-underline" href="#2-how-to-create-an-asset-value-adjustment" aria-hidden="true"><ins class="diffmod">
+        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
+          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+        </ins></svg><ins class="diffmod">
+      </ins></a></h2><ins class="diffmod">
+
+</ins><ol><ins class="diffmod">
+</ins><li><ins class="diffmod">Go to the Asset Value Adjustment list, click on New.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Select an Asset whose value is to be adjusted.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Select a date.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Enter the current and new value of the asset.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Save and Submit.</ins></li><ins class="diffmod">
+</ins></ol><ins class="diffmod">
+
+</ins><p><ins class="diffmod"><img src="/files/asset-value-adjustment.png" alt="Asset" class="screenshot"></ins></p><ins class="diffmod">
+
+</ins><p><ins class="diffmod">On saving the system will book a "Gain/Loss on asset revaluation" and adjust the valuation of the asset.
+You can change the cost center and add a finance book.</ins></p><ins class="diffmod">
+
+</ins><p><ins class="diffmod">On submitting, a Journal Entry is created under the 'Accumulated Depreciations' account.</ins></p><ins class="diffmod">
+
+</ins><h3 id="3-related-topics"><del class="diffmod">No</del><ins class="diffmod">3.</ins> <del class="diffmod">Revisions</del><ins class="diffmod">Related Topics</ins><a class="no-underline" href="#3-related-topics" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3><del class="diffmod">
+
+                </del><ins class="diffmod">
+
+</ins><ol><ins class="diffmod">
+</ins><li><a href="/erpnext/v13/user/manual/en/asset/asset-depreciation"><ins class="diffmod">Asset Depreciation</ins></a></li><ins class="diffmod">
+</ins><li><a href="/erpnext/v13/user/manual/en/asset/scrapping-an-asset"><ins class="diffmod">Scrapping an Asset</ins></a></li><ins class="diffmod">
+</ins></ol><ins class="diffmod">
+
+	</ins></div>
+            </div>
+          </main>

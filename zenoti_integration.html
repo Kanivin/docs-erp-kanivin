@@ -1,0 +1,458 @@
+<main><div class="from-markdown markdown ">
+	<div class="alert alert-warning admin-banner hide" role="alert">
+		<div class="d-flex justify-content-between align-items-center">
+			<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+			<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+		</div>
+	</div>
+	<div class="d-flex justify-content-between align-items-center">
+		<h1 class="wiki-title" id="zenoti-integration">Zenoti Integration<a class="no-underline" href="#zenoti-integration" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h1>
+	</div>
+	<div class="wiki-content">
+		<blockquote>
+  <p>Introduced in version 13.</p>
+</blockquote>
+
+<p>Zenoti Integration pulls the purchase orders and sales invoices from Zenoti and creates Purchase Order and Sales Invoice against them in KanivinERP.</p>
+
+<p>While creating these records if Customer, Supplier or Item is missing in KanivinERP the system will create new Customer, Supplier or Item by pulling respective details from Zenoti.</p>
+
+<h3 id="how-to-setup">How to Setup?<a class="no-underline" href="#how-to-setup" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>Zenoti Integration is available through <em>Ecommerce Integrations</em> on <a href="https://frappecloud.com/marketplace/apps/ecommerce_integrations">Frappe Cloud Marketplace</a>.</p>
+
+<h3 id="app-installation">App Installation<a class="no-underline" href="#app-installation" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<ul>
+<li>If you are hosting your KanivinERP site on Frappe Cloud, you can quickly install the app by going to your site Dashboard. The app is available in <a href="https://frappecloud.com/marketplace/apps/ecommerce_integrations">Frappe Cloud Marketplace</a>.</li>
+<li>If your site is hosted by Frappe, please raise a support ticket to get the app installed on your site.</li>
+<li>If you are self hosting KanivinERP you can install the app using Frappe bench. Refer <a href="https://frappeframework.com/docs/user/en/bench/frappe-commands#app-installation">bench documentation</a> for installing Frappe Apps. <code>bench get-app ecommerce_integrations --branch main</code></li>
+</ul>
+
+<p>The repository for app is hosted on GitHub: <a href="http://github.com/frappe/ecommerce_integrations/">http://github.com/frappe/ecommerce_integrations/</a>.</p>
+
+<h3 id="prerequisite">Prerequisite<a class="no-underline" href="#prerequisite" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<ol>
+<li>For each center in Zenoti there should be a cost center and a warehouse created in KanivinERP which will be used in Cost Center and Warehouse Mapping table in Zenoti Settings in KanivinERP.</li>
+<li>Items<em>(alteast those having stock impact)</em> have to be created. Data import can be used for this.</li>
+<li>Opening stock entries have to be created using Stock Reconciliation in KanivinERP.</li>
+<li>Item Tax Templates have to be created from Tax Groups in Zenoti with proper accounts and tax rates.</li>
+<li>Create an account to book liability for the sales of gift or prepaid cards and tips, this is to be set as <em>Liability Income Account to book Gift &amp; Prepaid cards</em> in Zenoti Settings.</li>
+<li>Set appropriate accounts in the mode of payments. Also add "Card", "Custom" and "Points" as Mode of Payment.</li>
+<li>"Enable Perpetual Inventory" should be unchecked in Company Master.</li>
+</ol>
+
+<h3 id="important-details-for-setting-up-zenoti-on-erpnext">Important details for setting up Zenoti on KanivinERP<a class="no-underline" href="#important-details-for-setting-up-zenoti-on-erpnext" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<blockquote>
+  <p>To access Zenoti Settings, go to: Awesome search bar &gt; Zenoti Settings.</p>
+</blockquote>
+
+<p><img src="/files/Zenoti Settings Screen.png" alt="Zenoti setting page" class="screenshot"></p>
+
+<ol>
+<li><strong>Last Sync:</strong> Date and time of when the invoices were synced last.</li>
+<li><strong>API Key:</strong> API Key from Zenoti. If you do not have an API Key, you can easily generate one by going to Admin &gt; Setup &gt; API section.</li>
+<li><strong>Sync Interval:</strong> Duration in hours between each syncing. Following options are avaliable <em>(1, 3, 6, 12, 24)</em></li>
+<li><strong>Default Purchase Warehouse:</strong> Warehouse to be set for all the Purchase Orders. Usually this is the main center in Zenoti so put the one you created for main center.</li>
+<li><strong>Default Buying Price List:</strong> This is required in KanivinERP to maintain price of the Items. You can create a new or or use the existing one <em>Standard Buying</em> provided by KanivinERP.</li>
+<li><strong>Default Selling Price List:</strong> This is required in KanivinERP to maintain price of the Items. You can create a new or or use the existing one <em>Standard Selling</em> provided by KanivinERP.</li>
+<li><strong>Liability Income Account to book Tips, Gift &amp; Prepaid cards:</strong> Add here the account you created to book Tips and sales of Gift &amp; Prepaid cards.</li>
+<li><strong>Default Customer Group:</strong> If on creation of new customer while syncing sales invoice a specific customer group is to be assigned to them then add that here. If nothing is added then the default <em>All Customer Group</em> will be set for those new customer.</li>
+<li><strong>Default Supplier Group:</strong> If on creation of new supplier while syncing purchase order a specific supplier group is to be assigned to them then add that here. If nothing is added then the default <em>All Supplier Group</em> will be set for those new supplier.</li>
+<li><strong>Cost Center and Warehouse Mapping:</strong> In this table map all the Centers of Zenoti to their corresponding Cost Centers and Warehouses in KanivinERP.</li>
+</ol>
+
+<h3 id="what-will-be-synced-or-will-have-to-be-created-manually">What will be synced or will have to be created manually<a class="no-underline" href="#what-will-be-synced-or-will-have-to-be-created-manually" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<h4 id="item">Item<a class="no-underline" href="#item" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h4>
+
+<p>Items will have to be created manually into KanivinERP from Zenoti one time at the start. Then it will be created on a demand basis when syncing sales /purchase orders.</p>
+
+<h4 id="item-tax-template">Item Tax Template<a class="no-underline" href="#item-tax-template" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h4>
+
+<p>Item Tax Template will be created manually based on Tax Groups on zenoti.</p>
+
+<h4 id="customer">Customer<a class="no-underline" href="#customer" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h4>
+
+<p>Customer and Customer Group will be created on demand basis while syncing sales invoices. If there are no customer groups in Zenoti, “Default Customer Group” mentioned in Zenoti Settings will be used. If not mentioned in Zenoti Settings “All Customer Groups” will be used.</p>
+
+<h4 id="supplier">Supplier<a class="no-underline" href="#supplier" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h4>
+
+<p>Supplier and Supplier Group will be created on demand basis while syncing purchase orders. If there are no supplier groups in Zenoti, “Default Supplier Group” mentioned in Zenoti Settings will be used. If not mentioned in Zenoti Settings “All Supplier Groups” will be used.</p>
+
+<h4 id="warehouse">Warehouse<a class="no-underline" href="#warehouse" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h4>
+
+<p>Warehouses will have to be created in KanivinERP manually and mapped with Centres of Zenoti via Cost Center and Warehouse Mapping table in Zenoti Settings.</p>
+
+<h4 id="cost-center">Cost Center<a class="no-underline" href="#cost-center" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h4>
+
+<p>Cost Centers will have to be created in KanivinERP manually and mapped with Centres of Zenoti via Cost Center and Warehouse Mapping table in Zenoti Settings.</p>
+
+<h4 id="employees">Employees<a class="no-underline" href="#employees" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h4>
+
+<p>Employees will have to be created manually into KanivinERP from Zenoti one time at the start. Then it can be created on a demand basis when syncing sales/purchase records. For Employees fields "Date of Birth", "Date of Joining" are mandatory. Hence when creating employee from sales/purchase records "Date of Joining" will be set as the day the employee is created and "Date of Birth" as 25 years before "Date of Joining". These can be changed later on.</p>
+
+<h4 id="purchase-order">Purchase Order<a class="no-underline" href="#purchase-order" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h4>
+
+<p>Purchase Order will be created in Zenoti and sync into the KanivinERP at the end of the day.
+Supplier and Item will be created on demand basis if new.</p>
+
+<blockquote>
+  <p>Note: Purchase Invoice from the Purchase Order have to be created manually.</p>
+</blockquote>
+
+<h4 id="debit-note">Debit Note<a class="no-underline" href="#debit-note" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h4>
+
+<p>Debit Note will be created automatically and remain in Draft mode based for Return Purchase Order in Zenoti.</p>
+
+<h4 id="sales-invoice">Sales Invoice<a class="no-underline" href="#sales-invoice" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h4>
+
+<p>Invoice will be created automatically via API on the given interval set in Zenoti Settings.
+Customer and Item will be created on demand basis if new.</p>
+
+<h4 id="credit-note">Credit Note<a class="no-underline" href="#credit-note" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h4>
+
+<p>Credit Note will be created automatically based on Return Invoice in Zenoti and will only contain products and not services.</p>
+
+<h4 id="giftprepaid-card-sales">Gift/Prepaid Card Sales<a class="no-underline" href="#giftprepaid-card-sales" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h4>
+
+<p>Each Gift/Prepaid card will be treated as Items.
+Gift/Prepaid Cards will be treated as mode of payment for future invoices where the payment was done using these in Zenoti.</p>
+
+<h4 id="stock-reconciliation">Stock Reconciliation<a class="no-underline" href="#stock-reconciliation" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h4>
+
+<p>At the end of the day, stock will be synced via Stock Reconciliation.</p>
+
+	</div>
+	<input value="egii67gdub" class="d-none" name="wiki-page-name">
+	<div class="modal revisions-modal fade" id="revisionsModal" tabindex="-1" role="dialog" aria-labelledby="revisionsModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="d-flex flex-column">
+                    <h5 class="modal-title revision-title" id="zenoti-integration">Zenoti Integration<a class="no-underline" href="#zenoti-integration" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h5>
+                    <span class="small text-muted revision-time">administrator edited 4 months ago</span>
+                </div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="revision-content wiki-content"><del class="diffmod">
+                    </del><ins class="diffmod">
+		</ins><blockquote><ins class="diffmod">
+  </ins><p><ins class="diffmod">Introduced in version 13.</ins></p><ins class="diffmod">
+</ins></blockquote><ins class="diffmod">
+
+</ins><p><ins class="diffmod">Zenoti Integration pulls the purchase orders and sales invoices from Zenoti and creates Purchase Order and Sales Invoice against them in KanivinERP.</ins></p><ins class="diffmod">
+
+</ins><p><ins class="diffmod">While creating these records if Customer, Supplier or Item is missing in KanivinERP the system will create new Customer, Supplier or Item by pulling respective details from Zenoti.</ins></p><ins class="diffmod">
+
+</ins><h3 id="how-to-setup"><del class="diffmod">No</del><ins class="diffmod">How</ins> <del class="diffmod">Revisions</del><ins class="diffmod">to Setup?</ins><a class="no-underline" href="#how-to-setup" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3><del class="diffmod">
+
+                </del><ins class="diffmod">
+
+</ins><p><ins class="diffmod">Zenoti Integration is available through </ins><em><ins class="mod"><ins class="diffmod">Ecommerce Integrations</ins></ins></em><ins class="diffmod">&nbsp;on </ins><a href="https://frappecloud.com/marketplace/apps/ecommerce_integrations"><ins class="diffmod">Frappe Cloud Marketplace</ins></a><ins class="diffmod">.</ins></p><ins class="diffmod">
+
+</ins><h3 id="app-installation"><ins class="diffmod">App Installation</ins><a class="no-underline" href="#app-installation" aria-hidden="true"><ins class="diffmod">
+        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
+          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+        </ins></svg><ins class="diffmod">
+      </ins></a></h3><ins class="diffmod">
+
+</ins><ul><ins class="diffmod">
+</ins><li><ins class="diffmod">If you are hosting your KanivinERP site on Frappe Cloud, you can quickly install the app by going to your site Dashboard. The app is available in </ins><a href="https://frappecloud.com/marketplace/apps/ecommerce_integrations"><ins class="diffmod">Frappe Cloud Marketplace</ins></a><ins class="diffmod">.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">If your site is hosted by Frappe, please raise a support ticket to get the app installed on your site.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">If you are self hosting KanivinERP you can install the app using Frappe bench. Refer </ins><a href="https://frappeframework.com/docs/user/en/bench/frappe-commands#app-installation"><ins class="diffmod">bench documentation</ins></a><ins class="diffmod">&nbsp;for installing Frappe Apps. </ins><code><ins class="diffmod">bench get-app ecommerce_integrations --branch main</ins></code></li><ins class="diffmod">
+</ins></ul><ins class="diffmod">
+
+</ins><p><ins class="diffmod">The repository for app is hosted on GitHub: </ins><a href="http://github.com/frappe/ecommerce_integrations/"><ins class="diffmod">http://github.com/frappe/ecommerce_integrations/</ins></a><ins class="diffmod">.</ins></p><ins class="diffmod">
+
+</ins><h3 id="prerequisite"><ins class="diffmod">Prerequisite</ins><a class="no-underline" href="#prerequisite" aria-hidden="true"><ins class="diffmod">
+        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
+          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+        </ins></svg><ins class="diffmod">
+      </ins></a></h3><ins class="diffmod">
+
+</ins><ol><ins class="diffmod">
+</ins><li><ins class="diffmod">For each center in Zenoti there should be a cost center and a warehouse created in KanivinERP which will be used in Cost Center and Warehouse Mapping table in Zenoti Settings in KanivinERP.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Items</ins><em><ins class="mod"><ins class="diffmod">(alteast those having stock impact)</ins></ins></em><ins class="diffmod">&nbsp;have to be created. Data import can be used for this.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Opening stock entries have to be created using Stock Reconciliation in KanivinERP.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Item Tax Templates have to be created from Tax Groups in Zenoti with proper accounts and tax rates.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Create an account to book liability for the sales of gift or prepaid cards and tips, this is to be set as </ins><em><ins class="mod"><ins class="diffmod">Liability Income Account to book Gift &amp; Prepaid cards</ins></ins></em><ins class="diffmod">&nbsp;in Zenoti Settings.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Set appropriate accounts in the mode of payments. Also add "Card", "Custom" and "Points" as Mode of Payment.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">"Enable Perpetual Inventory" should be unchecked in Company Master.</ins></li><ins class="diffmod">
+</ins></ol><ins class="diffmod">
+
+</ins><h3 id="important-details-for-setting-up-zenoti-on-erpnext"><ins class="diffmod">Important details for setting up Zenoti on KanivinERP</ins><a class="no-underline" href="#important-details-for-setting-up-zenoti-on-erpnext" aria-hidden="true"><ins class="diffmod">
+        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
+          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+        </ins></svg><ins class="diffmod">
+      </ins></a></h3><ins class="diffmod">
+
+</ins><blockquote><ins class="diffmod">
+  </ins><p><ins class="diffmod">To access Zenoti Settings, go to: Awesome search bar &gt; Zenoti Settings.</ins></p><ins class="diffmod">
+</ins></blockquote><ins class="diffmod">
+
+</ins><p><ins class="diffmod"><img src="/files/Zenoti Settings Screen.png" alt="Zenoti setting page" class="screenshot"></ins></p><ins class="diffmod">
+
+</ins><ol><ins class="diffmod">
+</ins><li><strong><ins class="diffmod">Last Sync:</ins></strong><ins class="diffmod">&nbsp;Date and time of when the invoices were synced last.</ins></li><ins class="diffmod">
+</ins><li><strong><ins class="diffmod">API Key:</ins></strong><ins class="diffmod">&nbsp;API Key from Zenoti. If you do not have an API Key, you can easily generate one by going to Admin &gt; Setup &gt; API section.</ins></li><ins class="diffmod">
+</ins><li><strong><ins class="diffmod">Sync Interval:</ins></strong><ins class="diffmod">&nbsp;Duration in hours between each syncing. Following options are avaliable </ins><em><ins class="mod"><ins class="diffmod">(1, 3, 6, 12, 24)</ins></ins></em></li><ins class="diffmod">
+</ins><li><strong><ins class="diffmod">Default Purchase Warehouse:</ins></strong><ins class="diffmod">&nbsp;Warehouse to be set for all the Purchase Orders. Usually this is the main center in Zenoti so put the one you created for main center.</ins></li><ins class="diffmod">
+</ins><li><strong><ins class="diffmod">Default Buying Price List:</ins></strong><ins class="diffmod">&nbsp;This is required in KanivinERP to maintain price of the Items. You can create a new or or use the existing one </ins><em><ins class="mod"><ins class="diffmod">Standard Buying</ins></ins></em><ins class="diffmod">&nbsp;provided by KanivinERP.</ins></li><ins class="diffmod">
+</ins><li><strong><ins class="diffmod">Default Selling Price List:</ins></strong><ins class="diffmod">&nbsp;This is required in KanivinERP to maintain price of the Items. You can create a new or or use the existing one </ins><em><ins class="mod"><ins class="diffmod">Standard Selling</ins></ins></em><ins class="diffmod">&nbsp;provided by KanivinERP.</ins></li><ins class="diffmod">
+</ins><li><strong><ins class="diffmod">Liability Income Account to book Tips, Gift &amp; Prepaid cards:</ins></strong><ins class="diffmod">&nbsp;Add here the account you created to book Tips and sales of Gift &amp; Prepaid cards.</ins></li><ins class="diffmod">
+</ins><li><strong><ins class="diffmod">Default Customer Group:</ins></strong><ins class="diffmod">&nbsp;If on creation of new customer while syncing sales invoice a specific customer group is to be assigned to them then add that here. If nothing is added then the default </ins><em><ins class="mod"><ins class="diffmod">All Customer Group</ins></ins></em><ins class="diffmod">&nbsp;will be set for those new customer.</ins></li><ins class="diffmod">
+</ins><li><strong><ins class="diffmod">Default Supplier Group:</ins></strong><ins class="diffmod">&nbsp;If on creation of new supplier while syncing purchase order a specific supplier group is to be assigned to them then add that here. If nothing is added then the default </ins><em><ins class="mod"><ins class="diffmod">All Supplier Group</ins></ins></em><ins class="diffmod">&nbsp;will be set for those new supplier.</ins></li><ins class="diffmod">
+</ins><li><strong><ins class="diffmod">Cost Center and Warehouse Mapping:</ins></strong><ins class="diffmod">&nbsp;In this table map all the Centers of Zenoti to their corresponding Cost Centers and Warehouses in KanivinERP.</ins></li><ins class="diffmod">
+</ins></ol><ins class="diffmod">
+
+</ins><h3 id="what-will-be-synced-or-will-have-to-be-created-manually"><ins class="diffmod">What will be synced or will have to be created manually</ins><a class="no-underline" href="#what-will-be-synced-or-will-have-to-be-created-manually" aria-hidden="true"><ins class="diffmod">
+        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
+          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+        </ins></svg><ins class="diffmod">
+      </ins></a></h3><ins class="diffmod">
+
+</ins><h4 id="item"><ins class="diffmod">Item</ins><a class="no-underline" href="#item" aria-hidden="true"><ins class="diffmod">
+        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
+          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+        </ins></svg><ins class="diffmod">
+      </ins></a></h4><ins class="diffmod">
+
+</ins><p><ins class="diffmod">Items will have to be created manually into KanivinERP from Zenoti one time at the start. Then it will be created on a demand basis when syncing sales /purchase orders.</ins></p><ins class="diffmod">
+
+</ins><h4 id="item-tax-template"><ins class="diffmod">Item Tax Template</ins><a class="no-underline" href="#item-tax-template" aria-hidden="true"><ins class="diffmod">
+        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
+          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+        </ins></svg><ins class="diffmod">
+      </ins></a></h4><ins class="diffmod">
+
+</ins><p><ins class="diffmod">Item Tax Template will be created manually based on Tax Groups on zenoti.</ins></p><ins class="diffmod">
+
+</ins><h4 id="customer"><ins class="diffmod">Customer</ins><a class="no-underline" href="#customer" aria-hidden="true"><ins class="diffmod">
+        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
+          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+        </ins></svg><ins class="diffmod">
+      </ins></a></h4><ins class="diffmod">
+
+</ins><p><ins class="diffmod">Customer and Customer Group will be created on demand basis while syncing sales invoices. If there are no customer groups in Zenoti, “Default Customer Group” mentioned in Zenoti Settings will be used. If not mentioned in Zenoti Settings “All Customer Groups” will be used.</ins></p><ins class="diffmod">
+
+</ins><h4 id="supplier"><ins class="diffmod">Supplier</ins><a class="no-underline" href="#supplier" aria-hidden="true"><ins class="diffmod">
+        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
+          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+        </ins></svg><ins class="diffmod">
+      </ins></a></h4><ins class="diffmod">
+
+</ins><p><ins class="diffmod">Supplier and Supplier Group will be created on demand basis while syncing purchase orders. If there are no supplier groups in Zenoti, “Default Supplier Group” mentioned in Zenoti Settings will be used. If not mentioned in Zenoti Settings “All Supplier Groups” will be used.</ins></p><ins class="diffmod">
+
+</ins><h4 id="warehouse"><ins class="diffmod">Warehouse</ins><a class="no-underline" href="#warehouse" aria-hidden="true"><ins class="diffmod">
+        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
+          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+        </ins></svg><ins class="diffmod">
+      </ins></a></h4><ins class="diffmod">
+
+</ins><p><ins class="diffmod">Warehouses will have to be created in KanivinERP manually and mapped with Centres of Zenoti via Cost Center and Warehouse Mapping table in Zenoti Settings.</ins></p><ins class="diffmod">
+
+</ins><h4 id="cost-center"><ins class="diffmod">Cost Center</ins><a class="no-underline" href="#cost-center" aria-hidden="true"><ins class="diffmod">
+        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
+          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+        </ins></svg><ins class="diffmod">
+      </ins></a></h4><ins class="diffmod">
+
+</ins><p><ins class="diffmod">Cost Centers will have to be created in KanivinERP manually and mapped with Centres of Zenoti via Cost Center and Warehouse Mapping table in Zenoti Settings.</ins></p><ins class="diffmod">
+
+</ins><h4 id="employees"><ins class="diffmod">Employees</ins><a class="no-underline" href="#employees" aria-hidden="true"><ins class="diffmod">
+        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
+          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+        </ins></svg><ins class="diffmod">
+      </ins></a></h4><ins class="diffmod">
+
+</ins><p><ins class="diffmod">Employees will have to be created manually into KanivinERP from Zenoti one time at the start. Then it can be created on a demand basis when syncing sales/purchase records. For Employees fields "Date of Birth", "Date of Joining" are mandatory. Hence when creating employee from sales/purchase records "Date of Joining" will be set as the day the employee is created and "Date of Birth" as 25 years before "Date of Joining". These can be changed later on.</ins></p><ins class="diffmod">
+
+</ins><h4 id="purchase-order"><ins class="diffmod">Purchase Order</ins><a class="no-underline" href="#purchase-order" aria-hidden="true"><ins class="diffmod">
+        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
+          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+        </ins></svg><ins class="diffmod">
+      </ins></a></h4><ins class="diffmod">
+
+</ins><p><ins class="diffmod">Purchase Order will be created in Zenoti and sync into the KanivinERP at the end of the day.
+Supplier and Item will be created on demand basis if new.</ins></p><ins class="diffmod">
+
+</ins><blockquote><ins class="diffmod">
+  </ins><p><ins class="diffmod">Note: Purchase Invoice from the Purchase Order have to be created manually.</ins></p><ins class="diffmod">
+</ins></blockquote><ins class="diffmod">
+
+</ins><h4 id="debit-note"><ins class="diffmod">Debit Note</ins><a class="no-underline" href="#debit-note" aria-hidden="true"><ins class="diffmod">
+        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
+          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+        </ins></svg><ins class="diffmod">
+      </ins></a></h4><ins class="diffmod">
+
+</ins><p><ins class="diffmod">Debit Note will be created automatically and remain in Draft mode based for Return Purchase Order in Zenoti.</ins></p><ins class="diffmod">
+
+</ins><h4 id="sales-invoice"><ins class="diffmod">Sales Invoice</ins><a class="no-underline" href="#sales-invoice" aria-hidden="true"><ins class="diffmod">
+        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
+          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+        </ins></svg><ins class="diffmod">
+      </ins></a></h4><ins class="diffmod">
+
+</ins><p><ins class="diffmod">Invoice will be created automatically via API on the given interval set in Zenoti Settings.
+Customer and Item will be created on demand basis if new.</ins></p><ins class="diffmod">
+
+</ins><h4 id="credit-note"><ins class="diffmod">Credit Note</ins><a class="no-underline" href="#credit-note" aria-hidden="true"><ins class="diffmod">
+        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
+          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+        </ins></svg><ins class="diffmod">
+      </ins></a></h4><ins class="diffmod">
+
+</ins><p><ins class="diffmod">Credit Note will be created automatically based on Return Invoice in Zenoti and will only contain products and not services.</ins></p><ins class="diffmod">
+
+</ins><h4 id="giftprepaid-card-sales"><ins class="diffmod">Gift/Prepaid Card Sales</ins><a class="no-underline" href="#giftprepaid-card-sales" aria-hidden="true"><ins class="diffmod">
+        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
+          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+        </ins></svg><ins class="diffmod">
+      </ins></a></h4><ins class="diffmod">
+
+</ins><p><ins class="diffmod">Each Gift/Prepaid card will be treated as Items.
+Gift/Prepaid Cards will be treated as mode of payment for future invoices where the payment was done using these in Zenoti.</ins></p><ins class="diffmod">
+
+</ins><h4 id="stock-reconciliation"><ins class="diffmod">Stock Reconciliation</ins><a class="no-underline" href="#stock-reconciliation" aria-hidden="true"><ins class="diffmod">
+        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
+          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+        </ins></svg><ins class="diffmod">
+      </ins></a></h4><ins class="diffmod">
+
+</ins><p><ins class="diffmod">At the end of the day, stock will be synced via Stock Reconciliation.</ins></p><ins class="diffmod">
+
+	</ins></div>
+            </div>
+           </main>

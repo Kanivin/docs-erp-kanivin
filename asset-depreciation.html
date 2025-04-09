@@ -1,0 +1,272 @@
+<main><div class="from-markdown markdown ">
+	<div class="alert alert-warning admin-banner hide" role="alert">
+		<div class="d-flex justify-content-between align-items-center">
+			<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+			<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+		</div>
+	</div>
+	<div class="d-flex justify-content-between align-items-center">
+		<h1 class="wiki-title" id="depreciation-calculation">Depreciation Calculation<a class="no-underline" href="#depreciation-calculation" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h1>
+	</div>
+	<div class="wiki-content">
+		<p>The system automatically creates a <code>depreciation schedule</code> based on the <code>Depreciation Method</code>, <code>Total Number of Depreciations</code>, and other related inputs like <code>Available to Use Date</code> in the Asset record. It is also possible to create multiple depreciation schedules for different <code>Finance Books</code>. </p>
+
+<p>You need to tick the <code>Calculate Depreciation</code> checkbox while creating an asset if you want the system to create the depreciation schedule.</p>
+
+<p><img src="/files/depreciation-schedule-img1.png" alt="Depreciation Schedule" class="screenshot"></p>
+
+<h2 id="different-depreciation-methods-in-erpnext">Different Depreciation Methods in ERPNext<a class="no-underline" href="#different-depreciation-methods-in-erpnext" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h2>
+
+<h3 id="straight-line">Straight Line<a class="no-underline" href="#straight-line" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>In this method, the value of an asset is reduced uniformly over its useful life until it reaches its salvage value. </p>
+
+<p><strong>Example</strong>: If the asset is worth 1000 and its salvage value is 500 after 5 years, the straight line method would depreciate the asset by 100 every month/year. This method is useful when there is no particular pattern to how the depreciation takes place over a period of time.</p>
+
+<p><img src="/files/Screenshot%202024-10-17%20at%201.52.17%E2%80%AFAM.png" alt="" class="screenshot"></p>
+
+<p>You can use the <a href="https://docs.erpnext.com/docs/user/manual/en/pro-rata-based-depreciation-for-slm">Depreciate based on daily pro-rata</a> option if you want the depreciation amount to vary depending on the number of days in a calendar period. You can also use the <code>Depreciate based on shifts</code> option to define the number of shifts the asset would run in a period in order to depreciate it accordingly. You need to first define the shift names with their shift factors in the <strong>Asset Shift Factor</strong> doctype (for example: <code>"half": 0.5</code>, <code>"single": 1</code>, <code>"double": 1.5</code>, and <code>"triple": 2</code>) and set a default. Later, if you want to change the shifts of an asset for a particular period, you can do so using the <strong>Asset Shift Allocation</strong> doctype, and the remaining shifts are automatically adjusted.</p>
+
+<h3 id="double-declining-balance">Double Declining Balance<a class="no-underline" href="#double-declining-balance" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>This is also known as the <strong>200% declining balance</strong>. This method is useful when the asset depreciates fast in the beginning and slows down later. </p>
+
+<p><strong>Example</strong>: If the asset is worth 100,000 and its salvage value is 11,000 after 8 years, the depreciation schedule would be:</p>
+
+<p><img src="/files/Screenshot%202024-10-17%20at%201.54.17%E2%80%AFAM.png" alt="" class="screenshot"></p>
+
+<h3 id="written-down-value">Written Down Value<a class="no-underline" href="#written-down-value" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>In this method, you can set a particular rate of depreciation or let the system calculate the rate of depreciation based on the asset’s purchase amount, salvage value, and useful life. The rate of depreciation is applied to the current written down value of the asset to calculate the depreciation amount for each year. This method is useful for assets that have higher depreciation in the initial years.</p>
+
+<p><strong>Example</strong>: If the asset’s purchase amount is 1,000 and the rate of depreciation is 40% over 5 years, the depreciation schedule would be:</p>
+
+<p><img src="/files/Screenshot%202024-10-17%20at%201.41.48%E2%80%AFAM.png" alt="" class="screenshot"></p>
+
+<h3 id="manual">Manual<a class="no-underline" href="#manual" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>In this method, a system-generated depreciation schedule is created for your convenience based on the depreciation details set. You can then edit the schedule dates and depreciation amounts manually for any period according to your needs.</p>
+
+<h2 id="automatic-depreciation-entries">Automatic Depreciation Entries<a class="no-underline" href="#automatic-depreciation-entries" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h2>
+
+<p>You can enable automatic booking of depreciation entries from <strong><a href="https://docs.erpnext.com/docs/user/manual/en/accounts-settings">Accounts Settings</a></strong>. This will create depreciation entries automatically on the scheduled dates. Otherwise, you have to create the Journal Entry manually by clicking the <strong>Make Depreciation Entry</strong> button in the corresponding <strong>Depreciation Schedule</strong> row.</p>
+
+<p><img src="/files/depreciation-entry.png" alt="Journal Entry" class="screenshot"></p>
+
+<h2 id="accounting-entries-on-depreciation">Accounting Entries on Depreciation<a class="no-underline" href="#accounting-entries-on-depreciation" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h2>
+
+<p>In the depreciation entry:</p>
+
+<ul>
+<li><strong>Accumulated Depreciation Account</strong> is credited.</li>
+<li><strong>Depreciation Expense Account</strong> is debited.</li>
+</ul>
+
+<p>The related accounts can be set in the <strong>Asset Category</strong> or <strong>Company</strong>.</p>
+
+<h3 id="asset-value-chart">Asset Value Chart<a class="no-underline" href="#asset-value-chart" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>For better understanding, the net value of the asset on different depreciation dates is shown in a line graph.
+<img src="/files/asset-submit.png" alt="Asset Graph" class="screenshot"></p>
+
+<h2 id="related-topics">Related Topics<a class="no-underline" href="#related-topics" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h2>
+
+<ol>
+<li><strong><a href="https://docs.erpnext.com/docs/user/manual/en/asset-maintenance">Asset Maintenance</a></strong></li>
+<li><strong><a href="https://docs.erpnext.com/docs/user/manual/en/asset-value-adjustment">Asset Value Adjustment</a></strong></li>
+<li><strong><a href="https://docs.erpnext.com/docs/user/manual/en/scrapping-an-asset">Scrapping an Asset</a></strong></li>
+</ol>
+
+	</div>
+	<input value="7do8e55643" class="d-none" name="wiki-page-name">
+	<div class="modal revisions-modal fade" id="revisionsModal" tabindex="-1" role="dialog" aria-labelledby="revisionsModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="d-flex flex-column">
+                    <h5 class="modal-title revision-title" id="depreciation-calculation">Depreciation Calculation<a class="no-underline" href="#depreciation-calculation" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h5>
+                    <span class="small text-muted revision-time">administrator edited 4 months ago</span>
+                </div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="revision-content wiki-content"><del class="diffmod">
+                    </del><ins class="diffmod">
+		</ins><p><ins class="diffmod">The system automatically creates a </ins><code><ins class="diffmod">depreciation schedule</ins></code><ins class="diffmod">&nbsp;based on the </ins><code><ins class="diffmod">Depreciation Method</ins></code><ins class="diffmod">, </ins><code><ins class="diffmod">Total Number of Depreciations</ins></code><ins class="diffmod">, and other related inputs like </ins><code><ins class="diffmod">Available to Use Date</ins></code><ins class="diffmod">&nbsp;in the Asset record. It is also possible to create multiple depreciation schedules for different </ins><code><ins class="diffmod">Finance Books</ins></code><ins class="diffmod">. </ins></p><ins class="diffmod">
+
+</ins><p><ins class="diffmod">You need to tick the </ins><code><ins class="diffmod">Calculate Depreciation</ins></code><ins class="diffmod">&nbsp;checkbox while creating an asset if you want the system to create the depreciation schedule.</ins></p><ins class="diffmod">
+
+</ins><p><ins class="diffmod"><img src="/files/depreciation-schedule-img1.png" alt="Depreciation Schedule" class="screenshot"></ins></p><ins class="diffmod">
+
+</ins><h2 id="different-depreciation-methods-in-erpnext"><ins class="diffmod">Different Depreciation Methods in ERPNext</ins><a class="no-underline" href="#different-depreciation-methods-in-erpnext" aria-hidden="true"><ins class="diffmod">
+        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
+          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+        </ins></svg><ins class="diffmod">
+      </ins></a></h2><ins class="diffmod">
+
+</ins><h3 id="straight-line"><del class="diffmod">No</del><ins class="diffmod">Straight</ins> <del class="diffmod">Revisions</del><ins class="diffmod">Line</ins><a class="no-underline" href="#straight-line" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3><del class="diffmod">
+
+                </del><ins class="diffmod">
+
+</ins><p><ins class="diffmod">In this method, the value of an asset is reduced uniformly over its useful life until it reaches its salvage value. </ins></p><ins class="diffmod">
+
+</ins><p><strong><ins class="diffmod">Example</ins></strong><ins class="diffmod">: If the asset is worth 1000 and its salvage value is 500 after 5 years, the straight line method would depreciate the asset by 100 every month/year. This method is useful when there is no particular pattern to how the depreciation takes place over a period of time.</ins></p><ins class="diffmod">
+
+</ins><p><ins class="diffmod"><img src="/files/Screenshot%202024-10-17%20at%201.52.17%E2%80%AFAM.png" alt="" class="screenshot"></ins></p><ins class="diffmod">
+
+</ins><p><ins class="diffmod">You can use the </ins><a href="https://docs.erpnext.com/docs/user/manual/en/pro-rata-based-depreciation-for-slm"><ins class="diffmod">Depreciate based on daily pro-rata</ins></a><ins class="diffmod">&nbsp;option if you want the depreciation amount to vary depending on the number of days in a calendar period. You can also use the </ins><code><ins class="diffmod">Depreciate based on shifts</ins></code><ins class="diffmod">&nbsp;option to define the number of shifts the asset would run in a period in order to depreciate it accordingly. You need to first define the shift names with their shift factors in the </ins><strong><ins class="mod"><ins class="diffmod">Asset Shift Factor</ins></ins></strong><ins class="diffmod">&nbsp;doctype (for example: </ins><code><ins class="diffmod">"half": 0.5</ins></code><ins class="diffmod">, </ins><code><ins class="diffmod">"single": 1</ins></code><ins class="diffmod">, </ins><code><ins class="diffmod">"double": 1.5</ins></code><ins class="diffmod">, and </ins><code><ins class="diffmod">"triple": 2</ins></code><ins class="diffmod">) and set a default. Later, if you want to change the shifts of an asset for a particular period, you can do so using the </ins><strong><ins class="mod"><ins class="diffmod">Asset Shift Allocation</ins></ins></strong><ins class="diffmod">&nbsp;doctype, and the remaining shifts are automatically adjusted.</ins></p><ins class="diffmod">
+
+</ins><h3 id="double-declining-balance"><ins class="diffmod">Double Declining Balance</ins><a class="no-underline" href="#double-declining-balance" aria-hidden="true"><ins class="diffmod">
+        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
+          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+        </ins></svg><ins class="diffmod">
+      </ins></a></h3><ins class="diffmod">
+
+</ins><p><ins class="diffmod">This is also known as the </ins><strong><ins class="mod"><ins class="diffmod">200% declining balance</ins></ins></strong><ins class="diffmod">. This method is useful when the asset depreciates fast in the beginning and slows down later. </ins></p><ins class="diffmod">
+
+</ins><p><strong><ins class="diffmod">Example</ins></strong><ins class="diffmod">: If the asset is worth 100,000 and its salvage value is 11,000 after 8 years, the depreciation schedule would be:</ins></p><ins class="diffmod">
+
+</ins><p><ins class="diffmod"><img src="/files/Screenshot%202024-10-17%20at%201.54.17%E2%80%AFAM.png" alt="" class="screenshot"></ins></p><ins class="diffmod">
+
+</ins><h3 id="written-down-value"><ins class="diffmod">Written Down Value</ins><a class="no-underline" href="#written-down-value" aria-hidden="true"><ins class="diffmod">
+        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
+          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+        </ins></svg><ins class="diffmod">
+      </ins></a></h3><ins class="diffmod">
+
+</ins><p><ins class="diffmod">In this method, you can set a particular rate of depreciation or let the system calculate the rate of depreciation based on the asset’s purchase amount, salvage value, and useful life. The rate of depreciation is applied to the current written down value of the asset to calculate the depreciation amount for each year. This method is useful for assets that have higher depreciation in the initial years.</ins></p><ins class="diffmod">
+
+</ins><p><strong><ins class="diffmod">Example</ins></strong><ins class="diffmod">: If the asset’s purchase amount is 1,000 and the rate of depreciation is 40% over 5 years, the depreciation schedule would be:</ins></p><ins class="diffmod">
+
+</ins><p><ins class="diffmod"><img src="/files/Screenshot%202024-10-17%20at%201.41.48%E2%80%AFAM.png" alt="" class="screenshot"></ins></p><ins class="diffmod">
+
+</ins><h3 id="manual"><ins class="diffmod">Manual</ins><a class="no-underline" href="#manual" aria-hidden="true"><ins class="diffmod">
+        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
+          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+        </ins></svg><ins class="diffmod">
+      </ins></a></h3><ins class="diffmod">
+
+</ins><p><ins class="diffmod">In this method, a system-generated depreciation schedule is created for your convenience based on the depreciation details set. You can then edit the schedule dates and depreciation amounts manually for any period according to your needs.</ins></p><ins class="diffmod">
+
+</ins><h2 id="automatic-depreciation-entries"><ins class="diffmod">Automatic Depreciation Entries</ins><a class="no-underline" href="#automatic-depreciation-entries" aria-hidden="true"><ins class="diffmod">
+        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
+          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+        </ins></svg><ins class="diffmod">
+      </ins></a></h2><ins class="diffmod">
+
+</ins><p><ins class="diffmod">You can enable automatic booking of depreciation entries from </ins><strong><a href="https://docs.erpnext.com/docs/user/manual/en/accounts-settings"><ins class="mod"><ins class="diffmod">Accounts Settings</ins></ins></a></strong><ins class="diffmod">. This will create depreciation entries automatically on the scheduled dates. Otherwise, you have to create the Journal Entry manually by clicking the </ins><strong><ins class="mod"><ins class="diffmod">Make Depreciation Entry</ins></ins></strong><ins class="diffmod">&nbsp;button in the corresponding </ins><strong><ins class="mod"><ins class="diffmod">Depreciation Schedule</ins></ins></strong><ins class="diffmod">&nbsp;row.</ins></p><ins class="diffmod">
+
+</ins><p><ins class="diffmod"><img src="/files/depreciation-entry.png" alt="Journal Entry" class="screenshot"></ins></p><ins class="diffmod">
+
+</ins><h2 id="accounting-entries-on-depreciation"><ins class="diffmod">Accounting Entries on Depreciation</ins><a class="no-underline" href="#accounting-entries-on-depreciation" aria-hidden="true"><ins class="diffmod">
+        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
+          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+        </ins></svg><ins class="diffmod">
+      </ins></a></h2><ins class="diffmod">
+
+</ins><p><ins class="diffmod">In the depreciation entry:</ins></p><ins class="diffmod">
+
+</ins><ul><ins class="diffmod">
+</ins><li><strong><ins class="diffmod">Accumulated Depreciation Account</ins></strong><ins class="diffmod">&nbsp;is credited.</ins></li><ins class="diffmod">
+</ins><li><strong><ins class="diffmod">Depreciation Expense Account</ins></strong><ins class="diffmod">&nbsp;is debited.</ins></li><ins class="diffmod">
+</ins></ul><ins class="diffmod">
+
+</ins><p><ins class="diffmod">The related accounts can be set in the </ins><strong><ins class="mod"><ins class="diffmod">Asset Category</ins></ins></strong><ins class="diffmod">&nbsp;or </ins><strong><ins class="mod"><ins class="diffmod">Company</ins></ins></strong><ins class="diffmod">.</ins></p><ins class="diffmod">
+
+</ins><h3 id="asset-value-chart"><ins class="diffmod">Asset Value Chart</ins><a class="no-underline" href="#asset-value-chart" aria-hidden="true"><ins class="diffmod">
+        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
+          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+        </ins></svg><ins class="diffmod">
+      </ins></a></h3><ins class="diffmod">
+
+</ins><p><ins class="diffmod">For better understanding, the net value of the asset on different depreciation dates is shown in a line graph.
+<img src="/files/asset-submit.png" alt="Asset Graph" class="screenshot"></ins></p><ins class="diffmod">
+
+</ins><h2 id="related-topics"><ins class="diffmod">Related Topics</ins><a class="no-underline" href="#related-topics" aria-hidden="true"><ins class="diffmod">
+        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
+          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+        </ins></svg><ins class="diffmod">
+      </ins></a></h2><ins class="diffmod">
+
+</ins><ol><ins class="diffmod">
+</ins><li><strong><a href="https://docs.erpnext.com/docs/user/manual/en/asset-maintenance"><ins class="diffmod">Asset Maintenance</ins></a></strong></li><ins class="diffmod">
+</ins><li><strong><a href="https://docs.erpnext.com/docs/user/manual/en/asset-value-adjustment"><ins class="diffmod">Asset Value Adjustment</ins></a></strong></li><ins class="diffmod">
+</ins><li><strong><a href="https://docs.erpnext.com/docs/user/manual/en/scrapping-an-asset"><ins class="diffmod">Scrapping an Asset</ins></a></strong></li><ins class="diffmod">
+</ins></ol><ins class="diffmod">
+
+	</ins></div>
+            </div>
+        </main>

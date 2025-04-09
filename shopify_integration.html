@@ -1,0 +1,482 @@
+<main><div class="from-markdown markdown ">
+	<div class="alert alert-warning admin-banner hide" role="alert">
+		<div class="d-flex justify-content-between align-items-center">
+			<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+			<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+		</div>
+	</div>
+	<div class="d-flex justify-content-between align-items-center">
+		<h1 class="wiki-title" id="shopify-integration">Shopify Integration<a class="no-underline" href="#shopify-integration" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h1>
+	</div>
+	<div class="wiki-content">
+		<p>The Shopify Connector pulls the orders from Shopify and creates Sales Order against them in KanivinERP.</p>
+
+<p>While creating the sales order if Customer or Item is missing in KanivinERP the system will create new Customer/Item by pulling respective details from Shopify.</p>
+
+<h3 id="how-to-setup-connector">How to Setup Connector?<a class="no-underline" href="#how-to-setup-connector" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>Shopify Connector is moved out from KanivinERP and available through a Frappe App on <a href="https://frappecloud.com/marketplace/apps/ecommerce_integrations">Frappe Cloud Marketplace</a></p>
+
+<h4 id="note-to-users-of-old-shopify-connector">Note to users of old Shopify Connector<a class="no-underline" href="#note-to-users-of-old-shopify-connector" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h4>
+
+<p>If you have not setup Shopify Connector on your KanivinERP site you can proceed to next step.</p>
+
+<p>If you are using old Shopify integration that's provided in KanivinERP then you will have to disable the connector before proceeding. After installing the app, it will migrate existing data e.g. unique product_id for items to separate doctype. Once you are done configuring new integration, you can confirm the status of migration by going to "Ecommerce Integration Log" doctype.</p>
+
+<h4 id="app-installation">App Installation<a class="no-underline" href="#app-installation" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h4>
+
+<ul>
+<li>If you are hosting your KanivinERP site on Frappe Cloud, you can quickly install the app by going to your site Dashboard. The app is available in <a href="https://frappecloud.com/marketplace/apps/ecommerce_integrations">Frappe Cloud Marketplace</a></li>
+<li>If your site is hosted by Frappe, please raise a support ticket to get the app installed on your site.</li>
+<li>If you are self hosting KanivinERP you can install the app using Frappe bench. Refer <a href="https://frappeframework.com/docs/user/en/bench/frappe-commands#app-installation">bench documentation</a> for installing Frappe Apps. <code>bench get-app ecommerce_integrations --branch main</code></li>
+</ul>
+
+<p>The repository for app is hosted on GitHub: <a href="http://github.com/frappe/ecommerce_integrations/">http://github.com/frappe/ecommerce_integrations/</a></p>
+
+<h4 id="create-a-custom-app-in-shopify">Create A Custom App in Shopify<a class="no-underline" href="#create-a-custom-app-in-shopify" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h4>
+
+<ol>
+<li><p>Click on Apps in menu bar
+<img src="/files/app_menu.png" alt="Menu Section" class="screenshot"></p></li>
+<li><p>Click on <strong>Develop apps for your store</strong> to create custom app
+<img src="/files/Screenshot 2022-02-16 at 11.36.57 AM.png" alt="new app" class="screenshot"></p></li>
+<li><p>Create New app
+<img src="/files/new_app.png" alt="" class="screenshot"></p></li>
+<li><p>Fill up the details and create app. The each app has its own API key, Password and Shared secret
+<img src="/files/configure_admin_scope.png" alt="" class="screenshot"></p></li>
+<li><p>Allow following permissions to the app.</p>
+
+<ul>
+<li>Draft Orders - Read and Write</li>
+<li>Orders - Read and Write</li>
+<li>Location - Read</li>
+<li>Customers - Read</li>
+<li>Assigned fulfillment orders - Read and Write</li>
+<li>Products - Read and Write</li>
+<li>Product listings - Read and Write</li>
+<li>Inventory - Read and Write</li>
+</ul>
+
+<p>your final admin scopes should look like this:</p>
+
+<p><img src="/files/final_admin_scopes.png" alt="" class="screenshot"></p></li>
+<li><p>Install the app on your site
+<img src="/files/install.png" alt="" class="screenshot"></p></li>
+</ol>
+
+<h4 id="setting-up-shopify-on-erpnext-">Setting Up Shopify on KanivinERP:-<a class="no-underline" href="#setting-up-shopify-on-erpnext-" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h4>
+
+<p>Once you have created a Private App on Shopify, setup App Credentials and other details in Shopify Settings in KanivinERP.</p>
+
+<blockquote>
+  <p>To access Shopify Settings, go to:
+  Awesome search bar &gt; Shopify Setting</p>
+</blockquote>
+
+<ol>
+<li><p>Fill-up Shopify site URL, Access Token and API Secret from Shopify's Private App.
+<img src="/files/tokens.png" alt="" class="screenshot">
+<img src="/files/Screenshot 2022-02-16 at 11.57.34 AM.png" alt="" class="screenshot"></p></li>
+<li><p>Setup Customer, Company and Inventory configurations.</p></li>
+<li><p><img src="/files/main-settings.png" alt="Shopify setting page" class="screenshot"></p></li>
+<li><p>Setup Sync Configurations.
+The system pulls Orders from Shopify and creates Sales Order in KanivinERP. You can configure KanivinERP system to capture payment and fulfilments against orders.
+<img src="/files/series-setting.png" alt="Shopify sync config for orders" class="screenshot"></p></li>
+<li><p>Setup Tax Mapper.
+Prepare tax and shipping charges mapper for each tax and shipping charge you apply in Shopify. You can find name of your taxes from your Shopify Admin page.
+<img src="/files/tax-mapping.png" alt="Shopify tax mapping" class="screenshot">
+<img src="/files/Screenshot 2021-08-25 at 11.02.20 AM.png" alt="Finding Shopify Tax names" class="screenshot"></p></li>
+</ol>
+
+<p>After setting up all the configurations, enable the Shopify sync and save the settings. This will register the API's to Shopify and the system will start Order sync between Shopify and KanivinERP.</p>
+
+<h3 id="syncing-old-orders-from-shopify">Syncing Old Orders From Shopify<a class="no-underline" href="#syncing-old-orders-from-shopify" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>Once you are done with the Shopify configuration and have enabled Shopify Syncing, you also get a provision to sync your old orders from Shopify into KanivinERP. This syncing will happen in background and can take few hours depending on number of orders you have.</p>
+
+<ol>
+<li>Enable "Sync Old Shopify Orders"</li>
+<li>Enter the From and To dates between which the orders need to be synced
+<img src="/files/sync-old-orders.png" alt="shopify sync old orders" class="screenshot"> </li>
+</ol>
+
+<h3 id="inventory-sync">Inventory Sync<a class="no-underline" href="#inventory-sync" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>You can update your inventory with Shopify for items that are synced from Shopify. Inventory sync is done every hour with a scheduled job. Inventory levels of items that have changed since last sync are pushed to Shopify. Inventory levels of KanivinERP warehouses are mapped 1 to 1 with Shopify locations.</p>
+
+<ol>
+<li>To enable inventory sync click on the checkbox, this will show you a table to map KanivinERP warehouse with Shopify Location.</li>
+<li>Select sync frequency. 30 to 60 minutes is recommended frequency.</li>
+<li>Click on "Fetch Shopify Locations" button to populate Shopify locations in the table.</li>
+<li>Link each location with KanivinERP warehouse.</li>
+<li>Save the settings.</li>
+</ol>
+
+<p><img src="/files/inventory-sync.png" alt="Inventory sync with shopify" class="screenshot"></p>
+
+<blockquote>
+  <p>Note: This connector assumes that KanivinERP is main source of information about inventory levels, any changes done to Shopify inventory levels will be overwritten by KanivinERP if KanivinERP inventory levels change.</p>
+</blockquote>
+
+<blockquote>
+  <p>Note: Shopify does not support fractional quantity. If fractional quantity is found in KanivinERP, the inventory level on Shopify will be set by rounding it down to nearest whole number.</p>
+</blockquote>
+
+<h3 id="item-sync">Item Sync<a class="no-underline" href="#item-sync" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>You can enable sync of new KanivinERP items to Shopify by checking "Upload new KanivinERP items to Shopify".</p>
+
+<p>You can also update Shopify item upon updating KanivinERP item.</p>
+
+<p>Following fields are uploaded / updated:</p>
+
+<table class="table table-bordered">
+<thead>
+<tr>
+  <th style="text-align:center;">KanivinERP Field</th>
+  <th style="text-align:center;">Shopify Field</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td style="text-align:center;">Item Name</td>
+  <td style="text-align:center;">Title</td>
+</tr>
+<tr>
+  <td style="text-align:center;">Item Code</td>
+  <td style="text-align:center;">SKU</td>
+</tr>
+<tr>
+  <td style="text-align:center;">Description body</td>
+  <td style="text-align:center;">Description</td>
+</tr>
+<tr>
+  <td style="text-align:center;">Item Group</td>
+  <td style="text-align:center;">Product Type</td>
+</tr>
+<tr>
+  <td style="text-align:center;">Weight per Unit</td>
+  <td style="text-align:center;">Weight</td>
+</tr>
+<tr>
+  <td style="text-align:center;">Weight UOM</td>
+  <td style="text-align:center;">Weight UOM</td>
+</tr>
+</tbody>
+</table>
+
+<p>By default all items are marked as Draft on Shopify and not published in any store.</p>
+
+<p>Purpose of providing this functionality is to sync items with Shopify. It's not possible to map every fields 1-to-1. Upon creation of item on Shopify using this method, it's linked with KanivinERP, this eliminates possibility of duplication. You can modify items on Shopify later to add more details.</p>
+
+<blockquote>
+  <p>Note: This feature is not supported in data import or for variant / template items.</p>
+</blockquote>
+
+<h3 id="cancellation-of-orders">Cancellation of Orders<a class="no-underline" href="#cancellation-of-orders" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>This connector handles various cancellation scenario in following manner:</p>
+
+<ol>
+<li>If Order on Shopify is cancelled and it doesn't have invoice or Delivery note linked against it then KanivinERP Sales Order is cancelled.</li>
+<li>If KanivinERP Sales Order does have any linked document, then status of order on Shopify is added to the respective document. Cancellation and preparation of appropriate documents has to be done by user based on this information.</li>
+</ol>
+
+	</div>
+	<input value="26402cd1gt" class="d-none" name="wiki-page-name">
+	<div class="modal revisions-modal fade" id="revisionsModal" tabindex="-1" role="dialog" aria-labelledby="revisionsModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="d-flex flex-column">
+                    <h5 class="modal-title revision-title" id="shopify-integration">Shopify Integration<a class="no-underline" href="#shopify-integration" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h5>
+                    <span class="small text-muted revision-time">administrator edited 4 months ago</span>
+                </div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="revision-content wiki-content"><del class="diffmod">
+                    </del><ins class="diffmod">
+		</ins><p><ins class="diffmod">The Shopify Connector pulls the orders from Shopify and creates Sales Order against them in KanivinERP.</ins></p><ins class="diffmod">
+
+</ins><p><ins class="diffmod">While creating the sales order if Customer or Item is missing in KanivinERP the system will create new Customer/Item by pulling respective details from Shopify.</ins></p><ins class="diffmod">
+
+</ins><h3 id="how-to-setup-connector"><del class="diffmod">No</del><ins class="diffmod">How</ins> <del class="diffmod">Revisions</del><ins class="diffmod">to Setup Connector?</ins><a class="no-underline" href="#how-to-setup-connector" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3><del class="diffmod">
+
+                </del><ins class="diffmod">
+
+</ins><p><ins class="diffmod">Shopify Connector is moved out from KanivinERP and available through a Frappe App on </ins><a href="https://frappecloud.com/marketplace/apps/ecommerce_integrations"><ins class="diffmod">Frappe Cloud Marketplace</ins></a></p><ins class="diffmod">
+
+</ins><h4 id="note-to-users-of-old-shopify-connector"><ins class="diffmod">Note to users of old Shopify Connector</ins><a class="no-underline" href="#note-to-users-of-old-shopify-connector" aria-hidden="true"><ins class="diffmod">
+        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
+          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+        </ins></svg><ins class="diffmod">
+      </ins></a></h4><ins class="diffmod">
+
+</ins><p><ins class="diffmod">If you have not setup Shopify Connector on your KanivinERP site you can proceed to next step.</ins></p><ins class="diffmod">
+
+</ins><p><ins class="diffmod">If you are using old Shopify integration that's provided in KanivinERP then you will have to disable the connector before proceeding. After installing the app, it will migrate existing data e.g. unique product_id for items to separate doctype. Once you are done configuring new integration, you can confirm the status of migration by going to "Ecommerce Integration Log" doctype.</ins></p><ins class="diffmod">
+
+</ins><h4 id="app-installation"><ins class="diffmod">App Installation</ins><a class="no-underline" href="#app-installation" aria-hidden="true"><ins class="diffmod">
+        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
+          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+        </ins></svg><ins class="diffmod">
+      </ins></a></h4><ins class="diffmod">
+
+</ins><ul><ins class="diffmod">
+</ins><li><ins class="diffmod">If you are hosting your KanivinERP site on Frappe Cloud, you can quickly install the app by going to your site Dashboard. The app is available in </ins><a href="https://frappecloud.com/marketplace/apps/ecommerce_integrations"><ins class="diffmod">Frappe Cloud Marketplace</ins></a></li><ins class="diffmod">
+</ins><li><ins class="diffmod">If your site is hosted by Frappe, please raise a support ticket to get the app installed on your site.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">If you are self hosting KanivinERP you can install the app using Frappe bench. Refer </ins><a href="https://frappeframework.com/docs/user/en/bench/frappe-commands#app-installation"><ins class="diffmod">bench documentation</ins></a><ins class="diffmod">&nbsp;for installing Frappe Apps. </ins><code><ins class="diffmod">bench get-app ecommerce_integrations --branch main</ins></code></li><ins class="diffmod">
+</ins></ul><ins class="diffmod">
+
+</ins><p><ins class="diffmod">The repository for app is hosted on GitHub: </ins><a href="http://github.com/frappe/ecommerce_integrations/"><ins class="diffmod">http://github.com/frappe/ecommerce_integrations/</ins></a></p><ins class="diffmod">
+
+</ins><h4 id="create-a-custom-app-in-shopify"><ins class="diffmod">Create A Custom App in Shopify</ins><a class="no-underline" href="#create-a-custom-app-in-shopify" aria-hidden="true"><ins class="diffmod">
+        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
+          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+        </ins></svg><ins class="diffmod">
+      </ins></a></h4><ins class="diffmod">
+
+</ins><ol><ins class="diffmod">
+</ins><li><p><ins class="diffmod">Click on Apps in menu bar
+<img src="/files/app_menu.png" alt="Menu Section" class="screenshot"></ins></p></li><ins class="diffmod">
+</ins><li><p><ins class="diffmod">Click on </ins><strong><ins class="mod"><ins class="diffmod">Develop apps for your store</ins></ins></strong><ins class="diffmod">&nbsp;to create custom app
+<img src="/files/Screenshot 2022-02-16 at 11.36.57 AM.png" alt="new app" class="screenshot"></ins></p></li><ins class="diffmod">
+</ins><li><p><ins class="diffmod">Create New app
+<img src="/files/new_app.png" alt="" class="screenshot"></ins></p></li><ins class="diffmod">
+</ins><li><p><ins class="diffmod">Fill up the details and create app. The each app has its own API key, Password and Shared secret
+<img src="/files/configure_admin_scope.png" alt="" class="screenshot"></ins></p></li><ins class="diffmod">
+</ins><li><p><ins class="diffmod">Allow following permissions to the app.</ins></p><ins class="diffmod">
+
+</ins><ul><ins class="diffmod">
+</ins><li><ins class="diffmod">Draft Orders - Read and Write</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Orders - Read and Write</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Location - Read</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Customers - Read</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Assigned fulfillment orders - Read and Write</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Products - Read and Write</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Product listings - Read and Write</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Inventory - Read and Write</ins></li><ins class="diffmod">
+</ins></ul><ins class="diffmod">
+
+</ins><p><ins class="diffmod">your final admin scopes should look like this:</ins></p><ins class="diffmod">
+
+</ins><p><ins class="diffmod"><img src="/files/final_admin_scopes.png" alt="" class="screenshot"></ins></p></li><ins class="diffmod">
+</ins><li><p><ins class="diffmod">Install the app on your site
+<img src="/files/install.png" alt="" class="screenshot"></ins></p></li><ins class="diffmod">
+</ins></ol><ins class="diffmod">
+
+</ins><h4 id="setting-up-shopify-on-erpnext-"><ins class="diffmod">Setting Up Shopify on KanivinERP:-</ins><a class="no-underline" href="#setting-up-shopify-on-erpnext-" aria-hidden="true"><ins class="diffmod">
+        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
+          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+        </ins></svg><ins class="diffmod">
+      </ins></a></h4><ins class="diffmod">
+
+</ins><p><ins class="diffmod">Once you have created a Private App on Shopify, setup App Credentials and other details in Shopify Settings in KanivinERP.</ins></p><ins class="diffmod">
+
+</ins><blockquote><ins class="diffmod">
+  </ins><p><ins class="diffmod">To access Shopify Settings, go to:
+  Awesome search bar &gt; Shopify Setting</ins></p><ins class="diffmod">
+</ins></blockquote><ins class="diffmod">
+
+</ins><ol><ins class="diffmod">
+</ins><li><p><ins class="diffmod">Fill-up Shopify site URL, Access Token and API Secret from Shopify's Private App.
+<img src="/files/tokens.png" alt="" class="screenshot">
+<img src="/files/Screenshot 2022-02-16 at 11.57.34 AM.png" alt="" class="screenshot"></ins></p></li><ins class="diffmod">
+</ins><li><p><ins class="diffmod">Setup Customer, Company and Inventory configurations.</ins></p></li><ins class="diffmod">
+</ins><li><p><ins class="diffmod"><img src="/files/main-settings.png" alt="Shopify setting page" class="screenshot"></ins></p></li><ins class="diffmod">
+</ins><li><p><ins class="diffmod">Setup Sync Configurations.
+The system pulls Orders from Shopify and creates Sales Order in KanivinERP. You can configure KanivinERP system to capture payment and fulfilments against orders.
+<img src="/files/series-setting.png" alt="Shopify sync config for orders" class="screenshot"></ins></p></li><ins class="diffmod">
+</ins><li><p><ins class="diffmod">Setup Tax Mapper.
+Prepare tax and shipping charges mapper for each tax and shipping charge you apply in Shopify. You can find name of your taxes from your Shopify Admin page.
+<img src="/files/tax-mapping.png" alt="Shopify tax mapping" class="screenshot">
+<img src="/files/Screenshot 2021-08-25 at 11.02.20 AM.png" alt="Finding Shopify Tax names" class="screenshot"></ins></p></li><ins class="diffmod">
+</ins></ol><ins class="diffmod">
+
+</ins><p><ins class="diffmod">After setting up all the configurations, enable the Shopify sync and save the settings. This will register the API's to Shopify and the system will start Order sync between Shopify and KanivinERP.</ins></p><ins class="diffmod">
+
+</ins><h3 id="syncing-old-orders-from-shopify"><ins class="diffmod">Syncing Old Orders From Shopify</ins><a class="no-underline" href="#syncing-old-orders-from-shopify" aria-hidden="true"><ins class="diffmod">
+        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
+          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+        </ins></svg><ins class="diffmod">
+      </ins></a></h3><ins class="diffmod">
+
+</ins><p><ins class="diffmod">Once you are done with the Shopify configuration and have enabled Shopify Syncing, you also get a provision to sync your old orders from Shopify into KanivinERP. This syncing will happen in background and can take few hours depending on number of orders you have.</ins></p><ins class="diffmod">
+
+</ins><ol><ins class="diffmod">
+</ins><li><ins class="diffmod">Enable "Sync Old Shopify Orders"</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Enter the From and To dates between which the orders need to be synced
+<img src="/files/sync-old-orders.png" alt="shopify sync old orders" class="screenshot"> </ins></li><ins class="diffmod">
+</ins></ol><ins class="diffmod">
+
+</ins><h3 id="inventory-sync"><ins class="diffmod">Inventory Sync</ins><a class="no-underline" href="#inventory-sync" aria-hidden="true"><ins class="diffmod">
+        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
+          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+        </ins></svg><ins class="diffmod">
+      </ins></a></h3><ins class="diffmod">
+
+</ins><p><ins class="diffmod">You can update your inventory with Shopify for items that are synced from Shopify. Inventory sync is done every hour with a scheduled job. Inventory levels of items that have changed since last sync are pushed to Shopify. Inventory levels of KanivinERP warehouses are mapped 1 to 1 with Shopify locations.</ins></p><ins class="diffmod">
+
+</ins><ol><ins class="diffmod">
+</ins><li><ins class="diffmod">To enable inventory sync click on the checkbox, this will show you a table to map KanivinERP warehouse with Shopify Location.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Select sync frequency. 30 to 60 minutes is recommended frequency.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Click on "Fetch Shopify Locations" button to populate Shopify locations in the table.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Link each location with KanivinERP warehouse.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Save the settings.</ins></li><ins class="diffmod">
+</ins></ol><ins class="diffmod">
+
+</ins><p><ins class="diffmod"><img src="/files/inventory-sync.png" alt="Inventory sync with shopify" class="screenshot"></ins></p><ins class="diffmod">
+
+</ins><blockquote><ins class="diffmod">
+  </ins><p><ins class="diffmod">Note: This connector assumes that KanivinERP is main source of information about inventory levels, any changes done to Shopify inventory levels will be overwritten by KanivinERP if KanivinERP inventory levels change.</ins></p><ins class="diffmod">
+</ins></blockquote><ins class="diffmod">
+
+</ins><blockquote><ins class="diffmod">
+  </ins><p><ins class="diffmod">Note: Shopify does not support fractional quantity. If fractional quantity is found in KanivinERP, the inventory level on Shopify will be set by rounding it down to nearest whole number.</ins></p><ins class="diffmod">
+</ins></blockquote><ins class="diffmod">
+
+</ins><h3 id="item-sync"><ins class="diffmod">Item Sync</ins><a class="no-underline" href="#item-sync" aria-hidden="true"><ins class="diffmod">
+        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
+          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+        </ins></svg><ins class="diffmod">
+      </ins></a></h3><ins class="diffmod">
+
+</ins><p><ins class="diffmod">You can enable sync of new KanivinERP items to Shopify by checking "Upload new KanivinERP items to Shopify".</ins></p><ins class="diffmod">
+
+</ins><p><ins class="diffmod">You can also update Shopify item upon updating KanivinERP item.</ins></p><ins class="diffmod">
+
+</ins><p><ins class="diffmod">Following fields are uploaded / updated:</ins></p><ins class="diffmod">
+
+</ins><ins class="diffmod">
+</ins><ins class="diffmod">
+</ins><ins class="diffmod">
+  </ins><ins class="diffmod">
+  </ins><ins class="diffmod">
+</ins><ins class="diffmod">
+</ins><ins class="diffmod">
+</ins><ins class="diffmod">
+</ins><ins class="diffmod">
+  </ins><ins class="diffmod">
+  </ins><ins class="diffmod">
+</ins><ins class="diffmod">
+</ins><ins class="diffmod">
+  </ins><ins class="diffmod">
+  </ins><ins class="diffmod">
+</ins><ins class="diffmod">
+</ins><ins class="diffmod">
+  </ins><ins class="diffmod">
+  </ins><ins class="diffmod">
+</ins><ins class="diffmod">
+</ins><ins class="diffmod">
+  </ins><ins class="diffmod">
+  </ins><ins class="diffmod">
+</ins><ins class="diffmod">
+</ins><ins class="diffmod">
+  </ins><ins class="diffmod">
+  </ins><ins class="diffmod">
+</ins><ins class="diffmod">
+</ins><ins class="diffmod">
+  </ins><ins class="diffmod">
+  </ins><ins class="diffmod">
+</ins><ins class="diffmod">
+</ins><ins class="diffmod">
+</ins><table class="table table-bordered"><thead><tr><th style="text-align:center;"><ins class="diffmod">KanivinERP Field</ins></th><th style="text-align:center;"><ins class="diffmod">Shopify Field</ins></th></tr></thead><tbody><tr><td style="text-align:center;"><ins class="diffmod">Item Name</ins></td><td style="text-align:center;"><ins class="diffmod">Title</ins></td></tr><tr><td style="text-align:center;"><ins class="diffmod">Item Code</ins></td><td style="text-align:center;"><ins class="diffmod">SKU</ins></td></tr><tr><td style="text-align:center;"><ins class="diffmod">Description body</ins></td><td style="text-align:center;"><ins class="diffmod">Description</ins></td></tr><tr><td style="text-align:center;"><ins class="diffmod">Item Group</ins></td><td style="text-align:center;"><ins class="diffmod">Product Type</ins></td></tr><tr><td style="text-align:center;"><ins class="diffmod">Weight per Unit</ins></td><td style="text-align:center;"><ins class="diffmod">Weight</ins></td></tr><tr><td style="text-align:center;"><ins class="diffmod">Weight UOM</ins></td><td style="text-align:center;"><ins class="diffmod">Weight UOM</ins></td></tr></tbody></table><ins class="diffmod">
+
+</ins><p><ins class="diffmod">By default all items are marked as Draft on Shopify and not published in any store.</ins></p><ins class="diffmod">
+
+</ins><p><ins class="diffmod">Purpose of providing this functionality is to sync items with Shopify. It's not possible to map every fields 1-to-1. Upon creation of item on Shopify using this method, it's linked with KanivinERP, this eliminates possibility of duplication. You can modify items on Shopify later to add more details.</ins></p><ins class="diffmod">
+
+</ins><blockquote><ins class="diffmod">
+  </ins><p><ins class="diffmod">Note: This feature is not supported in data import or for variant / template items.</ins></p><ins class="diffmod">
+</ins></blockquote><ins class="diffmod">
+
+</ins><h3 id="cancellation-of-orders"><ins class="diffmod">Cancellation of Orders</ins><a class="no-underline" href="#cancellation-of-orders" aria-hidden="true"><ins class="diffmod">
+        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
+          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+        </ins></svg><ins class="diffmod">
+      </ins></a></h3><ins class="diffmod">
+
+</ins><p><ins class="diffmod">This connector handles various cancellation scenario in following manner:</ins></p><ins class="diffmod">
+
+</ins><ol><ins class="diffmod">
+</ins><li><ins class="diffmod">If Order on Shopify is cancelled and it doesn't have invoice or Delivery note linked against it then KanivinERP Sales Order is cancelled.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">If KanivinERP Sales Order does have any linked document, then status of order on Shopify is added to the respective document. Cancellation and preparation of appropriate documents has to be done by user based on this information.</ins></li><ins class="diffmod">
+</ins></ol><ins class="diffmod">
+
+	</ins></div>
+            </div>
+           </main>

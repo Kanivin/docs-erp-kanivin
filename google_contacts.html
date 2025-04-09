@@ -1,0 +1,152 @@
+<main><div class="from-markdown markdown ">
+	<div class="alert alert-warning admin-banner hide" role="alert">
+		<div class="d-flex justify-content-between align-items-center">
+			<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+			<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+		</div>
+	</div>
+	<div class="d-flex justify-content-between align-items-center">
+		<h1 class="wiki-title" id="google-contacts-integration">Google Contacts Integration
+<a class="no-underline" href="#google-contacts-integration" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h1>
+	</div>
+	<div class="wiki-content">
+		<p>KanivinERP provides an integration with Google Contacts in order for all users to synchronize their Google Contacts with KanivinERP.</p>
+
+<h2 id="how-to-set-up-google-contacts-integration">How to set up Google Contacts Integration<a class="no-underline" href="#how-to-set-up-google-contacts-integration" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h2>
+
+<p>In order to allow a synchronization with Google Contacts, you need to authorize KanivinERP to get Contacts data from Google. Google Contacts Integration is set up with the following steps:</p>
+
+<ul>
+<li>Create OAuth 2.0 Credentials via <a href="/erpnext/v13/user/manual/en/erpnext_integration/google_settings">Google Settings</a>.</li>
+<li>In the Google Contacts list, click on New. Enter the Google Account Email you want to sync and then save it. Now click on <strong>Authorize Contacts Access</strong> to authorize KanivinERP to get Contacts data from Google.</li>
+</ul>
+
+<h2 id="how-to-use-google-contacts-integration">How to use Google Contacts Integration<a class="no-underline" href="#how-to-use-google-contacts-integration" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h2>
+
+<h3 id="creating-a-contacts-in-erpnext">Creating a Contacts in KanivinERP<a class="no-underline" href="#creating-a-contacts-in-erpnext" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<ul>
+<li>Once Google Contacts Integration is succesful, all the contacts created in KanivinERP will be synced if <code>Push to Google Contacts</code> is checked.</li>
+</ul>
+
+<p>Creating a Contact in KanivinERP:
+<img src="/files/google_contacts_create_contact.gif" alt="" class="screenshot"></p>
+
+<p>It will be shown in Google Contacts:
+<img src="/files/google_contacts_create_contact_!.gif" alt="" class="screenshot"></p>
+
+<h3 id="syncing-contacts-from-google-contacts">Syncing Contacts from Google Contacts<a class="no-underline" href="#syncing-contacts-from-google-contacts" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<ul>
+<li>Once Google Contacts Integration is succesful, all the contacts in Google Contacts will be synced if <code>Pull from Google Contacts</code> is checked.
+<img src="/files/google_contacts_contact_sync.gif" alt="" class="screenshot"></li>
+</ul>
+
+	</div>
+	<input value="vhcpb3rvq1" class="d-none" name="wiki-page-name">
+	<div class="modal revisions-modal fade" id="revisionsModal" tabindex="-1" role="dialog" aria-labelledby="revisionsModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="d-flex flex-column">
+                    <h5 class="modal-title revision-title" id="google-contacts-integration">Google Contacts Integration
+<a class="no-underline" href="#google-contacts-integration" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h5>
+                    <span class="small text-muted revision-time">administrator edited 4 months ago</span>
+                </div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="revision-content wiki-content"><del class="diffmod">
+                    </del><ins class="diffmod">
+		</ins><p><ins class="diffmod">KanivinERP provides an integration with Google Contacts in order for all users to synchronize their Google Contacts with KanivinERP.</ins></p><ins class="diffmod">
+
+</ins><h2 id="how-to-set-up-google-contacts-integration"><ins class="diffmod">How to set up Google Contacts Integration</ins><a class="no-underline" href="#how-to-set-up-google-contacts-integration" aria-hidden="true"><ins class="diffmod">
+        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
+          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+        </ins></svg><ins class="diffmod">
+      </ins></a></h2><ins class="diffmod">
+
+</ins><p><ins class="diffmod">In order to allow a synchronization with Google Contacts, you need to authorize KanivinERP to get Contacts data from Google. Google Contacts Integration is set up with the following steps:</ins></p><ins class="diffmod">
+
+</ins><ul><ins class="diffmod">
+</ins><li><ins class="diffmod">Create OAuth 2.0 Credentials via </ins><a href="/erpnext/v13/user/manual/en/erpnext_integration/google_settings"><ins class="diffmod">Google Settings</ins></a><ins class="diffmod">.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">In the Google Contacts list, click on New. Enter the Google Account Email you want to sync and then save it. Now click on </ins><strong><ins class="mod"><ins class="diffmod">Authorize Contacts Access</ins></ins></strong><ins class="diffmod">&nbsp;to authorize KanivinERP to get Contacts data from Google.</ins></li><ins class="diffmod">
+</ins></ul><ins class="diffmod">
+
+</ins><h2 id="how-to-use-google-contacts-integration"><ins class="diffmod">How to use Google Contacts Integration</ins><a class="no-underline" href="#how-to-use-google-contacts-integration" aria-hidden="true"><ins class="diffmod">
+        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
+          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+        </ins></svg><ins class="diffmod">
+      </ins></a></h2><ins class="diffmod">
+
+</ins><h3 id="creating-a-contacts-in-erpnext"><del class="diffmod">No</del><ins class="diffmod">Creating</ins> <del class="diffmod">Revisions</del><ins class="diffmod">a Contacts in KanivinERP</ins><a class="no-underline" href="#creating-a-contacts-in-erpnext" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3><del class="diffmod">
+
+                </del><ins class="diffmod">
+
+</ins><ul><ins class="diffmod">
+</ins><li><ins class="diffmod">Once Google Contacts Integration is succesful, all the contacts created in KanivinERP will be synced if </ins><code><ins class="diffmod">Push to Google Contacts</ins></code><ins class="diffmod">&nbsp;is checked.</ins></li><ins class="diffmod">
+</ins></ul><ins class="diffmod">
+
+</ins><p><ins class="diffmod">Creating a Contact in KanivinERP:
+<img src="/files/google_contacts_create_contact.gif" alt="" class="screenshot"></ins></p><ins class="diffmod">
+
+</ins><p><ins class="diffmod">It will be shown in Google Contacts:
+<img src="/files/google_contacts_create_contact_!.gif" alt="" class="screenshot"></ins></p><ins class="diffmod">
+
+</ins><h3 id="syncing-contacts-from-google-contacts"><ins class="diffmod">Syncing Contacts from Google Contacts</ins><a class="no-underline" href="#syncing-contacts-from-google-contacts" aria-hidden="true"><ins class="diffmod">
+        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
+          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+        </ins></svg><ins class="diffmod">
+      </ins></a></h3><ins class="diffmod">
+
+</ins><ul><ins class="diffmod">
+</ins><li><ins class="diffmod">Once Google Contacts Integration is succesful, all the contacts in Google Contacts will be synced if </ins><code><ins class="diffmod">Pull from Google Contacts</ins></code><ins class="diffmod">&nbsp;is checked.
+<img src="/files/google_contacts_contact_sync.gif" alt="" class="screenshot"></ins></li><ins class="diffmod">
+</ins></ul><ins class="diffmod">
+
+	</ins></div>
+            </div>
+        </main>

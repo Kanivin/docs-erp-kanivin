@@ -1,0 +1,310 @@
+<main><div class="from-markdown markdown ">
+	<div class="alert alert-warning admin-banner hide" role="alert">
+		<div class="d-flex justify-content-between align-items-center">
+			<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+			<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+		</div>
+	</div>
+	<div class="d-flex justify-content-between align-items-center">
+		<h1 class="wiki-title" id="setting-up-ldap">Setting up LDAP
+<a class="no-underline active" href="#setting-up-ldap" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h1>
+	</div>
+	<div class="wiki-content">
+		<p>Lightweight Directory Access Protocol (LDAP) is a centralized access control system used by many small and medium-scale organizations.</p>
+
+<p>By settings up LDAP service, you able to login to KanivinERP account by using LDAP credentials.</p>
+
+<h2 id="1-prerequisites">1. Prerequisites<a class="no-underline active" href="#1-prerequisites" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h2>
+
+<p>To use LDAP, you will first need to install the <code>ldap3</code> Python module. To do this, open a terminal session on your server that hosts the KanivinERP instance. Go to the <code>frappe-bench</code> directory.
+run the command: <code>./env/pip install ldap3</code></p>
+
+<p>You are now ready to enable the LDAP service in KanivinERP.</p>
+
+<h2 id="2-setting-up-ldap">2. Setting up LDAP<a class="no-underline active" href="#2-setting-up-ldap" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h2>
+
+<p>To setup LDAP, go to</p>
+
+<blockquote>
+  <p>Home &gt; Integrations &gt; LDAP Settings</p>
+</blockquote>
+
+<p>Many parameters are mandatory to allow KanivinERP to connect to LDAP. They are:</p>
+
+<ul>
+<li><p>LDAP Server URL: This is the URL to your LDAP server. Must be in the form of <code>ldap://yourserver:port</code> or <code>ldaps://yourserver:port</code></p></li>
+<li><p>Base Distinguished Name (DN): This is the distinguished name of the user that has permissions to look up user details on your LDAP server. This should be a user that only has read-only permissions on your LDAP Server.</p></li>
+<li><p>Password for Base DN: This is the password for the user above, that is used to look up user details on your LDAP server.</p></li>
+<li><p>Organization Unit of Users: This is the DN of the Organizational Unit that all users in your LDAP server must be part of to be able to log into KanivinERP.</p></li>
+<li><p>Default Role on Creation: When the user is created in KanivinERP, they will be assigned with this default role, the first time they log in.</p></li>
+<li><p>LDAP Search String: This field allows KanivinERP to match the user/email entered in the KanivinERP login screen, with the LDAP Server. For example, you could use email address, or username depending on your preference.</p>
+
+<p>It must be entered in the format: <code>LDAPFIELD={0}</code></p>
+
+<p>Active Directory username example: <code>sAMAccountName={0}</code></p>
+
+<p>Open LDAP username example: <code>uid={0}</code></p></li>
+<li><p>LDAP Email Field: Specifies the LDAP field that contains the email address of the user.</p>
+
+<p>Active Directory and Open LDAP example: <code>mail</code></p></li>
+<li><p>LDAP Username Field: Specifies the LDAP field that contains the username of the user.</p>
+
+<p>Active Directory example : <code>sAMAccountName</code></p>
+
+<p>Open LDAP example: <code>uid</code></p></li>
+<li><p>LDAP First Name Field: Specifies the LDAP field that contains the first name of the user.</p>
+
+<p>Active Directory example: <code>givenName</code></p>
+
+<p>Open LDAP example: <code>sn</code></p></li>
+</ul>
+
+<p>There are many other non-mandatory fields that you can use to map your LDAP user fields to the KanivinERP user fields. They are:</p>
+
+<ul>
+<li>Middle Name</li>
+<li>Phone</li>
+<li>Mobile</li>
+</ul>
+
+<p>Once your settings are correct, you can click the <code>Enabled</code> checkbox at the top. When attempting to enable LDAP, KanivinERP will try and connect to the LDAP server to ensure the settings are correct. If it fails, you will not be able to enable LDAP and will receive an error message.</p>
+
+<p>The error message will indicate the issue that needs to be resolved to continue.</p>
+
+<p>After setting enabling LDAP, on the login screen, the system enables <strong>Login Via LDAP</strong> option.</p>
+
+<h3 id="21-ldap-security">2.1 LDAP Security<a class="no-underline active" href="#21-ldap-security" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>In the LDAP Security section, You have many options to connect securely to your LDAP server.</p>
+
+<ul>
+<li><h5 id="ssltls-mode">SSL/TLS Mode<a class="no-underline active" href="#ssltls-mode" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h5>
+
+<p>Specifies whether you want to start a TLS session on initial connection to the LDAP server.</p></li>
+<li><h5 id="require-trusted-certificate">Require Trusted Certificate<a class="no-underline active" href="#require-trusted-certificate" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h5>
+
+<p>Specifies if you require a trusted certificate to connect to the LDAP server</p>
+
+<p>If you are specifying a trusted certificate, you will need to specify the paths to your certificate files. These files are to be placed on your KanivinERP server, and the following fields should be an absolute path to the files on your server.
+The certificate fields are:</p></li>
+<li><p>Path to private Key File</p></li>
+<li><p>Path to Server Certificate</p></li>
+<li><p>Path to CA Certs File</p></li>
+</ul>
+
+<h3 id="22-ldap-group-mappings">2.2 LDAP Group Mappings<a class="no-underline active" href="#22-ldap-group-mappings" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>KanivinERP also allows you to automatically map multiple LDAP groups to the appropriate KanivinERP roles.
+For example, you may want all of your Accounting employees, to automatically have the Accounts User Role.</p>
+
+<p>Ensure that you fill out the LDAP Group Field to allow this. This is the LDAP field that is found on a user object in LDAP, that has all of the groups the user is a member of.</p>
+
+<p>For Active Directory and Open LDAP, this field should be set to <code>memberOf</code>.</p>
+
+<p>Open LDAP may need this field to be enabled on your LDAP server. Please see examples on the internet for more details.</p>
+
+<blockquote>
+  <p>Note that all KanivinERP roles will be checked each time a user logs on and will be removed or added to the user's permissions.</p>
+</blockquote>
+
+<p>In the LDAP Settings area, there are two dropdowns.
+1. SSL/TLS Mode - set this to <strong>StartTLS</strong> to connect to your LDAP server using StartTLS. If your LDAP server does not support StartTLS, setting this to StartTLS will result in an error <code>StartTLS is not supported</code>. Check the configuration on your LDAP server if you receive this error.
+2. Require Trusted Certificate - if you change this to <strong>Yes</strong> then the certificate provided by the LDAP server must be trusted by the Frappe/KanivinERP server. If you would rather use StartTLS with a self-signed (untrusted) certificate, set this to <strong>No</strong>. If you do not use StartTLS, this setting is ignored.</p>
+
+	</div>
+	<input value="2mrgo7himj" class="d-none" name="wiki-page-name">
+	<div class="modal revisions-modal fade" id="revisionsModal" tabindex="-1" role="dialog" aria-labelledby="revisionsModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="d-flex flex-column">
+                    <h5 class="modal-title revision-title" id="setting-up-ldap">Setting up LDAP
+<a class="no-underline active" href="#setting-up-ldap" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h5>
+                    <span class="small text-muted revision-time">administrator edited 4 months ago</span>
+                </div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="revision-content wiki-content"><del class="diffmod">
+                    </del><ins class="diffmod">
+		</ins><p><ins class="diffmod">Lightweight Directory Access Protocol (LDAP) is a centralized access control system used by many small and medium-scale organizations.</ins></p><ins class="diffmod">
+
+</ins><p><ins class="diffmod">By settings up LDAP service, you able to login to KanivinERP account by using LDAP credentials.</ins></p><ins class="diffmod">
+
+</ins><h2 id="1-prerequisites"><ins class="diffmod">1. Prerequisites</ins><a class="no-underline active" href="#1-prerequisites" aria-hidden="true"><ins class="diffmod">
+        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
+          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+        </ins></svg><ins class="diffmod">
+      </ins></a></h2><ins class="diffmod">
+
+</ins><p><ins class="diffmod">To use LDAP, you will first need to install the </ins><code><ins class="diffmod">ldap3</ins></code><ins class="diffmod">&nbsp;Python module. To do this, open a terminal session on your server that hosts the KanivinERP instance. Go to the </ins><code><ins class="diffmod">frappe-bench</ins></code><ins class="diffmod">&nbsp;directory.
+run the command: </ins><code><ins class="diffmod">./env/pip install ldap3</ins></code></p><ins class="diffmod">
+
+</ins><p><ins class="diffmod">You are now ready to enable the LDAP service in KanivinERP.</ins></p><ins class="diffmod">
+
+</ins><h2 id="2-setting-up-ldap"><ins class="diffmod">2. Setting up LDAP</ins><a class="no-underline active" href="#2-setting-up-ldap" aria-hidden="true"><ins class="diffmod">
+        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
+          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+        </ins></svg><ins class="diffmod">
+      </ins></a></h2><ins class="diffmod">
+
+</ins><p><ins class="diffmod">To setup LDAP, go to</ins></p><ins class="diffmod">
+
+</ins><blockquote><ins class="diffmod">
+  </ins><p><ins class="diffmod">Home &gt; Integrations &gt; LDAP Settings</ins></p><ins class="diffmod">
+</ins></blockquote><ins class="diffmod">
+
+</ins><p><ins class="diffmod">Many parameters are mandatory to allow KanivinERP to connect to LDAP. They are:</ins></p><ins class="diffmod">
+
+</ins><ul><ins class="diffmod">
+</ins><li><p><ins class="diffmod">LDAP Server URL: This is the URL to your LDAP server. Must be in the form of </ins><code><ins class="diffmod">ldap://yourserver:port</ins></code><ins class="diffmod">&nbsp;or </ins><code><ins class="diffmod">ldaps://yourserver:port</ins></code></p></li><ins class="diffmod">
+</ins><li><p><ins class="diffmod">Base Distinguished Name (DN): This is the distinguished name of the user that has permissions to look up user details on your LDAP server. This should be a user that only has read-only permissions on your LDAP Server.</ins></p></li><ins class="diffmod">
+</ins><li><p><ins class="diffmod">Password for Base DN: This is the password for the user above, that is used to look up user details on your LDAP server.</ins></p></li><ins class="diffmod">
+</ins><li><p><ins class="diffmod">Organization Unit of Users: This is the DN of the Organizational Unit that all users in your LDAP server must be part of to be able to log into KanivinERP.</ins></p></li><ins class="diffmod">
+</ins><li><p><ins class="diffmod">Default Role on Creation: When the user is created in KanivinERP, they will be assigned with this default role, the first time they log in.</ins></p></li><ins class="diffmod">
+</ins><li><p><ins class="diffmod">LDAP Search String: This field allows KanivinERP to match the user/email entered in the KanivinERP login screen, with the LDAP Server. For example, you could use email address, or username depending on your preference.</ins></p><ins class="diffmod">
+
+</ins><p><ins class="diffmod">It must be entered in the format: </ins><code><ins class="diffmod">LDAPFIELD={0}</ins></code></p><ins class="diffmod">
+
+</ins><p><ins class="diffmod">Active Directory username example: </ins><code><ins class="diffmod">sAMAccountName={0}</ins></code></p><ins class="diffmod">
+
+</ins><p><ins class="diffmod">Open LDAP username example: </ins><code><ins class="diffmod">uid={0}</ins></code></p></li><ins class="diffmod">
+</ins><li><p><ins class="diffmod">LDAP Email Field: Specifies the LDAP field that contains the email address of the user.</ins></p><ins class="diffmod">
+
+</ins><p><ins class="diffmod">Active Directory and Open LDAP example: </ins><code><ins class="diffmod">mail</ins></code></p></li><ins class="diffmod">
+</ins><li><p><ins class="diffmod">LDAP Username Field: Specifies the LDAP field that contains the username of the user.</ins></p><ins class="diffmod">
+
+</ins><p><ins class="diffmod">Active Directory example : </ins><code><ins class="diffmod">sAMAccountName</ins></code></p><ins class="diffmod">
+
+</ins><p><ins class="diffmod">Open LDAP example: </ins><code><ins class="diffmod">uid</ins></code></p></li><ins class="diffmod">
+</ins><li><p><ins class="diffmod">LDAP First Name Field: Specifies the LDAP field that contains the first name of the user.</ins></p><ins class="diffmod">
+
+</ins><p><ins class="diffmod">Active Directory example: </ins><code><ins class="diffmod">givenName</ins></code></p><ins class="diffmod">
+
+</ins><p><ins class="diffmod">Open LDAP example: </ins><code><ins class="diffmod">sn</ins></code></p></li><ins class="diffmod">
+</ins></ul><ins class="diffmod">
+
+</ins><p><ins class="diffmod">There are many other non-mandatory fields that you can use to map your LDAP user fields to the KanivinERP user fields. They are:</ins></p><ins class="diffmod">
+
+</ins><ul><ins class="diffmod">
+</ins><li><ins class="diffmod">Middle Name</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Phone</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Mobile</ins></li><ins class="diffmod">
+</ins></ul><ins class="diffmod">
+
+</ins><p><ins class="diffmod">Once your settings are correct, you can click the </ins><code><ins class="diffmod">Enabled</ins></code><ins class="diffmod">&nbsp;checkbox at the top. When attempting to enable LDAP, KanivinERP will try and connect to the LDAP server to ensure the settings are correct. If it fails, you will not be able to enable LDAP and will receive an error message.</ins></p><ins class="diffmod">
+
+</ins><p><ins class="diffmod">The error message will indicate the issue that needs to be resolved to continue.</ins></p><ins class="diffmod">
+
+</ins><p><ins class="diffmod">After setting enabling LDAP, on the login screen, the system enables </ins><strong><ins class="mod"><ins class="diffmod">Login Via LDAP</ins></ins></strong><ins class="diffmod">&nbsp;option.</ins></p><ins class="diffmod">
+
+</ins><h3 id="21-ldap-security"><del class="diffmod">No</del><ins class="diffmod">2.1</ins> <del class="diffmod">Revisions</del><ins class="diffmod">LDAP Security</ins><a class="no-underline active" href="#21-ldap-security" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3><del class="diffmod">
+
+                </del><ins class="diffmod">
+
+</ins><p><ins class="diffmod">In the LDAP Security section, You have many options to connect securely to your LDAP server.</ins></p><ins class="diffmod">
+
+</ins><ul><ins class="diffmod">
+</ins><li><h5 id="ssltls-mode"><ins class="diffmod">SSL/TLS Mode</ins><a class="no-underline active" href="#ssltls-mode" aria-hidden="true"><ins class="diffmod">
+        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
+          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+        </ins></svg><ins class="diffmod">
+      </ins></a></h5><ins class="diffmod">
+
+</ins><p><ins class="diffmod">Specifies whether you want to start a TLS session on initial connection to the LDAP server.</ins></p></li><ins class="diffmod">
+</ins><li><h5 id="require-trusted-certificate"><ins class="diffmod">Require Trusted Certificate</ins><a class="no-underline active" href="#require-trusted-certificate" aria-hidden="true"><ins class="diffmod">
+        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
+          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+        </ins></svg><ins class="diffmod">
+      </ins></a></h5><ins class="diffmod">
+
+</ins><p><ins class="diffmod">Specifies if you require a trusted certificate to connect to the LDAP server</ins></p><ins class="diffmod">
+
+</ins><p><ins class="diffmod">If you are specifying a trusted certificate, you will need to specify the paths to your certificate files. These files are to be placed on your KanivinERP server, and the following fields should be an absolute path to the files on your server.
+The certificate fields are:</ins></p></li><ins class="diffmod">
+</ins><li><p><ins class="diffmod">Path to private Key File</ins></p></li><ins class="diffmod">
+</ins><li><p><ins class="diffmod">Path to Server Certificate</ins></p></li><ins class="diffmod">
+</ins><li><p><ins class="diffmod">Path to CA Certs File</ins></p></li><ins class="diffmod">
+</ins></ul><ins class="diffmod">
+
+</ins><h3 id="22-ldap-group-mappings"><ins class="diffmod">2.2 LDAP Group Mappings</ins><a class="no-underline active" href="#22-ldap-group-mappings" aria-hidden="true"><ins class="diffmod">
+        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
+          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+        </ins></svg><ins class="diffmod">
+      </ins></a></h3><ins class="diffmod">
+
+</ins><p><ins class="diffmod">KanivinERP also allows you to automatically map multiple LDAP groups to the appropriate KanivinERP roles.
+For example, you may want all of your Accounting employees, to automatically have the Accounts User Role.</ins></p><ins class="diffmod">
+
+</ins><p><ins class="diffmod">Ensure that you fill out the LDAP Group Field to allow this. This is the LDAP field that is found on a user object in LDAP, that has all of the groups the user is a member of.</ins></p><ins class="diffmod">
+
+</ins><p><ins class="diffmod">For Active Directory and Open LDAP, this field should be set to </ins><code><ins class="diffmod">memberOf</ins></code><ins class="diffmod">.</ins></p><ins class="diffmod">
+
+</ins><p><ins class="diffmod">Open LDAP may need this field to be enabled on your LDAP server. Please see examples on the internet for more details.</ins></p><ins class="diffmod">
+
+</ins><blockquote><ins class="diffmod">
+  </ins><p><ins class="diffmod">Note that all KanivinERP roles will be checked each time a user logs on and will be removed or added to the user's permissions.</ins></p><ins class="diffmod">
+</ins></blockquote><ins class="diffmod">
+
+</ins><p><ins class="diffmod">In the LDAP Settings area, there are two dropdowns.
+1. SSL/TLS Mode - set this to </ins><strong><ins class="mod"><ins class="diffmod">StartTLS</ins></ins></strong><ins class="diffmod">&nbsp;to connect to your LDAP server using StartTLS. If your LDAP server does not support StartTLS, setting this to StartTLS will result in an error </ins><code><ins class="diffmod">StartTLS is not supported</ins></code><ins class="diffmod">. Check the configuration on your LDAP server if you receive this error.
+2. Require Trusted Certificate - if you change this to </ins><strong><ins class="mod"><ins class="diffmod">Yes</ins></ins></strong><ins class="diffmod">&nbsp;then the certificate provided by the LDAP server must be trusted by the Frappe/KanivinERP server. If you would rather use StartTLS with a self-signed (untrusted) certificate, set this to </ins><strong><ins class="mod"><ins class="diffmod">No</ins></ins></strong><ins class="diffmod">. If you do not use StartTLS, this setting is ignored.</ins></p><ins class="diffmod">
+
+	</ins></div>
+            </div>
+          </main>

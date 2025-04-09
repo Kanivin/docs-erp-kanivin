@@ -1,0 +1,310 @@
+<main><div class="from-markdown markdown ">
+	<div class="alert alert-warning admin-banner hide" role="alert">
+		<div class="d-flex justify-content-between align-items-center">
+			<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+			<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+		</div>
+	</div>
+	<div class="d-flex justify-content-between align-items-center">
+		<h1 class="wiki-title" id="erpnext-shipping">KanivinERP Shipping<a class="no-underline active" href="#erpnext-shipping" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h1>
+	</div>
+	<div class="wiki-content">
+		<blockquote>
+  <p>Introduced in version 13</p>
+</blockquote>
+
+<p><strong>The KanivinERP Shipping app helps you compare shipping rates being offered by multiple service providers, generate labels, and track your shipments' status.</strong></p>
+
+<p>Integration with the following service providers is available:</p>
+
+<ol>
+<li><a href="https://www.letmeship.com/en/">LetMeShip</a></li>
+<li><a href="https://www.sendcloud.com">SendCloud</a></li>
+</ol>
+
+<blockquote>
+  <p>To avail these features, the <strong>KanivinERP Shipping</strong> app will have to be installed on your site. You can the avail the app <a href="https://github.com/frappe/erpnext-shipping/tree/master">on GitHub</a>, <a href="https://frappecloud.com/marketplace/apps/shipping">on Frappe Cloud Marketplace</a> or you can contact your hosting platform.</p>
+</blockquote>
+
+<h2 id="1-setting-up">1. Setting Up<a class="no-underline" href="#1-setting-up" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h2>
+
+<p>For the app to work smoothly, you will have to generate an API key from <strong>at least one</strong> of the platforms listed above. Here is a guide to set them up:</p>
+
+<h3 id="11-sendcloud">1.1 SendCloud<a class="no-underline" href="#11-sendcloud" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<ol>
+<li>Register on <a href="https://panel.sendcloud.sc/accounts/signup/">SendCloud</a>.</li>
+<li>Follow <a href="https://support.sendcloud.com/hc/en-us/articles/360024967612-Service-points-for-API-Integrations#step-1-">these steps</a> to generate a <strong>Public Key</strong> and a <strong>Secret Key</strong>.</li>
+<li>Search for <strong>SendCloud</strong> in the awesomebar.</li>
+<li>Add the <strong>Public Key</strong> in the 'API Key' field and the <strong>Secret Key</strong> in the 'API Secret' field of the SendCloud DocType.</li>
+<li>Check the <strong>Enabled</strong> field.</li>
+<li>Save.</li>
+</ol>
+
+<p><img src="/files/sendcloud_api.png" alt="Sendcloud API" class="screenshot">  </p>
+
+<h3 id="12-letmeship">1.2 LetMeShip<a class="no-underline" href="#12-letmeship" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<ol>
+<li>Register on <a href="https://www.letmeship.com/en/">LetMeShip</a>.</li>
+<li>Follow <a href="https://www.letmeship.com/en-de/shipping-api/">these steps</a> to generate an <strong>API ID</strong> and <strong>API Password</strong>.</li>
+<li>Search for <strong>LetMeShip</strong> in the awesomebar.</li>
+<li>Add the <strong>API ID</strong> and <strong>API Password</strong> to the LetMeShip DocType. Check the <strong>Enabled</strong> field.</li>
+<li>Save.</li>
+</ol>
+
+<p><img src="/files/letmeship_api.png" alt="LetMeShip API" class="screenshot">  </p>
+
+<h2 id="2-features">2. Features<a class="no-underline" href="#2-features" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h2>
+
+<h3 id="21-comparison-of-shipping-rates">2.1 Comparison of Shipping Rates<a class="no-underline" href="#21-comparison-of-shipping-rates" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>Once a <a href="/erpnext/v13/user/manual/en/stock/shipment">Shipment</a> is submitted, if the app is installed, the button <strong>Fetch Shipping Rates</strong> will appear. On clicking, you will get a list of services along with their service providers and rates.</p>
+
+<p><img src="/files/fetch_rates.png" alt="Fetch Rates" class="screenshot">  </p>
+
+<p>You can also add frequently used services to your <strong>Preferred Services</strong> using <strong>Parcel Service Type</strong>:</p>
+
+<ol>
+<li>Assuming the highlighted service is our frequently used service, let us add it to our <strong>Preferred Services</strong></li>
+</ol>
+
+<p><img src="/files/service_highlight.png" alt="Highlight Service" class="screenshot">
+2. Go to <strong>Parcel Service Type</strong> &gt; <strong>New</strong>. Create a new <strong>Parcel Service</strong>. In our case, it is 'TNT'.
+3. Add a <strong>Parcel Service Type</strong>. In our case, it will be 'Economy'.
+4. Add 'Economy' to the <strong>Parcel Service Type Alias</strong> table as well.
+5. Add a description (optional).
+6. Enable the <strong>Show in Preferred Services List</strong> field. Save.</p>
+
+<p>Now when you click on the <strong>Fetch Shipping Rates</strong> button, you will always see the previously highlighted service under <strong>Preferred Services</strong>.</p>
+
+<p><img src="/files/preferred_service.png" alt="Preferred Service" class="screenshot">  </p>
+
+<h3 id="22-creation-of-shipment">2.2 Creation of Shipment<a class="no-underline" href="#22-creation-of-shipment" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>After comparing rates, you can proceed with any one of the services by clicking <strong>Select</strong> against the appropriate service row. On clicking, a Shipment is automatically created on your service provider's platform.</p>
+
+<p>You will notice that the <strong>Shipment Information</strong> section is updated automatically, based on the Shipment created.</p>
+
+<p><img src="/files/create_shipment.gif" alt="Shipment Creation" class="screenshot">  </p>
+
+<p>You can also search for your transaction on your service provider's platform using the <strong>Shipment ID</strong> field.</p>
+
+<h3 id="23-printing-labels">2.3 Printing Labels<a class="no-underline" href="#23-printing-labels" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>To avail the <strong>Print Shipping Label</strong> button, the <strong>Shipment ID</strong> must be generated in the current record.</p>
+
+<p><img src="/files/print_label_button.png" alt="Print Label Button" class="screenshot">  </p>
+
+<p>You can then click on it and generate your shipping label.</p>
+
+<p><img src="/files/dummy_shipping_label.png" alt="Dummy Shipping Label" class="screenshot">  </p>
+
+<p>You can also track your shipment's status by clicking on <strong>View</strong> &gt; <strong>Track Status</strong>.</p>
+
+<blockquote>
+  <p><strong>Note</strong> : The currently integrated platforms may not serve your region. Please visit the links attached against them to know more.</p>
+</blockquote>
+
+	</div>
+	<input value="biho478581" class="d-none" name="wiki-page-name">
+	<div class="modal revisions-modal fade" id="revisionsModal" tabindex="-1" role="dialog" aria-labelledby="revisionsModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="d-flex flex-column">
+                    <h5 class="modal-title revision-title" id="erpnext-shipping">KanivinERP Shipping<a class="no-underline active" href="#erpnext-shipping" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h5>
+                    <span class="small text-muted revision-time">administrator edited 4 months ago</span>
+                </div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="revision-content wiki-content"><del class="diffmod">
+                    </del><ins class="diffmod">
+		</ins><blockquote><ins class="diffmod">
+  </ins><p><ins class="diffmod">Introduced in version 13</ins></p><ins class="diffmod">
+</ins></blockquote><ins class="diffmod">
+
+</ins><p><strong><ins class="diffmod">The KanivinERP Shipping app helps you compare shipping rates being offered by multiple service providers, generate labels, and track your shipments' status.</ins></strong></p><ins class="diffmod">
+
+</ins><p><ins class="diffmod">Integration with the following service providers is available:</ins></p><ins class="diffmod">
+
+</ins><ol><ins class="diffmod">
+</ins><li><a href="https://www.letmeship.com/en/"><ins class="diffmod">LetMeShip</ins></a></li><ins class="diffmod">
+</ins><li><a href="https://www.sendcloud.com"><ins class="diffmod">SendCloud</ins></a></li><ins class="diffmod">
+</ins></ol><ins class="diffmod">
+
+</ins><blockquote><ins class="diffmod">
+  </ins><p><ins class="diffmod">To avail these features, the </ins><strong><ins class="mod"><ins class="diffmod">KanivinERP Shipping</ins></ins></strong><ins class="diffmod">&nbsp;app will have to be installed on your site. You can the avail the app </ins><a href="https://github.com/frappe/erpnext-shipping/tree/master"><ins class="diffmod">on GitHub</ins></a><ins class="diffmod">, </ins><a href="https://frappecloud.com/marketplace/apps/shipping"><ins class="diffmod">on Frappe Cloud Marketplace</ins></a><ins class="diffmod">&nbsp;or you can contact your hosting platform.</ins></p><ins class="diffmod">
+</ins></blockquote><ins class="diffmod">
+
+</ins><h2 id="1-setting-up"><ins class="diffmod">1. Setting Up</ins><a class="no-underline" href="#1-setting-up" aria-hidden="true"><ins class="diffmod">
+        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
+          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+        </ins></svg><ins class="diffmod">
+      </ins></a></h2><ins class="diffmod">
+
+</ins><p><ins class="diffmod">For the app to work smoothly, you will have to generate an API key from </ins><strong><ins class="mod"><ins class="diffmod">at least one</ins></ins></strong><ins class="diffmod">&nbsp;of the platforms listed above. Here is a guide to set them up:</ins></p><ins class="diffmod">
+
+</ins><h3 id="11-sendcloud"><del class="diffmod">No</del><ins class="diffmod">1.1</ins> <del class="diffmod">Revisions</del><ins class="diffmod">SendCloud</ins><a class="no-underline" href="#11-sendcloud" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3><del class="diffmod">
+
+                </del><ins class="diffmod">
+
+</ins><ol><ins class="diffmod">
+</ins><li><ins class="diffmod">Register on </ins><a href="https://panel.sendcloud.sc/accounts/signup/"><ins class="diffmod">SendCloud</ins></a><ins class="diffmod">.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Follow </ins><a href="https://support.sendcloud.com/hc/en-us/articles/360024967612-Service-points-for-API-Integrations#step-1-"><ins class="diffmod">these steps</ins></a><ins class="diffmod">&nbsp;to generate a </ins><strong><ins class="mod"><ins class="diffmod">Public Key</ins></ins></strong><ins class="diffmod">&nbsp;and a </ins><strong><ins class="mod"><ins class="diffmod">Secret Key</ins></ins></strong><ins class="diffmod">.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Search for </ins><strong><ins class="mod"><ins class="diffmod">SendCloud</ins></ins></strong><ins class="diffmod">&nbsp;in the awesomebar.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Add the </ins><strong><ins class="mod"><ins class="diffmod">Public Key</ins></ins></strong><ins class="diffmod">&nbsp;in the 'API Key' field and the </ins><strong><ins class="mod"><ins class="diffmod">Secret Key</ins></ins></strong><ins class="diffmod">&nbsp;in the 'API Secret' field of the SendCloud DocType.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Check the </ins><strong><ins class="mod"><ins class="diffmod">Enabled</ins></ins></strong><ins class="diffmod">&nbsp;field.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Save.</ins></li><ins class="diffmod">
+</ins></ol><ins class="diffmod">
+
+</ins><p><ins class="diffmod"><img src="/files/sendcloud_api.png" alt="Sendcloud API" class="screenshot">  </ins></p><ins class="diffmod">
+
+</ins><h3 id="12-letmeship"><ins class="diffmod">1.2 LetMeShip</ins><a class="no-underline" href="#12-letmeship" aria-hidden="true"><ins class="diffmod">
+        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
+          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+        </ins></svg><ins class="diffmod">
+      </ins></a></h3><ins class="diffmod">
+
+</ins><ol><ins class="diffmod">
+</ins><li><ins class="diffmod">Register on </ins><a href="https://www.letmeship.com/en/"><ins class="diffmod">LetMeShip</ins></a><ins class="diffmod">.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Follow </ins><a href="https://www.letmeship.com/en-de/shipping-api/"><ins class="diffmod">these steps</ins></a><ins class="diffmod">&nbsp;to generate an </ins><strong><ins class="mod"><ins class="diffmod">API ID</ins></ins></strong><ins class="diffmod">&nbsp;and </ins><strong><ins class="mod"><ins class="diffmod">API Password</ins></ins></strong><ins class="diffmod">.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Search for </ins><strong><ins class="mod"><ins class="diffmod">LetMeShip</ins></ins></strong><ins class="diffmod">&nbsp;in the awesomebar.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Add the </ins><strong><ins class="mod"><ins class="diffmod">API ID</ins></ins></strong><ins class="diffmod">&nbsp;and </ins><strong><ins class="mod"><ins class="diffmod">API Password</ins></ins></strong><ins class="diffmod">&nbsp;to the LetMeShip DocType. Check the </ins><strong><ins class="mod"><ins class="diffmod">Enabled</ins></ins></strong><ins class="diffmod">&nbsp;field.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Save.</ins></li><ins class="diffmod">
+</ins></ol><ins class="diffmod">
+
+</ins><p><ins class="diffmod"><img src="/files/letmeship_api.png" alt="LetMeShip API" class="screenshot">  </ins></p><ins class="diffmod">
+
+</ins><h2 id="2-features"><ins class="diffmod">2. Features</ins><a class="no-underline" href="#2-features" aria-hidden="true"><ins class="diffmod">
+        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
+          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+        </ins></svg><ins class="diffmod">
+      </ins></a></h2><ins class="diffmod">
+
+</ins><h3 id="21-comparison-of-shipping-rates"><ins class="diffmod">2.1 Comparison of Shipping Rates</ins><a class="no-underline" href="#21-comparison-of-shipping-rates" aria-hidden="true"><ins class="diffmod">
+        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
+          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+        </ins></svg><ins class="diffmod">
+      </ins></a></h3><ins class="diffmod">
+
+</ins><p><ins class="diffmod">Once a </ins><a href="/erpnext/v13/user/manual/en/stock/shipment"><ins class="diffmod">Shipment</ins></a><ins class="diffmod">&nbsp;is submitted, if the app is installed, the button </ins><strong><ins class="mod"><ins class="diffmod">Fetch Shipping Rates</ins></ins></strong><ins class="diffmod">&nbsp;will appear. On clicking, you will get a list of services along with their service providers and rates.</ins></p><ins class="diffmod">
+
+</ins><p><ins class="diffmod"><img src="/files/fetch_rates.png" alt="Fetch Rates" class="screenshot">  </ins></p><ins class="diffmod">
+
+</ins><p><ins class="diffmod">You can also add frequently used services to your </ins><strong><ins class="mod"><ins class="diffmod">Preferred Services</ins></ins></strong><ins class="diffmod">&nbsp;using </ins><strong><ins class="mod"><ins class="diffmod">Parcel Service Type</ins></ins></strong><ins class="diffmod">:</ins></p><ins class="diffmod">
+
+</ins><ol><ins class="diffmod">
+</ins><li><ins class="diffmod">Assuming the highlighted service is our frequently used service, let us add it to our </ins><strong><ins class="mod"><ins class="diffmod">Preferred Services</ins></ins></strong></li><ins class="diffmod">
+</ins></ol><ins class="diffmod">
+
+</ins><p><ins class="diffmod"><img src="/files/service_highlight.png" alt="Highlight Service" class="screenshot">
+2. Go to </ins><strong><ins class="mod"><ins class="diffmod">Parcel Service Type</ins></ins></strong><ins class="diffmod">&nbsp;&gt; </ins><strong><ins class="mod"><ins class="diffmod">New</ins></ins></strong><ins class="diffmod">. Create a new </ins><strong><ins class="mod"><ins class="diffmod">Parcel Service</ins></ins></strong><ins class="diffmod">. In our case, it is 'TNT'.
+3. Add a </ins><strong><ins class="mod"><ins class="diffmod">Parcel Service Type</ins></ins></strong><ins class="diffmod">. In our case, it will be 'Economy'.
+4. Add 'Economy' to the </ins><strong><ins class="mod"><ins class="diffmod">Parcel Service Type Alias</ins></ins></strong><ins class="diffmod">&nbsp;table as well.
+5. Add a description (optional).
+6. Enable the </ins><strong><ins class="mod"><ins class="diffmod">Show in Preferred Services List</ins></ins></strong><ins class="diffmod">&nbsp;field. Save.</ins></p><ins class="diffmod">
+
+</ins><p><ins class="diffmod">Now when you click on the </ins><strong><ins class="mod"><ins class="diffmod">Fetch Shipping Rates</ins></ins></strong><ins class="diffmod">&nbsp;button, you will always see the previously highlighted service under </ins><strong><ins class="mod"><ins class="diffmod">Preferred Services</ins></ins></strong><ins class="diffmod">.</ins></p><ins class="diffmod">
+
+</ins><p><ins class="diffmod"><img src="/files/preferred_service.png" alt="Preferred Service" class="screenshot">  </ins></p><ins class="diffmod">
+
+</ins><h3 id="22-creation-of-shipment"><ins class="diffmod">2.2 Creation of Shipment</ins><a class="no-underline" href="#22-creation-of-shipment" aria-hidden="true"><ins class="diffmod">
+        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
+          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+        </ins></svg><ins class="diffmod">
+      </ins></a></h3><ins class="diffmod">
+
+</ins><p><ins class="diffmod">After comparing rates, you can proceed with any one of the services by clicking </ins><strong><ins class="mod"><ins class="diffmod">Select</ins></ins></strong><ins class="diffmod">&nbsp;against the appropriate service row. On clicking, a Shipment is automatically created on your service provider's platform.</ins></p><ins class="diffmod">
+
+</ins><p><ins class="diffmod">You will notice that the </ins><strong><ins class="mod"><ins class="diffmod">Shipment Information</ins></ins></strong><ins class="diffmod">&nbsp;section is updated automatically, based on the Shipment created.</ins></p><ins class="diffmod">
+
+</ins><p><ins class="diffmod"><img src="/files/create_shipment.gif" alt="Shipment Creation" class="screenshot">  </ins></p><ins class="diffmod">
+
+</ins><p><ins class="diffmod">You can also search for your transaction on your service provider's platform using the </ins><strong><ins class="mod"><ins class="diffmod">Shipment ID</ins></ins></strong><ins class="diffmod">&nbsp;field.</ins></p><ins class="diffmod">
+
+</ins><h3 id="23-printing-labels"><ins class="diffmod">2.3 Printing Labels</ins><a class="no-underline" href="#23-printing-labels" aria-hidden="true"><ins class="diffmod">
+        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
+          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+        </ins></svg><ins class="diffmod">
+      </ins></a></h3><ins class="diffmod">
+
+</ins><p><ins class="diffmod">To avail the </ins><strong><ins class="mod"><ins class="diffmod">Print Shipping Label</ins></ins></strong><ins class="diffmod">&nbsp;button, the </ins><strong><ins class="mod"><ins class="diffmod">Shipment ID</ins></ins></strong><ins class="diffmod">&nbsp;must be generated in the current record.</ins></p><ins class="diffmod">
+
+</ins><p><ins class="diffmod"><img src="/files/print_label_button.png" alt="Print Label Button" class="screenshot">  </ins></p><ins class="diffmod">
+
+</ins><p><ins class="diffmod">You can then click on it and generate your shipping label.</ins></p><ins class="diffmod">
+
+</ins><p><ins class="diffmod"><img src="/files/dummy_shipping_label.png" alt="Dummy Shipping Label" class="screenshot">  </ins></p><ins class="diffmod">
+
+</ins><p><ins class="diffmod">You can also track your shipment's status by clicking on </ins><strong><ins class="mod"><ins class="diffmod">View</ins></ins></strong><ins class="diffmod">&nbsp;&gt; </ins><strong><ins class="mod"><ins class="diffmod">Track Status</ins></ins></strong><ins class="diffmod">.</ins></p><ins class="diffmod">
+
+</ins><blockquote><ins class="diffmod">
+  </ins><p><strong><ins class="diffmod">Note</ins></strong><ins class="diffmod">&nbsp;: The currently integrated platforms may not serve your region. Please visit the links attached against them to know more.</ins></p><ins class="diffmod">
+</ins></blockquote><ins class="diffmod">
+
+	</ins></div>
+            </div>
+           </main>

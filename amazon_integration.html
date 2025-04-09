@@ -1,0 +1,244 @@
+<main><div class="from-markdown markdown ">
+	<div class="alert alert-warning admin-banner hide" role="alert">
+		<div class="d-flex justify-content-between align-items-center">
+			<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+			<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+		</div>
+	</div>
+	<div class="d-flex justify-content-between align-items-center">
+		<h1 class="wiki-title" id="amazon-sp-api-integration">Amazon SP-API Integration<a class="no-underline" href="#amazon-sp-api-integration" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h1>
+	</div>
+	<div class="wiki-content">
+		<p>The Amazon Connector pulls Products and Sales Orders from the Amazon marketplace.</p>
+
+<h2 id="how-to-setup-amazon-sp-api-connector">How to Setup Amazon SP-API Connector?<a class="no-underline" href="#how-to-setup-amazon-sp-api-connector" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h2>
+
+<p>Amazon Connector is moved out from KanivinERP and is available through a Frappe App on <a href="https://frappecloud.com/marketplace/apps/ecommerce_integrations">Frappe Cloud Marketplace</a></p>
+
+<h3 id="app-installation">App Installation<a class="no-underline" href="#app-installation" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<ul>
+<li>If you are hosting your KanivinERP site on Frappe Cloud, you can quickly install the app by going to your site Dashboard. The app is available in <a href="https://frappecloud.com/marketplace/apps/ecommerce_integrations">Frappe Cloud Marketplace</a></li>
+<li>If your site is hosted by Frappe, please raise a support ticket to get the app installed on your site.</li>
+<li>If you are self-hosting KanivinERP you can install the app using Frappe bench. Refer to <a href="https://frappeframework.com/docs/user/en/bench/frappe-commands#app-installation">bench documentation</a> for installing Frappe Apps. <code>bench get-app ecommerce_integrations --branch main</code></li>
+</ul>
+
+<p>The repository for the app is hosted on GitHub: <a href="http://github.com/frappe/ecommerce_integrations/">http://github.com/frappe/ecommerce_integrations/</a></p>
+
+<h3 id="setting-up-credentials-in-erpnext">Setting Up Credentials in KanivinERP<a class="no-underline" href="#setting-up-credentials-in-erpnext" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>You can request the developer credentials from Amazon Seller Central once you are a registered seller on their website. For more details on the same, click <a href="https://developer.amazonservices.com/">here</a>.</p>
+
+<h4 id="1-setup-sp-api-credentials">1. Setup SP-API Credentials<a class="no-underline" href="#1-setup-sp-api-credentials" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h4>
+
+<p>Enter the IAM ARN, Refresh Token, Client ID, Client Secret, AWS Access Key, AWS Secret Key and Country. <img src="/files/Credentials.png" alt="Credentials" title="Credentials.png" class="screenshot">  </p>
+
+<h4 id="2-set-up-order-details">2. Set up Order Details<a class="no-underline" href="#2-set-up-order-details" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h4>
+
+<p>Set up Company, Warehouse, Parent Item Group, Price List, Customer Group, Territory, Customer Type and Account Group. The Account Group is used to hold commissions, taxes etc. that Amazon charges. <img src="/files/Screenshot from 2023-07-31 13-51-36.png" alt="setup" title="setup.png" class="screenshot">  </p>
+
+<h4 id="3-setup-sync-configurations">3. Setup Sync Configurations<a class="no-underline" href="#3-setup-sync-configurations" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h4>
+
+<p>Using the After Date, you can sync orders created after a particular date. In case you are importing a lot of historic data, it is suggested to start in the reverse chronological order of the After Date and import data in small chunks. <img src="/files/Screenshot from 2023-07-31 13-45-15.png" alt="Syncing" title="Syncing.png" class="screenshot">After setting up all the configurations, click on Is Active and save the settings. You are now ready to use the integration.</p>
+
+<h4 id="4-amazon---erpnext-item-mapping">4. Amazon - KanivinERP Item Mapping<a class="no-underline" href="#4-amazon---erpnext-item-mapping" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h4>
+
+<p>Both ASIN and SellerSKU can be utilized to map Amazon items with corresponding KanivinERP items. For instance, if you have pre-existing items in your system, created through other integrations, you can establish a custom field within the Item Master by using the Customize Form feature and setting the ASIN/SellerSKU as the value.</p>
+
+<p>During the process of syncing orders from Amazon, the system will attempt to find the Item Code using the field configured to find the Item Code in the Amazon - KanivinERP Item Mapping table. If the item is not found in the mapping table, you have the option to create a new item by checking the <strong>Create Item If Not Exists</strong> box.</p>
+
+<p><img src="/files/Screenshot from 2023-07-31 13-52-50.png" alt="Screenshot from 2023-07-31 13-52-50" title="Screenshot from 2023-07-31 13-52-50.png" class="screenshot">  </p>
+
+<h4 id="5-sync-orders">5. Sync Orders<a class="no-underline" href="#5-sync-orders" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h4>
+
+<p>Click on this button to sync sales orders. Once this is successful you should see your Amazon Orders as Sales Orders in KanivinERP. You can also set up a scheduler to sync orders automatically.</p>
+
+<blockquote>
+  <p>In case your developer account does not have access to personally identifiable information. The customer name would be stored as a combination of the BuyerName + <order id=""> or Marketplace email ID.</order></p>
+</blockquote>
+
+<p><img src="/files/Sales Order.png" alt="Sales Order" title="Sales Order.png" class="screenshot">  </p>
+
+<h3 id="note">Note<a class="no-underline" href="#note" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3>
+
+<p>The connector won't handle Order cancellation. If you cancel any order in Amazon then manually you have to cancel the respective Sales Order and other documents in KanivinERP.</p>
+
+	</div>
+	<input value="vh2d80i3l7" class="d-none" name="wiki-page-name">
+	<div class="modal revisions-modal fade" id="revisionsModal" tabindex="-1" role="dialog" aria-labelledby="revisionsModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="d-flex flex-column">
+                    <h5 class="modal-title revision-title" id="amazon-sp-api-integration">Amazon SP-API Integration<a class="no-underline" href="#amazon-sp-api-integration" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h5>
+                    <span class="small text-muted revision-time">administrator edited 4 months ago</span>
+                </div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="revision-content wiki-content"><del class="diffmod">
+                    </del><ins class="diffmod">
+		</ins><p><ins class="diffmod">The Amazon Connector pulls Products and Sales Orders from the Amazon marketplace.</ins></p><ins class="diffmod">
+
+</ins><h2 id="how-to-setup-amazon-sp-api-connector"><ins class="diffmod">How to Setup Amazon SP-API Connector?</ins><a class="no-underline" href="#how-to-setup-amazon-sp-api-connector" aria-hidden="true"><ins class="diffmod">
+        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
+          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+        </ins></svg><ins class="diffmod">
+      </ins></a></h2><ins class="diffmod">
+
+</ins><p><ins class="diffmod">Amazon Connector is moved out from KanivinERP and is available through a Frappe App on </ins><a href="https://frappecloud.com/marketplace/apps/ecommerce_integrations"><ins class="diffmod">Frappe Cloud Marketplace</ins></a></p><ins class="diffmod">
+
+</ins><h3 id="app-installation"><del class="diffmod">No</del><ins class="diffmod">App</ins> <del class="diffmod">Revisions</del><ins class="diffmod">Installation</ins><a class="no-underline" href="#app-installation" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h3><del class="diffmod">
+
+                </del><ins class="diffmod">
+
+</ins><ul><ins class="diffmod">
+</ins><li><ins class="diffmod">If you are hosting your KanivinERP site on Frappe Cloud, you can quickly install the app by going to your site Dashboard. The app is available in </ins><a href="https://frappecloud.com/marketplace/apps/ecommerce_integrations"><ins class="diffmod">Frappe Cloud Marketplace</ins></a></li><ins class="diffmod">
+</ins><li><ins class="diffmod">If your site is hosted by Frappe, please raise a support ticket to get the app installed on your site.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">If you are self-hosting KanivinERP you can install the app using Frappe bench. Refer to </ins><a href="https://frappeframework.com/docs/user/en/bench/frappe-commands#app-installation"><ins class="diffmod">bench documentation</ins></a><ins class="diffmod">&nbsp;for installing Frappe Apps. </ins><code><ins class="diffmod">bench get-app ecommerce_integrations --branch main</ins></code></li><ins class="diffmod">
+</ins></ul><ins class="diffmod">
+
+</ins><p><ins class="diffmod">The repository for the app is hosted on GitHub: </ins><a href="http://github.com/frappe/ecommerce_integrations/"><ins class="diffmod">http://github.com/frappe/ecommerce_integrations/</ins></a></p><ins class="diffmod">
+
+</ins><h3 id="setting-up-credentials-in-erpnext"><ins class="diffmod">Setting Up Credentials in KanivinERP</ins><a class="no-underline" href="#setting-up-credentials-in-erpnext" aria-hidden="true"><ins class="diffmod">
+        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
+          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+        </ins></svg><ins class="diffmod">
+      </ins></a></h3><ins class="diffmod">
+
+</ins><p><ins class="diffmod">You can request the developer credentials from Amazon Seller Central once you are a registered seller on their website. For more details on the same, click </ins><a href="https://developer.amazonservices.com/"><ins class="diffmod">here</ins></a><ins class="diffmod">.</ins></p><ins class="diffmod">
+
+</ins><h4 id="1-setup-sp-api-credentials"><ins class="diffmod">1. Setup SP-API Credentials</ins><a class="no-underline" href="#1-setup-sp-api-credentials" aria-hidden="true"><ins class="diffmod">
+        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
+          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+        </ins></svg><ins class="diffmod">
+      </ins></a></h4><ins class="diffmod">
+
+</ins><p><ins class="diffmod">Enter the IAM ARN, Refresh Token, Client ID, Client Secret, AWS Access Key, AWS Secret Key and Country. <img src="/files/Credentials.png" alt="Credentials" title="Credentials.png" class="screenshot">  </ins></p><ins class="diffmod">
+
+</ins><h4 id="2-set-up-order-details"><ins class="diffmod">2. Set up Order Details</ins><a class="no-underline" href="#2-set-up-order-details" aria-hidden="true"><ins class="diffmod">
+        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
+          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+        </ins></svg><ins class="diffmod">
+      </ins></a></h4><ins class="diffmod">
+
+</ins><p><ins class="diffmod">Set up Company, Warehouse, Parent Item Group, Price List, Customer Group, Territory, Customer Type and Account Group. The Account Group is used to hold commissions, taxes etc. that Amazon charges. <img src="/files/Screenshot from 2023-07-31 13-51-36.png" alt="setup" title="setup.png" class="screenshot">  </ins></p><ins class="diffmod">
+
+</ins><h4 id="3-setup-sync-configurations"><ins class="diffmod">3. Setup Sync Configurations</ins><a class="no-underline" href="#3-setup-sync-configurations" aria-hidden="true"><ins class="diffmod">
+        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
+          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+        </ins></svg><ins class="diffmod">
+      </ins></a></h4><ins class="diffmod">
+
+</ins><p><ins class="diffmod">Using the After Date, you can sync orders created after a particular date. In case you are importing a lot of historic data, it is suggested to start in the reverse chronological order of the After Date and import data in small chunks. <img src="/files/Screenshot from 2023-07-31 13-45-15.png" alt="Syncing" title="Syncing.png" class="screenshot">After setting up all the configurations, click on Is Active and save the settings. You are now ready to use the integration.</ins></p><ins class="diffmod">
+
+</ins><h4 id="4-amazon---erpnext-item-mapping"><ins class="diffmod">4. Amazon - KanivinERP Item Mapping</ins><a class="no-underline" href="#4-amazon---erpnext-item-mapping" aria-hidden="true"><ins class="diffmod">
+        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
+          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+        </ins></svg><ins class="diffmod">
+      </ins></a></h4><ins class="diffmod">
+
+</ins><p><ins class="diffmod">Both ASIN and SellerSKU can be utilized to map Amazon items with corresponding KanivinERP items. For instance, if you have pre-existing items in your system, created through other integrations, you can establish a custom field within the Item Master by using the Customize Form feature and setting the ASIN/SellerSKU as the value.</ins></p><ins class="diffmod">
+
+</ins><p><ins class="diffmod">During the process of syncing orders from Amazon, the system will attempt to find the Item Code using the field configured to find the Item Code in the Amazon - KanivinERP Item Mapping table. If the item is not found in the mapping table, you have the option to create a new item by checking the </ins><strong><ins class="mod"><ins class="diffmod">Create Item If Not Exists</ins></ins></strong><ins class="diffmod">&nbsp;box.</ins></p><ins class="diffmod">
+
+</ins><p><ins class="diffmod"><img src="/files/Screenshot from 2023-07-31 13-52-50.png" alt="Screenshot from 2023-07-31 13-52-50" title="Screenshot from 2023-07-31 13-52-50.png" class="screenshot">  </ins></p><ins class="diffmod">
+
+</ins><h4 id="5-sync-orders"><ins class="diffmod">5. Sync Orders</ins><a class="no-underline" href="#5-sync-orders" aria-hidden="true"><ins class="diffmod">
+        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
+          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+        </ins></svg><ins class="diffmod">
+      </ins></a></h4><ins class="diffmod">
+
+</ins><p><ins class="diffmod">Click on this button to sync sales orders. Once this is successful you should see your Amazon Orders as Sales Orders in KanivinERP. You can also set up a scheduler to sync orders automatically.</ins></p><ins class="diffmod">
+
+</ins><blockquote><ins class="diffmod">
+  </ins><p><ins class="diffmod">In case your developer account does not have access to personally identifiable information. The customer name would be stored as a combination of the BuyerName + </ins><order id=""><ins class="diffmod">&nbsp;or Marketplace email ID.</ins></order></p><ins class="diffmod">
+</ins></blockquote><ins class="diffmod">
+
+</ins><p><ins class="diffmod"><img src="/files/Sales Order.png" alt="Sales Order" title="Sales Order.png" class="screenshot">  </ins></p><ins class="diffmod">
+
+</ins><h3 id="note"><ins class="diffmod">Note</ins><a class="no-underline" href="#note" aria-hidden="true"><ins class="diffmod">
+        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
+          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+        </ins></svg><ins class="diffmod">
+      </ins></a></h3><ins class="diffmod">
+
+</ins><p><ins class="diffmod">The connector won't handle Order cancellation. If you cancel any order in Amazon then manually you have to cancel the respective Sales Order and other documents in KanivinERP.</ins></p><ins class="diffmod">
+
+	</ins></div>
+            </div>
+           </main>

@@ -1,0 +1,217 @@
+<main><div class="from-markdown markdown ">
+	<div class="alert alert-warning admin-banner hide" role="alert">
+		<div class="d-flex justify-content-between align-items-center">
+			<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+			<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+		</div>
+	</div>
+	<div class="d-flex justify-content-between align-items-center">
+		<h1 class="wiki-title" id="asset-capitalization">Asset Capitalization																																																				<a class="no-underline" href="#asset-capitalization" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h1>
+	</div>
+	<div class="wiki-content">
+		<p>The Asset Capitalization feature lets you do the following:</p>
+
+<ul>
+<li>Convert one or more stock items into a new composite asset</li>
+<li>Convert one or more stock items into a new composite asset and capitalize the service expenses’ cost</li>
+<li>Convert one or more assets into a new composite asset</li>
+</ul>
+
+<p>To access the Asset Capitalization feature, go to:</p>
+
+<blockquote>
+  <p>Home &gt; Assets &gt; Maintenance &gt; Asset Capitalization</p>
+</blockquote>
+
+<p><img src="/files/jdmoSl4.png" alt="" class="screenshot">  </p>
+
+<p>Let’s go through the aforementioned use cases one by one.</p>
+
+<h2 id="1-convert-one-or-more-stock-items-into-a-new-composite-asset">1. Convert one or more stock items into a new composite asset<a class="no-underline" href="#1-convert-one-or-more-stock-items-into-a-new-composite-asset" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h2>
+
+<p><strong>Steps</strong>:</p>
+
+<ul>
+<li>Create a new Asset Capitalization</li>
+<li>If you want a new composite Asset to be created, choose the Capitalization Method as "Create a new composite asset" and set the Target Item Code to the fixed asset Item to be linked with the new asset and the Target Asset Location to the Location of the new asset. If you want a WIP composite asset to be used, choose the Capitalization Method as "Choose a WIP composite asset" and set the Target Asset to the composite asset.</li>
+<li>Change the Naming Series, Company, Finance Book and Posting Date if needed</li>
+<li>Enter the stock items to be converted in Consumed Stock Items. If you chose the Capitalization Method as "Choose a WIP composite asset", all the items tagged to the asset through Purchase Receipts/Invoices will be fetched automatically.</li>
+<li>Save and Submit</li>
+<li>Set the depreciation details (if any) of the newly created asset and submit it.</li>
+</ul>
+
+<p><strong>Accounting effect</strong>:</p>
+
+<ul>
+<li>The Consumed Stock Items will be reduced by the selected qty from the selected warehouses and the Warehouse Stock Accounts will be credited with the issued stock value amount.</li>
+<li>The system will first check if the target asset is in CWIP (Capital Work in Progress). If so, the CWIP account will be debited by the total value.</li>
+<li>Upon submission of the target asset, the CWIP account will be credited, and the corresponding Fixed Asset account will be debited.</li>
+</ul>
+
+<h2 id="2-convert-one-or-more-stock-items-into-a-new-composite-asset-and-capitalize-the-service-expenses-cost">2. Convert one or more stock items into a new composite asset and capitalize the service expenses’ cost<a class="no-underline" href="#2-convert-one-or-more-stock-items-into-a-new-composite-asset-and-capitalize-the-service-expenses-cost" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h2>
+
+<p>The prerequisites, steps and accounting effect for this is almost the same as the previous one, the only addition being that you can add the Service Expenses, and the Expense Accounts of the services would be credited with the service’s amount.</p>
+
+<h2 id="3-convert-one-or-more-assets-into-a-new-composite-asset">3. Convert one or more assets into a new composite asset<a class="no-underline" href="#3-convert-one-or-more-assets-into-a-new-composite-asset" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h2>
+
+<p><strong>Prerequisites</strong>:</p>
+
+<p>A new fixed asset Item (with <code>Is Fixed Asset</code> checkbox ticked) since it would be the item linked with the new asset.</p>
+
+<p><strong>Steps</strong>:</p>
+
+<ul>
+<li>Create a new Asset Capitalization</li>
+<li>Set the Target Item Code to the Item to be linked with the new asset</li>
+<li>Set the Target Asset Location to the Location of the new asset</li>
+<li>Change the Naming Series, Company, Finance Book and Posting Date if needed</li>
+<li>Enter the assets to be converted in Consumed Assets</li>
+<li>Save and Submit</li>
+<li>Set the depreciation details (if any) of the newly created asset and submit it.</li>
+</ul>
+
+<p><strong>Accounting effect</strong>:</p>
+
+<ul>
+<li>The Consumed Assets will be depreciated (if configured for depreciation) till the posting date and Depreciation Journal Entries will be created in the background. Then they would be disposed of and their status would be set to "Capitalized".</li>
+<li>The system will check if the newly created asset is in CWIP. If it is, the CWIP account will be debited by the remaining amount of the asset after depreciation and the Accumulated Depreciation accounts will be debited by their total accumulated depreciation</li>
+<li>The Fixed Asset accounts of the Consumed Assets will be credited by their gross purchase amount.</li>
+<li>Upon submission of the newly created asset or target asset, the CWIP account will be credited, and the corresponding Fixed Asset account will be debited.</li>
+</ul>
+
+	</div>
+	<input value="et2ndq1kuj" class="d-none" name="wiki-page-name">
+	<div class="modal revisions-modal fade" id="revisionsModal" tabindex="-1" role="dialog" aria-labelledby="revisionsModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="d-flex flex-column">
+                    <h5 class="modal-title revision-title" id="asset-capitalization">Asset Capitalization																																																				<a class="no-underline" href="#asset-capitalization" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h5>
+                    <span class="small text-muted revision-time">khushi edited 2 months ago</span>
+                </div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="revision-content wiki-content"><del class="diffmod">
+                    </del><ins class="diffmod">
+		</ins><p>The Asset Capitalization feature lets you do the following:</p>
+
+<ul>
+<li>Convert one or more stock items into a new composite asset</li>
+<li>Convert one or more stock items into a new composite asset and capitalize the service expenses’ cost</li>
+<li>Convert one or more assets into a new composite asset</li><del class="diffdel">
+</del><li><del class="diffdel">Convert one or more assets into a new stock item</del></li>
+</ul>
+
+<p>To access the Asset Capitalization feature, go to:</p>
+
+<blockquote>
+  <p>Home &gt; Assets &gt; Maintenance &gt; Asset Capitalization</p>
+</blockquote>
+
+<p><img src="/files/jdmoSl4.png" alt="" class="screenshot">  </p>
+
+<p>Let’s go through the aforementioned use cases one by one.</p>
+
+<h2 id="1-convert-one-or-more-stock-items-into-a-new-composite-asset">1. Convert one or more stock items into a new composite asset<a class="no-underline" href="#1-convert-one-or-more-stock-items-into-a-new-composite-asset" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h2>
+
+<p><strong>Steps</strong>:</p>
+
+<ul>
+<li>Create a new Asset Capitalization</li>
+<li>If you want a new composite Asset to be created, choose the Capitalization Method as "Create a new composite asset" and set the Target Item Code to the fixed asset Item to be linked with the new asset and the Target Asset Location to the Location of the new asset. If you want a WIP composite asset to be used, choose the Capitalization Method as "Choose a WIP composite asset" and set the Target Asset to the composite asset.</li>
+<li>Change the Naming Series, Company, Finance Book and Posting Date if needed</li>
+<li>Enter the stock items to be converted in Consumed Stock Items. If you chose the Capitalization Method as "Choose a WIP composite asset", all the items tagged to the asset through Purchase Receipts/Invoices will be fetched automatically.</li>
+<li>Save and Submit</li>
+<li>Set the depreciation details (if any) of the newly created asset and submit it.</li>
+</ul>
+
+<p><strong>Accounting effect</strong>:</p>
+
+<ul>
+<li>The Consumed Stock Items will be reduced by the selected qty from the selected warehouses and the Warehouse Stock Accounts will be credited with the issued stock value amount.</li>
+<li>The system will first check if the target asset is in CWIP (Capital Work in Progress). If so, the CWIP account will be debited by the total value.</li>
+<li>Upon submission of the target asset, the CWIP account will be credited, and the corresponding Fixed Asset account will be debited.</li>
+</ul>
+
+<h2 id="2-convert-one-or-more-stock-items-into-a-new-composite-asset-and-capitalize-the-service-expenses-cost">2. Convert one or more stock items into a new composite asset and capitalize the service expenses’ cost<a class="no-underline" href="#2-convert-one-or-more-stock-items-into-a-new-composite-asset-and-capitalize-the-service-expenses-cost" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h2>
+
+<p>The prerequisites, steps and accounting effect for this is almost the same as the previous one, the only addition being that you can add the Service Expenses, and the Expense Accounts of the services would be credited with the service’s amount.</p>
+
+<h2 id="3-convert-one-or-more-assets-into-a-new-composite-asset">3. Convert one or more assets into a new composite asset<a class="no-underline" href="#3-convert-one-or-more-assets-into-a-new-composite-asset" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </a></h2>
+
+<p><strong>Prerequisites</strong>:</p>
+
+<p>A new fixed asset Item (with <code>Is Fixed Asset</code> checkbox ticked) since it would be the item linked with the new asset.</p>
+
+<p><strong>Steps</strong>:</p>
+
+<ul>
+<li>Create a new Asset Capitalization</li>
+<li>Set the Target Item Code to the Item to be linked with the new asset</li>
+<li>Set the Target Asset Location to the Location of the new asset</li>
+<li>Change the Naming Series, Company, Finance Book and Posting Date if needed</li>
+<li>Enter the assets to be converted in Consumed Assets</li>
+<li>Save and Submit</li>
+<li>Set the depreciation details (if any) of the newly created asset and submit it.</li>
+</ul>
+
+<p><strong>Accounting effect</strong>:</p>
+
+<ul>
+<li>The Consumed Assets will be depreciated (if configured for depreciation) till the posting date and Depreciation Journal Entries will be created in the background. Then they would be disposed of and their status would be set to "Capitalized".</li>
+<li>The system will check if the newly created asset is in CWIP. If it is, the CWIP account will be debited by the remaining amount of the asset after depreciation and the Accumulated Depreciation accounts will be debited by their total accumulated depreciation</li>
+<li>The Fixed Asset accounts of the Consumed Assets will be credited by their gross purchase amount.</li>
+<li>Upon submission of the newly created asset or target asset, the CWIP account will be credited, and the corresponding Fixed Asset account will be debited.</li>
+</ul><del class="diffmod">
+
+                </del><ins class="diffmod">
+
+	</ins></div>
+            </div>
+        </main>
