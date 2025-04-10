@@ -1,0 +1,138 @@
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title">Request for Quotation</h1>
+</div>
+<div class="wiki-content">
+<p><strong>A Request for Quotation is a document that an organization sends to one or more suppliers asking a quotation for items.</strong></p>
+<p><img alt="Buying Flow" class="screenshot" src="/files/buying_flow_rfq.png"/> </p>
+<p>To access <strong>Request for Quotation</strong>, open the "Buying" workspace and, under "Reports &amp; Masters" &gt; "Buying", click on "Request for Quotation".</p>
+<h2 id="1-prerequisites">1. Prerequisites</h2>
+<p>Before creating and using a <strong>Request for Quotation</strong>, it is advised that you create the following first:</p>
+<ul>
+<li><a onclick="loadContent('supplier.html')">Supplier</a></li>
+<li><a onclick="loadContent('item.html')">Item</a></li>
+</ul>
+<h2 id="2-how-to-create-a-request-for-quotation">2. How to create a Request For Quotation</h2>
+<ol>
+<li>Go to the <strong>Request For Quotation</strong> list and click on "+ Add Request for Quotation".</li>
+<li>Enter the <em>Required Date</em>, by which you'll need the requested materials.</li>
+<li>Fill the "Suppliers" list with possible suppliers.<br/>
+If you set a <em>Contact</em> and <em>Email Id</em>, that can later be used for sending the <strong>Request For Quotation</strong> via email and grant access to the supplier portal.</li>
+<li>In the next table, enter the required items along with UOM and quantity, as well as the target warehouse.</li>
+<li>The <em>Warehouse</em> can be left blank if <em>Maintain Stock</em> is not enabled for the item.</li>
+<li><p>If you want to send the <strong>Request for Quotation</strong> to your suppliers as an email, you can create an <strong>Email Template</strong> and select it here. In the template, you can use special variables for supplier specific data:  </p>
+<ol>
+<li><code>{{ update_password_link }}</code>: A link where your supplier can set a new password to log into your portal.</li>
+<li><code>{{ portal_link }}</code>: A link to this RFQ in your supplier portal.</li>
+<li><code>{{ supplier_name }}</code>: The company name of your supplier.</li>
+<li><code>{{ contact.salutation }} {{ contact.last_name }}</code>: The contact person of your supplier.</li>
+<li><code>{{ user_fullname }}</code>: Your full name.  </li>
+</ol>
+<p>Apart from these, you can access all values in this RFQ, like <code>{{ message_for_supplier }}</code> or <code>{{ terms }}</code>.</p></li>
+<li>You can check how the email will look for a specific supplier by using the "Preview Email" button.</li>
+</ol>
+<p><img alt="Preview Email" class="screenshot" src="/files/email-preview.png"/>
+8. If you want to send further attachments to your suppliers, you can enable the checkbox<br/>
+<em>Send Attached Files</em>. This will add each file attached to the <strong>Request for Quotation</strong> as an attachment to each supplier email.
+9. Once you're done, save the <strong>Request for Quotation</strong> as a draft.
+10. When you're ready, you can submit the <strong>Request for Quotation</strong>. This will trigger an email to each supplier that has <em>Send Email</em> enabled.</p>
+<p><img alt="Create RFQ" class="screenshot" src="/files/rfq-create.png"/> </p>
+<p>A Request for Quotation (RFQ) can also be created from a submitted Material Request. Once an RFQ is created, you can print and send suppliers the PDF which will have all the details you entered relevant to the RFQ. You can also get their reply (Supplier Quotation) in KanivinERP itself, see section <a href="#41-supplier-quotation-by-user">4.1 Supplier Quotation by User</a>. However, for a large number of items, your supplier may be more comfortable with an Excel sheet, etc.</p>
+<h2 id="3-features">3. Features</h2>
+<h3 id="31-get-items-from">3.1 Get items from</h3>
+<p>The items in the items table can be fetched from other documents. The options are: Material Request, Opportunity, and Possible Supplier.</p>
+<ul>
+<li><strong>Material Request</strong>: Items will be fetched from a submitted Material Request that you select. A Material Request can be searched with some matching words and a date range can also be selected to filter the Material Requests.</li>
+<li><strong>Opportunity</strong>: Items will be fetched from a saved Opportunity. A date range can be selected here also.</li>
+<li><strong>Possible Supplier</strong>: Select a possible supplier. Then if you have any submitted Material Requests against this supplier, items can be fetched from that.</li>
+</ul>
+<p><img alt="RFQ get items" class="screenshot" src="/files/rfq-get-items.png"/> </p>
+<h3 id="32-get-suppliers">3.2 Get Suppliers</h3>
+<p>Instead of entering the suppliers manually in the table, you can also fetch them using the 'Get Suppliers' button. When you click on <strong>Tools &gt; Get Suppliers</strong>, you will see the field 'Get Suppliers By'. There are two options to fetch suppliers: By Tag or By Group.</p>
+<ul>
+<li><strong>By tag</strong>: Go to 'Tag Category' via searching from the search bar. You must have created tags here first and assigned them to a Supplier in the Buying module. Then you can select 'By Tag'. On clicking Add 'All Suppliers', suppliers with matching tags will be fetched.</li>
+<li><strong>By Group</strong>: Select 'Supplier Group' and choose the supplier group from which suppliers need to be added. For example, if you select Hardware, all your hardware suppliers will be added so that you can get a quote from all of them.</li>
+</ul>
+<p><img alt="RFQ get suppliers" class="screenshot" src="/files/rfq-get-suppliers.png"/> </p>
+<p>In the Supplier table, on expanding a row with the inverted triangle, you'll see an option 'Download PDF' which will open a PDF of the RFQ.</p>
+<h3 id="33-link-to-material-requests">3.3 Link to Material Requests:</h3>
+<p>When you click on <strong>Tools &gt; Link to Material Requests</strong>, it links the Request for Quotation to available Material Requests. The items should be the same in the Request for Quotation and the Material Request.</p>
+<p><img alt="Link to Material Request" class="screenshot" src="/files/link-to-material-request.png"/> </p>
+<p>Now, when the Request for Quotation is saved, you can see in the Dashboard that it is linked to the Material Request. If there are multiple Material Requests with the same items, then the link will be created with the newest Material Request.</p>
+<h3 id="35-terms-and-conditions">3.5 Terms and Conditions</h3>
+<p>In Sales/Purchase transactions, there might be certain Terms and Conditions based on which the Supplier provides goods or services to the Customer. You can apply the Terms and Conditions to transactions and they will appear when printing the document. To know about Terms and Conditions, <a href="/erpnext/v13/user/manual/en/setting-up/print/terms-and-conditions">click here</a></p>
+<h3 id="36-print-settings">3.6 Print Settings</h3>
+<h4 id="letterhead">Letterhead</h4>
+<p>You can print your request for quotation/purchase order on your company's letterhead. Know more <a href="/erpnext/v13/user/manual/en/setting-up/print/letter-head">here</a>.</p>
+<p>'Group same items' will group the same items added multiple times in the items table. This can be seen when you print it.</p>
+<h4 id="print-headings">Print Headings</h4>
+<p>Titles of your documents can be changed. Know more <a href="/erpnext/v13/user/manual/en/setting-up/print/print-headings">here</a>.</p>
+<h4 id="special-properties">Special properties</h4>
+<p>When printing a RFQ via the "Tools &gt; Download PDF" button, you are asked select the specific supplier you want to address. In the <strong>Print Format</strong> for RFQ, this information can be accessed via special properties:</p>
+<ul>
+<li><code>{{ doc.vendor }}</code> holds the selected supplier ID.</li>
+<li><code>{{ doc.items[i].supplier_part_no }}</code> holds the <em>Supplier Part Number</em> of a requested line item.</li>
+</ul>
+<p>The data of the first supplier will be used while rendering the standard print preview. If you want to print for a different supplier, please use the "Tools &gt; Download PDF" button.</p>
+<h2 id="4-creating-a-supplier-quotation-after-rfq">4. Creating a Supplier Quotation after RFQ</h2>
+<p>After creation of Request for Quotation, there are two ways to generate Supplier Quotation from Request for Quotation.</p>
+<h3 id="41-supplier-quotation-by-user">4.1 Supplier Quotation by User</h3>
+<ol>
+<li>Open Request for Quotation and click on <strong>Supplier Quotation &gt; Create</strong>.</li>
+</ol>
+<p><img alt="Supplier Quotation from RFQ" class="screenshot" src="/files/make-supplier-quotation-from-rfq.png"/>
+2. Select the Supplier, click on the supplier again. In this page, click on the + next to 'Supplier Quotation'. A new Supplier Quotation page will be opened, user has to enter the quantity, rate and submit it.</p>
+<p><img alt="Supplier Quotation from Supplier" class="screenshot" src="/files/supplier-quotation-from-sup.png"/></p>
+<h3 id="42-supplier-quotation-from-supplier">4.2 Supplier Quotation from Supplier</h3>
+<ol>
+<li>If a <a onclick="loadContent('contact.html')">Contact</a> is created for the Supplier and an email address is associated with the Contact, the Contact details and the email address will be fetched on selecting the Supplier. Create a Contact and email address if not present already.</li>
+<li>Click on <strong>Tools &gt; Send Emails to Suppliers</strong>.</li>
+</ol>
+<p><strong>If the Supplier's account is not present</strong>: The system will create the Supplier's account and send details to the Supplier. The Supplier will need to click on the link (Password Update) present in the email. After the password update, the Supplier can access their portal with the 'Request for Quotation' form. The Supplier will be created as a Website User.</p>
+<p><img alt="Supplier email if account not present" class="screenshot" src="/files/supplier-email-with-update-password.png"/> </p>
+<p><strong>If Supplier's account is present</strong>: The system will send a Request for Quotation link to the Supplier. The Supplier must log in using his credentials to view the Request for Quotation form on the portal.</p>
+<p><img alt="Supplier email if account present" class="screenshot" src="/files/supplier-email-normal.png"/>
+3. Either way, when the Supplier logs in, the following screen will be shown to them. From here they can send you a quotation:</p>
+<p><img alt="Supplier Quotation Screen" class="screenshot" src="/files/rfq-supplier-quotation.png"/> </p>
+<p>The Supplier has to enter the amount and notes (payment terms) on the form and click on Submit. In the Quotations section, previous quotations will be visible.
+4. On submission, KanivinERP will create a Supplier Quotation (draft mode) against the Supplier. The user has to review the Supplier Quotation and submit it. When all the items from the Request for Quotation have been quoted by a Supplier, the quote status is updated to 'Received' in the 'Suppliers' table of the Request for Quotation.</p>
+<p><img alt="RFQ status after supplier quote" class="screenshot" src="/files/rfq-supplier-quoted.png"/></p>
+<p>Read <a href="/erpnext/v13/user/manual/en/buying/supplier-quotation">Supplier Quotation</a> to know more.</p>
+<h2 id="5-video">5. Video</h2>
+<h3 id="6-related-topics">6. Related Topics</h3>
+<ol>
+<li><a onclick="loadContent('purchase-order.html')">Purchase Order</a></li>
+<li><a onclick="loadContent('supplier.html')">Supplier</a></li>
+<li><a onclick="loadContent('supplier-quotation.html')">Supplier Quotation</a></li>
+<li><a onclick="loadContent('quotation.html')">Quotation</a></li>
+<li><a onclick="loadContent('material-request.html')">Material Request</a></li>
+</ol>
+</div>
+<input class="d-none" name="wiki-page-name" value="ussgprtj0m"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="revisionsModalTitle">Request for Quotation</h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content">
+<h3>No Revisions</h3>
+</div>
+</div>
+</div></div></div></div></main>

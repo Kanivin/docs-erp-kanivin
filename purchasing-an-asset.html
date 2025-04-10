@@ -1,124 +1,101 @@
-<main><div class="from-markdown markdown ">
-	<div class="alert alert-warning admin-banner hide" role="alert">
-		<div class="d-flex justify-content-between align-items-center">
-			<div>This space has
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
 				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
 				review.
 			</div>
-			<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
-		</div>
-	</div>
-	<div class="d-flex justify-content-between align-items-center">
-		<h1 class="wiki-title" id="purchasing-an-asset">Purchasing an Asset
-<a class="no-underline" href="#purchasing-an-asset" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h1>
-	</div>
-	<div class="wiki-content">
-		<p>For purchasing a new asset:</p>
-
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title" id="purchasing-an-asset">Purchasing an Asset
+<a aria-hidden="true" class="no-underline" href="#purchasing-an-asset">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h1>
+</div>
+<div class="wiki-content">
+<p>For purchasing a new asset:</p>
 <ol>
 <li>Create an Asset Category</li>
 <li>Create a related Item with 'Is Fixed Asset' enabled for creating the asset.</li>
 <li><p>You may also enable 'Auto Create Assets on Purchase' for creating assets automatically. (Optional)</p>
-
-<p><img src="/files/asset-auto-create.png" alt="Purchasing Asset" class="screenshot"></p></li>
+<p><img alt="Purchasing Asset" class="screenshot" src="/files/asset-auto-create.png"/></p></li>
 <li><p>Then, the <a href="/erpnext/v13/user/manual/en/buying/purchase-order">purchase cycle</a> should be followed for purchasing an asset.</p></li>
-<li>Enter the Asset Location in the Items table of the <a href="/erpnext/v13/user/manual/en/stock/purchase-receipt">Purchase Receipt</a> or <a href="/erpnext/v13/user/manual/en/accounts/purchase-invoice">Purchase Invoice</a> through which you are receiving the item.</li>
+<li>Enter the Asset Location in the Items table of the <a onclick="loadContent('purchase-receipt.html')">Purchase Receipt</a> or <a onclick="loadContent('purchase-invoice.html')">Purchase Invoice</a> through which you are receiving the item.</li>
 <li>On submission of a Purchase Receipt, based on auto creation checkbox, Asset records will be created automatically. You can then enter other details of the Asset manually from the Asset form.</li>
 </ol>
-
-<p><img src="/files/asset-auto-create-on-purchase.png" alt="Purchasing Asset" class="screenshot"></p>
-
+<p><img alt="Purchasing Asset" class="screenshot" src="/files/asset-auto-create-on-purchase.png"/></p>
 <p>Following accounting entries will be posted on submission of the Receipt entry if Capital Work In Progress Accounting is enabled in the Asset Category of the purchased asset.</p>
-
-<p><img src="/files/asset-purchase-receipt-gl-entries.png" alt="Asset" class="screenshot"></p>
-
+<p><img alt="Asset" class="screenshot" src="/files/asset-purchase-receipt-gl-entries.png"/></p>
 <p>It is noticeable here that, instead of corresponding asset account, Capital Work in Progress (CWIP) has been debited. This is because the asset has only been purchased and it is still not available for use. Until the asset is available for use, the asset value is maintained against this account. On the day when it is available for use, the CWIP account gets credited and corresponding asset account gets debited.</p>
-
 <p>In case of disabled 'Capital Work In Progress Accounting' in the Asset Category, the receipt entry will be made against corresponding asset accounts set in the Asset Category.</p>
-
 <p>KanivinERP also uses a temporary account "Asset Received But Not Billed" (a liability account) which gets credited on submission of Purchase Receipt entry. Later, on submission of Purchase Invoice, this account gets debited/reversed.</p>
-
-<h4 id="related-topics">Related Topics<a class="no-underline" href="#related-topics" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h4>
-
+<h4 id="related-topics">Related Topics<a aria-hidden="true" class="no-underline" href="#related-topics">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h4>
 <ol>
-<li><a href="/erpnext/v13/user/manual/en/asset/asset">Asset</a></li>
-<li><a href="/erpnext/v13/user/manual/en/stock/purchase-receipt">Purchase Receipt</a></li>
-<li><a href="/erpnext/v13/user/manual/en/accounts/purchase-invoice">Purchase Invoice</a></li>
+<li><a onclick="loadContent('asset.html')">Asset</a></li>
+<li><a onclick="loadContent('purchase-receipt.html')">Purchase Receipt</a></li>
+<li><a onclick="loadContent('purchase-invoice.html')">Purchase Invoice</a></li>
 </ol>
-
-	</div>
-	<input value="arndu53usn" class="d-none" name="wiki-page-name">
-	<div class="modal revisions-modal fade" id="revisionsModal" tabindex="-1" role="dialog" aria-labelledby="revisionsModalTitle" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <div class="d-flex flex-column">
-                    <h5 class="modal-title revision-title" id="purchasing-an-asset">Purchasing an Asset
-<a class="no-underline" href="#purchasing-an-asset" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h5>
-                    <span class="small text-muted revision-time">administrator edited 4 months ago</span>
-                </div>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="revision-content wiki-content"><del class="diffmod">
-                    </del><h3 id="no-revisions"><del class="diffmod">No</del><ins class="diffmod">
-		</ins><p><ins class="diffmod">For</ins> <del class="diffmod">Revisions</del><ins class="diffmod">purchasing a new asset:</ins></p><ins class="diffmod">
-
+</div>
+<input class="d-none" name="wiki-page-name" value="arndu53usn"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="purchasing-an-asset">Purchasing an Asset
+<a aria-hidden="true" class="no-underline" href="#purchasing-an-asset">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content"><del class="diffmod">
+</del><h3 id="no-revisions"><del class="diffmod">No</del><ins class="diffmod">
+</ins><p><ins class="diffmod">For</ins> <del class="diffmod">Revisions</del><ins class="diffmod">purchasing a new asset:</ins></p><ins class="diffmod">
 </ins><ol><ins class="diffmod">
 </ins><li><ins class="diffmod">Create an Asset Category</ins></li><ins class="diffmod">
 </ins><li><ins class="diffmod">Create a related Item with 'Is Fixed Asset' enabled for creating the asset.</ins></li><ins class="diffmod">
 </ins><li><p><ins class="diffmod">You may also enable 'Auto Create Assets on Purchase' for creating assets automatically. (Optional)</ins></p><ins class="diffmod">
-
-</ins><p><ins class="diffmod"><img src="/files/asset-auto-create.png" alt="Purchasing Asset" class="screenshot"></ins></p></li><ins class="diffmod">
-</ins><li><p><ins class="diffmod">Then, the </ins><a href="/erpnext/v13/user/manual/en/buying/purchase-order"><ins class="diffmod">purchase cycle</ins></a><ins class="diffmod">&nbsp;should be followed for purchasing an asset.</ins></p></li><ins class="diffmod">
-</ins><li><ins class="diffmod">Enter the Asset Location in the Items table of the </ins><a href="/erpnext/v13/user/manual/en/stock/purchase-receipt"><ins class="diffmod">Purchase Receipt</ins></a><ins class="diffmod">&nbsp;or </ins><a href="/erpnext/v13/user/manual/en/accounts/purchase-invoice"><ins class="diffmod">Purchase Invoice</ins></a><ins class="diffmod">&nbsp;through which you are receiving the item.</ins></li><ins class="diffmod">
+</ins><p><ins class="diffmod"><img alt="Purchasing Asset" class="screenshot" src="/files/asset-auto-create.png"/></ins></p></li><ins class="diffmod">
+</ins><li><p><ins class="diffmod">Then, the </ins><a href="/erpnext/v13/user/manual/en/buying/purchase-order"><ins class="diffmod">purchase cycle</ins></a><ins class="diffmod"> should be followed for purchasing an asset.</ins></p></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Enter the Asset Location in the Items table of the </ins><a onclick="loadContent('purchase-receipt.html')"><ins class="diffmod">Purchase Receipt</ins></a><ins class="diffmod"> or </ins><a onclick="loadContent('purchase-invoice.html')"><ins class="diffmod">Purchase Invoice</ins></a><ins class="diffmod"> through which you are receiving the item.</ins></li><ins class="diffmod">
 </ins><li><ins class="diffmod">On submission of a Purchase Receipt, based on auto creation checkbox, Asset records will be created automatically. You can then enter other details of the Asset manually from the Asset form.</ins></li><ins class="diffmod">
 </ins></ol><ins class="diffmod">
-
-</ins><p><ins class="diffmod"><img src="/files/asset-auto-create-on-purchase.png" alt="Purchasing Asset" class="screenshot"></ins></p><ins class="diffmod">
-
+</ins><p><ins class="diffmod"><img alt="Purchasing Asset" class="screenshot" src="/files/asset-auto-create-on-purchase.png"/></ins></p><ins class="diffmod">
 </ins><p><ins class="diffmod">Following accounting entries will be posted on submission of the Receipt entry if Capital Work In Progress Accounting is enabled in the Asset Category of the purchased asset.</ins></p><ins class="diffmod">
-
-</ins><p><ins class="diffmod"><img src="/files/asset-purchase-receipt-gl-entries.png" alt="Asset" class="screenshot"></ins></p><ins class="diffmod">
-
+</ins><p><ins class="diffmod"><img alt="Asset" class="screenshot" src="/files/asset-purchase-receipt-gl-entries.png"/></ins></p><ins class="diffmod">
 </ins><p><ins class="diffmod">It is noticeable here that, instead of corresponding asset account, Capital Work in Progress (CWIP) has been debited. This is because the asset has only been purchased and it is still not available for use. Until the asset is available for use, the asset value is maintained against this account. On the day when it is available for use, the CWIP account gets credited and corresponding asset account gets debited.</ins></p><ins class="diffmod">
-
 </ins><p><ins class="diffmod">In case of disabled 'Capital Work In Progress Accounting' in the Asset Category, the receipt entry will be made against corresponding asset accounts set in the Asset Category.</ins></p><ins class="diffmod">
-
 </ins><p><ins class="diffmod">KanivinERP also uses a temporary account "Asset Received But Not Billed" (a liability account) which gets credited on submission of Purchase Receipt entry. Later, on submission of Purchase Invoice, this account gets debited/reversed.</ins></p><ins class="diffmod">
-
-</ins></h3><h4 id="related-topics"><ins class="diffmod">Related Topics</ins><a class="no-underline" href="#related-topics" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h4><del class="diffmod">
-
-                </del><ins class="diffmod">
-
+</ins></h3><h4 id="related-topics"><ins class="diffmod">Related Topics</ins><a aria-hidden="true" class="no-underline" href="#related-topics">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h4><del class="diffmod">
+</del><ins class="diffmod">
 </ins><ol><ins class="diffmod">
-</ins><li><a href="/erpnext/v13/user/manual/en/asset/asset"><ins class="diffmod">Asset</ins></a></li><ins class="diffmod">
-</ins><li><a href="/erpnext/v13/user/manual/en/stock/purchase-receipt"><ins class="diffmod">Purchase Receipt</ins></a></li><ins class="diffmod">
-</ins><li><a href="/erpnext/v13/user/manual/en/accounts/purchase-invoice"><ins class="diffmod">Purchase Invoice</ins></a></li><ins class="diffmod">
+</ins><li><a onclick="loadContent('asset.html')"><ins class="diffmod">Asset</ins></a></li><ins class="diffmod">
+</ins><li><a onclick="loadContent('purchase-receipt.html')"><ins class="diffmod">Purchase Receipt</ins></a></li><ins class="diffmod">
+</ins><li><a onclick="loadContent('purchase-invoice.html')"><ins class="diffmod">Purchase Invoice</ins></a></li><ins class="diffmod">
 </ins></ol><ins class="diffmod">
-
-	</ins></div>
-            </div>
-           </main>
+</ins></div>
+</div>
+</div></div></div></div></main>

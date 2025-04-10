@@ -1,0 +1,48 @@
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title">Auto Creation of Material Request</h1>
+</div>
+<div class="wiki-content">
+<p>To prevent stockouts, you can track item's reorder level. When stock level goes below reorder level, purchase manager is notified and instructed to initiate purchase process for the item.</p>
+<p>In KanivinERP, you can update item's Reorder Level and Reorder Qty in the Item master. If same item has different reorder level, you can also update warehouse-wise reorder level and reorder qty.</p>
+<p><img alt="reorder level" class="screenshot" src="/files/reorder-request-1.png"/> </p>
+<p>With reorder level, you can also define what should be the next action. Either new purchase or transfer from another warehouse. Based on setting in Item master, purpose will be updated in the Material Request as well.</p>
+<p><img alt="reorder level next action" class="screenshot" src="/files/reorder-request-2.png"/> </p>
+<p>When item's stock reaches reorder level, Material Request is auto-created automatically. You can enable this feature from:</p>
+<p><code>Stock &gt; Setup &gt; Stock Settings</code></p>
+<p><img alt="active auto-material request" class="screenshot" src="/files/reorder-request-3.png"/> </p>
+<p>A separate Material Request will be created for each item. User with Purchase Manager's role will receive email alert about these Material Requests.</p>
+<p>If auto creation of Material Request is failed, User with Purchase Manager role will be informed about error message. One of the most encountered error message is:</p>
+<p><strong>An error occurred for certain Items while creating Material Requests based on Re-order level.</strong> <strong>Date 01-04-2016 not in any Fiscal Year.</strong></p>
+<p>One of the reason of error could be Fiscal Year as well. Click <a href="/erpnext/v13/user/manual/en/accounts/articles/fiscal-year-error.html">here</a> to learn more about it.</p>
+<h3 id="note">Note:</h3>
+<p>The system creates a material request by comparing the projected quantity of the group warehouse with the reorder level. If the group warehouse is not set, then the system compares the projected quantity of the Request for Warehouse with the reorder level. If the projected qty is more than the reorder level then system doesn’t add that item in the material request.</p>
+</div>
+<input class="d-none" name="wiki-page-name" value="e68k0fs0dl"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="revisionsModalTitle">Auto Creation of Material Request</h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content">
+<h3>No Revisions</h3>
+</div>
+</div>
+</div></div></div></div></main>

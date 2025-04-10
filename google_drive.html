@@ -1,134 +1,115 @@
-<main><div class="from-markdown markdown ">
-	<div class="alert alert-warning admin-banner hide" role="alert">
-		<div class="d-flex justify-content-between align-items-center">
-			<div>This space has
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
 				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
 				review.
 			</div>
-			<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
-		</div>
-	</div>
-	<div class="d-flex justify-content-between align-items-center">
-		<h1 class="wiki-title" id="google-drive-integration">Google Drive Integration<a class="no-underline" href="#google-drive-integration" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h1>
-	</div>
-	<div class="wiki-content">
-		<p>KanivinERP provides an integration with Google Drive in order for all users to backup their data to Google Drive.</p>
-
-<h2 id="how-to-set-up-google-drive-integration">How to set up Google Drive Integration<a class="no-underline" href="#how-to-set-up-google-drive-integration" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h2>
-
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title" id="google-drive-integration">Google Drive Integration<a aria-hidden="true" class="no-underline" href="#google-drive-integration">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h1>
+</div>
+<div class="wiki-content">
+<p>KanivinERP provides an integration with Google Drive in order for all users to backup their data to Google Drive.</p>
+<h2 id="how-to-set-up-google-drive-integration">How to set up Google Drive Integration<a aria-hidden="true" class="no-underline" href="#how-to-set-up-google-drive-integration">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h2>
 <p>In order to allow a KanivinERP to upload backups to Google Drive, you need to authorize KanivinERP to upload files to Google Drive. Google Drive Integration is set up with the following steps:</p>
-
 <ul>
-<li>Create OAuth 2.0 Credentials via <a href="/erpnext/v13/user/manual/en/erpnext_integration/google_settings">Google Settings</a>.</li>
+<li>Create OAuth 2.0 Credentials via <a onclick="loadContent('google_settings.html')">Google Settings</a>.</li>
 <li>In the Google Drive list, click on New. Enter the Backup folder name to save backups to Google Drive, the backup frequency and the email of the person to whom email is sent notifying the status of the backup and then save it. Now click on <strong>Authorize Drive Access</strong> to authorize KanivinERP to push files to Google Drive.</li>
 <li>Once Authorized, you can save your backup to Google Drive.</li>
 </ul>
-
-<h2 id="how-to-use-google-drive-integration">How to use Google Drive Integration<a class="no-underline" href="#how-to-use-google-drive-integration" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h2>
-
+<h2 id="how-to-use-google-drive-integration">How to use Google Drive Integration<a aria-hidden="true" class="no-underline" href="#how-to-use-google-drive-integration">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h2>
 <blockquote>
-  <p>Note: If you are Frappe Cloud user, onsite and offsite backups are automatically created for you: <a href="https://frappecloud.com/docs/sites/backups">https://frappecloud.com/docs/sites/backups</a></p>
+<p>Note: If you are Frappe Cloud user, onsite and offsite backups are automatically created for you: <a href="https://frappecloud.com/docs/sites/backups">https://frappecloud.com/docs/sites/backups</a></p>
 </blockquote>
-
-<h3 id="uploading-backup-to-google-drive">Uploading backup to Google Drive<a class="no-underline" href="#uploading-backup-to-google-drive" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h3>
-
+<h3 id="uploading-backup-to-google-drive">Uploading backup to Google Drive<a aria-hidden="true" class="no-underline" href="#uploading-backup-to-google-drive">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
 <ul>
 <li>Once Google Drive Integration is successful, you can upload the system backup as well as all your public and private files to Google Drive.</li>
-<li>To backup data to Google Drive, click on <strong>Take Backup</strong>. Backup process will run in the background and you will be notified regarding the backup status. <img src="/files/google_drive.gif" alt="" class="screenshot"></li>
+<li>To backup data to Google Drive, click on <strong>Take Backup</strong>. Backup process will run in the background and you will be notified regarding the backup status. <img alt="" class="screenshot" src="/files/google_drive.gif"/></li>
 </ul>
-
 <blockquote>
-  <p><strong>Note</strong>: If the compressed backup size exceeds 1GB (Gigabyte), the system will upload the latest available backup to Google Drive instead of generating a new backup file.</p>
+<p><strong>Note</strong>: If the compressed backup size exceeds 1GB (Gigabyte), the system will upload the latest available backup to Google Drive instead of generating a new backup file.</p>
 </blockquote>
-
-	</div>
-	<input value="uinusv8dcp" class="d-none" name="wiki-page-name">
-	<div class="modal revisions-modal fade" id="revisionsModal" tabindex="-1" role="dialog" aria-labelledby="revisionsModalTitle" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <div class="d-flex flex-column">
-                    <h5 class="modal-title revision-title" id="google-drive-integration">Google Drive Integration<a class="no-underline" href="#google-drive-integration" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h5>
-                    <span class="small text-muted revision-time">administrator edited 4 months ago</span>
-                </div>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="revision-content wiki-content"><del class="diffmod">
-                    </del><ins class="diffmod">
-		</ins><p><ins class="diffmod">KanivinERP provides an integration with Google Drive in order for all users to backup their data to Google Drive.</ins></p><ins class="diffmod">
-
-</ins><h2 id="how-to-set-up-google-drive-integration"><ins class="diffmod">How to set up Google Drive Integration</ins><a class="no-underline" href="#how-to-set-up-google-drive-integration" aria-hidden="true"><ins class="diffmod">
-        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
-          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
-          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
-        </ins></svg><ins class="diffmod">
-      </ins></a></h2><ins class="diffmod">
-
+</div>
+<input class="d-none" name="wiki-page-name" value="uinusv8dcp"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="google-drive-integration">Google Drive Integration<a aria-hidden="true" class="no-underline" href="#google-drive-integration">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content"><del class="diffmod">
+</del><ins class="diffmod">
+</ins><p><ins class="diffmod">KanivinERP provides an integration with Google Drive in order for all users to backup their data to Google Drive.</ins></p><ins class="diffmod">
+</ins><h2 id="how-to-set-up-google-drive-integration"><ins class="diffmod">How to set up Google Drive Integration</ins><a aria-hidden="true" class="no-underline" href="#how-to-set-up-google-drive-integration"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h2><ins class="diffmod">
 </ins><p><ins class="diffmod">In order to allow a KanivinERP to upload backups to Google Drive, you need to authorize KanivinERP to upload files to Google Drive. Google Drive Integration is set up with the following steps:</ins></p><ins class="diffmod">
-
 </ins><ul><ins class="diffmod">
-</ins><li><ins class="diffmod">Create OAuth 2.0 Credentials via </ins><a href="/erpnext/v13/user/manual/en/erpnext_integration/google_settings"><ins class="diffmod">Google Settings</ins></a><ins class="diffmod">.</ins></li><ins class="diffmod">
-</ins><li><ins class="diffmod">In the Google Drive list, click on New. Enter the Backup folder name to save backups to Google Drive, the backup frequency and the email of the person to whom email is sent notifying the status of the backup and then save it. Now click on </ins><strong><ins class="mod"><ins class="diffmod">Authorize Drive Access</ins></ins></strong><ins class="diffmod">&nbsp;to authorize KanivinERP to push files to Google Drive.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Create OAuth 2.0 Credentials via </ins><a onclick="loadContent('google_settings.html')"><ins class="diffmod">Google Settings</ins></a><ins class="diffmod">.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">In the Google Drive list, click on New. Enter the Backup folder name to save backups to Google Drive, the backup frequency and the email of the person to whom email is sent notifying the status of the backup and then save it. Now click on </ins><strong><ins class="mod"><ins class="diffmod">Authorize Drive Access</ins></ins></strong><ins class="diffmod"> to authorize KanivinERP to push files to Google Drive.</ins></li><ins class="diffmod">
 </ins><li><ins class="diffmod">Once Authorized, you can save your backup to Google Drive.</ins></li><ins class="diffmod">
 </ins></ul><ins class="diffmod">
-
-</ins><h2 id="how-to-use-google-drive-integration"><ins class="diffmod">How to use Google Drive Integration</ins><a class="no-underline" href="#how-to-use-google-drive-integration" aria-hidden="true"><ins class="diffmod">
-        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
-          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
-          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
-        </ins></svg><ins class="diffmod">
-      </ins></a></h2><ins class="diffmod">
-
+</ins><h2 id="how-to-use-google-drive-integration"><ins class="diffmod">How to use Google Drive Integration</ins><a aria-hidden="true" class="no-underline" href="#how-to-use-google-drive-integration"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h2><ins class="diffmod">
 </ins><blockquote><ins class="diffmod">
-  </ins><p><ins class="diffmod">Note: If you are Frappe Cloud user, onsite and offsite backups are automatically created for you: </ins><a href="https://frappecloud.com/docs/sites/backups"><ins class="diffmod">https://frappecloud.com/docs/sites/backups</ins></a></p><ins class="diffmod">
+</ins><p><ins class="diffmod">Note: If you are Frappe Cloud user, onsite and offsite backups are automatically created for you: </ins><a href="https://frappecloud.com/docs/sites/backups"><ins class="diffmod">https://frappecloud.com/docs/sites/backups</ins></a></p><ins class="diffmod">
 </ins></blockquote><ins class="diffmod">
-
-</ins><h3 id="uploading-backup-to-google-drive"><del class="diffmod">No</del><ins class="diffmod">Uploading</ins> <del class="diffmod">Revisions</del><ins class="diffmod">backup to Google Drive</ins><a class="no-underline" href="#uploading-backup-to-google-drive" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h3><del class="diffmod">
-
-                </del><ins class="diffmod">
-
+</ins><h3 id="uploading-backup-to-google-drive"><del class="diffmod">No</del><ins class="diffmod">Uploading</ins> <del class="diffmod">Revisions</del><ins class="diffmod">backup to Google Drive</ins><a aria-hidden="true" class="no-underline" href="#uploading-backup-to-google-drive">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3><del class="diffmod">
+</del><ins class="diffmod">
 </ins><ul><ins class="diffmod">
 </ins><li><ins class="diffmod">Once Google Drive Integration is successful, you can upload the system backup as well as all your public and private files to Google Drive.</ins></li><ins class="diffmod">
-</ins><li><ins class="diffmod">To backup data to Google Drive, click on </ins><strong><ins class="mod"><ins class="diffmod">Take Backup</ins></ins></strong><ins class="diffmod">. Backup process will run in the background and you will be notified regarding the backup status. <img src="/files/google_drive.gif" alt="" class="screenshot"></ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">To backup data to Google Drive, click on </ins><strong><ins class="mod"><ins class="diffmod">Take Backup</ins></ins></strong><ins class="diffmod">. Backup process will run in the background and you will be notified regarding the backup status. <img alt="" class="screenshot" src="/files/google_drive.gif"/></ins></li><ins class="diffmod">
 </ins></ul><ins class="diffmod">
-
 </ins><blockquote><ins class="diffmod">
-  </ins><p><strong><ins class="diffmod">Note</ins></strong><ins class="diffmod">: If the compressed backup size exceeds 1GB (Gigabyte), the system will upload the latest available backup to Google Drive instead of generating a new backup file.</ins></p><ins class="diffmod">
+</ins><p><strong><ins class="diffmod">Note</ins></strong><ins class="diffmod">: If the compressed backup size exceeds 1GB (Gigabyte), the system will upload the latest available backup to Google Drive instead of generating a new backup file.</ins></p><ins class="diffmod">
 </ins></blockquote><ins class="diffmod">
-
-	</ins></div>
-            </div>
-           </main>
+</ins></div>
+</div>
+</div></div></div></div></main>

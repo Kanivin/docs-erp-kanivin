@@ -1,0 +1,331 @@
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title" id="raw-printing">Raw Printing
+<a aria-hidden="true" class="no-underline" href="#raw-printing">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h1>
+</div>
+<div class="wiki-content">
+<blockquote>
+<p>Introduced in Version 12</p>
+</blockquote>
+<p><strong>Sending a string of commands to a printer directly in its native language is called Raw Printing.</strong></p>
+<p>Many thermal printers need these raw commands sent to them in order to perform functions like barcode printing, receipt printing, label printing, etc. Raw Printing bypasses the printer's drivers in most cases, making them very fast and reliable. Raw Printing is also capable of doing some advanced features such as cutting receipt paper, kicking out cash drawers, etc.</p>
+<h2 id="1-setting-up-raw-printing-in-erpnext">1. Setting up Raw Printing in KanivinERP<a aria-hidden="true" class="no-underline" href="#1-setting-up-raw-printing-in-erpnext">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h2>
+<h3 id="11-installing-qz-tray-application-on-the-client-computer">1.1 Installing QZ Tray application on the client computer<a aria-hidden="true" class="no-underline" href="#11-installing-qz-tray-application-on-the-client-computer">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<p>Download and install the QZ Tray application on the computer to which your thermal printer is connected. This application can be found at its <a href="https://qz.io/download/">official site</a>. Currently, Windows, macOS, and Linux are supported by QZ Tray. During the installation you will be prompted to install Java if not already installed, please install Java to complete the installation.</p>
+<p>Further instructions on installing the QZ Tray Application can be <a href="https://qz.io/wiki/using-qz-tray">here</a>.</p>
+<h3 id="12-create-raw-commands-print-format">1.2 Create Raw Commands Print Format<a aria-hidden="true" class="no-underline" href="#12-create-raw-commands-print-format">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<p>To be able to send raw commands to a printer you need to first create a print format in raw commands. Jinja Templating Language is used in raw commands just like in the <a href="/erpnext/v13/user/manual/en/customize-erpnext/print-format">HTML custom print format</a>.</p>
+<p>To create a new print format for Raw Printing:</p>
+<ol>
+<li>Go to print format list: <strong>Home &gt; Settings &gt; Printing &gt; Print Format</strong></li>
+<li>Click on New.</li>
+<li>Select the relevant DocType.</li>
+<li>Check the <strong>Custom format</strong> and <strong>Raw Printing</strong> options.</li>
+<li>Fill in the <strong>Raw Commands</strong> field with the required raw commands to be sent to the printer.</li>
+<li><p>Click Save.</p>
+<p><img alt="Raw Commands Print Format" class="screenshot" src="/files/raw-command-print-format.png"/></p></li>
+</ol>
+<p>Currently, any string-based printer languages can be used in the <code>Raw Commands</code> field in the print format. Writing raw commands requires knowledge of the printer's native language provided by the printer manufacturer. Please refer to the developer manual provided by the printer manufacturer on how to write their native commands.</p>
+<h3 id="13-enable-raw-printing-in-the-print-setting">1.3 Enable Raw Printing in the Print Setting<a aria-hidden="true" class="no-underline" href="#13-enable-raw-printing-in-the-print-setting">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<p>To enable Raw Printing:</p>
+<ol>
+<li>Go to: <strong>Home &gt; Settings &gt; Printing &gt; Print Settings &gt; Raw Printing</strong>.</li>
+<li>Check the <strong>Enable Raw Printing</strong> option.</li>
+<li>Save.</li>
+</ol>
+<h2 id="2-methods-to-utilize-raw-printing-in-erpnext">2. Methods to utilize raw printing in KanivinERP<a aria-hidden="true" class="no-underline" href="#2-methods-to-utilize-raw-printing-in-erpnext">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h2>
+<p>There are two ways to send Raw Printing commands to your printer.</p>
+<h3 id="21-clicking-print-on-the-print-view-page">2.1 Clicking print on the print view page<a aria-hidden="true" class="no-underline" href="#21-clicking-print-on-the-print-view-page">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<p>To print a raw command print format from the Document print view:</p>
+<ol>
+<li>Select appropriate print format. For print format in Raw Commands, "No Preview available" message is shown in place of the print preview.</li>
+<li>Click on the print button.</li>
+<li>Please allow the connection prompt from the QZ Tray for the actions that you initiated (Keyboard Shortcut: Alt + A).
+<ul>
+<li><img alt="QZ Tray Prompt" class="screenshot" src="/files/qz-tray-prompt.png"/></li>
+</ul></li>
+<li><p>You may be asked to select the "print format - printer mapping".</p>
+<ul>
+<li>This mapping is used to send the print commands to the appropriate printer.</li>
+<li>The printer needs to be installed on your computer to be able to map it to a print format.
+<img alt="print format - printer mapping" class="screenshot" src="/files/printer-settings.png"/></li>
+<li>This mapping is stored locally on the same computer and will have to be set on each client machine.</li>
+<li>You can also edit this by clicking on the <strong>Printer Settings</strong> button.</li>
+</ul>
+<p><img alt="Raw Printing from Print View" class="screenshot" src="/files/raw-printing-from-print-view.gif"/></p></li>
+</ol>
+<h3 id="22-calling-raw-print-functions-from-a-client-script">2.2 Calling Raw Print functions from a client script<a aria-hidden="true" class="no-underline" href="#22-calling-raw-print-functions-from-a-client-script">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<p>It is often a requirement that a print command has to be issued on a certain event (like submit, save, amend, etc.). It is possible to write a <a href="/erpnext/v13/user/manual/en/customize-erpnext/client-scripts">client script</a> to do this for you.</p>
+<p>Following are the relevant Raw Print functions:</p>
+<ol>
+<li>function: <code>frappe.ui.form.qz_connect</code>
+<ul>
+<li>A connection wrapper to establish a connection with the QZ Tray application.</li>
+<li>Returns a promise which resolves on successful establishment of a connection.</li>
+<li>Allows active and inactive connections to resolve regardless. Hence it can be called every time before sending a command.</li>
+<li>Usage example:</li>
+</ul></li>
+</ol>
+<pre><button class="btn copy-btn" data-toggle="tooltip" title="Copy Code"><svg class="feather feather-clipboard" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect height="4" rx="1" ry="1" width="8" x="8" y="2"></rect></svg></button><code class="hljs scss"> frappe<span class="hljs-selector-class">.ui</span><span class="hljs-selector-class">.form</span><span class="hljs-selector-class">.qz_connect</span>()
+ <span class="hljs-selector-class">.then</span>(function () {
+ return qz<span class="hljs-selector-class">.print</span>(config, data);
+ })
+ <span class="hljs-selector-class">.then</span>(frappe.ui.form.qz_success)
+ <span class="hljs-selector-class">.catch</span>(err =&gt; {
+ frappe.ui.form.qz_fail(err);
+ });
+</code></pre>
+<p>Here, <code>qz</code> is a global object provided by the <code>qz-tray.js</code> library.</p>
+<ol start="2">
+<li><p>function: <code>frappe.ui.form.qz_get_printer_list</code></p>
+<ul>
+<li>Gives you the list of printers available to the QZ Tray application</li>
+<li>Returns a promise which resolves to a list of printers</li>
+</ul>
+<p>Usage example:</p></li>
+</ol>
+<pre><button class="btn copy-btn" data-toggle="tooltip" title="Copy Code"><svg class="feather feather-clipboard" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect height="4" rx="1" ry="1" width="8" x="8" y="2"></rect></svg></button><code class="hljs less"> <span class="hljs-selector-tag">frappe</span><span class="hljs-selector-class">.ui</span><span class="hljs-selector-class">.form</span><span class="hljs-selector-class">.qz_get_printer_list</span>()<span class="hljs-selector-class">.then</span>(
+ <span class="hljs-comment">// Required action on getting the printer list.</span>
+ <span class="hljs-comment">// <span class="hljs-doctag">Note:</span> Printer list is a array of strings.</span>
+ );
+</code></pre>
+<ol start="3">
+<li><p>function: <code>frappe.ui.form.qz_success</code></p>
+<ul>
+<li>Displays a "Print Sent to the printer!" alert to the user. Can be called after the print command is successful.</li>
+</ul></li>
+<li><p>function: <code>frappe.ui.form.qz_fail</code></p>
+<ul>
+<li>Displays the error message to the user. Should be called on failure of QZ Tray connection.</li>
+</ul></li>
+</ol>
+<p>You can also directly access the functions provided by the <code>qz-tray.js</code> library via the <code>qz</code> object. <a href="https://qz.io/api/">Click here for qz-tray.js library documentation</a>. Note: The <code>qz</code> object is initialized only after calling the <code>frappe.ui.form.qz_connect</code> for the first time. In case you require the <code>qz</code> object before that you can use the <code>frappe.ui.form.qz_init</code>.</p>
+<h3 id="3-related-topics">3. Related Topics<a aria-hidden="true" class="no-underline" href="#3-related-topics">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<ol>
+<li><a onclick="loadContent('print-settings.html')">Print Settings</a></li>
+<li><a onclick="loadContent('print-format.html')">Print Format</a></li>
+<li><a onclick="loadContent('print-style.html')">Print Style</a></li>
+</ol>
+</div>
+<input class="d-none" name="wiki-page-name" value="f9th809pqu"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="raw-printing">Raw Printing
+<a aria-hidden="true" class="no-underline" href="#raw-printing">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content"><del class="diffmod">
+</del><ins class="diffmod">
+</ins><blockquote><ins class="diffmod">
+</ins><p><ins class="diffmod">Introduced in Version 12</ins></p><ins class="diffmod">
+</ins></blockquote><ins class="diffmod">
+</ins><p><strong><ins class="diffmod">Sending a string of commands to a printer directly in its native language is called Raw Printing.</ins></strong></p><ins class="diffmod">
+</ins><p><ins class="diffmod">Many thermal printers need these raw commands sent to them in order to perform functions like barcode printing, receipt printing, label printing, etc. Raw Printing bypasses the printer's drivers in most cases, making them very fast and reliable. Raw Printing is also capable of doing some advanced features such as cutting receipt paper, kicking out cash drawers, etc.</ins></p><ins class="diffmod">
+</ins><h2 id="1-setting-up-raw-printing-in-erpnext"><ins class="diffmod">1. Setting up Raw Printing in KanivinERP</ins><a aria-hidden="true" class="no-underline" href="#1-setting-up-raw-printing-in-erpnext"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h2><ins class="diffmod">
+</ins><h3 id="11-installing-qz-tray-application-on-the-client-computer"><del class="diffmod">No</del><ins class="diffmod">1.1</ins> <del class="diffmod">Revisions</del><ins class="diffmod">Installing QZ Tray application on the client computer</ins><a aria-hidden="true" class="no-underline" href="#11-installing-qz-tray-application-on-the-client-computer">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3><del class="diffmod">
+</del><ins class="diffmod">
+</ins><p><ins class="diffmod">Download and install the QZ Tray application on the computer to which your thermal printer is connected. This application can be found at its </ins><a href="https://qz.io/download/"><ins class="diffmod">official site</ins></a><ins class="diffmod">. Currently, Windows, macOS, and Linux are supported by QZ Tray. During the installation you will be prompted to install Java if not already installed, please install Java to complete the installation.</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod">Further instructions on installing the QZ Tray Application can be </ins><a href="https://qz.io/wiki/using-qz-tray"><ins class="diffmod">here</ins></a><ins class="diffmod">.</ins></p><ins class="diffmod">
+</ins><h3 id="12-create-raw-commands-print-format"><ins class="diffmod">1.2 Create Raw Commands Print Format</ins><a aria-hidden="true" class="no-underline" href="#12-create-raw-commands-print-format"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h3><ins class="diffmod">
+</ins><p><ins class="diffmod">To be able to send raw commands to a printer you need to first create a print format in raw commands. Jinja Templating Language is used in raw commands just like in the </ins><a href="/erpnext/v13/user/manual/en/customize-erpnext/print-format"><ins class="diffmod">HTML custom print format</ins></a><ins class="diffmod">.</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod">To create a new print format for Raw Printing:</ins></p><ins class="diffmod">
+</ins><ol><ins class="diffmod">
+</ins><li><ins class="diffmod">Go to print format list: </ins><strong><ins class="mod"><ins class="diffmod">Home &gt; Settings &gt; Printing &gt; Print Format</ins></ins></strong></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Click on New.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Select the relevant DocType.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Check the </ins><strong><ins class="mod"><ins class="diffmod">Custom format</ins></ins></strong><ins class="diffmod"> and </ins><strong><ins class="mod"><ins class="diffmod">Raw Printing</ins></ins></strong><ins class="diffmod"> options.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Fill in the </ins><strong><ins class="mod"><ins class="diffmod">Raw Commands</ins></ins></strong><ins class="diffmod"> field with the required raw commands to be sent to the printer.</ins></li><ins class="diffmod">
+</ins><li><p><ins class="diffmod">Click Save.</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod"><img alt="Raw Commands Print Format" class="screenshot" src="/files/raw-command-print-format.png"/></ins></p></li><ins class="diffmod">
+</ins></ol><ins class="diffmod">
+</ins><p><ins class="diffmod">Currently, any string-based printer languages can be used in the </ins><code><ins class="diffmod">Raw Commands</ins></code><ins class="diffmod"> field in the print format. Writing raw commands requires knowledge of the printer's native language provided by the printer manufacturer. Please refer to the developer manual provided by the printer manufacturer on how to write their native commands.</ins></p><ins class="diffmod">
+</ins><h3 id="13-enable-raw-printing-in-the-print-setting"><ins class="diffmod">1.3 Enable Raw Printing in the Print Setting</ins><a aria-hidden="true" class="no-underline" href="#13-enable-raw-printing-in-the-print-setting"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h3><ins class="diffmod">
+</ins><p><ins class="diffmod">To enable Raw Printing:</ins></p><ins class="diffmod">
+</ins><ol><ins class="diffmod">
+</ins><li><ins class="diffmod">Go to: </ins><strong><ins class="mod"><ins class="diffmod">Home &gt; Settings &gt; Printing &gt; Print Settings &gt; Raw Printing</ins></ins></strong><ins class="diffmod">.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Check the </ins><strong><ins class="mod"><ins class="diffmod">Enable Raw Printing</ins></ins></strong><ins class="diffmod"> option.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Save.</ins></li><ins class="diffmod">
+</ins></ol><ins class="diffmod">
+</ins><h2 id="2-methods-to-utilize-raw-printing-in-erpnext"><ins class="diffmod">2. Methods to utilize raw printing in KanivinERP</ins><a aria-hidden="true" class="no-underline" href="#2-methods-to-utilize-raw-printing-in-erpnext"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h2><ins class="diffmod">
+</ins><p><ins class="diffmod">There are two ways to send Raw Printing commands to your printer.</ins></p><ins class="diffmod">
+</ins><h3 id="21-clicking-print-on-the-print-view-page"><ins class="diffmod">2.1 Clicking print on the print view page</ins><a aria-hidden="true" class="no-underline" href="#21-clicking-print-on-the-print-view-page"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h3><ins class="diffmod">
+</ins><p><ins class="diffmod">To print a raw command print format from the Document print view:</ins></p><ins class="diffmod">
+</ins><ol><ins class="diffmod">
+</ins><li><ins class="diffmod">Select appropriate print format. For print format in Raw Commands, "No Preview available" message is shown in place of the print preview.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Click on the print button.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Please allow the connection prompt from the QZ Tray for the actions that you initiated (Keyboard Shortcut: Alt + A).
+</ins><ul><ins class="diffmod">
+</ins><li><ins class="diffmod"><img alt="QZ Tray Prompt" class="screenshot" src="/files/qz-tray-prompt.png"/></ins></li><ins class="diffmod">
+</ins></ul></li><ins class="diffmod">
+</ins><li><p><ins class="diffmod">You may be asked to select the "print format - printer mapping".</ins></p><ins class="diffmod">
+</ins><ul><ins class="diffmod">
+</ins><li><ins class="diffmod">This mapping is used to send the print commands to the appropriate printer.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">The printer needs to be installed on your computer to be able to map it to a print format.
+<img alt="print format - printer mapping" class="screenshot" src="/files/printer-settings.png"/></ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">This mapping is stored locally on the same computer and will have to be set on each client machine.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">You can also edit this by clicking on the </ins><strong><ins class="mod"><ins class="diffmod">Printer Settings</ins></ins></strong><ins class="diffmod"> button.</ins></li><ins class="diffmod">
+</ins></ul><ins class="diffmod">
+</ins><p><ins class="diffmod"><img alt="Raw Printing from Print View" class="screenshot" src="/files/raw-printing-from-print-view.gif"/></ins></p></li><ins class="diffmod">
+</ins></ol><ins class="diffmod">
+</ins><h3 id="22-calling-raw-print-functions-from-a-client-script"><ins class="diffmod">2.2 Calling Raw Print functions from a client script</ins><a aria-hidden="true" class="no-underline" href="#22-calling-raw-print-functions-from-a-client-script"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h3><ins class="diffmod">
+</ins><p><ins class="diffmod">It is often a requirement that a print command has to be issued on a certain event (like submit, save, amend, etc.). It is possible to write a </ins><a href="/erpnext/v13/user/manual/en/customize-erpnext/client-scripts"><ins class="diffmod">client script</ins></a><ins class="diffmod"> to do this for you.</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod">Following are the relevant Raw Print functions:</ins></p><ins class="diffmod">
+</ins><ol><ins class="diffmod">
+</ins><li><ins class="diffmod">function: </ins><code><ins class="diffmod">frappe.ui.form.qz_connect</ins></code><ins class="diffmod">
+</ins><ul><ins class="diffmod">
+</ins><li><ins class="diffmod">A connection wrapper to establish a connection with the QZ Tray application.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Returns a promise which resolves on successful establishment of a connection.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Allows active and inactive connections to resolve regardless. Hence it can be called every time before sending a command.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Usage example:</ins></li><ins class="diffmod">
+</ins></ul></li><ins class="diffmod">
+</ins></ol><ins class="diffmod">
+</ins><pre><button class="btn copy-btn" data-toggle="tooltip" title="Copy Code"><svg class="feather feather-clipboard" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect height="4" rx="1" ry="1" width="8" x="8" y="2"></rect></svg></button><code class="hljs scss"><ins class="diffmod"> frappe<span class="hljs-selector-class">.ui</span><span class="hljs-selector-class">.form</span><span class="hljs-selector-class">.qz_connect</span>()
+ <span class="hljs-selector-class">.then</span>(function () {
+ return qz<span class="hljs-selector-class">.print</span>(config, data);
+ })
+ <span class="hljs-selector-class">.then</span>(frappe.ui.form.qz_success)
+ <span class="hljs-selector-class">.catch</span>(err =&gt; {
+ frappe.ui.form.qz_fail(err);
+ });
+</ins></code></pre><ins class="diffmod">
+</ins><p><ins class="diffmod">Here, </ins><code><ins class="diffmod">qz</ins></code><ins class="diffmod"> is a global object provided by the </ins><code><ins class="diffmod">qz-tray.js</ins></code><ins class="diffmod"> library.</ins></p><ins class="diffmod">
+</ins><ol start="2"><ins class="diffmod">
+</ins><li><p><ins class="diffmod">function: </ins><code><ins class="diffmod">frappe.ui.form.qz_get_printer_list</ins></code></p><ins class="diffmod">
+</ins><ul><ins class="diffmod">
+</ins><li><ins class="diffmod">Gives you the list of printers available to the QZ Tray application</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Returns a promise which resolves to a list of printers</ins></li><ins class="diffmod">
+</ins></ul><ins class="diffmod">
+</ins><p><ins class="diffmod">Usage example:</ins></p></li><ins class="diffmod">
+</ins></ol><ins class="diffmod">
+</ins><pre><button class="btn copy-btn" data-toggle="tooltip" title="Copy Code"><svg class="feather feather-clipboard" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect height="4" rx="1" ry="1" width="8" x="8" y="2"></rect></svg></button><code class="hljs less"><ins class="diffmod"> <span class="hljs-selector-tag">frappe</span><span class="hljs-selector-class">.ui</span><span class="hljs-selector-class">.form</span><span class="hljs-selector-class">.qz_get_printer_list</span>()<span class="hljs-selector-class">.then</span>(
+ <span class="hljs-comment">// Required action on getting the printer list.</span>
+ <span class="hljs-comment">// <span class="hljs-doctag">Note:</span> Printer list is a array of strings.</span>
+ );
+</ins></code></pre><ins class="diffmod">
+</ins><ol start="3"><ins class="diffmod">
+</ins><li><p><ins class="diffmod">function: </ins><code><ins class="diffmod">frappe.ui.form.qz_success</ins></code></p><ins class="diffmod">
+</ins><ul><ins class="diffmod">
+</ins><li><ins class="diffmod">Displays a "Print Sent to the printer!" alert to the user. Can be called after the print command is successful.</ins></li><ins class="diffmod">
+</ins></ul></li><ins class="diffmod">
+</ins><li><p><ins class="diffmod">function: </ins><code><ins class="diffmod">frappe.ui.form.qz_fail</ins></code></p><ins class="diffmod">
+</ins><ul><ins class="diffmod">
+</ins><li><ins class="diffmod">Displays the error message to the user. Should be called on failure of QZ Tray connection.</ins></li><ins class="diffmod">
+</ins></ul></li><ins class="diffmod">
+</ins></ol><ins class="diffmod">
+</ins><p><ins class="diffmod">You can also directly access the functions provided by the </ins><code><ins class="diffmod">qz-tray.js</ins></code><ins class="diffmod"> library via the </ins><code><ins class="diffmod">qz</ins></code><ins class="diffmod"> object. </ins><a href="https://qz.io/api/"><ins class="diffmod">Click here for qz-tray.js library documentation</ins></a><ins class="diffmod">. Note: The </ins><code><ins class="diffmod">qz</ins></code><ins class="diffmod"> object is initialized only after calling the </ins><code><ins class="diffmod">frappe.ui.form.qz_connect</ins></code><ins class="diffmod"> for the first time. In case you require the </ins><code><ins class="diffmod">qz</ins></code><ins class="diffmod"> object before that you can use the </ins><code><ins class="diffmod">frappe.ui.form.qz_init</ins></code><ins class="diffmod">.</ins></p><ins class="diffmod">
+</ins><h3 id="3-related-topics"><ins class="diffmod">3. Related Topics</ins><a aria-hidden="true" class="no-underline" href="#3-related-topics"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h3><ins class="diffmod">
+</ins><ol><ins class="diffmod">
+</ins><li><a onclick="loadContent('print-settings.html')"><ins class="diffmod">Print Settings</ins></a></li><ins class="diffmod">
+</ins><li><a onclick="loadContent('print-format.html')"><ins class="diffmod">Print Format</ins></a></li><ins class="diffmod">
+</ins><li><a onclick="loadContent('print-style.html')"><ins class="diffmod">Print Style</ins></a></li><ins class="diffmod">
+</ins></ol><ins class="diffmod">
+</ins></div>
+</div>
+</div></div></div></div></main>

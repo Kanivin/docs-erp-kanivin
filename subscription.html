@@ -1,0 +1,107 @@
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title">Subscription</h1>
+</div>
+<div class="wiki-content">
+<p>If you offer a service that requires renewal in a certain time period or you pay some monthly expenses like rent (yearly, monthly, quarterly, etc.), you can use the Subscription feature in KanivinERP to track them. The Subscription master captures all the details required for the auto-creation of Sales or Purchase Invoices.</p>
+<p>Let's consider a use-case of KanivinERP subscription itself. Our hosting plans are available on a yearly basis. Each Customer's account has a subscription expiry date, after which customers must renew their subscription with us.</p>
+<p>To manage the client's subscription expiry and auto-generation of Sales Invoice for the renewal, we use the Subscription feature.</p>
+<p>To access the Subscription list, go to:</p>
+<blockquote>
+<p>Home &gt; Accounting &gt; Subscription Management &gt; Subscription</p>
+</blockquote>
+<h2 id="1-prerequisites">1. Prerequisites</h2>
+<p>Before creating and using a Subscription, it is advisable to create the following first:</p>
+<ol>
+<li><a onclick="loadContent('subscription-plan.html')">Subscription Plan</a></li>
+</ol>
+<h2 id="2-how-to-set-a-subscription">2. How to set a Subscription</h2>
+<ol>
+<li>Go to the Subscription list and click on New.</li>
+<li>Select Party Type as 'Customer' or 'Supplier' and select the party.</li>
+<li>Set the Start Date from when the subscription will be active.</li>
+<li>Optionally you can also enter the subscription end date if you know it before hand.</li>
+<li>Days Until Due is the number of days within which Customer has to pay a generated Sales Invoice.</li>
+<li>Select the <a onclick="loadContent('subscription-plan.html')">Subscription Plans</a>.</li>
+<li>Save. <img alt="Subscription" class="screenshot" src="/files/subscription.png"/></li>
+</ol>
+<p>Based on the subscription start and end date, actual dates for invoices will be calculated.</p>
+<h2 id="3-features">3. Features</h2>
+<h3 id="31-trial-period">3.1 Trial Period</h3>
+<p>If you're offering a trial period for the subscription, a Trial Period Start Date and a Trial Period End Date can be set. Invoices will not be generated during the trial period and the Subscription status will show 'Trialling'. <img alt="Subscription Trial" class="screenshot" src="/files/subscription-trial.png"/> </p>
+<h3 id="32-cancel-auto-renewal">3.2 Cancel Auto Renewal</h3>
+<p>On enabling the 'Cancel At End Of Period' the Subscription will be canceled at the end of its period. For example, if it is a yearly subscription, the system will stop generating invoices after one year of subscription.</p>
+<h3 id="33-taxes">3.3 Taxes</h3>
+<p>You can apply Taxes to a Subscription by using a Sales Taxes and Charges Template. Visit the <a href="/erpnext/v13/user/manual/en/selling/sales-taxes-and-charges-template">Sales Taxes and Charges Template</a> page to know more.</p>
+<h3 id="34-applying-discounts">3.4 Applying discounts</h3>
+<p>You can apply additional discounts on the Subscription based on Grand Total (pre tax) or Net Total (post tax). A discount percentage can also be set. For example, a discount of 2% on 12,000 would be 240 in discount. <img alt="Subscription Discount" class="screenshot" src="/files/subscription-discount.png"/> Visit the <a href="/erpnext/v13/user/manual/en/selling/articles/applying-discount">Applying Discount</a> page for more details.</p>
+<h3 id="35-automatically-create-invoices">3.5 Automatically create invoices</h3>
+<p>Based on the <a href="/erpnext/v13/user/manual/en/accounts/subscription-plan">Subscription Plans</a> interval, invoices will be created automatically. "Generate Invoice At Beginning Of Period" needs to be enabled if you want to generate invoices as soon as the subscription is active. If "Generate New Invoices Past Due Date" is enabled then new invoices will keep on generating even though current invoice is unpaid or past due date. If "Generate Invoice Early" is enabled, an invoice will be generated before the end of the period by the number of days entered in "Generate Invoice Days Early."</p>
+<p>The generated invoices will be submitted automatically by default. If 'Submit Invoice Automatically' is disabled, the invoice will be saved as a draft.</p>
+<p><img alt="Subscription Invoices" class="screenshot" src="/files/subscription-invoices.png"/> </p>
+<h3 id="36-follow-calendar-months">3.6 Follow Calendar Months</h3>
+<p>If 'Follow Calendar Months' is enabled then proper calendar months will be followed even if the Subscription Start Date is in the middle of the month. For Eg: Suppose billing interval is 'Month' and billing interval count is 3 in subscription plan and Subscription Start Date is '15-04-2020' then if 'Follow Calendar Months' is checked then first invoice will be generated for '15-04-2020' to '30-06-2020' rather than '15-04-2020' to '14-07-2020'</p>
+<h3 id="37-canceling-a-subscription">3.7 Canceling a Subscription</h3>
+<p>If the Customer decides to cancel a Subscription, it can be canceled in the system using the <strong>Cancel Subscription</strong>. The system will stop generating invoices when a Subscription is canceled. <img alt="Subscription Cancel" class="screenshot" src="/files/subscription-cancel.png"/> </p>
+<h3 id="38-updating-a-subscription">3.8 Updating a Subscription</h3>
+<p>Clicking on the <strong>Fetch Subscription Updates</strong> button will update the Subscription with the latest generated invoices.</p>
+<h2 id="4-difference-between-subscription-and-auto-repeat">4. Difference Between Subscription and Auto-Repeat</h2>
+<table class="table table-bordered">
+<thead>
+<tr>
+<th>Auto Repeat</th>
+<th>Subscription</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Is applicable on transactions</td>
+<td>Is applicable on Items</td>
+</tr>
+<tr>
+<td>Multiple transactions like Sales Order, Purchase Order, Invoices, Journal Entry, etc. are auto created</td>
+<td>Only Sales Invoices and Purchase Invoices are auto-created</td>
+</tr>
+<tr>
+<td>Has only a few controls</td>
+<td>Has many control options to define trials, billing due date, and creating Subscription Plans</td>
+</tr>
+</tbody>
+</table>
+<h3 id="5-related-topics">5. Related Topics</h3>
+<ol>
+<li><a onclick="loadContent('sales-invoice.html')">Sales Invoice</a></li>
+<li><a onclick="loadContent('purchase-invoice.html')">Purchase Invoice</a></li>
+<li><a onclick="loadContent('item.html')">Item</a></li>
+<li><a onclick="loadContent('customer.html')">Customer</a></li>
+<li><a onclick="loadContent('subscription-plan.html')">Subscription Plan</a></li>
+</ol>
+</div>
+<input class="d-none" name="wiki-page-name" value="uav46ep9mm"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="revisionsModalTitle">Subscription</h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content">
+<h3>No Revisions</h3>
+</div>
+</div>
+</div></div></div></div></main>

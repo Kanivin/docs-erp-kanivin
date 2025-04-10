@@ -1,0 +1,59 @@
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title">Sales Invoice from Timesheet
+</h1>
+</div>
+<div class="wiki-content">
+<p>A customer can be billed based on the total number of hours an employee has worked for that customer. The actual number of hours of billable work can be tracked via a <a href="/erpnext/v13/user/manual/en/projects/timesheets/">Timesheet</a>.</p>
+<p><strong>A sales invoice can be generated from each Timesheet submitted by an employee which can be used to bill the customer.</strong></p>
+<p><img alt="Sales Invoice" class="screenshot" src="/files/projects-sales-invoice-from-timesheet.png"/></p>
+<h2 id="1-how-to-create-a-sales-invoice-from-a-timesheet">1. How to Create A Sales Invoice from A Timesheet</h2>
+<ol>
+<li>Once the Timesheet is submitted, click on 'Create Sales Invoice'.</li>
+<li>Enter the Item Code and name of the Customer who has to be billed against this Timesheet. The Item could be a Product as well as a Service. Click on 'Create Sales Invoice'.</li>
+<li>All the details of the Timesheet will get auto-populated in the Sales Invoice.</li>
+<li>The posting date and time will be set to current, you can edit after you tick the checkbox below Posting Time.</li>
+<li>Optionally, you can include payments for POS or make this a credit note.</li>
+<li>Save and Submit.</li>
+</ol>
+<p>To fetch the details automatically in a Sales Invoice, click on the <strong>Get items from</strong> button. The details can be fetched from a Sales Order, Delivery Note, or a Quotation. The details like Customer PO, Address and Contact Number, Currency and Price List, Items will get auto-populated.</p>
+<p><img alt="Sales Invoice" class="screenshot" src="/files/timesheet-billing-to-sales-invoice.gif"/></p>
+<h2 id="2-features">2. Features</h2>
+<p>Additional Details while creating a Sales Invoice from a Timesheet:</p>
+<ul>
+<li><strong>Accounting Dimensions</strong>: Accounting Dimensions lets you tag transactions to a specific Territory, Branch, Project, etc. This helps in viewing accounting statements separately based on the criteria selected. To know more, visit the <a onclick="loadContent('accounting-dimensions.html')">Accounting Dimensions</a> page.</li>
+<li><strong>Time Sheet List</strong>: Since the Project is created from a Time Sheet, the details of the Time Sheet will get auto-fetched. You can click on 'Add Row' to add more Time Sheets to this Invoice.</li>
+</ul>
+<p>All the other details can be added as you would add them in any <a href="/erpnext/v13/user/manual/en/accounts/sales-invoice">Sales Invoice</a>.</p>
+<h2 id="3-after-submitting">3. After submitting</h2>
+<p>Once you have submitted the Sales Invoice, The details like 'Total Billed Hours', 'Total Billed Amount' and '% Amount Billed' will get updated in the Timesheet. Further, a <a href="/erpnext/v13/user/manual/en/projects/salary-slip-from-timesheet">Salary Slip</a> can also be generated from the Timesheet.</p>
+</div>
+<input class="d-none" name="wiki-page-name" value="gp69jiggh2"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="revisionsModalTitle">Sales Invoice from Timesheet
+</h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content">
+<h3>No Revisions</h3>
+</div>
+</div>
+</div></div></div></div></main>

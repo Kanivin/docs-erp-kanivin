@@ -1,0 +1,69 @@
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title">Process Deferred Accounting
+</h1>
+</div>
+<div class="wiki-content">
+<p><strong>Process Deferred Accounting is a log which is created on every processing of deferred revenue or expense.</strong></p>
+<p>Process Deferred Accounting records are automatically created on booking Deferred Revenue or Expense. It is done via a background job but the user can also create a record for manual Deferred Revenue or Expense booking.</p>
+<p>To access the Process Deferred Accounting list, go to:</p>
+<blockquote>
+<p>Home &gt; Accounting &gt; General Ledger &gt; Process Deferred Accounting</p>
+</blockquote>
+<h2 id="1-prerequisites">1. Prerequisites</h2>
+<p>Before creating and using a Process Deferred Accounting, it is advised to create and understand the following first:</p>
+<ul>
+<li><a onclick="loadContent('deferred-revenue.html')">Deferred Revenue</a></li>
+<li><a onclick="loadContent('deferred-expense.html')">Deferred Expense</a></li>
+</ul>
+<h2 id="2-how-to-create-a-process-deferred-accounting">2. How to create a Process Deferred Accounting</h2>
+<ol>
+<li>Go to Process Deferred Accounting list, click on New.</li>
+<li>Enter the Company.</li>
+<li>Select the type of deferred accounting process. Select 'Income' for booking deferred revenue or select 'Expense' for booking deferred expense</li>
+<li>Expand the posting date.</li>
+<li>Enter service Start Date and End Date.</li>
+<li>Save and Submit.</li>
+</ol>
+<p><img alt="Process Deferred Revenue" class="screenshot" src="/files/process-deferred-accounting.png"/></p>
+<h2 id="3-features">3. Features</h2>
+<h3 id="31-on-submitting">3.1 On Submitting</h3>
+<p>On submitting a Process Deferred Accounting document, GL Entries for deferred revenue or expense booking will be created for all the invoices falling between the service Start Date and End Date.</p>
+<p>Enter the account if Deferred Revenue or Expense has to be booked only for specific deferred income or expense account</p>
+<h3 id="32-enabling-automatic-deferred-accounting">3.2 Enabling automatic deferred accounting</h3>
+<p>To enable automatic deferred accounting, enable the 'Automatically Process Deferred Account Entry' checkbox by navigating to Accounts Settings.</p>
+<p>To access Accounts Settings go to:</p>
+<blockquote>
+<p>Home &gt; Accounting &gt; Accounting Masters &gt; Accounts Settings</p>
+</blockquote>
+<p><img alt="Deferred Accounting Settings" class="screenshot" src="/files/deferred-accounting-settings.png"/></p>
+</div>
+<input class="d-none" name="wiki-page-name" value="fdv2efs9qb"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="revisionsModalTitle">Process Deferred Accounting
+</h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content">
+<h3>No Revisions</h3>
+</div>
+</div>
+</div></div></div></div></main>

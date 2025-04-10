@@ -1,0 +1,587 @@
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title" id="event-streaming">Event Streaming
+<a aria-hidden="true" class="no-underline" href="#event-streaming">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h1>
+</div>
+<div class="wiki-content">
+<blockquote>
+<p>Introduced in Version 13</p>
+</blockquote>
+<p>Event Streaming enables inter site communications between two or more sites. You can <strong>subscribe</strong> to Document Types and <strong>stream</strong> Documents between different sites.</p>
+<p>For Example: Consider you have more than one Company hosted on different sites, one among them is the main site where you want to do ledger posting and on other sites, the Sales Invoices are generated. You can use Event Streaming in this case. For this, your child company sites can subscribe to the main company site for Item, Customer, and Supplier Document Types. The main Company in turn can subscribe to the child companies for Sales Invoices.</p>
+<p>To access Event Streaming, go to:</p>
+<blockquote>
+<p>Home &gt; Automation &gt; Event Streaming</p>
+</blockquote>
+<h2 id="1-prerequisites">1. Prerequisites<a aria-hidden="true" class="no-underline" href="#1-prerequisites">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h2>
+<p>Before creating an Event Producer, a common user needs to be created on both the sites which will be used to access the site and will act as an Event Subscriber. Make sure the user is a System Manager and has the necessary permissions for creation, updation, and deletion of the subscribed DocTypes.</p>
+<h2 id="2-how-to-set-up-event-streaming">2. How to set up Event Streaming<a aria-hidden="true" class="no-underline" href="#2-how-to-set-up-event-streaming">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h2>
+<p>Let's take two sites for explaining the process. http://test_site:8000 (Consumer site) and http://test_site_producer:8000 (Producer site)</p>
+<h3 id="21-obtain-the-event-subscribers-keys-from-the-producer-site">2.1 Obtain the Event Subscriber's keys from the Producer Site<a aria-hidden="true" class="no-underline" href="#21-obtain-the-event-subscribers-keys-from-the-producer-site">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<ol>
+<li>On http://test_site_producer:8000 (producer site), go to the User list.</li>
+<li>Open the user document you are going to use as an Event Subscriber. Scroll down to the section labelled "API Access". In that section, generate keys for the user by clicking on <strong>Generate Keys</strong> button. You will get a prompt with the user secret, copy the user secret and save it with you. It will also generate an API key.</li>
+</ol>
+<h3 id="22-generate-keys-for-the-event-subscriber-on-the-consumer-site">2.2 Generate Keys for the Event Subscriber on the Consumer Site<a aria-hidden="true" class="no-underline" href="#22-generate-keys-for-the-event-subscriber-on-the-consumer-site">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<ol>
+<li>On http://test_site:8000 (consumer site), go to the User list and follow the same process specified in the previous step.</li>
+</ol>
+<h3 id="23-create-an-event-producer-on-the-consumer-site">2.3 Create an Event Producer on the Consumer Site<a aria-hidden="true" class="no-underline" href="#23-create-an-event-producer-on-the-consumer-site">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<ol>
+<li>The site which you want to subscribe to, is called as the Event Producer. Create an Event Producer document for the site you wish to get the updates from.</li>
+<li>On http://test_site:8000 (consumer site), go to <strong>Home &gt; Automation &gt; Event Streaming &gt; Event Producer</strong>.</li>
+<li>Enter the URL of the site you want to subscribe to (in this case http://test_site_producer:8000), in the Producer URL field.</li>
+<li>Add all the Document Types you want to subscribe to, in the Event Producer Document Types table.</li>
+<li>If you want to have the created documents with the same name as it is on the remote Event Producer site, check the 'Use Same Name' checkbox in the table against the required Document Type.</li>
+<li>Set the Event Subscriber field to the user that will be used to create the documents fetched from the Event Producer. You need to create the same user both ways, i.e. on the Event Consumer as well as the Event Producer site before creating the Event Producer.</li>
+<li>Paste the API key and API Secret you generated in the first step (2.1) in the API key and API secret fields respectively.</li>
+<li>Save.</li>
+<li><p>After saving, an Event Consumer is created on the producer site (http://test_site_producer:8000). The keys of the user on the consumer site are automatically copied to the Event Consumer document on the producer site in this process.</p>
+<p><img alt="Event Producer" class="screenshot" src="/files/event-producer-doc.png"/></p></li>
+</ol>
+<blockquote>
+<p><strong>Note</strong>: If at all the API Secret is changed for the users on any of these sites, you will have to manually update the keys in the Event Producer as well as the Event Consumer on both the sites.</p>
+</blockquote>
+<h3 id="24-approve-event-consumer-on-the-event-producer-site">2.4 Approve Event Consumer on the Event Producer site<a aria-hidden="true" class="no-underline" href="#24-approve-event-consumer-on-the-event-producer-site">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<ol>
+<li>After the Event Producer has been created, an Event Consumer automatically gets created on the producer site. By default, all the Subscribed Document Types have the status as 'Pending'. In order to enable the Event Consumer to consume the documents of these Document Types, their Status needs to be updated to 'Approved'.</li>
+<li>Go to: <strong>Home &gt; Automation &gt; Event Streaming &gt; Event Consumer</strong>.</li>
+<li>Once you open the Event Consumer document you will see all the Document Types that the consumer has subscribed to. Change the status from 'Pending' to 'Approved' for all the Document Types that you want to approve to be consumed. You can change the status to 'Rejected' if you do not want the documents of that Document Type to be consumed.</li>
+<li><p>Save.</p>
+<p><img alt="Event Consumer" class="screenshot" src="/files/event-consumer-doc.png"/></p></li>
+</ol>
+<blockquote>
+<p><strong>Note</strong>: Document updates for Subscribed Document Types won't be synced unless they are Approved.</p>
+</blockquote>
+<h3 id="25-offline-access-with-single-site">2.5 Offline access with single site<a aria-hidden="true" class="no-underline" href="#25-offline-access-with-single-site">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<p>If you have some places where internet connectivity is low, for example, a store in a remote area where sales invoices are generated and you want to sync these invoices from the store to the hosted account, you could setup offline syncing using the following steps:</p>
+<ol>
+<li>Set up an KanivinERP local instance. You can refer <a href="https://github.com/frappe/bench">this guide</a> for local setup.</li>
+<li>You need to have hosted account with your company set up.</li>
+<li>Now create an Event Producer on the hosted account and set the producer URL to the URL of your local account.</li>
+<li>Add whatever doctypes you want to sync in the Event Producer Document Types child table.</li>
+<li>Approve the doctypes.</li>
+</ol>
+<h2 id="3-features">3. Features<a aria-hidden="true" class="no-underline" href="#3-features">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h2>
+<h3 id="31-unsubscribe-from-the-updates">3.1 Unsubscribe from the updates<a aria-hidden="true" class="no-underline" href="#31-unsubscribe-from-the-updates">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<p>As an Event Consumer, if you wish to unsubscribe from the updates for any doctypes you had previously subscribed to, check unsubscribe against the doctype. You will not receive any more updates from the producer site for that particular doctype once you have unsubscribed.</p>
+<p><img alt="Unsubscribe" class="screenshot" src="/files/unsubscribe-event.png"/></p>
+<h3 id="32-event-update-log">3.2 Event Update Log<a aria-hidden="true" class="no-underline" href="#32-event-update-log">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<p>"Event Update Log" logs every create, update, and delete action for documents that have consumers on the Event Producer site.
+In order to view the Event Update Log:</p>
+<p>Go to: <strong>Home &gt; Automation &gt; Event Streaming &gt; Event Update Log</strong>.</p>
+<ul>
+<li>For 'Create' type the Update Type, Document Type, Document Name and the entire document (as JSON) is logged.</li>
+<li>For 'Update' type the Update Type, Document Type, Document Name and the updated data (difference between the previous state and current state of the document) is logged.</li>
+<li>For 'Delete' type only the Update Type, Document Type, and Document Name is logged.</li>
+</ul>
+<p><img alt="Event Update Log" class="screenshot" src="/files/event-update-log-doc.png"/></p>
+<h3 id="33-event-sync-log">3.3 Event Sync Log<a aria-hidden="true" class="no-underline" href="#33-event-sync-log">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<p>Like the Update Log, Event Sync Log logs every document synced from the Event Producer on the Event Consumer site.
+In order to view the Event Sync Log:</p>
+<p>Go to: <strong>Home &gt; Automation &gt; Event Streaming &gt; Event Sync Log</strong>.</p>
+<p><img alt="Event Sync Log" class="screenshot" src="/files/event-sync-log.png"/></p>
+<p>A successfully synced event generates a log document with:</p>
+<ul>
+<li><strong>Update Type</strong>: Create, Update or Delete</li>
+<li><strong>Status</strong>: Sync Status</li>
+<li><strong>DocType</strong></li>
+<li><strong>Event Producer</strong>: The site URL from where the document was created</li>
+<li><strong>Document Name</strong></li>
+<li><strong>Remote Document Name</strong>: If 'Use Same Name' is unchecked</li>
+<li><strong>Use Same Name</strong></li>
+<li><p><strong>Data</strong>: The document data as JSON</p>
+<p><img alt="Event Sync Log" class="screenshot" src="/files/event-synced.png"/></p></li>
+</ul>
+<p>A failed event generates a log doc with the above fields along with:</p>
+<ul>
+<li><p><strong>Error</strong>: The error because of which the document was not synced.
+<img alt="Event Synced" class="screenshot" src="/files/event-failed-error.png"/></p></li>
+<li><p><strong>Resync Button</strong>: It also provides a 'Resync' button in order to resync the failed event.
+<img alt="Event Failed" class="screenshot" src="/files/event-failed.png"/></p></li>
+</ul>
+<h3 id="34-dependency-syncing">3.4 Dependency Syncing<a aria-hidden="true" class="no-underline" href="#34-dependency-syncing">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<p>Certain Document Types have dependencies. For example, before syncing a Sales Invoice, the Item and Customer need to be present in the current site. So, Item and Customer are dependencies for Sales Invoice. Event Streaming handles this by on-demand dependency syncing. Whenever any document is to be synced, it first checks whether the document has any dependencies (Link fields, Dynamic Link fields, Child Table fields, etc.). If that dependency is not fullfilled i.e. the dependent document (eg: Item) is not present on your consumer site, it will be synced first and then the Sales Invoice will be synced.</p>
+<p>For example: Sales Invoice syncing with Item dependency:
+ <img alt="Event Dependency" class="screenshot" src="/files/event-dependency-sync.gif"/></p>
+<h3 id="35-naming-configuration">3.5 Naming Configuration<a aria-hidden="true" class="no-underline" href="#35-naming-configuration">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<p>Check the 'Use Same Name' checkbox to let the documents have same name on both Event Producer and Event Consumer sites. If this is not checked, then the document will be created using the naming conventions of the current site.</p>
+<p><img alt="Use Same Name Config" class="screenshot" src="/files/event-use-same-name.png"/></p>
+<blockquote>
+<p><strong>Note</strong>: For Document Types that have naming series, it is advised to keep the 'Use Same Name' checkbox unchecked, to prevent naming conflicts. If this is unchecked, the Documents are created by following the naming conventions on the current site and the 'Remote Site Name' and 'Remote Document Name' custom fields are set in the synced document to store the Event Producer site URL and the document name on the remote site respectively.</p>
+</blockquote>
+<p><img alt="Subscribed Document" class="screenshot" src="/files/event-subscribed-doc.png"/></p>
+<h3 id="36-mapping-configuration">3.6 Mapping Configuration<a aria-hidden="true" class="no-underline" href="#36-mapping-configuration">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<p>If you want to stream documents between an KanivinERP instance and another Frappe app for a particular Document Type with same or different structures, or if field names are different in both the sites, you can use Event Streaming with Mapping Configuration.</p>
+<p>For this you need to first set up a Document Type Mapping.</p>
+<p>To access Document Type Mapping, go to:</p>
+<blockquote>
+<p>Home &gt; Automation &gt; Event Streaming &gt; Document Type Mapping.</p>
+</blockquote>
+<h4 id="361-mapping-for-doctypes-with-similar-structure">3.6.1 Mapping for DocTypes with similar structure<a aria-hidden="true" class="no-underline" href="#361-mapping-for-doctypes-with-similar-structure">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h4>
+<ul>
+<li><strong>Mapping Name</strong>: Give a unique name to the mapping</li>
+<li><strong>Local Document Type</strong>: The Document Type in your current site</li>
+<li><strong>Remote Document Type</strong>: The Document Type on the Event Producer site which you want to sync</li>
+</ul>
+<p>In the Field Mapping child table:</p>
+<ul>
+<li><strong>Local Fieldname</strong>: The fieldname in the Local Document type of your current site.</li>
+<li><strong>Remote Fieldname</strong>: The fieldname in the Remote Document type of the Event Producer site which you want to map to the Local Fieldname. During the sync, the value of the remote fieldname gets copied to the local fieldname.</li>
+</ul>
+<p><img alt="Document Type Mapping" class="screenshot" src="/files/event-field-mapping.png"/></p>
+<h4 id="362-default-value-for-some-field">3.6.2 Default value for some field<a aria-hidden="true" class="no-underline" href="#362-default-value-for-some-field">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h4>
+<p>If your field is not mapped to any other remote fieldname and you always want the field to have the same value, set the set the same in the default value field. Event if you have set the remote fieldname, in case during the sync, remote field's value is not found and if the "Default Value" has been specified, it will be set.</p>
+<p><img alt="Child Table Mapping Link" class="screenshot" src="/files/default.png"/></p>
+<h4 id="363-mapping-for-doctypes-having-child-tables">3.6.3 Mapping for DocTypes having child tables<a aria-hidden="true" class="no-underline" href="#363-mapping-for-doctypes-having-child-tables">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h4>
+<p>If the field you are trying to map is a child table, you need to create another Document Type Mapping for the child table fields.</p>
+<p><img alt="Child Table Mapping Link" class="screenshot" src="/files/child_table_map_doc.png"/></p>
+<ul>
+<li><strong>Mapping Type</strong>: Select the Mapping Type as Child Table.</li>
+<li><strong>Mapping</strong>: Select the Document Type Mapping document you created for the child table.</li>
+</ul>
+<p><img alt="Child Table Mapping Link" class="screenshot" src="/files/event-map-is-child-table.png"/></p>
+<h4 id="364-mapping-for-doctypes-having-dependencies-link-dynamic-link-fields">3.6.4 Mapping for DocTypes having dependencies (Link, Dynamic Link fields)<a aria-hidden="true" class="no-underline" href="#364-mapping-for-doctypes-having-dependencies-link-dynamic-link-fields">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h4>
+<p>If the DocTypes you are trying to map have any kind of dependencies like Link or Dynamic Link fields, you need to set up another Document Type Mapping for syncing the dependencies.</p>
+<p>For example, let's assume that the local doctype is Opportunity and the remote doctype is KanivinERP Opportunity. The field <code>party_name</code> (Link field for DocType Lead) in Opportunity is mapped to <code>full_name</code> (Data field) in KanivinERP Opportunity. During the sync, this Lead has to be created for the main Opportunity to sync. So you need to set up a mapping for this Link Field too.</p>
+<p><img alt="Lead Dependency Creation" class="screenshot" src="/files/lead_dependency_creation.png"/></p>
+<ul>
+<li><strong>Mapping Type</strong>: In this case, the Mapping Type is Document.</li>
+<li><strong>Mapping</strong>: Select the mapping you just created.</li>
+<li><strong>Remote Value Filters</strong>: You need to specify the filters that will fetch the exact remote document to be mapped. Like in this case, the remote DocType is KanivinERP Opportunity which can be uniquely fetched using name, phone number and country.</li>
+</ul>
+<p>The format is:</p>
+<p>{ "remote fieldname": "field or expression from where we will get the value for that fieldname"}</p>
+<p>If you want to fetch the value from somewhere, start the expression with eval:</p>
+<p>Like in this case it is: <code>eval:frappe.db.get_value('Global Defaults', None, 'country')</code></p>
+<p><img alt="Document Mapping Type" class="screenshot" src="/files/document_mapping_type.png"/></p>
+<p>Lastly, enable the 'Has Mapping' option in the Event Configuration child table in Event Producer against the required Document Type and select the Document Type Mapping you just created.</p>
+<p><img alt="Mapping Configuration" class="screenshot" src="/files/event-mapping-conf.png"/></p>
+<h3 id="36-conditional-events-configuration">3.6 Conditional Events Configuration<a aria-hidden="true" class="no-underline" href="#36-conditional-events-configuration">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<p>If you are in scenario when you do not want to send over all the documents in a doctype over to the consumer, you can specify the conditions for them.</p>
+<p>For example, if you would like to emit only those <code>Note</code> documents that are public, you can specify them within the Producer/Consumer document.</p>
+<p><img alt="Child Table Mapping Link" class="screenshot" src="/files/event-streaming-conditions.png"/></p>
+<blockquote>
+<p>If a document satisfies a condition down the line in its lifetime, all the old <code>Event Update Logs</code> are synced to the consumer</p>
+</blockquote>
+<p>Let's consider another example. You want to sync only those Sales Invoices that are submitted.
+You can specify <code>doc.docstatus == 1</code> as the condition. The invoices will not be synced until they are submitted.</p>
+<p>For each update log, you can see its Consumers within the Update Log document.</p>
+<p>If you need more fine control over the conditions, you can hook up a custom function. Your function will be executed with parameters <code>consumer</code>, <code>doc</code> &amp; <code>update_log</code>. For example, you want to sync only those Notes that are <code>odd</code></p>
+<pre><button class="btn copy-btn" data-toggle="tooltip" title="Copy Code"><svg class="feather feather-clipboard" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect height="4" rx="1" ry="1" width="8" x="8" y="2"></rect></svg></button><code class="py language-py hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">is_odd_note</span>(<span class="hljs-params">consumer, doc, update_log</span>):</span>
+ <span class="hljs-keyword">return</span> frappe.db.sql(<span class="hljs-string">"""
+ SELECT
+ COUNT(*)
+ FROM `tabNote`
+ WHERE creation &lt;= %(creation)s
+ """</span>, { <span class="hljs-string">"creation"</span>: doc.creation })[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>] % <span class="hljs-number">2</span> != <span class="hljs-number">0</span>
+</code></pre>
+<p>Then, you could specify the condition:</p>
+<pre><button class="btn copy-btn" data-toggle="tooltip" title="Copy Code"><svg class="feather feather-clipboard" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect height="4" rx="1" ry="1" width="8" x="8" y="2"></rect></svg></button><code class="js language-js hljs javascript">cmd: my_custom_app.note.is_odd_note
+</code></pre>
+</div>
+<input class="d-none" name="wiki-page-name" value="6fr0cht951"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="event-streaming">Event Streaming
+<a aria-hidden="true" class="no-underline" href="#event-streaming">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content"><del class="diffmod">
+</del><ins class="diffmod">
+</ins><blockquote><ins class="diffmod">
+</ins><p><ins class="diffmod">Introduced in Version 13</ins></p><ins class="diffmod">
+</ins></blockquote><ins class="diffmod">
+</ins><p><ins class="diffmod">Event Streaming enables inter site communications between two or more sites. You can </ins><strong><ins class="mod"><ins class="diffmod">subscribe</ins></ins></strong><ins class="diffmod"> to Document Types and </ins><strong><ins class="mod"><ins class="diffmod">stream</ins></ins></strong><ins class="diffmod"> Documents between different sites.</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod">For Example: Consider you have more than one Company hosted on different sites, one among them is the main site where you want to do ledger posting and on other sites, the Sales Invoices are generated. You can use Event Streaming in this case. For this, your child company sites can subscribe to the main company site for Item, Customer, and Supplier Document Types. The main Company in turn can subscribe to the child companies for Sales Invoices.</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod">To access Event Streaming, go to:</ins></p><ins class="diffmod">
+</ins><blockquote><ins class="diffmod">
+</ins><p><ins class="diffmod">Home &gt; Automation &gt; Event Streaming</ins></p><ins class="diffmod">
+</ins></blockquote><ins class="diffmod">
+</ins><h2 id="1-prerequisites"><ins class="diffmod">1. Prerequisites</ins><a aria-hidden="true" class="no-underline" href="#1-prerequisites"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h2><ins class="diffmod">
+</ins><p><ins class="diffmod">Before creating an Event Producer, a common user needs to be created on both the sites which will be used to access the site and will act as an Event Subscriber. Make sure the user is a System Manager and has the necessary permissions for creation, updation, and deletion of the subscribed DocTypes.</ins></p><ins class="diffmod">
+</ins><h2 id="2-how-to-set-up-event-streaming"><ins class="diffmod">2. How to set up Event Streaming</ins><a aria-hidden="true" class="no-underline" href="#2-how-to-set-up-event-streaming"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h2><ins class="diffmod">
+</ins><p><ins class="diffmod">Let's take two sites for explaining the process. http://test_site:8000 (Consumer site) and http://test_site_producer:8000 (Producer site)</ins></p><ins class="diffmod">
+</ins><h3 id="21-obtain-the-event-subscribers-keys-from-the-producer-site"><del class="diffmod">No</del><ins class="diffmod">2.1</ins> <del class="diffmod">Revisions</del><ins class="diffmod">Obtain the Event Subscriber's keys from the Producer Site</ins><a aria-hidden="true" class="no-underline" href="#21-obtain-the-event-subscribers-keys-from-the-producer-site">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3><del class="diffmod">
+</del><ins class="diffmod">
+</ins><ol><ins class="diffmod">
+</ins><li><ins class="diffmod">On http://test_site_producer:8000 (producer site), go to the User list.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Open the user document you are going to use as an Event Subscriber. Scroll down to the section labelled "API Access". In that section, generate keys for the user by clicking on </ins><strong><ins class="mod"><ins class="diffmod">Generate Keys</ins></ins></strong><ins class="diffmod"> button. You will get a prompt with the user secret, copy the user secret and save it with you. It will also generate an API key.</ins></li><ins class="diffmod">
+</ins></ol><ins class="diffmod">
+</ins><h3 id="22-generate-keys-for-the-event-subscriber-on-the-consumer-site"><ins class="diffmod">2.2 Generate Keys for the Event Subscriber on the Consumer Site</ins><a aria-hidden="true" class="no-underline" href="#22-generate-keys-for-the-event-subscriber-on-the-consumer-site"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h3><ins class="diffmod">
+</ins><ol><ins class="diffmod">
+</ins><li><ins class="diffmod">On http://test_site:8000 (consumer site), go to the User list and follow the same process specified in the previous step.</ins></li><ins class="diffmod">
+</ins></ol><ins class="diffmod">
+</ins><h3 id="23-create-an-event-producer-on-the-consumer-site"><ins class="diffmod">2.3 Create an Event Producer on the Consumer Site</ins><a aria-hidden="true" class="no-underline" href="#23-create-an-event-producer-on-the-consumer-site"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h3><ins class="diffmod">
+</ins><ol><ins class="diffmod">
+</ins><li><ins class="diffmod">The site which you want to subscribe to, is called as the Event Producer. Create an Event Producer document for the site you wish to get the updates from.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">On http://test_site:8000 (consumer site), go to </ins><strong><ins class="mod"><ins class="diffmod">Home &gt; Automation &gt; Event Streaming &gt; Event Producer</ins></ins></strong><ins class="diffmod">.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Enter the URL of the site you want to subscribe to (in this case http://test_site_producer:8000), in the Producer URL field.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Add all the Document Types you want to subscribe to, in the Event Producer Document Types table.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">If you want to have the created documents with the same name as it is on the remote Event Producer site, check the 'Use Same Name' checkbox in the table against the required Document Type.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Set the Event Subscriber field to the user that will be used to create the documents fetched from the Event Producer. You need to create the same user both ways, i.e. on the Event Consumer as well as the Event Producer site before creating the Event Producer.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Paste the API key and API Secret you generated in the first step (2.1) in the API key and API secret fields respectively.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Save.</ins></li><ins class="diffmod">
+</ins><li><p><ins class="diffmod">After saving, an Event Consumer is created on the producer site (http://test_site_producer:8000). The keys of the user on the consumer site are automatically copied to the Event Consumer document on the producer site in this process.</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod"><img alt="Event Producer" class="screenshot" src="/files/event-producer-doc.png"/></ins></p></li><ins class="diffmod">
+</ins></ol><ins class="diffmod">
+</ins><blockquote><ins class="diffmod">
+</ins><p><strong><ins class="diffmod">Note</ins></strong><ins class="diffmod">: If at all the API Secret is changed for the users on any of these sites, you will have to manually update the keys in the Event Producer as well as the Event Consumer on both the sites.</ins></p><ins class="diffmod">
+</ins></blockquote><ins class="diffmod">
+</ins><h3 id="24-approve-event-consumer-on-the-event-producer-site"><ins class="diffmod">2.4 Approve Event Consumer on the Event Producer site</ins><a aria-hidden="true" class="no-underline" href="#24-approve-event-consumer-on-the-event-producer-site"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h3><ins class="diffmod">
+</ins><ol><ins class="diffmod">
+</ins><li><ins class="diffmod">After the Event Producer has been created, an Event Consumer automatically gets created on the producer site. By default, all the Subscribed Document Types have the status as 'Pending'. In order to enable the Event Consumer to consume the documents of these Document Types, their Status needs to be updated to 'Approved'.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Go to: </ins><strong><ins class="mod"><ins class="diffmod">Home &gt; Automation &gt; Event Streaming &gt; Event Consumer</ins></ins></strong><ins class="diffmod">.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Once you open the Event Consumer document you will see all the Document Types that the consumer has subscribed to. Change the status from 'Pending' to 'Approved' for all the Document Types that you want to approve to be consumed. You can change the status to 'Rejected' if you do not want the documents of that Document Type to be consumed.</ins></li><ins class="diffmod">
+</ins><li><p><ins class="diffmod">Save.</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod"><img alt="Event Consumer" class="screenshot" src="/files/event-consumer-doc.png"/></ins></p></li><ins class="diffmod">
+</ins></ol><ins class="diffmod">
+</ins><blockquote><ins class="diffmod">
+</ins><p><strong><ins class="diffmod">Note</ins></strong><ins class="diffmod">: Document updates for Subscribed Document Types won't be synced unless they are Approved.</ins></p><ins class="diffmod">
+</ins></blockquote><ins class="diffmod">
+</ins><h3 id="25-offline-access-with-single-site"><ins class="diffmod">2.5 Offline access with single site</ins><a aria-hidden="true" class="no-underline" href="#25-offline-access-with-single-site"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h3><ins class="diffmod">
+</ins><p><ins class="diffmod">If you have some places where internet connectivity is low, for example, a store in a remote area where sales invoices are generated and you want to sync these invoices from the store to the hosted account, you could setup offline syncing using the following steps:</ins></p><ins class="diffmod">
+</ins><ol><ins class="diffmod">
+</ins><li><ins class="diffmod">Set up an KanivinERP local instance. You can refer </ins><a href="https://github.com/frappe/bench"><ins class="diffmod">this guide</ins></a><ins class="diffmod"> for local setup.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">You need to have hosted account with your company set up.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Now create an Event Producer on the hosted account and set the producer URL to the URL of your local account.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Add whatever doctypes you want to sync in the Event Producer Document Types child table.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Approve the doctypes.</ins></li><ins class="diffmod">
+</ins></ol><ins class="diffmod">
+</ins><h2 id="3-features"><ins class="diffmod">3. Features</ins><a aria-hidden="true" class="no-underline" href="#3-features"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h2><ins class="diffmod">
+</ins><h3 id="31-unsubscribe-from-the-updates"><ins class="diffmod">3.1 Unsubscribe from the updates</ins><a aria-hidden="true" class="no-underline" href="#31-unsubscribe-from-the-updates"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h3><ins class="diffmod">
+</ins><p><ins class="diffmod">As an Event Consumer, if you wish to unsubscribe from the updates for any doctypes you had previously subscribed to, check unsubscribe against the doctype. You will not receive any more updates from the producer site for that particular doctype once you have unsubscribed.</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod"><img alt="Unsubscribe" class="screenshot" src="/files/unsubscribe-event.png"/></ins></p><ins class="diffmod">
+</ins><h3 id="32-event-update-log"><ins class="diffmod">3.2 Event Update Log</ins><a aria-hidden="true" class="no-underline" href="#32-event-update-log"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h3><ins class="diffmod">
+</ins><p><ins class="diffmod">"Event Update Log" logs every create, update, and delete action for documents that have consumers on the Event Producer site.
+In order to view the Event Update Log:</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod">Go to: </ins><strong><ins class="mod"><ins class="diffmod">Home &gt; Automation &gt; Event Streaming &gt; Event Update Log</ins></ins></strong><ins class="diffmod">.</ins></p><ins class="diffmod">
+</ins><ul><ins class="diffmod">
+</ins><li><ins class="diffmod">For 'Create' type the Update Type, Document Type, Document Name and the entire document (as JSON) is logged.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">For 'Update' type the Update Type, Document Type, Document Name and the updated data (difference between the previous state and current state of the document) is logged.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">For 'Delete' type only the Update Type, Document Type, and Document Name is logged.</ins></li><ins class="diffmod">
+</ins></ul><ins class="diffmod">
+</ins><p><ins class="diffmod"><img alt="Event Update Log" class="screenshot" src="/files/event-update-log-doc.png"/></ins></p><ins class="diffmod">
+</ins><h3 id="33-event-sync-log"><ins class="diffmod">3.3 Event Sync Log</ins><a aria-hidden="true" class="no-underline" href="#33-event-sync-log"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h3><ins class="diffmod">
+</ins><p><ins class="diffmod">Like the Update Log, Event Sync Log logs every document synced from the Event Producer on the Event Consumer site.
+In order to view the Event Sync Log:</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod">Go to: </ins><strong><ins class="mod"><ins class="diffmod">Home &gt; Automation &gt; Event Streaming &gt; Event Sync Log</ins></ins></strong><ins class="diffmod">.</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod"><img alt="Event Sync Log" class="screenshot" src="/files/event-sync-log.png"/></ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod">A successfully synced event generates a log document with:</ins></p><ins class="diffmod">
+</ins><ul><ins class="diffmod">
+</ins><li><strong><ins class="diffmod">Update Type</ins></strong><ins class="diffmod">: Create, Update or Delete</ins></li><ins class="diffmod">
+</ins><li><strong><ins class="diffmod">Status</ins></strong><ins class="diffmod">: Sync Status</ins></li><ins class="diffmod">
+</ins><li><strong><ins class="diffmod">DocType</ins></strong></li><ins class="diffmod">
+</ins><li><strong><ins class="diffmod">Event Producer</ins></strong><ins class="diffmod">: The site URL from where the document was created</ins></li><ins class="diffmod">
+</ins><li><strong><ins class="diffmod">Document Name</ins></strong></li><ins class="diffmod">
+</ins><li><strong><ins class="diffmod">Remote Document Name</ins></strong><ins class="diffmod">: If 'Use Same Name' is unchecked</ins></li><ins class="diffmod">
+</ins><li><strong><ins class="diffmod">Use Same Name</ins></strong></li><ins class="diffmod">
+</ins><li><p><strong><ins class="diffmod">Data</ins></strong><ins class="diffmod">: The document data as JSON</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod"><img alt="Event Sync Log" class="screenshot" src="/files/event-synced.png"/></ins></p></li><ins class="diffmod">
+</ins></ul><ins class="diffmod">
+</ins><p><ins class="diffmod">A failed event generates a log doc with the above fields along with:</ins></p><ins class="diffmod">
+</ins><ul><ins class="diffmod">
+</ins><li><p><strong><ins class="diffmod">Error</ins></strong><ins class="diffmod">: The error because of which the document was not synced.
+<img alt="Event Synced" class="screenshot" src="/files/event-failed-error.png"/></ins></p></li><ins class="diffmod">
+</ins><li><p><strong><ins class="diffmod">Resync Button</ins></strong><ins class="diffmod">: It also provides a 'Resync' button in order to resync the failed event.
+<img alt="Event Failed" class="screenshot" src="/files/event-failed.png"/></ins></p></li><ins class="diffmod">
+</ins></ul><ins class="diffmod">
+</ins><h3 id="34-dependency-syncing"><ins class="diffmod">3.4 Dependency Syncing</ins><a aria-hidden="true" class="no-underline" href="#34-dependency-syncing"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h3><ins class="diffmod">
+</ins><p><ins class="diffmod">Certain Document Types have dependencies. For example, before syncing a Sales Invoice, the Item and Customer need to be present in the current site. So, Item and Customer are dependencies for Sales Invoice. Event Streaming handles this by on-demand dependency syncing. Whenever any document is to be synced, it first checks whether the document has any dependencies (Link fields, Dynamic Link fields, Child Table fields, etc.). If that dependency is not fullfilled i.e. the dependent document (eg: Item) is not present on your consumer site, it will be synced first and then the Sales Invoice will be synced.</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod">For example: Sales Invoice syncing with Item dependency:
+ <img alt="Event Dependency" class="screenshot" src="/files/event-dependency-sync.gif"/></ins></p><ins class="diffmod">
+</ins><h3 id="35-naming-configuration"><ins class="diffmod">3.5 Naming Configuration</ins><a aria-hidden="true" class="no-underline" href="#35-naming-configuration"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h3><ins class="diffmod">
+</ins><p><ins class="diffmod">Check the 'Use Same Name' checkbox to let the documents have same name on both Event Producer and Event Consumer sites. If this is not checked, then the document will be created using the naming conventions of the current site.</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod"><img alt="Use Same Name Config" class="screenshot" src="/files/event-use-same-name.png"/></ins></p><ins class="diffmod">
+</ins><blockquote><ins class="diffmod">
+</ins><p><strong><ins class="diffmod">Note</ins></strong><ins class="diffmod">: For Document Types that have naming series, it is advised to keep the 'Use Same Name' checkbox unchecked, to prevent naming conflicts. If this is unchecked, the Documents are created by following the naming conventions on the current site and the 'Remote Site Name' and 'Remote Document Name' custom fields are set in the synced document to store the Event Producer site URL and the document name on the remote site respectively.</ins></p><ins class="diffmod">
+</ins></blockquote><ins class="diffmod">
+</ins><p><ins class="diffmod"><img alt="Subscribed Document" class="screenshot" src="/files/event-subscribed-doc.png"/></ins></p><ins class="diffmod">
+</ins><h3 id="36-mapping-configuration"><ins class="diffmod">3.6 Mapping Configuration</ins><a aria-hidden="true" class="no-underline" href="#36-mapping-configuration"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h3><ins class="diffmod">
+</ins><p><ins class="diffmod">If you want to stream documents between an KanivinERP instance and another Frappe app for a particular Document Type with same or different structures, or if field names are different in both the sites, you can use Event Streaming with Mapping Configuration.</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod">For this you need to first set up a Document Type Mapping.</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod">To access Document Type Mapping, go to:</ins></p><ins class="diffmod">
+</ins><blockquote><ins class="diffmod">
+</ins><p><ins class="diffmod">Home &gt; Automation &gt; Event Streaming &gt; Document Type Mapping.</ins></p><ins class="diffmod">
+</ins></blockquote><ins class="diffmod">
+</ins><h4 id="361-mapping-for-doctypes-with-similar-structure"><ins class="diffmod">3.6.1 Mapping for DocTypes with similar structure</ins><a aria-hidden="true" class="no-underline" href="#361-mapping-for-doctypes-with-similar-structure"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h4><ins class="diffmod">
+</ins><ul><ins class="diffmod">
+</ins><li><strong><ins class="diffmod">Mapping Name</ins></strong><ins class="diffmod">: Give a unique name to the mapping</ins></li><ins class="diffmod">
+</ins><li><strong><ins class="diffmod">Local Document Type</ins></strong><ins class="diffmod">: The Document Type in your current site</ins></li><ins class="diffmod">
+</ins><li><strong><ins class="diffmod">Remote Document Type</ins></strong><ins class="diffmod">: The Document Type on the Event Producer site which you want to sync</ins></li><ins class="diffmod">
+</ins></ul><ins class="diffmod">
+</ins><p><ins class="diffmod">In the Field Mapping child table:</ins></p><ins class="diffmod">
+</ins><ul><ins class="diffmod">
+</ins><li><strong><ins class="diffmod">Local Fieldname</ins></strong><ins class="diffmod">: The fieldname in the Local Document type of your current site.</ins></li><ins class="diffmod">
+</ins><li><strong><ins class="diffmod">Remote Fieldname</ins></strong><ins class="diffmod">: The fieldname in the Remote Document type of the Event Producer site which you want to map to the Local Fieldname. During the sync, the value of the remote fieldname gets copied to the local fieldname.</ins></li><ins class="diffmod">
+</ins></ul><ins class="diffmod">
+</ins><p><ins class="diffmod"><img alt="Document Type Mapping" class="screenshot" src="/files/event-field-mapping.png"/></ins></p><ins class="diffmod">
+</ins><h4 id="362-default-value-for-some-field"><ins class="diffmod">3.6.2 Default value for some field</ins><a aria-hidden="true" class="no-underline" href="#362-default-value-for-some-field"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h4><ins class="diffmod">
+</ins><p><ins class="diffmod">If your field is not mapped to any other remote fieldname and you always want the field to have the same value, set the set the same in the default value field. Event if you have set the remote fieldname, in case during the sync, remote field's value is not found and if the "Default Value" has been specified, it will be set.</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod"><img alt="Child Table Mapping Link" class="screenshot" src="/files/default.png"/></ins></p><ins class="diffmod">
+</ins><h4 id="363-mapping-for-doctypes-having-child-tables"><ins class="diffmod">3.6.3 Mapping for DocTypes having child tables</ins><a aria-hidden="true" class="no-underline" href="#363-mapping-for-doctypes-having-child-tables"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h4><ins class="diffmod">
+</ins><p><ins class="diffmod">If the field you are trying to map is a child table, you need to create another Document Type Mapping for the child table fields.</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod"><img alt="Child Table Mapping Link" class="screenshot" src="/files/child_table_map_doc.png"/></ins></p><ins class="diffmod">
+</ins><ul><ins class="diffmod">
+</ins><li><strong><ins class="diffmod">Mapping Type</ins></strong><ins class="diffmod">: Select the Mapping Type as Child Table.</ins></li><ins class="diffmod">
+</ins><li><strong><ins class="diffmod">Mapping</ins></strong><ins class="diffmod">: Select the Document Type Mapping document you created for the child table.</ins></li><ins class="diffmod">
+</ins></ul><ins class="diffmod">
+</ins><p><ins class="diffmod"><img alt="Child Table Mapping Link" class="screenshot" src="/files/event-map-is-child-table.png"/></ins></p><ins class="diffmod">
+</ins><h4 id="364-mapping-for-doctypes-having-dependencies-link-dynamic-link-fields"><ins class="diffmod">3.6.4 Mapping for DocTypes having dependencies (Link, Dynamic Link fields)</ins><a aria-hidden="true" class="no-underline" href="#364-mapping-for-doctypes-having-dependencies-link-dynamic-link-fields"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h4><ins class="diffmod">
+</ins><p><ins class="diffmod">If the DocTypes you are trying to map have any kind of dependencies like Link or Dynamic Link fields, you need to set up another Document Type Mapping for syncing the dependencies.</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod">For example, let's assume that the local doctype is Opportunity and the remote doctype is KanivinERP Opportunity. The field </ins><code><ins class="diffmod">party_name</ins></code><ins class="diffmod"> (Link field for DocType Lead) in Opportunity is mapped to </ins><code><ins class="diffmod">full_name</ins></code><ins class="diffmod"> (Data field) in KanivinERP Opportunity. During the sync, this Lead has to be created for the main Opportunity to sync. So you need to set up a mapping for this Link Field too.</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod"><img alt="Lead Dependency Creation" class="screenshot" src="/files/lead_dependency_creation.png"/></ins></p><ins class="diffmod">
+</ins><ul><ins class="diffmod">
+</ins><li><strong><ins class="diffmod">Mapping Type</ins></strong><ins class="diffmod">: In this case, the Mapping Type is Document.</ins></li><ins class="diffmod">
+</ins><li><strong><ins class="diffmod">Mapping</ins></strong><ins class="diffmod">: Select the mapping you just created.</ins></li><ins class="diffmod">
+</ins><li><strong><ins class="diffmod">Remote Value Filters</ins></strong><ins class="diffmod">: You need to specify the filters that will fetch the exact remote document to be mapped. Like in this case, the remote DocType is KanivinERP Opportunity which can be uniquely fetched using name, phone number and country.</ins></li><ins class="diffmod">
+</ins></ul><ins class="diffmod">
+</ins><p><ins class="diffmod">The format is:</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod">{ "remote fieldname": "field or expression from where we will get the value for that fieldname"}</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod">If you want to fetch the value from somewhere, start the expression with eval:</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod">Like in this case it is: </ins><code><ins class="diffmod">eval:frappe.db.get_value('Global Defaults', None, 'country')</ins></code></p><ins class="diffmod">
+</ins><p><ins class="diffmod"><img alt="Document Mapping Type" class="screenshot" src="/files/document_mapping_type.png"/></ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod">Lastly, enable the 'Has Mapping' option in the Event Configuration child table in Event Producer against the required Document Type and select the Document Type Mapping you just created.</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod"><img alt="Mapping Configuration" class="screenshot" src="/files/event-mapping-conf.png"/></ins></p><ins class="diffmod">
+</ins><h3 id="36-conditional-events-configuration"><ins class="diffmod">3.6 Conditional Events Configuration</ins><a aria-hidden="true" class="no-underline" href="#36-conditional-events-configuration"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h3><ins class="diffmod">
+</ins><p><ins class="diffmod">If you are in scenario when you do not want to send over all the documents in a doctype over to the consumer, you can specify the conditions for them.</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod">For example, if you would like to emit only those </ins><code><ins class="diffmod">Note</ins></code><ins class="diffmod"> documents that are public, you can specify them within the Producer/Consumer document.</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod"><img alt="Child Table Mapping Link" class="screenshot" src="/files/event-streaming-conditions.png"/></ins></p><ins class="diffmod">
+</ins><blockquote><ins class="diffmod">
+</ins><p><ins class="diffmod">If a document satisfies a condition down the line in its lifetime, all the old </ins><code><ins class="diffmod">Event Update Logs</ins></code><ins class="diffmod"> are synced to the consumer</ins></p><ins class="diffmod">
+</ins></blockquote><ins class="diffmod">
+</ins><p><ins class="diffmod">Let's consider another example. You want to sync only those Sales Invoices that are submitted.
+You can specify </ins><code><ins class="diffmod">doc.docstatus == 1</ins></code><ins class="diffmod"> as the condition. The invoices will not be synced until they are submitted.</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod">For each update log, you can see its Consumers within the Update Log document.</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod">If you need more fine control over the conditions, you can hook up a custom function. Your function will be executed with parameters </ins><code><ins class="diffmod">consumer</ins></code><ins class="diffmod">, </ins><code><ins class="diffmod">doc</ins></code><ins class="diffmod"> &amp; </ins><code><ins class="diffmod">update_log</ins></code><ins class="diffmod">. For example, you want to sync only those Notes that are </ins><code><ins class="diffmod">odd</ins></code></p><ins class="diffmod">
+</ins><pre><button class="btn copy-btn" data-toggle="tooltip" title="Copy Code"><svg class="feather feather-clipboard" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect height="4" rx="1" ry="1" width="8" x="8" y="2"></rect></svg></button><code class="py language-py hljs python"><ins class="diffmod"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">is_odd_note</span>(<span class="hljs-params">consumer, doc, update_log</span>):</span>
+ <span class="hljs-keyword">return</span> frappe.db.sql(<span class="hljs-string">"""
+ SELECT
+ COUNT(*)
+ FROM `tabNote`
+ WHERE creation &lt;= %(creation)s
+ """</span>, { <span class="hljs-string">"creation"</span>: doc.creation })[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>] % <span class="hljs-number">2</span> != <span class="hljs-number">0</span>
+</ins></code></pre><ins class="diffmod">
+</ins><p><ins class="diffmod">Then, you could specify the condition:</ins></p><ins class="diffmod">
+</ins><pre><button class="btn copy-btn" data-toggle="tooltip" title="Copy Code"><svg class="feather feather-clipboard" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect height="4" rx="1" ry="1" width="8" x="8" y="2"></rect></svg></button><code class="js language-js hljs javascript"><ins class="diffmod">cmd: my_custom_app.note.is_odd_note
+</ins></code></pre><ins class="diffmod">
+</ins></div>
+</div>
+</div></div></div></div></main>

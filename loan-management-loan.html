@@ -1,0 +1,85 @@
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title">Loan
+</h1>
+</div>
+<div class="wiki-content">
+<blockquote>
+<p>Introduced in Version 13</p>
+</blockquote>
+<p><strong>Loan record is the loan account which contains all the information regarding a loan.</strong></p>
+<p>Loan record acts as a loan account which contains all the applicant details, repayment schedule, and repayment info. All the loan related documents like <a href="/erpnext/v13/user/manual/en/loan-management/loan-disbursement">Loan Disbursement</a>, <a href="/erpnext/v13/user/manual/en/loan-management/loan-repayment">Loan Repayment</a>, etc are linked to a Loan.</p>
+<p>To access the Loan List list, go to:</p>
+<blockquote>
+<p>Home &gt; Loan Management &gt; Loan &gt; Loan</p>
+</blockquote>
+<h2 id="1-prerequisites">1. Prerequisites</h2>
+<p>Before creating and using a Loan, it is advised that you create the following first:</p>
+<ul>
+<li><a onclick="loadContent('loan-security-type.html')">Loan Security Type</a></li>
+<li><a onclick="loadContent('loan-security.html')">Loan Security</a></li>
+<li><a onclick="loadContent('loan-type.html')">Loan Type</a></li>
+<li><a onclick="loadContent('loan-application.html')">Loan Application</a></li>
+<li><a onclick="loadContent('loan-security-pledge.html')">Loan Security Pledge</a></li>
+</ul>
+<h2 id="2-how-to-create-a-loan">2. How to Create a Loan</h2>
+<ol>
+<li>Go to Loan List, click on New.</li>
+<li>Select Applicant Type.</li>
+<li>Select the Applicant.</li>
+<li>Select Loan Application if Loan Application is created against that Applicant. All the details in loan application will be automatically fetched in the Loan record.</li>
+<li>Select Company.</li>
+<li>Enter posting date.</li>
+<li><p>If applicant type is Employee then check "Repay from Salary" if loan will be repaid from salary.</p>
+<p><img alt="Make Loan" class="screenshot" src="/files/loan-details.png"/></p></li>
+<li><p>Enter Loan Type. All the loan accounts, mode of payment and other loan details like whether the loan is a term loan or demand loan will be automatically fetched from the loan type master. If loan is a term loan repayment schedule will be auto generated on saving the loan document.</p>
+<p><img alt="Make Loan" class="screenshot" src="/files/loan-accounts.png"/>
+<img alt="Make Loan" class="screenshot" src="/files/loan-repayment-schedule.png"/></p></li>
+<li><p>Check 'Is Secured Loan' if the loan is a secured loan. Also select 'Loan Security Pledge' if the loan is a secured loan.</p></li>
+<li>Click "Save" to save the draft of the Loan.</li>
+<li>Click "Submit" to submit the Loan Security Pledge.</li>
+<li>Once the Loan is submitted the loan amount is ready to be disbursed.</li>
+</ol>
+<h3 id="21-other-ways-to-create-a-loan">2.1. Other ways to create a Loan</h3>
+<p>You can also create a Loan from an approved Loan Application via the <strong>Create</strong> button on the top right.</p>
+<p><img alt="Loan Application" class="screenshot" src="/files/create-loan.png"/></p>
+<h2 id="3-features">3. Features</h2>
+<h3 id="31-creation-of-disbursement-entry">3.1 Creation Of Disbursement Entry</h3>
+<p>After submitting the Loan document, if the status is "Sanctioned" and "Repay from Salary" is unchecked, you can create <a href="/erpnext/v13/user/manual/en/loan-management/loan-disbursement">Loan Disbursement</a> from the loan document via <strong>Create</strong> button on top right.</p>
+<p><img alt="Create Loan Disbursement" class="screenshot" src="/files/create-loan-disbursement.png"/></p>
+<h3 id="32-creation-of-repayment-entry">3.2 Creation Of Repayment Entry</h3>
+<p>If the loan is fully or partially disbursed and "Repay from Salary" is unchecked, you can create a <a href="/erpnext/v13/user/manual/en/loan-management/loan-repayment">Loan Repayment</a> from the loan document via <strong>Create</strong> button on top right.</p>
+<p><img alt="Create Loan Repayment" class="screenshot" src="/files/create-loan-repayment.png"/></p>
+<h3 id="33-loan-repayment-deduction-from-salary">3.3 Loan Repayment Deduction from salary</h3>
+<p>To auto deduct the Loan repayment from Salary, check "Repay from Salary" in Loan. It will appear as Loan Repayment in Salary Slip and a <a href="/erpnext/v13/user/manual/en/loan-management/loan-repayment">Loan Repayment</a> record will also be automatically created for the it.</p>
+<p><img alt="Salary Slip Loan" class="screenshot" src="/files/salary-slip-loan.png"/></p>
+</div>
+<input class="d-none" name="wiki-page-name" value="gcsmk9tmge"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="revisionsModalTitle">Loan
+</h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content">
+<h3>No Revisions</h3>
+</div>
+</div>
+</div></div></div></div></main>

@@ -1,0 +1,91 @@
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title">Workstation
+</h1>
+</div>
+<div class="wiki-content">
+<p><strong>A Workstation stores information regarding the place where the workstation operations are carried out.</strong></p>
+<p>Data regarding the operation cost, rent, electricity can be stored here.</p>
+<blockquote>
+<p>Note: An Operation can take place at multiple Workstations.</p>
+</blockquote>
+<blockquote>
+<p>An Operation takes place at a Workstation. The Operation is the work performed and the Workstation is the place/machine where it is performed. For example, melting is an Operation that can be done at 10 different Workstations.</p>
+</blockquote>
+<p>To access the Workstation list, go to:</p>
+<blockquote>
+<p>Home &gt; Manufacturing &gt; Bill of Materials &gt; Workstation</p>
+</blockquote>
+<h2 id="1-how-to-create-a-workstation">1. How to create a Workstation</h2>
+<ol>
+<li>Go to the Workstation list, click on New.</li>
+<li>Enter a name for the Workstation.</li>
+<li>Under Operating Costs, enter the following as applicable:
+<ul>
+<li>Electricity Cost</li>
+<li>Rent Cost</li>
+<li>Consumable Cost</li>
+<li>Wages</li>
+</ul></li>
+<li>Save.</li>
+</ol>
+<p>Optionally, you can enter a description for the Workstation.</p>
+<p><img alt="Workstation" class="screenshot" src="/files/workstation.png"/></p>
+<p>The hours when the Workstation will be Operational can be added. On adding a Holiday list, the days listed as holidays won't be counted as working for the Workstation.
+<img alt="Workstation Hours" class="screenshot" src="/files/workstation-hours.png"/></p>
+<p>After saving the Workstation, the following actions can be performed against it:
+<img alt="Workstation submit" class="screenshot" src="/files/workstation-submit.png"/></p>
+<h2 id="2-features">2. Features</h2>
+<h3 id="21-production-capacity">2.1 Production Capacity</h3>
+<p>Production Capacity is the total number of jobs can be executed at the same time in the respective workstation.</p>
+<p><img alt="Work Order" class="screenshot" src="/files/work_station_capacity.png"/></p>
+<h3 id="22-working-hours">2.2 Working Hours</h3>
+<p>Under Working Hours table, you can add start and end times for a Workstation. For example, a Workstation may be active from 9 am to 1 pm, then 2 pm to 5 pm. You can also specify the working hours based on shifts. While scheduling a <a href="/erpnext/v13/user/manual/en/manufacturing/work-order">Work Order</a>, the system will check for the availability of the Workstation based on the working hours specified.</p>
+<h3 id="23-holiday-list">2.3 Holiday List</h3>
+<ol>
+<li>A <a onclick="loadContent('holiday-list.html')">Holiday List</a> can be added to exclude counting these days for the Workstation.</li>
+</ol>
+<blockquote>
+<p>Note : You can enable overtime for a Workstation in <a href="/erpnext/v13/user/manual/en/manufacturing/manufacturing-settings">Manufacturing Settings</a></p>
+</blockquote>
+<h2 id="3-video">3. Video</h2>
+<iframe allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/UVGfzwOOZC4?rel=0">
+</iframe>
+<h2 id="4-related-topics">4. Related Topics</h2>
+<ol>
+<li><a onclick="loadContent('bill-of-materials.html')">Bill Of Materials</a></li>
+<li><a onclick="loadContent('operation.html')">Operation</a></li>
+<li><a onclick="loadContent('routing.html')">Routing</a></li>
+<li><a onclick="loadContent('work-order.html')">Work Order</a></li>
+<li><a onclick="loadContent('job-card.html')">Job Card</a></li>
+</ol>
+</div>
+<input class="d-none" name="wiki-page-name" value="kbsr2ivs68"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="revisionsModalTitle">Workstation
+</h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content">
+<h3>No Revisions</h3>
+</div>
+</div>
+</div></div></div></div></main>

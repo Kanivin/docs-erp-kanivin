@@ -1,55 +1,45 @@
-<main><div class="from-markdown markdown ">
-	<div class="alert alert-warning admin-banner hide" role="alert">
-		<div class="d-flex justify-content-between align-items-center">
-			<div>This space has
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
 				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
 				review.
 			</div>
-			<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
-		</div>
-	</div>
-	<div class="d-flex justify-content-between align-items-center">
-		<h1 class="wiki-title" id="setting-up-fairlogin">Setting up fairlogin
-<a class="no-underline" href="#setting-up-fairlogin" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h1>
-	</div>
-	<div class="wiki-content">
-		<p>fairlogin is an GDPR aware oAuth provider by fairkom.eu.</p>
-
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title" id="setting-up-fairlogin">Setting up fairlogin
+<a aria-hidden="true" class="no-underline" href="#setting-up-fairlogin">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h1>
+</div>
+<div class="wiki-content">
+<p>fairlogin is an GDPR aware oAuth provider by fairkom.eu.</p>
 <p>To setup fairlogin as an oAuth provider, go to:</p>
-
 <blockquote>
-  <p>Home &gt; Integrations &gt; Social Login Key</p>
+<p>Home &gt; Integrations &gt; Social Login Key</p>
 </blockquote>
-
-<h2 id="setup-keycloak">Setup keycloak<a class="no-underline" href="#setup-keycloak" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h2>
-
+<h2 id="setup-keycloak">Setup keycloak<a aria-hidden="true" class="no-underline" href="#setup-keycloak">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h2>
 <p>fairlogin is based on keycloak, so the parameters may be similar for any custom oAuth setting facilitating keycloak.</p>
-
 <p>There you add a new client, select open-id as client protocol and enter the address of your ERPnext instance as the Root, Redirect and Base URL.</p>
-
 <p>Adding your ERNext service as a client is being <a href="https://erp.fairkom.net/cloud/fairlogin-client">offered as a service by fairkom</a>.</p>
-
-<p><img src="/files/fairloginKeycloakERPnext.png" alt="ERPnext keycloak Settings" class="screenshot"></p>
-
-<h2 id="setup-fairlogin">Setup fairlogin<a class="no-underline" href="#setup-fairlogin" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h2>
-
+<p><img alt="ERPnext keycloak Settings" class="screenshot" src="/files/fairloginKeycloakERPnext.png"/></p>
+<h2 id="setup-fairlogin">Setup fairlogin<a aria-hidden="true" class="no-underline" href="#setup-fairlogin">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h2>
 <p>To enable fairlogin as an KanivinERP login option, you need to configure the following parameters:</p>
-
 <ul>
 <li>Base URL https://id.fairkom.net/auth/realms/fairlogin/</li>
 <li>Authorize URL https://id.fairkom.net/auth/realms/fairlogin/protocol/openid-connect/auth</li>
@@ -57,70 +47,55 @@
 <li>Access Token URL https://id.fairkom.net/auth/realms/fairlogin/protocol/openid-connect/token</li>
 <li>API Endpoint https://id.fairkom.net/auth/realms/fairlogin/protocol/openid-connect/userinfo</li>
 </ul>
-
-<p><img src="/files/fairloginERPnextSettings.png" alt="ERPnext fairlogin Settings" class="screenshot"></p>
-
+<p><img alt="ERPnext fairlogin Settings" class="screenshot" src="/files/fairloginERPnextSettings.png"/></p>
 <p>On enabling service, the system will allow to login with any fairlogin account.</p>
-
 <p>The default role of a new user is Blogger (currently hardcoded).</p>
-
-	</div>
-	<input value="s8bo18ue9m" class="d-none" name="wiki-page-name">
-	<div class="modal revisions-modal fade" id="revisionsModal" tabindex="-1" role="dialog" aria-labelledby="revisionsModalTitle" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <div class="d-flex flex-column">
-                    <h5 class="modal-title revision-title" id="setting-up-fairlogin">Setting up fairlogin
-<a class="no-underline" href="#setting-up-fairlogin" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h5>
-                    <span class="small text-muted revision-time">administrator edited 4 months ago</span>
-                </div>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="revision-content wiki-content"><del class="diffmod">
-                    </del><h3 id="no-revisions"><del class="diffmod">No</del><ins class="diffmod">
-		</ins><p><ins class="diffmod">fairlogin</ins> <del class="diffmod">Revisions</del><ins class="diffmod">is an GDPR aware oAuth provider by fairkom.eu.</ins></p><ins class="diffmod">
-
+</div>
+<input class="d-none" name="wiki-page-name" value="s8bo18ue9m"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="setting-up-fairlogin">Setting up fairlogin
+<a aria-hidden="true" class="no-underline" href="#setting-up-fairlogin">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content"><del class="diffmod">
+</del><h3 id="no-revisions"><del class="diffmod">No</del><ins class="diffmod">
+</ins><p><ins class="diffmod">fairlogin</ins> <del class="diffmod">Revisions</del><ins class="diffmod">is an GDPR aware oAuth provider by fairkom.eu.</ins></p><ins class="diffmod">
 </ins><p><ins class="diffmod">To setup fairlogin as an oAuth provider, go to:</ins></p><ins class="diffmod">
-
 </ins><blockquote><ins class="diffmod">
-  </ins><p><ins class="diffmod">Home &gt; Integrations &gt; Social Login Key</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod">Home &gt; Integrations &gt; Social Login Key</ins></p><ins class="diffmod">
 </ins></blockquote><ins class="diffmod">
-
-</ins></h3><h2 id="setup-keycloak"><ins class="diffmod">Setup keycloak</ins><a class="no-underline" href="#setup-keycloak" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h2><del class="diffmod">
-
-                </del><ins class="diffmod">
-
+</ins></h3><h2 id="setup-keycloak"><ins class="diffmod">Setup keycloak</ins><a aria-hidden="true" class="no-underline" href="#setup-keycloak">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h2><del class="diffmod">
+</del><ins class="diffmod">
 </ins><p><ins class="diffmod">fairlogin is based on keycloak, so the parameters may be similar for any custom oAuth setting facilitating keycloak.</ins></p><ins class="diffmod">
-
 </ins><p><ins class="diffmod">There you add a new client, select open-id as client protocol and enter the address of your ERPnext instance as the Root, Redirect and Base URL.</ins></p><ins class="diffmod">
-
 </ins><p><ins class="diffmod">Adding your ERNext service as a client is being </ins><a href="https://erp.fairkom.net/cloud/fairlogin-client"><ins class="diffmod">offered as a service by fairkom</ins></a><ins class="diffmod">.</ins></p><ins class="diffmod">
-
-</ins><p><ins class="diffmod"><img src="/files/fairloginKeycloakERPnext.png" alt="ERPnext keycloak Settings" class="screenshot"></ins></p><ins class="diffmod">
-
-</ins><h2 id="setup-fairlogin"><ins class="diffmod">Setup fairlogin</ins><a class="no-underline" href="#setup-fairlogin" aria-hidden="true"><ins class="diffmod">
-        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
-          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
-          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
-        </ins></svg><ins class="diffmod">
-      </ins></a></h2><ins class="diffmod">
-
+</ins><p><ins class="diffmod"><img alt="ERPnext keycloak Settings" class="screenshot" src="/files/fairloginKeycloakERPnext.png"/></ins></p><ins class="diffmod">
+</ins><h2 id="setup-fairlogin"><ins class="diffmod">Setup fairlogin</ins><a aria-hidden="true" class="no-underline" href="#setup-fairlogin"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h2><ins class="diffmod">
 </ins><p><ins class="diffmod">To enable fairlogin as an KanivinERP login option, you need to configure the following parameters:</ins></p><ins class="diffmod">
-
 </ins><ul><ins class="diffmod">
 </ins><li><ins class="diffmod">Base URL https://id.fairkom.net/auth/realms/fairlogin/</ins></li><ins class="diffmod">
 </ins><li><ins class="diffmod">Authorize URL https://id.fairkom.net/auth/realms/fairlogin/protocol/openid-connect/auth</ins></li><ins class="diffmod">
@@ -128,13 +103,9 @@
 </ins><li><ins class="diffmod">Access Token URL https://id.fairkom.net/auth/realms/fairlogin/protocol/openid-connect/token</ins></li><ins class="diffmod">
 </ins><li><ins class="diffmod">API Endpoint https://id.fairkom.net/auth/realms/fairlogin/protocol/openid-connect/userinfo</ins></li><ins class="diffmod">
 </ins></ul><ins class="diffmod">
-
-</ins><p><ins class="diffmod"><img src="/files/fairloginERPnextSettings.png" alt="ERPnext fairlogin Settings" class="screenshot"></ins></p><ins class="diffmod">
-
+</ins><p><ins class="diffmod"><img alt="ERPnext fairlogin Settings" class="screenshot" src="/files/fairloginERPnextSettings.png"/></ins></p><ins class="diffmod">
 </ins><p><ins class="diffmod">On enabling service, the system will allow to login with any fairlogin account.</ins></p><ins class="diffmod">
-
 </ins><p><ins class="diffmod">The default role of a new user is Blogger (currently hardcoded).</ins></p><ins class="diffmod">
-
-	</ins></div>
-            </div>
-         </main>
+</ins></div>
+</div>
+</div></div></div></div></main>

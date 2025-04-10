@@ -1,0 +1,65 @@
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title">Debit Note
+</h1>
+</div>
+<div class="wiki-content">
+<p><strong>A Debit Note is a document sent by a buyer to the Supplier notifying that a debit has been recorded against the goods returned to the Supplier.</strong></p>
+<p>A Debit Note is issued for the value of the goods returned. In some cases, sellers are seen sending Debit Notes which should be treated as like another invoice.</p>
+<p>A Debit is for your record of the debit against the Items your return.</p>
+<h2 id="1-how-to-create-debit-note">1. How to create Debit Note</h2>
+<p>The user can make a Debit Note against the Purchase Invoice or they can directly make Debit Note from the Purchase Invoice without reference.</p>
+<ol>
+<li>Go to the respective Purchase Invoice and click on <strong>Create &gt; Return / Debit Note</strong>.
+<img alt="Debit Note from Invoice" class="screenshot" src="/files/debit-note-from-purchase-invoice.png"/></li>
+<li>The Supplier and Item details will be fetched as set in the Purchase Invoice.</li>
+<li>If you had paid partially or fully, make a Payment Entry against the original Purchase Invoice.</li>
+<li><p>Save and Submit.</p>
+<p><img alt="Debit Note" class="screenshot" src="/files/debit-note.png"/></p></li>
+</ol>
+<p>The other steps are similar to a <a href="/erpnext/v13/user/manual/en/accounts/purchase-invoice">Purchase Invoice</a>.</p>
+<h3 id="11-how-does-debit-note-affect-ledger">1.1 How does Debit Note affect ledger</h3>
+<p>The Debit Note will reverse the impact of the purchase invoice.</p>
+<p><img alt="Debit Note Ledger" class="screenshot" src="/files/debit-note-ledger.png"/></p>
+<p>Refer the <a href="/erpnext/v13/user/manual/en/accounts/purchase-invoice">Purchase Invoice</a> page for any other details.</p>
+<h3 id="12-no-payment-was-made-against-sales-invoice">1.2 No payment was made against Sales Invoice</h3>
+<p>In case <strong>no payment</strong> was made against the original invoice, you could just cancel the Sales Invoice. But, if only 5 out of 10 Items are being returned from an invoice, creating a Debit Note is useful for updating the ledger.</p>
+<h2 id="2-example">2. Example</h2>
+<p>From Supplier Blue Mills, you had purchased Cotton worth Rs 2400 + taxes and at the time of delivery, you found that the products were damaged. Now you returned the product a Debit Note will be issued.</p>
+<p>Debit Note with payment entry in KanivinERP for above example is as below:</p>
+<p><img alt="Creating Debit Note" class="screenshot" src="/files/creating-debit-note.gif"/></p>
+<h3 id="3-related-topics">3. Related Topics</h3>
+<ol>
+<li><a onclick="loadContent('payment-entry.html')">Payment Entry</a></li>
+<li><a onclick="loadContent('credit-note.html')">Credit Note</a></li>
+</ol>
+</div>
+<input class="d-none" name="wiki-page-name" value="ht551a78b4"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="revisionsModalTitle">Debit Note
+</h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content">
+<h3>No Revisions</h3>
+</div>
+</div>
+</div></div></div></div></main>

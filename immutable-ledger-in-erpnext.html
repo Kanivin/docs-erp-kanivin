@@ -1,0 +1,54 @@
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title">Immutable Ledger</h1>
+</div>
+<div class="wiki-content">
+<blockquote>
+<p>Introduced in Version 13</p>
+</blockquote>
+<p>A major change has been introduced in KanivinERP from version 13 onwards. This changes the way Accounting Ledger (General Ledger) and Stock Ledger works in KanivinERP. There are multiple reasons why ledgers should be immutable. To list a few:</p>
+<ul>
+<li>Reposting future entries is computationally expensive. To post a backdated transaction, all future entries need to be reposted.</li>
+<li>In Stock Ledger, where the valuations are based on First-in-first-out (FIFO) method, the entire sequence may get regenerated which may upset valuations and profit for subsequent transactions.</li>
+<li>Taxes paid for a period may also get changed.</li>
+</ul>
+<h2 id="following-are-the-impacts-on-day-to-day-transactions">Following are the impacts on day to day transactions</h2>
+<h3 id="1-reverse-entries-on-cancellation-of-transactions">1. Reverse Entries on cancellation of transactions</h3>
+<p><img alt="General Ledger" class="screenshot" src="/files/general-ledgercb549a.png"/></p>
+<p>On cancellation of any transaction instead of deleting the GL Entries for that transactions reverse entries will be passed to cancel the effect of that transaction on the date of cancellation.</p>
+<p><img alt="Document Delete" class="screenshot" src="/files/document-delete.png"/></p>
+<p>Since GL Entries linked to a transaction will never be deleted this also means that cancelled transactions and their linked documents can no longer be deleted.</p>
+<h3 id="2-restriction-on-posting-backdated-stock-entries">2. Restriction on posting backdated stock entries</h3>
+<p>Since the ledgers are immutable now this means future transactions cannot be updated or reposted.
+So users will no longer be able to post backdated stock transactions.</p>
+<p><img alt="Back Dated Entry" class="screenshot" src="/files/backdated-entry603ad4.png"/></p>
+<p>For Eg: Suppose a Stock Transaction has been made for <strong>Item A</strong> with posting time as <code>19-06-2020 23:00:10</code> then after this transaction you cannot post a transaction for <strong>Item A</strong> with posting time before this timestamp.</p>
+</div>
+<input class="d-none" name="wiki-page-name" value="e5phb9i8p6"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="revisionsModalTitle">Immutable Ledger</h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content">
+<h3>No Revisions</h3>
+</div>
+</div>
+</div></div></div></div></main>

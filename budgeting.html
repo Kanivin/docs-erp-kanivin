@@ -1,0 +1,88 @@
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title">Budgeting</h1>
+</div>
+<div class="wiki-content">
+<p><strong>Budgeting is a financial plan that helps controlling Company expenses.</strong></p>
+<p>In KanivinERP, you can set and manage budgets against a Cost Center or a Project. This is useful in controlling your expenses. You can also create separate <a href="/erpnext/v13/user/manual/en/accounts/accounting-dimensions">Accounting Dimensions</a> to tag transactions with different fields.</p>
+<p>For example, if you are doing online sales, you can set a budget for search advertisements and configure KanivinERP to stop or warn you from overspending beyond a set budget.</p>
+<p>Budgets are also great for planning purposes. When you are making plans for the next Financial Year, you would typically target a revenue based on which you would set your expenses. Setting a budget will ensure that your expenses do not get out of hand at any point.</p>
+<p>To access the Budget list, go to:</p>
+<blockquote>
+<p>Home &gt; Accounting &gt; Cost Center and Budgeting &gt; Budget</p>
+</blockquote>
+<h2 id="1-how-to-create-a-new-budget">1. How to Create a new Budget</h2>
+<ol>
+<li>Go to the Budget list and click on Add Budget.</li>
+<li>Select whether the budget is setup against a Cost Center, Project, or an <a onclick="loadContent('accounting-dimensions.html')">Accounting Dimensions</a>.</li>
+<li>Specify the Fiscal Year for which the budget is applicable.</li>
+<li>In the accounts table, select an income/expense account for which a budget is to be set. Let's set a budget for telephone expenses for the year. <img alt="Budget" class="screenshot" src="/files/budget.png"/></li>
+<li>Enter the budget amount for that account.</li>
+<li>Save and Submit.</li>
+</ol>
+<h2 id="2-features">2. Features</h2>
+<h3 id="21-monthly-distribution">2.1 Monthly Distribution</h3>
+<p>You can also define a Monthly Distribution record to distribute the budget between months. If you don't set the monthly distribution, KanivinERP will calculate the budget yearly or in equal proportion for every month.</p>
+<p><img alt="Screenshot 2024-08-28 at 11.34.29 AM" class="screenshot" src="/files/Screenshot 2024-08-28 at 11.34.29 AM.png"/> </p>
+<h3 id="22-control-actions-alerts">2.2 Control Actions (Alerts)</h3>
+<p>Control actions can be triggered when:</p>
+<ul>
+<li>A <a onclick="loadContent('material-request.html')">Material Request</a> is being submitted</li>
+<li>A <a onclick="loadContent('purchase-order.html')">Purchase Order</a> is being submitted</li>
+<li>When an actual expense is being posted (through a journal entry or a purchase invoice).</li>
+</ul>
+<p>You can set a control action in the Budget based on Material Requests, Purchase Orders, or on actual expenses. Further, you can set a control action for annual or monthly budgets.</p>
+<p><img alt="Control Actions" class="screenshot" src="/files/control-actions.png"/> </p>
+<p>There are three types of control actions.</p>
+<ul>
+<li><strong>Stop</strong>: This will not allow users to submit the transaction.</li>
+<li><strong>Warn</strong>: This will show a warning message but lets the user submit the transaction.</li>
+<li><strong>Ignore</strong>: This will neither prevent the user from submitting transactions nor show an error message.</li>
+</ul>
+<p>You can set separate actions for monthly and annual budgets. If you exceed the budget, a warning will be shown:</p>
+<p><img alt="Budget Warning" class="screenshot" src="/files/budget-warning.png"/> </p>
+<p>Note that a similar warning will be triggered for any type of transactions set in the budget for the particular Account heads.</p>
+<h2 id="3-budget-variance-report">3. Budget Variance Report</h2>
+<p>At any point in time, you can check the Budget Variance Report to analyze the actual expense incurred vs budget allocated against a cost center or a project.</p>
+<p>To check the Budget Variance report, go to:</p>
+<blockquote>
+<p>Home &gt; Accounting &gt; Cost Center and Budgeting &gt; Budget Variance Report</p>
+</blockquote>
+<p><img alt="Budget Variance Report" class="screenshot" src="/files/budget-variance-report.png"/> </p>
+<h2 id="4-video">4. Video</h2>
+<p>Here is a video demonstration:</p>
+<h2 id="5-related-topics">5. Related Topics</h2>
+<ol>
+<li><a onclick="loadContent('cost-center.html')">Cost Center</a></li>
+<li><a onclick="loadContent('sales-invoice.html')">Sales Invoice</a></li>
+<li><a onclick="loadContent('purchase-invoice.html')">Purchase Invoice</a></li>
+</ol>
+</div>
+<input class="d-none" name="wiki-page-name" value="jg14sf5ihm"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="revisionsModalTitle">Budgeting</h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content">
+<h3>No Revisions</h3>
+</div>
+</div>
+</div></div></div></div></main>

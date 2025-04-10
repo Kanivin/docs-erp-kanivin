@@ -1,0 +1,82 @@
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title">Batch</h1>
+</div>
+<div class="wiki-content">
+<blockquote>
+<p>Allow Negative Stock has removed for Serial / Batch Items from version 15. So from version 15 users won't be able to make negative stock transactions for serial /batch items even though Allow Negative Stock has enabled in the Stock Settings.</p>
+</blockquote>
+<p><strong>Batch feature in KanivinERP allows you to group multiple units of an Item and assign them a unique value/number/tag called Batch No.</strong></p>
+<p>This is done based on the Item. If the Item is batched, then a Batch number must be mentioned in every stock transaction. Batch numbers can be maintained manually or automatically. This feature is useful to set the expiry date of multiple Items or move them together to different Warehouses.</p>
+<p>To access the Batch No list, go to: &gt; Home &gt; Stock &gt; Serial No and Batch &gt; Batch</p>
+<h2 id="1-prerequisites">1. Prerequisites</h2>
+<p>Before creating and using a Batch, it is advised that you create the following first:</p>
+<ul>
+<li><a onclick="loadContent('item.html')">Item</a></li>
+<li>Enable 'Has Batch No' in the Item master <img alt="Batch No Enabled" class="screenshot" src="/files/batch-no-enabled.png"/></li>
+</ul>
+<h2 id="2-how-to-create-a-new-batch">2. How to create a new Batch</h2>
+<p>To set item as a batch item, "Has Batch No" field should be checked in the Item master. If you have not selected "Automatically Create New Batch" when creating an Item, you will have to make Batches Manually as you go along.</p>
+<p>To create new Batch No. master for an item, go to:</p>
+<ol>
+<li>Go to the Batch list, click on New.</li>
+<li>Set the Batch ID.</li>
+<li>Select the Item.</li>
+<li>If any transaction is done with an item, the batch cannot be set or unset.</li>
+<li>Save.</li>
+</ol>
+<p>When Batches are enabled for an Item, the option to <a href="/erpnext/v13/user/manual/en/stock/retain-sample-stock">retain sample stock</a> also becomes available.</p>
+<h3 id="21-batch-auto-creation">2.1 Batch Auto Creation</h3>
+<p>If you want automatic batch creation at the time of Purchase Receipt, you must tick 'Automatically Create New Batch' in the Item master:</p>
+<p><img alt="Item Setup for Batches" class="screenshot" src="/files/item_setup_for_batch.png"/> </p>
+<h2 id="3-features">3. Features</h2>
+<h3 id="31-splitting-and-moving-batches">3.1 Splitting and Moving Batches</h3>
+<p>When you open a batch, you will see all the quantities that belong to that batch on the page.</p>
+<p><img alt="Batch View" class="screenshot" src="/files/batch_view.png"/> </p>
+<ul>
+<li>To move the batch from one Warehouse to another, you can click on the <strong>Move</strong> button.</li>
+<li>You can also split the batch into smaller one by clicking on the <strong>Split</strong> button. This will create a new Batch based on this Batch and the quantities will be split between the batches.</li>
+</ul>
+<p><img alt="Split Batch" class="screenshot" src="/files/batch_split.png"/>
+* If you set expiry date, the Batch will show 'Not Expired' until the expiry date, after which it'll show 'Expired'. If a date is not set, the Batch will show 'Not Set'.</p>
+<h3 id="32-transacting-items-with-batches">3.2 Transacting Items with Batches</h3>
+<p>A Batch master should be created before the creation of Purchase Receipt. Hence, every time a Purchase Receipt or Work Order is being made for a batch item, you will first create its Batch No, and then select it in the Purchase order or Stock Entry.</p>
+<p>On every stock transaction (Purchase Receipt, Delivery Note, Invoice) with a batch item, you should provide the Item's Batch No.</p>
+<blockquote>
+<p>Note: In stock transactions, Batch IDs will be filtered based on Item Code, Warehouse, Batch Expiry Date (compared with a Posting date of a transaction) and Actual Qty in Warehouse. While searching for Batch ID without value in the Warehouse field, Actual Qty filter won't be applied.</p>
+</blockquote>
+<h3 id="4-related-topics">4. Related Topics</h3>
+<ol>
+<li><a onclick="loadContent('serial-no.html')">Serial Number</a></li>
+<li><a onclick="loadContent('opening-stock-balance-entry-for-serialized-and-batch-item.html')">Opening Stock Balance Entry For Serialized And Batch Item</a></li>
+<li><a onclick="loadContent('managing-batch-wise-inventory.html')">Managing Batch Wise Inventory</a></li>
+</ol>
+</div>
+<input class="d-none" name="wiki-page-name" value="r09gc9ejnl"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="revisionsModalTitle">Batch</h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content">
+<h3>No Revisions</h3>
+</div>
+</div>
+</div></div></div></div></main>

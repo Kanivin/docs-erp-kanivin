@@ -1,80 +1,66 @@
-<main><div class="from-markdown markdown ">
-	<div class="alert alert-warning admin-banner hide" role="alert">
-		<div class="d-flex justify-content-between align-items-center">
-			<div>This space has
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
 				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
 				review.
 			</div>
-			<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
-		</div>
-	</div>
-	<div class="d-flex justify-content-between align-items-center">
-		<h1 class="wiki-title" id="issue">Issue
-<a class="no-underline" href="#issue" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h1>
-	</div>
-	<div class="wiki-content">
-		<p><strong>An Issue is an incoming query from a Customer, usually via email or from the <em>Contact</em> section of your website.</strong></p>
-
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title" id="issue">Issue
+<a aria-hidden="true" class="no-underline" href="#issue">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h1>
+</div>
+<div class="wiki-content">
+<p><strong>An Issue is an incoming query from a Customer, usually via email or from the <em>Contact</em> section of your website.</strong></p>
 <blockquote>
-  <p>Tip: A dedicated support Email Address is a good way to keep track of incoming
-  queries. For example, you can send support queries to ERPNext at
+<p>Tip: A dedicated support Email Address is a good way to keep track of incoming
+  queries. For example, you can send support queries to KanivinERP at
   support@erpnext.com and it will automatically create an Issue in our system.</p>
 </blockquote>
-
 <p>To access the Issue list, go to:</p>
-
 <blockquote>
-  <p>Home &gt; Support &gt; Issues &gt; Issue</p>
+<p>Home &gt; Support &gt; Issues &gt; Issue</p>
 </blockquote>
-
-<p><img src="/files/issue.png" alt="Issue" class="screenshot"></p>
-
-<h2 id="1-prerequisites">1. Prerequisites<a class="no-underline" href="#1-prerequisites" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h2>
-
+<p><img alt="Issue" class="screenshot" src="/files/issue.png"/></p>
+<h2 id="1-prerequisites">1. Prerequisites<a aria-hidden="true" class="no-underline" href="#1-prerequisites">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h2>
 <p>Before creating and using Issues, it is advised that you create the following first:</p>
-
 <ul>
-<li><a href="/erpnext/v13/user/manual/en/CRM/customer">Customer</a></li>
-<li><a href="/erpnext/v13/user/manual/en/setting-up/email/email-account">Email Account</a></li>
+<li><a onclick="loadContent('customer.html')">Customer</a></li>
+<li><a onclick="loadContent('email-account.html')">Email Account</a></li>
 </ul>
-
-<h2 id="2-how-to-create-issue">2. How to Create Issue<a class="no-underline" href="#2-how-to-create-issue" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h2>
-
+<h2 id="2-how-to-create-issue">2. How to Create Issue<a aria-hidden="true" class="no-underline" href="#2-how-to-create-issue">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h2>
 <p>Issues are automatically created if you use the <strong>append to feature</strong> in <a href="/erpnext/v13/user/manual/en/setting-up/email/email-account#32-incoming-email-accounts">Email Account</a>.</p>
-
 <p>You can also create an Issue manually, to do that:</p>
-
 <ol>
 <li>Go to the Issue list, click on New.</li>
 <li>Enter the Subject, Raised By, and a description of the Issue.</li>
 </ol>
-
-<h3 id="21-additional-options-when-creating-an-issue">2.1 Additional Options when Creating an Issue<a class="no-underline" href="#21-additional-options-when-creating-an-issue" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h3>
-
+<h3 id="21-additional-options-when-creating-an-issue">2.1 Additional Options when Creating an Issue<a aria-hidden="true" class="no-underline" href="#21-additional-options-when-creating-an-issue">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
 <ul>
 <li><p><strong>Status</strong>: When a new Issue is created, its status will be "Open", when it is
 replied, its status becomes "Replied".</p>
-
 <ul>
 <li>Open: The Issue has been created and yet to be replied to.</li>
 <li>Replied: A reply has been sent to the Issue.</li>
@@ -82,82 +68,65 @@ replied, its status becomes "Replied".</p>
 <li>Resolved: When the users are reasonably sure that they have provided the customer with a solution to their problem but have not received an acknowledgment about the resolution from the customer.</li>
 <li>Closed: The Customer got a satisfactory resolution that he has indicated with an acknowledgment and the Issue was closed.</li>
 </ul>
-
 <p>If the sender replies to the thread, the status becomes "Open" again. User can "Close" the Issue manually by clicking on the <strong>Close</strong> button on the top right.</p></li>
 </ul>
-
 <blockquote>
-  <p>Note: If SLA has been set up, then the fulfillment status of the SLA will be updated on both, the <strong>Closed</strong> as well as the <strong>Resolved</strong> status.</p>
+<p>Note: If SLA has been set up, then the fulfillment status of the SLA will be updated on both, the <strong>Closed</strong> as well as the <strong>Resolved</strong> status.</p>
 </blockquote>
-
 <ul>
-<li><strong>Customer</strong>: If the email was sent from a <a href="/erpnext/v13/user/manual/en/CRM/customer">Customer</a> stored in your ERPNext account, then a Customer link will appear in this field.</li>
+<li><strong>Customer</strong>: If the email was sent from a <a onclick="loadContent('customer.html')">Customer</a> stored in your KanivinERP account, then a Customer link will appear in this field.</li>
 <li><strong>Priority</strong>: Priority can be set as per the requirements. By default, there are three priorities--Low, Medium, and High. You can delete these or add more as needed.</li>
 <li><strong>Issue Type</strong>: An Issue can be classified using Issue Type. Examples of Issue Types can be: 'Functional', 'Technical', 'Hardware', etc.</li>
 <li><strong>Raised By (Email)</strong>: The email ID from which the Issue was sent will be shown here.</li>
 </ul>
-
-<h2 id="3-features">3. Features<a class="no-underline" href="#3-features" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h2>
-
-<h3 id="31-details">3.1 Details<a class="no-underline" href="#31-details" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h3>
-
+<h2 id="3-features">3. Features<a aria-hidden="true" class="no-underline" href="#3-features">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h2>
+<h3 id="31-details">3.1 Details<a aria-hidden="true" class="no-underline" href="#31-details">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
 <ul>
 <li><strong>Description</strong>: This is a text field in which details about the Issue can be seen. This can also contain an image or a table.</li>
 </ul>
-
-<h3 id="32-service-level-agreement">3.2 Service Level Agreement<a class="no-underline" href="#32-service-level-agreement" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h3>
-
+<h3 id="32-service-level-agreement">3.2 Service Level Agreement<a aria-hidden="true" class="no-underline" href="#32-service-level-agreement">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
 <p>It is a contract between a service provider and the end user that defines the level of service expected from the service provider.</p>
-
 <p>User can select the <a href="/erpnext/v13/user/manual/en/support/service-level-agreement">Service Level Agreement</a> (SLA) from the list.</p>
-
 <ul>
 <li>Every Issue will have a Time to Response and Time to Resolve within which the Support team has to Respond and Resolve the Issue.</li>
 <li>The Priority can be changed to escalate the Issue. The priorities need to be specified in the Service Level Agreement.</li>
 <li>If needed, the Service Level Agreement can be reset by clicking on the <strong>Reset Service Level Agreement</strong> button in Issues shown as follows:</li>
 </ul>
-
-<p><img src="/files/new-issue.gif" alt="SLA" class="screenshot"></p>
-
-<h3 id="33-response">3.3 Response<a class="no-underline" href="#33-response" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h3>
-
+<p><img alt="SLA" class="screenshot" src="/files/new-issue.gif"/></p>
+<h3 id="33-response">3.3 Response<a aria-hidden="true" class="no-underline" href="#33-response">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
 <ul>
 <li><p><strong>Mins to First Response</strong>: Time in minutes from when the Issue was created to when the first reply was sent.</p></li>
 <li><p><strong>First Responded on</strong>: When a Support team member first replies to the issue, first response date and time will be updated.</p></li>
 <li><p><strong>Average Response Time</strong>: The average time taken to respond to the Customer. This is calculated by taking the average of all time spans between Received and Sent Communications. This field will be updated on every reply sent to the customer.</p></li>
 </ul>
-
-<p><img src="/files/response.png" alt="Response Details" class="screenshot"></p>
-
-<h3 id="34-reference">3.4 Reference<a class="no-underline" href="#34-reference" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h3>
-
+<p><img alt="Response Details" class="screenshot" src="/files/response.png"/></p>
+<h3 id="34-reference">3.4 Reference<a aria-hidden="true" class="no-underline" href="#34-reference">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
 <p>User can filter the issues based on these fields linked to the Issue:</p>
-
 <ul>
 <li>Lead</li>
 <li>Contact</li>
@@ -165,14 +134,12 @@ replied, its status becomes "Replied".</p>
 <li>Project</li>
 <li>Company</li>
 </ul>
-
-<h3 id="35-resolution">3.5 Resolution<a class="no-underline" href="#35-resolution" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h3>
-
+<h3 id="35-resolution">3.5 Resolution<a aria-hidden="true" class="no-underline" href="#35-resolution">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
 <ul>
 <li><strong>Opening Date</strong>: When the issue is created or logged the date be posted.</li>
 <li><strong>Opening Time</strong>: When the issue is created or logged the exact time will automatically be posted.</li>
@@ -180,184 +147,147 @@ replied, its status becomes "Replied".</p>
 <li><strong>Resolution Details</strong>: User can enter the details of the issue, once it is resolved. This is a text field. Also, user can upload the image, enter or create a table.</li>
 <li><strong>Resolution Time</strong>: Total time taken to close the ticket (from Issue creation to closing).</li>
 <li><p><strong>User Resolution Time</strong>: Many times a user has to wait for a customer's reply in order to solve some Issue. While measuring User's productivity this wait time shouldn't be taken into consideration. Hence, user resolution time is the total time taken by a user to close the ticket and can be calculated as:</p>
-
 <p>_Resolution time - Total Time for which the user had to wait for a customer's reply_</p></li>
 </ul>
-
 <p>The Resolution Time and User Resolution Time metrics are set on "Close". These metrics reset automatically when the Issue reopens or splits.</p>
-
-<p><img src="/files/resolution.png" alt="Resolution" class="screenshot"></p>
-
-<h4 id="via-customer-portal">Via Customer Portal<a class="no-underline" href="#via-customer-portal" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h4>
-
+<p><img alt="Resolution" class="screenshot" src="/files/resolution.png"/></p>
+<h4 id="via-customer-portal">Via Customer Portal<a aria-hidden="true" class="no-underline" href="#via-customer-portal">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h4>
 <p>If the Customer raising the Issue is a Website User (no access to modules), this checkbox will be ticked to indicate that.</p>
-
-<h2 id="4-after-saving">4. After Saving<a class="no-underline" href="#4-after-saving" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h2>
-
-<h3 id="41-add-comments">4.1 Add Comments<a class="no-underline" href="#41-add-comments" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h3>
-
+<h2 id="4-after-saving">4. After Saving<a aria-hidden="true" class="no-underline" href="#4-after-saving">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h2>
+<h3 id="41-add-comments">4.1 Add Comments<a aria-hidden="true" class="no-underline" href="#41-add-comments">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
 <p>Once the Issue is registered, support team Users can add comments for the issue. This field is editable. Comments in Issues are for internal discussions and will not be visible to the Customers.</p>
-
-<h3 id="42-new-email">4.2 New Email<a class="no-underline" href="#42-new-email" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h3>
-
+<h3 id="42-new-email">4.2 New Email<a aria-hidden="true" class="no-underline" href="#42-new-email">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
 <p>Users can compose an email to the person that has raised the Issue. All the mails (received as well as sent) can be seen in a thread in the Issue.</p>
-
-<h3 id="43-discussion-thread">4.3 Discussion Thread<a class="no-underline" href="#43-discussion-thread" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h3>
-
+<h3 id="43-discussion-thread">4.3 Discussion Thread<a aria-hidden="true" class="no-underline" href="#43-discussion-thread">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
 <p>The email discussion thread in an Issue maintains all the emails which are sent back and forth against this Issue in the system so that you can track what transpired between the sender and the person responding.</p>
-
 <ul>
 <li>When a New Email is sent from your mailbox, an automatic reply is sent to the sender with your message and the Support Ticket Number.</li>
 <li>The sender can send additional information to this email.</li>
 <li>All subsequent emails containing this Issue number in the subject will be added to this Issue thread.</li>
 <li>The sender can also add attachments to the email.</li>
 </ul>
-
-<h3 id="44-assigning-issues-to-users">4.4 Assigning Issues to Users<a class="no-underline" href="#44-assigning-issues-to-users" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h3>
-
+<h3 id="44-assigning-issues-to-users">4.4 Assigning Issues to Users<a aria-hidden="true" class="no-underline" href="#44-assigning-issues-to-users">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
 <blockquote>
-  <p>Issues can be assigned automatically among Users using <a href="/erpnext/v13/user/manual/en/automation/assignment-rule">Assignment Rule</a>.</p>
+<p>Issues can be assigned automatically among Users using <a href="/erpnext/v13/user/manual/en/automation/assignment-rule">Assignment Rule</a>.</p>
 </blockquote>
-
 <p>You can assign an Issue to a specific User by clicking on "Assign" feature in the left sidebar. This will add a new To Do to the user and also send a message indicating that this Issue is allocated.</p>
-
-<p><img src="/files/issue-assign.png" alt="Assign Issue" class="screenshot"></p>
-
-<h3 id="45-closing">4.5 Closing<a class="no-underline" href="#45-closing" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h3>
-
+<p><img alt="Assign Issue" class="screenshot" src="/files/issue-assign.png"/></p>
+<h3 id="45-closing">4.5 Closing<a aria-hidden="true" class="no-underline" href="#45-closing">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
 <ul>
 <li>You can close the Issue manually by clicking on 'Close' in the toolbar.</li>
 <li>If the sender does not reply in 7 days, then the Issue gets closed automatically.</li>
 </ul>
-
-<h3 id="5-related-topics">5. Related Topics<a class="no-underline" href="#5-related-topics" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h3>
-
+<h3 id="5-related-topics">5. Related Topics<a aria-hidden="true" class="no-underline" href="#5-related-topics">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
 <ol>
-<li><a href="/erpnext/v13/user/manual/en/support/issue-type-and-priority">Issue Type and Priority</a></li>
+<li><a onclick="loadContent('issue-type-and-priority.html')">Issue Type and Priority</a></li>
 </ol>
-
-	</div>
-	<input value="fddr5uojpp" class="d-none" name="wiki-page-name">
-	<div class="modal revisions-modal fade" id="revisionsModal" tabindex="-1" role="dialog" aria-labelledby="revisionsModalTitle" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <div class="d-flex flex-column">
-                    <h5 class="modal-title revision-title" id="issue">Issue
-<a class="no-underline" href="#issue" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h5>
-                    <span class="small text-muted revision-time">administrator edited 4 months ago</span>
-                </div>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="revision-content wiki-content"><del class="diffmod">
-                    </del><ins class="diffmod">
-		</ins><p><strong><ins class="diffmod">An Issue is an incoming query from a Customer, usually via email or from the </ins><em><ins class="mod"><ins class="diffmod">Contact</ins></ins></em><ins class="diffmod">&nbsp;section of your website.</ins></strong></p><ins class="diffmod">
-
+</div>
+<input class="d-none" name="wiki-page-name" value="fddr5uojpp"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="issue">Issue
+<a aria-hidden="true" class="no-underline" href="#issue">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content"><del class="diffmod">
+</del><ins class="diffmod">
+</ins><p><strong><ins class="diffmod">An Issue is an incoming query from a Customer, usually via email or from the </ins><em><ins class="mod"><ins class="diffmod">Contact</ins></ins></em><ins class="diffmod"> section of your website.</ins></strong></p><ins class="diffmod">
 </ins><blockquote><ins class="diffmod">
-  </ins><p><ins class="diffmod">Tip: A dedicated support Email Address is a good way to keep track of incoming
-  queries. For example, you can send support queries to ERPNext at
+</ins><p><ins class="diffmod">Tip: A dedicated support Email Address is a good way to keep track of incoming
+  queries. For example, you can send support queries to KanivinERP at
   support@erpnext.com and it will automatically create an Issue in our system.</ins></p><ins class="diffmod">
 </ins></blockquote><ins class="diffmod">
-
 </ins><p><ins class="diffmod">To access the Issue list, go to:</ins></p><ins class="diffmod">
-
 </ins><blockquote><ins class="diffmod">
-  </ins><p><ins class="diffmod">Home &gt; Support &gt; Issues &gt; Issue</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod">Home &gt; Support &gt; Issues &gt; Issue</ins></p><ins class="diffmod">
 </ins></blockquote><ins class="diffmod">
-
-</ins><p><ins class="diffmod"><img src="/files/issue.png" alt="Issue" class="screenshot"></ins></p><ins class="diffmod">
-
-</ins><h2 id="1-prerequisites"><ins class="diffmod">1. Prerequisites</ins><a class="no-underline" href="#1-prerequisites" aria-hidden="true"><ins class="diffmod">
-        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
-          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
-          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
-        </ins></svg><ins class="diffmod">
-      </ins></a></h2><ins class="diffmod">
-
+</ins><p><ins class="diffmod"><img alt="Issue" class="screenshot" src="/files/issue.png"/></ins></p><ins class="diffmod">
+</ins><h2 id="1-prerequisites"><ins class="diffmod">1. Prerequisites</ins><a aria-hidden="true" class="no-underline" href="#1-prerequisites"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h2><ins class="diffmod">
 </ins><p><ins class="diffmod">Before creating and using Issues, it is advised that you create the following first:</ins></p><ins class="diffmod">
-
 </ins><ul><ins class="diffmod">
-</ins><li><a href="/erpnext/v13/user/manual/en/CRM/customer"><ins class="diffmod">Customer</ins></a></li><ins class="diffmod">
-</ins><li><a href="/erpnext/v13/user/manual/en/setting-up/email/email-account"><ins class="diffmod">Email Account</ins></a></li><ins class="diffmod">
+</ins><li><a onclick="loadContent('customer.html')"><ins class="diffmod">Customer</ins></a></li><ins class="diffmod">
+</ins><li><a onclick="loadContent('email-account.html')"><ins class="diffmod">Email Account</ins></a></li><ins class="diffmod">
 </ins></ul><ins class="diffmod">
-
-</ins><h2 id="2-how-to-create-issue"><ins class="diffmod">2. How to Create Issue</ins><a class="no-underline" href="#2-how-to-create-issue" aria-hidden="true"><ins class="diffmod">
-        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
-          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
-          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
-        </ins></svg><ins class="diffmod">
-      </ins></a></h2><ins class="diffmod">
-
-</ins><p><ins class="diffmod">Issues are automatically created if you use the </ins><strong><ins class="mod"><ins class="diffmod">append to feature</ins></ins></strong><ins class="diffmod">&nbsp;in </ins><a href="/erpnext/v13/user/manual/en/setting-up/email/email-account#32-incoming-email-accounts"><ins class="diffmod">Email Account</ins></a><ins class="diffmod">.</ins></p><ins class="diffmod">
-
+</ins><h2 id="2-how-to-create-issue"><ins class="diffmod">2. How to Create Issue</ins><a aria-hidden="true" class="no-underline" href="#2-how-to-create-issue"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h2><ins class="diffmod">
+</ins><p><ins class="diffmod">Issues are automatically created if you use the </ins><strong><ins class="mod"><ins class="diffmod">append to feature</ins></ins></strong><ins class="diffmod"> in </ins><a href="/erpnext/v13/user/manual/en/setting-up/email/email-account#32-incoming-email-accounts"><ins class="diffmod">Email Account</ins></a><ins class="diffmod">.</ins></p><ins class="diffmod">
 </ins><p><ins class="diffmod">You can also create an Issue manually, to do that:</ins></p><ins class="diffmod">
-
 </ins><ol><ins class="diffmod">
 </ins><li><ins class="diffmod">Go to the Issue list, click on New.</ins></li><ins class="diffmod">
 </ins><li><ins class="diffmod">Enter the Subject, Raised By, and a description of the Issue.</ins></li><ins class="diffmod">
 </ins></ol><ins class="diffmod">
-
-</ins><h3 id="21-additional-options-when-creating-an-issue"><del class="diffmod">No</del><ins class="diffmod">2.1</ins> <del class="diffmod">Revisions</del><ins class="diffmod">Additional Options when Creating an Issue</ins><a class="no-underline" href="#21-additional-options-when-creating-an-issue" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h3><del class="diffmod">
-
-                </del><ins class="diffmod">
-
+</ins><h3 id="21-additional-options-when-creating-an-issue"><del class="diffmod">No</del><ins class="diffmod">2.1</ins> <del class="diffmod">Revisions</del><ins class="diffmod">Additional Options when Creating an Issue</ins><a aria-hidden="true" class="no-underline" href="#21-additional-options-when-creating-an-issue">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3><del class="diffmod">
+</del><ins class="diffmod">
 </ins><ul><ins class="diffmod">
 </ins><li><p><strong><ins class="diffmod">Status</ins></strong><ins class="diffmod">: When a new Issue is created, its status will be "Open", when it is
 replied, its status becomes "Replied".</ins></p><ins class="diffmod">
-
 </ins><ul><ins class="diffmod">
 </ins><li><ins class="diffmod">Open: The Issue has been created and yet to be replied to.</ins></li><ins class="diffmod">
 </ins><li><ins class="diffmod">Replied: A reply has been sent to the Issue.</ins></li><ins class="diffmod">
@@ -365,82 +295,65 @@ replied, its status becomes "Replied".</ins></p><ins class="diffmod">
 </ins><li><ins class="diffmod">Resolved: When the users are reasonably sure that they have provided the customer with a solution to their problem but have not received an acknowledgment about the resolution from the customer.</ins></li><ins class="diffmod">
 </ins><li><ins class="diffmod">Closed: The Customer got a satisfactory resolution that he has indicated with an acknowledgment and the Issue was closed.</ins></li><ins class="diffmod">
 </ins></ul><ins class="diffmod">
-
-</ins><p><ins class="diffmod">If the sender replies to the thread, the status becomes "Open" again. User can "Close" the Issue manually by clicking on the </ins><strong><ins class="mod"><ins class="diffmod">Close</ins></ins></strong><ins class="diffmod">&nbsp;button on the top right.</ins></p></li><ins class="diffmod">
+</ins><p><ins class="diffmod">If the sender replies to the thread, the status becomes "Open" again. User can "Close" the Issue manually by clicking on the </ins><strong><ins class="mod"><ins class="diffmod">Close</ins></ins></strong><ins class="diffmod"> button on the top right.</ins></p></li><ins class="diffmod">
 </ins></ul><ins class="diffmod">
-
 </ins><blockquote><ins class="diffmod">
-  </ins><p><ins class="diffmod">Note: If SLA has been set up, then the fulfillment status of the SLA will be updated on both, the </ins><strong><ins class="mod"><ins class="diffmod">Closed</ins></ins></strong><ins class="diffmod">&nbsp;as well as the </ins><strong><ins class="mod"><ins class="diffmod">Resolved</ins></ins></strong><ins class="diffmod">&nbsp;status.</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod">Note: If SLA has been set up, then the fulfillment status of the SLA will be updated on both, the </ins><strong><ins class="mod"><ins class="diffmod">Closed</ins></ins></strong><ins class="diffmod"> as well as the </ins><strong><ins class="mod"><ins class="diffmod">Resolved</ins></ins></strong><ins class="diffmod"> status.</ins></p><ins class="diffmod">
 </ins></blockquote><ins class="diffmod">
-
 </ins><ul><ins class="diffmod">
-</ins><li><strong><ins class="diffmod">Customer</ins></strong><ins class="diffmod">: If the email was sent from a </ins><a href="/erpnext/v13/user/manual/en/CRM/customer"><ins class="diffmod">Customer</ins></a><ins class="diffmod">&nbsp;stored in your ERPNext account, then a Customer link will appear in this field.</ins></li><ins class="diffmod">
+</ins><li><strong><ins class="diffmod">Customer</ins></strong><ins class="diffmod">: If the email was sent from a </ins><a onclick="loadContent('customer.html')"><ins class="diffmod">Customer</ins></a><ins class="diffmod"> stored in your KanivinERP account, then a Customer link will appear in this field.</ins></li><ins class="diffmod">
 </ins><li><strong><ins class="diffmod">Priority</ins></strong><ins class="diffmod">: Priority can be set as per the requirements. By default, there are three priorities--Low, Medium, and High. You can delete these or add more as needed.</ins></li><ins class="diffmod">
 </ins><li><strong><ins class="diffmod">Issue Type</ins></strong><ins class="diffmod">: An Issue can be classified using Issue Type. Examples of Issue Types can be: 'Functional', 'Technical', 'Hardware', etc.</ins></li><ins class="diffmod">
 </ins><li><strong><ins class="diffmod">Raised By (Email)</ins></strong><ins class="diffmod">: The email ID from which the Issue was sent will be shown here.</ins></li><ins class="diffmod">
 </ins></ul><ins class="diffmod">
-
-</ins><h2 id="3-features"><ins class="diffmod">3. Features</ins><a class="no-underline" href="#3-features" aria-hidden="true"><ins class="diffmod">
-        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
-          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
-          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
-        </ins></svg><ins class="diffmod">
-      </ins></a></h2><ins class="diffmod">
-
-</ins><h3 id="31-details"><ins class="diffmod">3.1 Details</ins><a class="no-underline" href="#31-details" aria-hidden="true"><ins class="diffmod">
-        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
-          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
-          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
-        </ins></svg><ins class="diffmod">
-      </ins></a></h3><ins class="diffmod">
-
+</ins><h2 id="3-features"><ins class="diffmod">3. Features</ins><a aria-hidden="true" class="no-underline" href="#3-features"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h2><ins class="diffmod">
+</ins><h3 id="31-details"><ins class="diffmod">3.1 Details</ins><a aria-hidden="true" class="no-underline" href="#31-details"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h3><ins class="diffmod">
 </ins><ul><ins class="diffmod">
 </ins><li><strong><ins class="diffmod">Description</ins></strong><ins class="diffmod">: This is a text field in which details about the Issue can be seen. This can also contain an image or a table.</ins></li><ins class="diffmod">
 </ins></ul><ins class="diffmod">
-
-</ins><h3 id="32-service-level-agreement"><ins class="diffmod">3.2 Service Level Agreement</ins><a class="no-underline" href="#32-service-level-agreement" aria-hidden="true"><ins class="diffmod">
-        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
-          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
-          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
-        </ins></svg><ins class="diffmod">
-      </ins></a></h3><ins class="diffmod">
-
+</ins><h3 id="32-service-level-agreement"><ins class="diffmod">3.2 Service Level Agreement</ins><a aria-hidden="true" class="no-underline" href="#32-service-level-agreement"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h3><ins class="diffmod">
 </ins><p><ins class="diffmod">It is a contract between a service provider and the end user that defines the level of service expected from the service provider.</ins></p><ins class="diffmod">
-
-</ins><p><ins class="diffmod">User can select the </ins><a href="/erpnext/v13/user/manual/en/support/service-level-agreement"><ins class="diffmod">Service Level Agreement</ins></a><ins class="diffmod">&nbsp;(SLA) from the list.</ins></p><ins class="diffmod">
-
+</ins><p><ins class="diffmod">User can select the </ins><a href="/erpnext/v13/user/manual/en/support/service-level-agreement"><ins class="diffmod">Service Level Agreement</ins></a><ins class="diffmod"> (SLA) from the list.</ins></p><ins class="diffmod">
 </ins><ul><ins class="diffmod">
 </ins><li><ins class="diffmod">Every Issue will have a Time to Response and Time to Resolve within which the Support team has to Respond and Resolve the Issue.</ins></li><ins class="diffmod">
 </ins><li><ins class="diffmod">The Priority can be changed to escalate the Issue. The priorities need to be specified in the Service Level Agreement.</ins></li><ins class="diffmod">
-</ins><li><ins class="diffmod">If needed, the Service Level Agreement can be reset by clicking on the </ins><strong><ins class="mod"><ins class="diffmod">Reset Service Level Agreement</ins></ins></strong><ins class="diffmod">&nbsp;button in Issues shown as follows:</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">If needed, the Service Level Agreement can be reset by clicking on the </ins><strong><ins class="mod"><ins class="diffmod">Reset Service Level Agreement</ins></ins></strong><ins class="diffmod"> button in Issues shown as follows:</ins></li><ins class="diffmod">
 </ins></ul><ins class="diffmod">
-
-</ins><p><ins class="diffmod"><img src="/files/new-issue.gif" alt="SLA" class="screenshot"></ins></p><ins class="diffmod">
-
-</ins><h3 id="33-response"><ins class="diffmod">3.3 Response</ins><a class="no-underline" href="#33-response" aria-hidden="true"><ins class="diffmod">
-        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
-          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
-          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
-        </ins></svg><ins class="diffmod">
-      </ins></a></h3><ins class="diffmod">
-
+</ins><p><ins class="diffmod"><img alt="SLA" class="screenshot" src="/files/new-issue.gif"/></ins></p><ins class="diffmod">
+</ins><h3 id="33-response"><ins class="diffmod">3.3 Response</ins><a aria-hidden="true" class="no-underline" href="#33-response"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h3><ins class="diffmod">
 </ins><ul><ins class="diffmod">
 </ins><li><p><strong><ins class="diffmod">Mins to First Response</ins></strong><ins class="diffmod">: Time in minutes from when the Issue was created to when the first reply was sent.</ins></p></li><ins class="diffmod">
 </ins><li><p><strong><ins class="diffmod">First Responded on</ins></strong><ins class="diffmod">: When a Support team member first replies to the issue, first response date and time will be updated.</ins></p></li><ins class="diffmod">
 </ins><li><p><strong><ins class="diffmod">Average Response Time</ins></strong><ins class="diffmod">: The average time taken to respond to the Customer. This is calculated by taking the average of all time spans between Received and Sent Communications. This field will be updated on every reply sent to the customer.</ins></p></li><ins class="diffmod">
 </ins></ul><ins class="diffmod">
-
-</ins><p><ins class="diffmod"><img src="/files/response.png" alt="Response Details" class="screenshot"></ins></p><ins class="diffmod">
-
-</ins><h3 id="34-reference"><ins class="diffmod">3.4 Reference</ins><a class="no-underline" href="#34-reference" aria-hidden="true"><ins class="diffmod">
-        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
-          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
-          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
-        </ins></svg><ins class="diffmod">
-      </ins></a></h3><ins class="diffmod">
-
+</ins><p><ins class="diffmod"><img alt="Response Details" class="screenshot" src="/files/response.png"/></ins></p><ins class="diffmod">
+</ins><h3 id="34-reference"><ins class="diffmod">3.4 Reference</ins><a aria-hidden="true" class="no-underline" href="#34-reference"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h3><ins class="diffmod">
 </ins><p><ins class="diffmod">User can filter the issues based on these fields linked to the Issue:</ins></p><ins class="diffmod">
-
 </ins><ul><ins class="diffmod">
 </ins><li><ins class="diffmod">Lead</ins></li><ins class="diffmod">
 </ins><li><ins class="diffmod">Contact</ins></li><ins class="diffmod">
@@ -448,14 +361,12 @@ replied, its status becomes "Replied".</ins></p><ins class="diffmod">
 </ins><li><ins class="diffmod">Project</ins></li><ins class="diffmod">
 </ins><li><ins class="diffmod">Company</ins></li><ins class="diffmod">
 </ins></ul><ins class="diffmod">
-
-</ins><h3 id="35-resolution"><ins class="diffmod">3.5 Resolution</ins><a class="no-underline" href="#35-resolution" aria-hidden="true"><ins class="diffmod">
-        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
-          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
-          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
-        </ins></svg><ins class="diffmod">
-      </ins></a></h3><ins class="diffmod">
-
+</ins><h3 id="35-resolution"><ins class="diffmod">3.5 Resolution</ins><a aria-hidden="true" class="no-underline" href="#35-resolution"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h3><ins class="diffmod">
 </ins><ul><ins class="diffmod">
 </ins><li><strong><ins class="diffmod">Opening Date</ins></strong><ins class="diffmod">: When the issue is created or logged the date be posted.</ins></li><ins class="diffmod">
 </ins><li><strong><ins class="diffmod">Opening Time</ins></strong><ins class="diffmod">: When the issue is created or logged the exact time will automatically be posted.</ins></li><ins class="diffmod">
@@ -463,102 +374,80 @@ replied, its status becomes "Replied".</ins></p><ins class="diffmod">
 </ins><li><strong><ins class="diffmod">Resolution Details</ins></strong><ins class="diffmod">: User can enter the details of the issue, once it is resolved. This is a text field. Also, user can upload the image, enter or create a table.</ins></li><ins class="diffmod">
 </ins><li><strong><ins class="diffmod">Resolution Time</ins></strong><ins class="diffmod">: Total time taken to close the ticket (from Issue creation to closing).</ins></li><ins class="diffmod">
 </ins><li><p><strong><ins class="diffmod">User Resolution Time</ins></strong><ins class="diffmod">: Many times a user has to wait for a customer's reply in order to solve some Issue. While measuring User's productivity this wait time shouldn't be taken into consideration. Hence, user resolution time is the total time taken by a user to close the ticket and can be calculated as:</ins></p><ins class="diffmod">
-
 </ins><p><ins class="diffmod">_Resolution time - Total Time for which the user had to wait for a customer's reply_</ins></p></li><ins class="diffmod">
 </ins></ul><ins class="diffmod">
-
 </ins><p><ins class="diffmod">The Resolution Time and User Resolution Time metrics are set on "Close". These metrics reset automatically when the Issue reopens or splits.</ins></p><ins class="diffmod">
-
-</ins><p><ins class="diffmod"><img src="/files/resolution.png" alt="Resolution" class="screenshot"></ins></p><ins class="diffmod">
-
-</ins><h4 id="via-customer-portal"><ins class="diffmod">Via Customer Portal</ins><a class="no-underline" href="#via-customer-portal" aria-hidden="true"><ins class="diffmod">
-        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
-          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
-          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
-        </ins></svg><ins class="diffmod">
-      </ins></a></h4><ins class="diffmod">
-
+</ins><p><ins class="diffmod"><img alt="Resolution" class="screenshot" src="/files/resolution.png"/></ins></p><ins class="diffmod">
+</ins><h4 id="via-customer-portal"><ins class="diffmod">Via Customer Portal</ins><a aria-hidden="true" class="no-underline" href="#via-customer-portal"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h4><ins class="diffmod">
 </ins><p><ins class="diffmod">If the Customer raising the Issue is a Website User (no access to modules), this checkbox will be ticked to indicate that.</ins></p><ins class="diffmod">
-
-</ins><h2 id="4-after-saving"><ins class="diffmod">4. After Saving</ins><a class="no-underline" href="#4-after-saving" aria-hidden="true"><ins class="diffmod">
-        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
-          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
-          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
-        </ins></svg><ins class="diffmod">
-      </ins></a></h2><ins class="diffmod">
-
-</ins><h3 id="41-add-comments"><ins class="diffmod">4.1 Add Comments</ins><a class="no-underline" href="#41-add-comments" aria-hidden="true"><ins class="diffmod">
-        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
-          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
-          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
-        </ins></svg><ins class="diffmod">
-      </ins></a></h3><ins class="diffmod">
-
+</ins><h2 id="4-after-saving"><ins class="diffmod">4. After Saving</ins><a aria-hidden="true" class="no-underline" href="#4-after-saving"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h2><ins class="diffmod">
+</ins><h3 id="41-add-comments"><ins class="diffmod">4.1 Add Comments</ins><a aria-hidden="true" class="no-underline" href="#41-add-comments"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h3><ins class="diffmod">
 </ins><p><ins class="diffmod">Once the Issue is registered, support team Users can add comments for the issue. This field is editable. Comments in Issues are for internal discussions and will not be visible to the Customers.</ins></p><ins class="diffmod">
-
-</ins><h3 id="42-new-email"><ins class="diffmod">4.2 New Email</ins><a class="no-underline" href="#42-new-email" aria-hidden="true"><ins class="diffmod">
-        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
-          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
-          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
-        </ins></svg><ins class="diffmod">
-      </ins></a></h3><ins class="diffmod">
-
+</ins><h3 id="42-new-email"><ins class="diffmod">4.2 New Email</ins><a aria-hidden="true" class="no-underline" href="#42-new-email"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h3><ins class="diffmod">
 </ins><p><ins class="diffmod">Users can compose an email to the person that has raised the Issue. All the mails (received as well as sent) can be seen in a thread in the Issue.</ins></p><ins class="diffmod">
-
-</ins><h3 id="43-discussion-thread"><ins class="diffmod">4.3 Discussion Thread</ins><a class="no-underline" href="#43-discussion-thread" aria-hidden="true"><ins class="diffmod">
-        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
-          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
-          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
-        </ins></svg><ins class="diffmod">
-      </ins></a></h3><ins class="diffmod">
-
+</ins><h3 id="43-discussion-thread"><ins class="diffmod">4.3 Discussion Thread</ins><a aria-hidden="true" class="no-underline" href="#43-discussion-thread"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h3><ins class="diffmod">
 </ins><p><ins class="diffmod">The email discussion thread in an Issue maintains all the emails which are sent back and forth against this Issue in the system so that you can track what transpired between the sender and the person responding.</ins></p><ins class="diffmod">
-
 </ins><ul><ins class="diffmod">
 </ins><li><ins class="diffmod">When a New Email is sent from your mailbox, an automatic reply is sent to the sender with your message and the Support Ticket Number.</ins></li><ins class="diffmod">
 </ins><li><ins class="diffmod">The sender can send additional information to this email.</ins></li><ins class="diffmod">
 </ins><li><ins class="diffmod">All subsequent emails containing this Issue number in the subject will be added to this Issue thread.</ins></li><ins class="diffmod">
 </ins><li><ins class="diffmod">The sender can also add attachments to the email.</ins></li><ins class="diffmod">
 </ins></ul><ins class="diffmod">
-
-</ins><h3 id="44-assigning-issues-to-users"><ins class="diffmod">4.4 Assigning Issues to Users</ins><a class="no-underline" href="#44-assigning-issues-to-users" aria-hidden="true"><ins class="diffmod">
-        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
-          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
-          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
-        </ins></svg><ins class="diffmod">
-      </ins></a></h3><ins class="diffmod">
-
+</ins><h3 id="44-assigning-issues-to-users"><ins class="diffmod">4.4 Assigning Issues to Users</ins><a aria-hidden="true" class="no-underline" href="#44-assigning-issues-to-users"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h3><ins class="diffmod">
 </ins><blockquote><ins class="diffmod">
-  </ins><p><ins class="diffmod">Issues can be assigned automatically among Users using </ins><a href="/erpnext/v13/user/manual/en/automation/assignment-rule"><ins class="diffmod">Assignment Rule</ins></a><ins class="diffmod">.</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod">Issues can be assigned automatically among Users using </ins><a href="/erpnext/v13/user/manual/en/automation/assignment-rule"><ins class="diffmod">Assignment Rule</ins></a><ins class="diffmod">.</ins></p><ins class="diffmod">
 </ins></blockquote><ins class="diffmod">
-
 </ins><p><ins class="diffmod">You can assign an Issue to a specific User by clicking on "Assign" feature in the left sidebar. This will add a new To Do to the user and also send a message indicating that this Issue is allocated.</ins></p><ins class="diffmod">
-
-</ins><p><ins class="diffmod"><img src="/files/issue-assign.png" alt="Assign Issue" class="screenshot"></ins></p><ins class="diffmod">
-
-</ins><h3 id="45-closing"><ins class="diffmod">4.5 Closing</ins><a class="no-underline" href="#45-closing" aria-hidden="true"><ins class="diffmod">
-        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
-          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
-          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
-        </ins></svg><ins class="diffmod">
-      </ins></a></h3><ins class="diffmod">
-
+</ins><p><ins class="diffmod"><img alt="Assign Issue" class="screenshot" src="/files/issue-assign.png"/></ins></p><ins class="diffmod">
+</ins><h3 id="45-closing"><ins class="diffmod">4.5 Closing</ins><a aria-hidden="true" class="no-underline" href="#45-closing"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h3><ins class="diffmod">
 </ins><ul><ins class="diffmod">
 </ins><li><ins class="diffmod">You can close the Issue manually by clicking on 'Close' in the toolbar.</ins></li><ins class="diffmod">
 </ins><li><ins class="diffmod">If the sender does not reply in 7 days, then the Issue gets closed automatically.</ins></li><ins class="diffmod">
 </ins></ul><ins class="diffmod">
-
-</ins><h3 id="5-related-topics"><ins class="diffmod">5. Related Topics</ins><a class="no-underline" href="#5-related-topics" aria-hidden="true"><ins class="diffmod">
-        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
-          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
-          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
-        </ins></svg><ins class="diffmod">
-      </ins></a></h3><ins class="diffmod">
-
+</ins><h3 id="5-related-topics"><ins class="diffmod">5. Related Topics</ins><a aria-hidden="true" class="no-underline" href="#5-related-topics"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h3><ins class="diffmod">
 </ins><ol><ins class="diffmod">
-</ins><li><a href="/erpnext/v13/user/manual/en/support/issue-type-and-priority"><ins class="diffmod">Issue Type and Priority</ins></a></li><ins class="diffmod">
+</ins><li><a onclick="loadContent('issue-type-and-priority.html')"><ins class="diffmod">Issue Type and Priority</ins></a></li><ins class="diffmod">
 </ins></ol><ins class="diffmod">
-
-	</ins></div>
-            </div>
-        </main>
+</ins></div>
+</div>
+</div></div></div></div></main>

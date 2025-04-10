@@ -1,0 +1,89 @@
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title">Tax Rule
+</h1>
+</div>
+<div class="wiki-content">
+<p><strong>A Tax Rule automatically applies taxes to transactions based on preset rules.</strong></p>
+<p>You can define which <a href="/erpnext/v13/user/manual/en/setting-up/setting-up-taxes.html">Tax Template</a> must be applied on a Sales / Purchase transaction using Tax Rule. This is decided by various factors like Customer, Customer Group, Supplier, Supplier Group, Item, Item Group or a combination of these.</p>
+<p>To access the Tax Rule list, go to:</p>
+<blockquote>
+<p>Home &gt; Accounting &gt; Taxes &gt; Tax Rule</p>
+</blockquote>
+<h2 id="1-prerequisites">1. Prerequisites</h2>
+<p>Before creating and using a Tax Rule, it is advised to create the following first:</p>
+<ol>
+<li><p><a href="/erpnext/v13/user/manual/en/selling/sales-taxes-and-charges-template">Sales Taxes and Charges Template</a></p>
+<p>Or</p></li>
+<li><p><a href="/erpnext/v13/user/manual/en/buying/purchase-taxes-and-charges-template">Purchase Taxes and Charges Template</a></p></li>
+</ol>
+<h2 id="2-how-to-create-a-tax-rule">2. How to create a Tax Rule</h2>
+<ol>
+<li>Go to the Tax Rule list and click on New.</li>
+<li>Under Tax Type select whether the tax will be applied at Sales or Purchase.</li>
+<li>Select the Tax Template to be applied.</li>
+<li>Save.
+<img alt="Tax Rule" class="screenshot" src="/files/tax-rule.png"/></li>
+</ol>
+<p>You can list Items online using the Website module. Selecting 'Use for Shopping Cart' will use this Tax Rule for Shopping Cart transactions also. To know more, visit the <a href="/erpnext/v13/user/manual/en/e_commerce/shopping-cart">Shopping Cart</a> page.</p>
+<blockquote>
+<p>Note: It is advised to not use the Sales/Purchase Template selected here in <a href="/erpnext/v13/user/manual/en/accounts/item-tax-template">Item Tax Template</a>, it may cause interference. If you want to use same tax rates for Tax Rule and Item Tax Template, use a different name for the Sales/Purchase Tax Templates.</p>
+</blockquote>
+<h2 id="3-features">3. Features</h2>
+<h3 id="31-auto-applying-tax-rule-based-on-customersupplier">3.1 Auto applying Tax Rule based on Customer/Supplier</h3>
+<p>Select a Customer/Supplier if tax is to be applied for a specific party. Leave it as All Customer Groups/All Supplier Groups if this Tax Rule is applicable to all Customers/Suppliers.</p>
+<p>On selecting a Customer/Supplier their Billing and Shipping addresses will be fetched if saved in the Customer/Supplier master.</p>
+<h3 id="32-auto-applying-tax-rule-based-on-item-item-group">3.2 Auto applying Tax Rule based on Item / Item Group</h3>
+<p>On setting an Item or Item group in the Tax Rule, this Tax Rule will automatically be applied to new transactions that have the selected Item/Item Group.</p>
+<h3 id="33-setting-a-tax-category">3.3 Setting a Tax Category</h3>
+<p>Setting a Tax Category allows applying multiple Tax Rules to a transaction based on different factors. To know more, visit the <a href="/erpnext/v13/user/manual/en/accounts/tax-category">Tax Category</a> page.</p>
+<h3 id="34-validity">3.4 Validity</h3>
+<p>Set a Start and End Date if the tax is to be applied only for a specified period. Leaving both dates blank will result in the Tax Rule to have no time limits.</p>
+<h3 id="35-priority">3.5 Priority</h3>
+<p>Setting a priority number here will decide on which order a Tax Rule will be applied in case multiple Tax Rules have similar criteria. '1' is the highest priority, '2' has lesser priority and so on.</p>
+<h2 id="4-how-does-tax-rule-work">4. How does Tax Rule Work?</h2>
+<p>Let us configure Tax Rule so that system automatically applies specific tax rates when a specific condition matches. For example, if the city in the billing address of customer is 'Malibu' then a 6.25% of state tax, 1% of county tax and 2.25% of district tax should be applied. </p>
+<p>Create a Sales Taxes and Charges Template as shown below.</p>
+<p><img alt="City Specific To Zipcode" class="screenshot" src="/files/city-specific-tax.png"/></p>
+<p>Create a Tax Rule as shown below.</p>
+<p><img alt="Tax Rule" class="screenshot" src="/files/tax-rule.png"/></p>
+<p>Once you select a customer and a billing address of that customer with city as 'Malibu', system automatically applies the appropriate taxes.</p>
+<p><img alt="Tax Rule in Sales Invoice" class="screenshot" src="/files/tax-rule-in-sales-invoice.gif"/></p>
+<h3 id="5-related-topics">5. Related Topics</h3>
+<ol>
+<li><a onclick="loadContent('pricing-rule.html')">Pricing Rule</a></li>
+<li><a onclick="loadContent('item-tax-template.html')">Item Tax Template</a></li>
+<li><a onclick="loadContent('tax-category.html')">Tax Category</a></li>
+<li><a onclick="loadContent('customer.html')">Customer</a></li>
+<li><a onclick="loadContent('supplier.html')">Supplier</a></li>
+</ol>
+</div>
+<input class="d-none" name="wiki-page-name" value="ft597am759"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="revisionsModalTitle">Tax Rule
+</h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content">
+<h3>No Revisions</h3>
+</div>
+</div>
+</div></div></div></div></main>

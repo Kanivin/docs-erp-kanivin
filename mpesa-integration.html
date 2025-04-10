@@ -1,208 +1,161 @@
-<main><div class="from-markdown markdown ">
-	<div class="alert alert-warning admin-banner hide" role="alert">
-		<div class="d-flex justify-content-between align-items-center">
-			<div>This space has
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
 				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
 				review.
 			</div>
-			<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
-		</div>
-	</div>
-	<div class="d-flex justify-content-between align-items-center">
-		<h1 class="wiki-title" id="m-pesa-integration">M-Pesa Integration
-<a class="no-underline" href="#m-pesa-integration" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h1>
-	</div>
-	<div class="wiki-content">
-		<p><strong>M-Pesa integration allows processing transactions with the payment gateway provider M-Pesa.</strong></p>
-
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title" id="m-pesa-integration">M-Pesa Integration
+<a aria-hidden="true" class="no-underline" href="#m-pesa-integration">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h1>
+</div>
+<div class="wiki-content">
+<p><strong>M-Pesa integration allows processing transactions with the payment gateway provider M-Pesa.</strong></p>
 <p>M-Pesa Integration facilitates the processing of payments between the M-Pesa application and KanivinERP. M-Pesa Integration only works with the POS to facilitate the payments for the same. This feature doesn't work with the shopping cart.</p>
-
 <p>To set up M-Pesa, go to:</p>
-
 <blockquote>
-  <p>Integrations &gt; Payments &gt; M-Pesa Settings</p>
+<p>Integrations &gt; Payments &gt; M-Pesa Settings</p>
 </blockquote>
-
-<h2 id="1how-to-get-your-m-pesa-credentials">1.How to get your M-Pesa credentials?<a class="no-underline" href="#1how-to-get-your-m-pesa-credentials" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h2>
-
+<h2 id="1how-to-get-your-m-pesa-credentials">1.How to get your M-Pesa credentials?<a aria-hidden="true" class="no-underline" href="#1how-to-get-your-m-pesa-credentials">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h2>
 <ol>
 <li>In order to activate your API credentials, you need to log in to your M-Pesa account.</li>
 <li>Then, open the Go Live section of the application and follow the steps to get the approval for the app.</li>
 <li>When all the test cases are satisfied and expected results match the final results, you need to submit the document and follow the steps to get the final credentials for your application.</li>
 <li>Details mentioned in the Production URL and Credentials section are the credentials that you are supposed to use in M-Pesa Settings.</li>
 </ol>
-
-<p><img src="/files/mpesa_credentials.png" alt="Mpesa Credentials" class="screenshot"></p>
-
-<h2 id="2setting-up-m-pesa">2.Setting up M-Pesa<a class="no-underline" href="#2setting-up-m-pesa" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h2>
-
+<p><img alt="Mpesa Credentials" class="screenshot" src="/files/mpesa_credentials.png"/></p>
+<h2 id="2setting-up-m-pesa">2.Setting up M-Pesa<a aria-hidden="true" class="no-underline" href="#2setting-up-m-pesa">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h2>
 <p>To enable M-Pesa Express, you need to configure all the mandatory parameters which you have received from M-Pesa. If you want to use the staging environment of the integration, you can select the staging option and use the staging credentials provided by M-Pesa by creating a separate application for the same.
-<img src="/files/mpesa_settings.png" alt="Mpesa Settings" class="screenshot"></p>
-
+<img alt="Mpesa Settings" class="screenshot" src="/files/mpesa_settings.png"/></p>
 <p>On enabling the M-Pesa integration in KanivinERP, the system will create a Payment Gateway record and an Account head in the Chart of Accounts with the Account type as Bank as seen in the following screenshot.</p>
-
-<p><img src="/files/mpesa_coa.png" alt="Mpesa COA" class="screenshot">
-<img src="/files/mpesa_pos_settings.png" alt="Mpesa POS Settings" class="screenshot"></p>
-
+<p><img alt="Mpesa COA" class="screenshot" src="/files/mpesa_coa.png"/>
+<img alt="Mpesa POS Settings" class="screenshot" src="/files/mpesa_pos_settings.png"/></p>
 <p>It will also create a Mode of Payment with the same name and account as the payment gateway's, along with certain custom fields in POS Settings to handle the POS payments.</p>
-
-<p><img src="/files/payment_gateway_account_mpesa.png" alt="Payment Gateway Account" class="screenshot"></p>
-
+<p><img alt="Payment Gateway Account" class="screenshot" src="/files/payment_gateway_account_mpesa.png"/></p>
 <p>After configuring the Payment Gateway Account, you will be able to accept online payments via M-Pesa.</p>
-
-<h2 id="3-m-pesa-pos-payments">3. M-Pesa POS Payments<a class="no-underline" href="#3-m-pesa-pos-payments" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h2>
-
+<h2 id="3-m-pesa-pos-payments">3. M-Pesa POS Payments<a aria-hidden="true" class="no-underline" href="#3-m-pesa-pos-payments">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h2>
 <p>On setting up the POS profile with M-Pesa mode of payment, the POS checkout would show an additional information section. This section contains two fields that were automatically set-up on adding M-Pesa settings.</p>
-
-<p><img src="/files/additional-information.png" alt="POS Additional Information" class="screenshot"></p>
-
+<p><img alt="POS Additional Information" class="screenshot" src="/files/additional-information.png"/></p>
 <p>As soon as a POS user fills the mobile number of the customer, they can initiate a request for payment from the customer. A request is sent to the customer's M-Pesa mobile application linked with the specified mobile number. Once the payment is processed by the user, the user is prompted by a confirmation dialog to submit the payment.</p>
-
-<h2 id="4-m-pesa-account-balance">4. M-Pesa Account Balance<a class="no-underline" href="#4-m-pesa-account-balance" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h2>
-
+<h2 id="4-m-pesa-account-balance">4. M-Pesa Account Balance<a aria-hidden="true" class="no-underline" href="#4-m-pesa-account-balance">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h2>
 <p>Account balance linked with an individual M-Pesa can be fetched via the Get Account Balance button. This will load the M-Pesa account balance details in the dashboard.</p>
-
-<p><img src="/files/mpesa_account_balance.png" alt="POS Account Balance" class="screenshot"></p>
-
-<h2 id="5-supporting-transaction-currencies">5. Supporting transaction currencies<a class="no-underline" href="#5-supporting-transaction-currencies" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h2>
-
+<p><img alt="POS Account Balance" class="screenshot" src="/files/mpesa_account_balance.png"/></p>
+<h2 id="5-supporting-transaction-currencies">5. Supporting transaction currencies<a aria-hidden="true" class="no-underline" href="#5-supporting-transaction-currencies">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h2>
 <p>M-Pesa will only work for the Company which has KSH (Kenyan Shilling) as the Company Currency.</p>
-
-	</div>
-	<input value="30ff8vqpa8" class="d-none" name="wiki-page-name">
-	<div class="modal revisions-modal fade" id="revisionsModal" tabindex="-1" role="dialog" aria-labelledby="revisionsModalTitle" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <div class="d-flex flex-column">
-                    <h5 class="modal-title revision-title" id="m-pesa-integration">M-Pesa Integration
-<a class="no-underline" href="#m-pesa-integration" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h5>
-                    <span class="small text-muted revision-time">administrator edited 4 months ago</span>
-                </div>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="revision-content wiki-content"><del class="diffmod">
-                    </del><h3 id="no-revisions"><del class="diffmod">No</del><ins class="diffmod">
-		</ins><p><strong><ins class="diffmod">M-Pesa</ins> <del class="diffmod">Revisions</del><ins class="diffmod">integration allows processing transactions with the payment gateway provider M-Pesa.</ins></strong></p><ins class="diffmod">
-
+</div>
+<input class="d-none" name="wiki-page-name" value="30ff8vqpa8"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="m-pesa-integration">M-Pesa Integration
+<a aria-hidden="true" class="no-underline" href="#m-pesa-integration">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content"><del class="diffmod">
+</del><h3 id="no-revisions"><del class="diffmod">No</del><ins class="diffmod">
+</ins><p><strong><ins class="diffmod">M-Pesa</ins> <del class="diffmod">Revisions</del><ins class="diffmod">integration allows processing transactions with the payment gateway provider M-Pesa.</ins></strong></p><ins class="diffmod">
 </ins><p><ins class="diffmod">M-Pesa Integration facilitates the processing of payments between the M-Pesa application and KanivinERP. M-Pesa Integration only works with the POS to facilitate the payments for the same. This feature doesn't work with the shopping cart.</ins></p><ins class="diffmod">
-
 </ins><p><ins class="diffmod">To set up M-Pesa, go to:</ins></p><ins class="diffmod">
-
 </ins><blockquote><ins class="diffmod">
-  </ins><p><ins class="diffmod">Integrations &gt; Payments &gt; M-Pesa Settings</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod">Integrations &gt; Payments &gt; M-Pesa Settings</ins></p><ins class="diffmod">
 </ins></blockquote><ins class="diffmod">
-
-</ins></h3><h2 id="1how-to-get-your-m-pesa-credentials"><ins class="diffmod">1.How to get your M-Pesa credentials?</ins><a class="no-underline" href="#1how-to-get-your-m-pesa-credentials" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h2><del class="diffmod">
-
-                </del><ins class="diffmod">
-
+</ins></h3><h2 id="1how-to-get-your-m-pesa-credentials"><ins class="diffmod">1.How to get your M-Pesa credentials?</ins><a aria-hidden="true" class="no-underline" href="#1how-to-get-your-m-pesa-credentials">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h2><del class="diffmod">
+</del><ins class="diffmod">
 </ins><ol><ins class="diffmod">
 </ins><li><ins class="diffmod">In order to activate your API credentials, you need to log in to your M-Pesa account.</ins></li><ins class="diffmod">
 </ins><li><ins class="diffmod">Then, open the Go Live section of the application and follow the steps to get the approval for the app.</ins></li><ins class="diffmod">
 </ins><li><ins class="diffmod">When all the test cases are satisfied and expected results match the final results, you need to submit the document and follow the steps to get the final credentials for your application.</ins></li><ins class="diffmod">
 </ins><li><ins class="diffmod">Details mentioned in the Production URL and Credentials section are the credentials that you are supposed to use in M-Pesa Settings.</ins></li><ins class="diffmod">
 </ins></ol><ins class="diffmod">
-
-</ins><p><ins class="diffmod"><img src="/files/mpesa_credentials.png" alt="Mpesa Credentials" class="screenshot"></ins></p><ins class="diffmod">
-
-</ins><h2 id="2setting-up-m-pesa"><ins class="diffmod">2.Setting up M-Pesa</ins><a class="no-underline" href="#2setting-up-m-pesa" aria-hidden="true"><ins class="diffmod">
-        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
-          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
-          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
-        </ins></svg><ins class="diffmod">
-      </ins></a></h2><ins class="diffmod">
-
+</ins><p><ins class="diffmod"><img alt="Mpesa Credentials" class="screenshot" src="/files/mpesa_credentials.png"/></ins></p><ins class="diffmod">
+</ins><h2 id="2setting-up-m-pesa"><ins class="diffmod">2.Setting up M-Pesa</ins><a aria-hidden="true" class="no-underline" href="#2setting-up-m-pesa"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h2><ins class="diffmod">
 </ins><p><ins class="diffmod">To enable M-Pesa Express, you need to configure all the mandatory parameters which you have received from M-Pesa. If you want to use the staging environment of the integration, you can select the staging option and use the staging credentials provided by M-Pesa by creating a separate application for the same.
-<img src="/files/mpesa_settings.png" alt="Mpesa Settings" class="screenshot"></ins></p><ins class="diffmod">
-
+<img alt="Mpesa Settings" class="screenshot" src="/files/mpesa_settings.png"/></ins></p><ins class="diffmod">
 </ins><p><ins class="diffmod">On enabling the M-Pesa integration in KanivinERP, the system will create a Payment Gateway record and an Account head in the Chart of Accounts with the Account type as Bank as seen in the following screenshot.</ins></p><ins class="diffmod">
-
-</ins><p><ins class="diffmod"><img src="/files/mpesa_coa.png" alt="Mpesa COA" class="screenshot">
-<img src="/files/mpesa_pos_settings.png" alt="Mpesa POS Settings" class="screenshot"></ins></p><ins class="diffmod">
-
+</ins><p><ins class="diffmod"><img alt="Mpesa COA" class="screenshot" src="/files/mpesa_coa.png"/>
+<img alt="Mpesa POS Settings" class="screenshot" src="/files/mpesa_pos_settings.png"/></ins></p><ins class="diffmod">
 </ins><p><ins class="diffmod">It will also create a Mode of Payment with the same name and account as the payment gateway's, along with certain custom fields in POS Settings to handle the POS payments.</ins></p><ins class="diffmod">
-
-</ins><p><ins class="diffmod"><img src="/files/payment_gateway_account_mpesa.png" alt="Payment Gateway Account" class="screenshot"></ins></p><ins class="diffmod">
-
+</ins><p><ins class="diffmod"><img alt="Payment Gateway Account" class="screenshot" src="/files/payment_gateway_account_mpesa.png"/></ins></p><ins class="diffmod">
 </ins><p><ins class="diffmod">After configuring the Payment Gateway Account, you will be able to accept online payments via M-Pesa.</ins></p><ins class="diffmod">
-
-</ins><h2 id="3-m-pesa-pos-payments"><ins class="diffmod">3. M-Pesa POS Payments</ins><a class="no-underline" href="#3-m-pesa-pos-payments" aria-hidden="true"><ins class="diffmod">
-        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
-          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
-          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
-        </ins></svg><ins class="diffmod">
-      </ins></a></h2><ins class="diffmod">
-
+</ins><h2 id="3-m-pesa-pos-payments"><ins class="diffmod">3. M-Pesa POS Payments</ins><a aria-hidden="true" class="no-underline" href="#3-m-pesa-pos-payments"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h2><ins class="diffmod">
 </ins><p><ins class="diffmod">On setting up the POS profile with M-Pesa mode of payment, the POS checkout would show an additional information section. This section contains two fields that were automatically set-up on adding M-Pesa settings.</ins></p><ins class="diffmod">
-
-</ins><p><ins class="diffmod"><img src="/files/additional-information.png" alt="POS Additional Information" class="screenshot"></ins></p><ins class="diffmod">
-
+</ins><p><ins class="diffmod"><img alt="POS Additional Information" class="screenshot" src="/files/additional-information.png"/></ins></p><ins class="diffmod">
 </ins><p><ins class="diffmod">As soon as a POS user fills the mobile number of the customer, they can initiate a request for payment from the customer. A request is sent to the customer's M-Pesa mobile application linked with the specified mobile number. Once the payment is processed by the user, the user is prompted by a confirmation dialog to submit the payment.</ins></p><ins class="diffmod">
-
-</ins><h2 id="4-m-pesa-account-balance"><ins class="diffmod">4. M-Pesa Account Balance</ins><a class="no-underline" href="#4-m-pesa-account-balance" aria-hidden="true"><ins class="diffmod">
-        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
-          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
-          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
-        </ins></svg><ins class="diffmod">
-      </ins></a></h2><ins class="diffmod">
-
+</ins><h2 id="4-m-pesa-account-balance"><ins class="diffmod">4. M-Pesa Account Balance</ins><a aria-hidden="true" class="no-underline" href="#4-m-pesa-account-balance"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h2><ins class="diffmod">
 </ins><p><ins class="diffmod">Account balance linked with an individual M-Pesa can be fetched via the Get Account Balance button. This will load the M-Pesa account balance details in the dashboard.</ins></p><ins class="diffmod">
-
-</ins><p><ins class="diffmod"><img src="/files/mpesa_account_balance.png" alt="POS Account Balance" class="screenshot"></ins></p><ins class="diffmod">
-
-</ins><h2 id="5-supporting-transaction-currencies"><ins class="diffmod">5. Supporting transaction currencies</ins><a class="no-underline" href="#5-supporting-transaction-currencies" aria-hidden="true"><ins class="diffmod">
-        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
-          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
-          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
-        </ins></svg><ins class="diffmod">
-      </ins></a></h2><ins class="diffmod">
-
+</ins><p><ins class="diffmod"><img alt="POS Account Balance" class="screenshot" src="/files/mpesa_account_balance.png"/></ins></p><ins class="diffmod">
+</ins><h2 id="5-supporting-transaction-currencies"><ins class="diffmod">5. Supporting transaction currencies</ins><a aria-hidden="true" class="no-underline" href="#5-supporting-transaction-currencies"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h2><ins class="diffmod">
 </ins><p><ins class="diffmod">M-Pesa will only work for the Company which has KSH (Kenyan Shilling) as the Company Currency.</ins></p><ins class="diffmod">
-
-	</ins></div>
-            </div>
-           </main>
+</ins></div>
+</div>
+</div></div></div></div></main>

@@ -1,0 +1,52 @@
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title">Serial Number Naming</h1>
+</div>
+<div class="wiki-content">
+<p>Serial Nos. is unique value assigned on each unit of an item. Serial no. helps in tracking item's warranty and expiry details. Generally high value items like machines, computers, costly equipments are serialized.</p>
+<p>To make item Serialized, in the Item master, check <strong>Has Serial No</strong>.</p>
+<p>There are two ways Serial no. can be generated in KanivinERP.</p>
+<h3 id="1-serializing-purchase-items">1. Serializing Purchase Items</h3>
+<p>If purchased items are received with Serial Nos. applied by OEM (original equipment manufacturer), you can follow same Serial No in KanivinERP as well. While creating Purchase Receipt, you shall scan or manually enter Serial nos. for an item. On submitting Purchase Receipt, Serial Nos. will be created in the backend as per Serial Nos. provided for an item. If using OEM' Serial No., then in the Item master, Prefix should not be mentioned for serializalization. As per this scenaio, Prefix field should be left blank.</p>
+<p>If received items already has its Serial No. barcoded, you can simply scan that barcode for entering Serial No. in the Purchase Receipt. Click <a href="https://frappe.io/blog/management/using-barcodes-to-ease-data-entry">here</a> to learn more about it.</p>
+<p>On submission of Purchase Receipt or Stock entry for the serialized item, Serial Nos. will be auto-generated.</p>
+<p><img alt="Serial Nos Entry" class="screenshot" src="/files/serial-naming-1.png"/></p>
+<p>Generated Serial numbers will be updated for each item.</p>
+<p><img alt="Serial Nos Created" class="screenshot" src="/files/serial-naming-2.png"/></p>
+<h3 id="2-serializing-manufacturing-item">2. Serializing Manufacturing Item</h3>
+<p>To Serialize Manufacturing Item, you can define Series for Serial No. Generation in the Item master itself. Following that series, system will create Serial Nos. for Item when its Production entry is made.</p>
+<h4 id="21-serial-no-series">2.1 Serial No. Series</h4>
+<p>When Item is set as serialized, it will allow you to mentioned Series for it.</p>
+<p><img alt="Serial Nos Created" class="screenshot" src="/files/serial-naming-3.png"/></p>
+<h4 id="22-production-entry-for-serialized-item">2.2 Production Entry for Serialized Item</h4>
+<p>On submission of production entry for manufacturing item, system will automatically generate Serial Nos. following Series as specified in the Item master.</p>
+<p><img alt="Serial Nos Created" class="screenshot" src="/files/serial-naming-4.png"/></p>
+</div>
+<input class="d-none" name="wiki-page-name" value="v52akvqpln"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="revisionsModalTitle">Serial Number Naming</h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content">
+<h3>No Revisions</h3>
+</div>
+</div>
+</div></div></div></div></main>

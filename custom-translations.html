@@ -1,0 +1,153 @@
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title" id="custom-translations">Custom Translations
+<a aria-hidden="true" class="no-underline" href="#custom-translations">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h1>
+</div>
+<div class="wiki-content">
+<p><strong>With Custom Translations, user can print the customer's and supplier's document in their local language.</strong></p>
+<p>For example, if you have customers from Germany and France who want quotations in German and French, it's possible using Custom Translations.</p>
+<h2 id="1-set-the-language">1. Set the Language<a aria-hidden="true" class="no-underline" href="#1-set-the-language">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h2>
+<p>In the Customer master, select the default Language. Say, the default language for the Customer is <strong>Spanish</strong>.</p>
+<p><img alt="Set Customer Language" class="screenshot" src="/files/set-customer-language.png"/></p>
+<p>Same way, you can also set default language in the Supplier master.</p>
+<h3 id="11-print-preview-in-the-partys-language">1.1 Print Preview in the Party's Language<a aria-hidden="true" class="no-underline" href="#11-print-preview-in-the-partys-language">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<p>In the Print Preview of a transaction, values will be translated into the party's language.</p>
+<p>Customer Quotation print preview in customer's default language.</p>
+<p><img alt="Invoice in Customer Language" class="screenshot" src="/files/invoice-in-customer-language.png"/></p>
+<p>Supplier Quotation print preview in supplier's default language.</p>
+<h3 id="12-changing-the-print-language-in-the-preview">1.2 Changing the print language in the preview<a aria-hidden="true" class="no-underline" href="#12-changing-the-print-language-in-the-preview">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<p>User has the option to select an alternate language on print view.</p>
+<p><img alt="Select Language in Invoice" class="screenshot" src="/files/select-language-in-invoice.png"/></p>
+<h2 id="2-custom-translation">2. Custom Translation<a aria-hidden="true" class="no-underline" href="#2-custom-translation">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h2>
+<p>Users can set their custom translations using Custom Translations form. For example, if a user wants to set a description of a product in the customer's language (Spanish). For that, create a new translation with language as Spanish, enter source data and translated information.</p>
+<blockquote>
+<p>Home &gt; Customization &gt; Other &gt; Custom Translations &gt; New</p>
+</blockquote>
+<p><img alt="Translation" class="screenshot" src="/files/translation.png"/></p>
+<p>The translation is applied when the user selects the language as Spanish on supplier Quotation's print preview. Note that no translation is applied for the second item's description since it wasn't created in the Translation list.</p>
+<p><img alt="Translation in Transaction" class="screenshot" src="/files/translation-in-transaction.png"/></p>
+<h3 id="3-related-topics">3. Related Topics<a aria-hidden="true" class="no-underline" href="#3-related-topics">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<ol>
+<li><a onclick="loadContent('address-template.html')">Address Template</a></li>
+<li><a onclick="loadContent('quotation.html')">Quotation</a></li>
+<li><a onclick="loadContent('sales-order.html')">Sales Order</a></li>
+</ol>
+</div>
+<input class="d-none" name="wiki-page-name" value="u6c9iqpe0h"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="custom-translations">Custom Translations
+<a aria-hidden="true" class="no-underline" href="#custom-translations">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content"><del class="diffmod">
+</del><ins class="diffmod">
+</ins><p><strong><ins class="diffmod">With Custom Translations, user can print the customer's and supplier's document in their local language.</ins></strong></p><ins class="diffmod">
+</ins><p><ins class="diffmod">For example, if you have customers from Germany and France who want quotations in German and French, it's possible using Custom Translations.</ins></p><ins class="diffmod">
+</ins><h2 id="1-set-the-language"><ins class="diffmod">1. Set the Language</ins><a aria-hidden="true" class="no-underline" href="#1-set-the-language"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h2><ins class="diffmod">
+</ins><p><ins class="diffmod">In the Customer master, select the default Language. Say, the default language for the Customer is </ins><strong><ins class="mod"><ins class="diffmod">Spanish</ins></ins></strong><ins class="diffmod">.</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod"><img alt="Set Customer Language" class="screenshot" src="/files/set-customer-language.png"/></ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod">Same way, you can also set default language in the Supplier master.</ins></p><ins class="diffmod">
+</ins><h3 id="11-print-preview-in-the-partys-language"><del class="diffmod">No</del><ins class="diffmod">1.1</ins> <del class="diffmod">Revisions</del><ins class="diffmod">Print Preview in the Party's Language</ins><a aria-hidden="true" class="no-underline" href="#11-print-preview-in-the-partys-language">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3><del class="diffmod">
+</del><ins class="diffmod">
+</ins><p><ins class="diffmod">In the Print Preview of a transaction, values will be translated into the party's language.</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod">Customer Quotation print preview in customer's default language.</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod"><img alt="Invoice in Customer Language" class="screenshot" src="/files/invoice-in-customer-language.png"/></ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod">Supplier Quotation print preview in supplier's default language.</ins></p><ins class="diffmod">
+</ins><h3 id="12-changing-the-print-language-in-the-preview"><ins class="diffmod">1.2 Changing the print language in the preview</ins><a aria-hidden="true" class="no-underline" href="#12-changing-the-print-language-in-the-preview"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h3><ins class="diffmod">
+</ins><p><ins class="diffmod">User has the option to select an alternate language on print view.</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod"><img alt="Select Language in Invoice" class="screenshot" src="/files/select-language-in-invoice.png"/></ins></p><ins class="diffmod">
+</ins><h2 id="2-custom-translation"><ins class="diffmod">2. Custom Translation</ins><a aria-hidden="true" class="no-underline" href="#2-custom-translation"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h2><ins class="diffmod">
+</ins><p><ins class="diffmod">Users can set their custom translations using Custom Translations form. For example, if a user wants to set a description of a product in the customer's language (Spanish). For that, create a new translation with language as Spanish, enter source data and translated information.</ins></p><ins class="diffmod">
+</ins><blockquote><ins class="diffmod">
+</ins><p><ins class="diffmod">Home &gt; Customization &gt; Other &gt; Custom Translations &gt; New</ins></p><ins class="diffmod">
+</ins></blockquote><ins class="diffmod">
+</ins><p><ins class="diffmod"><img alt="Translation" class="screenshot" src="/files/translation.png"/></ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod">The translation is applied when the user selects the language as Spanish on supplier Quotation's print preview. Note that no translation is applied for the second item's description since it wasn't created in the Translation list.</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod"><img alt="Translation in Transaction" class="screenshot" src="/files/translation-in-transaction.png"/></ins></p><ins class="diffmod">
+</ins><h3 id="3-related-topics"><ins class="diffmod">3. Related Topics</ins><a aria-hidden="true" class="no-underline" href="#3-related-topics"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h3><ins class="diffmod">
+</ins><ol><ins class="diffmod">
+</ins><li><a onclick="loadContent('address-template.html')"><ins class="diffmod">Address Template</ins></a></li><ins class="diffmod">
+</ins><li><a onclick="loadContent('quotation.html')"><ins class="diffmod">Quotation</ins></a></li><ins class="diffmod">
+</ins><li><a onclick="loadContent('sales-order.html')"><ins class="diffmod">Sales Order</ins></a></li><ins class="diffmod">
+</ins></ol><ins class="diffmod">
+</ins></div>
+</div>
+</div></div></div></div></main>

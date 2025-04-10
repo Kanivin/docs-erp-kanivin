@@ -1,98 +1,79 @@
-<main><div class="from-markdown markdown ">
-	<div class="alert alert-warning admin-banner hide" role="alert">
-		<div class="d-flex justify-content-between align-items-center">
-			<div>This space has
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
 				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
 				review.
 			</div>
-			<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
-		</div>
-	</div>
-	<div class="d-flex justify-content-between align-items-center">
-		<h1 class="wiki-title" id="setting-up-dropbox-backups">Setting Up Dropbox Backups<a class="no-underline" href="#setting-up-dropbox-backups" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h1>
-	</div>
-	<div class="wiki-content">
-		<p>We always recommend customers to maintain backup of their data in KanivinERP. The database backup is downloaded in the form of an SQL file. If needed, this SQL file of backup can be restored in the another KanivinERP account as well.</p>
-
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title" id="setting-up-dropbox-backups">Setting Up Dropbox Backups<a aria-hidden="true" class="no-underline" href="#setting-up-dropbox-backups">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h1>
+</div>
+<div class="wiki-content">
+<p>We always recommend customers to maintain backup of their data in KanivinERP. The database backup is downloaded in the form of an SQL file. If needed, this SQL file of backup can be restored in the another KanivinERP account as well.</p>
 <p>You can automate database backup download of your KanivinERP account into your Dropbox account.</p>
-
 <blockquote>
-  <p>Note: If you are Frappe Cloud user, onsite and offsite backups are automatically created for you: <a href="https://frappecloud.com/docs/sites/backups">https://frappecloud.com/docs/sites/backups</a></p>
+<p>Note: If you are Frappe Cloud user, onsite and offsite backups are automatically created for you: <a href="https://frappecloud.com/docs/sites/backups">https://frappecloud.com/docs/sites/backups</a></p>
 </blockquote>
-
 <p>To setup Dropbox Backup, &gt; Home &gt; Integrations &gt; Dropbox Settings</p>
-
-<h4 id="step-1-login-to-dropbox-developer-area">Step 1: Login to Dropbox Developer area<a class="no-underline" href="#step-1-login-to-dropbox-developer-area" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h4>
-
+<h4 id="step-1-login-to-dropbox-developer-area">Step 1: Login to Dropbox Developer area<a aria-hidden="true" class="no-underline" href="#step-1-login-to-dropbox-developer-area">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h4>
 <p><a href="https://www.dropbox.com/developers/apps">https://www.dropbox.com/developers/apps</a></p>
-
-<h4 id="step-2-create-a-new-dropbox-app">Step 2: Create a new Dropbox app<a class="no-underline" href="#step-2-create-a-new-dropbox-app" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h4>
-
-<p><img src="/files/dropbox-open-3.png" alt="Create new" class="screenshot">  </p>
-
-<h4 id="step-3-fill-in-the-details-for-your-new-app">Step 3: Fill in the details for your new app<a class="no-underline" href="#step-3-fill-in-the-details-for-your-new-app" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h4>
-
-<p><img src="/files/dropbox-open-1.png" alt="Choose Dropbox API and type as APP Folder" class="screenshot"> <img src="/files/dropbox-open-2.png" alt="Setup APP Name" class="screenshot">  </p>
-
-<p><img src="https://support.frappe.io/files/nBdh7wu.png" alt="https://support.frappe.io/files/nBdh7wu.png" class="screenshot">  </p>
-
-<h4 id="step-4-insert-your-custom-domain-redirect-uri">Step 4: Insert your custom domain Redirect URI<a class="no-underline" href="#step-4-insert-your-custom-domain-redirect-uri" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h4>
-
-<p><code>https://{yourwebsite.com}/api/method/frappe.integrations.doctype.dropbox_settings.dropbox_settings.dropbox_auth_finish</code> <img src="/files/dropbox_redirect_uri.png" alt="Set Redirect URL" class="screenshot">  </p>
-
-<h4 id="step-5-in-a-new-window-open-the-dropbox-settings-page-in-your-erpnext-installation">Step 5: In a new window, open the Dropbox Settings page in your ERPnext installation<a class="no-underline" href="#step-5-in-a-new-window-open-the-dropbox-settings-page-in-your-erpnext-installation" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h4>
-
-<h4 id="step-6-set-backup-frequency-and-email">Step 6: Set backup frequency and email<a class="no-underline" href="#step-6-set-backup-frequency-and-email" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h4>
-
-<p>Set the frequency to download your site backups to your Dropbox account. <img src="/files/setup-backup-frequency.png" alt="set frequency" class="screenshot">  </p>
-
-<h4 id="step-7-input-keys-from-your-dropbox-app-window">Step 7: Input Keys from your Dropbox App window<a class="no-underline" href="#step-7-input-keys-from-your-dropbox-app-window" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h4>
-
+<h4 id="step-2-create-a-new-dropbox-app">Step 2: Create a new Dropbox app<a aria-hidden="true" class="no-underline" href="#step-2-create-a-new-dropbox-app">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h4>
+<p><img alt="Create new" class="screenshot" src="/files/dropbox-open-3.png"/> </p>
+<h4 id="step-3-fill-in-the-details-for-your-new-app">Step 3: Fill in the details for your new app<a aria-hidden="true" class="no-underline" href="#step-3-fill-in-the-details-for-your-new-app">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h4>
+<p><img alt="Choose Dropbox API and type as APP Folder" class="screenshot" src="/files/dropbox-open-1.png"/> <img alt="Setup APP Name" class="screenshot" src="/files/dropbox-open-2.png"/> </p>
+<p><img alt="https://support.frappe.io/files/nBdh7wu.png" class="screenshot" src="https://support.frappe.io/files/nBdh7wu.png"/> </p>
+<h4 id="step-4-insert-your-custom-domain-redirect-uri">Step 4: Insert your custom domain Redirect URI<a aria-hidden="true" class="no-underline" href="#step-4-insert-your-custom-domain-redirect-uri">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h4>
+<p><code>https://{yourwebsite.com}/api/method/frappe.integrations.doctype.dropbox_settings.dropbox_settings.dropbox_auth_finish</code> <img alt="Set Redirect URL" class="screenshot" src="/files/dropbox_redirect_uri.png"/> </p>
+<h4 id="step-5-in-a-new-window-open-the-dropbox-settings-page-in-your-erpnext-installation">Step 5: In a new window, open the Dropbox Settings page in your ERPnext installation<a aria-hidden="true" class="no-underline" href="#step-5-in-a-new-window-open-the-dropbox-settings-page-in-your-erpnext-installation">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h4>
+<h4 id="step-6-set-backup-frequency-and-email">Step 6: Set backup frequency and email<a aria-hidden="true" class="no-underline" href="#step-6-set-backup-frequency-and-email">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h4>
+<p>Set the frequency to download your site backups to your Dropbox account. <img alt="set frequency" class="screenshot" src="/files/setup-backup-frequency.png"/> </p>
+<h4 id="step-7-input-keys-from-your-dropbox-app-window">Step 7: Input Keys from your Dropbox App window<a aria-hidden="true" class="no-underline" href="#step-7-input-keys-from-your-dropbox-app-window">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h4>
 <p>From your Dropbox App page, enter the app key and (unhidden) app secret into the ERPnext Dropbox settings page.</p>
-
 <p>Alternatively, you can enter it manually in <code>sites/{sitename}/site_config.json</code> as follows,</p>
-
-<pre><button title="Copy Code" class="btn copy-btn" data-toggle="tooltip"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clipboard"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg></button><code class="hljs json">       {
+<pre><button class="btn copy-btn" data-toggle="tooltip" title="Copy Code"><svg class="feather feather-clipboard" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect height="4" rx="1" ry="1" width="8" x="8" y="2"></rect></svg></button><code class="hljs json">       {
  <span class="hljs-attr">"db_name"</span>: <span class="hljs-string">"demo"</span>,
  <span class="hljs-attr">"db_password"</span>: <span class="hljs-string">"DZ1Idd55xJ9qvkHvUH"</span>,
  <span class="hljs-attr">"dropbox_access_key"</span>: <span class="hljs-string">"ACCESSKEY"</span>,
@@ -101,152 +82,122 @@
 
 
 </code></pre>
-
-<h4 id="step-8-click-save-before-continuing">Step 8: Click Save before continuing<a class="no-underline" href="#step-8-click-save-before-continuing" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h4>
-
-<h4 id="step-9-after-saving-click-allow-dropbox-access">Step 9: After saving, click "Allow Dropbox Access"<a class="no-underline" href="#step-9-after-saving-click-allow-dropbox-access" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h4>
-
+<h4 id="step-8-click-save-before-continuing">Step 8: Click Save before continuing<a aria-hidden="true" class="no-underline" href="#step-8-click-save-before-continuing">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h4>
+<h4 id="step-9-after-saving-click-allow-dropbox-access">Step 9: After saving, click "Allow Dropbox Access"<a aria-hidden="true" class="no-underline" href="#step-9-after-saving-click-allow-dropbox-access">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h4>
 <p>The Dropbox login page will open in the new tab. This might require you to allow pop-up for your KanivinERP account.</p>
-
-<h4 id="step-11-allow-dropbox-access">Step 11: Allow Dropbox Access<a class="no-underline" href="#step-11-allow-dropbox-access" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h4>
-
-<p>On successful login, you will find a confirmation message as following. Click on "Allow" to let your KanivinERP account have access to your Dropbox account. <img src="/files/dropbox-3.png" alt="Allow" class="screenshot">  </p>
-
-<h4 id="step-12-confirm-backups-work">Step 12: Confirm Backups Work<a class="no-underline" href="#step-12-confirm-backups-work" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h4>
-
+<h4 id="step-11-allow-dropbox-access">Step 11: Allow Dropbox Access<a aria-hidden="true" class="no-underline" href="#step-11-allow-dropbox-access">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h4>
+<p>On successful login, you will find a confirmation message as following. Click on "Allow" to let your KanivinERP account have access to your Dropbox account. <img alt="Allow" class="screenshot" src="/files/dropbox-3.png"/> </p>
+<h4 id="step-12-confirm-backups-work">Step 12: Confirm Backups Work<a aria-hidden="true" class="no-underline" href="#step-12-confirm-backups-work">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h4>
 <p>From the ERPnext Dropbox page, click <code>Take Backup Now</code> and then go to you Dropbox files view. You should see a new folder in Dropbox named <code>Apps</code> and inside of it your {New App} folder. Inside of it should be backup folders for both files and database. So for an app named <code>erpnext</code>, following are the folder locations:</p>
-
-<pre><button title="Copy Code" class="btn copy-btn" data-toggle="tooltip"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clipboard"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg></button><code class="hljs javascript">Database files: <span class="hljs-regexp">/Apps/</span>erpnext/database
+<pre><button class="btn copy-btn" data-toggle="tooltip" title="Copy Code"><svg class="feather feather-clipboard" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect height="4" rx="1" ry="1" width="8" x="8" y="2"></rect></svg></button><code class="hljs javascript">Database files: <span class="hljs-regexp">/Apps/</span>erpnext/database
 Public files: <span class="hljs-regexp">/Apps/</span>erpnext/files
 Private files: <span class="hljs-regexp">/Apps/</span>erpnext/private/files
 
 
 </code></pre>
-
 <blockquote>
-  <p><strong>Note</strong>: If the compressed backup size exceeds 1GB (Gigabyte), the system will upload the latest available backup to Dropbox instead of generating a new backup file.</p>
+<p><strong>Note</strong>: If the compressed backup size exceeds 1GB (Gigabyte), the system will upload the latest available backup to Dropbox instead of generating a new backup file.</p>
 </blockquote>
-
-	</div>
-	<input value="qm03fi5tc5" class="d-none" name="wiki-page-name">
-	<div class="modal revisions-modal fade" id="revisionsModal" tabindex="-1" role="dialog" aria-labelledby="revisionsModalTitle" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <div class="d-flex flex-column">
-                    <h5 class="modal-title revision-title" id="setting-up-dropbox-backups">Setting Up Dropbox Backups<a class="no-underline" href="#setting-up-dropbox-backups" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h5>
-                    <span class="small text-muted revision-time">administrator edited 4 months ago</span>
-                </div>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="revision-content wiki-content"><del class="diffmod">
-                    </del><h3 id="no-revisions"><del class="diffmod">No</del><ins class="diffmod">
-		</ins><p><ins class="diffmod">We</ins> <del class="diffmod">Revisions</del><ins class="diffmod">always recommend customers to maintain backup of their data in KanivinERP. The database backup is downloaded in the form of an SQL file. If needed, this SQL file of backup can be restored in the another KanivinERP account as well.</ins></p><ins class="diffmod">
-
+</div>
+<input class="d-none" name="wiki-page-name" value="qm03fi5tc5"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="setting-up-dropbox-backups">Setting Up Dropbox Backups<a aria-hidden="true" class="no-underline" href="#setting-up-dropbox-backups">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content"><del class="diffmod">
+</del><h3 id="no-revisions"><del class="diffmod">No</del><ins class="diffmod">
+</ins><p><ins class="diffmod">We</ins> <del class="diffmod">Revisions</del><ins class="diffmod">always recommend customers to maintain backup of their data in KanivinERP. The database backup is downloaded in the form of an SQL file. If needed, this SQL file of backup can be restored in the another KanivinERP account as well.</ins></p><ins class="diffmod">
 </ins><p><ins class="diffmod">You can automate database backup download of your KanivinERP account into your Dropbox account.</ins></p><ins class="diffmod">
-
 </ins><blockquote><ins class="diffmod">
-  </ins><p><ins class="diffmod">Note: If you are Frappe Cloud user, onsite and offsite backups are automatically created for you: </ins><a href="https://frappecloud.com/docs/sites/backups"><ins class="diffmod">https://frappecloud.com/docs/sites/backups</ins></a></p><ins class="diffmod">
+</ins><p><ins class="diffmod">Note: If you are Frappe Cloud user, onsite and offsite backups are automatically created for you: </ins><a href="https://frappecloud.com/docs/sites/backups"><ins class="diffmod">https://frappecloud.com/docs/sites/backups</ins></a></p><ins class="diffmod">
 </ins></blockquote><ins class="diffmod">
-
 </ins><p><ins class="diffmod">To setup Dropbox Backup, &gt; Home &gt; Integrations &gt; Dropbox Settings</ins></p><ins class="diffmod">
-
-</ins></h3><h4 id="step-1-login-to-dropbox-developer-area"><ins class="diffmod">Step 1: Login to Dropbox Developer area</ins><a class="no-underline" href="#step-1-login-to-dropbox-developer-area" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h4><del class="diffmod">
-
-                </del><ins class="diffmod">
-
+</ins></h3><h4 id="step-1-login-to-dropbox-developer-area"><ins class="diffmod">Step 1: Login to Dropbox Developer area</ins><a aria-hidden="true" class="no-underline" href="#step-1-login-to-dropbox-developer-area">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h4><del class="diffmod">
+</del><ins class="diffmod">
 </ins><p><a href="https://www.dropbox.com/developers/apps"><ins class="diffmod">https://www.dropbox.com/developers/apps</ins></a></p><ins class="diffmod">
-
-</ins><h4 id="step-2-create-a-new-dropbox-app"><ins class="diffmod">Step 2: Create a new Dropbox app</ins><a class="no-underline" href="#step-2-create-a-new-dropbox-app" aria-hidden="true"><ins class="diffmod">
-        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
-          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
-          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
-        </ins></svg><ins class="diffmod">
-      </ins></a></h4><ins class="diffmod">
-
-</ins><p><ins class="diffmod"><img src="/files/dropbox-open-3.png" alt="Create new" class="screenshot">  </ins></p><ins class="diffmod">
-
-</ins><h4 id="step-3-fill-in-the-details-for-your-new-app"><ins class="diffmod">Step 3: Fill in the details for your new app</ins><a class="no-underline" href="#step-3-fill-in-the-details-for-your-new-app" aria-hidden="true"><ins class="diffmod">
-        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
-          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
-          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
-        </ins></svg><ins class="diffmod">
-      </ins></a></h4><ins class="diffmod">
-
-</ins><p><ins class="diffmod"><img src="/files/dropbox-open-1.png" alt="Choose Dropbox API and type as APP Folder" class="screenshot"> <img src="/files/dropbox-open-2.png" alt="Setup APP Name" class="screenshot">  </ins></p><ins class="diffmod">
-
-</ins><p><ins class="diffmod"><img src="https://support.frappe.io/files/nBdh7wu.png" alt="https://support.frappe.io/files/nBdh7wu.png" class="screenshot">  </ins></p><ins class="diffmod">
-
-</ins><h4 id="step-4-insert-your-custom-domain-redirect-uri"><ins class="diffmod">Step 4: Insert your custom domain Redirect URI</ins><a class="no-underline" href="#step-4-insert-your-custom-domain-redirect-uri" aria-hidden="true"><ins class="diffmod">
-        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
-          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
-          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
-        </ins></svg><ins class="diffmod">
-      </ins></a></h4><ins class="diffmod">
-
-</ins><p><code><ins class="diffmod">https://{yourwebsite.com}/api/method/frappe.integrations.doctype.dropbox_settings.dropbox_settings.dropbox_auth_finish</ins></code><ins class="diffmod">&nbsp;<img src="/files/dropbox_redirect_uri.png" alt="Set Redirect URL" class="screenshot">  </ins></p><ins class="diffmod">
-
-</ins><h4 id="step-5-in-a-new-window-open-the-dropbox-settings-page-in-your-erpnext-installation"><ins class="diffmod">Step 5: In a new window, open the Dropbox Settings page in your ERPnext installation</ins><a class="no-underline" href="#step-5-in-a-new-window-open-the-dropbox-settings-page-in-your-erpnext-installation" aria-hidden="true"><ins class="diffmod">
-        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
-          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
-          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
-        </ins></svg><ins class="diffmod">
-      </ins></a></h4><ins class="diffmod">
-
-</ins><h4 id="step-6-set-backup-frequency-and-email"><ins class="diffmod">Step 6: Set backup frequency and email</ins><a class="no-underline" href="#step-6-set-backup-frequency-and-email" aria-hidden="true"><ins class="diffmod">
-        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
-          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
-          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
-        </ins></svg><ins class="diffmod">
-      </ins></a></h4><ins class="diffmod">
-
-</ins><p><ins class="diffmod">Set the frequency to download your site backups to your Dropbox account. <img src="/files/setup-backup-frequency.png" alt="set frequency" class="screenshot">  </ins></p><ins class="diffmod">
-
-</ins><h4 id="step-7-input-keys-from-your-dropbox-app-window"><ins class="diffmod">Step 7: Input Keys from your Dropbox App window</ins><a class="no-underline" href="#step-7-input-keys-from-your-dropbox-app-window" aria-hidden="true"><ins class="diffmod">
-        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
-          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
-          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
-        </ins></svg><ins class="diffmod">
-      </ins></a></h4><ins class="diffmod">
-
+</ins><h4 id="step-2-create-a-new-dropbox-app"><ins class="diffmod">Step 2: Create a new Dropbox app</ins><a aria-hidden="true" class="no-underline" href="#step-2-create-a-new-dropbox-app"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h4><ins class="diffmod">
+</ins><p><ins class="diffmod"><img alt="Create new" class="screenshot" src="/files/dropbox-open-3.png"/> </ins></p><ins class="diffmod">
+</ins><h4 id="step-3-fill-in-the-details-for-your-new-app"><ins class="diffmod">Step 3: Fill in the details for your new app</ins><a aria-hidden="true" class="no-underline" href="#step-3-fill-in-the-details-for-your-new-app"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h4><ins class="diffmod">
+</ins><p><ins class="diffmod"><img alt="Choose Dropbox API and type as APP Folder" class="screenshot" src="/files/dropbox-open-1.png"/> <img alt="Setup APP Name" class="screenshot" src="/files/dropbox-open-2.png"/> </ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod"><img alt="https://support.frappe.io/files/nBdh7wu.png" class="screenshot" src="https://support.frappe.io/files/nBdh7wu.png"/> </ins></p><ins class="diffmod">
+</ins><h4 id="step-4-insert-your-custom-domain-redirect-uri"><ins class="diffmod">Step 4: Insert your custom domain Redirect URI</ins><a aria-hidden="true" class="no-underline" href="#step-4-insert-your-custom-domain-redirect-uri"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h4><ins class="diffmod">
+</ins><p><code><ins class="diffmod">https://{yourwebsite.com}/api/method/frappe.integrations.doctype.dropbox_settings.dropbox_settings.dropbox_auth_finish</ins></code><ins class="diffmod"> <img alt="Set Redirect URL" class="screenshot" src="/files/dropbox_redirect_uri.png"/> </ins></p><ins class="diffmod">
+</ins><h4 id="step-5-in-a-new-window-open-the-dropbox-settings-page-in-your-erpnext-installation"><ins class="diffmod">Step 5: In a new window, open the Dropbox Settings page in your ERPnext installation</ins><a aria-hidden="true" class="no-underline" href="#step-5-in-a-new-window-open-the-dropbox-settings-page-in-your-erpnext-installation"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h4><ins class="diffmod">
+</ins><h4 id="step-6-set-backup-frequency-and-email"><ins class="diffmod">Step 6: Set backup frequency and email</ins><a aria-hidden="true" class="no-underline" href="#step-6-set-backup-frequency-and-email"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h4><ins class="diffmod">
+</ins><p><ins class="diffmod">Set the frequency to download your site backups to your Dropbox account. <img alt="set frequency" class="screenshot" src="/files/setup-backup-frequency.png"/> </ins></p><ins class="diffmod">
+</ins><h4 id="step-7-input-keys-from-your-dropbox-app-window"><ins class="diffmod">Step 7: Input Keys from your Dropbox App window</ins><a aria-hidden="true" class="no-underline" href="#step-7-input-keys-from-your-dropbox-app-window"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h4><ins class="diffmod">
 </ins><p><ins class="diffmod">From your Dropbox App page, enter the app key and (unhidden) app secret into the ERPnext Dropbox settings page.</ins></p><ins class="diffmod">
-
-</ins><p><ins class="diffmod">Alternatively, you can enter it manually in </ins><code><ins class="diffmod">sites/{sitename}/site_config.json</ins></code><ins class="diffmod">&nbsp;as follows,</ins></p><ins class="diffmod">
-
-</ins><pre><button title="Copy Code" class="btn copy-btn" data-toggle="tooltip"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clipboard"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg></button><code class="hljs json"><ins class="diffmod">       {
+</ins><p><ins class="diffmod">Alternatively, you can enter it manually in </ins><code><ins class="diffmod">sites/{sitename}/site_config.json</ins></code><ins class="diffmod"> as follows,</ins></p><ins class="diffmod">
+</ins><pre><button class="btn copy-btn" data-toggle="tooltip" title="Copy Code"><svg class="feather feather-clipboard" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect height="4" rx="1" ry="1" width="8" x="8" y="2"></rect></svg></button><code class="hljs json"><ins class="diffmod">       {
  <span class="hljs-attr">"db_name"</span>: <span class="hljs-string">"demo"</span>,
  <span class="hljs-attr">"db_password"</span>: <span class="hljs-string">"DZ1Idd55xJ9qvkHvUH"</span>,
  <span class="hljs-attr">"dropbox_access_key"</span>: <span class="hljs-string">"ACCESSKEY"</span>,
@@ -255,52 +206,42 @@ Private files: <span class="hljs-regexp">/Apps/</span>erpnext/private/files
 
 
 </ins></code></pre><ins class="diffmod">
-
-</ins><h4 id="step-8-click-save-before-continuing"><ins class="diffmod">Step 8: Click Save before continuing</ins><a class="no-underline" href="#step-8-click-save-before-continuing" aria-hidden="true"><ins class="diffmod">
-        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
-          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
-          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
-        </ins></svg><ins class="diffmod">
-      </ins></a></h4><ins class="diffmod">
-
-</ins><h4 id="step-9-after-saving-click-allow-dropbox-access"><ins class="diffmod">Step 9: After saving, click "Allow Dropbox Access"</ins><a class="no-underline" href="#step-9-after-saving-click-allow-dropbox-access" aria-hidden="true"><ins class="diffmod">
-        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
-          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
-          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
-        </ins></svg><ins class="diffmod">
-      </ins></a></h4><ins class="diffmod">
-
+</ins><h4 id="step-8-click-save-before-continuing"><ins class="diffmod">Step 8: Click Save before continuing</ins><a aria-hidden="true" class="no-underline" href="#step-8-click-save-before-continuing"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h4><ins class="diffmod">
+</ins><h4 id="step-9-after-saving-click-allow-dropbox-access"><ins class="diffmod">Step 9: After saving, click "Allow Dropbox Access"</ins><a aria-hidden="true" class="no-underline" href="#step-9-after-saving-click-allow-dropbox-access"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h4><ins class="diffmod">
 </ins><p><ins class="diffmod">The Dropbox login page will open in the new tab. This might require you to allow pop-up for your KanivinERP account.</ins></p><ins class="diffmod">
-
-</ins><h4 id="step-11-allow-dropbox-access"><ins class="diffmod">Step 11: Allow Dropbox Access</ins><a class="no-underline" href="#step-11-allow-dropbox-access" aria-hidden="true"><ins class="diffmod">
-        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
-          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
-          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
-        </ins></svg><ins class="diffmod">
-      </ins></a></h4><ins class="diffmod">
-
-</ins><p><ins class="diffmod">On successful login, you will find a confirmation message as following. Click on "Allow" to let your KanivinERP account have access to your Dropbox account. <img src="/files/dropbox-3.png" alt="Allow" class="screenshot">  </ins></p><ins class="diffmod">
-
-</ins><h4 id="step-12-confirm-backups-work"><ins class="diffmod">Step 12: Confirm Backups Work</ins><a class="no-underline" href="#step-12-confirm-backups-work" aria-hidden="true"><ins class="diffmod">
-        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
-          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
-          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
-        </ins></svg><ins class="diffmod">
-      </ins></a></h4><ins class="diffmod">
-
-</ins><p><ins class="diffmod">From the ERPnext Dropbox page, click </ins><code><ins class="diffmod">Take Backup Now</ins></code><ins class="diffmod">&nbsp;and then go to you Dropbox files view. You should see a new folder in Dropbox named </ins><code><ins class="diffmod">Apps</ins></code><ins class="diffmod">&nbsp;and inside of it your {New App} folder. Inside of it should be backup folders for both files and database. So for an app named </ins><code><ins class="diffmod">erpnext</ins></code><ins class="diffmod">, following are the folder locations:</ins></p><ins class="diffmod">
-
-</ins><pre><button title="Copy Code" class="btn copy-btn" data-toggle="tooltip"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clipboard"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg></button><code class="hljs javascript"><ins class="diffmod">Database files: <span class="hljs-regexp">/Apps/</span>erpnext/database
+</ins><h4 id="step-11-allow-dropbox-access"><ins class="diffmod">Step 11: Allow Dropbox Access</ins><a aria-hidden="true" class="no-underline" href="#step-11-allow-dropbox-access"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h4><ins class="diffmod">
+</ins><p><ins class="diffmod">On successful login, you will find a confirmation message as following. Click on "Allow" to let your KanivinERP account have access to your Dropbox account. <img alt="Allow" class="screenshot" src="/files/dropbox-3.png"/> </ins></p><ins class="diffmod">
+</ins><h4 id="step-12-confirm-backups-work"><ins class="diffmod">Step 12: Confirm Backups Work</ins><a aria-hidden="true" class="no-underline" href="#step-12-confirm-backups-work"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h4><ins class="diffmod">
+</ins><p><ins class="diffmod">From the ERPnext Dropbox page, click </ins><code><ins class="diffmod">Take Backup Now</ins></code><ins class="diffmod"> and then go to you Dropbox files view. You should see a new folder in Dropbox named </ins><code><ins class="diffmod">Apps</ins></code><ins class="diffmod"> and inside of it your {New App} folder. Inside of it should be backup folders for both files and database. So for an app named </ins><code><ins class="diffmod">erpnext</ins></code><ins class="diffmod">, following are the folder locations:</ins></p><ins class="diffmod">
+</ins><pre><button class="btn copy-btn" data-toggle="tooltip" title="Copy Code"><svg class="feather feather-clipboard" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect height="4" rx="1" ry="1" width="8" x="8" y="2"></rect></svg></button><code class="hljs javascript"><ins class="diffmod">Database files: <span class="hljs-regexp">/Apps/</span>erpnext/database
 Public files: <span class="hljs-regexp">/Apps/</span>erpnext/files
 Private files: <span class="hljs-regexp">/Apps/</span>erpnext/private/files
 
 
 </ins></code></pre><ins class="diffmod">
-
 </ins><blockquote><ins class="diffmod">
-  </ins><p><strong><ins class="diffmod">Note</ins></strong><ins class="diffmod">: If the compressed backup size exceeds 1GB (Gigabyte), the system will upload the latest available backup to Dropbox instead of generating a new backup file.</ins></p><ins class="diffmod">
+</ins><p><strong><ins class="diffmod">Note</ins></strong><ins class="diffmod">: If the compressed backup size exceeds 1GB (Gigabyte), the system will upload the latest available backup to Dropbox instead of generating a new backup file.</ins></p><ins class="diffmod">
 </ins></blockquote><ins class="diffmod">
-
-	</ins></div>
-            </div>
-          </main>
+</ins></div>
+</div>
+</div></div></div></div></main>

@@ -1,63 +1,35 @@
-<main><div class="from-markdown markdown ">
-	<div class="alert alert-warning admin-banner hide" role="alert">
-		<div class="d-flex justify-content-between align-items-center">
-			<div>This space has
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
 				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
 				review.
 			</div>
-			<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
-		</div>
-	</div>
-	<div class="d-flex justify-content-between align-items-center">
-		<h1 class="wiki-title" id="serial-number">Serial Number<a class="no-underline" href="#serial-number" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h1>
-	</div>
-	<div class="wiki-content">
-		<blockquote>
-  <p>Allow Negative Stock has removed for Serial / Batch Items from version 15. So from version 15 users won't be able to make negative stock transactions for serial /batch items even though Allow Negative Stock has enabled in the Stock Settings.</p>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title">Serial Number</h1>
+</div>
+<div class="wiki-content">
+<blockquote>
+<p>Allow Negative Stock has removed for Serial / Batch Items from version 15. So from version 15 users won't be able to make negative stock transactions for serial /batch items even though Allow Negative Stock has enabled in the Stock Settings.</p>
 </blockquote>
-
 <p>As discussed in the <a href="/erpnext/v13/user/manual/en/stock/item">Item</a> page, if an <strong>Item</strong> is <em>serialized</em>, a <strong>Serial Number</strong> (Serial No) record is maintained for each quantity of that <strong>Item</strong>. This information helps track the location of the Serial No, its warranty and end-of-life (expiry) information.</p>
-
 <p>You can also track from which <strong>Supplier</strong> you purchased the <strong>Serial No</strong> and to which <strong>Customer</strong> you have sold it. The <strong>Serial No</strong> status will tell you its current inventory status.</p>
-
 <p>If your Item is <em>serialized</em> you will have to enter the Serial Nos in the related column with each Serial No in a new line. You can maintain single units of serialized items using Serial Number.</p>
-
 <p>To access the Serial Number list, go to: &gt; Home &gt; Stock &gt; Serial No and Batch &gt; Serial No</p>
-
-<h2 id="1-prerequisites">1. Prerequisites<a class="no-underline" href="#1-prerequisites" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h2>
-
+<h2 id="1-prerequisites">1. Prerequisites</h2>
 <p>Before creating and using a Serial Number, it is advised that you create the following first:</p>
-
 <ul>
-<li><a href="/erpnext/v13/user/manual/en/stock/item">Item</a></li>
-<li>Enable 'Has Serial No' in the Item master <img src="/files/serial-no-enabled.png" alt="Serial No Enabled" class="screenshot"></li>
+<li><a onclick="loadContent('item.html')">Item</a></li>
+<li>Enable 'Has Serial No' in the Item master <img alt="Serial No Enabled" class="screenshot" src="/files/serial-no-enabled.png"/></li>
 </ul>
-
-<h2 id="2-how-to-create-a-serial-number">2. How to create a Serial Number<a class="no-underline" href="#2-how-to-create-a-serial-number" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h2>
-
+<h2 id="2-how-to-create-a-serial-number">2. How to create a Serial Number</h2>
 <p>Usually, Serial Numbers are auto-created when transactions are made against a serialized Item. This works only when 'Has Serial No' is enabled and a series is set in the Item master.</p>
-
 <p>For example, a series was set for the following Item as 'PB2L.#####'. Then a Stock Entry was submitted to receive the Item. The Serial Numbers were created accordingly.</p>
-
-<p><img src="/files/serial-no-created.png" alt="Serial No Created" class="screenshot">  </p>
-
+<p><img alt="Serial No Created" class="screenshot" src="/files/serial-no-created.png"/> </p>
 <p>However, if you want to create a Serial No <em>manually</em> follow these steps:</p>
-
 <ol>
 <li>Go to the Serial Number list, click on New.</li>
 <li>Enter a Serial Number.</li>
@@ -65,242 +37,48 @@
 <li>If any transaction is done with an item, Serial No cannot be set or unset.</li>
 <li>Save.</li>
 </ol>
-
 <p>Inventory of an Item can only be affected if the Serial No is transacted via a Stock transaction (Stock Entry, Purchase Receipt, Delivery Note, Sales Invoice). When a new Serial No is created directly, its Warehouse cannot be set.</p>
-
-<p><img src="/files/serial-no.png" alt="Serial Number" class="screenshot">  </p>
-
-<h3 id="21-notes-about-serial-number">2.1 Notes about Serial Number<a class="no-underline" href="#21-notes-about-serial-number" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h3>
-
+<p><img alt="Serial Number" class="screenshot" src="/files/serial-no.png"/> </p>
+<h3 id="21-notes-about-serial-number">2.1 Notes about Serial Number</h3>
 <ul>
 <li>The Status is set based on Stock Entry.</li>
 <li>Only Serial Numbers with status 'Available' can be delivered.</li>
 <li>Serial Nos can automatically be created from a Stock Entry or Purchase Receipt. If you mention Serial No in the Serial Nos column, it will automatically create those serial Nos.</li>
 <li>If in the Item Master, the Serial No Series is mentioned, you can leave the Serial No column blank in a Stock Entry / Purchase Receipt. Serial Nos will automatically be set from that series.</li>
 </ul>
-
-<h2 id="3-features">3. Features<a class="no-underline" href="#3-features" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h2>
-
-<h3 id="31-purchasemanufacture-details">3.1 Purchase/Manufacture details<a class="no-underline" href="#31-purchasemanufacture-details" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h3>
-
+<h2 id="3-features">3. Features</h2>
+<h3 id="31-purchasemanufacture-details">3.1 Purchase/Manufacture details</h3>
 <p>The document from which the Serial No was created will be shown. If you purchased it from a Supplier, it'll be linked here.</p>
-
-<h3 id="32-delivery-details">3.2 Delivery Details<a class="no-underline" href="#32-delivery-details" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h3>
-
+<h3 id="32-delivery-details">3.2 Delivery Details</h3>
 <p>If the Serial No was generated from a Sales Order, the Customer will be linked here.</p>
-
-<h3 id="33-warrantyamc-details">3.3 Warranty/AMC Details<a class="no-underline" href="#33-warrantyamc-details" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h3>
-
+<h3 id="33-warrantyamc-details">3.3 Warranty/AMC Details</h3>
 <p>If the Item is under warranty or AMC (Annual Maintenance Contract), the expiry dates for these can be set.</p>
-
-<h3 id="34-more-information">3.4 More Information<a class="no-underline" href="#34-more-information" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h3>
-
+<h3 id="34-more-information">3.4 More Information</h3>
 <p>Any additional information about this specific Item unit can be set under 'Serial No Details'.</p>
-
-<h2 id="4-video">4. Video<a class="no-underline" href="#4-video" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h2>
-
-<h3 id="5-related-topics">5. Related Topics<a class="no-underline" href="#5-related-topics" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h3>
-
+<h2 id="4-video">4. Video</h2>
+<h3 id="5-related-topics">5. Related Topics</h3>
 <ol>
-<li><a href="/erpnext/v13/user/manual/en/stock/articles/item-codification">Item Codification</a></li>
-<li><a href="/erpnext/v13/user/manual/en/stock/item-variants">Item Variants</a></li>
-<li><a href="/erpnext/v13/user/manual/en/stock/articles/serial-no-naming">Serial Number Naming</a></li>
+<li><a onclick="loadContent('item-codification.html')">Item Codification</a></li>
+<li><a onclick="loadContent('item-variants.html')">Item Variants</a></li>
+<li><a onclick="loadContent('serial-no-naming.html')">Serial Number Naming</a></li>
 </ol>
-
-	</div>
-	<input value="e20mriu6n2" class="d-none" name="wiki-page-name">
-	<div class="modal revisions-modal fade" id="revisionsModal" tabindex="-1" role="dialog" aria-labelledby="revisionsModalTitle" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <div class="d-flex flex-column">
-                    <h5 class="modal-title revision-title" id="serial-number">Serial Number<a class="no-underline" href="#serial-number" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h5>
-                    <span class="small text-muted revision-time">administrator edited 4 months ago</span>
-                </div>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="revision-content wiki-content"><del class="diffmod">
-                    </del><h3 id="no-revisions"><ins class="diffmod">
-		</ins><blockquote><ins class="diffmod">
-  </ins><p><ins class="diffmod">Allow Negative Stock has removed for Serial / Batch Items from version 15. So from version 15 users won't be able to make negative stock transactions for serial /batch items even though Allow Negative Stock has enabled in the Stock Settings.</ins></p><ins class="diffmod">
-</ins></blockquote><ins class="diffmod">
-
-</ins><p><ins class="diffmod">As discussed in the </ins><a href="/erpnext/v13/user/manual/en/stock/item"><ins class="diffmod">Item</ins></a><ins class="diffmod">&nbsp;page, if an </ins><strong><ins class="mod"><ins class="diffmod">Item</ins></ins></strong><ins class="diffmod">&nbsp;is </ins><em><ins class="mod"><ins class="diffmod">serialized</ins></ins></em><ins class="diffmod">, a </ins><strong><ins class="mod"><ins class="diffmod">Serial Number</ins></ins></strong><ins class="diffmod">&nbsp;(Serial No) record is maintained for each quantity of that </ins><strong><ins class="mod"><ins class="diffmod">Item</ins></ins></strong><ins class="diffmod">. This information helps track the location of the Serial No, its warranty and end-of-life (expiry) information.</ins></p><ins class="diffmod">
-
-</ins><p><ins class="diffmod">You can also track from which </ins><strong><ins class="mod"><ins class="diffmod">Supplier</ins></ins></strong><ins class="diffmod">&nbsp;you purchased the </ins><strong><ins class="mod"><ins class="diffmod">Serial No</ins></ins></strong><ins class="diffmod">&nbsp;and to which </ins><strong><ins class="mod"><ins class="diffmod">Customer</ins></ins></strong><ins class="diffmod">&nbsp;you have sold it. The </ins><strong><ins class="mod"><ins class="diffmod">Serial No</ins></ins></strong><ins class="diffmod">&nbsp;status will tell you its current inventory status.</ins></p><ins class="diffmod">
-
-</ins><p><ins class="diffmod">If your Item is </ins><em><ins class="mod"><ins class="diffmod">serialized</ins></ins></em><ins class="diffmod">&nbsp;you will have to enter the Serial Nos in the related column with each Serial </ins>No <del class="diffmod">Revisions</del><ins class="diffmod">in a new line. You can maintain single units of serialized items using Serial Number.</ins></p><ins class="diffmod">
-
-</ins><p><ins class="diffmod">To access the Serial Number list, go to: &gt; Home &gt; Stock &gt; Serial No and Batch &gt; Serial No</ins></p><ins class="diffmod">
-
-</ins></h3><h2 id="1-prerequisites"><ins class="diffmod">1. Prerequisites</ins><a class="no-underline" href="#1-prerequisites" aria-hidden="true"><ins class="diffmod">
-        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
-          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
-          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
-        </ins></svg><ins class="diffmod">
-      </ins></a></h2><ins class="diffmod">
-
-</ins><p><ins class="diffmod">Before creating and using a Serial Number, it is advised that you create the following first:</ins></p><ins class="diffmod">
-
-</ins><ul><ins class="diffmod">
-</ins><li><a href="/erpnext/v13/user/manual/en/stock/item"><ins class="diffmod">Item</ins></a></li><ins class="diffmod">
-</ins><li><ins class="diffmod">Enable 'Has Serial No' in the Item master <img src="/files/serial-no-enabled.png" alt="Serial No Enabled" class="screenshot"></ins></li><ins class="diffmod">
-</ins></ul><ins class="diffmod">
-
-</ins><h2 id="2-how-to-create-a-serial-number"><ins class="diffmod">2. How to create a Serial Number</ins><a class="no-underline" href="#2-how-to-create-a-serial-number" aria-hidden="true"><ins class="diffmod">
-        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
-          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
-          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
-        </ins></svg><ins class="diffmod">
-      </ins></a></h2><ins class="diffmod">
-
-</ins><p><ins class="diffmod">Usually, Serial Numbers are auto-created when transactions are made against a serialized Item. This works only when 'Has Serial No' is enabled and a series is set in the Item master.</ins></p><ins class="diffmod">
-
-</ins><p><ins class="diffmod">For example, a series was set for the following Item as 'PB2L.#####'. Then a Stock Entry was submitted to receive the Item. The Serial Numbers were created accordingly.</ins></p><ins class="diffmod">
-
-</ins><p><ins class="diffmod"><img src="/files/serial-no-created.png" alt="Serial No Created" class="screenshot">  </ins></p><ins class="diffmod">
-
-</ins><p><ins class="diffmod">However, if you want to create a Serial No </ins><em><ins class="mod"><ins class="diffmod">manually</ins></ins></em><ins class="diffmod">&nbsp;follow these steps:</ins></p><ins class="diffmod">
-
-</ins><ol><ins class="diffmod">
-</ins><li><ins class="diffmod">Go to the Serial Number list, click on New.</ins></li><ins class="diffmod">
-</ins><li><ins class="diffmod">Enter a Serial Number.</ins></li><ins class="diffmod">
-</ins><li><ins class="diffmod">Enter the Item Code and details will be fetched.</ins></li><ins class="diffmod">
-</ins><li><ins class="diffmod">If any transaction is done with an item, Serial No cannot be set or unset.</ins></li><ins class="diffmod">
-</ins><li><ins class="diffmod">Save.</ins></li><ins class="diffmod">
-</ins></ol><ins class="diffmod">
-
-</ins><p><ins class="diffmod">Inventory of an Item can only be affected if the Serial No is transacted via a Stock transaction (Stock Entry, Purchase Receipt, Delivery Note, Sales Invoice). When a new Serial No is created directly, its Warehouse cannot be set.</ins></p><ins class="diffmod">
-
-</ins><p><ins class="diffmod"><img src="/files/serial-no.png" alt="Serial Number" class="screenshot">  </ins></p><ins class="diffmod">
-
-</ins><h3 id="21-notes-about-serial-number"><ins class="diffmod">2.1 Notes about Serial Number</ins><a class="no-underline" href="#21-notes-about-serial-number" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h3><del class="diffmod">
-
-                </del><ins class="diffmod">
-
-</ins><ul><ins class="diffmod">
-</ins><li><ins class="diffmod">The Status is set based on Stock Entry.</ins></li><ins class="diffmod">
-</ins><li><ins class="diffmod">Only Serial Numbers with status 'Available' can be delivered.</ins></li><ins class="diffmod">
-</ins><li><ins class="diffmod">Serial Nos can automatically be created from a Stock Entry or Purchase Receipt. If you mention Serial No in the Serial Nos column, it will automatically create those serial Nos.</ins></li><ins class="diffmod">
-</ins><li><ins class="diffmod">If in the Item Master, the Serial No Series is mentioned, you can leave the Serial No column blank in a Stock Entry / Purchase Receipt. Serial Nos will automatically be set from that series.</ins></li><ins class="diffmod">
-</ins></ul><ins class="diffmod">
-
-</ins><h2 id="3-features"><ins class="diffmod">3. Features</ins><a class="no-underline" href="#3-features" aria-hidden="true"><ins class="diffmod">
-        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
-          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
-          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
-        </ins></svg><ins class="diffmod">
-      </ins></a></h2><ins class="diffmod">
-
-</ins><h3 id="31-purchasemanufacture-details"><ins class="diffmod">3.1 Purchase/Manufacture details</ins><a class="no-underline" href="#31-purchasemanufacture-details" aria-hidden="true"><ins class="diffmod">
-        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
-          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
-          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
-        </ins></svg><ins class="diffmod">
-      </ins></a></h3><ins class="diffmod">
-
-</ins><p><ins class="diffmod">The document from which the Serial No was created will be shown. If you purchased it from a Supplier, it'll be linked here.</ins></p><ins class="diffmod">
-
-</ins><h3 id="32-delivery-details"><ins class="diffmod">3.2 Delivery Details</ins><a class="no-underline" href="#32-delivery-details" aria-hidden="true"><ins class="diffmod">
-        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
-          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
-          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
-        </ins></svg><ins class="diffmod">
-      </ins></a></h3><ins class="diffmod">
-
-</ins><p><ins class="diffmod">If the Serial No was generated from a Sales Order, the Customer will be linked here.</ins></p><ins class="diffmod">
-
-</ins><h3 id="33-warrantyamc-details"><ins class="diffmod">3.3 Warranty/AMC Details</ins><a class="no-underline" href="#33-warrantyamc-details" aria-hidden="true"><ins class="diffmod">
-        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
-          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
-          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
-        </ins></svg><ins class="diffmod">
-      </ins></a></h3><ins class="diffmod">
-
-</ins><p><ins class="diffmod">If the Item is under warranty or AMC (Annual Maintenance Contract), the expiry dates for these can be set.</ins></p><ins class="diffmod">
-
-</ins><h3 id="34-more-information"><ins class="diffmod">3.4 More Information</ins><a class="no-underline" href="#34-more-information" aria-hidden="true"><ins class="diffmod">
-        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
-          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
-          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
-        </ins></svg><ins class="diffmod">
-      </ins></a></h3><ins class="diffmod">
-
-</ins><p><ins class="diffmod">Any additional information about this specific Item unit can be set under 'Serial No Details'.</ins></p><ins class="diffmod">
-
-</ins><h2 id="4-video"><ins class="diffmod">4. Video</ins><a class="no-underline" href="#4-video" aria-hidden="true"><ins class="diffmod">
-        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
-          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
-          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
-        </ins></svg><ins class="diffmod">
-      </ins></a></h2><ins class="diffmod">
-
-</ins><h3 id="5-related-topics"><ins class="diffmod">5. Related Topics</ins><a class="no-underline" href="#5-related-topics" aria-hidden="true"><ins class="diffmod">
-        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
-          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
-          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
-        </ins></svg><ins class="diffmod">
-      </ins></a></h3><ins class="diffmod">
-
-</ins><ol><ins class="diffmod">
-</ins><li><a href="/erpnext/v13/user/manual/en/stock/articles/item-codification"><ins class="diffmod">Item Codification</ins></a></li><ins class="diffmod">
-</ins><li><a href="/erpnext/v13/user/manual/en/stock/item-variants"><ins class="diffmod">Item Variants</ins></a></li><ins class="diffmod">
-</ins><li><a href="/erpnext/v13/user/manual/en/stock/articles/serial-no-naming"><ins class="diffmod">Serial Number Naming</ins></a></li><ins class="diffmod">
-</ins></ol><ins class="diffmod">
-
-	</ins></div>
-            </div>
-         </main>
+</div>
+<input class="d-none" name="wiki-page-name" value="e20mriu6n2"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="revisionsModalTitle">Serial Number</h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content">
+<h3>No Revisions</h3>
+</div>
+</div>
+</div></div></div></div></main>

@@ -1,0 +1,51 @@
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title">Cost Center Allocation</h1>
+</div>
+<div class="wiki-content">
+<h2 id="cost-center-allocation">Cost Center Allocation</h2>
+<p>Cost Center Allocation is a feature using which the general ledger entry against a cost center can be split against multiple cost centers. In the Cost Center Allocation document, you can define allocation percentages of the child cost centers.</p>
+<p>In a growing business, it becomes a necessity to analyse the income/expenses against each business unit of the organisation. And to do that, we need to treat each businees unit as a cost center and book income/expenses against the cost center. But if we need to split it every time at the transaction level manually, it becomes very difficult. That's when this Cost Center Allocation feature comes to the rescue.</p>
+<p>In KanivinERP, we just need to define the allocation between multiple cost centers (business units) against a specific master/main cost center. Then whenever we book an invoice or expense transaction against the main cost center, the system automatically split it based on allocation and posts gl entries against each child cost center.</p>
+<h3 id="1-how-to-create-a-cost-center-allocation">1. How to create a Cost Center Allocation?</h3>
+<ol>
+<li>Go to Cost Center Allocation list view and create a new Cost Center Allocation.</li>
+<li>Enter the <strong>Main Cost Center</strong> which will be used in the transaction.</li>
+<li>Enter <strong>Valid From</strong> helps us track the validity of the allocation.</li>
+<li>In the child table, enter <strong>child cost centers and their percentage</strong></li>
+<li>Save and Submit the document.</li>
+</ol>
+<p><img alt="Screenshot 2024-06-24 at 12.26.59 PM" class="screenshot" src="/files/Screenshot 2024-06-24 at 12.26.59 PM.png"/> </p>
+<h3 id="2-gl-entries-against-transaction">2. GL Entries against Transaction</h3>
+<p>While booking any transaction against the main cost center, the system automatically split the GL Entry against it and posts multiple gl entries based on the applicable cost center allocation record.</p>
+<p><img alt="Screenshot 2024-06-24 at 12.31.26 PM" class="screenshot" src="/files/Screenshot 2024-06-24 at 12.31.26 PM.png"/> </p>
+<p>(GL Entries against a Sales Invoice has been splitted based on Cost Center Allocation)</p>
+</div>
+<input class="d-none" name="wiki-page-name" value="35ibaq21a4"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="revisionsModalTitle">Cost Center Allocation</h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content">
+<h3>No Revisions</h3>
+</div>
+</div>
+</div></div></div></div></main>

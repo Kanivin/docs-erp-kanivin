@@ -1,0 +1,241 @@
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title">Journal Entry
+</h1>
+</div>
+<div class="wiki-content">
+<p><strong>A Journal Entry is an entry made in the general ledger and it indicates the affected accounts.</strong></p>
+<p>A Journal Entry is a multi purpose transaction where the debit and credit accounts can be selected.</p>
+<p>All types of accounting entries other than Sales and Purchase transactions are made using the <strong>Journal Entry</strong>. A <strong>Journal Entry</strong> is a standard accounting transaction that affects multiple Accounts and the sum of debits is equal to the sum of credits. A Journal Entry Impacts the main ledger.</p>
+<p>Journal Entries can be used for entering expenses, opening entries, contra entries, bank payments, excise entries, etc. For example, booking running expenses, direct expenses like petrol/transport, sundry expenses, adjustment entries, and adjusting invoice amount.</p>
+<blockquote>
+<p>Note: From version-13 onwards we have introduced immutable ledger which changes the way cancellation of accounting entries works in KanivinERP. <a href="/erpnext/v13/user/manual/en/accounts/articles/immutable-ledger-in-erpnext">Learn more here</a>.</p>
+</blockquote>
+<p>To access the Journal Entry list, go to:</p>
+<blockquote>
+<p>Home &gt; Accounting &gt; General Ledger &gt; Journal Entry</p>
+</blockquote>
+<h2 id="1-how-to-create-a-journal-entry">1. How to create a Journal Entry</h2>
+<ol>
+<li>Go to the Journal Entry list, click on New.</li>
+<li>The default Entry Type will be 'Journal Entry'. This is a general purpose entry type. Visit <a onclick="loadContent('journal-entry#3-journal-entry-types.html')">section 3</a> to know more about entry types.</li>
+<li>You can change the Posting Date.</li>
+<li>Expand the table, select an Account from which amount is debited.</li>
+<li>The above details can be added from a <a onclick="loadContent('journal-entry-template.html')">Journal Entry Template</a> too with the 'From Template' field.</li>
+<li>Select the Party Type and Party if it's a Debtor entry.</li>
+<li>Add a row where the amount will be credited.</li>
+<li>Note that, in the end, total debit and credit amounts should add up to be the same.</li>
+<li>Save and Submit.</li>
+</ol>
+<p><img alt="Journal Entry" class="screenshot" src="/files/journal-entry.png"/></p>
+<p><strong>Finance Book</strong>: You can post this entry to a specific <a href="/erpnext/v13/user/manual/en/accounts/finance-book">Finance Book</a>. On leaving this field blank, this Journal Entry will show up in all Finance Books. This field will only be visible if 'Enable Finance Books' under the Fixed Asset Defaults section of the Company master is checked.</p>
+<h3 id="11-quick-entry">1.1 Quick Entry</h3>
+<p>When creating a Journal Entry, a <strong>Quick Entry</strong> button can be seen on the top right. This makes creating the Journal Entry a bit easier. Enter the amount, select the accounts, add a remark. This will populate the 'Accounting Entries' table with the selected details.</p>
+<p><img alt="Quick Entry" class="screenshot" src="/files/quick-journal-entry.png"/></p>
+<h2 id="2-features">2. Features</h2>
+<h3 id="21-accounting-entries">2.1 Accounting Entries</h3>
+<ol>
+<li><strong>Accounting Dimensions</strong>: A Project or Cost Center can be linked here to track the costing separately. To know more, <a onclick="loadContent('accounting-dimensions.html')">visit this page</a>. <img alt="Accounting Dimension" class="screenshot" src="/files/journal-entry-accounting-dimension.png"/></li>
+<li><strong>Bank Account No</strong>: If you've added a <a onclick="loadContent('bank-account.html')">Bank Account</a>, the number associated with that bank account will be fetched.</li>
+<li><strong>Reference Type</strong>: If this Accounting Entry is associated with another transaction, it can be referenced here. Select the Reference Type and select the specific document. For example, if you're creating a Journal Entry against a specific Sales Invoice. Link this Journal Entry to the invoice. The “outstanding” amount of that invoice will be affected.</li>
+<li><img alt="Reference" class="screenshot" src="/files/journal-entry-reference.png"/></li>
+</ol>
+<p>Following are the documents that can be selected in the Journal Entry under Reference Type:</p>
+<ol>
+<li><a onclick="loadContent('sales-invoice.html')">Sales Invoice</a></li>
+<li><a onclick="loadContent('purchase-invoice.html')">Purchase Invoice</a></li>
+<li>Journal Entry</li>
+<li><a onclick="loadContent('sales-order.html')">Sales Order</a></li>
+<li><a onclick="loadContent('purchase-order.html')">Purchase Order</a></li>
+<li><a onclick="loadContent('expense-claim.html')">Expense Claim</a></li>
+<li><a onclick="loadContent('asset.html')">Asset</a></li>
+<li><a onclick="loadContent('loan.html')">Loan</a></li>
+<li><a onclick="loadContent('payroll-entry.html')">Payroll Entry</a></li>
+<li><a onclick="loadContent('employee-advance.html')">Employee Advance</a></li>
+<li><a onclick="loadContent('exchange-rate-revaluation.html')">Exchange Rate Revaluation</a></li>
+<li><a onclick="loadContent('invoice_discounting.html')">Invoice Discounting</a></li>
+<li><strong>Is Advance</strong>: If this is an advance payment by a Customer, set this option to 'Yes'. This is useful when you have linked a 'Reference Type' form to this Journal Entry. Selecting “Yes” will link this Journal Entry to the transaction selected in the 'Reference Name' field. To know more, visit the <a onclick="loadContent('advance-payment-entry.html')">Advance Payment Entry</a> page.</li>
+<li><strong>User Remark</strong>: Any additional remarks about the entry can be added in this field.</li>
+</ol>
+<h3 id="22-reverse-journal-entry">2.2 Reverse Journal Entry</h3>
+<p>In any submitted Journal Entry, there is a dedicated button to reverse the Journal Entry. On clicking the 'Reverse Journal Entry' button, the system creates a new Journal Entry by reversing debit and credit amount against the respective accounts.</p>
+<p><img alt="Reverse Journal Entry" class="screenshot" src="/files/reverse-journal-entry.png"/></p>
+<h3 id="23-difference-entry">2.3 Difference Entry</h3>
+<p>The “Difference” is the difference that remains after summing all debit and credit amounts.</p>
+<p>As per double entry accounting system, the total debit should be equal to the total credit.</p>
+<p>This should be zero if the Journal Entry is to be “Submitted”. If this number is not zero, you can click on “Make Difference Entry” and the system will automatically add a new row with the amount required to make the total as zero. Select the account to debit/credit and proceed.</p>
+<p><img alt="Make Difference" class="screenshot" src="/files/journal-entry-make-difference-entry.png"/></p>
+<h3 id="24-referencing">2.4 Referencing</h3>
+<p>A Reference Number can be entered manually and a Reference Date can be set. On entering a Reference Number here, a 'Remark' will be seen, for example:</p>
+<blockquote>
+<p>Note: supplier</p>
+</blockquote>
+<blockquote>
+<p>Reference #2321 dated 30-09-2019 ₹ 1,000.00 against Sales Invoice ACC-SINV-2019-00064</p>
+</blockquote>
+<p>In th Reference section, the following fields can be entered manually if the bill was recorded offline and not in the KanivinERP system. This is only for reference purposes.</p>
+<ol>
+<li>Bill No</li>
+<li>Bill Date</li>
+<li>Due Date</li>
+</ol>
+<h3 id="25-multi-currency-entries">2.5 Multi Currency entries</h3>
+<p>If the accounts selected are in different currencies, tick the 'Multi Currency' checkbox. If this checkbox is not enabled, you will not be able to select any foreign currencies in the Journal Entry. This will show the different currency and fetch the 'Exchange Rate'. To know more, visit the <a href="/erpnext/v13/user/manual/en/accounts/multi-currency-accounting">Multi Currency Accounting</a> page.</p>
+<p><img alt="Multi Currency" class="screenshot" src="/files/multi-currency-journal-entry.png"/></p>
+<h3 id="26-journal-entry-template">2.6 Journal Entry Template</h3>
+<p><strong>From Template</strong> field: Selecting an option in this will load details from a Journal Entry Template.</p>
+<p>It will fetch and add the following details to the entry:</p>
+<ol>
+<li>Entry Type</li>
+<li>Company</li>
+<li>Series</li>
+<li>Accounts in Accounting Entries</li>
+<li>Is Opening</li>
+</ol>
+<p>To learn more go to the <a href="/erpnext/v13/user/manual/en/accounts/journal-entry-template">Journal Entry Template</a> page.</p>
+<h3 id="27-print-settings">2.7 Print Settings</h3>
+<p><img alt="Journal Print Settings" class="screenshot" src="/files/journal-entry-print-settings.png"/></p>
+<p><strong>Pay To / Recd From</strong>: The name entered here will show up in the Sales Invoice. This is useful for printing cheques. Go to the print view in the Journal Entry and select the 'Cheque Printing Format'.</p>
+<h4 id="letterhead">Letterhead</h4>
+<p>You can print your Journal Entry on your company's letterhead. Know more <a href="/erpnext/v13/user/manual/en/setting-up/print/letter-head">here</a>.</p>
+<h4 id="print-headings">Print Headings</h4>
+<p>Journal Entries can also be titled differently for printing purposes. You can do this by selecting a <strong>Print Heading</strong>. To create new Print Headings go to:</p>
+<p>Home &gt; Settings &gt; Printing &gt; Print Heading</p>
+<p>Read <a href="/erpnext/v13/user/manual/en/setting-up/print/print-headings">Print Headings</a> to know more.</p>
+<h3 id="27-more-information">2.7 More Information</h3>
+<ol>
+<li><strong>Mode of Payment</strong>: Whether the payment was done using Wire Transfer, Bank Draft, Credit Card, Cheque, or Cash. New Modes of Payment can also be created. If a Bank Account is set in Mode of Payment, it will be fetched here when the Mode of Payment is selected.</li>
+<li><strong>Is Opening</strong>: If the Journal Entry is of type 'Opening Entry' this field will be set to 'Yes'. To know more, visit the <a onclick="loadContent('opening-balance.html')">Opening Balance</a> page.</li>
+<li><strong>From Template</strong>: When a template is selected, the 'Accounting Entries' table will be emptied first before loading the accounts from the template. You can add more account entries after that.</li>
+</ol>
+<h2 id="3-journal-entry-types">3. Journal Entry Types</h2>
+<p>Let's take a look at some of the common accounting entries that can be done via Journal Entry in KanivinERP.</p>
+<h3 id="31-journal-entry">3.1 Journal Entry</h3>
+<p>This is a general purpose entry type which can be used for different purposes. Let's see a few examples.</p>
+<h4 id="expenses-non-accruing">Expenses (non accruing)</h4>
+<p>Many times it may not be necessary to accrue an expense, but it can be directly booked against an expense Account on payment. For example, a travel allowance or a telephone bill. You can directly debit Telephone Expense (instead of your telephone company) and credit your Bank on payment.</p>
+<ol>
+<li>Debit: Expense Account (like Telephone expense).</li>
+<li>Credit: Bank or Cash Account.</li>
+</ol>
+<h4 id="crediting-salaries">Crediting Salaries</h4>
+<p>For crediting employee salaries, 'Journal Entry' type is used. In this case,</p>
+<ol>
+<li>Debit: The salary components.</li>
+<li>Credit: The bank account.</li>
+</ol>
+<h3 id="32-inter-company-journal-entry">3.2 Inter Company Journal Entry</h3>
+<p>If a transaction occurs between a parent and child company, or sister companies, or two companies belonging to the same group, this option can be used to make an Inter Company Journal Entry.</p>
+<p>To know more visit the <a href="/erpnext/v13/user/manual/en/accounts/inter-company-journal-entry">Inter Company Journal Entry</a> page.</p>
+<h3 id="33-bank-entry">3.3 Bank Entry</h3>
+<p>Use this type when making or receiving a payment using a <a href="/erpnext/v13/user/manual/en/accounts/bank-account">Bank Account</a>. For example, paying for an entertainment charges etc using the Company's bank account.</p>
+<h3 id="34-cash-entry">3.4 Cash Entry</h3>
+<p>This is the same as 'Bank Entry' but the payment is made via Cash Account.</p>
+<h3 id="35-credit-card-entry">3.5 Credit Card Entry</h3>
+<p>This is a type of entry to easily identify all credit card entries.</p>
+<h3 id="36-debit-note">3.6 Debit Note</h3>
+<p>This is a document sent by a customer (your Company) to a supplier (your Supplier) when returning goods/items.</p>
+<p>You can also create a Debit Note directly from a Purchase Invoice.</p>
+<p>"Debit Note" is made for a Supplier against a Purchase Invoice or accepted as a credit note from Supplier when a company returns goods. When a Debit Note is made, the Company can either receive a payment from the Supplier or adjust the amount in another invoice.</p>
+<ol>
+<li>Debit: Supplier Account.</li>
+<li>Credit: Purchase Return Account.</li>
+</ol>
+<p>To know more, <a href="/erpnext/v13/user/manual/en/accounts/debit-note">visit this page</a>.</p>
+<h3 id="37-credit-note">3.7 Credit Note</h3>
+<p>This is a document sent by a supplier to a customer when returning goods/items.</p>
+<p>"Credit Note" is made for a Customer against a Sales Invoice when the company needs to adjust a payment for returned goods. When a Credit Note is made, the seller can either make a payment to the customer or adjust the amount in another invoice.</p>
+<ol>
+<li>Debit: Sales Return Account.</li>
+<li>Credit: Customer Account.</li>
+</ol>
+<p>To know more, <a href="/erpnext/v13/user/manual/en/accounts/credit-note">visit this page</a>.</p>
+<blockquote>
+<p>A debit/credit note is usually issued for the value of the goods returned or lesser.</p>
+</blockquote>
+<h3 id="38-contra-entry">3.8 Contra Entry</h3>
+<p>A Contra Entry is booked when the transaction is booked within the same Company of types:</p>
+<ol>
+<li>Cash to Cash</li>
+<li>Bank to Bank</li>
+<li>Cash to Bank</li>
+<li>Bank to Cash</li>
+</ol>
+<p>This is used to record withdrawing or depositing money from a Bank Account. When this entry is used, the money does not leave the company unless it is again used to pay for something.</p>
+<h3 id="39-excise-entry">3.9 Excise Entry</h3>
+<p>When a Company buys goods from a Supplier, company pays excise duty on these goods to Supplier. And when a company sells these goods to Customers, it receives excise duty. Company will deduct payable excise duty and deposit balance in Govt. account.</p>
+<p>When a Company buys goods with Excise duty:</p>
+<ol>
+<li>Debit: Purchase Account, Excise Duty Account.</li>
+<li>Credit: Supplier Account.</li>
+</ol>
+<p>When a Company sells goods with Excise duty:</p>
+<ol>
+<li>Debit: Customer Account.</li>
+<li>Credit: Sales Account, Excise Duty Account.</li>
+</ol>
+<blockquote>
+<p>Note: Applicable in India, might not be applicable for your country. Please check your country regulations.</p>
+</blockquote>
+<h3 id="310-write-offs-or-bad-debts">3.10 Write Offs or Bad Debts</h3>
+<p>If you are writing off an Invoice as a bad debt, you can create a Journal Voucher similar to a Payment, except instead of debiting your Bank, you can debit an Expense Account called Bad Debts.</p>
+<ol>
+<li>Debit: Bad Debts Written Off</li>
+<li>Credit: Customer</li>
+</ol>
+<blockquote>
+<p>Note: There may be regulations in your country before you can write off bad debts.</p>
+</blockquote>
+<h3 id="311-opening-entry">3.11 Opening Entry</h3>
+<p>This entry is useful when moving from an another software to KanivinERP during any time of the year. Your outstanding bills, equities etc. can be recorded to KanivinERP using this entry type. Selecting type will fetch the Balance Sheet accounts.</p>
+<h3 id="312-depreciation">3.12 Depreciation</h3>
+<p>Depreciation is when you write off certain value of your assets as an expense. For example if you have a computer that you will use for say 5 years, you can distribute its expense over the period and pass a Journal Entry at the end of each year reducing its value by a certain percentage.</p>
+<ol>
+<li>Debit: Depreciation (Expense).</li>
+<li>Credit: Asset (the Account under which you had booked the asset to be depreciated).</li>
+</ol>
+<p>To know more, visit the <a href="/erpnext/v13/user/manual/en/asset/asset-depreciation">Asset Depreciation</a> page.</p>
+<blockquote>
+<p>Note: There may be regulations in your country that define by how much amount you can depreciate a class of Assets.</p>
+</blockquote>
+<h3 id="313-exchange-rate-revaluation">3.13 Exchange Rate Revaluation</h3>
+<p>If your Chart of Accounts has accounts with multiple currencies, a Journal Entry of type 'Exchange Rate Revaluation' helps in dealing with this situation. This entry is intended to be created from an Exchange Rate Revaluation form. To know more <a href="/erpnext/v13/user/manual/en/accounts/exchange-rate-revaluation">visit the Exchange Rate Revaluation page</a>.</p>
+<h3 id="4-related-topics">4. Related Topics</h3>
+<ol>
+<li><a onclick="loadContent('inter-company-journal-entry.html')">Inter Company Journal Entry</a></li>
+<li><a onclick="loadContent('credit-note.html')">Credit Note</a></li>
+<li><a onclick="loadContent('debit-note.html')">Debit Note</a></li>
+<li><a onclick="loadContent('sales-invoice.html')">Sales Invoice</a></li>
+<li><a onclick="loadContent('difference-entry-button.html')">Difference Entry Button</a></li>
+<li><a onclick="loadContent('finance-book.html')">Finance Book</a></li>
+</ol>
+</div>
+<input class="d-none" name="wiki-page-name" value="o43a1pvb2t"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="revisionsModalTitle">Journal Entry
+</h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content">
+<h3>No Revisions</h3>
+</div>
+</div>
+</div></div></div></div></main>

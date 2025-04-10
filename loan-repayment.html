@@ -1,0 +1,64 @@
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title">Loan Repayment
+</h1>
+</div>
+<div class="wiki-content">
+<blockquote>
+<p>Introduced in Version 13</p>
+</blockquote>
+<p><strong>Loan Repayment entry is used to track repayments against loans.</strong></p>
+<p><img alt="Make Loan Repayment" class="screenshot" src="/files/loan-repayment-flow.png"/></p>
+<p>To access the Loan Disbursement list, go to:</p>
+<blockquote>
+<p>Home &gt; Loan Management &gt; Disbursement and Repayment &gt; Loan Repayment</p>
+</blockquote>
+<p><img alt="Loan Repayment" class="screenshot" src="/files/loan-repayment.png"/></p>
+<h2 id="1-prerequisites">1. Prerequisites</h2>
+<p>Before creating a Loan Disbursement, you must create the following first:</p>
+<ul>
+<li><a onclick="loadContent('loan.html')">Loan</a></li>
+<li><a onclick="loadContent('loan-interest-accrual.html')">Loan Interest Accrual</a></li>
+</ul>
+<h2 id="2-how-to-create-a-loan-repayment">2. How to Create a Loan Repayment</h2>
+<ol>
+<li>Go to Loan Repayment List, click on New.</li>
+<li>Select Loan against which repayment is being made. The Applicant Type and Applicant will be fetched from the Loan.</li>
+<li>Select Payment Type. The default option is 'Regular Repayment' which is selected in case of normal monthly payment and 'Loan Closure' in case of final repayment or the Loan needs to be closed.</li>
+<li>Enter Posting Date. On entering the Posting Date, all the payable amounts like pending principal amount, interest payable, penalty amount, and payable amount will be automatically fetched.</li>
+<li>Click "Save" to save the draft of the Loan Repayment Entry</li>
+<li>Click "Submit" to submit the Loan Repayment Entry.</li>
+</ol>
+<h3 id="21-other-ways-to-create-a-loan-repayment">2.1. Other ways to create a Loan Repayment</h3>
+<p>You can also create a Loan Repayment from a disbursed Loan via the <strong>Create</strong> button on the top right of a Loan.</p>
+<p><img alt="Create Loan Repayment" class="screenshot" src="/files/create-loan-repayment.png"/></p>
+</div>
+<input class="d-none" name="wiki-page-name" value="9sc37le648"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="revisionsModalTitle">Loan Repayment
+</h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content">
+<h3>No Revisions</h3>
+</div>
+</div>
+</div></div></div></div></main>

@@ -1,0 +1,187 @@
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title" id="session-defaults">Session Defaults<a aria-hidden="true" class="no-underline" href="#session-defaults">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h1>
+</div>
+<div class="wiki-content">
+<p><strong>Session Defaults allow users to configurable default values for certain parameters during user sessions.</strong></p>
+<p>Let's assume that you have a multi company setup spanning across different countries then you have to set the 'Company' , 'Country' and 'Currency' fields every time while creating new transactions. This is a very time-consuming process when you have to deal with multiple Sales Orders daily. Hence, instead of putting the value manually, the value set in the Session Defaults gets displayed automatically by default.</p>
+<h2 id="1-how-to-create-session-defaults">1. How to Create Session Defaults<a aria-hidden="true" class="no-underline" href="#1-how-to-create-session-defaults">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h2>
+<h3 id="11-set-up-the-session-default-settings">1.1 Set up the Session Default Settings<a aria-hidden="true" class="no-underline" href="#11-set-up-the-session-default-settings">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<ol>
+<li>Go to Session Default Settings. There you can see a table for Session Defaults.</li>
+<li>Click on 'Add Row'.</li>
+<li>Select the DocType for which you want to set Session Defaults.</li>
+<li>Save.</li>
+</ol>
+<p><img alt="Screenshot 2024-05-30 at 1.07.03 PM" class="screenshot" src="/files/Screenshot 2024-05-30 at 1.07.03 PM.png"/></p>
+<h3 id="12-set-up-the-session-default-values">1.2 Set up the Session Default Values<a aria-hidden="true" class="no-underline" href="#12-set-up-the-session-default-values">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<ol>
+<li>Click on the 'Settings' menu in the toolbar. You will find an option 'Session Defaults' there. Click on it.</li>
+</ol>
+<p><img alt="Screenshot 2024-05-30 at 1.23.34 PM" class="screenshot" src="/files/Screenshot 2024-05-30 at 1.23.34 PM.png"/>
+2. A 'Session Defaults' prompt will appear. Set the default values for the respective fields and Save.</p>
+<p><img alt="Screenshot 2024-05-30 at 1.09.45 PM" class="screenshot" src="/files/Screenshot 2024-05-30 at 1.09.45 PM.png"/></p>
+<p>After saving, the default values will be set everywhere.</p>
+<p>You can open a new Sales Order and check. The company field is set to the default Company.</p>
+<p><img alt="Screenshot 2024-05-30 at 1.12.02 PM" class="screenshot" src="/files/Screenshot 2024-05-30 at 1.12.02 PM.png"/> </p>
+<p>The default currency is also set to INR as defined in the Session Defaults</p>
+<p><img alt="Screenshot 2024-05-30 at 1.13.50 PM" class="screenshot" src="/files/Screenshot 2024-05-30 at 1.13.50 PM.png"/> </p>
+<p>Once you open any report, the default company and currency will be Cooper Hospital and INR respectviely.</p>
+<p><img alt="Screenshot 2024-05-30 at 1.15.45 PM" class="screenshot" src="/files/Screenshot 2024-05-30 at 1.15.45 PM.png"/> </p>
+<h2 id="2-features">2. Features<a aria-hidden="true" class="no-underline" href="#2-features">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h2>
+<h3 id="21-defaults-cleared-on-logout">2.1 Defaults cleared on logout<a aria-hidden="true" class="no-underline" href="#21-defaults-cleared-on-logout">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<p>The default values are set for that particular user for the ongoing session. Once logged out, these default values are cleared.</p>
+<h3 id="22-settings-button-visibility">2.2 'Settings' button visibility<a aria-hidden="true" class="no-underline" href="#22-settings-button-visibility">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<p>The Settings button is only visible to the System Manager or to a person having permission to access 'Session Default Settings'. This button navigates you to Session Default Settings where you can add or remove the document types for which you want to set Session Defaults.</p>
+<p><img alt="Screenshot 2024-05-30 at 1.21.51 PM" class="screenshot" src="/files/Screenshot 2024-05-30 at 1.21.51 PM.png"/> </p>
+<h3 id="3-related-topics">3. Related Topics<a aria-hidden="true" class="no-underline" href="#3-related-topics">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<ol>
+<li><a onclick="loadContent('global-defaults.html')">Global Defaults</a></li>
+<li><a onclick="loadContent('system-settings.html')">System Settings</a></li>
+</ol>
+</div>
+<input class="d-none" name="wiki-page-name" value="j9frdlhr2h"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="session-defaults">Session Defaults<a aria-hidden="true" class="no-underline" href="#session-defaults">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content"><del class="diffmod">
+</del><ins class="diffmod">
+</ins><p><strong><ins class="diffmod">Session Defaults allow users to configurable default values for certain parameters during user sessions.</ins></strong></p><ins class="diffmod">
+</ins><p><ins class="diffmod">Let's assume that you have a multi company setup spanning across different countries then you have to set the 'Company' , 'Country' and 'Currency' fields every time while creating new transactions. This is a very time-consuming process when you have to deal with multiple Sales Orders daily. Hence, instead of putting the value manually, the value set in the Session Defaults gets displayed automatically by default.</ins></p><ins class="diffmod">
+</ins><h2 id="1-how-to-create-session-defaults"><ins class="diffmod">1. How to Create Session Defaults</ins><a aria-hidden="true" class="no-underline" href="#1-how-to-create-session-defaults"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h2><ins class="diffmod">
+</ins><h3 id="11-set-up-the-session-default-settings"><del class="diffmod">No</del><ins class="diffmod">1.1</ins> <del class="diffmod">Revisions</del><ins class="diffmod">Set up the Session Default Settings</ins><a aria-hidden="true" class="no-underline" href="#11-set-up-the-session-default-settings">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3><del class="diffmod">
+</del><ins class="diffmod">
+</ins><ol><ins class="diffmod">
+</ins><li><ins class="diffmod">Go to Session Default Settings. There you can see a table for Session Defaults.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Click on 'Add Row'.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Select the DocType for which you want to set Session Defaults.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Save.</ins></li><ins class="diffmod">
+</ins></ol><ins class="diffmod">
+</ins><p><ins class="diffmod"><img alt="Screenshot 2024-05-30 at 1.07.03 PM" class="screenshot" src="/files/Screenshot 2024-05-30 at 1.07.03 PM.png"/></ins></p><ins class="diffmod">
+</ins><h3 id="12-set-up-the-session-default-values"><ins class="diffmod">1.2 Set up the Session Default Values</ins><a aria-hidden="true" class="no-underline" href="#12-set-up-the-session-default-values"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h3><ins class="diffmod">
+</ins><ol><ins class="diffmod">
+</ins><li><ins class="diffmod">Click on the 'Settings' menu in the toolbar. You will find an option 'Session Defaults' there. Click on it.</ins></li><ins class="diffmod">
+</ins></ol><ins class="diffmod">
+</ins><p><ins class="diffmod"><img alt="Screenshot 2024-05-30 at 1.23.34 PM" class="screenshot" src="/files/Screenshot 2024-05-30 at 1.23.34 PM.png"/>
+2. A 'Session Defaults' prompt will appear. Set the default values for the respective fields and Save.</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod"><img alt="Screenshot 2024-05-30 at 1.09.45 PM" class="screenshot" src="/files/Screenshot 2024-05-30 at 1.09.45 PM.png"/></ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod">After saving, the default values will be set everywhere.</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod">You can open a new Sales Order and check. The company field is set to the default Company.</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod"><img alt="Screenshot 2024-05-30 at 1.12.02 PM" class="screenshot" src="/files/Screenshot 2024-05-30 at 1.12.02 PM.png"/> </ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod">The default currency is also set to INR as defined in the Session Defaults</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod"><img alt="Screenshot 2024-05-30 at 1.13.50 PM" class="screenshot" src="/files/Screenshot 2024-05-30 at 1.13.50 PM.png"/> </ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod">Once you open any report, the default company and currency will be Cooper Hospital and INR respectviely.</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod"><img alt="Screenshot 2024-05-30 at 1.15.45 PM" class="screenshot" src="/files/Screenshot 2024-05-30 at 1.15.45 PM.png"/> </ins></p><ins class="diffmod">
+</ins><h2 id="2-features"><ins class="diffmod">2. Features</ins><a aria-hidden="true" class="no-underline" href="#2-features"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h2><ins class="diffmod">
+</ins><h3 id="21-defaults-cleared-on-logout"><ins class="diffmod">2.1 Defaults cleared on logout</ins><a aria-hidden="true" class="no-underline" href="#21-defaults-cleared-on-logout"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h3><ins class="diffmod">
+</ins><p><ins class="diffmod">The default values are set for that particular user for the ongoing session. Once logged out, these default values are cleared.</ins></p><ins class="diffmod">
+</ins><h3 id="22-settings-button-visibility"><ins class="diffmod">2.2 'Settings' button visibility</ins><a aria-hidden="true" class="no-underline" href="#22-settings-button-visibility"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h3><ins class="diffmod">
+</ins><p><ins class="diffmod">The Settings button is only visible to the System Manager or to a person having permission to access 'Session Default Settings'. This button navigates you to Session Default Settings where you can add or remove the document types for which you want to set Session Defaults.</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod"><img alt="Screenshot 2024-05-30 at 1.21.51 PM" class="screenshot" src="/files/Screenshot 2024-05-30 at 1.21.51 PM.png"/> </ins></p><ins class="diffmod">
+</ins><h3 id="3-related-topics"><ins class="diffmod">3. Related Topics</ins><a aria-hidden="true" class="no-underline" href="#3-related-topics"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h3><ins class="diffmod">
+</ins><ol><ins class="diffmod">
+</ins><li><a onclick="loadContent('global-defaults.html')"><ins class="diffmod">Global Defaults</ins></a></li><ins class="diffmod">
+</ins><li><a onclick="loadContent('system-settings.html')"><ins class="diffmod">System Settings</ins></a></li><ins class="diffmod">
+</ins></ol><ins class="diffmod">
+</ins></div>
+</div>
+</div></div></div></div></main>

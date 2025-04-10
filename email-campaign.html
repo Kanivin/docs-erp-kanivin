@@ -1,0 +1,102 @@
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title">Email Campaign
+</h1>
+</div>
+<div class="wiki-content">
+<p><strong>An Email Campaign is a coordinated set of emails sent to leads or contacts according to a particular schedule.</strong></p>
+<p>Email Campaigns are still one of the most effective ways to reach your Customers, Contacts or Leads and keep them engaged. For example, you could set up Email Campaigns for introducing your product to the customers, with every email revealing an interesting feature of your product.</p>
+<p>To create an Email Campaign, go to:</p>
+<blockquote>
+<p>Home &gt; CRM &gt; Campaign &gt; Email Campaign</p>
+</blockquote>
+<h2 id="1-prerequisites">1. Prerequisites</h2>
+<p>Before creating and using Email Campaign, these need to be created first:</p>
+<ul>
+<li><a onclick="loadContent('campaign.html')">Campaign</a></li>
+<li><a onclick="loadContent('lead.html')">Lead</a> or <a onclick="loadContent('contact.html')">Contact</a> or <a onclick="loadContent('email_group.html')">Email Group</a></li>
+</ul>
+<h2 id="2-how-to-create-an-email-campaign">2. How to Create an Email Campaign</h2>
+<ol>
+<li>Go to the Email Campaign list, click on New.</li>
+<li>Select the <a onclick="loadContent('campaign.html')">Campaign</a> for which you want to set up an Email Campaign.</li>
+<li>Set the 'Start Date' for the Email Campaign.</li>
+<li>In 'Email Campaign For', select whether you want to set up Email Campaign for a Lead or a Contact or for an Email Group to send to multiple email contacts.</li>
+<li>In 'Recipient', select the respective Lead or Contact or Email Group for whom you want to start the Email Campaign.</li>
+<li>In 'Sender', select the user of the system who should be the sender of the emails.</li>
+<li><p>Save</p>
+<p><img alt="Email Campaign" class="screenshot" src="/files/email-campaign.png"/></p>
+<p>The above Email Campaign is for the following Campaign:</p>
+<p><img alt="Campaign Schedule" class="screenshot" src="/files/campaign-email-schedule.png"/></p>
+<p><strong>Note</strong>: The <strong>Send After (days)</strong> field in Campaign specifies the day on which email is to be sent relative to the <strong>Start Date</strong> of <strong>Email Campaign</strong>. Notice the 'End Date' in the above Email Campaign. It is '26-07-2019', which is 4 days after the 'Start Date', '22-07-2029', as the Campaign Schedule ends on day 4.</p></li>
+</ol>
+<h3 id="21-create-multiple-email-campaigns-for-a-campaign">2.1 Create multiple Email Campaigns for a Campaign</h3>
+<p>You can also create new Email Campaigns for different Leads or Contacts for the same Campaign though the Campaign Dashboard.</p>
+<ol>
+<li>Go to the Campaign for which you want to create Email Campaigns.</li>
+<li><p>Click on + in front of Email Campaigns to create a new Email Campaign for the Campaign.</p>
+<p><img alt="Email Campaigns from Dashboard" class="screenshot" src="/files/campaign-dashboard.png"/></p></li>
+</ol>
+<h2 id="3-features">3. Features</h2>
+<h3 id="31-linked-communication">3.1 Linked Communication</h3>
+<p>When emails are sent to the respective leads or contacts, Communication is linked to the Email Campaign document. You can view all the emails sent in your document.</p>
+<p><img alt="Linked Communication" class="screenshot" src="/files/email-campaign-linked-comm.png"/></p>
+<h3 id="32-unsubscribe-from-email-campaign">3.2 Unsubscribe from Email Campaign</h3>
+<p>If a lead or contact does not want to continue getting emails regarding the campaign, he or she can unsubscribe from the Email Campaign via the unsubscribe link sent with the email.</p>
+<p><img alt="Unsubscribe Link" class="screenshot" src="/files/unsubscribe-link.png"/></p>
+<p>When the lead or contact unsubscribes, the status of the Email Campaign document changes to 'Unsubscribed'.</p>
+<p><img alt="Unsubscribed" class="screenshot" src="/files/email-campaign-unsubscribed.png"/></p>
+<h3 id="33-use-lead-or-contact-fields-in-email-template">3.3 Use Lead or Contact fields in Email Template</h3>
+<p>The Email Template has the context of the document you have specified in the 'Email Campaign For' field. If you want to display the fields from your Lead or Contact document in your Email Template you will have to use <code>doc.fieldname</code> for the same.
+ For example, if 'Email Campaign For' is 'Contact', you can mention the 'first name' of your Contact as <code>doc.first_name</code> in the Email Template as shown below:</p>
+<p><img alt="Email Template Document" class="screenshot" src="/files/email-template-doc.png"/>
+<img alt="" class="screenshot" src="/erpnext/v13/assets/img/crm/"/></p>
+<p>Then the emails sent would look like this:</p>
+<p><img alt="Email Campaign Doc Data" class="screenshot" src="/files/email-campaign-doc-data.png"/>
+<img alt="" class="screenshot" src="/erpnext/v13/assets/img/crm/"/></p>
+<h3 id="34-status-indication">3.4 Status indication</h3>
+<p>Status indicates the state of the Email Campaign, the various Statuses are:</p>
+<ul>
+<li><strong>Scheduled</strong>: When the Email Campaign has not yet started but scheduled on a future 'Start Date'.</li>
+<li><strong>In Progress</strong>: The campaign would be marked as 'In Progress' between 'Start Date' and 'End Date' of the campaign.</li>
+<li><strong>Completed</strong>: After the 'End Date' of the campaign, the status will be changed to 'Completed'.</li>
+<li><strong>Unsubscribed</strong>: When the Lead or Contact unsubscribes from the Campaign.</li>
+</ul>
+<p><img alt="Email Campaign Status" class="screenshot" src="/files/email-campaign-status.png"/></p>
+<h2 id="4-related-topics">4. Related Topics</h2>
+<ol>
+<li><a onclick="loadContent('campaign.html')">Campaign</a></li>
+<li><a onclick="loadContent('lead.html')">Lead</a></li>
+<li><a onclick="loadContent('contact.html')">Contact</a></li>
+</ol>
+<p>Next: <a href="/erpnext/v13/user/manual/en/CRM/newsletter">Newsletter</a></p>
+</div>
+<input class="d-none" name="wiki-page-name" value="kkbdj43fn9"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="revisionsModalTitle">Email Campaign
+</h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content">
+<h3>No Revisions</h3>
+</div>
+</div>
+</div></div></div></div></main>

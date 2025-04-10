@@ -1,0 +1,216 @@
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title">Company Setup</h1>
+</div>
+<div class="wiki-content">
+<p><strong>A company is a legal entity made up of an association of people for carrying on a commercial or industrial enterprise.</strong></p>
+<p>In KanivinERP, the first Company is created when an KanivinERP account is set up. For each Company, you can set a domain as manufacturing, retail, or services depending on the nature of your business activity.</p>
+<p>If you have more than one company, you can add them from:</p>
+<blockquote>
+<p>Home &gt; Accounting &gt; Company</p>
+</blockquote>
+<h2 id="1-how-to-create-a-new-company">1. How to create a new Company</h2>
+<ol>
+<li>Go to the Company list, click on New.</li>
+<li>Enter the name, abbreviation, and default currency for the company.</li>
+<li>Save.</li>
+</ol>
+<p>The abbreviation for your company is created by default. For example, FT for Frappe Technologies. The abbreviation helps in differentiating assets of one company from another.</p>
+<p>The abbreviation also appears in various accounts, cost centers, taxes templates, warehouse, etc, of your company.</p>
+<p>You can also attach a company logo and add a description for the company.</p>
+<p><img alt="Company Master" class="screenshot" src="/files/company-master.png"/> </p>
+<h3 id="11-multi-company-structure">1.1 Multi Company Structure</h3>
+<p>Let's assume you run a group of companies, some may be larger companies and some may be smaller that are a part of the larger company(s).</p>
+<p>In KanivinERP, you can set up multiple companies. The company structure can be parallel, i.e., sister companies, parent-child companies, or a combination of both.</p>
+<p>A parent company is a larger organization which consists of one or more child companies. A child company is a subsidiary of a parent company.</p>
+<p>The company tree view displays the overall structure of your companies.</p>
+<p><img alt="Company Tree" class="screenshot" src="/files/company-tree.png"/> </p>
+<p>Once you build a company tree, KanivinERP will validate if the accounts of the child companies match the accounts in the parent company. All the accounts can be combined in a consolidated chart of accounts statement.</p>
+<h3 id="12-other-options-when-creating-a-company">1.2 Other Options when Creating a Company</h3>
+<ul>
+<li><strong>Domain</strong>: The domain of work the company is into. Eg: manufacturing, services, etc. Choose one when setting up your account.</li>
+<li><strong>Is Group</strong>: If checked, this becomes a parent company.</li>
+<li><strong>Parent Company</strong>: If this is a child company, set the parent from this field i.e., select a group company this company belongs to. If a parent company is set, the chart of accounts for the new company you're creating will be created based on the selected parent company.</li>
+</ul>
+<h3 id="13-chart-of-accounts">1.3 Chart of Accounts</h3>
+<p>For each Company, the master for Chart of Accounts is maintained separately. This allows you to maintain separate accounting for each company as per the legal requirements. You can also import chart of accounts using the <a href="/erpnext/v13/user/manual/en/setting-up/chart-of-accounts-importer">Charts Of Accounts Importer</a>.</p>
+<p>KanivinERP has localized Chart of Accounts readily available for some countries. When creating a new Company, you can choose to set up the Chart of Account for it from one of the following options.</p>
+<ul>
+<li>Standard Chart of Accounts</li>
+<li>Based on Existing Company's Chart of Account</li>
+</ul>
+<p><img alt="Company Chart of Accounts" class="screenshot" src="/files/new-company-coa-based-on.png"/> </p>
+<p>Note that, if the Parent Company is selected when creating a new Company, the Chart of Accounts will be created based on the existing Parent Company.</p>
+<h3 id="14-defaults">1.4 Defaults</h3>
+<p>Within the Company master, you can set many of the default values for masters and accounts. These default accounts will help you in the quick posting of accounting transactions, where the value for the account will be fetched from the Company master if provided. As soon as the company is created, a default Chart Of Accounts and Cost Center is automatically created.</p>
+<p>The following defaults can be set for a company:</p>
+<ul>
+<li>Default Letter Head</li>
+<li>Default Holiday List</li>
+<li>Standard Working Hours</li>
+<li>Default Terms and Conditions</li>
+<li>Country</li>
+<li>Tax ID</li>
+<li>Date of Establishment</li>
+</ul>
+<h2 id="2-features">2. Features</h2>
+<h3 id="21-monthly-sales-target">2.1 Monthly Sales Target</h3>
+<p>Set the monthly sales target number in the company currency, for example, $10,000. Total monthly sales will be visible once transactions are made. To know more <a href="/erpnext/v13/user/manual/en/setting-up/setting-company-sales-goal">click here</a>.</p>
+<h3 id="22-account-settings">2.2 Account Settings</h3>
+<p>Some of the following accounts will be set by default when you create a new company, others can be created. The accounts can be seen in the <a href="/erpnext/v13/user/manual/en/accounts/chart-of-accounts">Chart of Accounts</a>. These values can be changed later on if needed.</p>
+<ul>
+<li>Default Bank Account</li>
+<li>Default Cash Account</li>
+<li>Default Receivable Account</li>
+<li>Round Off Account</li>
+<li>Round Off Cost Center</li>
+<li>Write Off Account</li>
+<li>Discount Allowed Account</li>
+<li>Discount Received Account</li>
+<li>Exchange Gain / Loss Account</li>
+<li>Unrealized Exchange Gain/Loss Account</li>
+<li>Default Payable Account</li>
+<li>Default Employee Advance Account</li>
+<li>Default Cost of Goods Sold Account</li>
+<li>Default Income Account</li>
+<li>Default Deferred Revenue Account</li>
+<li>Default Deferred Expense Account</li>
+<li>Default Payroll Payable Account</li>
+<li>Default Expense Claim Payable Account</li>
+<li>Default Cost Center</li>
+<li>Credit Limit</li>
+<li>Default Payment Terms Template</li>
+</ul>
+<h3 id="23-stock-and-manufacturing-settings">2.3 Stock and Manufacturing Settings</h3>
+<p>Perpetual Inventory feature would lead to Stock transactions impacting the company's books of accounts. Know more <a href="/erpnext/v13/user/manual/en/stock/perpetual-inventory">here</a>. It is enabled by default.</p>
+<ul>
+<li>Default Inventory Account</li>
+<li>Stock Adjustment Account</li>
+<li>Stock Received But Not Billed</li>
+<li>Expenses Included In Valuation</li>
+</ul>
+<p><img alt="Stock Settings in Company" class="screenshot" src="/files/company-stock-settings.png"/>
+* Default Operating Cost Account</p>
+<pre><code>+ User can set the manufacturing overhead cost account in the company master under this field.
++ Once the user created the stock entry with type Manufacture against the work order, system will fetch respective account with the operating cost in the additional cost section of the stock entry
++ On submission of the stock entry, system book the operational cost under this account
++ User has to create the Purchase Invoice to knock off the accounting effect against the Operating Cost Account
++ ![manufacturing-op-cost-account](/files/manufacturing-op-cost-account.png)
+</code></pre>
+<h3 id="24-fixed-asset-defaults">2.4 Fixed Asset Defaults</h3>
+<p>For managing fixed assets in a company, the following accounts are needed. Most of them will be created by default. They can be seen in the <a href="/erpnext/v13/user/manual/en/accounts/chart-of-accounts">Chart of Accounts</a>.</p>
+<ul>
+<li>Accumulated Depreciation Account</li>
+<li>Depreciation Expense Account</li>
+<li>Series for Asset Depreciation Entry (Journal Entry)</li>
+<li>Expenses Included In Asset Valuation</li>
+<li>Gain/Loss Account on Asset Disposal</li>
+<li>Asset Depreciation Cost Center</li>
+<li>Capital Work In Progress Account</li>
+<li>Asset Received But Not Billed</li>
+</ul>
+<p><img alt="Fixed Asset Defaults" class="screenshot" src="/files/Fixed Asset Defaults.png"/></p>
+<p>If you wish to book your accounting entries against different <a href="/erpnext/v13/user/manual/en/accounts/finance-book">Finance Books</a>, check the Enable Finance Books box and set a Default Finance Book.</p>
+<h3 id="25-hra-settings">2.5 HRA Settings</h3>
+<p>Set the default Component for the following Salary Components.</p>
+<blockquote>
+<p>For the Indian user, setting the default value in this section will help in Employee Tax Declaration calculations, especially for HRA exemption amount.</p>
+</blockquote>
+<ul>
+<li>Basic Component</li>
+<li>HRA Component</li>
+<li>Arrear Component</li>
+</ul>
+<h3 id="26-bank-remittance-settings">2.6 Bank Remittance Settings</h3>
+<p><em>Only for India.</em></p>
+<p>Using the Payment Order feature (in Accounts), you can give a single document of transfer for multiple bank transfers. Updating value in the following fields will help you generate Bank Remittance in a format which can be accepted and can be also uploaded on the bank's portal.</p>
+<p>Payment order allows a user to combine several payment entries/payment requests into a single document. Bank Remittance allows a user to send <strong>that</strong> single document to the bank as text format, this text format can be manually uploaded to Kotak bank payments platform.</p>
+<p>Client Code and Product Code are codes given by the bank to you. This is required to be added in the text file as per the format specified by Kotak bank.</p>
+<h3 id="27-budget">2.7 Budget</h3>
+<p>Exception Budget Approver Role: The role selected here can bypass the set budget to approve expenses.</p>
+<h3 id="28-company-info">2.8 Company Info</h3>
+<p>For reference, the following details of your company can be saved in KanivinERP:</p>
+<ul>
+<li>Date of Incorporation</li>
+<li>Phone No</li>
+<li>Fax</li>
+<li>Email</li>
+<li>Website</li>
+<li>Address</li>
+<li>Registration Details</li>
+</ul>
+<blockquote>
+<p>Note: When setting the address here, it is important to tick the 'Is Your Company Address' checkbox.</p>
+</blockquote>
+<p><img alt="Company Address" class="screenshot" src="/files/company-address.png"/> </p>
+<p><strong>For India</strong>, different addresses can be added with different GSTIN numbers if the company has multiple locations. For example, if your company has offices in Mumbai, Delhi, and Bangalore, you'll have to add different addresses with different GSTIN numbers.</p>
+<p><strong>Registration Details</strong>: Here you can save various tax/cheque/bank number for reference.</p>
+<h3 id="29-deleting-all-company-transactions">2.9 Deleting all Company Transactions</h3>
+<p>You can delete all transactions (Orders, Invoices) of a Company. <em>Use with caution</em>, transactions once deleted cannot be recovered.</p>
+<h4 id="requirements">Requirements</h4>
+<ul>
+<li>The User has to be a System Manager</li>
+<li>The User has to be the creator of the Company</li>
+</ul>
+<h4 id="steps">Steps</h4>
+<ol>
+<li>Click on the <strong>Delete Transactions</strong> button under <strong>Manage</strong></li>
+<li>Verify your password</li>
+<li>Enter Company name for confirmation <img alt="Company after Save" class="screenshot" src="/files/company-delete-transactions.png"/></li>
+</ol>
+<p>And you're done. The master data like Item, Account, Employee, BOM etc. will remain as it is.</p>
+<h4 id="what-is-affected">What is affected?</h4>
+<ul>
+<li>Sales/Purchase Orders/Invoices Receipts/Notes will be deleted</li>
+<li>The monthly sales and sales history will be cleared</li>
+<li>All notifications will be cleared</li>
+<li>Lead Addresses to which the Company is linked will be deleted</li>
+<li>All communications linked to the Company will be deleted</li>
+<li>All naming series will be reset</li>
+<li>Stock Entries linked to a Warehouse of this Company will be deleted</li>
+</ul>
+<blockquote>
+<p>Introduced in Version 13.</p>
+</blockquote>
+<h3 id="210-change-parent-company">2.10 Change Parent Company</h3>
+<p>You can change the Parent Company of an existing company. Go to the Parent Company field, select the Company from the list, and save the form. <img alt="Change Parent Company" class="screenshot" src="/files/parent_company.gif"/> </p>
+<h3 id="3-related-topics">3. Related Topics</h3>
+<ol>
+<li><a onclick="loadContent('setting-up-taxes.html')">Setting Up Taxes</a></li>
+<li><a onclick="loadContent('system-settings.html')">System Settings</a></li>
+<li><a onclick="loadContent('chart-of-accounts-importer.html')">Charts Of Accounts Importer</a></li>
+<li><a onclick="loadContent('users-and-permissions.html')">Users and Permissions</a></li>
+<li><a onclick="loadContent('adding-users.html')">Adding Users</a></li>
+<li><a onclick="loadContent('letter-head.html')">Letter Head</a></li>
+<li><a onclick="loadContent('email-account.html')">Email Account</a></li>
+<li><a onclick="loadContent('administrator.html')">Administrator</a></li>
+</ol>
+</div>
+<input class="d-none" name="wiki-page-name" value="p4ir42f4fe"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="revisionsModalTitle">Company Setup</h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content">
+<h3>No Revisions</h3>
+</div>
+</div>
+</div></div></div></div></main>

@@ -1,0 +1,50 @@
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title">Capacity Planning based on Production Order</h1>
+</div>
+<div class="wiki-content">
+<p>Capacity Planning functionality helps you in tracking production jobs allocated on each Workstation.</p>
+<p><img alt="" class="screenshot" src="/files/Screen Shot 2017-01-30 at 8.06.24 PM.png"/></p>
+<p>Follow are the steps to use Capacity Planning Feature in your KanivinERP account.</p>
+<p><strong>Operations</strong></p>
+<p>To add operations, go to: Manufacturing &gt; Bill of Materials &gt; Operations</p>
+<p><strong>Workstation</strong></p>
+<p>Add each Workstation in your KanivinERP account from: Manufacturing &gt; Bill of Materials &gt; Workstation</p>
+<p>In the Workstation master, you can define which operations will be performed on it, what are the cost associated with it, and what are the working hours of that Workstation.</p>
+<p><strong>Bill of Materials (BOM)</strong></p>
+<p>In a BOM, with the list of raw material needed, for manufacturing, you can also list operation and workstations through which those raw materials will be processed.</p>
+<p><strong>Production Order</strong></p>
+<p>On submission of Production Order, Timesheet for Operations. This helps you allocate production jobs on each Workstation, as well as you can update actual time taken for each Operation.</p>
+<p>--</p>
+<p><strong>Question</strong> : On Submission of Production Order, we are getting following error message.</p>
+<p><img alt="" class="screenshot" src="/files/Screen Shot 2017-01-30 at 8.12.40 PM.png"/></p>
+<p><strong>Answer</strong> : Please check if you have updated Working Hours in the Workstation master? If not, then please update it and then try to submit Production Order. On submission of Production Order, Operations (as added in the BOM) are allocated on the workstation. Each operation should start and end on the same day. If a system is not able to schedule that operation in a day, then system request you to divide that Project, so that system can allocate smaller operations in a day. If you have update working hours in the Workstation, but still getting this issue, that because one of your operation is taking too long, and cannot be completed in a day. Please divide that operation into smaller operations, so that it can be allocated on Workstation and completed on the same day.</p>
+</div>
+<input class="d-none" name="wiki-page-name" value="ll3gphrb3s"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="revisionsModalTitle">Capacity Planning based on Production Order</h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content">
+<h3>No Revisions</h3>
+</div>
+</div>
+</div></div></div></div></main>

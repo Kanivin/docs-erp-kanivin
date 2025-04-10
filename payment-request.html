@@ -1,0 +1,78 @@
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title">Payment Request
+</h1>
+</div>
+<div class="wiki-content">
+<p><strong>A Payment Request is used to request payment from a Customer for a Sales Order or Invoice.</strong></p>
+<p>Payment Request is sent via email and will contain a link to a Payment Gateway if set up. You can create a payment request via a Sales Order or a Sales Invoice. A Payment Request can also be set up against a Purchase Order or a Purchase Invoice for internal records. Then, payments can be processed in bulk using a <a href="/erpnext/v13/user/manual/en/accounts/payment-order">Payment Order</a>.</p>
+<p>To access Payment Request go to:</p>
+<blockquote>
+<p>Home &gt; Accounting &gt; Accounts Receivable &gt; Payment Request</p>
+</blockquote>
+<h2 id="1-prerequisites">1. Prerequisites</h2>
+<p>Before creating and using Payment Request, it is advisable to create the following first:</p>
+<ol>
+<li><a onclick="loadContent('sales-invoice.html')">Sales Invoice</a></li>
+<li><a onclick="loadContent('purchase-invoice.html')">Purchase Invoice</a></li>
+<li><a onclick="loadContent('sales-order.html')">Sales Order</a></li>
+<li><a onclick="loadContent('purchase-order.html')">Purchase Order</a></li>
+</ol>
+<h2 id="2-how-to-create-a-payment-request">2. How to create a Payment Request</h2>
+<p>A Payment Request cannot be created manually, it is created from a Sales/Purchase Order or Invoice.</p>
+<h3 id="21-creating-payment-request-via-sales-order">2.1 Creating Payment Request via Sales Order</h3>
+<p>In a Sales Order, click on Create and then click on Payment to make an advance payment. To know more about advance payment, visit the <a href="/erpnext/v13/user/manual/en/accounts/advance-payment-entry">Advance Payment Entry</a> page.</p>
+<p><img alt="Payment Request From Sales Order" class="screenshot" src="/files/payment-request-from-sales-order.png"/></p>
+<h3 id="22-creating-payment-request-via-sales-invoice">2.2 Creating Payment Request via Sales Invoice</h3>
+<p>In a Sales Invoice, click on Create and then click on Payment to make payment against the invoice.</p>
+<p><img alt="Payment Request From Sales Invoice" class="screenshot" src="/files/payment-request-from-sales-invoice.png"/></p>
+<p>Select appropriate Payment Gateway Account on Payment Request for accounts posting. Account head specified on payment gateway will be considered to create a Journal Entry.</p>
+<blockquote>
+<p>Note: Invoice/Order currency and 'Payment Gateway Account' currency should be the same.</p>
+</blockquote>
+<p><img alt="Payment Request Details" class="screenshot" src="/files/payment-request-details.png"/></p>
+<h3 id="23-notifying-the-customer">2.3 Notifying the Customer</h3>
+<p>You can notify customer from Payment Request using <a href="/erpnext/v13/user/manual/en/setting-up/print/print-format">Print Format</a>. If the customer contact email is set, it will be fetched automatically. If not so you can set an email address in Payment Request.</p>
+<p><img alt="Payment Request Details" class="screenshot" src="/files/payment-request-recipient-details.png"/></p>
+<h3 id="24-request-mail">2.4 Request Mail</h3>
+<p>Here is an example request email. The URL is generated automatically if you've set up the respective payment integration. To know more about integrations, <a href="/erpnext/v13/user/manual/en/erpnext_integration">visit this page</a>.</p>
+<p><img alt="Payment Request" class="screenshot" src="/files/pr-email.png"/></p>
+<h3 id="25-payment-request-without-using-any-gateway">2.5 Payment Request without using any Gateway</h3>
+<p>In case you don't want to use any integration or payment gateway and only want to send a notification, simply set the Bank Account. You'll have to compose the message accordingly with bank details. The party can then transfer the amount to the mentioned bank account.</p>
+<h2 id="3-related-topics">3. Related Topics</h2>
+<ol>
+<li><a onclick="loadContent('payment-entry.html')">Payment Entry</a></li>
+<li><a onclick="loadContent('payment-terms.html')">Payment Terms</a></li>
+<li><a onclick="loadContent('sales-invoice.html')">Sales Invoice</a></li>
+<li><a onclick="loadContent('purchase-invoice.html')">Purchase Invoice</a></li>
+</ol>
+</div>
+<input class="d-none" name="wiki-page-name" value="2jgvst00ng"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="revisionsModalTitle">Payment Request
+</h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content">
+<h3>No Revisions</h3>
+</div>
+</div>
+</div></div></div></div></main>

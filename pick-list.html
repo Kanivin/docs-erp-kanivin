@@ -1,0 +1,121 @@
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title">Pick List</h1>
+</div>
+<div class="wiki-content">
+<p><strong>A Pick List is a document that indicates which items should be taken from your inventory to fulfill orders.</strong></p>
+<p>This is particularly useful for shippers with a large amount of inventory, volume of orders, or customers ordering many Stock Keeping Unit(SKU). Pick list selects Warehouse where an Item is available on FIFO (First-In-First-Out) basis. Selection of Warehouse for a batched item is different. In case of batched items, Warehouse where the batch is nearer to its expiry will be selected.</p>
+<p>To access Pick List, go to:</p>
+<blockquote>
+<p>Home &gt; Stock &gt; Stock Transactions &gt; Pick List</p>
+</blockquote>
+<h2 id="1-prerequisites">1. Prerequisites</h2>
+<p>Before creating and using a Pick List, it is advised that you create the following first:</p>
+<ul>
+<li><a onclick="loadContent('item.html')">Stock Item</a></li>
+<li><a onclick="loadContent('warehouse.html')">Warehouse</a></li>
+</ul>
+<h2 id="2-how-to-create-pick-list">2. How to create Pick List</h2>
+<ol>
+<li>Go to the Pick List list, click on New. <img alt="Unsaved Pick List" class="screenshot" src="/files/pick-list-unsaved-doc.png"/></li>
+<li>Set the Company.</li>
+<li><p>Select the Purpose of Pick List. These are the options under Purpose:</p>
+<ul>
+<li><strong>Delivery:</strong> This option will let you add Items from a Sales Order, to deliver. After submitting Pick List a new Delivery Note can be created based on the Warehouse from which items were picked.</li>
+<li><strong>Material Transfer for Manufacture:</strong> This will let you select a Work Order from which raw materials will be pulled for picking. You will be presented with an option to select the number of finished goods for which you want to pick raw materials. After picking the stock you can create Stock Entry for the picked items i.e., raw materials.</li>
+<li><strong>Material Transfer:</strong> This will let you select a Material Request for which you want to pick items. After picking the stock you can create a Stock Entry for the picked items.</li>
+</ul></li>
+<li>Add Item and the quantity you want to pick in the Item Locations table. Click on <strong>Get Item Locations</strong> to get the Warehouse and other details for each Item.</li>
+<li><strong>Parent Warehouse:</strong> If a parent Warehouse is selected, Warehouses only under that parent Warehouse will be suggested.</li>
+<li><strong>Get Item Locations:</strong> Once items to be picked is finalized you can click on the <strong>Get Item Locations</strong> button to get Warehouse selection for each item. Since Warehouse will be automatically fetched if you get an Item from any reference document, this button can be useful to manually add additional Items or change the quantity of existing Items in the Item Locations table.</li>
+<li><strong>Item Locations:</strong> This will have the information of the item location (Warehouse), Serial Number for serialized items and batch no for batched items. <img alt="Item Locations" class="screenshot" src="/files/pick-list-item-locations.png"/> </li>
+</ol>
+<p>If Serial Numbers are involved, the Item row will look like this: <img alt="Item Location Detail" class="screenshot" src="/files/pick-list-item-location-detail.png"/>
+8. Save and Submit. <img alt="Submitted Pick List" class="screenshot" src="/files/pick-list-submitted-doc.png"/></p>
+<h3 id="21-create-pick-list-from-a-sales-order">2.1 Create Pick List from a Sales Order</h3>
+<ol>
+<li>Go to a <a onclick="loadContent('sales-order.html')">Sales Order</a>.</li>
+<li>Click on the <strong>Create</strong> button on the top right of the form and then click the <strong>Pick List</strong> option.</li>
+<li>Once you click Pick List, all the data required for Pick List will be fetched from the Sales Order.</li>
+<li>Alternatively, you can create a new Pick List and click on "Get Items". This would show a popup of all pending Sales Orders.</li>
+</ol>
+<p><img alt="" class="screenshot" src="/files/Screenshot 2021-12-29 at 12.04.24 PM.png"/> </p>
+<ol>
+<li>You should be able to see the Item Locations Table with the Warehouse selected for each item.</li>
+<li>Save this document and it can be used for stock picking by the person performing this activity.</li>
+<li>Submit the document once the stock picking is done and picked item quantities are updated in the document.</li>
+</ol>
+<blockquote>
+<p><strong>Note:</strong> &gt; &gt; - Pick list can only be created for Sales Orders which has '% picked' &lt; 100 &gt; - A <strong>Delivery Note</strong> can be created only if the Pick List is submitted.</p>
+</blockquote>
+<h3 id="22-create-pick-list-from-a-work-order">2.2 Create Pick List from a Work Order</h3>
+<ol>
+<li>Go to a <a onclick="loadContent('work-order.html')">Work Order</a>.</li>
+<li>Click <strong>Create Pick List</strong> button.</li>
+<li>You'll see the dialog box asking for the quantity of Finished Goods Item. This is required to calculate the number of raw material items required to manufacture the entered quantity of Finished Goods Item. <img alt="Dialog For qty" class="screenshot" src="/files/pick-list-dialog-for-qty.png"/></li>
+<li>You should be able to see the Item locations table with the Warehouse selected for each raw material item.</li>
+<li>Save this document and then this document can be forwarded to the person who is picking the stock.</li>
+<li>Submit the document once the stock picking is done and the picked item is updated in the document accordingly.</li>
+</ol>
+<blockquote>
+<p><strong>Note:</strong> &gt; &gt; - Pick list can only be created for Work Orders that are still in the state of 'Not Started' or 'In Progress'. &gt; - A <strong>Stock Entry</strong> can be created only after the Pick List is submitted.</p>
+</blockquote>
+<h3 id="23-create-pick-list-from-material-request">2.3 Create Pick List from Material Request</h3>
+<ol>
+<li>Go to a <a onclick="loadContent('material-request.html')">Material Request</a>.</li>
+<li>Click on <strong>Create</strong> button and then click <strong>Pick List</strong> option.</li>
+<li>You should be able to see the Item Locations table with the Warehouse selected for each item in Material Request.</li>
+<li>Save this document and then this document can be forwarded to the person picking the stock.</li>
+<li>Submit the document once the stock picking is done and the picked item is updated in the document accordingly.</li>
+</ol>
+<blockquote>
+<p><strong>Note:</strong> &gt; &gt; - Only Material Requests with type 'Material Transfer' can be used for Pick List creation. &gt; - A <strong>Stock Entry</strong> of type 'Material Transfer' can be created after the Pick List is submitted.</p>
+</blockquote>
+<h2 id="3-features">3. Features</h2>
+<h3 id="31-update-current-stock">3.1. Update Current Stock</h3>
+<p>If a Pick List is outdated, there could be a shift in stock availability by the time a Delivery Note or Stock Entry is created against it. Clicking <strong>Update Current Stock</strong> will update the quantities and warehouses in the Item Locations table.</p>
+<blockquote>
+<p><strong>Note:</strong> This button is visible as long as there are no Delivery Notes or Stock Entries against the Pick List.</p>
+</blockquote>
+<h3 id="32-barcode-scanning">3.2 Barcode Scanning</h3>
+<p>Pick list supports barcode scanning, introducing two check boxes. <strong>Scan Mode</strong>, and <strong>Prompt Qty</strong>.</p>
+<p><strong>Scan Mode</strong>: Scan Mode in KanivinERP's Pick List feature is designed to streamline and verify the item-picking process in a warehouse or store environment. When using Scan Mode, users can scan barcodes on items to confirm that they are picking the correct products according to the Picklist. This mode is particularly useful for ensuring accuracy and efficiency during the picking process.</p>
+<p><strong>Prompt Qty</strong>: When enabled, instead of incrementing the scanned items qty by 1, a dialog will prompt the user to enter a qty to increment by.</p>
+<h2 id="4-pick-manually">4. Pick Manually</h2>
+<p>In the pick list, if a user manually selects batches, the system overrides the changes upon saving the pick list. To solve this issue added a checkbox 'Pick Manually' in the pick list. If this checkbox is enabled, the system will not override the user's changes in the pick list.</p>
+<p><img alt="pick_manual" class="screenshot" src="/files/pick_manual.gif"/> </p>
+<h2 id="5-related-topics">5. Related Topics</h2>
+<ol>
+<li><a onclick="loadContent('sales-order.html')">Sales Order</a></li>
+<li><a onclick="loadContent('work-order.html')">Work Order</a></li>
+<li><a onclick="loadContent('material-request.html')">Material Request</a></li>
+</ol>
+</div>
+<input class="d-none" name="wiki-page-name" value="1ii99qplg5"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="revisionsModalTitle">Pick List</h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content">
+<h3>No Revisions</h3>
+</div>
+</div>
+</div></div></div></div></main>

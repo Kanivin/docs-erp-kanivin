@@ -1,0 +1,531 @@
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title" id="accounts-settings">Accounts Settings<a aria-hidden="true" class="no-underline" href="#accounts-settings">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h1>
+</div>
+<div class="wiki-content">
+<p>KanivinERP allows you to configure some aspects of Accounting as per your business rules. This page will help you understand how you can leverage this to cater to various scenarios encountered by you.</p>
+<h2 id="transactions-settings">Transactions Settings<a aria-hidden="true" class="no-underline" href="#transactions-settings">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h2>
+<p><img alt="Screenshot 2024-06-03 at 11.08.05 AM" class="screenshot" src="/files/Screenshot 2024-06-03 at 11.08.05 AM.png"/> </p>
+<h3 id="1-over-billing-allowance-">1. Over Billing Allowance (%)<a aria-hidden="true" class="no-underline" href="#1-over-billing-allowance-">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<p>The percentage by which you can overbill transactions. For example, if the order value is $100 for an Item and percentage here is set as 10% then you are allowed to bill for $110.</p>
+<h3 id="2-role-allowed-to-over-bill">2. Role Allowed to Over Bill<a aria-hidden="true" class="no-underline" href="#2-role-allowed-to-over-bill">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<p>Users with this role are allowed to over bill above the allowance percentage.</p>
+<h3 id="3-check-supplier-invoice-number-uniqueness">3. Check Supplier Invoice Number Uniqueness<a aria-hidden="true" class="no-underline" href="#3-check-supplier-invoice-number-uniqueness">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<p>When checked, Purchase Invoices with same 'Supplier Invoice No' will not be allowed. This is useful to avoid duplicate entries.</p>
+<h3 id="4-unlink-payment-on-cancellation-of-invoice">4. Unlink Payment on Cancellation of Invoice<a aria-hidden="true" class="no-underline" href="#4-unlink-payment-on-cancellation-of-invoice">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<p>If checked, system will unlink the payment against the respective invoice. By default, if a Payment Entry is submitted, the linked invoice cannot be canceled until the Payment Entry is also canceled. On unlinking, you can now cancel and amend the invoices. But the payments not be linked and considered as advance payments.</p>
+<h3 id="5-automatically-fetch-payment-terms-from-order">5. Automatically Fetch Payment Terms from Order<a aria-hidden="true" class="no-underline" href="#5-automatically-fetch-payment-terms-from-order">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<p>Enabling this will automatically fetch the Payment Terms from a Purchase/Sales Order to its linked Purchase/Sales Invoice.</p>
+<h3 id="6-delete-accounting-and-stock-ledger-entries-on-deletion-of-transaction">6. Delete Accounting and Stock Ledger Entries on deletion of Transaction<a aria-hidden="true" class="no-underline" href="#6-delete-accounting-and-stock-ledger-entries-on-deletion-of-transaction">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<p>Enabling this will allow the deletion of linked General Ledger and Stock Ledger Entries on deleting invoices and receipts. This can be checked if you don't want to lose the document ID after cancelling the document. You can now cancel and delete the document to get the same document ID again.</p>
+<h3 id="7-book-asset-depreciation-entry-automatically">7. Book Asset Depreciation Entry Automatically<a aria-hidden="true" class="no-underline" href="#7-book-asset-depreciation-entry-automatically">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<p>When checked, an automatic entry for an asset depreciation will be created based on the first date set. For example, yearly depreciation for an item will be scheduled for the next 3/4 years based on the Number of Depreciations Booked set in the Asset master. For more details, visit the <a href="/erpnext/v13/user/manual/en/asset/asset-depreciation">Asset Depreciation</a> page.</p>
+<h3 id="8-unlink-advance-payment-on-cancellation-of-order">8. Unlink Advance Payment on Cancellation of Order<a aria-hidden="true" class="no-underline" href="#8-unlink-advance-payment-on-cancellation-of-order">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<p>Similar to the previous option, this unlinks any advance payments made against Purchase/Sales Orders.</p>
+<h3 id="9-enable-common-party-accounting">9. Enable Common Party Accounting<a aria-hidden="true" class="no-underline" href="#9-enable-common-party-accounting">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<p>If checked, an adjustment Journal Entry will be posted automatically on creation of Sales/Purchase Invoices against common Customer &amp; Supplier. For more details, visit <a href="/erpnext/v13/user/manual/en/accounts/articles/common_party_accounting">Common Party Accounting</a></p>
+<h3 id="10-allow-multi-currency-invoices-against-single-party-account">10. Allow multi-currency invoices against single party account<a aria-hidden="true" class="no-underline" href="#10-allow-multi-currency-invoices-against-single-party-account">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<p>Enabling this will allow creation of multi-currency invoices against single party account in company currency.</p>
+<h3 id="11-create-ledger-entries-for-change-amount">11. Create Ledger Entries for Change Amount<a aria-hidden="true" class="no-underline" href="#11-create-ledger-entries-for-change-amount">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<p>If checked, for a Point of Sale invoice, the system will post ledger entries considering the change amount given.</p>
+<h3 id="12-enable-discount-accounting">12. Enable Discount Accounting<a aria-hidden="true" class="no-underline" href="#12-enable-discount-accounting">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<p>If checked, Discount Accounts can be added in the Items table of Sales Invoices, which will allow you to account for Discounts applied on Items more efficiently. It also lets you add Default Discount Accounts for Items, which will be fetched automatically when the Item is added to a Sales Invoice.</p>
+<h2 id="tax-settings">Tax Settings<a aria-hidden="true" class="no-underline" href="#tax-settings">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h2>
+<p><img alt="Screenshot 2024-06-03 at 11.12.55 AM" class="screenshot" src="/files/Screenshot 2024-06-03 at 11.12.55 AM.png"/> </p>
+<h3 id="1-determine-address-tax-category-from">1. Determine Address Tax Category From<a aria-hidden="true" class="no-underline" href="#1-determine-address-tax-category-from">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<p><a href="/erpnext/v13/user/manual/en/accounts/tax-category">Tax category</a> can be set on Addresses. An address can be Shipping or Billing address. Set which addres to select when applying Tax Category.</p>
+<h3 id="2-automatically-add-taxes-and-charges-from-item-tax-template">2. Automatically Add Taxes and Charges from Item Tax Template<a aria-hidden="true" class="no-underline" href="#2-automatically-add-taxes-and-charges-from-item-tax-template">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<p>Enabling this will populate the Taxes table in transactions if an <a href="/erpnext/v13/user/manual/en/accounts/item-tax-template">Item Tax Template</a> is set for an Item and that Item is selected in the transaction.</p>
+<h3 id="3-book-tax-loss-on-early-payment-discount">3. Book Tax Loss on Early Payment Discount<a aria-hidden="true" class="no-underline" href="#3-book-tax-loss-on-early-payment-discount">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<p>Enabling this will split the Payment Entry discount deductions into Income Loss and Tax Loss if the document against the Payment Entry has an <a href="/erpnext/v14/user/manual/en/accounts/payment-terms#11-setting-up-discount-on-early-payments">Early Payment Discount</a> set.</p>
+<h2 id="period-closing-settings">Period Closing Settings<a aria-hidden="true" class="no-underline" href="#period-closing-settings">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h2>
+<p><img alt="Screenshot 2024-06-03 at 11.14.36 AM" class="screenshot" src="/files/Screenshot 2024-06-03 at 11.14.36 AM.png"/> </p>
+<h3 id="1-accounts-frozen-till-date">1. Accounts Frozen Till Date<a aria-hidden="true" class="no-underline" href="#1-accounts-frozen-till-date">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<p>Freeze accounting transactions up to specified date, nobody can make/modify entry except the specified Role.</p>
+<h3 id="2-role-allowed-to-set-frozen-accounts-and-edit-frozen-entries">2. Role Allowed to Set Frozen Accounts and Edit Frozen Entries<a aria-hidden="true" class="no-underline" href="#2-role-allowed-to-set-frozen-accounts-and-edit-frozen-entries">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<p>Users with this Role are allowed to set frozen accounts and create/modify accounting entries against frozen accounts.</p>
+<h3 id="3-credit-controller">3. Credit Controller<a aria-hidden="true" class="no-underline" href="#3-credit-controller">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<p>This role is allowed to submit transactions that exceed credit limit.</p>
+<h2 id="deferred-accounting-settings">Deferred Accounting Settings<a aria-hidden="true" class="no-underline" href="#deferred-accounting-settings">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h2>
+<p><img alt="Screenshot 2024-06-03 at 11.16.37 AM" class="screenshot" src="/files/Screenshot 2024-06-03 at 11.16.37 AM.png"/> </p>
+<h3 id="1-book-deferred-entries-based-on">1. Book Deferred Entries Based On<a aria-hidden="true" class="no-underline" href="#1-book-deferred-entries-based-on">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<p>Deferred revenue amount can be booked based on two criteria. The default option here is "Days". If "Days" is selected, the deferred revenue amount will be booked based on the number of days in each month and if "Months" is selected, then it will be booked based on number of months. <strong>For Eg:</strong> If "Days" is selected and $12000 revenue has to be deferred over a period of 12 months, then $986.30 will be for the month having 30 days and $1019.17 will be booked for the month having 31 days. If "Months" is selected, $1000 deferred revenue will booked each month irrespective of the number of days in a month.</p>
+<h3 id="2-automatically-process-deferred-accounting-entry">2. Automatically Process Deferred Accounting Entry<a aria-hidden="true" class="no-underline" href="#2-automatically-process-deferred-accounting-entry">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<p>This setting is enabled by default. In case you don't want the deferred accounting entries to be posted automatically you can disable this setting. If this setting is disabled deferred accounting will have to be processed manually using <a href="/erpnext/v13/user/manual/en/accounts/process-deferred-accounting">Process Deferred Accounting</a></p>
+<h3 id="3-book-deferred-entries-via-journal-entry">3. Book Deferred Entries Via Journal Entry<a aria-hidden="true" class="no-underline" href="#3-book-deferred-entries-via-journal-entry">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<p>By default Ledger Entries are posted directly to book deferred revenue against an invoice. In order to book this deferred amount posting via Journal Entry, this option can be enabled.</p>
+<h2 id="print-settings">Print Settings<a aria-hidden="true" class="no-underline" href="#print-settings">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h2>
+<p><img alt="Screenshot 2024-06-03 at 11.19.05 AM" class="screenshot" src="/files/Screenshot 2024-06-03 at 11.19.05 AM.png"/> </p>
+<h3 id="1-show-inclusive-tax-in-print">1. Show Inclusive Tax In Print<a aria-hidden="true" class="no-underline" href="#1-show-inclusive-tax-in-print">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<p>It allows you to display the tax amounts inclusive of the item prices on printed documents such as invoices and sales orders.</p>
+<h3 id="2-show-taxes-as-table-in-print">2. Show Taxes as Table in Print<a aria-hidden="true" class="no-underline" href="#2-show-taxes-as-table-in-print">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<p>It allows you to display tax details in a tabular format on printed documents such as invoices, purchase orders, and sales orders.</p>
+<h3 id="3-show-payment-schedule-in-print">3. Show Payment Schedule in Print<a aria-hidden="true" class="no-underline" href="#3-show-payment-schedule-in-print">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<p>The Payment Schedule table is visible on using <a href="/erpnext/v13/user/manual/en/accounts/payment-terms">Payment Terms</a>. Enabling this will show this table in print view.</p>
+<h2 id="currency-exchange-settings">Currency Exchange Settings<a aria-hidden="true" class="no-underline" href="#currency-exchange-settings">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h2>
+<p><img alt="Screenshot 2024-06-03 at 11.22.56 AM" class="screenshot" src="/files/Screenshot 2024-06-03 at 11.22.56 AM.png"/> </p>
+<h3 id="1-allow-stale-exchange-rates">1. Allow Stale Exchange Rates<a aria-hidden="true" class="no-underline" href="#1-allow-stale-exchange-rates">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<p>This should be unchecked if you want KanivinERP to check the age of records fetched from Currency Exchange in foreign currency transactions. If it is unchecked, the exchange rate field will be read-only in documents.</p>
+<p>Stale Days is the number of days to use when deciding if a Currency Exchange record is stale. This is valid when 'Allow Stale Rates' is <strong>disabled</strong>. So, if the Stale Days is set as 10, stale rates that are 10 days will be allowed. If Allow Stale Rates is enabled, there is no time limit on the age of stale rates.</p>
+<p>If stale rates are enabled, the order of fetching is:</p>
+<ul>
+<li>Latest rate from Currency Exchange form</li>
+<li>If no Currency Exchange is found latest rate as per market is fetched automatically</li>
+</ul>
+<p>If stale rates are disabled, the order of fetching is:</p>
+<ul>
+<li>Latest rate from Currency Exchange form upto number of days set in 'Stale Days'</li>
+<li>If no Currency Exchange is found Latest rate as per market is fetched automatically</li>
+</ul>
+<h2 id="report-settings">Report Settings<a aria-hidden="true" class="no-underline" href="#report-settings">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h2>
+<p><img alt="Screenshot 2024-06-03 at 11.23.29 AM" class="screenshot" src="/files/Screenshot 2024-06-03 at 11.23.29 AM.png"/> </p>
+<h3 id="1-use-custom-cash-flow-format">1. Use Custom Cash Flow Format<a aria-hidden="true" class="no-underline" href="#1-use-custom-cash-flow-format">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<p>You may choose to use Custom Cash Flow Formats to customize what the Cash Flow report looks like. To know more, <a href="/erpnext/user/manual/en/customise-cash-flow-report">visit here.</a></p>
+</div>
+<input class="d-none" name="wiki-page-name" value="lvmbpm2f0i"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="accounts-settings">Accounts Settings<a aria-hidden="true" class="no-underline" href="#accounts-settings">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content"><del class="diffmod">
+</del><ins class="diffmod">
+</ins><p><ins class="diffmod">KanivinERP allows you to configure some aspects of Accounting as per your business rules. This page will help you understand how you can leverage this to cater to various scenarios encountered by you.</ins></p><ins class="diffmod">
+</ins><h2 id="transactions-settings"><ins class="diffmod">Transactions Settings</ins><a aria-hidden="true" class="no-underline" href="#transactions-settings"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h2><ins class="diffmod">
+</ins><p><ins class="diffmod"><img alt="Screenshot 2024-06-03 at 11.08.05 AM" class="screenshot" src="/files/Screenshot 2024-06-03 at 11.08.05 AM.png"/> </ins></p><ins class="diffmod">
+</ins><h3 id="1-over-billing-allowance-"><del class="diffmod">No</del><ins class="diffmod">1.</ins> <del class="diffmod">Revisions</del><ins class="diffmod">Over Billing Allowance (%)</ins><a aria-hidden="true" class="no-underline" href="#1-over-billing-allowance-">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3><del class="diffmod">
+</del><ins class="diffmod">
+</ins><p><ins class="diffmod">The percentage by which you can overbill transactions. For example, if the order value is $100 for an Item and percentage here is set as 10% then you are allowed to bill for $110.</ins></p><ins class="diffmod">
+</ins><h3 id="2-role-allowed-to-over-bill"><ins class="diffmod">2. Role Allowed to Over Bill</ins><a aria-hidden="true" class="no-underline" href="#2-role-allowed-to-over-bill"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h3><ins class="diffmod">
+</ins><p><ins class="diffmod">Users with this role are allowed to over bill above the allowance percentage.</ins></p><ins class="diffmod">
+</ins><h3 id="3-check-supplier-invoice-number-uniqueness"><ins class="diffmod">3. Check Supplier Invoice Number Uniqueness</ins><a aria-hidden="true" class="no-underline" href="#3-check-supplier-invoice-number-uniqueness"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h3><ins class="diffmod">
+</ins><p><ins class="diffmod">When checked, Purchase Invoices with same 'Supplier Invoice No' will not be allowed. This is useful to avoid duplicate entries.</ins></p><ins class="diffmod">
+</ins><h3 id="4-unlink-payment-on-cancellation-of-invoice"><ins class="diffmod">4. Unlink Payment on Cancellation of Invoice</ins><a aria-hidden="true" class="no-underline" href="#4-unlink-payment-on-cancellation-of-invoice"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h3><ins class="diffmod">
+</ins><p><ins class="diffmod">If checked, system will unlink the payment against the respective invoice. By default, if a Payment Entry is submitted, the linked invoice cannot be canceled until the Payment Entry is also canceled. On unlinking, you can now cancel and amend the invoices. But the payments not be linked and considered as advance payments.</ins></p><ins class="diffmod">
+</ins><h3 id="5-automatically-fetch-payment-terms-from-order"><ins class="diffmod">5. Automatically Fetch Payment Terms from Order</ins><a aria-hidden="true" class="no-underline" href="#5-automatically-fetch-payment-terms-from-order"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h3><ins class="diffmod">
+</ins><p><ins class="diffmod">Enabling this will automatically fetch the Payment Terms from a Purchase/Sales Order to its linked Purchase/Sales Invoice.</ins></p><ins class="diffmod">
+</ins><h3 id="6-delete-accounting-and-stock-ledger-entries-on-deletion-of-transaction"><ins class="diffmod">6. Delete Accounting and Stock Ledger Entries on deletion of Transaction</ins><a aria-hidden="true" class="no-underline" href="#6-delete-accounting-and-stock-ledger-entries-on-deletion-of-transaction"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h3><ins class="diffmod">
+</ins><p><ins class="diffmod">Enabling this will allow the deletion of linked General Ledger and Stock Ledger Entries on deleting invoices and receipts. This can be checked if you don't want to lose the document ID after cancelling the document. You can now cancel and delete the document to get the same document ID again.</ins></p><ins class="diffmod">
+</ins><h3 id="7-book-asset-depreciation-entry-automatically"><ins class="diffmod">7. Book Asset Depreciation Entry Automatically</ins><a aria-hidden="true" class="no-underline" href="#7-book-asset-depreciation-entry-automatically"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h3><ins class="diffmod">
+</ins><p><ins class="diffmod">When checked, an automatic entry for an asset depreciation will be created based on the first date set. For example, yearly depreciation for an item will be scheduled for the next 3/4 years based on the Number of Depreciations Booked set in the Asset master. For more details, visit the </ins><a href="/erpnext/v13/user/manual/en/asset/asset-depreciation"><ins class="diffmod">Asset Depreciation</ins></a><ins class="diffmod"> page.</ins></p><ins class="diffmod">
+</ins><h3 id="8-unlink-advance-payment-on-cancellation-of-order"><ins class="diffmod">8. Unlink Advance Payment on Cancellation of Order</ins><a aria-hidden="true" class="no-underline" href="#8-unlink-advance-payment-on-cancellation-of-order"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h3><ins class="diffmod">
+</ins><p><ins class="diffmod">Similar to the previous option, this unlinks any advance payments made against Purchase/Sales Orders.</ins></p><ins class="diffmod">
+</ins><h3 id="9-enable-common-party-accounting"><ins class="diffmod">9. Enable Common Party Accounting</ins><a aria-hidden="true" class="no-underline" href="#9-enable-common-party-accounting"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h3><ins class="diffmod">
+</ins><p><ins class="diffmod">If checked, an adjustment Journal Entry will be posted automatically on creation of Sales/Purchase Invoices against common Customer &amp; Supplier. For more details, visit </ins><a href="/erpnext/v13/user/manual/en/accounts/articles/common_party_accounting"><ins class="diffmod">Common Party Accounting</ins></a></p><ins class="diffmod">
+</ins><h3 id="10-allow-multi-currency-invoices-against-single-party-account"><ins class="diffmod">10. Allow multi-currency invoices against single party account</ins><a aria-hidden="true" class="no-underline" href="#10-allow-multi-currency-invoices-against-single-party-account"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h3><ins class="diffmod">
+</ins><p><ins class="diffmod">Enabling this will allow creation of multi-currency invoices against single party account in company currency.</ins></p><ins class="diffmod">
+</ins><h3 id="11-create-ledger-entries-for-change-amount"><ins class="diffmod">11. Create Ledger Entries for Change Amount</ins><a aria-hidden="true" class="no-underline" href="#11-create-ledger-entries-for-change-amount"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h3><ins class="diffmod">
+</ins><p><ins class="diffmod">If checked, for a Point of Sale invoice, the system will post ledger entries considering the change amount given.</ins></p><ins class="diffmod">
+</ins><h3 id="12-enable-discount-accounting"><ins class="diffmod">12. Enable Discount Accounting</ins><a aria-hidden="true" class="no-underline" href="#12-enable-discount-accounting"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h3><ins class="diffmod">
+</ins><p><ins class="diffmod">If checked, Discount Accounts can be added in the Items table of Sales Invoices, which will allow you to account for Discounts applied on Items more efficiently. It also lets you add Default Discount Accounts for Items, which will be fetched automatically when the Item is added to a Sales Invoice.</ins></p><ins class="diffmod">
+</ins><h2 id="tax-settings"><ins class="diffmod">Tax Settings</ins><a aria-hidden="true" class="no-underline" href="#tax-settings"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h2><ins class="diffmod">
+</ins><p><ins class="diffmod"><img alt="Screenshot 2024-06-03 at 11.12.55 AM" class="screenshot" src="/files/Screenshot 2024-06-03 at 11.12.55 AM.png"/> </ins></p><ins class="diffmod">
+</ins><h3 id="1-determine-address-tax-category-from"><ins class="diffmod">1. Determine Address Tax Category From</ins><a aria-hidden="true" class="no-underline" href="#1-determine-address-tax-category-from"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h3><ins class="diffmod">
+</ins><p><a href="/erpnext/v13/user/manual/en/accounts/tax-category"><ins class="diffmod">Tax category</ins></a><ins class="diffmod"> can be set on Addresses. An address can be Shipping or Billing address. Set which addres to select when applying Tax Category.</ins></p><ins class="diffmod">
+</ins><h3 id="2-automatically-add-taxes-and-charges-from-item-tax-template"><ins class="diffmod">2. Automatically Add Taxes and Charges from Item Tax Template</ins><a aria-hidden="true" class="no-underline" href="#2-automatically-add-taxes-and-charges-from-item-tax-template"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h3><ins class="diffmod">
+</ins><p><ins class="diffmod">Enabling this will populate the Taxes table in transactions if an </ins><a href="/erpnext/v13/user/manual/en/accounts/item-tax-template"><ins class="diffmod">Item Tax Template</ins></a><ins class="diffmod"> is set for an Item and that Item is selected in the transaction.</ins></p><ins class="diffmod">
+</ins><h3 id="3-book-tax-loss-on-early-payment-discount"><ins class="diffmod">3. Book Tax Loss on Early Payment Discount</ins><a aria-hidden="true" class="no-underline" href="#3-book-tax-loss-on-early-payment-discount"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h3><ins class="diffmod">
+</ins><p><ins class="diffmod">Enabling this will split the Payment Entry discount deductions into Income Loss and Tax Loss if the document against the Payment Entry has an </ins><a href="/erpnext/v14/user/manual/en/accounts/payment-terms#11-setting-up-discount-on-early-payments"><ins class="diffmod">Early Payment Discount</ins></a><ins class="diffmod"> set.</ins></p><ins class="diffmod">
+</ins><h2 id="period-closing-settings"><ins class="diffmod">Period Closing Settings</ins><a aria-hidden="true" class="no-underline" href="#period-closing-settings"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h2><ins class="diffmod">
+</ins><p><ins class="diffmod"><img alt="Screenshot 2024-06-03 at 11.14.36 AM" class="screenshot" src="/files/Screenshot 2024-06-03 at 11.14.36 AM.png"/> </ins></p><ins class="diffmod">
+</ins><h3 id="1-accounts-frozen-till-date"><ins class="diffmod">1. Accounts Frozen Till Date</ins><a aria-hidden="true" class="no-underline" href="#1-accounts-frozen-till-date"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h3><ins class="diffmod">
+</ins><p><ins class="diffmod">Freeze accounting transactions up to specified date, nobody can make/modify entry except the specified Role.</ins></p><ins class="diffmod">
+</ins><h3 id="2-role-allowed-to-set-frozen-accounts-and-edit-frozen-entries"><ins class="diffmod">2. Role Allowed to Set Frozen Accounts and Edit Frozen Entries</ins><a aria-hidden="true" class="no-underline" href="#2-role-allowed-to-set-frozen-accounts-and-edit-frozen-entries"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h3><ins class="diffmod">
+</ins><p><ins class="diffmod">Users with this Role are allowed to set frozen accounts and create/modify accounting entries against frozen accounts.</ins></p><ins class="diffmod">
+</ins><h3 id="3-credit-controller"><ins class="diffmod">3. Credit Controller</ins><a aria-hidden="true" class="no-underline" href="#3-credit-controller"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h3><ins class="diffmod">
+</ins><p><ins class="diffmod">This role is allowed to submit transactions that exceed credit limit.</ins></p><ins class="diffmod">
+</ins><h2 id="deferred-accounting-settings"><ins class="diffmod">Deferred Accounting Settings</ins><a aria-hidden="true" class="no-underline" href="#deferred-accounting-settings"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h2><ins class="diffmod">
+</ins><p><ins class="diffmod"><img alt="Screenshot 2024-06-03 at 11.16.37 AM" class="screenshot" src="/files/Screenshot 2024-06-03 at 11.16.37 AM.png"/> </ins></p><ins class="diffmod">
+</ins><h3 id="1-book-deferred-entries-based-on"><ins class="diffmod">1. Book Deferred Entries Based On</ins><a aria-hidden="true" class="no-underline" href="#1-book-deferred-entries-based-on"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h3><ins class="diffmod">
+</ins><p><ins class="diffmod">Deferred revenue amount can be booked based on two criteria. The default option here is "Days". If "Days" is selected, the deferred revenue amount will be booked based on the number of days in each month and if "Months" is selected, then it will be booked based on number of months. </ins><strong><ins class="mod"><ins class="diffmod">For Eg:</ins></ins></strong><ins class="diffmod"> If "Days" is selected and $12000 revenue has to be deferred over a period of 12 months, then $986.30 will be for the month having 30 days and $1019.17 will be booked for the month having 31 days. If "Months" is selected, $1000 deferred revenue will booked each month irrespective of the number of days in a month.</ins></p><ins class="diffmod">
+</ins><h3 id="2-automatically-process-deferred-accounting-entry"><ins class="diffmod">2. Automatically Process Deferred Accounting Entry</ins><a aria-hidden="true" class="no-underline" href="#2-automatically-process-deferred-accounting-entry"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h3><ins class="diffmod">
+</ins><p><ins class="diffmod">This setting is enabled by default. In case you don't want the deferred accounting entries to be posted automatically you can disable this setting. If this setting is disabled deferred accounting will have to be processed manually using </ins><a href="/erpnext/v13/user/manual/en/accounts/process-deferred-accounting"><ins class="diffmod">Process Deferred Accounting</ins></a></p><ins class="diffmod">
+</ins><h3 id="3-book-deferred-entries-via-journal-entry"><ins class="diffmod">3. Book Deferred Entries Via Journal Entry</ins><a aria-hidden="true" class="no-underline" href="#3-book-deferred-entries-via-journal-entry"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h3><ins class="diffmod">
+</ins><p><ins class="diffmod">By default Ledger Entries are posted directly to book deferred revenue against an invoice. In order to book this deferred amount posting via Journal Entry, this option can be enabled.</ins></p><ins class="diffmod">
+</ins><h2 id="print-settings"><ins class="diffmod">Print Settings</ins><a aria-hidden="true" class="no-underline" href="#print-settings"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h2><ins class="diffmod">
+</ins><p><ins class="diffmod"><img alt="Screenshot 2024-06-03 at 11.19.05 AM" class="screenshot" src="/files/Screenshot 2024-06-03 at 11.19.05 AM.png"/> </ins></p><ins class="diffmod">
+</ins><h3 id="1-show-inclusive-tax-in-print"><ins class="diffmod">1. Show Inclusive Tax In Print</ins><a aria-hidden="true" class="no-underline" href="#1-show-inclusive-tax-in-print"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h3><ins class="diffmod">
+</ins><p><ins class="diffmod">It allows you to display the tax amounts inclusive of the item prices on printed documents such as invoices and sales orders.</ins></p><ins class="diffmod">
+</ins><h3 id="2-show-taxes-as-table-in-print"><ins class="diffmod">2. Show Taxes as Table in Print</ins><a aria-hidden="true" class="no-underline" href="#2-show-taxes-as-table-in-print"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h3><ins class="diffmod">
+</ins><p><ins class="diffmod">It allows you to display tax details in a tabular format on printed documents such as invoices, purchase orders, and sales orders.</ins></p><ins class="diffmod">
+</ins><h3 id="3-show-payment-schedule-in-print"><ins class="diffmod">3. Show Payment Schedule in Print</ins><a aria-hidden="true" class="no-underline" href="#3-show-payment-schedule-in-print"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h3><ins class="diffmod">
+</ins><p><ins class="diffmod">The Payment Schedule table is visible on using </ins><a href="/erpnext/v13/user/manual/en/accounts/payment-terms"><ins class="diffmod">Payment Terms</ins></a><ins class="diffmod">. Enabling this will show this table in print view.</ins></p><ins class="diffmod">
+</ins><h2 id="currency-exchange-settings"><ins class="diffmod">Currency Exchange Settings</ins><a aria-hidden="true" class="no-underline" href="#currency-exchange-settings"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h2><ins class="diffmod">
+</ins><p><ins class="diffmod"><img alt="Screenshot 2024-06-03 at 11.22.56 AM" class="screenshot" src="/files/Screenshot 2024-06-03 at 11.22.56 AM.png"/> </ins></p><ins class="diffmod">
+</ins><h3 id="1-allow-stale-exchange-rates"><ins class="diffmod">1. Allow Stale Exchange Rates</ins><a aria-hidden="true" class="no-underline" href="#1-allow-stale-exchange-rates"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h3><ins class="diffmod">
+</ins><p><ins class="diffmod">This should be unchecked if you want KanivinERP to check the age of records fetched from Currency Exchange in foreign currency transactions. If it is unchecked, the exchange rate field will be read-only in documents.</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod">Stale Days is the number of days to use when deciding if a Currency Exchange record is stale. This is valid when 'Allow Stale Rates' is </ins><strong><ins class="mod"><ins class="diffmod">disabled</ins></ins></strong><ins class="diffmod">. So, if the Stale Days is set as 10, stale rates that are 10 days will be allowed. If Allow Stale Rates is enabled, there is no time limit on the age of stale rates.</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod">If stale rates are enabled, the order of fetching is:</ins></p><ins class="diffmod">
+</ins><ul><ins class="diffmod">
+</ins><li><ins class="diffmod">Latest rate from Currency Exchange form</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">If no Currency Exchange is found latest rate as per market is fetched automatically</ins></li><ins class="diffmod">
+</ins></ul><ins class="diffmod">
+</ins><p><ins class="diffmod">If stale rates are disabled, the order of fetching is:</ins></p><ins class="diffmod">
+</ins><ul><ins class="diffmod">
+</ins><li><ins class="diffmod">Latest rate from Currency Exchange form upto number of days set in 'Stale Days'</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">If no Currency Exchange is found Latest rate as per market is fetched automatically</ins></li><ins class="diffmod">
+</ins></ul><ins class="diffmod">
+</ins><h2 id="report-settings"><ins class="diffmod">Report Settings</ins><a aria-hidden="true" class="no-underline" href="#report-settings"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h2><ins class="diffmod">
+</ins><p><ins class="diffmod"><img alt="Screenshot 2024-06-03 at 11.23.29 AM" class="screenshot" src="/files/Screenshot 2024-06-03 at 11.23.29 AM.png"/> </ins></p><ins class="diffmod">
+</ins><h3 id="1-use-custom-cash-flow-format"><ins class="diffmod">1. Use Custom Cash Flow Format</ins><a aria-hidden="true" class="no-underline" href="#1-use-custom-cash-flow-format"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h3><ins class="diffmod">
+</ins><p><ins class="diffmod">You may choose to use Custom Cash Flow Formats to customize what the Cash Flow report looks like. To know more, </ins><a href="/erpnext/user/manual/en/customise-cash-flow-report"><ins class="diffmod">visit here.</ins></a></p><ins class="diffmod">
+</ins></div>
+</div>
+</div></div></div></div></main>

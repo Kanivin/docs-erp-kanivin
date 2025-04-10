@@ -1,0 +1,70 @@
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title">Lower Deduction Certificate
+</h1>
+</div>
+<div class="wiki-content">
+<p>According to the tax withholding category, a person responsible for making payments is required to deduct tax at source at prescribed rates. Instead of receiving tax on your income from you at a later date, the government wants the payers to deduct tax beforehand and deposit it with the government. However this scheme of deducting tax at source may cause issues to a few taxpayers who may not have taxable income for that fiscal year.</p>
+<p>Therefore, for such taxpayers, the government provides an option to obtain a certificate confirming to either a lower rate or NIL rate of TDS compared to the rate specified in the tax withholding category.</p>
+<h2 id="1-prerequisites">1. Prerequisites</h2>
+<p>Before creating and using a Lower Deduction Certificate, it is advised to create and study the following first:</p>
+<ol>
+<li><a onclick="loadContent('supplier.html')">Supplier</a></li>
+<li><a onclick="loadContent('tax-withholding-category.html')">Tax Withholding Category</a></li>
+</ol>
+<h2 id="2-how-to-create-a-lower-deduction-certificate">2. How to create a Lower Deduction Certificate</h2>
+<ol>
+<li>Go to the Lower Deduction Certificate list and click on New.</li>
+<li>Enter the Certificate No.</li>
+<li>Select the Section Code.</li>
+<li>Enter the <a onclick="loadContent('fiscal-year.html')">Fiscal Year</a>.</li>
+<li>Select the Supplier having a valid PAN number. PAN number will be auto fetched on the selection of Supplier.</li>
+<li>Enter Valid From and Valid Up To dates.</li>
+<li>Enter rate of TDS as per the certificate and the certificate limit.</li>
+<li><p>Click on Save.</p>
+<p><img alt="Lower Deduction Certificate" class="screenshot" src="/files/lower-deduction-certificate.png"/></p></li>
+</ol>
+<h2 id="3-using-lower-deduction-certificate">3. Using Lower Deduction Certificate</h2>
+<h3 id="31-use-in-purchase-invoice">3.1 Use in Purchase Invoice</h3>
+<p>In the following example, we have selected TDS category as 'TDS - 194D - Individual' which has a rate of 5%.</p>
+<p><img alt="Tax Withholding Category" class="screenshot" src="/files/tax-withholding-category.png"/></p>
+<ol>
+<li><p>Set the Tax Withholding Category for the Supplier in the supplier master. Then upon selecting that Supplier, a checkbox will become visible in the Purchase Invoice to select whether to apply tax or not and the TDS category will be auto-fetched.</p>
+<p><img alt="Supplier With Tax Withholding Category" class="screenshot" src="/files/supplier-with-tax-withholding-category.png"/></p></li>
+<li><p>Let's create an invoice for 20,000. Saving the invoice automatically calculates tax and appends it in the Purchase Taxes and Charges table. Although the tax category assigned to the supplier has a tax rate of 5%, the prevailing tax rate is 1% which is mentioned in the Lower Deduction Certificate.</p>
+<p><img alt="Lower TDS in Purchase Invoice" class="screenshot" src="/files/lower-tax-withholding-in-purchase-invoice.png"/></p></li>
+</ol>
+<h3 id="4-related-topics">4. Related Topics</h3>
+<ol>
+<li><a onclick="loadContent('tax-withholding-category.html')">Tax Withholding Category</a></li>
+</ol>
+</div>
+<input class="d-none" name="wiki-page-name" value="poanhov3sh"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="revisionsModalTitle">Lower Deduction Certificate
+</h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content">
+<h3>No Revisions</h3>
+</div>
+</div>
+</div></div></div></div></main>

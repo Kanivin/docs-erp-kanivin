@@ -1,0 +1,55 @@
+
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title">Limited User</h1>
+</div>
+<div class="wiki-content">
+<p><strong>The user will get limited access to the system.</strong></p>
+<p>Limited users can access only specific documents of the specific modules. Certain users don't use all the modules and need only specific modules. For example, in the company, to record the daily attendance or leave application every employee was given required system access. But assume 500 people are working in the company out of which only 100 use all documents and the remaining 400 need only documents for daily attendance or leave applications. Such users are limited users.</p>
+<p>The User Type document plays an important role to handle this use case. There are default User Types, "System User" and "Website User". The System User can access the desk and website portal whereas the Website User can only access the website portal. To handle the case of limited access of documents for the employees by default KanivinERP has added a new user type 'Employee Self Service'.</p>
+<h2 id="user-type">User Type</h2>
+<p>To access the User Type document, go to:</p>
+<blockquote>
+<p>Users &gt; User Type</p>
+</blockquote>
+<p><img alt="Screenshot 2024-05-30 at 3.03.26 PM" class="screenshot" src="/files/Screenshot 2024-05-30 at 3.03.26 PM.png"/> </p>
+<p><strong>Note:</strong> Website User and System User will be standard user types and these cannot be deleted or edited.</p>
+<h2 id="non-standard-user-type">Non-Standard User Type</h2>
+<p>1) For the non standard user type, user has to select the Custom Role, document on which they want to apply the user permission, and the fieldname of the user.</p>
+<p><img alt="Screenshot 2024-05-30 at 3.15.09 PM" class="screenshot" src="/files/Screenshot 2024-05-30 at 3.15.09 PM.png"/> </p>
+<p>In the above image, Employee has the link field User ID which is linked to the User document. As the "Apply User Permission on" has been set as "Employee", then the respective employee's user can only view the documents in which the respective employee field is linked. For example, the employee can only able to view the salary slip which has been created against their employee id.</p>
+<p>2) Document Types:</p>
+<p>The non-standard user type users can only access the documents which have been mentioned in the user type.</p>
+<p><img alt="Screenshot 2024-05-30 at 3.17.38 PM" class="screenshot" src="/files/Screenshot 2024-05-30 at 3.17.38 PM.png"/> </p>
+<p>The above table also acts as the Role Permission Manager for this particular User Type (Employee Self Service in our case). Employee Self Service as a role won't be accessible in the general Role Permission Manager.</p>
+<p>3) Document Types (Select Permissions Only):</p>
+<p>In this table, you need to list down all the doctypes that you want the Employee Self Service User to have SELECT access to. There is no limit to the number of doctypes you can add here. Users will not be able to create the records for the documents to which they have Select perm access.</p>
+<p><img alt="Screenshot 2024-05-30 at 3.17.04 PM" class="screenshot" src="/files/Screenshot 2024-05-30 at 3.17.04 PM.png"/> </p>
+</div>
+<input class="d-none" name="wiki-page-name" value="dvqifv0ak7"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="revisionsModalTitle">Limited User</h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content">
+<h3>No Revisions</h3>
+</div>
+</div></div></div></div></div></main>

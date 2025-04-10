@@ -1,0 +1,73 @@
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title">Routing
+</h1>
+</div>
+<div class="wiki-content">
+<p><strong>Routing is a template of BOM Operations.</strong></p>
+<p>A Routing stores all Operations along with the description, hourly rate, operation time, batch size, etc. Creating a Routing for your BOM Operations is useful when similar Operations are used for manufacturing different items.</p>
+<p>To access the Routing list, go to:</p>
+<blockquote>
+<p>Home &gt; Manufacturing &gt; Bill of Materials &gt; Routing</p>
+</blockquote>
+<h2 id="1-prerequisites">1. Prerequisites</h2>
+<ul>
+<li><a onclick="loadContent('operation.html')">Operation</a></li>
+<li><a onclick="loadContent('workstation.html')">Workstation</a></li>
+</ul>
+<h2 id="2-how-to-create-a-routing">2. How to Create a Routing</h2>
+<ol>
+<li>Go to the Routing list, click on New.</li>
+<li>Enter a name for the Routing.</li>
+<li>Enter the Operations in the BOM Operation table:
+<ol>
+<li>Select the Operation.</li>
+<li>The default Workstation will be fetched.</li>
+<li>Enter the Hourly Rate for running this Operation.</li>
+<li>Enter the Operation Time in minutes.</li>
+<li>Enter the Batch Size, i.e. the number of units processed in this Operation.</li>
+<li>The Operating Cost will be calculated based on the Hourly Rate and the Operation Time.</li>
+</ol></li>
+<li><p>Save.</p>
+<p><img alt="Routing" class="screenshot" src="/files/routing.png"/></p></li>
+</ol>
+<p>Once created, a Routing can be selected in a BOM to fetch the Operations stored in the Routing.
+<img alt="Routing BOM" class="screenshot" src="/files/routing-bom.png"/></p>
+<h2 id="3-sequence-id-in-routing">3. Sequence ID in Routing</h2>
+<p><img alt="Routing Sequence ID" class="screenshot" src="/files/sequence-id-routing.png"/>
+Sequence ID enforces the users to complete the operations sequentially via Job Card. In case a user tries to complete an operation before completing any of its precedent operations as per the Sequence ID, the system throws a validation error.</p>
+<h2 id="2-related-topics">2. Related Topics</h2>
+<ol>
+<li><a onclick="loadContent('work-order.html')">Work Order</a></li>
+<li><a onclick="loadContent('bill-of-materials.html')">Bill Of Materials</a></li>
+</ol>
+</div>
+<input class="d-none" name="wiki-page-name" value="0p0c5mb8uc"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="revisionsModalTitle">Routing
+</h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content">
+<h3>No Revisions</h3>
+</div>
+</div>
+</div></div></div></div></main>

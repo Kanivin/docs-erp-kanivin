@@ -1,0 +1,68 @@
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title">Journal Entry Template
+</h1>
+</div>
+<div class="wiki-content">
+<p><strong>A Journal Entry Template lets you set and select a predetermined list of accounts and options while making a Journal Entry.</strong></p>
+<p>To access the Journal Entry Template, go to:</p>
+<blockquote>
+<p>Home &gt; Accounting &gt; General Ledger &gt; Journal Entry Template</p>
+</blockquote>
+<h2 id="1-how-to-create-and-use-a-journal-entry-template">1. How to Create and use a Journal Entry Template:</h2>
+<p><img alt="Journal Entry Template" class="screenshot" src="/files/journal-entry-template.png"/></p>
+<ol>
+<li>Go to the Journal Entry Template List and click on New.</li>
+<li>Add the following details:</li>
+</ol>
+<ul>
+<li><strong>Template Title</strong>: This will be used to select the template from Journal Entry.</li>
+<li><strong>Company</strong>: By default the company defined in Global Defaults is selected. You can select any another company too.</li>
+<li><strong>Entry Type</strong>: You can select from the <a onclick="loadContent('journal-entry#3-journal-entry-types.html')">entry types available in Journal Entry</a> here. Default value is <a onclick="loadContent('journal-entry#31-journal-entry.html')">Journal Entry</a>.</li>
+<li>There are 3 special 'Entry Types' in this:</li>
+<li><a onclick="loadContent('journal-entry#311-opening-entry.html')">Opening Entry</a>: This will get all the accounts and load them into the "Accounting Entries" table. To learn more visit <a onclick="loadContent('opening-balance.html')">Opening Balance</a> page.</li>
+<li><a onclick="loadContent('journal-entry#33-bank-entry.html')">Bank Entry</a>: This will get and load the default Bank Account if set.</li>
+<li><a onclick="loadContent('journal-entry#34-cash-entry.html')">Cash Entry</a>: This will get and load the default Cash Account if set.</li>
+<li><strong>Is Opening</strong>: This will be autoset to 'Yes' if 'Opening Entry' is selected as Entry Type.</li>
+<li><strong>Series</strong>: You can select from a list of naming series available to Journal Entry.</li>
+<li><strong>Accounting Entries</strong>: Here you can select a list of accounts to add to the entry.</li>
+</ul>
+<ol start="3">
+<li>Save and go to <a onclick="loadContent('journal-entry#1-how-to-create-a-journal-entry.html')">Journal Entry</a> and click on new.</li>
+<li>In the 'From Template' field when you select the template, it will load the accounts and other options set in it. Please note it will clear the Accounting Entries table first, but you can add more accounts to the table apart from those fetched from the template.</li>
+</ol>
+<p><img alt="Creating Journal Entry From Template" class="screenshot" src="/files/create-journal-entry-from-template.gif"/></p>
+<h2 id="3-related-topics">3. Related Topics</h2>
+<ol>
+<li><a onclick="loadContent('journal-entry.html')">Journal Entry</a></li>
+</ol>
+</div>
+<input class="d-none" name="wiki-page-name" value="okfniuefaf"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="revisionsModalTitle">Journal Entry Template
+</h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content">
+<h3>No Revisions</h3>
+</div>
+</div>
+</div></div></div></div></main>

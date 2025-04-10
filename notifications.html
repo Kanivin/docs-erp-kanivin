@@ -1,0 +1,479 @@
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title" id="notification">Notification<a aria-hidden="true" class="no-underline" href="#notification">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h1>
+</div>
+<div class="wiki-content">
+<p><strong>You can configure various notifications in your system to remind you of important activities.</strong></p>
+<ol>
+<li>The completion date of a Task.</li>
+<li>Expected Delivery Date of a Sales Order.</li>
+<li>Expected Payment Date.</li>
+<li>A reminder of follow up.</li>
+<li>If an Order greater than a particular value is received or sent.</li>
+<li>Expiry notification for a Contract.</li>
+<li>Completion/Status change of a Task.</li>
+</ol>
+<p>To access notification setup, go to:</p>
+<blockquote>
+<p>Home &gt; Settings &gt; Notification</p>
+</blockquote>
+<h2 id="1-setting-up-an-alert">1. Setting Up An Alert<a aria-hidden="true" class="no-underline" href="#1-setting-up-an-alert">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h2>
+<p>To set up a Notification:</p>
+<ol>
+<li><p>Define what events you want to watch under Send Alert On. Events are:</p>
+<ol>
+<li>New: When a new document of the selected type is made.</li>
+<li>Save/Submit/Cancel: When a document of the selected type is saved, submitted, or canceled.</li>
+<li>Days Before/Days After: Trigger this alert a few days before or after the <strong>Reference Date.</strong> To set the days, set <strong>Days Before or After</strong>. This can be useful in reminding you of upcoming due dates or reminding you to follow up on certain leads of quotations.</li>
+<li>Value Change: When a particular value in the selected type changes.</li>
+<li>Method: Sends notification when a specific method is triggered. Eg: before_insert.</li>
+<li>Custom: Send a notification to an <a onclick="loadContent('email-account.html')">Email Account</a> selected.</li>
+</ol></li>
+<li>Select the Document Type you want to watch changes on. From Version 16, You can also select child Document Types if Send Alert On is set to <em>Days Before</em>or <em>Days After</em>.</li>
+<li>Set additional Conditions if required.</li>
+<li>Set the recipients of this alert. The recipient could either be a field of the document or a list of fixed Email Addresses.</li>
+<li>Compose the message.</li>
+<li>Save.</li>
+</ol>
+<h3 id="11-setting-a-subject">1.1 Setting a Subject<a aria-hidden="true" class="no-underline" href="#11-setting-a-subject">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<p>You can retrieve the data for a particular field by using <code>doc.[field_name]</code>. To use it in your subject/message, you have to surround it with <code>{% raw %}{{ }}{% endraw %}</code>. These are called <a href="http://jinja.pocoo.org/">Jinja</a> tags. For example, to get the name of a document, you use <code>{% raw %}{{ doc.name }}{% endraw %}</code>. The following example sends an email on saving a Task with the Subject, "TASK#### has been created"</p>
+<p><img alt="Setting Subject" class="screenshot" src="/files/email-alert-subject.png"/> </p>
+<h3 id="12-setting-conditions">1.2 Setting Conditions<a aria-hidden="true" class="no-underline" href="#12-setting-conditions">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<p>Notifications allow you to set conditions according to the field data in your documents. For example, if you want to receive an Email if a Lead has been saved as "Interested" as it's status, you put <code>doc.status == "Interested"</code> in the conditions textbox. You can also set more complex conditions by combining them with the operator <strong>and</strong> or <strong>or</strong>.</p>
+<p><img alt="Setting Condition" class="screenshot" src="/files/notification screenshot.jpg"/> </p>
+<p>The above example will send a Notification when a Task is saved with the status "Open" and the "Expected End Date" for the Task is the date on or before the date on which it was saved on.</p>
+<h3 id="13-setting-a-message">1.3 Setting a Message<a aria-hidden="true" class="no-underline" href="#13-setting-a-message">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<p>You can use both Jinja Tags (<code>{% raw %}{{ doc.[field_name] }}{% endraw %}</code>) and HTML tags in the message textbox.</p>
+<pre><button class="btn copy-btn" data-toggle="tooltip" title="Copy Code"><svg class="feather feather-clipboard" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect height="4" rx="1" ry="1" width="8" x="8" y="2"></rect></svg></button><code class="hljs django"><span class="hljs-template-tag">{% <span class="hljs-name">raw</span> %}</span><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>Order Overdue<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
+
+
+</span></code></pre>
+<p>Transaction {{ doc.name }} has exceeded Due Date. Please take necessary action.</p>
+<p>{% if comments %} Last comment: {{ comments[-1].comment }} by {{ comments[-1].by }} {% endif %}</p>
+<pre><button class="btn copy-btn" data-toggle="tooltip" title="Copy Code"><svg class="feather feather-clipboard" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect height="4" rx="1" ry="1" width="8" x="8" y="2"></rect></svg></button><code class="hljs css">&lt;<span class="hljs-selector-tag">h4</span>&gt;<span class="hljs-selector-tag">Details</span>&lt;/<span class="hljs-selector-tag">h4</span>&gt;
+
+
+</code></pre>
+<ul>
+<li>Customer: {{ doc.customer }}</li>
+<li>Amount: {{ doc.total_amount }}</li>
+</ul>
+<p>{% endraw %}</p>
+<h3 id="14-setting-a-value-after-the-alert-is-set">1.4 Setting a Value after the Alert is Set<a aria-hidden="true" class="no-underline" href="#14-setting-a-value-after-the-alert-is-set">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<p>Sometimes to make sure that the Notification is not sent multiple times, you can define a custom property (via Customize Form) like "Notification Sent" and then set this property after the alert is sent by setting the <strong>Set Property After Alert</strong> field.</p>
+<p>Then you can use that as a condition in the <strong>Condition</strong> rules to ensure emails are not sent multiple times</p>
+<p><img alt="Setting Property in Notification" class="screenshot" src="/files/email-alert-subject.png"/> </p>
+<h3 id="15-example">1.5 Example<a aria-hidden="true" class="no-underline" href="#15-example">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<ol>
+<li>Defining the Criteria <img alt="Defining Criteria" class="screenshot" src="/files/email-alert-1.png"/></li>
+<li>Setting the Recipients and Message <img alt="Set Message" class="screenshot" src="/files/email-alert-2.png"/></li>
+</ol>
+<hr/>
+<h2 id="2-slack-notifications">2. Slack Notifications<a aria-hidden="true" class="no-underline" href="#2-slack-notifications">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h2>
+<p>If you prefer to have your notifications sent to a dedicated Slack channel, you can also choose the option "Slack" in the channel options and select the appropriate Slack Webhook URL.</p>
+<h3 id="21-slack-webhook-url">2.1 Slack Webhook URL<a aria-hidden="true" class="no-underline" href="#21-slack-webhook-url">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<p>A Slack webhook URL is a URL pointing directly to a Slack channel.</p>
+<p>To generate webhook URLs, you need to create a new Slack App:</p>
+<ol>
+<li>Go to https://api.slack.com/slack-apps.</li>
+<li>Click on "Create a Slack App". <img alt="Set Message" class="screenshot" src="/files/slack_notification_1.png"/></li>
+<li>Give your App a name and choose the right workspace. Once your app is created, go to the "Incoming Webhooks" section and add a new Webhook to Workspace. <img alt="Set Message" class="screenshot" src="/files/slack_notification_2.png"/></li>
+<li>Copy the created link, go back to KanivinERP and use it to create a new Slack Webhook URL in Integrations &gt; Slack Webhook URL. <img alt="Set Message" class="screenshot" src="/files/slack_notification_3.png"/></li>
+<li>Select Slack and your Slack channel in the channel and Slack channel fields within your notification</li>
+</ol>
+<h3 id="22-message-format">2.2 Message Format<a aria-hidden="true" class="no-underline" href="#22-message-format">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<p>Unlike Email messages, Slack doesn't allow HTML formatting.</p>
+<p>Instead, you can use markdown formatting: <a href="https://get.slack.help/hc/en-us/articles/202288908-Format-your-messages">Slack Documentation</a></p>
+<p>Example: {% raw %} <em>Order Overdue</em></p>
+<pre><button class="btn copy-btn" data-toggle="tooltip" title="Copy Code"><svg class="feather feather-clipboard" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect height="4" rx="1" ry="1" width="8" x="8" y="2"></rect></svg></button><code class="hljs django"><span class="xml">Transaction </span><span class="hljs-template-variable">{{ doc.name }}</span><span class="xml"> has exceeded Due Date. Please take the necessary action.
+
+
+</span><span class="hljs-template-tag">{% <span class="hljs-name"><span class="hljs-name">if</span></span> comments %}</span><span class="xml">
+Last comment: </span><span class="hljs-template-variable">{{ comments[-1].comment }}</span><span class="xml"> by </span><span class="hljs-template-variable">{{ comments[-1].by }}</span><span class="xml">
+</span><span class="hljs-template-tag">{% <span class="hljs-name"><span class="hljs-name">endif</span></span> %}</span><span class="xml">
+
+*Details*
+
+• Customer: </span><span class="hljs-template-variable">{{ doc.customer }}</span><span class="xml">
+• Amount: </span><span class="hljs-template-variable">{{ doc.grand_total }}</span><span class="xml">
+</span><span class="hljs-template-tag">{% <span class="hljs-name">endraw</span> %}</span><span class="xml">
+
+
+</span></code></pre>
+<p><img alt="Set Message" class="screenshot" src="/files/slack_notification_4.png"/> </p>
+<hr/>
+<h2 id="3-system-notifications">3. System Notifications<a aria-hidden="true" class="no-underline" href="#3-system-notifications">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h2>
+<p>In <strong>Version 12</strong> we introduced System notifications for <strong>Assignments</strong>, <strong>mentions</strong>, <strong>documents shared</strong>, and <strong>Energy Points</strong>. These notifications show up in the notifications dropdown on the the navigation bar's top right corner.</p>
+<p>In <strong>Version 13</strong> we have introduced an additional channel to send alerts - <strong>System Notifications</strong>:</p>
+<p><img alt="Notifications Dropdown" class="screenshot" src="/files/system-notifications-channel.png"/> </p>
+<p>Choosing this channel will send a system notification when a notification is triggered, instead of an Email or a Slack notification.</p>
+<p><img alt="Notifications Dropdown" class="screenshot" src="/files/system-notification.png"/> </p>
+<p>Clicking on the notification routes to the <strong>Notification Log</strong> document which contains the configured subject, message as well as the attached file, if Attach Print is set:</p>
+<p><img alt="Notifications Dropdown" class="screenshot" src="/files/notification-log.png"/> </p>
+<p>If Email/Slack alerts and System Notifications both are required, the main channel can be set as Email or Slack and this option can be checked:</p>
+<p><img alt="Notifications Dropdown" class="screenshot" src="/files/send-system-notification.png"/> </p>
+<h2 id="4-whatsapp">4. WhatsApp<a aria-hidden="true" class="no-underline" href="#4-whatsapp">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h2>
+<p>In <strong>Version 13</strong> we have introduced an additional channel to send alerts - <strong>WhatsApp</strong>: <img alt="Notifications WhatsApp Channel" class="screenshot" src="/files/twilio-channel.png"/> </p>
+<p>If you prefer to have your notifications sent to a WhatsApp number, you can also choose the option "WhatsApp" in the channel options and select the appropriate Twilio Number. Twilio Numbers can be added to Twilio settings in Frappe. WhatsApp messages can only be sent to numbers which have country codes in them.</p>
+<p><img alt="Twilio Settings" class="screenshot" src="/files/twilio-settings.png"/> </p>
+<h3 id="41-twilio-settings">4.1 Twilio Settings<a aria-hidden="true" class="no-underline" href="#41-twilio-settings">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<p>In order to configure Twilio settings, you need to first obtain Twilio credentials from your Twilio Account's account settings. You can only add those phone numbers that have been activated in your Twilio Account with WhatsApp access. <img alt="Twilio Credentials" class="screenshot" src="/files/twilio-credentials.png"/> </p>
+<h3 id="42-message-format">4.2 Message Format<a aria-hidden="true" class="no-underline" href="#42-message-format">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<p>WhatsApp allows their users to only send those message templates that are pre-approved by them to your customers. Failure to do so might result in restrictions on you Twilio account. <img alt="Pre Approved Message Template" class="screenshot" src="/files/twilio-pre-approved-message.png"/> </p>
+<h2 id="5-sms">5. SMS<a aria-hidden="true" class="no-underline" href="#5-sms">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h2>
+<p>In <strong>Version 13</strong> we have introduced an additional channel to send alerts - <strong>SMS</strong>: <img alt="SMS Channel" class="screenshot" src="/files/sms-notification-channel.png"/> </p>
+<p>In order to use this channel, you would need to complete the configuration of <a href="/erpnext/v13/user/manual/en/setting-up/sms-setting">SMS Settings</a>.</p>
+<h3 id="6-related-topics">6. Related Topics<a aria-hidden="true" class="no-underline" href="#6-related-topics">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<ol>
+<li><a onclick="loadContent('sms-setting.html')">SMS Settings</a></li>
+<li><a onclick="loadContent('document-follow.html')">Document Follow</a></li>
+</ol>
+<h3 id="7-one-off-reminders">7. One-off Reminders<a aria-hidden="true" class="no-underline" href="#7-one-off-reminders">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<blockquote>
+<p>Note: This feature is only available in nightly version as of now.</p>
+</blockquote>
+<p>Since setting up notifications is quite involved process, Frappe Framework also provides a way to setup one-off reminders on documents. Example of such notification would be "Remind me to follow up about this lead in 4 hour"</p>
+<p>To set up one-off reminder on document:</p>
+<ol>
+<li>Open the document on which you want to set a reminder</li>
+<li>Click on menu (three dots) &gt; "Remind Me"</li>
+<li>Select time and add a description for yourself and click "Create"</li>
+<li>System will send you a system notification around the time you've configured with reminder description as subject.</li>
+</ol>
+</div>
+<input class="d-none" name="wiki-page-name" value="h98ng45src"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="notification">Notification<a aria-hidden="true" class="no-underline" href="#notification">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content"><del class="diffmod">
+</del><ins class="diffmod">
+</ins><p><strong><ins class="diffmod">You can configure various notifications in your system to remind you of important activities.</ins></strong></p><ins class="diffmod">
+</ins><ol><ins class="diffmod">
+</ins><li><ins class="diffmod">The completion date of a Task.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Expected Delivery Date of a Sales Order.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Expected Payment Date.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">A reminder of follow up.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">If an Order greater than a particular value is received or sent.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Expiry notification for a Contract.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Completion/Status change of a Task.</ins></li><ins class="diffmod">
+</ins></ol><ins class="diffmod">
+</ins><p><ins class="diffmod">To access notification setup, go to:</ins></p><ins class="diffmod">
+</ins><blockquote><ins class="diffmod">
+</ins><p><ins class="diffmod">Home &gt; Settings &gt; Notification</ins></p><ins class="diffmod">
+</ins></blockquote><ins class="diffmod">
+</ins><h2 id="1-setting-up-an-alert"><ins class="diffmod">1. Setting Up An Alert</ins><a aria-hidden="true" class="no-underline" href="#1-setting-up-an-alert"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h2><ins class="diffmod">
+</ins><p><ins class="diffmod">To set up a Notification:</ins></p><ins class="diffmod">
+</ins><ol><ins class="diffmod">
+</ins><li><p><ins class="diffmod">Define what events you want to watch under Send Alert On. Events are:</ins></p><ins class="diffmod">
+</ins><ol><ins class="diffmod">
+</ins><li><ins class="diffmod">New: When a new document of the selected type is made.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Save/Submit/Cancel: When a document of the selected type is saved, submitted, or canceled.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Days Before/Days After: Trigger this alert a few days before or after the </ins><strong><ins class="mod"><ins class="diffmod">Reference Date.</ins></ins></strong><ins class="diffmod"> To set the days, set </ins><strong><ins class="mod"><ins class="diffmod">Days Before or After</ins></ins></strong><ins class="diffmod">. This can be useful in reminding you of upcoming due dates or reminding you to follow up on certain leads of quotations.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Value Change: When a particular value in the selected type changes.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Method: Sends notification when a specific method is triggered. Eg: before_insert.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Custom: Send a notification to an </ins><a onclick="loadContent('email-account.html')"><ins class="diffmod">Email Account</ins></a><ins class="diffmod"> selected.</ins></li><ins class="diffmod">
+</ins></ol></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Select the Document Type you want to watch changes on. From Version 16, You can also select child Document Types if Send Alert On is set to </ins><em><ins class="mod"><ins class="diffmod">Days Before</ins></ins></em><ins class="diffmod">or </ins><em><ins class="mod"><ins class="diffmod">Days After</ins></ins></em><ins class="diffmod">.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Set additional Conditions if required.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Set the recipients of this alert. The recipient could either be a field of the document or a list of fixed Email Addresses.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Compose the message.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Save.</ins></li><ins class="diffmod">
+</ins></ol><ins class="diffmod">
+</ins><h3 id="11-setting-a-subject"><del class="diffmod">No</del><ins class="diffmod">1.1</ins> <del class="diffmod">Revisions</del><ins class="diffmod">Setting a Subject</ins><a aria-hidden="true" class="no-underline" href="#11-setting-a-subject">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3><del class="diffmod">
+</del><ins class="diffmod">
+</ins><p><ins class="diffmod">You can retrieve the data for a particular field by using </ins><code><ins class="diffmod">doc.[field_name]</ins></code><ins class="diffmod">. To use it in your subject/message, you have to surround it with </ins><code><ins class="diffmod">{% raw %}{{ }}{% endraw %}</ins></code><ins class="diffmod">. These are called </ins><a href="http://jinja.pocoo.org/"><ins class="diffmod">Jinja</ins></a><ins class="diffmod"> tags. For example, to get the name of a document, you use </ins><code><ins class="diffmod">{% raw %}{{ doc.name }}{% endraw %}</ins></code><ins class="diffmod">. The following example sends an email on saving a Task with the Subject, "TASK#### has been created"</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod"><img alt="Setting Subject" class="screenshot" src="/files/email-alert-subject.png"/> </ins></p><ins class="diffmod">
+</ins><h3 id="12-setting-conditions"><ins class="diffmod">1.2 Setting Conditions</ins><a aria-hidden="true" class="no-underline" href="#12-setting-conditions"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h3><ins class="diffmod">
+</ins><p><ins class="diffmod">Notifications allow you to set conditions according to the field data in your documents. For example, if you want to receive an Email if a Lead has been saved as "Interested" as it's status, you put </ins><code><ins class="diffmod">doc.status == "Interested"</ins></code><ins class="diffmod"> in the conditions textbox. You can also set more complex conditions by combining them with the operator </ins><strong><ins class="mod"><ins class="diffmod">and</ins></ins></strong><ins class="diffmod"> or </ins><strong><ins class="mod"><ins class="diffmod">or</ins></ins></strong><ins class="diffmod">.</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod"><img alt="Setting Condition" class="screenshot" src="/files/notification screenshot.jpg"/> </ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod">The above example will send a Notification when a Task is saved with the status "Open" and the "Expected End Date" for the Task is the date on or before the date on which it was saved on.</ins></p><ins class="diffmod">
+</ins><h3 id="13-setting-a-message"><ins class="diffmod">1.3 Setting a Message</ins><a aria-hidden="true" class="no-underline" href="#13-setting-a-message"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h3><ins class="diffmod">
+</ins><p><ins class="diffmod">You can use both Jinja Tags (</ins><code><ins class="diffmod">{% raw %}{{ doc.[field_name] }}{% endraw %}</ins></code><ins class="diffmod">) and HTML tags in the message textbox.</ins></p><ins class="diffmod">
+</ins><pre><button class="btn copy-btn" data-toggle="tooltip" title="Copy Code"><svg class="feather feather-clipboard" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect height="4" rx="1" ry="1" width="8" x="8" y="2"></rect></svg></button><code class="hljs django"><ins class="diffmod"><span class="hljs-template-tag">{% <span class="hljs-name">raw</span> %}</span><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>Order Overdue<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
+
+
+</span></ins></code></pre><ins class="diffmod">
+</ins><p><ins class="diffmod">Transaction {{ doc.name }} has exceeded Due Date. Please take necessary action.</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod">{% if comments %} Last comment: {{ comments[-1].comment }} by {{ comments[-1].by }} {% endif %}</ins></p><ins class="diffmod">
+</ins><pre><button class="btn copy-btn" data-toggle="tooltip" title="Copy Code"><svg class="feather feather-clipboard" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect height="4" rx="1" ry="1" width="8" x="8" y="2"></rect></svg></button><code class="hljs css"><ins class="diffmod">&lt;<span class="hljs-selector-tag">h4</span>&gt;<span class="hljs-selector-tag">Details</span>&lt;/<span class="hljs-selector-tag">h4</span>&gt;
+
+
+</ins></code></pre><ins class="diffmod">
+</ins><ul><ins class="diffmod">
+</ins><li><ins class="diffmod">Customer: {{ doc.customer }}</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Amount: {{ doc.total_amount }}</ins></li><ins class="diffmod">
+</ins></ul><ins class="diffmod">
+</ins><p><ins class="diffmod">{% endraw %}</ins></p><ins class="diffmod">
+</ins><h3 id="14-setting-a-value-after-the-alert-is-set"><ins class="diffmod">1.4 Setting a Value after the Alert is Set</ins><a aria-hidden="true" class="no-underline" href="#14-setting-a-value-after-the-alert-is-set"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h3><ins class="diffmod">
+</ins><p><ins class="diffmod">Sometimes to make sure that the Notification is not sent multiple times, you can define a custom property (via Customize Form) like "Notification Sent" and then set this property after the alert is sent by setting the </ins><strong><ins class="mod"><ins class="diffmod">Set Property After Alert</ins></ins></strong><ins class="diffmod"> field.</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod">Then you can use that as a condition in the </ins><strong><ins class="mod"><ins class="diffmod">Condition</ins></ins></strong><ins class="diffmod"> rules to ensure emails are not sent multiple times</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod"><img alt="Setting Property in Notification" class="screenshot" src="/files/email-alert-subject.png"/> </ins></p><ins class="diffmod">
+</ins><h3 id="15-example"><ins class="diffmod">1.5 Example</ins><a aria-hidden="true" class="no-underline" href="#15-example"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h3><ins class="diffmod">
+</ins><ol><ins class="diffmod">
+</ins><li><ins class="diffmod">Defining the Criteria <img alt="Defining Criteria" class="screenshot" src="/files/email-alert-1.png"/></ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Setting the Recipients and Message <img alt="Set Message" class="screenshot" src="/files/email-alert-2.png"/></ins></li><ins class="diffmod">
+</ins></ol><ins class="diffmod">
+</ins><hr/><ins class="diffmod">
+</ins><h2 id="2-slack-notifications"><ins class="diffmod">2. Slack Notifications</ins><a aria-hidden="true" class="no-underline" href="#2-slack-notifications"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h2><ins class="diffmod">
+</ins><p><ins class="diffmod">If you prefer to have your notifications sent to a dedicated Slack channel, you can also choose the option "Slack" in the channel options and select the appropriate Slack Webhook URL.</ins></p><ins class="diffmod">
+</ins><h3 id="21-slack-webhook-url"><ins class="diffmod">2.1 Slack Webhook URL</ins><a aria-hidden="true" class="no-underline" href="#21-slack-webhook-url"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h3><ins class="diffmod">
+</ins><p><ins class="diffmod">A Slack webhook URL is a URL pointing directly to a Slack channel.</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod">To generate webhook URLs, you need to create a new Slack App:</ins></p><ins class="diffmod">
+</ins><ol><ins class="diffmod">
+</ins><li><ins class="diffmod">Go to https://api.slack.com/slack-apps.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Click on "Create a Slack App". <img alt="Set Message" class="screenshot" src="/files/slack_notification_1.png"/></ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Give your App a name and choose the right workspace. Once your app is created, go to the "Incoming Webhooks" section and add a new Webhook to Workspace. <img alt="Set Message" class="screenshot" src="/files/slack_notification_2.png"/></ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Copy the created link, go back to KanivinERP and use it to create a new Slack Webhook URL in Integrations &gt; Slack Webhook URL. <img alt="Set Message" class="screenshot" src="/files/slack_notification_3.png"/></ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Select Slack and your Slack channel in the channel and Slack channel fields within your notification</ins></li><ins class="diffmod">
+</ins></ol><ins class="diffmod">
+</ins><h3 id="22-message-format"><ins class="diffmod">2.2 Message Format</ins><a aria-hidden="true" class="no-underline" href="#22-message-format"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h3><ins class="diffmod">
+</ins><p><ins class="diffmod">Unlike Email messages, Slack doesn't allow HTML formatting.</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod">Instead, you can use markdown formatting: </ins><a href="https://get.slack.help/hc/en-us/articles/202288908-Format-your-messages"><ins class="diffmod">Slack Documentation</ins></a></p><ins class="diffmod">
+</ins><p><ins class="diffmod">Example: {% raw %} </ins><em><ins class="mod"><ins class="diffmod">Order Overdue</ins></ins></em></p><ins class="diffmod">
+</ins><pre><button class="btn copy-btn" data-toggle="tooltip" title="Copy Code"><svg class="feather feather-clipboard" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect height="4" rx="1" ry="1" width="8" x="8" y="2"></rect></svg></button><code class="hljs django"><ins class="diffmod"><span class="xml">Transaction </span><span class="hljs-template-variable">{{ doc.name }}</span><span class="xml"> has exceeded Due Date. Please take the necessary action.
+
+
+</span><span class="hljs-template-tag">{% <span class="hljs-name"><span class="hljs-name">if</span></span> comments %}</span><span class="xml">
+Last comment: </span><span class="hljs-template-variable">{{ comments[-1].comment }}</span><span class="xml"> by </span><span class="hljs-template-variable">{{ comments[-1].by }}</span><span class="xml">
+</span><span class="hljs-template-tag">{% <span class="hljs-name"><span class="hljs-name">endif</span></span> %}</span><span class="xml">
+
+*Details*
+
+• Customer: </span><span class="hljs-template-variable">{{ doc.customer }}</span><span class="xml">
+• Amount: </span><span class="hljs-template-variable">{{ doc.grand_total }}</span><span class="xml">
+</span><span class="hljs-template-tag">{% <span class="hljs-name">endraw</span> %}</span><span class="xml">
+
+
+</span></ins></code></pre><ins class="diffmod">
+</ins><p><ins class="diffmod"><img alt="Set Message" class="screenshot" src="/files/slack_notification_4.png"/> </ins></p><ins class="diffmod">
+</ins><hr/><ins class="diffmod">
+</ins><h2 id="3-system-notifications"><ins class="diffmod">3. System Notifications</ins><a aria-hidden="true" class="no-underline" href="#3-system-notifications"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h2><ins class="diffmod">
+</ins><p><ins class="diffmod">In </ins><strong><ins class="mod"><ins class="diffmod">Version 12</ins></ins></strong><ins class="diffmod"> we introduced System notifications for </ins><strong><ins class="mod"><ins class="diffmod">Assignments</ins></ins></strong><ins class="diffmod">, </ins><strong><ins class="mod"><ins class="diffmod">mentions</ins></ins></strong><ins class="diffmod">, </ins><strong><ins class="mod"><ins class="diffmod">documents shared</ins></ins></strong><ins class="diffmod">, and </ins><strong><ins class="mod"><ins class="diffmod">Energy Points</ins></ins></strong><ins class="diffmod">. These notifications show up in the notifications dropdown on the the navigation bar's top right corner.</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod">In </ins><strong><ins class="mod"><ins class="diffmod">Version 13</ins></ins></strong><ins class="diffmod"> we have introduced an additional channel to send alerts - </ins><strong><ins class="mod"><ins class="diffmod">System Notifications</ins></ins></strong><ins class="diffmod">:</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod"><img alt="Notifications Dropdown" class="screenshot" src="/files/system-notifications-channel.png"/> </ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod">Choosing this channel will send a system notification when a notification is triggered, instead of an Email or a Slack notification.</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod"><img alt="Notifications Dropdown" class="screenshot" src="/files/system-notification.png"/> </ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod">Clicking on the notification routes to the </ins><strong><ins class="mod"><ins class="diffmod">Notification Log</ins></ins></strong><ins class="diffmod"> document which contains the configured subject, message as well as the attached file, if Attach Print is set:</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod"><img alt="Notifications Dropdown" class="screenshot" src="/files/notification-log.png"/> </ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod">If Email/Slack alerts and System Notifications both are required, the main channel can be set as Email or Slack and this option can be checked:</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod"><img alt="Notifications Dropdown" class="screenshot" src="/files/send-system-notification.png"/> </ins></p><ins class="diffmod">
+</ins><h2 id="4-whatsapp"><ins class="diffmod">4. WhatsApp</ins><a aria-hidden="true" class="no-underline" href="#4-whatsapp"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h2><ins class="diffmod">
+</ins><p><ins class="diffmod">In </ins><strong><ins class="mod"><ins class="diffmod">Version 13</ins></ins></strong><ins class="diffmod"> we have introduced an additional channel to send alerts - </ins><strong><ins class="mod"><ins class="diffmod">WhatsApp</ins></ins></strong><ins class="diffmod">: <img alt="Notifications WhatsApp Channel" class="screenshot" src="/files/twilio-channel.png"/> </ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod">If you prefer to have your notifications sent to a WhatsApp number, you can also choose the option "WhatsApp" in the channel options and select the appropriate Twilio Number. Twilio Numbers can be added to Twilio settings in Frappe. WhatsApp messages can only be sent to numbers which have country codes in them.</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod"><img alt="Twilio Settings" class="screenshot" src="/files/twilio-settings.png"/> </ins></p><ins class="diffmod">
+</ins><h3 id="41-twilio-settings"><ins class="diffmod">4.1 Twilio Settings</ins><a aria-hidden="true" class="no-underline" href="#41-twilio-settings"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h3><ins class="diffmod">
+</ins><p><ins class="diffmod">In order to configure Twilio settings, you need to first obtain Twilio credentials from your Twilio Account's account settings. You can only add those phone numbers that have been activated in your Twilio Account with WhatsApp access. <img alt="Twilio Credentials" class="screenshot" src="/files/twilio-credentials.png"/> </ins></p><ins class="diffmod">
+</ins><h3 id="42-message-format"><ins class="diffmod">4.2 Message Format</ins><a aria-hidden="true" class="no-underline" href="#42-message-format"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h3><ins class="diffmod">
+</ins><p><ins class="diffmod">WhatsApp allows their users to only send those message templates that are pre-approved by them to your customers. Failure to do so might result in restrictions on you Twilio account. <img alt="Pre Approved Message Template" class="screenshot" src="/files/twilio-pre-approved-message.png"/> </ins></p><ins class="diffmod">
+</ins><h2 id="5-sms"><ins class="diffmod">5. SMS</ins><a aria-hidden="true" class="no-underline" href="#5-sms"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h2><ins class="diffmod">
+</ins><p><ins class="diffmod">In </ins><strong><ins class="mod"><ins class="diffmod">Version 13</ins></ins></strong><ins class="diffmod"> we have introduced an additional channel to send alerts - </ins><strong><ins class="mod"><ins class="diffmod">SMS</ins></ins></strong><ins class="diffmod">: <img alt="SMS Channel" class="screenshot" src="/files/sms-notification-channel.png"/> </ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod">In order to use this channel, you would need to complete the configuration of </ins><a href="/erpnext/v13/user/manual/en/setting-up/sms-setting"><ins class="diffmod">SMS Settings</ins></a><ins class="diffmod">.</ins></p><ins class="diffmod">
+</ins><h3 id="6-related-topics"><ins class="diffmod">6. Related Topics</ins><a aria-hidden="true" class="no-underline" href="#6-related-topics"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h3><ins class="diffmod">
+</ins><ol><ins class="diffmod">
+</ins><li><a onclick="loadContent('sms-setting.html')"><ins class="diffmod">SMS Settings</ins></a></li><ins class="diffmod">
+</ins><li><a onclick="loadContent('document-follow.html')"><ins class="diffmod">Document Follow</ins></a></li><ins class="diffmod">
+</ins></ol><ins class="diffmod">
+</ins><h3 id="7-one-off-reminders"><ins class="diffmod">7. One-off Reminders</ins><a aria-hidden="true" class="no-underline" href="#7-one-off-reminders"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h3><ins class="diffmod">
+</ins><blockquote><ins class="diffmod">
+</ins><p><ins class="diffmod">Note: This feature is only available in nightly version as of now.</ins></p><ins class="diffmod">
+</ins></blockquote><ins class="diffmod">
+</ins><p><ins class="diffmod">Since setting up notifications is quite involved process, Frappe Framework also provides a way to setup one-off reminders on documents. Example of such notification would be "Remind me to follow up about this lead in 4 hour"</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod">To set up one-off reminder on document:</ins></p><ins class="diffmod">
+</ins><ol><ins class="diffmod">
+</ins><li><ins class="diffmod">Open the document on which you want to set a reminder</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Click on menu (three dots) &gt; "Remind Me"</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Select time and add a description for yourself and click "Create"</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">System will send you a system notification around the time you've configured with reminder description as subject.</ins></li><ins class="diffmod">
+</ins></ol><ins class="diffmod">
+</ins></div>
+</div>
+</div></div></div></div></main>

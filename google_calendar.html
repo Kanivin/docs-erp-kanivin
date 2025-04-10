@@ -1,36 +1,33 @@
-<main><div class="from-markdown markdown ">
-	<div class="alert alert-warning admin-banner hide" role="alert">
-		<div class="d-flex justify-content-between align-items-center">
-			<div>This space has
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
 				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
 				review.
 			</div>
-			<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
-		</div>
-	</div>
-	<div class="d-flex justify-content-between align-items-center">
-		<h1 class="wiki-title" id="google-calendar-integration">Google Calendar Integration
-<a class="no-underline" href="#google-calendar-integration" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h1>
-	</div>
-	<div class="wiki-content">
-		<p>KanivinERP provides an integration with Google Calendar in order for all users to synchronize their Google Calendar Events with KanivinERP.</p>
-
-<h2 id="how-to-set-up-google-calendar-integration">How to set up Google Calendar Integration<a class="no-underline" href="#how-to-set-up-google-calendar-integration" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h2>
-
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title" id="google-calendar-integration">Google Calendar Integration
+<a aria-hidden="true" class="no-underline" href="#google-calendar-integration">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h1>
+</div>
+<div class="wiki-content">
+<p>KanivinERP provides an integration with Google Calendar in order for all users to synchronize their Google Calendar Events with KanivinERP.</p>
+<h2 id="how-to-set-up-google-calendar-integration">How to set up Google Calendar Integration<a aria-hidden="true" class="no-underline" href="#how-to-set-up-google-calendar-integration">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h2>
 <p>In order to allow a synchronization with Google Calendar, you need to authorize KanivinERP to get Calendar Events data from Google. Google Calendar Integration is set up with the following steps:</p>
-
 <ul>
-<li>Create OAuth 2.0 Credentials via <a href="/erpnext/v13/user/manual/en/erpnext_integration/google_settings">Google Settings</a>.</li>
+<li>Create OAuth 2.0 Credentials via <a onclick="loadContent('google_settings.html')">Google Settings</a>.</li>
 <li>In the Google Calendar list, click on New. Enter Calendar Name and the User for whom you want to sync and then save it.</li>
 <li>Depending what data you want to sync, you can select following
 <ul>
@@ -40,125 +37,109 @@
 <li>Now click on <strong>Authorize Calendar Access</strong> to authorize KanivinERP to get Calendar Events data from Google.</li>
 <li>Once Authorized, you can manually sync Google Calendar Event or let KanivinERP sync Google Contacts daily.</li>
 </ul>
-
-<h2 id="how-to-use-google-calendar-integration">How to use Google Calendar Integration<a class="no-underline" href="#how-to-use-google-calendar-integration" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h2>
-
-<h3 id="creating-an-event-in-erpnext">Creating an Event in KanivinERP<a class="no-underline" href="#creating-an-event-in-erpnext" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h3>
-
+<h2 id="how-to-use-google-calendar-integration">How to use Google Calendar Integration<a aria-hidden="true" class="no-underline" href="#how-to-use-google-calendar-integration">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h2>
+<h3 id="creating-an-event-in-erpnext">Creating an Event in KanivinERP<a aria-hidden="true" class="no-underline" href="#creating-an-event-in-erpnext">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
 <ul>
 <li>Once Google Calendar Integration is succesful, all the events created in KanivinERP will be synced if <code>Push to Google Calendar</code> is checked.</li>
 <li>Creating an Event in KanivinERP
-<img src="/files/erpnext-gc.gif" alt="" class="screenshot"></li>
+<img alt="" class="screenshot" src="/files/erpnext-gc.gif"/></li>
 <li>Deleting an Event in KanivinERP
-<img src="/files/gc-erpnext.gif" alt="" class="screenshot"></li>
+<img alt="" class="screenshot" src="/files/gc-erpnext.gif"/></li>
 </ul>
-
-<h3 id="syncing-events-from-google-calendar">Syncing Events from Google Calendar<a class="no-underline" href="#syncing-events-from-google-calendar" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h3>
-
+<h3 id="syncing-events-from-google-calendar">Syncing Events from Google Calendar<a aria-hidden="true" class="no-underline" href="#syncing-events-from-google-calendar">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
 <ul>
 <li>Once Google Calendar Integration is succesful, all the events in Google Calendar will be synced if <code>Pull from Google Calendar</code> is checked.</li>
 <li>Syncing Events from Google Calendar to KanivinERP
-<img src="/files/gc-sync.gif" alt="" class="screenshot"></li>
+<img alt="" class="screenshot" src="/files/gc-sync.gif"/></li>
 </ul>
-
-	</div>
-	<input value="br5ohi2ch1" class="d-none" name="wiki-page-name">
-	<div class="modal revisions-modal fade" id="revisionsModal" tabindex="-1" role="dialog" aria-labelledby="revisionsModalTitle" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <div class="d-flex flex-column">
-                    <h5 class="modal-title revision-title" id="google-calendar-integration">Google Calendar Integration
-<a class="no-underline" href="#google-calendar-integration" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h5>
-                    <span class="small text-muted revision-time">administrator edited 4 months ago</span>
-                </div>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="revision-content wiki-content"><del class="diffmod">
-                    </del><ins class="diffmod">
-		</ins><p><ins class="diffmod">KanivinERP provides an integration with Google Calendar in order for all users to synchronize their Google Calendar Events with KanivinERP.</ins></p><ins class="diffmod">
-
-</ins><h2 id="how-to-set-up-google-calendar-integration"><ins class="diffmod">How to set up Google Calendar Integration</ins><a class="no-underline" href="#how-to-set-up-google-calendar-integration" aria-hidden="true"><ins class="diffmod">
-        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
-          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
-          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
-        </ins></svg><ins class="diffmod">
-      </ins></a></h2><ins class="diffmod">
-
+</div>
+<input class="d-none" name="wiki-page-name" value="br5ohi2ch1"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="google-calendar-integration">Google Calendar Integration
+<a aria-hidden="true" class="no-underline" href="#google-calendar-integration">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content"><del class="diffmod">
+</del><ins class="diffmod">
+</ins><p><ins class="diffmod">KanivinERP provides an integration with Google Calendar in order for all users to synchronize their Google Calendar Events with KanivinERP.</ins></p><ins class="diffmod">
+</ins><h2 id="how-to-set-up-google-calendar-integration"><ins class="diffmod">How to set up Google Calendar Integration</ins><a aria-hidden="true" class="no-underline" href="#how-to-set-up-google-calendar-integration"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h2><ins class="diffmod">
 </ins><p><ins class="diffmod">In order to allow a synchronization with Google Calendar, you need to authorize KanivinERP to get Calendar Events data from Google. Google Calendar Integration is set up with the following steps:</ins></p><ins class="diffmod">
-
 </ins><ul><ins class="diffmod">
-</ins><li><ins class="diffmod">Create OAuth 2.0 Credentials via </ins><a href="/erpnext/v13/user/manual/en/erpnext_integration/google_settings"><ins class="diffmod">Google Settings</ins></a><ins class="diffmod">.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Create OAuth 2.0 Credentials via </ins><a onclick="loadContent('google_settings.html')"><ins class="diffmod">Google Settings</ins></a><ins class="diffmod">.</ins></li><ins class="diffmod">
 </ins><li><ins class="diffmod">In the Google Calendar list, click on New. Enter Calendar Name and the User for whom you want to sync and then save it.</ins></li><ins class="diffmod">
 </ins><li><ins class="diffmod">Depending what data you want to sync, you can select following
 </ins><ul><ins class="diffmod">
 </ins><li><ins class="diffmod">Pull from Google Calendar - Syncs all event from Google Calendar to KanivinERP.</ins></li><ins class="diffmod">
 </ins><li><ins class="diffmod">Push to Google Calendar - Syncs all event from KanivinERP to Google Calendar.</ins></li><ins class="diffmod">
 </ins></ul></li><ins class="diffmod">
-</ins><li><ins class="diffmod">Now click on </ins><strong><ins class="mod"><ins class="diffmod">Authorize Calendar Access</ins></ins></strong><ins class="diffmod">&nbsp;to authorize KanivinERP to get Calendar Events data from Google.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Now click on </ins><strong><ins class="mod"><ins class="diffmod">Authorize Calendar Access</ins></ins></strong><ins class="diffmod"> to authorize KanivinERP to get Calendar Events data from Google.</ins></li><ins class="diffmod">
 </ins><li><ins class="diffmod">Once Authorized, you can manually sync Google Calendar Event or let KanivinERP sync Google Contacts daily.</ins></li><ins class="diffmod">
 </ins></ul><ins class="diffmod">
-
-</ins><h2 id="how-to-use-google-calendar-integration"><ins class="diffmod">How to use Google Calendar Integration</ins><a class="no-underline" href="#how-to-use-google-calendar-integration" aria-hidden="true"><ins class="diffmod">
-        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
-          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
-          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
-        </ins></svg><ins class="diffmod">
-      </ins></a></h2><ins class="diffmod">
-
-</ins><h3 id="creating-an-event-in-erpnext"><del class="diffmod">No</del><ins class="diffmod">Creating</ins> <del class="diffmod">Revisions</del><ins class="diffmod">an Event in KanivinERP</ins><a class="no-underline" href="#creating-an-event-in-erpnext" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h3><del class="diffmod">
-
-                </del><ins class="diffmod">
-
+</ins><h2 id="how-to-use-google-calendar-integration"><ins class="diffmod">How to use Google Calendar Integration</ins><a aria-hidden="true" class="no-underline" href="#how-to-use-google-calendar-integration"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h2><ins class="diffmod">
+</ins><h3 id="creating-an-event-in-erpnext"><del class="diffmod">No</del><ins class="diffmod">Creating</ins> <del class="diffmod">Revisions</del><ins class="diffmod">an Event in KanivinERP</ins><a aria-hidden="true" class="no-underline" href="#creating-an-event-in-erpnext">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3><del class="diffmod">
+</del><ins class="diffmod">
 </ins><ul><ins class="diffmod">
-</ins><li><ins class="diffmod">Once Google Calendar Integration is succesful, all the events created in KanivinERP will be synced if </ins><code><ins class="diffmod">Push to Google Calendar</ins></code><ins class="diffmod">&nbsp;is checked.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Once Google Calendar Integration is succesful, all the events created in KanivinERP will be synced if </ins><code><ins class="diffmod">Push to Google Calendar</ins></code><ins class="diffmod"> is checked.</ins></li><ins class="diffmod">
 </ins><li><ins class="diffmod">Creating an Event in KanivinERP
-<img src="/files/erpnext-gc.gif" alt="" class="screenshot"></ins></li><ins class="diffmod">
+<img alt="" class="screenshot" src="/files/erpnext-gc.gif"/></ins></li><ins class="diffmod">
 </ins><li><ins class="diffmod">Deleting an Event in KanivinERP
-<img src="/files/gc-erpnext.gif" alt="" class="screenshot"></ins></li><ins class="diffmod">
+<img alt="" class="screenshot" src="/files/gc-erpnext.gif"/></ins></li><ins class="diffmod">
 </ins></ul><ins class="diffmod">
-
-</ins><h3 id="syncing-events-from-google-calendar"><ins class="diffmod">Syncing Events from Google Calendar</ins><a class="no-underline" href="#syncing-events-from-google-calendar" aria-hidden="true"><ins class="diffmod">
-        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
-          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
-          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
-        </ins></svg><ins class="diffmod">
-      </ins></a></h3><ins class="diffmod">
-
+</ins><h3 id="syncing-events-from-google-calendar"><ins class="diffmod">Syncing Events from Google Calendar</ins><a aria-hidden="true" class="no-underline" href="#syncing-events-from-google-calendar"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h3><ins class="diffmod">
 </ins><ul><ins class="diffmod">
-</ins><li><ins class="diffmod">Once Google Calendar Integration is succesful, all the events in Google Calendar will be synced if </ins><code><ins class="diffmod">Pull from Google Calendar</ins></code><ins class="diffmod">&nbsp;is checked.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Once Google Calendar Integration is succesful, all the events in Google Calendar will be synced if </ins><code><ins class="diffmod">Pull from Google Calendar</ins></code><ins class="diffmod"> is checked.</ins></li><ins class="diffmod">
 </ins><li><ins class="diffmod">Syncing Events from Google Calendar to KanivinERP
-<img src="/files/gc-sync.gif" alt="" class="screenshot"></ins></li><ins class="diffmod">
+<img alt="" class="screenshot" src="/files/gc-sync.gif"/></ins></li><ins class="diffmod">
 </ins></ul><ins class="diffmod">
-
-	</ins></div>
-            </div>
-        </main>
+</ins></div>
+</div>
+</div></div></div></div></main>

@@ -1,0 +1,94 @@
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title">Multi Currency Accounting
+</h1>
+</div>
+<div class="wiki-content">
+<p><strong>Transacting in two different currencies is known as Multi Currency Accounting.</strong></p>
+<p>In KanivinERP, you can make accounting entries in multiple currencies. For example, if you have a bank account in foreign currency, you can make transactions in that currency and the system will show bank balance in that specific currency only.</p>
+<p>Bank accounts in foreign currencies can be for other branches of your own company or Debtors/Creditors account for foreign Customers/Suppliers.</p>
+<h2 id="1-setup">1. Setup</h2>
+<h3 id="11-set-currency-in-chart-of-accounts">1.1 Set currency in Chart of Accounts</h3>
+<p>To get started with multi-currency accounting, you need to assign accounting currency in the Account record. You can define Currency from <a href="/erpnext/v13/user/manual/en/accounts/chart-of-accounts">Chart of Accounts</a> while creating an Account.</p>
+<p><img alt="Set Currency in Account" class="screenshot" src="/files/set-default-currency-in-ledger.png"/></p>
+<h3 id="12-new-account-with-different-currency">1.2 New account with different currency</h3>
+<p>You can also assign/modify the currency by opening specific Account records for existing Accounts.</p>
+<p><img alt="Update Currency in Ledger" class="screenshot" src="/files/update-currency-in-ledger.png"/></p>
+<h3 id="13-currency-for-customersupplier">1.3 Currency for Customer/Supplier</h3>
+<p>For Customer/Supplier (Party), you can also define its billing currency in the party record. If the party's accounting currency is different from Company Currency, you should mention Default Receivable/Payable Account in that currency.</p>
+<p><img alt="Billing Currency in Customer" class="screenshot" src="/files/customer-billing-currency.png"/></p>
+<h3 id="14-after-setup">1.4 After setup</h3>
+<p>Once you define Currency in the required account(s) and select relevant accounts in the Party record, you are ready to make transactions against them. If party account currency is different from the Company currency, the system will restrict from making transactions with that party.</p>
+<p>You need to change the currency to party currency in the transaction (Sales or Purchase Order/Invoice). If party account currency is the same as company currency, you can make transactions for that Party in any currency. But accounting entries (GL Entries) will always be in Party Account Currency.</p>
+<blockquote>
+<p><strong>Note</strong>: Ensure that the correct account with currency is set in the 'Debit To' field when making invoices/payments.</p>
+</blockquote>
+<p>You can change accounting currency in Party/Account record before you make any transactions against them. After making accounting entries, the system will not allow you to change the currency for both Party/Account records. In case of multi-company setup, the accounting currency of the party must be the same for all the companies.</p>
+<h2 id="2-exchange-rates">2. Exchange Rates</h2>
+<p>When dealing with multiple currencies, KanivinERP has the Currency Exchange page for managing exchange rates. It allows you to save the exchange rate quotes you require. To know more, visit the <a href="/erpnext/v13/user/manual/en/accounts/currency-exchange">Currency Exchange</a> page.</p>
+<p>For foreign currency transactions, KanivinERP checks exchange rates from:</p>
+<ol>
+<li>From the Currency Exchange for any matching record (if created by a User).</li>
+<li>If this fails, KanivinERP will attempt to get the current market exchange rate from <a href="https://www.frankfurter.app">Frankfurter</a>.</li>
+<li><strong>NOTE</strong>: Starting from KanivinERP version 13.10.0, Frankfurter is replaced by a new service called <a href="https://exchangerate.host">exchangerate.host</a>.</li>
+<li>If this still fails, then the exchange rate will have to be entered manually.</li>
+</ol>
+<p>The rates in the Currency Exchange master are fetched based on whether 'Allow Stale Exchange Rate' is enabled in Accounts Settings. To know more, visit the <a href="/erpnext/v13/user/manual/en/accounts/accounts-settings">Accounts Settings</a> page.</p>
+<h2 id="3-transactions">3. Transactions</h2>
+<h3 id="31-sales-invoice">3.1 Sales Invoice</h3>
+<p>In a Sales Invoice, transaction currency must be the same as the accounting currency of Customer if Customer's accounting currency is different from Company currency. Otherwise, you can select any currency in a Sales Invoice. On selection of Customer, system will fetch a Receivable account from Customer/Company. The Currency of the receivable account must be the same as the Customer's accounting currency.</p>
+<p>Now, in Invoice, Paid Amount will be entered in transaction currency, instead of earlier Company Currency. Write Off Amount will also be entered in the transaction currency.</p>
+<p>Outstanding Amount and Advance Amount will always be calculated and shown in Customer's Account Currency. The paid amounts will be reflected in the <a href="/erpnext/v13/user/manual/en/accounts/payment-entry">Payment Entry</a>:</p>
+<p><img alt="Multi-currency in Payment Entry" class="screenshot" src="/files/multi-currency-in-payment-entry.png"/></p>
+<h3 id="32-purchase-invoice">3.2 Purchase Invoice</h3>
+<p>Similarly, in a Purchase Invoice, accounting entries will be made based on Supplier's accounting currency. Outstanding Amount and Advance Amount will also be shown in the supplier's accounting currency. Write Off Amount will now be entered in the transaction currency.</p>
+<h3 id="33-journal-entry">3.3 Journal Entry</h3>
+<p>In Journal Entry, you can make transactions in different currencies. There is a checkbox 'Multi Currency', to enable multi-currency entries. Only when 'Multi Currency' option selected, you will be able to select accounts which have different currencies.</p>
+<p><img alt="Multi-currency in Journal Entry" class="screenshot" src="/files/multi-currency-journal-entry.png"/></p>
+<p>In the Accounts table, on the selection of a foreign currency account, the system will show the Currency section and fetch Account Currency and Exchange Rate automatically. You can change/modify the Exchange Rate later manually. Debit/Credit amount should be entered in Account Currency, the system will calculate and show the Debit/Credit amount in Company Currency automatically.</p>
+<p><img alt="Company and Transaction Currency in Journal ENtry" class="screenshot" src="/files/company-and-transaction-currency-in-journal-entry.png"/></p>
+<h2 id="4-reports">4. Reports</h2>
+<h3 id="41-general-ledger">4.1 General Ledger</h3>
+<p>In General Ledger, the system shows debit/credit amount in party currency <strong>if filtered</strong> by an Account and that Account Currency is different from Company Currency.</p>
+<p><img alt="Multi-currency in General Ledger" class="screenshot" src="/files/multi-currency-in-general-ledger.png"/></p>
+<h3 id="42-accounts-receivablepayable">4.2 Accounts Receivable/Payable</h3>
+<p>In Accounts Receivable/Payable report, the system shows all the amounts in Party/Account Currency.</p>
+<p><img alt="Multi-currency in Accounts Receivables" class="screenshot" src="/files/multi-currency-in-accounts-receivable.png"/></p>
+<h3 id="5-related-topics">5. Related Topics</h3>
+<ol>
+<li><a onclick="loadContent('exchange-rate-revaluation.html')">Exchange Rate Revaluation</a></li>
+<li><a onclick="loadContent('currency-exchange.html')">Currency Exchange</a></li>
+<li><a onclick="loadContent('currency.html')">Currency</a></li>
+<li><a onclick="loadContent('sales-invoice.html')">Sales Invoice</a></li>
+<li><a onclick="loadContent('purchase-invoice.html')">Purchase Invoice</a></li>
+</ol>
+</div>
+<input class="d-none" name="wiki-page-name" value="pcsf7928oq"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="revisionsModalTitle">Multi Currency Accounting
+</h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content">
+<h3>No Revisions</h3>
+</div>
+</div>
+</div></div></div></div></main>

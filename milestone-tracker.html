@@ -1,0 +1,165 @@
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title" id="milestone-tracking">Milestone Tracking
+<a aria-hidden="true" class="no-underline" href="#milestone-tracking">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h1>
+</div>
+<div class="wiki-content">
+<blockquote>
+<p>Introduced in Version 12</p>
+</blockquote>
+<p><strong>You can automatically track milestones based on the lifecycle of a document if it undergoes multiple stages.</strong></p>
+<p>The configuration for Milestone setting can be set in <strong>Milestone Tracking</strong> and each milestone is updated in <strong>Milestone</strong></p>
+<p>To access Milestone Tracker, go to:</p>
+<blockquote>
+<p>Home &gt; Settings &gt; Milestone Tracker</p>
+</blockquote>
+<h2 id="1-creating-a-milestone-tracker">1. Creating a Milestone Tracker<a aria-hidden="true" class="no-underline" href="#1-creating-a-milestone-tracker">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h2>
+<ol>
+<li>Click on New.</li>
+<li>Set the Document Type to track (example: "Issue").</li>
+<li>Set the field that represents stages (example: "Status").</li>
+</ol>
+<blockquote>
+<p>Note: A milestone stage can be defined by Link or Select properties.</p>
+</blockquote>
+<p>Once this is set, a new <strong>Milestone</strong> record is created every time the status of any issue is changed.</p>
+<p>The Milestone can be viewed in the timeline of the view:</p>
+<p><img alt="Assign" class="screenshot" src="/files/milestone-in-timeline.png"/></p>
+<p>Note: Milestones work independently of Versions.</p>
+<h2 id="2-features">2. Features<a aria-hidden="true" class="no-underline" href="#2-features">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h2>
+<p>Milestones can be a great source for reporting and notifying. For example, if Lead Qualification is a milestone on "Lead", milestones can help generate reports on the number of leads being qualified in a period.</p>
+<h3 id="21-using-milestones-with-dashboards">2.1 Using Milestones with Dashboards<a aria-hidden="true" class="no-underline" href="#21-using-milestones-with-dashboards">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<p>Used along with Dashboards, Milestones can help track the trends in milestones. For example, if "Qualification" is tracked as a "Lead Stage", a Dashboard on Milestone filtered by Qualification will show the trends of leads qualified.</p>
+<h3 id="22-using-milestones-with-energy-points">2.2 Using Milestones with Energy Points<a aria-hidden="true" class="no-underline" href="#22-using-milestones-with-energy-points">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<p>Energy Point Rules can be defined to automatically give Energy Points to users who achieve a milestone. This can be used to incentivize action on transactions at various levels.</p>
+<h2 id="3-related-topics">3. Related Topics<a aria-hidden="true" class="no-underline" href="#3-related-topics">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h2>
+<ol>
+<li><a onclick="loadContent('document-versioning.html')">Tracking Versions</a></li>
+<li><a onclick="loadContent('dashboard.html')">Dashboards</a></li>
+<li><a onclick="loadContent('energy-point-system.html')">Energy Point System</a></li>
+</ol>
+</div>
+<input class="d-none" name="wiki-page-name" value="cteuj538kb"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="milestone-tracking">Milestone Tracking
+<a aria-hidden="true" class="no-underline" href="#milestone-tracking">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content"><del class="diffmod">
+</del><ins class="diffmod">
+</ins><blockquote><ins class="diffmod">
+</ins><p><ins class="diffmod">Introduced in Version 12</ins></p><ins class="diffmod">
+</ins></blockquote><ins class="diffmod">
+</ins><p><strong><ins class="diffmod">You can automatically track milestones based on the lifecycle of a document if it undergoes multiple stages.</ins></strong></p><ins class="diffmod">
+</ins><p><ins class="diffmod">The configuration for Milestone setting can be set in </ins><strong><ins class="mod"><ins class="diffmod">Milestone Tracking</ins></ins></strong><ins class="diffmod"> and each milestone is updated in </ins><strong><ins class="mod"><ins class="diffmod">Milestone</ins></ins></strong></p><ins class="diffmod">
+</ins><p><ins class="diffmod">To access Milestone Tracker, go to:</ins></p><ins class="diffmod">
+</ins><blockquote><ins class="diffmod">
+</ins><p><ins class="diffmod">Home &gt; Settings &gt; Milestone Tracker</ins></p><ins class="diffmod">
+</ins></blockquote><ins class="diffmod">
+</ins><h2 id="1-creating-a-milestone-tracker"><ins class="diffmod">1. Creating a Milestone Tracker</ins><a aria-hidden="true" class="no-underline" href="#1-creating-a-milestone-tracker"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h2><ins class="diffmod">
+</ins><ol><ins class="diffmod">
+</ins><li><ins class="diffmod">Click on New.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Set the Document Type to track (example: "Issue").</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Set the field that represents stages (example: "Status").</ins></li><ins class="diffmod">
+</ins></ol><ins class="diffmod">
+</ins><blockquote><ins class="diffmod">
+</ins><p><ins class="diffmod">Note: A milestone stage can be defined by Link or Select properties.</ins></p><ins class="diffmod">
+</ins></blockquote><ins class="diffmod">
+</ins><p><ins class="diffmod">Once this is set, a new </ins><strong><ins class="mod"><ins class="diffmod">Milestone</ins></ins></strong><ins class="diffmod"> record is created every time the status of any issue is changed.</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod">The Milestone can be viewed in the timeline of the view:</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod"><img alt="Assign" class="screenshot" src="/files/milestone-in-timeline.png"/></ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod">Note: Milestones work independently of Versions.</ins></p><ins class="diffmod">
+</ins><h2 id="2-features"><ins class="diffmod">2. Features</ins><a aria-hidden="true" class="no-underline" href="#2-features"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h2><ins class="diffmod">
+</ins><p><ins class="diffmod">Milestones can be a great source for reporting and notifying. For example, if Lead Qualification is a milestone on "Lead", milestones can help generate reports on the number of leads being qualified in a period.</ins></p><ins class="diffmod">
+</ins><h3 id="21-using-milestones-with-dashboards"><del class="diffmod">No</del><ins class="diffmod">2.1</ins> <del class="diffmod">Revisions</del><ins class="diffmod">Using Milestones with Dashboards</ins><a aria-hidden="true" class="no-underline" href="#21-using-milestones-with-dashboards">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3><del class="diffmod">
+</del><ins class="diffmod">
+</ins><p><ins class="diffmod">Used along with Dashboards, Milestones can help track the trends in milestones. For example, if "Qualification" is tracked as a "Lead Stage", a Dashboard on Milestone filtered by Qualification will show the trends of leads qualified.</ins></p><ins class="diffmod">
+</ins><h3 id="22-using-milestones-with-energy-points"><ins class="diffmod">2.2 Using Milestones with Energy Points</ins><a aria-hidden="true" class="no-underline" href="#22-using-milestones-with-energy-points"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h3><ins class="diffmod">
+</ins><p><ins class="diffmod">Energy Point Rules can be defined to automatically give Energy Points to users who achieve a milestone. This can be used to incentivize action on transactions at various levels.</ins></p><ins class="diffmod">
+</ins><h2 id="3-related-topics"><ins class="diffmod">3. Related Topics</ins><a aria-hidden="true" class="no-underline" href="#3-related-topics"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h2><ins class="diffmod">
+</ins><ol><ins class="diffmod">
+</ins><li><a onclick="loadContent('document-versioning.html')"><ins class="diffmod">Tracking Versions</ins></a></li><ins class="diffmod">
+</ins><li><a onclick="loadContent('dashboard.html')"><ins class="diffmod">Dashboards</ins></a></li><ins class="diffmod">
+</ins><li><a onclick="loadContent('energy-point-system.html')"><ins class="diffmod">Energy Point System</ins></a></li><ins class="diffmod">
+</ins></ol><ins class="diffmod">
+</ins></div>
+</div>
+</div></div></div></div></main>

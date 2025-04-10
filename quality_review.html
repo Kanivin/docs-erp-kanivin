@@ -1,222 +1,181 @@
-<main><div class="from-markdown markdown ">
-	<div class="alert alert-warning admin-banner hide" role="alert">
-		<div class="d-flex justify-content-between align-items-center">
-			<div>This space has
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
 				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
 				review.
 			</div>
-			<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
-		</div>
-	</div>
-	<div class="d-flex justify-content-between align-items-center">
-		<h1 class="wiki-title" id="quality-review">Quality Review
-<a class="no-underline" href="#quality-review" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h1>
-	</div>
-	<div class="wiki-content">
-		<blockquote>
-  <p>Introduced in Version 12</p>
-</blockquote>
-
-<p><strong>A Quality Review is a record of the performance against Quality Goal at regular intervals.</strong></p>
-
-<p>A Quality Review is an inspection with a specific structure, defined roles, and procedure designed to ensure a product's completeness and adherence to quality standards. The Quality Review is used to check if all Objectives of a Quality Goal have been achieved.</p>
-
-<p>To access the Quality Review list, go to:</p>
-
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title" id="quality-review">Quality Review
+<a aria-hidden="true" class="no-underline" href="#quality-review">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h1>
+</div>
+<div class="wiki-content">
 <blockquote>
-  <p>Home &gt; Quality &gt; Review and Action &gt; Quality Review</p>
+<p>Introduced in Version 12</p>
 </blockquote>
-
-<h2 id="1-prerequisites">1. Prerequisites<a class="no-underline" href="#1-prerequisites" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h2>
-
+<p><strong>A Quality Review is a record of the performance against Quality Goal at regular intervals.</strong></p>
+<p>A Quality Review is an inspection with a specific structure, defined roles, and procedure designed to ensure a product's completeness and adherence to quality standards. The Quality Review is used to check if all Objectives of a Quality Goal have been achieved.</p>
+<p>To access the Quality Review list, go to:</p>
+<blockquote>
+<p>Home &gt; Quality &gt; Review and Action &gt; Quality Review</p>
+</blockquote>
+<h2 id="1-prerequisites">1. Prerequisites<a aria-hidden="true" class="no-underline" href="#1-prerequisites">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h2>
 <p>Before creating and using a Quality Review it is advised to create the following first:</p>
-
 <ul>
-<li><a href="/erpnext/v13/user/manual/en/quality-management/quality_goal">Quality Goal</a></li>
+<li><a onclick="loadContent('quality_goal.html')">Quality Goal</a></li>
 </ul>
-
-<h2 id="2-how-to-create-a-quality-review">2. How to Create a Quality Review<a class="no-underline" href="#2-how-to-create-a-quality-review" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h2>
-
+<h2 id="2-how-to-create-a-quality-review">2. How to Create a Quality Review<a aria-hidden="true" class="no-underline" href="#2-how-to-create-a-quality-review">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h2>
 <ol>
 <li>Go to the Quality Review list, click on New.</li>
 <li>Select a Quality Goal which is to be Reviewed.</li>
 <li>In the Review section of the Reviews table, leave a review about a Quality Objective.</li>
 <li><p>Save.</p>
-
-<p><img src="/files/quality-review.gif" alt="Quality Review" class="screenshot"></p></li>
+<p><img alt="Quality Review" class="screenshot" src="/files/quality-review.gif"/></p></li>
 </ol>
-
 <blockquote>
-  <p>Note: If the Quality Procedure is linked to the Quality Goal, the Quality Procedure will be fetched in the Quality Review.</p>
+<p>Note: If the Quality Procedure is linked to the Quality Goal, the Quality Procedure will be fetched in the Quality Review.</p>
 </blockquote>
-
 <p>You can also add some notes in the 'Additional Information' section.</p>
-
-<h2 id="3-features">3. Features<a class="no-underline" href="#3-features" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h2>
-
-<h4 id="periodic-auto-creation">Periodic Auto Creation<a class="no-underline" href="#periodic-auto-creation" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h4>
-
+<h2 id="3-features">3. Features<a aria-hidden="true" class="no-underline" href="#3-features">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h2>
+<h4 id="periodic-auto-creation">Periodic Auto Creation<a aria-hidden="true" class="no-underline" href="#periodic-auto-creation">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h4>
 <p>if you have set the frequency of review in your Quality Goal, then the Quality Review will automatically be created and its status will be set to "Open". The quality manager can then check open reviews and complete the inspection.</p>
-
-<h2 id="4-next-steps">4. Next Steps<a class="no-underline" href="#4-next-steps" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h2>
-
+<h2 id="4-next-steps">4. Next Steps<a aria-hidden="true" class="no-underline" href="#4-next-steps">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h2>
 <p>After you have completed a Quality Review, you can create a <a href="/erpnext/v13/user/manual/en/quality-management/quality_action">Quality Action</a> against it if you want to record any corrective or preventive actions</p>
-
-<h2 id="5-related-topics">5. Related Topics<a class="no-underline" href="#5-related-topics" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h2>
-
+<h2 id="5-related-topics">5. Related Topics<a aria-hidden="true" class="no-underline" href="#5-related-topics">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h2>
 <ul>
-<li><a href="/erpnext/v13/user/manual/en/quality-management/quality_procedure">Quality Procedure</a></li>
-<li><a href="/erpnext/v13/user/manual/en/quality-management/quality_goal">Quality Goal</a></li>
-<li><a href="/erpnext/v13/user/manual/en/quality-management/quality_action">Quality Action</a></li>
+<li><a onclick="loadContent('quality_procedure.html')">Quality Procedure</a></li>
+<li><a onclick="loadContent('quality_goal.html')">Quality Goal</a></li>
+<li><a onclick="loadContent('quality_action.html')">Quality Action</a></li>
 </ul>
-
-	</div>
-	<input value="rq4cuer943" class="d-none" name="wiki-page-name">
-	<div class="modal revisions-modal fade" id="revisionsModal" tabindex="-1" role="dialog" aria-labelledby="revisionsModalTitle" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <div class="d-flex flex-column">
-                    <h5 class="modal-title revision-title" id="quality-review">Quality Review
-<a class="no-underline" href="#quality-review" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h5>
-                    <span class="small text-muted revision-time">administrator edited 4 months ago</span>
-                </div>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="revision-content wiki-content"><del class="diffmod">
-                    </del><h3 id="no-revisions"><del class="diffmod">No</del><ins class="diffmod">
-		</ins><blockquote><ins class="diffmod">
-  </ins><p><ins class="diffmod">Introduced</ins> <del class="diffmod">Revisions</del><ins class="diffmod">in Version 12</ins></p><ins class="diffmod">
-</ins></blockquote><ins class="diffmod">
-
-</ins><p><strong><ins class="diffmod">A Quality Review is a record of the performance against Quality Goal at regular intervals.</ins></strong></p><ins class="diffmod">
-
-</ins><p><ins class="diffmod">A Quality Review is an inspection with a specific structure, defined roles, and procedure designed to ensure a product's completeness and adherence to quality standards. The Quality Review is used to check if all Objectives of a Quality Goal have been achieved.</ins></p><ins class="diffmod">
-
-</ins><p><ins class="diffmod">To access the Quality Review list, go to:</ins></p><ins class="diffmod">
-
+</div>
+<input class="d-none" name="wiki-page-name" value="rq4cuer943"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="quality-review">Quality Review
+<a aria-hidden="true" class="no-underline" href="#quality-review">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content"><del class="diffmod">
+</del><h3 id="no-revisions"><del class="diffmod">No</del><ins class="diffmod">
 </ins><blockquote><ins class="diffmod">
-  </ins><p><ins class="diffmod">Home &gt; Quality &gt; Review and Action &gt; Quality Review</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod">Introduced</ins> <del class="diffmod">Revisions</del><ins class="diffmod">in Version 12</ins></p><ins class="diffmod">
 </ins></blockquote><ins class="diffmod">
-
-</ins></h3><h2 id="1-prerequisites"><ins class="diffmod">1. Prerequisites</ins><a class="no-underline" href="#1-prerequisites" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h2><del class="diffmod">
-
-                </del><ins class="diffmod">
-
+</ins><p><strong><ins class="diffmod">A Quality Review is a record of the performance against Quality Goal at regular intervals.</ins></strong></p><ins class="diffmod">
+</ins><p><ins class="diffmod">A Quality Review is an inspection with a specific structure, defined roles, and procedure designed to ensure a product's completeness and adherence to quality standards. The Quality Review is used to check if all Objectives of a Quality Goal have been achieved.</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod">To access the Quality Review list, go to:</ins></p><ins class="diffmod">
+</ins><blockquote><ins class="diffmod">
+</ins><p><ins class="diffmod">Home &gt; Quality &gt; Review and Action &gt; Quality Review</ins></p><ins class="diffmod">
+</ins></blockquote><ins class="diffmod">
+</ins></h3><h2 id="1-prerequisites"><ins class="diffmod">1. Prerequisites</ins><a aria-hidden="true" class="no-underline" href="#1-prerequisites">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h2><del class="diffmod">
+</del><ins class="diffmod">
 </ins><p><ins class="diffmod">Before creating and using a Quality Review it is advised to create the following first:</ins></p><ins class="diffmod">
-
 </ins><ul><ins class="diffmod">
-</ins><li><a href="/erpnext/v13/user/manual/en/quality-management/quality_goal"><ins class="diffmod">Quality Goal</ins></a></li><ins class="diffmod">
+</ins><li><a onclick="loadContent('quality_goal.html')"><ins class="diffmod">Quality Goal</ins></a></li><ins class="diffmod">
 </ins></ul><ins class="diffmod">
-
-</ins><h2 id="2-how-to-create-a-quality-review"><ins class="diffmod">2. How to Create a Quality Review</ins><a class="no-underline" href="#2-how-to-create-a-quality-review" aria-hidden="true"><ins class="diffmod">
-        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
-          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
-          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
-        </ins></svg><ins class="diffmod">
-      </ins></a></h2><ins class="diffmod">
-
+</ins><h2 id="2-how-to-create-a-quality-review"><ins class="diffmod">2. How to Create a Quality Review</ins><a aria-hidden="true" class="no-underline" href="#2-how-to-create-a-quality-review"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h2><ins class="diffmod">
 </ins><ol><ins class="diffmod">
 </ins><li><ins class="diffmod">Go to the Quality Review list, click on New.</ins></li><ins class="diffmod">
 </ins><li><ins class="diffmod">Select a Quality Goal which is to be Reviewed.</ins></li><ins class="diffmod">
 </ins><li><ins class="diffmod">In the Review section of the Reviews table, leave a review about a Quality Objective.</ins></li><ins class="diffmod">
 </ins><li><p><ins class="diffmod">Save.</ins></p><ins class="diffmod">
-
-</ins><p><ins class="diffmod"><img src="/files/quality-review.gif" alt="Quality Review" class="screenshot"></ins></p></li><ins class="diffmod">
+</ins><p><ins class="diffmod"><img alt="Quality Review" class="screenshot" src="/files/quality-review.gif"/></ins></p></li><ins class="diffmod">
 </ins></ol><ins class="diffmod">
-
 </ins><blockquote><ins class="diffmod">
-  </ins><p><ins class="diffmod">Note: If the Quality Procedure is linked to the Quality Goal, the Quality Procedure will be fetched in the Quality Review.</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod">Note: If the Quality Procedure is linked to the Quality Goal, the Quality Procedure will be fetched in the Quality Review.</ins></p><ins class="diffmod">
 </ins></blockquote><ins class="diffmod">
-
 </ins><p><ins class="diffmod">You can also add some notes in the 'Additional Information' section.</ins></p><ins class="diffmod">
-
-</ins><h2 id="3-features"><ins class="diffmod">3. Features</ins><a class="no-underline" href="#3-features" aria-hidden="true"><ins class="diffmod">
-        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
-          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
-          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
-        </ins></svg><ins class="diffmod">
-      </ins></a></h2><ins class="diffmod">
-
-</ins><h4 id="periodic-auto-creation"><ins class="diffmod">Periodic Auto Creation</ins><a class="no-underline" href="#periodic-auto-creation" aria-hidden="true"><ins class="diffmod">
-        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
-          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
-          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
-        </ins></svg><ins class="diffmod">
-      </ins></a></h4><ins class="diffmod">
-
+</ins><h2 id="3-features"><ins class="diffmod">3. Features</ins><a aria-hidden="true" class="no-underline" href="#3-features"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h2><ins class="diffmod">
+</ins><h4 id="periodic-auto-creation"><ins class="diffmod">Periodic Auto Creation</ins><a aria-hidden="true" class="no-underline" href="#periodic-auto-creation"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h4><ins class="diffmod">
 </ins><p><ins class="diffmod">if you have set the frequency of review in your Quality Goal, then the Quality Review will automatically be created and its status will be set to "Open". The quality manager can then check open reviews and complete the inspection.</ins></p><ins class="diffmod">
-
-</ins><h2 id="4-next-steps"><ins class="diffmod">4. Next Steps</ins><a class="no-underline" href="#4-next-steps" aria-hidden="true"><ins class="diffmod">
-        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
-          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
-          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
-        </ins></svg><ins class="diffmod">
-      </ins></a></h2><ins class="diffmod">
-
-</ins><p><ins class="diffmod">After you have completed a Quality Review, you can create a </ins><a href="/erpnext/v13/user/manual/en/quality-management/quality_action"><ins class="diffmod">Quality Action</ins></a><ins class="diffmod">&nbsp;against it if you want to record any corrective or preventive actions</ins></p><ins class="diffmod">
-
-</ins><h2 id="5-related-topics"><ins class="diffmod">5. Related Topics</ins><a class="no-underline" href="#5-related-topics" aria-hidden="true"><ins class="diffmod">
-        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
-          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
-          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
-        </ins></svg><ins class="diffmod">
-      </ins></a></h2><ins class="diffmod">
-
+</ins><h2 id="4-next-steps"><ins class="diffmod">4. Next Steps</ins><a aria-hidden="true" class="no-underline" href="#4-next-steps"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h2><ins class="diffmod">
+</ins><p><ins class="diffmod">After you have completed a Quality Review, you can create a </ins><a href="/erpnext/v13/user/manual/en/quality-management/quality_action"><ins class="diffmod">Quality Action</ins></a><ins class="diffmod"> against it if you want to record any corrective or preventive actions</ins></p><ins class="diffmod">
+</ins><h2 id="5-related-topics"><ins class="diffmod">5. Related Topics</ins><a aria-hidden="true" class="no-underline" href="#5-related-topics"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h2><ins class="diffmod">
 </ins><ul><ins class="diffmod">
-</ins><li><a href="/erpnext/v13/user/manual/en/quality-management/quality_procedure"><ins class="diffmod">Quality Procedure</ins></a></li><ins class="diffmod">
-</ins><li><a href="/erpnext/v13/user/manual/en/quality-management/quality_goal"><ins class="diffmod">Quality Goal</ins></a></li><ins class="diffmod">
-</ins><li><a href="/erpnext/v13/user/manual/en/quality-management/quality_action"><ins class="diffmod">Quality Action</ins></a></li><ins class="diffmod">
+</ins><li><a onclick="loadContent('quality_procedure.html')"><ins class="diffmod">Quality Procedure</ins></a></li><ins class="diffmod">
+</ins><li><a onclick="loadContent('quality_goal.html')"><ins class="diffmod">Quality Goal</ins></a></li><ins class="diffmod">
+</ins><li><a onclick="loadContent('quality_action.html')"><ins class="diffmod">Quality Action</ins></a></li><ins class="diffmod">
 </ins></ul><ins class="diffmod">
-
-	</ins></div>
-            </div>
-        </main>
+</ins></div>
+</div>
+</div></div></div></div></main>

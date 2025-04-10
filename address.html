@@ -1,0 +1,84 @@
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title">Address
+</h1>
+</div>
+<div class="wiki-content">
+<p>You can record the addresses associated with a Lead, Customer, Supplier, Shareholder, Sales Partner or a Warehouse.</p>
+<p>You can also add an Address as a standalone record without linking it to any of the entities listed above.</p>
+<p>To access the Address list, go to:</p>
+<blockquote>
+<p>Home &gt; CRM &gt; Address</p>
+</blockquote>
+<h2 id="1-how-to-create-an-address">1. How to create an Address</h2>
+<ol>
+<li>Go to the Address list and click on New.</li>
+<li>Select Address Type.</li>
+<li>Enter details in Address Line 1, Address Line 2, City/Town, County, State, Country.</li>
+<li>Enter Email Address, Phone and Fax.</li>
+<li>Enter Link DocType and Link Name to link this address to customer, supplier etc.</li>
+<li>Save.
+<img alt="Contact" class="screenshot" src="/files/address.png"/></li>
+</ol>
+<p>You can also add an Address from the Customer or Supplier record by clicking on “New Address" button as shown below.</p>
+<p><img alt="Add Address From Customer" class="screenshot" src="/files/add-address-from-customer.png"/></p>
+<p>To Import multiple addresses from a spreadsheet, use the <a href="/erpnext/v13/user/manual/en/setting-up/data/data-import">Data Import Tool</a>.</p>
+<hr/>
+<h2 id="2-features">2. Features</h2>
+<h3 id="21-link-an-address-to-multiple-entities">2.1 Link an Address to Multiple Entities</h3>
+<p>An address may be linked to multiple customers or multiple suppliers.</p>
+<p>An address can also be linked to customers and suppliers at the same time.</p>
+<p><img alt="Link One Address to Multiple Entities" class="screenshot" src="/files/link-address-to-multiple-entities.png"/></p>
+<h3 id="22-address-title">2.2 Address Title</h3>
+<p>If the address is not linked to any entity you need to manually add a title.</p>
+<p>If the address is linked to an entity like a customer or supplier, the title is generated automatically in 'Entity Name-Address Type' format.</p>
+<p><img alt="Address Title" class="screenshot" src="/files/address-title.png"/></p>
+<h3 id="23-preferred-billing-address-and-shipping-address">2.3 Preferred Billing Address and Shipping Address</h3>
+<p>If you check 'Preferred Shipping Address', the address would be automatically added in the Shipping Address in Sales Order, Sales Invoice and Delivery Note transactions.</p>
+<p>Similarly, if you check 'Preferred Billing Address', the address would be automatically added in the Billing Address in Sales Order, Sales Invoice and Delivery Note transactions.</p>
+<h3 id="24-gst-localization-for-india">2.4 GST Localization for India</h3>
+<p>If the customer or supplier has registered under GST, you can enter GSTIN and GST State in Address. Make sure GSTIN entered is in valid format.
+<img alt="GST Details in Address" class="screenshot" src="/files/gst-details-in-address.png"/></p>
+<p>In sales transactions along with address, GSTIN is also fetched.</p>
+<p><img alt="GST Details in Sales Order" class="screenshot" src="/files/gst-details-in-sales-order.png"/></p>
+<p>You can also add addresses of your own company's facilities. Check 'Is Your Company Address', select Company in Link DocType, and Company Name in Link Name for such addresses and you can select them in GST Sales Invoice to print your own address.</p>
+<p><img alt="Company Address" class="screenshot" src="/files/company-address.png"/></p>
+<blockquote>
+<p>GSTIN is to be added in Address and not in Customer/Supplier, as one Customer/Supplier may have multiple GSTIN (one for each state where he conducts his business).</p>
+</blockquote>
+<h3 id="3-related-topics">3. Related Topics</h3>
+<ol>
+<li><a onclick="loadContent('customer.html')">Customer</a></li>
+<li><a onclick="loadContent('buying.html')">Supplier</a></li>
+<li><a onclick="loadContent('selling.html')">Sales Partner</a></li>
+</ol>
+</div>
+<input class="d-none" name="wiki-page-name" value="undhg4j0bl"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="revisionsModalTitle">Address
+</h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content">
+<h3>No Revisions</h3>
+</div>
+</div>
+</div></div></div></div></main>

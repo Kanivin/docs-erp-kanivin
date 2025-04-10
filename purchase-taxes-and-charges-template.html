@@ -1,0 +1,80 @@
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title">Purchase Taxes and Charges Template
+</h1>
+</div>
+<div class="wiki-content">
+<p><strong>Purchase Taxes and Charges may be applied to any item you buy.</strong></p>
+<p>The Purchase Taxes and Charges Template is similar to the Sales Taxes and Charges Template. The templates created from this form can be used in Purchase Orders and Purchase Invoices for internal records.</p>
+<p>For Tax Accounts that you want to use in the tax templates, you must set the Account Type field as 'Tax' for that particular account.</p>
+<p>To access Purchase Taxes and Charges Template, go to:</p>
+<blockquote>
+<p>Home &gt; Buying &gt; Settings &gt; Purchase Taxes and Charges Template</p>
+</blockquote>
+<h2 id="1-how-to-add-purchase-taxescharges-via-a-template">1. How to add Purchase Taxes/Charges via a template</h2>
+<p>Before creating a new template, note that templates are already created for many of the commonly used taxes.</p>
+<ol>
+<li>Click on New.</li>
+<li>Enter a title name for the Tax.</li>
+<li>Under type, set on what the tax will be calculated and the tax rate. There are five options under type for which tax will be calculated.
+<ol>
+<li>Actual: On the actual amount of each item.</li>
+<li>On Net Total: On the grand total of all the items.</li>
+<li>On Previous Row Amount: This is for compounding the charges. For example, cess charges over the amount to which tax was already applied in the previous row.</li>
+<li>On Previous Row Total: Same as above but applied on the total bill and not just the amount of an item.</li>
+</ol></li>
+<li>Select an account head which has pre set tax rates or create your own.</li>
+<li>Selecting default will apply this template by default for new Purchase transactions.</li>
+<li>Save.
+<img alt="Purchase taxes" class="screenshot" src="/files/purchase-taxes.png"/></li>
+</ol>
+<p>Is Inter State: For India. On selection of a customer in Sales Invoice or Delivery Note, if the GST codes of place of supply and customer shipping address don't match, the template with 'Is Inter State' ticked will be set as the taxes template. If the place of supply and shipping address are the same, the default taxes template will be applied. This also applies to Purchase Invoice, on selection of Supplier, the templates are set depending on the addresses. For example, IGST.</p>
+<h2 id="2-features">2. Features</h2>
+<h3 id="21-purchase-taxes-and-charges-table">2.1 Purchase Taxes and Charges table</h3>
+<ul>
+<li><strong>Consider Tax or Charge for</strong>: Total - for the total of all items. Valuation - for each item. Valuation and total - apply tax/charge to both. <a href="https://docs.erpnext.com/docs/v13/user/manual/en/accounts/articles/difference-in-total-and-valuation-in-tax-and-charges">Check out this article</a> to know the difference.</li>
+<li><p><strong>Add or Deduct:</strong> Whether you want to add or deduct the tax from the item.</p></li>
+<li><p><strong>Reference Row #</strong>: If tax is based on "Previous Row Total" you can select the row number which will be taken as a base for this calculation (default is the previous row).
+<img alt="Purchase taxes table" class="screenshot" src="/files/purchase-taxes-table.png"/></p></li>
+<li><p><strong>Is this Tax included in Basic Rate?</strong>: If checked, the tax amount will be considered as already included in the Print Rate / Print Amount.</p></li>
+<li><strong>Account Head:</strong> The Account ledger under which this tax will be booked. If you select VAT or any other preset heads, the rate will be automatically filled.</li>
+<li><strong>Cost Center:</strong> If the tax/charge is an income (like shipping) or expense it needs to be booked against a Cost Center.</li>
+<li><strong>Description:</strong> Description of the tax (that will be printed in invoices/quotes).</li>
+<li><strong>Rate:</strong> The Tax rate, eg: 14 = 14% tax.</li>
+<li><strong>Amount:</strong> The Tax amount to be applied, eg: 100.00 = ₹100 tax.</li>
+</ul>
+<h3 id="3-related-topics">3. Related Topics</h3>
+<ol>
+<li><a onclick="loadContent('purchase-order.html')">Purchase Order</a></li>
+<li><a onclick="loadContent('buying-settings.html')">Buying Settings</a></li>
+</ol>
+</div>
+<input class="d-none" name="wiki-page-name" value="pr25cpea6p"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="revisionsModalTitle">Purchase Taxes and Charges Template
+</h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content">
+<h3>No Revisions</h3>
+</div>
+</div>
+</div></div></div></div></main>

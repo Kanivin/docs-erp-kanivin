@@ -1,0 +1,69 @@
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title">Payment Reconciliation</h1>
+</div>
+<div class="wiki-content">
+<p><strong>Payment Reconciliation is used to link payments with invoices.</strong></p>
+<p>In complex scenarios, especially in the capital goods industry, sometimes there is no direct link between payments and invoices. For example, suppose a party is a customer, you send invoices to a customer and the customer sends you block payments or payments based on some schedule that is not linked to your invoices.</p>
+<p>In such cases, you can match Payments with Invoices using Payment Reconciliation.</p>
+<p>To access Payment Reconciliation, go to:</p>
+<blockquote>
+<p>Home &gt; Accounting &gt; Accounts Receivable &gt; Payment Reconciliation</p>
+</blockquote>
+<h2 id="1-how-to-match-payments-with-invoices">1. How to Match Payments with Invoices</h2>
+<ol>
+<li>Go to Payment Reconciliation.</li>
+<li>Select a Company.</li>
+<li>Select a Party Type and select the Party. The Receivable/Payable account will be selected automatically.</li>
+<li>Select the Bank/Cash account against which the payments need to be reconciled.</li>
+<li>If you want to filter the records, select a date range for the invoices or set minimum or maximum amount for invoices as well as payment transactions</li>
+<li>Click on the <strong>Get Unreconciled Entries</strong> button.</li>
+<li>This will fetch all un-linked invoices and payment transactions from that party in Invoices and Payments table resp.</li>
+<li>You can either select any particular entries to be allocated or can click on <strong>Allocate</strong> button without selecting anything to allocate all the entries.</li>
+<li>Allocation table will be populated based on FIFO or/and selection.</li>
+<li>Allocated Amount is the amount you want to allocate for the reconciliation.</li>
+<li>Click on <strong>Reconcile</strong> to reconcile allocated entries. You will get a message that says 'Successfully Reconciled'.</li>
+</ol>
+<p><img alt="Payment Reconciliation Tool" class="screenshot" src="/files/payment_recon.gif"/> </p>
+<h2 id="2-what-happens-on-payment-reconciliation">2. What happens on Payment Reconciliation</h2>
+<p>If the invoices are reconciled against: </p>
+<ol>
+<li><strong>Payment Entry</strong> - A journal entry is not auto-created when reconciliation happens against a payment entry. This is because payment entries are associated with linked transactions.</li>
+<li><strong>Credit/Debit Note</strong> - A journal entry is auto-created to allocate a credit/debit note to an invoice that is being reconciled. This automatic creation of a journal entry is necessary since credit/debit notes do not have linked transactions. The journal entry resulting from the reconciliation indicates the adjustment of a particular credit/debit note with a specific invoice.</li>
+</ol>
+<h3 id="2-related-topics">2. Related Topics</h3>
+<ol>
+<li><a onclick="loadContent('payment-request.html')">Payment Request</a></li>
+<li><a onclick="loadContent('sales-invoice.html')">Sales Invoice</a></li>
+<li><a onclick="loadContent('purchase-invoice.html')">Purchase Invoice</a></li>
+<li><a onclick="loadContent('semi-auto-payment-reconciliation.html')">Semi-Auto Payment Reconciliation</a></li>
+</ol>
+</div>
+<input class="d-none" name="wiki-page-name" value="4he5pt9ho8"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="revisionsModalTitle">Payment Reconciliation</h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content">
+<h3>No Revisions</h3>
+</div>
+</div>
+</div></div></div></div></main>

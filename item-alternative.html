@@ -1,0 +1,74 @@
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title">Item Alternative
+</h1>
+</div>
+<div class="wiki-content">
+<p><strong>An Item Alternative is an Item similar to the original one and can be used instead of the original Item in manufacturing.</strong></p>
+<p>If the raw material defined in the BOM is not available during the production process then their respective available alternative Item can be used to complete the production process.</p>
+<p>First you need to enable the "Allow Alternative Item" in the Item.
+<img alt="Item" class="screenshot" src="/files/allow-alternative-item.png"/></p>
+<p>To access the Item alternative list, go to:</p>
+<blockquote>
+<p>Home &gt; Stock &gt; Items and Pricing &gt; Item Alternative</p>
+</blockquote>
+<p>This can also be done by clicking the plus sign next to 'Item Alternative' from the Item master dashboard.
+You can enable Two-Way replacement between an Item and their alternative item if both can be used as an alternative to each other.</p>
+<p><img alt="Item Alternative" class="screenshot" src="/files/item-alternative.png"/></p>
+<h2 id="1-prerequisites">1. Prerequisites</h2>
+<p>Before creating and using an Item Alternative, it is advised that you create the following first:</p>
+<ul>
+<li><a onclick="loadContent('item.html')">Item</a></li>
+</ul>
+<h2 id="2-item-alternative-for-work-order">2. Item Alternative for Work Order</h2>
+<p>To allow to using alternative Items in the manufacturing process, the user can configure to 'Allow Alternative Item' in the BOM/Work Order</p>
+<h3 id="21-provision-to-allow-alternative-item-in-the-bom">2.1 Provision to allow alternative item in the BOM</h3>
+<p>You can enable 'Allow Alternative Item' in a BOM then select the alternative item in the Stock Entry. This can also be done with a Work Order.
+<img alt="Item" class="screenshot" src="/files/allow-alternative-item-bom.png"/></p>
+<h3 id="22-provision-to-allow-alternative-item-in-the-work-order">2.2 Provision to allow alternative item in the Work Order</h3>
+<p>User can also enable/disable allow alternative item for individual Work Orders.
+<img alt="Item" class="screenshot" src="/files/allow-alternative-item-wo.png"/></p>
+<p>Ticking on the 'Allow Alternative Item' checkbox will show a button named 'Alternate Item'. You can click on this to set the Item Alternative in the Work Order. This is how you use Item Alternative in a Work Order:
+<img alt="Item" class="screenshot" src="/files/work_order_item_alternative.gif"/></p>
+<p>This is how you use Item Alternative with a Stock Entry:
+<img alt="Item" class="screenshot" src="/files/se_item_alternative.gif"/></p>
+<p>If the 'Allow Alternative Item' checkbox in the Item table is disabled, you cannot set an Alternate Item for this Item.</p>
+<h3 id="23-item-alternative-for-subcontract">2.3 Item Alternative for subcontract</h3>
+<p>In subcontract, the user has to transfer raw materials to the subcontracted supplier to get finished good from them. If the raw material is not available in the stock, with this feature, the user can transfer the alternate item of the subcontracted raw material to the supplier. This is done in the Stock Entry.</p>
+<p><img alt="Item" class="screenshot" src="/files/purchase_order_item_alternative.gif"/></p>
+<p>After this, when you create a Purchase Receipt from the Work Order, the alternate item will be shown.</p>
+<h3 id="3-related-topics">3. Related Topics</h3>
+<ol>
+<li><a onclick="loadContent('bill-of-materials.html')">Bill Of Materials</a></li>
+<li><a onclick="loadContent('work-order.html')">Work Order</a></li>
+</ol>
+</div>
+<input class="d-none" name="wiki-page-name" value="8ekafqrq4k"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="revisionsModalTitle">Item Alternative
+</h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content">
+<h3>No Revisions</h3>
+</div>
+</div>
+</div></div></div></div></main>

@@ -1,0 +1,113 @@
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title" id="address-template">Address Template																										<a aria-hidden="true" class="no-underline" href="#address-template">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h1>
+</div>
+<div class="wiki-content">
+<p><strong>Address Template can store different formats of addresses based on the region.</strong></p>
+<p>Each region has its way of defining addresses. To manage multiple address formats for your Documents (like Quotations, Purchase Invoices, etc.), you can create country-wise <strong>Address Templates</strong>.</p>
+<p>To access address template, go to:</p>
+<blockquote>
+<p>CRM &gt; Address Template</p>
+</blockquote>
+<p>A default Address Template is created when you set up the system. You can either edit it or create a new template. This default template will apply to all countries not having a specific template.</p>
+<p>Consider a customer from the United States where 'County' is a part of the address. If you set county in the address template for United States, then it'll show up in the address field and hence in the print preview. Fields like PIN code can be changed to be displayed as ZIP code and fields like county can be added by using Address Templates.</p>
+<p>The Address Template checks the 'Country' field in the Address master to apply different address templates to transactions.</p>
+<h2 id="1-how-to-create-an-address-template">1. How to create an Address Template<a aria-hidden="true" class="no-underline" href="#1-how-to-create-an-address-template">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h2>
+<ol>
+<li>Go to the Address Template list, click on Add Address Template.</li>
+<li>Select a country.</li>
+<li>Change the CSS and Jinja if required.</li>
+<li>Mark as default if it is going to be the default address template in the system</li>
+<li>Save.</li>
+</ol>
+<p><img alt="Screenshot 2024-05-23 at 4.29.42 PM" class="screenshot" src="/files/Screenshot 2024-05-23 at 4.29.42 PM.png"/> </p>
+<p>Note: The template engine is based on HTML and the <a href="https://jinja.palletsprojects.com/">Jinja</a> system. All the fields (including Custom Fields) will be available for creating the template.</p>
+<h3 id="2-related-topics">2. Related Topics<a aria-hidden="true" class="no-underline" href="#2-related-topics">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<ol>
+<li><a onclick="loadContent('terms-and-conditions.html')">Terms and Conditions Template</a></li>
+<li><a onclick="loadContent('cheque-print-template.html')">Cheque Print Template</a></li>
+</ol>
+</div>
+<input class="d-none" name="wiki-page-name" value="ds6vu2n8am"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="address-template">Address Template																										<a aria-hidden="true" class="no-underline" href="#address-template">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h5>
+<span class="small text-muted revision-time">hisham edited 3 weeks ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content"><del class="diffmod">
+</del><ins class="diffmod">
+</ins><p><strong>Address Template can store different formats of addresses based on the region.</strong></p>
+<p>Each region has its way of defining addresses. To manage multiple address formats for your Documents (like Quotations, Purchase Invoices, etc.), you can create country-wise <strong>Address Templates</strong>.</p>
+<p>To access address template, go to:</p>
+<blockquote>
+<p><del class="diffmod">Awesomebar</del><ins class="diffmod">CRM</ins> &gt; Address Template</p>
+</blockquote>
+<p>A default Address Template is created when you set up the system. You can either edit it or create a new template. This default template will apply to all countries not having a specific template.</p>
+<p>Consider a customer from the United States where 'County' is a part of the address. If you set county in the address template for United States, then it'll show up in the address field and hence in the print preview. Fields like PIN code can be changed to be displayed as ZIP code and fields like county can be added by using Address Templates.</p>
+<p>The Address Template checks the 'Country' field in the Address master to apply different address templates to transactions.</p>
+<h2 id="1-how-to-create-an-address-template">1. How to create an Address Template<a aria-hidden="true" class="no-underline" href="#1-how-to-create-an-address-template">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h2>
+<ol>
+<li>Go to the Address Template list, click on Add Address Template.</li>
+<li>Select a country.</li>
+<li>Change the CSS and Jinja if required.</li>
+<li>Mark as default if it is going to be the default address template in the system</li>
+<li>Save.</li>
+</ol>
+<p><img alt="Screenshot 2024-05-23 at 4.29.42 PM" class="screenshot" src="/files/Screenshot 2024-05-23 at 4.29.42 PM.png"/> </p>
+<p>Note: The template engine is based on HTML and the <a href="https://jinja.palletsprojects.com/">Jinja</a> system. All the fields (including Custom Fields) will be available for creating the template.</p>
+<h3 id="2-related-topics">2. Related Topics<a aria-hidden="true" class="no-underline" href="#2-related-topics">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<ol>
+<li><a onclick="loadContent('terms-and-conditions.html')">Terms and Conditions Template</a></li>
+<li><a onclick="loadContent('cheque-print-template.html')">Cheque Print Template</a></li>
+</ol><del class="diffmod">
+</del><ins class="diffmod">
+</ins></div>
+</div>
+</div></div></div></div></main>

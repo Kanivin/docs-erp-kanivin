@@ -1,0 +1,269 @@
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title" id="document-naming-settings">Document Naming Settings<a aria-hidden="true" class="no-underline" href="#document-naming-settings">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h1>
+</div>
+<div class="wiki-content">
+<p><strong>Masters and transactions can be given prefixes in the form of naming series.</strong></p>
+<p>KanivinERP allows you to make prefixes to your documents, with each prefix
+forming its own series. For example, a series with prefix INV12#### will have
+numbers INV120001, INV120002, and so on.</p>
+<p>You can have multiple series for all your transactions. For example, Sales Invoice IDs like these can be generated:</p>
+<ul>
+<li>ACC-SINV-.YYYY.-</li>
+<li>SINV12####</li>
+<li>SALESINV-00####</li>
+</ul>
+<p>You can define or select the Naming Series pattern from:</p>
+<blockquote>
+<p>Home &gt; Settings &gt; Document Naming Settings</p>
+</blockquote>
+<h2 id="1-setting-up-naming-series-for-documents">1. Setting up Naming Series for Documents<a aria-hidden="true" class="no-underline" href="#1-setting-up-naming-series-for-documents">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h2>
+<ol>
+<li>Select the transaction for which you want to make the series. The system will update the current series in the text box.</li>
+<li>Edit the series as required with unique prefixes for each series.
+The first prefix will be the default prefix. Each new prefix Naming Series must be added on a new line. The newly added naming series will be available in the document.</li>
+</ol>
+<p><img alt="document naming settings" class="screenshot" src="/files/document_naming_settings.gif"/></p>
+<ol start="3">
+<li><p>If you want the user to explicitly select a series instead of the default one, check the “User must always select” checkbox.
+There will be no default naming series if this is ticked.</p></li>
+<li><p>You can also update the starting point of a series by entering the series name and the starting point in the “Update Series” section.</p></li>
+<li><p>Click on the Update button to update the set of Naming Series for the selected document.</p></li>
+</ol>
+<blockquote>
+<p>Note: To see the newly added Naming Series, click on Settings &gt; Reload.</p>
+</blockquote>
+<h2 id="2-financial-year-in-naming-series">2. Financial Year in Naming Series<a aria-hidden="true" class="no-underline" href="#2-financial-year-in-naming-series">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h2>
+<p>You can also show the financial year in the Naming Series. By default, if you enter 'YYYY' in the naming series, it'll pick up the current year. To set naming series based on the fiscal year, enter something like 'ACC-SINV-.19-20.-' where 19-20 is the current Fiscal Year. It is common to have a separate series for each financial year.</p>
+<p>As you can see, in the following screenshot of a Sales Invoice, the year 2019 is listed:</p>
+<p><img alt="Fiscal year in Naming Series" class="screenshot" src="/files/year-naming-series.png"/></p>
+<h2 id="3-updating-the-current-value-for-existing-naming-series">3. Updating the current value for existing Naming Series<a aria-hidden="true" class="no-underline" href="#3-updating-the-current-value-for-existing-naming-series">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h2>
+<p>You can change the starting/current sequence number of an existing series.</p>
+<ol>
+<li>Under the Update Series section, select the prefix whose sequence is to be changed.</li>
+<li>The current value will be fetched and displayed.</li>
+<li>Change starting/existing sequence number if needed.</li>
+<li>Click on Update Series Number.</li>
+</ol>
+<p>For example, if the current Sales Order series number is at 16, and you want to restart or set it as 50, enter 0 or 50 depending on your case. Any new Sales Order created will start from the new sequence number.</p>
+<p>To know more about this, <a href="/erpnext/v13/user/manual/en/setting-up/articles/naming-series-current-value">visit this article</a>.</p>
+<blockquote>
+<p>Tip: You could have a separate series for each type of Customer or for
+  each of your retail outlets.</p>
+</blockquote>
+<h2 id="4-using-field-values-in-naming-series">4. Using Field Values in Naming Series<a aria-hidden="true" class="no-underline" href="#4-using-field-values-in-naming-series">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h2>
+<p>Some companies prefer to make use of "short-codes" for suppliers, i.e. WN for company "Web Notes" that later can be used in naming series for quick identification.</p>
+<p>For example:</p>
+<p>A custom field "Vendor ID" is created under Document: Supplier.
+ Then under Naming Series, we allow something like
+ PO-.YY.MM.-.vendor_id.-.####
+ Resulting in "PO-1503-WN-00001"</p>
+<h2 id="5-updating-amended-documents">5. Updating Amended Documents<a aria-hidden="true" class="no-underline" href="#5-updating-amended-documents">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h2>
+<p>Some companies prefer naming amended documents as new documents. KanivinERP provides a feature to configure this setting based on your requirements.</p>
+<p>To configure the naming of amended documents:</p>
+<ol>
+<li>Navigate to the Amended Documents section.</li>
+<li><p>Choose one of the following options:</p>
+<ol>
+<li>Apply the Default Amend Counter to change the naming for all doctypes.</li>
+<li>Customize naming for specific doctypes by selecting the relevant doctypes and defining their naming methods.</li>
+</ol></li>
+</ol>
+<p><img alt="Amended Naming Series" class="screenshot" src="/files/Screenshot%202024-11-21%20at%2012.17.06%E2%80%AFPM.png"/></p>
+<ol start="3">
+<li>Click "Update Amendment Counter" to save your changes.</li>
+</ol>
+<h2 id="6-video">6. Video<a aria-hidden="true" class="no-underline" href="#6-video">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h2>
+<iframe allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed//IGyISSfI1qU">
+</iframe>
+<h2 id="7-related-topics">7. Related Topics<a aria-hidden="true" class="no-underline" href="#7-related-topics">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h2>
+<ol>
+<li><a onclick="loadContent('bulk-rename.html')">Bulk Rename</a></li>
+</ol>
+</div>
+<input class="d-none" name="wiki-page-name" value="n8eevtkluh"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="document-naming-settings">Document Naming Settings<a aria-hidden="true" class="no-underline" href="#document-naming-settings">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content"><del class="diffmod">
+</del><h3 id="no-revisions"><del class="diffmod">No</del><ins class="diffmod">
+</ins><p><strong><ins class="diffmod">Masters</ins> <del class="diffmod">Revisions</del><ins class="diffmod">and transactions can be given prefixes in the form of naming series.</ins></strong></p><ins class="diffmod">
+</ins><p><ins class="diffmod">KanivinERP allows you to make prefixes to your documents, with each prefix
+forming its own series. For example, a series with prefix INV12#### will have
+numbers INV120001, INV120002, and so on.</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod">You can have multiple series for all your transactions. For example, Sales Invoice IDs like these can be generated:</ins></p><ins class="diffmod">
+</ins><ul><ins class="diffmod">
+</ins><li><ins class="diffmod">ACC-SINV-.YYYY.-</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">SINV12####</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">SALESINV-00####</ins></li><ins class="diffmod">
+</ins></ul><ins class="diffmod">
+</ins><p><ins class="diffmod">You can define or select the Naming Series pattern from:</ins></p><ins class="diffmod">
+</ins><blockquote><ins class="diffmod">
+</ins><p><ins class="diffmod">Home &gt; Settings &gt; Document Naming Settings</ins></p><ins class="diffmod">
+</ins></blockquote><ins class="diffmod">
+</ins></h3><h2 id="1-setting-up-naming-series-for-documents"><ins class="diffmod">1. Setting up Naming Series for Documents</ins><a aria-hidden="true" class="no-underline" href="#1-setting-up-naming-series-for-documents">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h2><del class="diffmod">
+</del><ins class="diffmod">
+</ins><ol><ins class="diffmod">
+</ins><li><ins class="diffmod">Select the transaction for which you want to make the series. The system will update the current series in the text box.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Edit the series as required with unique prefixes for each series.
+The first prefix will be the default prefix. Each new prefix Naming Series must be added on a new line. The newly added naming series will be available in the document.</ins></li><ins class="diffmod">
+</ins></ol><ins class="diffmod">
+</ins><p><ins class="diffmod"><img alt="document naming settings" class="screenshot" src="/files/document_naming_settings.gif"/></ins></p><ins class="diffmod">
+</ins><ol start="3"><ins class="diffmod">
+</ins><li><p><ins class="diffmod">If you want the user to explicitly select a series instead of the default one, check the “User must always select” checkbox.
+There will be no default naming series if this is ticked.</ins></p></li><ins class="diffmod">
+</ins><li><p><ins class="diffmod">You can also update the starting point of a series by entering the series name and the starting point in the “Update Series” section.</ins></p></li><ins class="diffmod">
+</ins><li><p><ins class="diffmod">Click on the Update button to update the set of Naming Series for the selected document.</ins></p></li><ins class="diffmod">
+</ins></ol><ins class="diffmod">
+</ins><blockquote><ins class="diffmod">
+</ins><p><ins class="diffmod">Note: To see the newly added Naming Series, click on Settings &gt; Reload.</ins></p><ins class="diffmod">
+</ins></blockquote><ins class="diffmod">
+</ins><h2 id="2-financial-year-in-naming-series"><ins class="diffmod">2. Financial Year in Naming Series</ins><a aria-hidden="true" class="no-underline" href="#2-financial-year-in-naming-series"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h2><ins class="diffmod">
+</ins><p><ins class="diffmod">You can also show the financial year in the Naming Series. By default, if you enter 'YYYY' in the naming series, it'll pick up the current year. To set naming series based on the fiscal year, enter something like 'ACC-SINV-.19-20.-' where 19-20 is the current Fiscal Year. It is common to have a separate series for each financial year.</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod">As you can see, in the following screenshot of a Sales Invoice, the year 2019 is listed:</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod"><img alt="Fiscal year in Naming Series" class="screenshot" src="/files/year-naming-series.png"/></ins></p><ins class="diffmod">
+</ins><h2 id="3-updating-the-current-value-for-existing-naming-series"><ins class="diffmod">3. Updating the current value for existing Naming Series</ins><a aria-hidden="true" class="no-underline" href="#3-updating-the-current-value-for-existing-naming-series"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h2><ins class="diffmod">
+</ins><p><ins class="diffmod">You can change the starting/current sequence number of an existing series.</ins></p><ins class="diffmod">
+</ins><ol><ins class="diffmod">
+</ins><li><ins class="diffmod">Under the Update Series section, select the prefix whose sequence is to be changed.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">The current value will be fetched and displayed.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Change starting/existing sequence number if needed.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Click on Update Series Number.</ins></li><ins class="diffmod">
+</ins></ol><ins class="diffmod">
+</ins><p><ins class="diffmod">For example, if the current Sales Order series number is at 16, and you want to restart or set it as 50, enter 0 or 50 depending on your case. Any new Sales Order created will start from the new sequence number.</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod">To know more about this, </ins><a href="/erpnext/v13/user/manual/en/setting-up/articles/naming-series-current-value"><ins class="diffmod">visit this article</ins></a><ins class="diffmod">.</ins></p><ins class="diffmod">
+</ins><blockquote><ins class="diffmod">
+</ins><p><ins class="diffmod">Tip: You could have a separate series for each type of Customer or for
+  each of your retail outlets.</ins></p><ins class="diffmod">
+</ins></blockquote><ins class="diffmod">
+</ins><h2 id="4-using-field-values-in-naming-series"><ins class="diffmod">4. Using Field Values in Naming Series</ins><a aria-hidden="true" class="no-underline" href="#4-using-field-values-in-naming-series"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h2><ins class="diffmod">
+</ins><p><ins class="diffmod">Some companies prefer to make use of "short-codes" for suppliers, i.e. WN for company "Web Notes" that later can be used in naming series for quick identification.</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod">For example:</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod">A custom field "Vendor ID" is created under Document: Supplier.
+ Then under Naming Series, we allow something like
+ PO-.YY.MM.-.vendor_id.-.####
+ Resulting in "PO-1503-WN-00001"</ins></p><ins class="diffmod">
+</ins><h2 id="5-updating-amended-documents"><ins class="diffmod">5. Updating Amended Documents</ins><a aria-hidden="true" class="no-underline" href="#5-updating-amended-documents"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h2><ins class="diffmod">
+</ins><p><ins class="diffmod">Some companies prefer naming amended documents as new documents. KanivinERP provides a feature to configure this setting based on your requirements.</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod">To configure the naming of amended documents:</ins></p><ins class="diffmod">
+</ins><ol><ins class="diffmod">
+</ins><li><ins class="diffmod">Navigate to the Amended Documents section.</ins></li><ins class="diffmod">
+</ins><li><p><ins class="diffmod">Choose one of the following options:</ins></p><ins class="diffmod">
+</ins><ol><ins class="diffmod">
+</ins><li><ins class="diffmod">Apply the Default Amend Counter to change the naming for all doctypes.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Customize naming for specific doctypes by selecting the relevant doctypes and defining their naming methods.</ins></li><ins class="diffmod">
+</ins></ol></li><ins class="diffmod">
+</ins></ol><ins class="diffmod">
+</ins><p><ins class="diffmod"><img alt="Amended Naming Series" class="screenshot" src="/files/Screenshot%202024-11-21%20at%2012.17.06%E2%80%AFPM.png"/></ins></p><ins class="diffmod">
+</ins><ol start="3"><ins class="diffmod">
+</ins><li><ins class="diffmod">Click "Update Amendment Counter" to save your changes.</ins></li><ins class="diffmod">
+</ins></ol><ins class="diffmod">
+</ins><h2 id="6-video"><ins class="diffmod">6. Video</ins><a aria-hidden="true" class="no-underline" href="#6-video"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h2><ins class="diffmod">
+</ins><iframe allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed//IGyISSfI1qU"><ins class="diffmod">
+</ins></iframe><ins class="diffmod">
+</ins><h2 id="7-related-topics"><ins class="diffmod">7. Related Topics</ins><a aria-hidden="true" class="no-underline" href="#7-related-topics"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h2><ins class="diffmod">
+</ins><ol><ins class="diffmod">
+</ins><li><a onclick="loadContent('bulk-rename.html')"><ins class="diffmod">Bulk Rename</ins></a></li><ins class="diffmod">
+</ins></ol><ins class="diffmod">
+</ins></div>
+</div>
+</div></div></div></div></main>

@@ -1,0 +1,115 @@
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title">Tasks
+</h1>
+</div>
+<div class="wiki-content">
+<p><strong>In project management, a task is an actionable unit or activity which needs to be completed.</strong></p>
+<p><img alt="Task" class="screenshot" src="/files/projects-task.png"/></p>
+<p>To access Tasks, go to,</p>
+<blockquote>
+<p>Home &gt; Projects &gt; Projects &gt; Task</p>
+</blockquote>
+<h2 id="1-how-to-create-a-task">1. How to Create a Task</h2>
+<ol>
+<li>Go to the Task List and click on New.</li>
+<li>Add the subject of the task.</li>
+<li><p>Save.</p>
+<p><img alt="Task" class="screenshot" src="/files/projects-task-creation-main.gif"/></p></li>
+</ol>
+<p>Alternatively, a task can also be created from a Project in the following way:</p>
+<ol>
+<li>Go to the Project for which you want to create a new task.</li>
+<li>Go to Task under the Project section on the Dashboard. The plus icon '+' here would direct you to the task creation page.</li>
+<li>Add the subject of the task.</li>
+<li><p>Save.</p>
+<p><img alt="Task" class="screenshot" src="/files/projects-task-creation.gif"/></p></li>
+</ol>
+<h3 id="11-additional-options-while-creating-a-project">1.1 Additional Options while creating a Project</h3>
+<p>The following additional details can be added when editing a new task:</p>
+<ul>
+<li><strong>Status</strong>: You can add the status of the Project or change the same whenever needed, e.g., from 'Open' to 'Working', 'Overdue','Pending Review','Completed', or 'Cancelled'</li>
+<li><strong>Project</strong>: In case a task is added independently, you may choose to link the task to a particular Project. If the task is created from a Project, the details of the Project will get automatically added.</li>
+<li><strong>Priority</strong>: You can choose to define the priority of the task, viz., Low, Medium, High or Urgent.</li>
+<li><strong>Issue</strong>: If the task is an actionable that arises out of an Issue, that issue can be tagged here with the Task.</li>
+<li><strong>Weight</strong>: If a particular task carries some weightage out of a project, or otherwise, the weightage can be specified here. This weightage gets calculated in the Percentage Task Completion Method by Task Weight.</li>
+<li><strong>Type</strong>: If your task can be defined under a particular Task Type, say, User Training or User Demo, you can enter the Task Type here. It can be used to filter the Tasks based on Task Types.</li>
+<li><strong>Color</strong>: Each task can be recognized by a different color. This helps in identifying a task while creating Gantt Charts.</li>
+<li><strong>Is Group</strong>: This box can be checked to indicate that a task is a parent task, and can be further divided into multiple sub-tasks.</li>
+<li><strong>Is Template</strong>: This box can be checked to indicate that this task is a template task, and is meant to be used in a Project Template.</li>
+<li><p><strong>Parent Task</strong>: If a particular task is a part of a group task, the parent task can be linked to the task from this field.</p>
+<p><img alt="Task" class="screenshot" src="/files/project-task.png"/></p></li>
+</ul>
+<h2 id="2-features">2. Features</h2>
+<h3 id="21-timeline-and-details">2.1. Timeline and Details</h3>
+<ul>
+<li><strong>Expected Start Date</strong>: You can enter the date on which you expect the Task to be started.</li>
+<li><strong>Expected End Date</strong>: You can enter the date on which you expect this Task to be finished.</li>
+<li><strong>Expected Time</strong>: You can enter the number of hours which you expect are going to be spent on this task.</li>
+<li><strong>Progress</strong>: You can enter the Progress Percentage of a Task.</li>
+<li><strong>Begin</strong>: If the task is a template task, this field can be used to specify the day on which this task should begin after the project is commenced.</li>
+<li><strong>Duration</strong>: If the task is a template task, this field can be used to assign a specific number of days to this task.</li>
+<li><strong>Is Milestone</strong>: This box can be checked in the cases where a particular task is a Milestone in a Project.</li>
+<li><strong>Description</strong>: You can add a description of the task here.</li>
+</ul>
+<p><strong>Note</strong>: Based on the values of <strong>Begin</strong> and <strong>Duration</strong> field, the <strong>Expected Start Date</strong> and <strong>Expected End Date</strong> gets calculated for Project Tasks created using Project Template. This calculation skips holidays based on the holiday list of your company.</p>
+<p><img alt="Task" class="screenshot" src="/files/projects-task-timeline.png"/></p>
+<h3 id="22-dependencies-and-actual-time">2.2. Dependencies and Actual Time</h3>
+<ul>
+<li><p><strong>Dependent Tasks</strong>: Dependent tasks indicate that a particular task is dependent on another task, and the former cannot be completed before the completion of the latter.</p>
+<p>Task dependencies can be viewed in the Gantt Charts in the following way.</p>
+<p><img alt="Task" class="screenshot" src="/files/projects-task-gantt.png"/></p></li>
+<li><p><strong>Actual Start Date</strong>: The actual date and time on which the Task is started get recorded basis the <a href="/erpnext/v13/user/manual/en/projects/timesheets/">Timesheets</a>.</p></li>
+<li><p><strong>Actual End Date</strong>: The actual date and time on which the task was finished get recorded here via the Timesheets.</p>
+<p><img alt="Task" class="screenshot" src="/files/projects-task-dependencies.png"/></p></li>
+</ul>
+<h3 id="23-costing">2.3. Costing</h3>
+<ul>
+<li><strong>Total Costing Amount</strong>: The Total Costing Amount gets captured here via the Timesheets submitted by the user while working on this task.</li>
+<li><strong>Total Billing Amount</strong>: The Total Amount with which the <a onclick="loadContent('customer.html')">Customer</a> is to be billed via this task gets recorded here form the Timesheets.</li>
+<li><strong>Total Expense Claim</strong>: The Total Amount of Expense claimed by an Employee for the completion of this Task gets recorded and reflected here.</li>
+</ul>
+<h3 id="24-more-info">2.4. More Info</h3>
+<ul>
+<li><strong>Department</strong>: You can enter the Owner Department for the task. Irrespective of the Owner department of the Project, each task can be carried out by a different department.</li>
+<li><p><strong>Company</strong>: You can change the Company for which this Task is being carried out. This can be used in cases where A company is carrying out the Task for its Sister Company or its Parent Company or a Subsidiary.</p>
+<p><img alt="Task" class="screenshot" src="/files/projects-task-costing.png"/></p></li>
+</ul>
+<h2 id="3-video">3. Video</h2>
+<iframe allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/IxY-rSJsA6U?end=126rel=0">
+</iframe>
+<h2 id="4-related-topics">4. Related Topics</h2>
+<ol>
+<li><a onclick="loadContent('project.html')">Project</a></li>
+<li><a onclick="loadContent('timesheets.html')">Timesheet</a></li>
+</ol>
+</div>
+<input class="d-none" name="wiki-page-name" value="39m12ct1tv"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="revisionsModalTitle">Tasks
+</h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content">
+<h3>No Revisions</h3>
+</div>
+</div>
+</div></div></div></div></main>

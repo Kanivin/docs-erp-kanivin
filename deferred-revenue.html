@@ -1,0 +1,72 @@
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title">Deferred Revenue
+</h1>
+</div>
+<div class="wiki-content">
+<p><strong>Deferred revenue refers to advance payments a Company receives for products or services that are to be delivered or performed in the future.</strong></p>
+<p>It is also known as unearned revenue.</p>
+<p>The company that receives the prepayment records the amount as Deferred Revenue on their balance sheet as a liability. Deferred revenue is a liability because it refers to revenue that has not been earned and represents products or services that are owed to a Customer. As the product or service is delivered over time, it is recognized as revenue on the income statement.</p>
+<h2 id="1-configuring-deferred-accounting">1. Configuring Deferred Accounting</h2>
+<blockquote>
+<p>Introduced in Version 13</p>
+</blockquote>
+<p>Before you start using deferred accounting you should be aware of the below settings which will give you more control over how you manage your deferred accounting</p>
+<p><img alt="Deferred Accounting Settings" class="screenshot" src="/files/deferred-accounting-settings.png"/></p>
+<ol>
+<li><p><strong>Automatically Process Deferred Accounting Entry:</strong> This setting is enabled by default. In case you don't want the deferred accounting entries to be posted automatically you can disable this setting. If this setting is disabled deferred accounting will have to be processed manually using <a href="/erpnext/v13/user/manual/en/accounts/process-deferred-accounting">Process Deferred Accounting</a></p></li>
+<li><p><strong>Book Deferred Entries Based On:</strong> Deferred revenue amount can be booked based on two criteria. The default option here is "Days". If "Days" is selected, the deferred revenue amount will be booked based on the number of days in each month and if "Months" is selected, then it will be booked based on number of months. <strong>For Eg:</strong> If "Days" is selected and $12000 revenue has to be deferred over a period of 12 months, then $986.30 will be for the month having 30 days and $1019.17 will be booked for the month having 31 days. If "Months" is selected, $1000 deferred revenue will booked each month irrespective of the number of days in a month.</p></li>
+<li><p><strong>Book Deferred Entries Via Journal Entry:</strong> By default Ledger Entries are posted directly to book deferred revenue against an invoice. In order to book this deferred amount posting via Journal Entry, this option can be enabled.</p></li>
+<li><p><strong>Submit Journal Entries:</strong> This option is applicable only if deferred accounting entries are posted via Journal Entry. By default, the Journal Entries for deferred posting are kept in Draft state and a user has to verify those entries and submit them manually. If this option is enabled, Journal Entries will be automatically submitted without any user intervention.</p></li>
+</ol>
+<h2 id="2-how-to-use-deferred-revenue">2. How to use Deferred Revenue</h2>
+<p>Internet and broadcasting service providers offer subscription plans on quarterly or yearly basis. They take complete payment in advance from the Customer for couple of months, but book income on monthly basis in their book of accounts. This is Deferred Revenue for the Supplier and <a href="/erpnext/v13/user/manual/en/accounts/deferred-expense">Deferred Expense</a> for the Customer. Following is how they should configure Deferred Revenue accounting in KanivinERP to automate the process.</p>
+<h3 id="21-item">2.1 Item</h3>
+<p>In the Item master created for the subscription plan, under Deferred Revenue section, check field <strong>Enable Deferred Revenue</strong>. You can also select a Deferred Revenue account for this particular item and number of months.</p>
+<p><img alt="Item With Deferred Revenue" class="screenshot" src="/files/deferred-item.png"/></p>
+<h3 id="22-sales-invoice">2.2 Sales Invoice</h3>
+<p>On creation of Sales Invoice for the Deferred Revenue Item, instead of posting in the Income Account, Deferred Revenue account is Credited by the sale amount. If you had set the account and period in Item, then the account and service start, end dates will be fetched automatically.</p>
+<p><img alt="Invoice With Deferred Revenue" class="screenshot" src="/files/deferred-invoice.gif"/></p>
+<h3 id="23-journal-entry">2.3 Journal Entry</h3>
+<p>Based on the From Date and To Date set in the Sales Invoice Item table, Journal Entries are created automatically at the end of each month. It debits the value from Deferred Revenue account and credits Income Account selected for an Item in the Sales Invoice.</p>
+<p>Following is an example of Income for the Deferred Revenue Item booked via multiple Journal Entries.</p>
+<p><img alt="Deferred Revenue GL" class="screenshot" src="/files/deferred-revenue-gl.png"/></p>
+<h2 id="3-video">3. Video</h2>
+<iframe allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/j6mx-EHU4aY">
+</iframe>
+<h3 id="4-related-topics">4. Related Topics</h3>
+<ol>
+<li><a onclick="loadContent('sales-invoice.html')">Sales Invoice</a></li>
+<li><a onclick="loadContent('journal-entry.html')">Journal Entry</a></li>
+<li><a onclick="loadContent('chart-of-accounts.html')">Chart Of Accounts</a></li>
+</ol>
+</div>
+<input class="d-none" name="wiki-page-name" value="bh7ifoquse"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="revisionsModalTitle">Deferred Revenue
+</h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content">
+<h3>No Revisions</h3>
+</div>
+</div>
+</div></div></div></div></main>

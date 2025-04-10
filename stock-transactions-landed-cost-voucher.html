@@ -1,0 +1,80 @@
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title">Landed Cost Voucher</h1>
+</div>
+<div class="wiki-content">
+<p><strong>Landed Cost is the final total cost associated with a product for it to reach the buyer’s doorstep.</strong></p>
+<p>Landed costs include the original cost of the item, complete shipping costs, customs duties, taxes, insurance, currency conversion fees, etc. All of these components might not be applicable in every shipment, but relevant components must be considered as a part of the landed cost.</p>
+<blockquote>
+<p><strong>What is Landed Cost?</strong></p>
+</blockquote>
+<blockquote>
+<p>To understand landed cost better, let’s take an example based on our daily lives. You need to purchase a new washing machine for your home. Before making an actual purchase, you probably do some research to know the best price. In this process, you often found a better deal from a store which is long away from your home. But you should also consider shipping cost while buying from that store. Total cost including shipping might be more than the price you get in your nearby store. In that case, you will choose to buy from your nearest store, as the landed cost of the item is cheaper in the nearest store.</p>
+</blockquote>
+<p>Similarly in business, identifying landed cost for an Item/product is very crucial, as it helps to decide selling cost of that item and impacts the company’s profitability. Hence all applicable landed cost charges should be included in Item’s valuation rate.</p>
+<p>According to the <a href="http://www.3plstudy.com/">Third-Party Logistics Study</a>, only 45% of the respondents stated that they use Landed Cost extensively. The main reasons of not using Landed Cost were unavailability of necessary data (49%), lack of right tools (48%), insufficient time (31%), and not sure how to apply landed cost (27%).</p>
+<p>To access the Landed Cost Voucher list, go to: &gt; Home &gt; Stock &gt; Tools &gt; Landed Cost Voucher</p>
+<h2 id="1-prerequisites">1. Prerequisites</h2>
+<p>Before creating and using Landed Cost Voucher, it is advised that you create the following first:</p>
+<ul>
+<li>A <strong>Purchase Receipt</strong> or <strong>Purchase Invoice</strong> with <em>Update Stock</em> enabled. This is your original receipt of goods.</li>
+<li>A <strong>Purchase Invoice</strong> for the landed costs (e.g. Freight, Insurance, etc.)</li>
+</ul>
+<p>We will then use the <strong>Landed Cost Voucher</strong> to decrease the costs recorded through the second <strong>Purchase Invoice</strong> and increase the stock value. </p>
+<h2 id="2-how-to-create-a-landed-cost-voucher">2. How to create a Landed Cost Voucher</h2>
+<ol>
+<li>Go to the Landed Cost Voucher list, click on New.</li>
+<li>Select Receipt Document Type whether Purchase Invoice or Receipt. You can select multiple documents.</li>
+<li>Select the specific Invoice or Receipt. The supplier name and Grand Total will be fetched automatically.</li>
+<li>Click on the Get Items from Purchase Receipts button to fetch the item details from the Purchase Invoice/Receipt.</li>
+<li>Select whether Distribute Charges Based On should be on quantity or Amount.</li>
+<li>Enter the Expense Account and the Amount for Additional Costs in the Taxes and Charges table. The amount will be distributed equally based on the quantity or amount as per your selection.</li>
+<li>Save and Submit.</li>
+</ol>
+<p><img alt="Landed Cost Voucher" class="screenshot" src="/files/landed-cost-voucher.png"/></p>
+<p>In the document, you can select multiple Purchase Receipts/Invoices and fetch all items from those Purchase Receipts. Then you should add applicable charges in “Taxes and Charges” table. You can easily delete an item if the added charges do not apply to that item.</p>
+<p>The added charges are proportionately distributed among all the items based their amount or quantity. If you selected based on the amount, the Item with the highest amount will be allocated the highest proportion of the charges. In case of quantity, Item with the highest quantity will be allocated most of the charges and the other Items will be allocated lesser amounts. This is shown in the following screenshot:</p>
+<p><img alt="Landed Cost Voucher" class="screenshot" src="/files/landed-cost-distribution.png"/> </p>
+<h2 id="3-related-actions">3. Related Actions</h2>
+<h3 id="31-adding-landed-cost-in-the-purchase-receipt-itself">3.1 Adding Landed Cost in the Purchase Receipt itself</h3>
+<p>In KanivinERP, you can add landed cost-related charges in “Taxes and Charges” table while creating Purchase Receipt (PR). You should add those charges for “Total and Valuation” or “Valuation” in the 'Consider Tax or Charge for' field. Charges which are payable to the same Supplier from whom you are buying the items should be tagged as “Total and Valuation”. Otherwise, if applicable charges are payable to a 3rd party, it should be tagged as “Valuation”. On submission of Purchase Receipt, the system will calculate the landed cost of all items, considering those charges. This landed cost will be considered to calculate the item’s Valuation Rate (based on FIFO / Moving Average method).</p>
+<p>But in reality, while making Purchase Receipt we might not know all the charges which are applicable for landed cost. Your transporter can send the invoice after 1 month, but there is no point in waiting for booking Purchase Receipt till then. Companies that import their products/parts, pay a huge amount as Customs Duty. And generally, they get invoices from the Customs Department after a while. In these cases, “Landed Cost Voucher” becomes handy, as it allows you to add those additional charges on a later date, and to update landed cost of purchased items.</p>
+<h3 id="32-what-happens-on-submission">3.2 What happens on submission?</h3>
+<ol>
+<li>Valuation Rate of items is recalculated based on new landed cost.</li>
+<li>If you are using “Perpetual Inventory”, the system will post general ledger entries to correct Stock-in-Hand balance. It will debit (increase) corresponding “warehouse account” and credit (decrease) <strong>Expense Account</strong> mentioned in Taxes and Charges table. If items are already delivered, the Cost-of-Goods-Sold (CoGS) value has been booked as per the old valuation rate. Hence, general ledger entries are reposted for all future outgoing entries of associated items, to correct CoGS value.</li>
+</ol>
+<h3 id="4-related-topics">4. Related Topics</h3>
+<ol>
+<li><a onclick="loadContent('delivery-trip.html')">Delivery Trip</a></li>
+<li><a onclick="loadContent('purchase-receipt.html')">Purchase Receipt</a></li>
+</ol>
+</div>
+<input class="d-none" name="wiki-page-name" value="7uvq4pip3n"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="revisionsModalTitle">Landed Cost Voucher</h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content">
+<h3>No Revisions</h3>
+</div>
+</div>
+</div></div></div></div></main>

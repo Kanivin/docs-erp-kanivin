@@ -1,0 +1,130 @@
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title">Bank Reconciliation</h1>
+</div>
+<div class="wiki-content">
+<p><strong>A Bank Reconciliation entry is used to match KanivinERP account statements with your bank account statements.</strong></p>
+<p>If you are receiving payments or making payments via cheques, the bank statements will not accurately match the dates of your entry, this is because the bank usually takes time to “clear” these payments. Also, you may have mailed a cheque to your Supplier and it may be a few days before it is received and deposited by the Supplier. </p>
+<p>In KanivinERP you can synchronise your bank statements and your Journal Entries using the transaction dates. </p>
+<h2 id="1-what-is-a-bank-reconciliation-statement">1. What is a Bank Reconciliation Statement?</h2>
+<p>The Bank Reconciliation Report provides the difference between the bank balance shown in an organization's bank statement, as provided by the bank against the amount shown in the companies Chart of Accounts. </p>
+<p>This is what a Bank Reconciliation statement looks like: <img alt="Bank Reconciliation statement" class="screenshot" src="/files/bank-reconciliation-2.png"/></p>
+<p>In the report, check whether the field 'Balance as per bank' matches the Bank Account Statement. If it is matching, it means that the Clearance Date is correctly updated for all the bank entries. If there is a mismatch, it's because of bank entries for which Clearance Date is not yet updated. </p>
+<p>To access Bank Reconciliation, go to: </p>
+<blockquote>
+<p>Home &gt; Accounting &gt; Banking and Payments &gt; Update Bank Transaction Date </p>
+</blockquote>
+<h2 id="2-how-to-update-bank-transaction-dates">2. How to Update Bank Transaction Dates</h2>
+<ul>
+<li>Go to <strong>Bank Clearance</strong>.</li>
+<li>Select your Bank Account.</li>
+<li>Select a from and to date.</li>
+<li>You can choose to include reconciled entries and POS transactions.</li>
+<li>Click on the <strong>Get Payment Entries</strong> button.</li>
+<li>Now you will get all the “Bank Voucher” type entries.</li>
+<li>In each of the entries, on the rightmost column, update the <strong>Clearance Date</strong> field and click on the <strong>Update Clearance Date</strong> button. By doing this you will be able to sync your bank statements and entries into the system.</li>
+</ul>
+<p><img alt="Screenshot 2023-06-19 at 6.16.32 PM" class="screenshot" src="/files/Screenshot 2023-06-19 at 6.16.32 PM.png" title="Screenshot 2023-06-19 at 6.16.32 PM.png"/></p>
+<h2 id="3-types-of-reconciliation-tools">3. Types of reconciliation tools</h2>
+<p>KanivinERP has two reconciliation tools: </p>
+<ol>
+<li>A manual reconciliation tool allowing to set clearance dates against payment entries, sales invoice payments or journal entries</li>
+<li>A semi-automatic reconciliation tool allowing to clear bank transactions against payment entries, sales, and purchase invoices payments, journal entries or expense claims.</li>
+</ol>
+<h3 id="31-manual-bank-reconciliation-tool">3.1 Manual Bank Reconciliation Tool</h3>
+<p>To view this report, go to:</p>
+<blockquote>
+<p>Accounts &gt; Banking and Payments &gt; Bank Reconciliation Statement</p>
+</blockquote>
+<p>In the report, check whether the field 'Balance as per bank' matches the Bank Account Statement. If it is matching, it means that the Clearance Date is correctly updated for all the bank entries. If there is a mismatch, it's because the Clearance Date is not yet updated for the bank entries. </p>
+<h3 id="32-semi-automatic-bank-reconciliation-tool">3.2 Semi-automatic Bank Reconciliation Tool</h3>
+<p>It is a two-step process: </p>
+<ol>
+<li>Add Bank Transactions into KanivinERP via Bank Statement Import or Bank Account Synchronization</li>
+<li>Reconcile the Bank Statement</li>
+</ol>
+<h4 id="321-bank-statement-import">3.2.1 Bank Statement Import</h4>
+<ul>
+<li>Download a bank statement from your bank's website <img alt="Reconcile bank transactions" class="screenshot" src="/files/sample_bank_statement.png"/>Make sure you have at least the date, the debit/credit and the currency on every row of your bank statement. To upload your Bank Statement, go to: </li>
+</ul>
+<blockquote>
+<p><strong>Accounting &gt; Bank Statement &gt; Bank Statement Import</strong> </p>
+</blockquote>
+<p>Or simply search for <strong>Bank Statement Import</strong> in the awesomebar.
+* Select your Company and Bank Account
+* Click Save
+* Attach the Bank Statement
+* Click on <strong>Map Columns</strong> to enter the mapping between columns in the uploaded Bank Statement and the Bank Transaction DocType
+* Click on Start Import to start the import process. The Bank Transactions will be created via a background job, although the progress will be shown here <img alt="Reconcile bank transactions" class="screenshot" src="/files/bank_transaction_upload.gif"/>
+* The mapping that is done is stored in the Bank document linked to the corresponding Bank Account. In the next upload, the mapping is taken from here but the system allows the user to change it if needed. The changed mapping is updated in the Bank document too. <img alt="Reconcile bank transactions" class="screenshot" src="/files/bank_configuration.png"/></p>
+<h4 id="322-bank-account-synchronisation">3.2.2 Bank Account Synchronisation</h4>
+<p>You can use Plaid (see <a href="/erpnext/v14/user/manual/en/erpnext_integration/plaid_integration">Plaid Integrations page</a>) to automatically synchronise your bank account with KanivinERP. All your bank transactions will be automatically imported into KanivinERP. </p>
+<h4 id="323-automatic-party-matching-for-bank-transactions">3.2.3 Automatic Party Matching for Bank Transactions</h4>
+<p>You can optionally enable automatic party matching so that a party is auto set (if matched) in the Bank Transaction. To enable this, go to: </p>
+<blockquote>
+<p>Accounts Settings &gt; Banking &gt; Enable Automatic Party Matching </p>
+</blockquote>
+<p><img alt="Screenshot 2023-06-19 at 5.58.51 PM" class="screenshot" src="/files/Screenshot 2023-06-19 at 5.58.51 PM.png" title="Screenshot 2023-06-19 at 5.58.51 PM.png"/></p>
+<p>You can additionally check <strong>Enable Fuzzy Matching</strong> where, the Party Name/Description in the Bank Transaction is <strong>approximately</strong> matched with all the parties in the system. This is useful when the party's Bank Account is not registered in the system.</p>
+<p>Once enabled, party matching will automatically happen on <strong>submitting</strong> the Bank Transaction. </p>
+<p>To aid the mapping, you can easily store <strong>Customer</strong>, <strong>Supplier</strong> and <strong>Employee</strong> bank data by creating a <a href="/erpnext/v14/user/manual/en/accounts/bank-account">Bank Account</a> against individual parties. <strong>After Submission</strong>, the Party Type and Party in the Bank Transaction will be automatically set and can be corrected/updated. </p>
+<blockquote>
+<p>The fuzzy matching results depend on the nature of the party data there is in the system. It may fail to be accurate where multiple parties with extremely similar names exist.   </p>
+<p>It would be best to test this feature out first by:<br/>
+  1. Enabling the feature<br/>
+  2. Having some party records in the system<br/>
+  3. Creating a Bank Transaction where the party name/description contains a target party's name<br/>
+  4. Submitting the bank transaction after which the party should be automatically set in the Bank Transaction. Here you can determine if the results are acceptable.</p>
+</blockquote>
+<h4 id="324-reconcile-the-bank-statement">3.2.4 Reconcile the Bank Statement</h4>
+<p>Once all your bank transactions are imported into KanivinERP, you can reconcile them with your existing vouchers. Go to: </p>
+<blockquote>
+<p>Accounting &gt; Bank Statement &gt; Bank Reconciliation Tool </p>
+</blockquote>
+<p>Or simply search for <strong>Bank Reconciliation Tool</strong> in the awesomebar. </p>
+<ul>
+<li>Select your Company, Bank Account, Bank Statement Start and End Date.</li>
+<li>Make sure that the opening balance from KanivinERP matches the opening balance of your Bank Statement.</li>
+<li>Enter the Closing Balance of the Bank Statement.</li>
+<li>Saving the document will show the matching bank transactions. <img alt="Reconcile bank transactions" class="screenshot" src="/files/bank_reconciliation_tool.png"/></li>
+<li>The final goal of Bank Reconciliation is to make the difference amount zero (green) by either matching to an existing voucher or creating a new voucher.</li>
+<li>For all the bank transactions which are present in the Bank Statement but do not have a clearance date, click on the Actions Button to Match/ Create Vouchers</li>
+<li>For matching, choose 'Match Against Voucher' in 'Action'. The vouchers that are related to this transaction will be displayed. They will be ranked on the basis of the maximum number of fields matched. You can match one or multiple vouchers against the same Bank Transaction using the checkboxes. <img alt="Reconcile bank transactions" class="screenshot" src="/files/match_voucher.png"/></li>
+<li>To create a new voucher, choose 'Create Voucher' in the 'Action' and then choose the document type. Fill in the details that were not available in the Bank Transaction. Clicking on Submit will create the corresponding voucher and update its clearance date. <img alt="Reconcile bank transactions" class="screenshot" src="/files/create_voucher.png"/></li>
+<li>It is also possible to update the Bank Transactions. Updating the Bank Transaction might help KanivinERP in finding better matches. To Update a Bank transaction, choose 'Update Bank Transaction' in 'Action', fill in the required details, and click on Submit to save the Bank Transaction. <img alt="Reconcile bank transactions" class="screenshot" src="/files/update_bank_transaction.png"/></li>
+</ul>
+<h3 id="4-related-topics">4. Related Topics</h3>
+<ul>
+<li><a onclick="loadContent('payment-reconciliation.html')">Payment Reconciliation</a></li>
+<li><a onclick="loadContent('bank-guarantee.html')">Bank Guarantee</a></li>
+<li><a onclick="loadContent('payment-entry.html')">Payment Entry</a></li>
+</ul>
+</div>
+<input class="d-none" name="wiki-page-name" value="7laq832l7t"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="revisionsModalTitle">Bank Reconciliation</h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content">
+<h3>No Revisions</h3>
+</div>
+</div>
+</div></div></div></div></main>

@@ -1,0 +1,177 @@
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title" id="auto-email-reports">Auto Email Reports<a aria-hidden="true" class="no-underline" href="#auto-email-reports">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h1>
+</div>
+<div class="wiki-content">
+<p><strong>Auto Email Reports automatically sends reports for the selected document.</strong></p>
+<p>You can setup <strong>Auto Email Report</strong> to send reports at regular intervals. These must be saved reports of any type (Report Builder, Script or Query Report).</p>
+<p>You can find Auto Email Report at:</p>
+<blockquote>
+<p>Home &gt; Settings &gt; Auto Email Report</p>
+</blockquote>
+<h2 id="1-how-to-create-an-auto-email-report">1. How to create an Auto Email Report<a aria-hidden="true" class="no-underline" href="#1-how-to-create-an-auto-email-report">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h2>
+<ol>
+<li>Go to the Auto Email Report list, click on New.</li>
+<li>Select the Report for which you want to generate emails.</li>
+<li>Select the user for which you want to create this report (permissions will apply for this user).</li>
+<li>Set the Email Addresses to which you want this report to be emailed and the frequency of the report. Emails will be sent at midnight. The date will be repeated in case of weekly/monthly/yearly frequency.</li>
+</ol>
+<p><img alt="With Filters" class="screenshot" src="/files/auto-email-2.png"/>
+5. Save.</p>
+<p>You can test the report by clicking on "Download" or "Send Now". Here is an example of the email you will receive for a general ledger report:</p>
+<p><img alt="Report by Email" class="screenshot" src="/files/auto-email-4.png"/> </p>
+<h2 id="2-features">2. Features<a aria-hidden="true" class="no-underline" href="#2-features">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h2>
+<h3 id="21-filter-data">2.1 Filter Data<a aria-hidden="true" class="no-underline" href="#21-filter-data">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<ul>
+<li><strong>Send only if there is any data</strong>: If enabled, emails will not be sent if there is no data in the report.</li>
+<li><strong>Only Send Records Updated in Last X Hours</strong>: If set to 24, an email will contain only records updated in the last 24 hours.</li>
+<li><strong>No of Rows</strong>: The number of rows to be sent in the email. The maximum is 500.</li>
+</ul>
+<h3 id="22-report-filters">2.2 Report Filters<a aria-hidden="true" class="no-underline" href="#22-report-filters">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<p>If your report has filters, you will be able to see them. Click on the table to edit it:</p>
+<p><img alt="Edit Filters" class="screenshot" src="/files/auto-email-3.png"/> </p>
+<p>For example, if the email is on the report 'Project Billing Summary' select the Project. The date range here is the date range of the 'Project Billing Summary'.</p>
+<h3 id="23-message">2.3 Message<a aria-hidden="true" class="no-underline" href="#23-message">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<p>A message can also be added to be sent with the email report. For example, 'This is your monthly Project Billing Summary Report:'</p>
+<p>You can also change the file format in which the report is created. The available options are HTML, XLSX, and CSV.</p>
+<h3 id="2-related-topics">2. Related Topics<a aria-hidden="true" class="no-underline" href="#2-related-topics">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<ol>
+<li><a onclick="loadContent('email-digest.html')">Email Digest</a></li>
+<li><a onclick="loadContent('document-follow.html')">Document Follow</a></li>
+</ol>
+</div>
+<input class="d-none" name="wiki-page-name" value="frdmatt9in"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="auto-email-reports">Auto Email Reports<a aria-hidden="true" class="no-underline" href="#auto-email-reports">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content"><del class="diffmod">
+</del><ins class="diffmod">
+</ins><p><strong><ins class="diffmod">Auto Email Reports automatically sends reports for the selected document.</ins></strong></p><ins class="diffmod">
+</ins><p><ins class="diffmod">You can setup </ins><strong><ins class="mod"><ins class="diffmod">Auto Email Report</ins></ins></strong><ins class="diffmod"> to send reports at regular intervals. These must be saved reports of any type (Report Builder, Script or Query Report).</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod">You can find Auto Email Report at:</ins></p><ins class="diffmod">
+</ins><blockquote><ins class="diffmod">
+</ins><p><ins class="diffmod">Home &gt; Settings &gt; Auto Email Report</ins></p><ins class="diffmod">
+</ins></blockquote><ins class="diffmod">
+</ins><h2 id="1-how-to-create-an-auto-email-report"><ins class="diffmod">1. How to create an Auto Email Report</ins><a aria-hidden="true" class="no-underline" href="#1-how-to-create-an-auto-email-report"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h2><ins class="diffmod">
+</ins><ol><ins class="diffmod">
+</ins><li><ins class="diffmod">Go to the Auto Email Report list, click on New.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Select the Report for which you want to generate emails.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Select the user for which you want to create this report (permissions will apply for this user).</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Set the Email Addresses to which you want this report to be emailed and the frequency of the report. Emails will be sent at midnight. The date will be repeated in case of weekly/monthly/yearly frequency.</ins></li><ins class="diffmod">
+</ins></ol><ins class="diffmod">
+</ins><p><ins class="diffmod"><img alt="With Filters" class="screenshot" src="/files/auto-email-2.png"/>
+5. Save.</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod">You can test the report by clicking on "Download" or "Send Now". Here is an example of the email you will receive for a general ledger report:</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod"><img alt="Report by Email" class="screenshot" src="/files/auto-email-4.png"/> </ins></p><ins class="diffmod">
+</ins><h2 id="2-features"><ins class="diffmod">2. Features</ins><a aria-hidden="true" class="no-underline" href="#2-features"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h2><ins class="diffmod">
+</ins><h3 id="21-filter-data"><del class="diffmod">No</del><ins class="diffmod">2.1</ins> <del class="diffmod">Revisions</del><ins class="diffmod">Filter Data</ins><a aria-hidden="true" class="no-underline" href="#21-filter-data">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3><del class="diffmod">
+</del><ins class="diffmod">
+</ins><ul><ins class="diffmod">
+</ins><li><strong><ins class="diffmod">Send only if there is any data</ins></strong><ins class="diffmod">: If enabled, emails will not be sent if there is no data in the report.</ins></li><ins class="diffmod">
+</ins><li><strong><ins class="diffmod">Only Send Records Updated in Last X Hours</ins></strong><ins class="diffmod">: If set to 24, an email will contain only records updated in the last 24 hours.</ins></li><ins class="diffmod">
+</ins><li><strong><ins class="diffmod">No of Rows</ins></strong><ins class="diffmod">: The number of rows to be sent in the email. The maximum is 500.</ins></li><ins class="diffmod">
+</ins></ul><ins class="diffmod">
+</ins><h3 id="22-report-filters"><ins class="diffmod">2.2 Report Filters</ins><a aria-hidden="true" class="no-underline" href="#22-report-filters"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h3><ins class="diffmod">
+</ins><p><ins class="diffmod">If your report has filters, you will be able to see them. Click on the table to edit it:</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod"><img alt="Edit Filters" class="screenshot" src="/files/auto-email-3.png"/> </ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod">For example, if the email is on the report 'Project Billing Summary' select the Project. The date range here is the date range of the 'Project Billing Summary'.</ins></p><ins class="diffmod">
+</ins><h3 id="23-message"><ins class="diffmod">2.3 Message</ins><a aria-hidden="true" class="no-underline" href="#23-message"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h3><ins class="diffmod">
+</ins><p><ins class="diffmod">A message can also be added to be sent with the email report. For example, 'This is your monthly Project Billing Summary Report:'</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod">You can also change the file format in which the report is created. The available options are HTML, XLSX, and CSV.</ins></p><ins class="diffmod">
+</ins><h3 id="2-related-topics"><ins class="diffmod">2. Related Topics</ins><a aria-hidden="true" class="no-underline" href="#2-related-topics"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h3><ins class="diffmod">
+</ins><ol><ins class="diffmod">
+</ins><li><a onclick="loadContent('email-digest.html')"><ins class="diffmod">Email Digest</ins></a></li><ins class="diffmod">
+</ins><li><a onclick="loadContent('document-follow.html')"><ins class="diffmod">Document Follow</ins></a></li><ins class="diffmod">
+</ins></ol><ins class="diffmod">
+</ins></div>
+</div>
+</div></div></div></div></main>

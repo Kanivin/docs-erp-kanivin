@@ -1,0 +1,81 @@
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title">Stock Reservation</h1>
+</div>
+<div class="wiki-content">
+<blockquote>
+<p>Introduced in Version 15</p>
+</blockquote>
+<p>Stock reservation, also known as inventory reservation, refers to the practice of setting aside a specific quantity of stock or inventory for a particular purpose or customer.</p>
+<h3 id="1-prerequisites">1. Prerequisites</h3>
+<ul>
+<li>Enable Stock Reservation in Stock Settings. <img alt="stock-settings" class="screenshot" src="/files/stock-settings.png"/></li>
+</ul>
+<h3 id="2-stock-reservation-against-sales-order">2. Stock Reservation against Sales Order</h3>
+<ul>
+<li>Create a Sales Order. <img alt="sales-order" class="screenshot" src="/files/sales-ordere027b8.png"/></li>
+<li>Check the reserve stock for items you want to reserve. <img alt="sales-order-item" class="screenshot" src="/files/sales-order-item.png"/></li>
+<li>Click on <strong>Stock Reservation</strong>, then select <strong>Reserve</strong>. Choose the warehouse and quantity, then click on the <strong>Reserve Stock</strong> button. <img alt="sales-order-reserve" class="screenshot" src="/files/sales-order-reserve.gif"/></li>
+<li>Stock reservation entries are created against the sales order items. <img alt="stock-reservation-entries" class="screenshot" src="/files/stock-reservation-entriesb9a114.gif"/></li>
+</ul>
+<h3 id="3-stock-reservation-from-pick-list">3. Stock Reservation from Pick List</h3>
+<ul>
+<li>Create a Sales Order.</li>
+<li>Create a Pick List for the Sales Order.</li>
+<li>In Pick List click on <strong>Stock Reservation</strong>, then select <strong>Reserve</strong>, the Stock Reservation Entries will be created against the Pick List. <img alt="sales-order-pick-list-reserve" class="screenshot" src="/files/sales-order-pick-list-reserve.gif"/></li>
+</ul>
+<h3 id="4-auto-reserve-stock-on-purchase">4. Auto Reserve Stock on Purchase</h3>
+<ul>
+<li>Navigate to Stock Settings and enable <strong>Auto Reserve Stock for Sales Order on Purchase</strong>.</li>
+<li>Create a Sales Order.</li>
+<li>Create a Material Request from the Sales Order.</li>
+<li>Create Purchase Order from Material Request.</li>
+<li>Complete the process by creating a Purchase Receipt for the Purchase Order. The stock will be automatically reserved upon submission of the Purchase Receipt.</li>
+</ul>
+<h3 id="5-stock-unreservation">5. Stock Unreservation</h3>
+<p>There are two ways to unreserve the stock.</p>
+<ol>
+<li><p>Stock Unreservation from Sales Order or Pick List:</p>
+<ul>
+<li>Open a document and click on <strong>Stock Reservation &gt; Unreserve</strong> button, the listed Stock Reservation Entries get cancelled. <img alt="sales-order-unreserve" class="screenshot" src="/files/sales-order-unreserve.gif"/></li>
+</ul></li>
+<li><p>Unreserve the stock from the Stock Reservation Entry DocType:</p>
+<ul>
+<li>2.1 Open a Stock Reservation Entry and cancel it by clicking the <strong>Cancel</strong> button. <img alt="stock-reservation-entry-cancel" class="screenshot" src="/files/stock-reservation-entry-cancel.gif"/></li>
+<li>2.2 Go to the Stock Reservation Entry List, select the entries you wish to cancel, and then click on <strong>Actions &gt; Cancel</strong>. <img alt="stock-reservation-entries-cancel" class="screenshot" src="/files/stock-reservation-entries-cancel.gif"/></li>
+</ul></li>
+</ol>
+<h3 id="6-related-topics">6. Related Topics</h3>
+<ol>
+<li><a onclick="loadContent('sales-order.html')">Sales Order</a></li>
+<li><a onclick="loadContent('pick-list.html')">Pick List</a></li>
+</ol>
+</div>
+<input class="d-none" name="wiki-page-name" value="r38798415c"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="revisionsModalTitle">Stock Reservation</h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content">
+<h3>No Revisions</h3>
+</div>
+</div>
+</div></div></div></div></main>

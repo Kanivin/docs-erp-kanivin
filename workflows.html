@@ -1,0 +1,317 @@
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title" id="workflows">Workflows<a aria-hidden="true" class="no-underline" href="#workflows">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h1>
+</div>
+<div class="wiki-content">
+<p><strong>With workflows you can rewrite how a particular process/workflow is approved in KanivinERP.</strong></p>
+<p>You can set multiple levels of approval for an KanivinERP Workflow. To allow multiple people to submit multiple requests, for approvals by multiple users, KanivinERP requires you to fill the Workflow conditions. KanivinERP tracks the multiple permissions before submission.</p>
+<p>Consider a scenario, where multiple levels of approval are required for a quotation. A sales person (user with 'Sales User' role) will create a quotation. Then it is either approved or rejected by a sales lead (user with 'Sales Manager' role). If approved by sales lead, it is further approved or rejected by regional manager (user with 'Regional Manager' role).</p>
+<p>To make a Workflow and transition rules go to:</p>
+<blockquote>
+<p>Home &gt; Settings &gt; Workflow</p>
+</blockquote>
+<p>Once a Workflow is created, you can take actions on it via <a href="/erpnext/v13/user/manual/en/setting-up/workflow-actions">Workflow Actions</a>.</p>
+<h2 id="1-prerequisites">1. Prerequisites<a aria-hidden="true" class="no-underline" href="#1-prerequisites">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h2>
+<p>Before creating a Workflow, it is advised to create these first:</p>
+<ul>
+<li><a onclick="loadContent('workflow-actions.html')">Workflow Actions</a></li>
+<li>Workflow States like Approved, Canceled, etc.</li>
+</ul>
+<h2 id="2-how-to-create-a-workflow">2. How to Create a Workflow<a aria-hidden="true" class="no-underline" href="#2-how-to-create-a-workflow">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h2>
+<ol>
+<li>Go to the Workflow list, click on New.</li>
+<li>Enter a name for the <strong>Workflow</strong> and select the DocType on which to be applied.</li>
+<li>Enter the different states of the Workflow. Enter Doc Status for them, select which field to update from the Update Field column, enter what the value will be updated to under Update Value.</li>
+</ol>
+<p>The Workflow States can have different colors according to the state. Eg: Green for success. Document statuses: Saved = 0, Submitted = 1, Cancelled = 2.</p>
+<p><img alt="Workflow" class="screenshot" src="/files/workflow.png"/>
+4. Enter the Transition Rules.</p>
+<p><img alt="Workflow Transition Rules" class="screenshot" src="/files/workflow-transition-rules.png"/></p>
+<h3 id="22-things-to-note-when-creating-a-workflow">2.2 Things to note when creating a Workflow<a aria-hidden="true" class="no-underline" href="#22-things-to-note-when-creating-a-workflow">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<ul>
+<li>Creating a Workflow in KanivinERP essentially overrides the regular Save and Submit workflow. Thus the document will function based on your Workflow and not based on the pre-set code workflow. Hence there might be no Submit button/option if you have not specified it in the Workflow you create.</li>
+</ul>
+<p>If you don't apply a Workflow to a document, and that document is submittable, then it has the default workflow with states: Draft - Submitted - Cancelled. If you are applying a Workflow to a submittable document, then those default states should be handled by the user.
+* A document cannot be canceled unless it is submitted.
+* If you wish to give the option to cancel, you will have to write a workflow transition step that says from submitted you can cancel.
+* If fields under Update Field column are not updated, a new custom field will be created with the name you set in the 'Workflow State Field' field.</p>
+<h3 id="23-other-options-for-a-workflow">2.3 Other options for a Workflow<a aria-hidden="true" class="no-underline" href="#23-other-options-for-a-workflow">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<ol>
+<li>Is Active: On ticking this, all other Workflows for the selected DocType become inactive.</li>
+<li>Don't Override Status: This Workflow's status will not override the status of the document (Quotation) in the list view.</li>
+<li>Send Email Alerts: Emails will be sent to the user with next possible workflow actions.</li>
+</ol>
+<h2 id="3-features">3. Features<a aria-hidden="true" class="no-underline" href="#3-features">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h2>
+<h3 id="31-enabledisable-optional-workflow-state">3.1 Enable/Disable Optional Workflow State<a aria-hidden="true" class="no-underline" href="#31-enabledisable-optional-workflow-state">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<blockquote>
+<p>Introduced in Version 12</p>
+</blockquote>
+<p>In States, optional Workflow state means that the state may not be a part of final approval.</p>
+<p>E.g. states like Canceled or Rejected can be optional. <img alt="Optional State" class="screenshot" src="/files/workflow-optional-state.png"/> </p>
+<p><strong>Note:</strong> Workflow Actions are not created for optional states.</p>
+<h3 id="32-conditions">3.2 Conditions<a aria-hidden="true" class="no-underline" href="#32-conditions">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<p>You can also add a condition for the Transition to be applicable. For example, in this case, if sales executive creates a quotation with grand total of $100,000 or more, a particular role must approve. For this to happen in the particular transition, you can set a property for <strong>Condition</strong>:</p>
+<pre><button class="btn copy-btn" data-toggle="tooltip" title="Copy Code"><svg class="feather feather-clipboard" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect height="4" rx="1" ry="1" width="8" x="8" y="2"></rect></svg></button><code class="hljs">doc.grand_total &lt;= 100000
+
+
+</code></pre>
+<p>Here, <code>grand_total</code> is the field name of the field 'Grand Total' of Quotation. To see the field name of a field go to Menu &gt; Customize.</p>
+<p>This can be extended to any property of the document.</p>
+<blockquote>
+<p>Introduced in Version 13</p>
+</blockquote>
+<p>In Version 13, you can use date/time, session, get<em>value and get</em>list functions in your condition expressions.</p>
+<p>Allowed functions:</p>
+<ul>
+<li>frappe.db.get_value</li>
+<li>frappe.db.get_list</li>
+<li>frappe.session</li>
+<li>frappe.utils.now_datetime</li>
+<li>frappe.utils.get_datetime</li>
+<li>frappe.utils.add<em>to</em>date</li>
+<li>frappe.utils.now</li>
+</ul>
+<p>Examples:</p>
+<pre><button class="btn copy-btn" data-toggle="tooltip" title="Copy Code"><svg class="feather feather-clipboard" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect height="4" rx="1" ry="1" width="8" x="8" y="2"></rect></svg></button><code class="hljs python">doc.creation &gt; frappe.utils.add_to_date(frappe.utils.now_datetime(), days=-<span class="hljs-number">5</span>, as_string=<span class="hljs-literal">True</span>, as_datetime=<span class="hljs-literal">True</span>)
+
+
+</code></pre>
+<h2 id="4-example-of-a-quotation-approval-process">4. Example of a Quotation Approval Process<a aria-hidden="true" class="no-underline" href="#4-example-of-a-quotation-approval-process">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h2>
+<p>When a quotation is saved by sales user, the status of the document changes to "Draft" and when clicked on submit the status changes to 'Approval Pending By Sales Manager':</p>
+<p><img alt="Workflow State in Transaction" class="screenshot" src="/files/workflow-status-in-transaction.png"/> </p>
+<p>When the Sales Manager logs in, he can either Approve or Reject. If approved the status of the document changes to "Approval Pending By Regional Manager".</p>
+<p><img alt="Workflow Action Options" class="screenshot" src="/files/workflow-action-options.png"/> </p>
+<p>When the Regional Manager opens the quotation, he can finally "Approve" or "Reject" it.</p>
+<p><img alt="Workflow Action Options" class="screenshot" src="/files/workflow-action-options-2.png"/> </p>
+<h2 id="5-video">5. Video<a aria-hidden="true" class="no-underline" href="#5-video">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h2>
+<h3 id="6-related-topics">6. Related Topics<a aria-hidden="true" class="no-underline" href="#6-related-topics">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<ol>
+<li><a onclick="loadContent('workflow-actions.html')">Workflow Actions</a></li>
+<li><a onclick="loadContent('assignment-rule.html')">Assignment Rule</a></li>
+</ol>
+</div>
+<input class="d-none" name="wiki-page-name" value="qcgl2cq7en"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="workflows">Workflows<a aria-hidden="true" class="no-underline" href="#workflows">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content"><del class="diffmod">
+</del><ins class="diffmod">
+</ins><p><strong><ins class="diffmod">With workflows you can rewrite how a particular process/workflow is approved in KanivinERP.</ins></strong></p><ins class="diffmod">
+</ins><p><ins class="diffmod">You can set multiple levels of approval for an KanivinERP Workflow. To allow multiple people to submit multiple requests, for approvals by multiple users, KanivinERP requires you to fill the Workflow conditions. KanivinERP tracks the multiple permissions before submission.</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod">Consider a scenario, where multiple levels of approval are required for a quotation. A sales person (user with 'Sales User' role) will create a quotation. Then it is either approved or rejected by a sales lead (user with 'Sales Manager' role). If approved by sales lead, it is further approved or rejected by regional manager (user with 'Regional Manager' role).</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod">To make a Workflow and transition rules go to:</ins></p><ins class="diffmod">
+</ins><blockquote><ins class="diffmod">
+</ins><p><ins class="diffmod">Home &gt; Settings &gt; Workflow</ins></p><ins class="diffmod">
+</ins></blockquote><ins class="diffmod">
+</ins><p><ins class="diffmod">Once a Workflow is created, you can take actions on it via </ins><a href="/erpnext/v13/user/manual/en/setting-up/workflow-actions"><ins class="diffmod">Workflow Actions</ins></a><ins class="diffmod">.</ins></p><ins class="diffmod">
+</ins><h2 id="1-prerequisites"><ins class="diffmod">1. Prerequisites</ins><a aria-hidden="true" class="no-underline" href="#1-prerequisites"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h2><ins class="diffmod">
+</ins><p><ins class="diffmod">Before creating a Workflow, it is advised to create these first:</ins></p><ins class="diffmod">
+</ins><ul><ins class="diffmod">
+</ins><li><a onclick="loadContent('workflow-actions.html')"><ins class="diffmod">Workflow Actions</ins></a></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Workflow States like Approved, Canceled, etc.</ins></li><ins class="diffmod">
+</ins></ul><ins class="diffmod">
+</ins><h2 id="2-how-to-create-a-workflow"><ins class="diffmod">2. How to Create a Workflow</ins><a aria-hidden="true" class="no-underline" href="#2-how-to-create-a-workflow"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h2><ins class="diffmod">
+</ins><ol><ins class="diffmod">
+</ins><li><ins class="diffmod">Go to the Workflow list, click on New.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Enter a name for the </ins><strong><ins class="mod"><ins class="diffmod">Workflow</ins></ins></strong><ins class="diffmod"> and select the DocType on which to be applied.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Enter the different states of the Workflow. Enter Doc Status for them, select which field to update from the Update Field column, enter what the value will be updated to under Update Value.</ins></li><ins class="diffmod">
+</ins></ol><ins class="diffmod">
+</ins><p><ins class="diffmod">The Workflow States can have different colors according to the state. Eg: Green for success. Document statuses: Saved = 0, Submitted = 1, Cancelled = 2.</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod"><img alt="Workflow" class="screenshot" src="/files/workflow.png"/>
+4. Enter the Transition Rules.</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod"><img alt="Workflow Transition Rules" class="screenshot" src="/files/workflow-transition-rules.png"/></ins></p><ins class="diffmod">
+</ins><h3 id="22-things-to-note-when-creating-a-workflow"><del class="diffmod">No</del><ins class="diffmod">2.2</ins> <del class="diffmod">Revisions</del><ins class="diffmod">Things to note when creating a Workflow</ins><a aria-hidden="true" class="no-underline" href="#22-things-to-note-when-creating-a-workflow">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3><del class="diffmod">
+</del><ins class="diffmod">
+</ins><ul><ins class="diffmod">
+</ins><li><ins class="diffmod">Creating a Workflow in KanivinERP essentially overrides the regular Save and Submit workflow. Thus the document will function based on your Workflow and not based on the pre-set code workflow. Hence there might be no Submit button/option if you have not specified it in the Workflow you create.</ins></li><ins class="diffmod">
+</ins></ul><ins class="diffmod">
+</ins><p><ins class="diffmod">If you don't apply a Workflow to a document, and that document is submittable, then it has the default workflow with states: Draft - Submitted - Cancelled. If you are applying a Workflow to a submittable document, then those default states should be handled by the user.
+* A document cannot be canceled unless it is submitted.
+* If you wish to give the option to cancel, you will have to write a workflow transition step that says from submitted you can cancel.
+* If fields under Update Field column are not updated, a new custom field will be created with the name you set in the 'Workflow State Field' field.</ins></p><ins class="diffmod">
+</ins><h3 id="23-other-options-for-a-workflow"><ins class="diffmod">2.3 Other options for a Workflow</ins><a aria-hidden="true" class="no-underline" href="#23-other-options-for-a-workflow"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h3><ins class="diffmod">
+</ins><ol><ins class="diffmod">
+</ins><li><ins class="diffmod">Is Active: On ticking this, all other Workflows for the selected DocType become inactive.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Don't Override Status: This Workflow's status will not override the status of the document (Quotation) in the list view.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Send Email Alerts: Emails will be sent to the user with next possible workflow actions.</ins></li><ins class="diffmod">
+</ins></ol><ins class="diffmod">
+</ins><h2 id="3-features"><ins class="diffmod">3. Features</ins><a aria-hidden="true" class="no-underline" href="#3-features"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h2><ins class="diffmod">
+</ins><h3 id="31-enabledisable-optional-workflow-state"><ins class="diffmod">3.1 Enable/Disable Optional Workflow State</ins><a aria-hidden="true" class="no-underline" href="#31-enabledisable-optional-workflow-state"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h3><ins class="diffmod">
+</ins><blockquote><ins class="diffmod">
+</ins><p><ins class="diffmod">Introduced in Version 12</ins></p><ins class="diffmod">
+</ins></blockquote><ins class="diffmod">
+</ins><p><ins class="diffmod">In States, optional Workflow state means that the state may not be a part of final approval.</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod">E.g. states like Canceled or Rejected can be optional. <img alt="Optional State" class="screenshot" src="/files/workflow-optional-state.png"/> </ins></p><ins class="diffmod">
+</ins><p><strong><ins class="diffmod">Note:</ins></strong><ins class="diffmod"> Workflow Actions are not created for optional states.</ins></p><ins class="diffmod">
+</ins><h3 id="32-conditions"><ins class="diffmod">3.2 Conditions</ins><a aria-hidden="true" class="no-underline" href="#32-conditions"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h3><ins class="diffmod">
+</ins><p><ins class="diffmod">You can also add a condition for the Transition to be applicable. For example, in this case, if sales executive creates a quotation with grand total of $100,000 or more, a particular role must approve. For this to happen in the particular transition, you can set a property for </ins><strong><ins class="mod"><ins class="diffmod">Condition</ins></ins></strong><ins class="diffmod">:</ins></p><ins class="diffmod">
+</ins><pre><button class="btn copy-btn" data-toggle="tooltip" title="Copy Code"><svg class="feather feather-clipboard" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect height="4" rx="1" ry="1" width="8" x="8" y="2"></rect></svg></button><code class="hljs"><ins class="diffmod">doc.grand_total &lt;= 100000
+
+
+</ins></code></pre><ins class="diffmod">
+</ins><p><ins class="diffmod">Here, </ins><code><ins class="diffmod">grand_total</ins></code><ins class="diffmod"> is the field name of the field 'Grand Total' of Quotation. To see the field name of a field go to Menu &gt; Customize.</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod">This can be extended to any property of the document.</ins></p><ins class="diffmod">
+</ins><blockquote><ins class="diffmod">
+</ins><p><ins class="diffmod">Introduced in Version 13</ins></p><ins class="diffmod">
+</ins></blockquote><ins class="diffmod">
+</ins><p><ins class="diffmod">In Version 13, you can use date/time, session, get</ins><em><ins class="mod"><ins class="diffmod">value and get</ins></ins></em><ins class="diffmod">list functions in your condition expressions.</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod">Allowed functions:</ins></p><ins class="diffmod">
+</ins><ul><ins class="diffmod">
+</ins><li><ins class="diffmod">frappe.db.get_value</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">frappe.db.get_list</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">frappe.session</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">frappe.utils.now_datetime</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">frappe.utils.get_datetime</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">frappe.utils.add</ins><em><ins class="mod"><ins class="diffmod">to</ins></ins></em><ins class="diffmod">date</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">frappe.utils.now</ins></li><ins class="diffmod">
+</ins></ul><ins class="diffmod">
+</ins><p><ins class="diffmod">Examples:</ins></p><ins class="diffmod">
+</ins><pre><button class="btn copy-btn" data-toggle="tooltip" title="Copy Code"><svg class="feather feather-clipboard" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect height="4" rx="1" ry="1" width="8" x="8" y="2"></rect></svg></button><code class="hljs python"><ins class="diffmod">doc.creation &gt; frappe.utils.add_to_date(frappe.utils.now_datetime(), days=-<span class="hljs-number">5</span>, as_string=<span class="hljs-literal">True</span>, as_datetime=<span class="hljs-literal">True</span>)
+
+
+</ins></code></pre><ins class="diffmod">
+</ins><h2 id="4-example-of-a-quotation-approval-process"><ins class="diffmod">4. Example of a Quotation Approval Process</ins><a aria-hidden="true" class="no-underline" href="#4-example-of-a-quotation-approval-process"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h2><ins class="diffmod">
+</ins><p><ins class="diffmod">When a quotation is saved by sales user, the status of the document changes to "Draft" and when clicked on submit the status changes to 'Approval Pending By Sales Manager':</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod"><img alt="Workflow State in Transaction" class="screenshot" src="/files/workflow-status-in-transaction.png"/> </ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod">When the Sales Manager logs in, he can either Approve or Reject. If approved the status of the document changes to "Approval Pending By Regional Manager".</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod"><img alt="Workflow Action Options" class="screenshot" src="/files/workflow-action-options.png"/> </ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod">When the Regional Manager opens the quotation, he can finally "Approve" or "Reject" it.</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod"><img alt="Workflow Action Options" class="screenshot" src="/files/workflow-action-options-2.png"/> </ins></p><ins class="diffmod">
+</ins><h2 id="5-video"><ins class="diffmod">5. Video</ins><a aria-hidden="true" class="no-underline" href="#5-video"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h2><ins class="diffmod">
+</ins><h3 id="6-related-topics"><ins class="diffmod">6. Related Topics</ins><a aria-hidden="true" class="no-underline" href="#6-related-topics"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h3><ins class="diffmod">
+</ins><ol><ins class="diffmod">
+</ins><li><a onclick="loadContent('workflow-actions.html')"><ins class="diffmod">Workflow Actions</ins></a></li><ins class="diffmod">
+</ins><li><a onclick="loadContent('assignment-rule.html')"><ins class="diffmod">Assignment Rule</ins></a></li><ins class="diffmod">
+</ins></ol><ins class="diffmod">
+</ins></div>
+</div>
+</div></div></div></div></main>

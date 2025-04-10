@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<title>User Permissions</title>
+</head>
+<body>
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title">User Permissions</h1>
+</div>
+<div class="wiki-content">
+<p><strong>User permissions is a way of restricting user access to particular documents.</strong></p>
+<p>Role based permissions allow setting complete (by default) access to a document type (doctype) like Sales Invoice, Orders, Quotation, etc. This means that when you assign a Sales User role to a user, they can access all the Sales Orders and Quotations.</p>
+<p>User Permissions can be used to restrict access to select documents based on the link fields in the document. For example, consider that you do business with multiple territories and you want to restrict access of certain Sales Users to Quotations/Sales Order belonging to a particular territory. This can be done via User Permissions. The restrictions can be set on Customer, Supplier, Customer Group, Supplier Group, etc.</p>
+<p>Setting User Permissions are particularly useful when you want to restrict based on:</p>
+<ol>
+<li>Allowing user to access data belonging to one Company</li>
+<li>Allowing user to access data related to a specific Customer or Territory</li>
+</ol>
+<p>To access User Permissions, go to: &gt; Home &gt; User and Permissions &gt; User Permissions</p>
+<h2 id="1-how-to-create-user-permissions">1. How to create User Permissions</h2>
+<ol>
+<li>Go to the User Permissions list, click on New.</li>
+<li>Select the user for which the rule has to be applied.</li>
+<li>Select the type of document to be allowed (for example "Company").</li>
+<li>Under For Value, select the specific item that you want to allow (the name of the "Company).</li>
+<li>If you check 'Is Default', the value selected in 'For Value' will be used by default for any future transactions by this user. That is if company 'Unico Plastics Inc.' is selected as 'For Value', this Company will be set as default for all future transactions by this user.</li>
+</ol>
+<p><img alt="Creating a new user permission" class="screenshot" src="/files/new-user-permission.png"/> </p>
+<blockquote>
+<p>Note: Only a single user permission can be set as default for a particular document type for a specific user.</p>
+</blockquote>
+<h2 id="2-more-user-permission-actions">2. More User Permission actions</h2>
+<h3 id="21-advanced-control">2.1 Advanced Control</h3>
+<p>In Advanced Control, you can have better command over where the User Permission is applied.</p>
+<h3 id="211-applicable-for">2.1.1. Applicable For</h3>
+<p>You can optionally apply user permissions only for specific document type by setting the Document Type after unchecking the Apply To All Document Types checkbox. Setting <strong>Applicable For</strong> option will make the current user permission applicable only under the selected Document Type master.</p>
+<p><img alt="Applicable For" class="screenshot" src="/files/advanced-control.png"/> </p>
+<p>In the above User Permission, the user will be able to access only Sales Orders of the selected company.</p>
+<p><strong>Note:</strong> If <strong>Applicable For</strong> is not set, User Permission will apply across all related Document Types.</p>
+<h3 id="212-hide-descendants">2.1.2. Hide Descendants</h3>
+<p>The value of <strong>Allow</strong> could be a DocType with a Tree View, which will have records with a parent-child or ancestor-descendant relationship.</p>
+<p>Let's assume <strong>For Value</strong>, 'Unico Plastics Inc.', has a child company 'Unico Toys'. When a User Permission is created for 'Unico Plastics Inc.', permissions for its descendants are granted as well.</p>
+<p><strong>Hide Descendants</strong> is visible only on selecting a Tree View DocType. By enabling this checkbox, permissions for descendants of <strong>For Value</strong> will not be granted.</p>
+<p><img alt="Hide Descendant Permissions" class="screenshot" src="/files/hide-descendant-permissions.png"/> </p>
+<p>A user that can view records of 'Unico Plastics Inc.' will not be able to view those of 'Unico Toys'.</p>
+<h3 id="22-ignoring-user-permissions-on-certain-fields">2.2 Ignoring User Permissions on Certain Fields</h3>
+<p>Another way of allowing documents to be seen by everyone that have been restricted by User Permissions is to tick "Ignore User Permissions" on a particular field by going to <strong>Customize Form</strong>.</p>
+<p>For example, you don't want Assets to be restricted for any user, then select <strong>Asset</strong> in form type. Under the fields table, expand the Company field and tick on "Ignore User Permissions".</p>
+<p><img alt="Ignore User Permissions on specific properties" class="screenshot" src="/files/ignore-user-permissions.png"/> </p>
+<h3 id="23-strict-permissions">2.3 Strict Permissions</h3>
+<p>When user permissions are defined, for a particular role - the role permissions are only applied when the user permission are defined. When there are no user permissions for a particular user, there could be two interpretations:</p>
+<ol>
+<li>Show everything (nothing is restricted)</li>
+<li>Show nothing (nothing is permitted)</li>
+</ol>
+<p>You can choose how to interpret this the way you want by checking "Apply strict permissions" on the System Settings page.</p>
+<p>To know more, go to the <a href="/erpnext/v13/user/manual/en/setting-up/settings/system-settings#14-permissions">System Settings page</a>.</p>
+<h3 id="24-checking-how-user-permissions-are-applied">2.4 Checking How User Permissions are Applied</h3>
+<p>Finally, once you have created your air-tight permission model, and you want to check how it applies to various users. You can see it via the <strong>Permitted Documents for User</strong> report. Using this report, you can select the <strong>User</strong> and document type and view which documents a particular user can access.</p>
+<p>Ticking on the Show Permissions checkbox will show the read/write/submit and other access levels.</p>
+<p><img alt="Permitted Documents for User report" class="screenshot" src="/files/permitted-documents.png"/> </p>
+<p>Note: If you cannot access Sales Order or any other document type in this list, make sure you've set the <a href="/erpnext/v13/user/manual/en/setting-up/users-and-permissions/role-based-permissions">roles</a> correctly.</p>
+<p>For example, the user, Bruce is restricted to Company 'Unico Plastics Inc.' <img alt="User restricted to Company" class="screenshot" src="/files/user-restricted-to-company.png"/> </p>
+<h3 id="3-related-topics">3. Related Topics</h3>
+<ol>
+<li><a onclick="loadContent('adding-users.html')">Adding Users</a></li>
+<li><a onclick="loadContent('role-and-role-profile.html')">Role and Role Profile</a></li>
+<li><a onclick="loadContent('role-based-permissions.html')">Role Based Permissions</a></li>
+<li><a onclick="loadContent('role-permission-for-page-and-report.html')">Role Permission For Page And Report</a></li>
+</ol>
+</div>
+</div></main></body></html>

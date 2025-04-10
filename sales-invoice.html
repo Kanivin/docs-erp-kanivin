@@ -1,0 +1,277 @@
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title">Sales Invoice</h1>
+</div>
+<div class="wiki-content">
+<p><strong>A Sales Invoice is a bill that you send to your Customers against which the Customer makes the payment.</strong></p>
+<p>Sales Invoice is an accounting transaction. On submission of Sales Invoice, the system updates the receivable and books income against a Customer Account.</p>
+<p>To access the Sales Invoice list, go to: &gt; Home &gt; Accounting &gt; Accounts Receivable &gt; Sales Invoice</p>
+<p><img alt="SO Flow" class="screenshot" src="/files/so-flow.png"/> </p>
+<h2 id="1-prerequisites">1. Prerequisites</h2>
+<p>Before creating and using a Sales Invoice, it is advised to create the following first:</p>
+<ul>
+<li><a onclick="loadContent('item.html')">Item</a></li>
+<li><a onclick="loadContent('customer.html')">Customer</a></li>
+<li><p>Optional:</p>
+<ul>
+<li><a onclick="loadContent('sales-order.html')">Sales Order</a></li>
+<li><a onclick="loadContent('delivery-note.html')">Delivery Note</a></li>
+</ul></li>
+</ul>
+<h2 id="2-how-to-create-a-sales-invoice">2. How to create a Sales Invoice</h2>
+<p>A Sales Invoice is usually created from a Sales Order or a Delivery Note. The Customer's Item details will be fetched into the Sales Invoice. However, you can also create a Sales Invoice directly, for example, a POS invoice.</p>
+<p>To fetch the details automatically in a Sales Invoice, click on the <strong>Get Items from</strong>. The details can be fetched from a Sales Order, Delivery Note, or a Quotation.</p>
+<p>For manual creation, follow these steps:</p>
+<ol>
+<li>Go to the Sales Invoice list and click on New.</li>
+<li>Select the Customer.</li>
+<li>Set the Payment Due Date.</li>
+<li>In the Items table, select the Items and set the quantities.</li>
+<li>The prices will be fetched automatically if <a onclick="loadContent('item-price.html')">Item Price</a> is added, else add a price in the table.</li>
+<li>The posting date and time will be set to current, you can edit after you tick the checkbox below Posting Time to make a backdated entry.</li>
+<li>Save and Submit. <img alt="New Sales Invoice" class="screenshot" src="/files/new-sales-invoice.png"/></li>
+</ol>
+<h3 id="21-additional-options-when-creating-a-sales-invoice">2.1 Additional options when creating a Sales Invoice</h3>
+<ul>
+<li><strong>Include Payment (POS)</strong>: If this invoice is for retail sales / Point of Sale. <a onclick="loadContent('point-of-sales.html')">Know more here</a>.</li>
+<li><strong>Is Return Credit Note</strong>: Tick this if the customer has returned the Items. To know more details, visit the <a onclick="loadContent('credit-note.html')">Credit Note</a> page.</li>
+</ul>
+<p><img alt="POS and Credit Note Options" class="screenshot" src="/files/pos-and-credit-note-in-sales-invoice.png"/> </p>
+<p>For India: <strong>e-Way Bill No</strong>: According to GST rules, transporters need to carry an e-Way Bill. To know how to generate an e-Way Bill, <a href="/erpnext/v13/user/manual/en/regional/india/auto-generate-e-way-bill-JSON">visit this page</a>.</p>
+<h3 id="22-statuses">2.2 Statuses</h3>
+<p>These are the statuses that are auto-assigned to Sales Invoice.</p>
+<ul>
+<li><strong>Draft</strong>: A draft is saved but yet to be submitted.</li>
+<li><strong>Submitted</strong>: The invoice is submitted to the system and the general ledger has been updated.</li>
+<li><strong>Paid</strong>: Customer has made the payment and a <a onclick="loadContent('payment-entry.html')">Payment Entry</a> has been submitted.</li>
+<li><strong>Unpaid</strong>: Invoice is generated but payment is pending but within the payment due date.</li>
+<li><strong>Overdue</strong>: Payment is pending beyond the payment due date.</li>
+<li><strong>Canceled</strong>: The Sales Invoice is canceled due to any reason. Once an invoice is canceled, it's impact on Account and Stock is undone.</li>
+<li><strong>Credit Note Issued</strong>: The Item is returned by the Customer and a <a onclick="loadContent('credit-note.html')">Credit Note</a> is created against this invoice.</li>
+<li><strong>Return</strong>: It is assigned to Credit Note created against the original Sales Invoice. Though you can also create a standalone Credit Note.</li>
+<li><strong>Unpaid and Discounted</strong>: Payment is pending and any ongoing subscription has been discounted using <a onclick="loadContent('invoice_discounting.html')">Invoice Discounting</a>.</li>
+<li><strong>Overdue and Discounted</strong>: Payment is pending beyond the payment due date and any ongoing subscription has been discounted using <a onclick="loadContent('invoice_discounting.html')">Invoice Discounting</a>.</li>
+</ul>
+<h2 id="3-features">3. Features</h2>
+<h3 id="31-dates">3.1 Dates</h3>
+<ul>
+<li><strong>Posting Date</strong>: The date on which the Sales Invoice will affect your books of accounts i.e. your General Ledger. This will affect all your balances in that accounting period.</li>
+<li><strong>Due Date</strong>: The date on which the payment is due (if you have sold on credit). The credit limit can be set from the <a onclick="loadContent('customer#24-credit-limit-and-payment-terms.html')">Customer</a> master.</li>
+</ul>
+<h3 id="32-accounting-dimensions">3.2 Accounting Dimensions</h3>
+<p>Accounting Dimensions lets you tag transactions based on a specific Territory, Branch, Customer, etc. This helps in viewing accounting statements separately based on the selected dimension(s). To know more, check help on <a href="/erpnext/v13/user/manual/en/accounts/accounting-dimensions">Accounting Dimensions</a> feature.</p>
+<blockquote>
+<p>Note: Project and Cost Center are treated as dimensions by default.</p>
+</blockquote>
+<h3 id="33-customer-po-details">3.3 Customer PO Details</h3>
+<ul>
+<li><strong>Customer's Purchase Order</strong>: Track customer's PO No. received, primarily to prevent the creation of duplicate Sales Order or Invoice for the same PO received from the Customer. You can do more configuration related to customer's PO No. validation in <a onclick="loadContent('selling-settings#44-allow-multiple-sales-orders-against-a-customers-purchase-order.html')">Selling Settings</a></li>
+<li><strong>Customer's Purchase Order Date</strong>: The date on which the Customer placed the Purchase Order.</li>
+</ul>
+<p><img alt="Purchase Order Details" class="screenshot" src="/files/purchase-order-details-in-invoice.png"/> </p>
+<h3 id="34-address-and-contact">3.4 Address and Contact</h3>
+<ul>
+<li><strong>Customer Address:</strong> This is the Billing Address of the Customer.</li>
+<li><strong>Contact Person</strong>: If the Customer is a company, the person to be contacted is fetched in this field if set in the <a onclick="loadContent('customer.html')">Customer</a> form.</li>
+<li><strong>Territory:</strong> A <a onclick="loadContent('territory.html')">Territory</a> is the region where the Customer belongs to, fetched from the Customer form. The default value is All Territories.</li>
+<li><strong>Shipping Address:</strong> Address where the items will be shipped to.</li>
+</ul>
+<p>For India, the following details can be recorded for GST purposes. You can capture these details in the Address and Customer master, which would be fetched in the Sales Invoice.</p>
+<ul>
+<li>Billing Address GSTIN</li>
+<li>Customer GSTIN</li>
+<li>Place of Supply</li>
+<li>Company GSTIN</li>
+</ul>
+<h3 id="35-currency">3.5 Currency</h3>
+<p>You can set the currency in which the Sales Invoice order is to be sent. This can be fetched from the Customer master or preceding transactions like Sales Order.</p>
+<ul>
+<li>Wish to select Customer's currency just for the reference of the Customer, whereas accounts posting will be done in the Company's base currency only. Learn more <a onclick="loadContent('managing-transactions-in-multiple-currency.html')">here</a>.</li>
+<li>Maintain separate receivable account in the Customer's currency. The Receivable for this invoice should be posted in that currency itself. Read <a onclick="loadContent('multi-currency-accounting.html')">Multi Currency Accounting</a> to learn more.</li>
+</ul>
+<h3 id="36-price-list">3.6 Price list</h3>
+<p>If you select a Price List, then the item prices will be fetched from that list. Ticking on 'Ignore Pricing Rule' will ignore the <a href="/erpnext/v13/user/manual/en/accounts/pricing-rule">Pricing Rules</a> set in Accounts &gt; Pricing Rule.</p>
+<p>Read <a href="/erpnext/v13/user/manual/en/stock/price-lists">Price List documentation</a> to know more.</p>
+<h3 id="37-the-items-table">3.7 The Items table</h3>
+<blockquote>
+<p>Note: From version-13 onwards we have introduced immutable ledger which changes the rules for cancellation of stock entries and posting backdated stock transactions in KanivinERP. <a href="/erpnext/v13/user/manual/en/accounts/articles/immutable-ledger-in-erpnext">Learn more here</a>.</p>
+</blockquote>
+<ul>
+<li><strong>Update Stock</strong> Ticking this checkbox will update the Stock Ledger on submitting the Sales Invoice. If you've created a Delivery Note, the Stock Ledger will be changed. If you're <strong>skipping</strong> the creation of Delivery Note, tick this checkbox.</li>
+<li><strong>Scan Barcode</strong>: You can add Items in the Items table by scanning their barcodes if you have a barcode scanner. Read documentation for <a onclick="loadContent('track-items-using-barcode.html')">tracking items using barcode</a> to know more.</li>
+<li><strong>Grant Commission</strong>: Grant a commission to <a onclick="loadContent('sales-person.html')">Sales Person</a> and <a onclick="loadContent('sales-partner.html')">Sales Partner</a> on the net amount of this line item. If disabled, this line item will be ignored in the calculation of commission.</li>
+<li>The Item Code, name, description, Image, and Manufacturer will be fetched from the <a onclick="loadContent('item.html')">Item master</a>.</li>
+<li><strong>Discount and Margin</strong>: You can apply a discount on individual Items percentage-wise or on the total amount of the Item. Read <a onclick="loadContent('applying-discount.html')">Applying Discount</a> for more details.</li>
+<li><strong>Rate</strong>: The Rate is fetched if set in the <a onclick="loadContent('price-lists.html')">Price List</a> and the total Amount is calculated.</li>
+<li><strong>Drop Ship</strong>: Drop Shipping is when you make the sales transaction, but the Item is delivered by the Supplier. To know more, visit the <a onclick="loadContent('drop-shipping.html')">Drop Shipping</a> page.</li>
+<li><strong>Accounting Details</strong>: The Income and Expense accounts can be changed here you you wish to. If this Item is an <a onclick="loadContent('asset.html')">Asset</a>, it can be linked here. This is useful when you're <a onclick="loadContent('selling-an-asset.html')">selling an Asset</a>.</li>
+<li><strong>Deferred Revenue</strong>: If the income for this Item will be billed over the coming months in parts, then tick on 'Enable Deferred Revenue'. To know more, visit the <a onclick="loadContent('deferred-revenue.html')">Deferred Revenue page</a>.</li>
+<li><strong>Item Weight</strong>: The Item Weight details per unit and Weight UOM are fetched if set in the Item master.</li>
+<li><p><strong>Stock Details</strong>: The following details will be fetched from the Item master:</p>
+<ul>
+<li><strong>Warehouse</strong>: The Warehouse from where the stock will be sent.</li>
+<li><strong>Available Qty at Warehouse</strong>: The quantity available in the selected Warehouse.</li>
+</ul></li>
+<li><strong>Batch No and Serial No</strong>: If your Item is serialized or batched, you will have to enter <a onclick="loadContent('serial-no.html')">Serial Number</a> and <a onclick="loadContent('batch.html')">Batch</a> in the Items table. You are allowed to enter multiple Serial Numbers in one row (each on a separate line) and you must enter the same number of Serial Numbers as the quantity.</li>
+<li><strong>Item Tax Template</strong>: You can set an Item Tax Template to apply a specific Tax amount to this particular Item. To know more, visit <a onclick="loadContent('item-tax-template.html')">this page</a>.</li>
+<li>References: If this Sales Invoice was created from a Sales Order/Delivery Note, it'll be referred here. Also, the Delivered Quantity will be shown.</li>
+<li><strong>Page Break</strong> will create a page break just before this Item when printing.</li>
+</ul>
+<h3 id="38-timesheet">3.8 Timesheet</h3>
+<p>If you want to bill Employees working on Projects on an hourly basis (contract based), they can fill out Timesheets which consists of their billing rate. When you make a new Sales Invoice, select the Project for which the billing is to be made, and the corresponding Timesheet entries for that Project will be fetched.</p>
+<p>If your Company's Employees are working at a location and it needs to be billed, you can create an Invoice based on the Timesheet.</p>
+<p><img alt="SI Timesheet" class="screenshot" src="/files/timesheet-in-sales-invoice.png"/> </p>
+<p>To know more, <a href="/erpnext/v13/user/manual/en/projects/sales-invoice-from-timesheet">visit this page</a>.</p>
+<h3 id="39-taxes-and-charges">3.9 Taxes and Charges</h3>
+<p>The Taxes and Charges will be fetched from the <a href="/erpnext/v13/user/manual/en/selling/sales-order">Sales Order</a> or <a href="/erpnext/v13/user/manual/en/stock/delivery-note">Delivery Note</a>.</p>
+<p>Visit the <a href="/erpnext/v13/user/manual/en/selling/sales-taxes-and-charges-template">Sales Taxes and Charges Template</a> page to know more about taxes.</p>
+<p>The total taxes and charges will be displayed below the table.</p>
+<p>To add taxes automatically via a Tax Category, visit <a href="/erpnext/v13/user/manual/en/accounts/tax-category">this page</a>.</p>
+<p>Make sure to mark all your taxes in the Taxes and Charges table correctly for an accurate valuation.</p>
+<p><img alt="SI Tax" class="screenshot" src="/files/taxes-in-sales-invoice.png"/> </p>
+<h4 id="shipping-rule">Shipping Rule</h4>
+<p>A Shipping Rule helps set the cost of shipping an Item. The cost will usually increase with the distance of shipping. To know more, visit the <a href="/erpnext/v13/user/manual/en/selling/shipping-rule">Shipping Rule</a> page.</p>
+<h3 id="310-loyalty-points-redemption">3.10 Loyalty Points Redemption</h3>
+<p>If the Customer is enrolled in a Loyalty Program, they can choose to redeem it. To know more, visit the <a href="/erpnext/v13/user/manual/en/accounts/loyalty-program">Loyalty Program</a> page.</p>
+<h3 id="311-additional-discount">3.11 Additional Discount</h3>
+<p>Any additional discounts to the whole Invoice can be set in this section. This discount could be based on the Grand Total i.e., post tax/charges or Net total i.e., pre tax/charges. The additional discount can be applied as a percentage or an amount. Visit the <a href="/erpnext/v13/user/manual/en/selling/articles/applying-discount">Applying Discount</a> page for more details.</p>
+<p><img alt="Additional Discount in Sales Invoice" class="screenshot" src="/files/additional-discount-in-sales-invoice.png"/> </p>
+<h3 id="312-advance-payment">3.12 Advance Payment</h3>
+<p>For high-value Items, the seller can request an advance payment before processing the order. The <strong>Get Advances Received</strong> button opens a popup from where you can fetch the orders where the advance payment was made. To know more, visit the <a href="/erpnext/v13/user/manual/en/accounts/advance-payment-entry">Advance Payment Entry</a> page.</p>
+<h3 id="313-payment-terms">3.13 Payment Terms</h3>
+<p>The payment for an invoice may be made in parts depending on your understanding with the Supplier. This is fetched if set in the Sales Order. To know more, visit the <a href="/erpnext/v13/user/manual/en/accounts/payment-terms">Payment Terms</a> page.</p>
+<h3 id="314-write-off">3.14 Write Off</h3>
+<p>Write off happens when the Customer pays an amount less than the invoice amount. This may be a small difference like 0.50. Over several orders, this might add up to a big number. For accounting accuracy, this difference amount is 'written off'. To know more, visit the <a href="/erpnext/v13/user/manual/en/accounts/payment-entry#25-deductions-or-loss">Payment Terms</a> page.</p>
+<h3 id="315-terms-and-conditions">3.15 Terms and Conditions</h3>
+<p>There may be certain terms and conditions on the Item you're selling, these can be applied here. Read <a href="/erpnext/v13/user/manual/en/setting-up/print/terms-and-conditions">Terms and Condition documentation</a> to know how to add them.</p>
+<h3 id="316-transporter-information">3.16 Transporter Information</h3>
+<p>If you outsource transporting Items to their delivery location, the transporter details can be added. This is not the same as <a href="/erpnext/v13/user/manual/en/selling/articles/drop-shipping">drop shipping</a>.</p>
+<ul>
+<li><strong>Transporter</strong>: The Supplier who will transport the Item to your Customer. The transporter feature should be enabled in the Supplier master to select the <a onclick="loadContent('supplier.html')">Supplier</a> here.</li>
+<li><strong>Driver</strong>: You can add a Driver here who will drive the mode of transport.</li>
+</ul>
+<p>The details are usually fetched from the Delivery Note.</p>
+<p><img alt="Delivery Note Transport" class="screenshot" src="/files/transporter-details-in-sales-invoice.png"/> </p>
+<p>The following details can be recorded:</p>
+<ul>
+<li>Distance in km</li>
+<li>Mode of Transport whether road, air, rail, or ship.</li>
+</ul>
+<p>For India, GST:</p>
+<ul>
+<li>GST Transporter ID</li>
+<li>Transport Receipt No</li>
+<li>Vehicle No The GST Vehicle Type can be changed</li>
+</ul>
+<p>The Transport Receipt Date and Driver Name will be fetched.</p>
+<h3 id="317-printing-settings">3.17 Printing Settings</h3>
+<h4 id="letterhead">Letterhead</h4>
+<p>You can print your Sales Invoice on your Company's letterhead. Know more <a href="/erpnext/v13/user/manual/en/setting-up/print/letter-head">here</a>.</p>
+<p>'Group same items' will group the same items added multiple times in the Items table. This can be seen when your print.</p>
+<h4 id="print-headings">Print Headings</h4>
+<p>Sales Invoice headings can also be changed when printing the document. You can do this by selecting a <strong>Print Heading</strong>. To create new Print Headings go to: Home &gt; Settings &gt; Printing &gt; Print Heading. Know more <a href="/erpnext/v13/user/manual/en/setting-up/print/print-headings">here</a>.</p>
+<p>There are additional checkboxes for printing the Sales Invoice without the amount, this might be useful when the Item is of high value. You can also group the same Items in one row when printing.</p>
+<h3 id="318-gst-details-for-india">3.18 GST Details (for India)</h3>
+<p>The following details can be set for GST:</p>
+<ul>
+<li>GST Category</li>
+<li>Invoice Copy</li>
+<li>Reverse Charge</li>
+<li>E-commerce GSTIN</li>
+<li>Print Heading</li>
+</ul>
+<h3 id="319-more-information">3.19 More Information</h3>
+<p>The following Sales details can be recorded:</p>
+<ul>
+<li><strong>Campaign</strong>: If this invoice is a part of on ongoing sales Campaign, it can be linked. To know more, visit the <a onclick="loadContent('campaign.html')">Campaign page</a>.</li>
+<li><strong>Source</strong>: A Lead Source can be tagged here to know the source of sales. To know more, visit the <a onclick="loadContent('lead_source.html')">Lead Source</a> page.</li>
+</ul>
+<p><img alt="SI More info" class="screenshot" src="/files/more-information-in-sales-invoice.png"/> </p>
+<h3 id="320-accounting-details">3.20 Accounting Details</h3>
+<ul>
+<li><strong>Debit To</strong>: The account against which receivable will be booked for this Customer.</li>
+<li><strong>Is Opening Entry</strong>: If this is an opening entry to affect your accounts select 'Yes'. i.e. if you're migrating from another ERP to KanivinERP mid year, you might want to use an Opening Entry to update account balances in KanivinERP.</li>
+<li><strong>Remarks</strong>: Any additional remarks about the Sales Invoice can be added here.</li>
+</ul>
+<p><img alt="Accounting Details" class="screenshot" src="/files/accounting-details-in-sales-invoice.png"/> </p>
+<h3 id="321-commission">3.21 Commission</h3>
+<p>If the sale took place via one of your Sales Partners, you can add their commission details here. This is usually fetched from the Sales Order/Delivery Note.</p>
+<h3 id="322-sales-team">3.22 Sales Team</h3>
+<p><strong>Sales Persons:</strong> KanivinERP allows you to add multiple Sales Persons who may have worked on this deal. This is also fetched from the Sales Order/Delivery Note.</p>
+<h3 id="323-automatically-fetching-item-batch-numbers">3.23 Automatically Fetching Item Batch Numbers</h3>
+<p>If you are selling an Item from a <a href="/erpnext/v13/user/manual/en/stock/batch">Batch</a>, KanivinERP will automatically fetch a batch number for you if "Update Stock" is checked. The batch number will be fetched on a First Expiring First Out (FEFO) basis. This is a variant of First In First Out (FIFO) that gives the highest priority to the soonest to expire Items.</p>
+<p>Note that if the first batch in the queue cannot satisfy the order on the invoice, the next batch in the queue that can satisfy the order will be selected. If no batch can satisfy the order, KanivinERP will cancel its attempt to automatically fetch a suitable batch number.</p>
+<h3 id="324-pos-invoices">3.24 POS Invoices</h3>
+<p>Consider a scenario where the retail transaction is carried out. For e.g: A retail shop. If you check the <strong>Is POS</strong> checkbox, then all your <strong>POS Profile</strong> data is fetched into the Sales Invoice and you can easily make payments.</p>
+<p>Also, if you check the <strong>Update Stock</strong> the stock will also update automatically, without the need for a Delivery Note.</p>
+<p><img alt="POS Invoice" class="screenshot" src="/files/pos-sales-invoice.png"/> </p>
+<h3 id="325-after-submitting">3.25 After Submitting</h3>
+<p>On submitting a Sales Invoice, the following documents can be created against it:</p>
+<ol>
+<li><a onclick="loadContent('journal-entry.html')">Journal Entry</a></li>
+<li><a onclick="loadContent('payment-entry.html')">Payment Entry</a></li>
+<li><a onclick="loadContent('payment-request.html')">Payment Request</a></li>
+<li><a onclick="loadContent('invoice_discounting.html')">Invoice Discounting</a></li>
+<li><a onclick="loadContent('delivery-note.html')">Delivery Note</a></li>
+</ol>
+<p><img alt="SI Submit" class="screenshot" src="/files/sales-invoice-post-submit.png"/> </p>
+<h2 id="4-more">4. More</h2>
+<h3 id="accounting-impact">Accounting Impact</h3>
+<p>All Sales must be booked against an “Income Account”. This refers to an Account in the “Income” section of your Chart of Accounts. It is a good practice to classify your income by type (like product income, service income, etc). The Income Account must be set for each row of the Items table.</p>
+<blockquote>
+<p>Tip: To set default Income Accounts for Items, you can set it in the Item or Item Group.</p>
+</blockquote>
+<p>The other account that is affected is the Account of the Customer. That is automatically set from “Debit To” in the heading section.</p>
+<p>You can also mention the Cost Centers in which your Income must be booked. Remember that your Cost Centers tell you the profitability of the different lines of business or product. You can also set a default Cost Center in the Item master. See also: <a href="/erpnext/v13/user/manual/en/accounts/accounting-dimensions">Accounting Dimensions</a>.</p>
+<h3 id="accounting-entries-gl-entry-for-a-typical-double-entry-sale">Accounting entries (GL Entry) for a typical double entry “Sale”:</h3>
+<p>When booking a sale (accrual):</p>
+<ul>
+<li><strong>Debit:</strong> Customer (grand total)</li>
+<li><strong>Credit:</strong> Income (net total, minus taxes for each Item)</li>
+<li><strong>Credit:</strong> Taxes (liabilities to be paid to the government)</li>
+</ul>
+<p><img alt="SI Ledger" class="screenshot" src="/files/ledger-updates-on-sales-invoice-submission.png"/></p>
+<blockquote>
+<p>To see entries in your Sales Invoice after you “Submit”, click on “View Ledger”.</p>
+</blockquote>
+<h2 id="5-related-topics">5. Related Topics</h2>
+<ol>
+<li><a onclick="loadContent('cost-center.html')">Cost Center</a></li>
+<li><a onclick="loadContent('journal-entry.html')">Journal Entry</a></li>
+<li><a onclick="loadContent('payment-entry.html')">Payment Entry</a></li>
+<li><a onclick="loadContent('purchase-invoice.html')">Purchase Invoice</a></li>
+<li><a onclick="loadContent('purchase-receipt.html')">Purchase Receipt</a></li>
+<li><a onclick="loadContent('item-tax-template.html')">Item Wise Taxation</a></li>
+<li><a onclick="loadContent('sales-order.html')">Sales Order</a></li>
+<li><a onclick="loadContent('quotation.html')">Quotation</a></li>
+<li><a onclick="loadContent('delivery-note.html')">Delivery Note</a></li>
+</ol>
+</div>
+<input class="d-none" name="wiki-page-name" value="57muv4qjj5"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="revisionsModalTitle">Sales Invoice</h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content">
+<h3>No Revisions</h3>
+</div>
+</div>
+</div></div></div></div></main>

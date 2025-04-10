@@ -1,59 +1,50 @@
-<main><div class="from-markdown markdown ">
-	<div class="alert alert-warning admin-banner hide" role="alert">
-		<div class="d-flex justify-content-between align-items-center">
-			<div>This space has
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
 				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
 				review.
 			</div>
-			<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
-		</div>
-	</div>
-	<div class="d-flex justify-content-between align-items-center">
-		<h1 class="wiki-title" id="upload-backups-to-amazon-s3">Upload Backups to Amazon S3<a class="no-underline" href="#upload-backups-to-amazon-s3" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h1>
-	</div>
-	<div class="wiki-content">
-		<blockquote>
-  <p>Note: If you are Frappe Cloud user, onsite and offsite backups are automatically created for you: <a href="https://frappecloud.com/docs/sites/backups">https://frappecloud.com/docs/sites/backups</a></p>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title" id="upload-backups-to-amazon-s3">Upload Backups to Amazon S3<a aria-hidden="true" class="no-underline" href="#upload-backups-to-amazon-s3">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h1>
+</div>
+<div class="wiki-content">
+<blockquote>
+<p>Note: If you are Frappe Cloud user, onsite and offsite backups are automatically created for you: <a href="https://frappecloud.com/docs/sites/backups">https://frappecloud.com/docs/sites/backups</a></p>
 </blockquote>
-
-<h2 id="prerequisites">Prerequisites<a class="no-underline" href="#prerequisites" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h2>
-
+<h2 id="prerequisites">Prerequisites<a aria-hidden="true" class="no-underline" href="#prerequisites">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h2>
 <ul>
-<li><a href="/erpnext/v13/user/manual/en/setting-up/email/email-account">Email Account</a></li>
+<li><a onclick="loadContent('email-account.html')">Email Account</a></li>
 </ul>
-
 <p>To receive emails for failed and successful backups, please create an <strong>Email Account</strong> first.</p>
-
-<h2 id="create-s3-bucket-and-set-up-access">Create S3 bucket and set up access<a class="no-underline" href="#create-s3-bucket-and-set-up-access" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h2>
-
+<h2 id="create-s3-bucket-and-set-up-access">Create S3 bucket and set up access<a aria-hidden="true" class="no-underline" href="#create-s3-bucket-and-set-up-access">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h2>
 <ol>
 <li>Create a new s3 bucket.</li>
 </ol>
-
 <p>In the bucket settings, enable "Block all public access" to keep your data private. Feel free to enable encryption, versioning or object lock as per your requirements (please refer to <a href="https://docs.aws.amazon.com/AmazonS3/latest/user-guide/create-bucket.html">Amazon's documentation</a>).
 2. Open Identity and Access Management (IAM).
 3. Create a new policy for the Service "S3", allowing the Actions "ListBucket" and "PutObject".</p>
-
-<p><img src="/files/s3-backup-policy.png" alt="Screenshot of &quot;Create Policy&quot; in AWS" class="screenshot">  </p>
-
+<p><img alt='Screenshot of "Create Policy" in AWS' class="screenshot" src="/files/s3-backup-policy.png"/> </p>
 <p>Or, using the JSON editor:</p>
-
-<pre><button title="Copy Code" class="btn copy-btn" data-toggle="tooltip"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clipboard"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg></button><code class="hljs json">{
+<pre><button class="btn copy-btn" data-toggle="tooltip" title="Copy Code"><svg class="feather feather-clipboard" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect height="4" rx="1" ry="1" width="8" x="8" y="2"></rect></svg></button><code class="hljs json">{
     <span class="hljs-attr">"Version"</span>: <span class="hljs-string">"2012-10-17"</span>,
     <span class="hljs-attr">"Statement"</span>: [
         {
@@ -78,24 +69,19 @@
 
 
 </code></pre>
-
 <ol start="4">
 <li>Create a new user for programmatic access.</li>
 </ol>
-
-<p><img src="/files/s3_backup_add_user.png" alt="Screenshot of &quot;Add User&quot; in AWS" class="screenshot">
+<p><img alt='Screenshot of "Add User" in AWS' class="screenshot" src="/files/s3_backup_add_user.png"/>
 5. Attach the policy you created to the new user.
 6. Copy the user's access key and secret.</p>
-
 <p>To automatically delete old backups or move them to a cheaper storage class, have a look at <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html">lifecycle management</a>.</p>
-
-<h2 id="set-up-erpnext">Set up KanivinERP<a class="no-underline" href="#set-up-erpnext" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h2>
-
+<h2 id="set-up-erpnext">Set up KanivinERP<a aria-hidden="true" class="no-underline" href="#set-up-erpnext">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h2>
 <ul>
 <li>Open <strong>S3 Backup Settings</strong>.</li>
 <li>Check "Enable Automatic Backup".</li>
@@ -104,70 +90,58 @@
 <li>Specify the name of the bucket that you created in step 1.</li>
 <li>Choose how often you want to take and upload backups. This can range from monthly to daily. If you only want to take manual backups, set the frequency to "None".</li>
 </ul>
-
-<p><img src="/files/s3_backup_settings.png" alt="S3 Backup Settings in KanivinERP" class="screenshot">  </p>
-
-	</div>
-	<input value="siq8k25rc6" class="d-none" name="wiki-page-name">
-	<div class="modal revisions-modal fade" id="revisionsModal" tabindex="-1" role="dialog" aria-labelledby="revisionsModalTitle" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <div class="d-flex flex-column">
-                    <h5 class="modal-title revision-title" id="upload-backups-to-amazon-s3">Upload Backups to Amazon S3<a class="no-underline" href="#upload-backups-to-amazon-s3" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h5>
-                    <span class="small text-muted revision-time">administrator edited 4 months ago</span>
-                </div>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="revision-content wiki-content"><del class="diffmod">
-                    </del><h3 id="no-revisions"><del class="diffmod">No</del><ins class="diffmod">
-		</ins><blockquote><ins class="diffmod">
-  </ins><p><ins class="diffmod">Note:</ins> <del class="diffmod">Revisions</del><ins class="diffmod">If you are Frappe Cloud user, onsite and offsite backups are automatically created for you: </ins><a href="https://frappecloud.com/docs/sites/backups"><ins class="diffmod">https://frappecloud.com/docs/sites/backups</ins></a></p><ins class="diffmod">
+<p><img alt="S3 Backup Settings in KanivinERP" class="screenshot" src="/files/s3_backup_settings.png"/> </p>
+</div>
+<input class="d-none" name="wiki-page-name" value="siq8k25rc6"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="upload-backups-to-amazon-s3">Upload Backups to Amazon S3<a aria-hidden="true" class="no-underline" href="#upload-backups-to-amazon-s3">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content"><del class="diffmod">
+</del><h3 id="no-revisions"><del class="diffmod">No</del><ins class="diffmod">
+</ins><blockquote><ins class="diffmod">
+</ins><p><ins class="diffmod">Note:</ins> <del class="diffmod">Revisions</del><ins class="diffmod">If you are Frappe Cloud user, onsite and offsite backups are automatically created for you: </ins><a href="https://frappecloud.com/docs/sites/backups"><ins class="diffmod">https://frappecloud.com/docs/sites/backups</ins></a></p><ins class="diffmod">
 </ins></blockquote><ins class="diffmod">
-
-</ins></h3><h2 id="prerequisites"><ins class="diffmod">Prerequisites</ins><a class="no-underline" href="#prerequisites" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h2><del class="diffmod">
-
-                </del><ins class="diffmod">
-
+</ins></h3><h2 id="prerequisites"><ins class="diffmod">Prerequisites</ins><a aria-hidden="true" class="no-underline" href="#prerequisites">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h2><del class="diffmod">
+</del><ins class="diffmod">
 </ins><ul><ins class="diffmod">
-</ins><li><a href="/erpnext/v13/user/manual/en/setting-up/email/email-account"><ins class="diffmod">Email Account</ins></a></li><ins class="diffmod">
+</ins><li><a onclick="loadContent('email-account.html')"><ins class="diffmod">Email Account</ins></a></li><ins class="diffmod">
 </ins></ul><ins class="diffmod">
-
-</ins><p><ins class="diffmod">To receive emails for failed and successful backups, please create an </ins><strong><ins class="mod"><ins class="diffmod">Email Account</ins></ins></strong><ins class="diffmod">&nbsp;first.</ins></p><ins class="diffmod">
-
-</ins><h2 id="create-s3-bucket-and-set-up-access"><ins class="diffmod">Create S3 bucket and set up access</ins><a class="no-underline" href="#create-s3-bucket-and-set-up-access" aria-hidden="true"><ins class="diffmod">
-        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
-          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
-          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
-        </ins></svg><ins class="diffmod">
-      </ins></a></h2><ins class="diffmod">
-
+</ins><p><ins class="diffmod">To receive emails for failed and successful backups, please create an </ins><strong><ins class="mod"><ins class="diffmod">Email Account</ins></ins></strong><ins class="diffmod"> first.</ins></p><ins class="diffmod">
+</ins><h2 id="create-s3-bucket-and-set-up-access"><ins class="diffmod">Create S3 bucket and set up access</ins><a aria-hidden="true" class="no-underline" href="#create-s3-bucket-and-set-up-access"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h2><ins class="diffmod">
 </ins><ol><ins class="diffmod">
 </ins><li><ins class="diffmod">Create a new s3 bucket.</ins></li><ins class="diffmod">
 </ins></ol><ins class="diffmod">
-
 </ins><p><ins class="diffmod">In the bucket settings, enable "Block all public access" to keep your data private. Feel free to enable encryption, versioning or object lock as per your requirements (please refer to </ins><a href="https://docs.aws.amazon.com/AmazonS3/latest/user-guide/create-bucket.html"><ins class="diffmod">Amazon's documentation</ins></a><ins class="diffmod">).
 2. Open Identity and Access Management (IAM).
 3. Create a new policy for the Service "S3", allowing the Actions "ListBucket" and "PutObject".</ins></p><ins class="diffmod">
-
-</ins><p><ins class="diffmod"><img src="/files/s3-backup-policy.png" alt="Screenshot of &quot;Create Policy&quot; in AWS" class="screenshot">  </ins></p><ins class="diffmod">
-
+</ins><p><ins class="diffmod"><img alt='Screenshot of "Create Policy" in AWS' class="screenshot" src="/files/s3-backup-policy.png"/> </ins></p><ins class="diffmod">
 </ins><p><ins class="diffmod">Or, using the JSON editor:</ins></p><ins class="diffmod">
-
-</ins><pre><button title="Copy Code" class="btn copy-btn" data-toggle="tooltip"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clipboard"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg></button><code class="hljs json"><ins class="diffmod">{
+</ins><pre><button class="btn copy-btn" data-toggle="tooltip" title="Copy Code"><svg class="feather feather-clipboard" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect height="4" rx="1" ry="1" width="8" x="8" y="2"></rect></svg></button><code class="hljs json"><ins class="diffmod">{
     <span class="hljs-attr">"Version"</span>: <span class="hljs-string">"2012-10-17"</span>,
     <span class="hljs-attr">"Statement"</span>: [
         {
@@ -192,24 +166,19 @@
 
 
 </ins></code></pre><ins class="diffmod">
-
 </ins><ol start="4"><ins class="diffmod">
 </ins><li><ins class="diffmod">Create a new user for programmatic access.</ins></li><ins class="diffmod">
 </ins></ol><ins class="diffmod">
-
-</ins><p><ins class="diffmod"><img src="/files/s3_backup_add_user.png" alt="Screenshot of &quot;Add User&quot; in AWS" class="screenshot">
+</ins><p><ins class="diffmod"><img alt='Screenshot of "Add User" in AWS' class="screenshot" src="/files/s3_backup_add_user.png"/>
 5. Attach the policy you created to the new user.
 6. Copy the user's access key and secret.</ins></p><ins class="diffmod">
-
 </ins><p><ins class="diffmod">To automatically delete old backups or move them to a cheaper storage class, have a look at </ins><a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html"><ins class="diffmod">lifecycle management</ins></a><ins class="diffmod">.</ins></p><ins class="diffmod">
-
-</ins><h2 id="set-up-erpnext"><ins class="diffmod">Set up KanivinERP</ins><a class="no-underline" href="#set-up-erpnext" aria-hidden="true"><ins class="diffmod">
-        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
-          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
-          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
-        </ins></svg><ins class="diffmod">
-      </ins></a></h2><ins class="diffmod">
-
+</ins><h2 id="set-up-erpnext"><ins class="diffmod">Set up KanivinERP</ins><a aria-hidden="true" class="no-underline" href="#set-up-erpnext"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h2><ins class="diffmod">
 </ins><ul><ins class="diffmod">
 </ins><li><ins class="diffmod">Open </ins><strong><ins class="mod"><ins class="diffmod">S3 Backup Settings</ins></ins></strong><ins class="diffmod">.</ins></li><ins class="diffmod">
 </ins><li><ins class="diffmod">Check "Enable Automatic Backup".</ins></li><ins class="diffmod">
@@ -218,9 +187,7 @@
 </ins><li><ins class="diffmod">Specify the name of the bucket that you created in step 1.</ins></li><ins class="diffmod">
 </ins><li><ins class="diffmod">Choose how often you want to take and upload backups. This can range from monthly to daily. If you only want to take manual backups, set the frequency to "None".</ins></li><ins class="diffmod">
 </ins></ul><ins class="diffmod">
-
-</ins><p><ins class="diffmod"><img src="/files/s3_backup_settings.png" alt="S3 Backup Settings in KanivinERP" class="screenshot">  </ins></p><ins class="diffmod">
-
-	</ins></div>
-            </div>
-            </main>
+</ins><p><ins class="diffmod"><img alt="S3 Backup Settings in KanivinERP" class="screenshot" src="/files/s3_backup_settings.png"/> </ins></p><ins class="diffmod">
+</ins></div>
+</div>
+</div></div></div></div></main>

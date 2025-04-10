@@ -1,0 +1,137 @@
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title">Tax Withholding Category</h1>
+</div>
+<div class="wiki-content">
+<p><strong>Tax Withholding Category is Tax Deducted at Source.</strong></p>
+<p>According to this, a person responsible for making payments is required to deduct tax at source at prescribed rates. Instead of receiving tax on your income from you at a later date, the govt wants the payers to deduct tax beforehand and deposit it with the government.</p>
+<p>To access the Tax Withholding Category list, go to:</p>
+<blockquote>
+<p>Home &gt; Accounting &gt; Taxes &gt; Tax Withholding Category</p>
+</blockquote>
+<h2 id="1-prerequisites">1. Prerequisites</h2>
+<p>Before creating and using a Tax Withholding Category, it is advised to create the following first:</p>
+<ol>
+<li><a onclick="loadContent('supplier.html')">Supplier</a></li>
+<li><a onclick="loadContent('customer.html')">Customer</a></li>
+</ol>
+<h2 id="2-how-to-create-a-tax-withholding-category">2. How to create a Tax Withholding Category</h2>
+<p>In KanivinERP, Tax Withholding Categories for most cases are available by default, however, you can create more if needed.</p>
+<ol>
+<li>Go to the Tax Withholding Category list and click on New.</li>
+<li>Enter a unique name, eg: Section 194C Individual.</li>
+<li>Enter a Category Name (Dividends, Professional Fees, etc,.).</li>
+<li>Enter a Tax Withholding Rate against a <a onclick="loadContent('fiscal-year.html')">Fiscal Year</a>.</li>
+<li>You can set the threshold for a single invoice or sum of all invoices.</li>
+<li>Select an account against your Company to which tax will be credited.</li>
+<li>Add more companies and accounts as needed.</li>
+<li>Save.</li>
+</ol>
+<p><img alt="Tax withholding Category" class="screenshot" src="/files/tax-withholding-category.png"/></p>
+<p>Under accounting details, the TDS account is added for each Company in the system.</p>
+<h3 id="21-assigning-tax-withholding-to-supplier">2.1 Assigning Tax Withholding to Supplier</h3>
+<p>After saving, it can be assigned to a Supplier:</p>
+<p><img alt="Tax withholding Category in Supplier" class="screenshot" src="/files/tax-withholding-category-in-supplier.png"/> </p>
+<h3 id="22-how-does-the-threshold-work">2.2 How does the threshold work?</h3>
+<p>Consider a Supplier on whom a Tax Withholding Category is applied.</p>
+<p>For example, let's say a rate of 5% will be applicable on invoice where Single threshold is 20,000 and the Cumulative threshold is 30,000. If an invoice is created with a grand total of 20,000 then the single threshold will be triggered and a 5% tax would be charged.</p>
+<p>But if the invoice amount totaled up to be 15,000 then no tax will be charged as it didn't cross the threshold. If again another invoice is created against the same supplier with a total of 15,000 then although it didn't cross the Single threshold, charges will be deducted since the sum of the last invoice and this invoice adds up to be 30,000 which is equal to the specified Cumulative threshold.</p>
+<h2 id="3-using-tax-withholding">3. Using Tax Withholding</h2>
+<h3 id="31-use-in-purchase-invoice">3.1 Use in Purchase Invoice</h3>
+<p>In the following example, we have selected 'TDS - 194C - Individual' which has a single threshold of 30,000, cumulative threshold of 1,00,000 and rate of 1%.</p>
+<ol>
+<li>If the <strong>Supplier</strong> has the tax withholding field set, then upon selecting that Supplier, a checkbox will become visible in the Purchase Invoice to select whether to apply tax or not.</li>
+</ol>
+<p><img alt="Tax Withholding Category in Purchase Invoice" class="screenshot" src="/files/tax-withholding-category-in-purchase-invoice.png"/> </p>
+<ol>
+<li>Let's create an invoice for 90,000. Saving the invoice automatically calculates tax and appends it in the taxes table.</li>
+</ol>
+<p><img alt="Tax Withholding Category in Purchase Invoice" class="screenshot" src="/files/withheld-tax-calculation-in-purchase-invoice.png"/>
+2. To see the effect of Cumulative threshold, let's create an invoice with of amount 10,000 and submit it.</p>
+<p><img alt="Tax Withholding Category Cumulative Threshhold" class="screenshot" src="/files/tax-withholding-category-cumulative-threshold.png"/> </p>
+<p>Although the invoice amount didn't cross the Single threshold (30,000), we see that tax has been charged. This is because the previous and the current invoice adds up to be 1,10,000 which exceeds the Cumulative threshold. Hence, tax based on the rate provided in the <strong>Tax Withholding Category</strong> is applied accordingly.</p>
+<blockquote>
+<p>Note: On submitting the invoice, three GL Entries are created:</p>
+</blockquote>
+<blockquote>
+<ol>
+<li>First for debit from the expense head</li>
+<li>Second for credit in Creditors account</li>
+<li>Third for credit in the account selected in Tax Withholding Category.</li>
+</ol>
+</blockquote>
+<h3 id="32-deducting-tax-at-source-on-advances">3.2 Deducting Tax at source on Advances</h3>
+<h4 id="321-deduction-advance-tds-against-purchase-order">3.2.1 Deduction Advance TDS against Purchase Order</h4>
+<ol>
+<li>Set up Tax Withholding Category against supplier and make a Purchase Order against the supplier. One point to remember here is not to check "Apply Tax Withholding" check in the PO as the PO has to generated for the full amount</li>
+<li>Create Payment Entry against that Purchase Order, In the Taxes and Charges section enable "Apply Tax Withholding" and enter other details and then save and submit the entry.</li>
+</ol>
+<p><img alt="Tax Withholding Payment Entry" class="screenshot" src="/files/Tax-Withholding-Payment Entry.png"/> </p>
+<ol start="3">
+<li>Create a Purchase Invoice against this order and enable "Set Advances and Allocate(FIFO)" so that payment linked to the corresponsing order is automatically applied. No Tax will be withheld in the Purchase Invoice if the Tax paid on advance in more than or equal to the tax amount in Invoice. Tax Will be withheld only for the excess amount if applicable.</li>
+</ol>
+<h3 id="322-deducting-tds-against-advances-paid-using-payment-entry">3.2.2 Deducting TDS against advances paid (Using Payment Entry)</h3>
+<ol>
+<li>Select "Payment Type" as "Pay"</li>
+<li>Select "Party Type" as "Supplier" and the appropriate supplier</li>
+<li>Enter paid amount, paid amount should be the amount before TDS deduction</li>
+<li>Under the Taxes and Charges section check "Apply Tax Withholding Amount" and select Tax Withholding Category</li>
+<li>Click on Save. TDS will be auto applied</li>
+<li>Submit the entry</li>
+<li>Same will also be visible in TDS payable monthly report</li>
+</ol>
+<h3 id="33-setting-up-tcs-section-20c1h-for-eligible-customers">3.3 Setting up TCS - Section 20C(1H) for eligible customers</h3>
+<p>In the following example, we have create a Tax Withholding Category for <a href="https://taxguru.in/income-tax/faqs-tcs-sales-goods-section-206c1h.html">TCS - Section 20C(1H)</a> and set it up against an eligble customer.</p>
+<ol>
+<li>We will first create a Tax Withholding Category named <strong>TCS - Section 20C(1H)</strong> and we set cumulative threshold to 50 Lakhs as per the scheme.</li>
+</ol>
+<p><img alt="Tax Withholding Category For TCS" class="screenshot" src="/files/tax-withholding-category-for-tcs.png"/> </p>
+<ol>
+<li>If a <strong>Customer</strong> is expected to crosses the sales threshold of 50 Lakh in current Fiscal Year, then we can set the Tax Withholding Category of the customer to TCS - Section 20C(1H) for automatically calculation TCS on sale of goods against the customer's invoices.</li>
+</ol>
+<p><img alt="TCS in Customer" class="screenshot" src="/files/tcs-eligible-customer.png"/>
+2. Let's create an invoice for 50 Lakhs against the eligible customer. Saving the invoice automatically calculates tax and appends it in the taxes table.</p>
+<p><img alt="TCS Calculation in Sales Invoice" class="screenshot" src="/files/tcs-invoice.png"/> </p>
+<p>Since the invoice cross the Cumulative threshold (50 Lakhs), we see that tax has been charged. Hence, tax based on the rate provided in the <strong>Tax Withholding Category</strong> is applied accordingly. Note that, as per the scheme, the TCS is calculated on the amount exceeding the threshold i.e 0.075 % of 10 Lakhs.</p>
+<h3 id="34-advanced-options-in-tax-withholding-category">3.4 Advanced options in Tax Withholding Category</h3>
+<p><img alt="Advance TDS Options" class="screenshot" src="/files/tds-advance-options.png"/> </p>
+<ol>
+<li><strong>Consider Entire Party Ledger Amount</strong>: In many situations threshold has to be calculated on the entire party ledger amount instead of the sum of the net total of specific invoices. On enabling this check cumulative threshold will be checked against the sum of the grand total of all the invoices against a particular Supplier/Customer.</li>
+<li><strong>Only Deduct Tax On Excess Amount</strong>: On enabling this tax will be deducted only on the amount exceeding the threshold and not the entire amount. For example, if the cumulative threshold is 50000 and if the cumulative amount goes till 52000 the tax will be applied only on 2000 and not the entire 52000.</li>
+<li><strong>Round Off Tax Amount</strong>: Enabling this check will round off the calculated tax amount to the nearest integer value (Normal Rounding Method)</li>
+</ol>
+<h3 id="4-related-topics">4. Related Topics</h3>
+<ol>
+<li><a onclick="loadContent('tax-rule.html')">Tax Rule</a></li>
+<li><a onclick="loadContent('supplier.html')">Supplier</a></li>
+<li><a onclick="loadContent('customer.html')">Customer</a></li>
+</ol>
+</div>
+<input class="d-none" name="wiki-page-name" value="a6a92u2mn9"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="revisionsModalTitle">Tax Withholding Category</h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content">
+<h3>No Revisions</h3>
+</div>
+</div>
+</div></div></div></div></main>

@@ -1,0 +1,189 @@
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title">Work Order</h1>
+</div>
+<div class="wiki-content">
+<p><strong>A Work Order is a document given to the manufacturing shop floor by the Production Planner as a signal to manufacture a certain quantity of a certain Item.</strong></p>
+<p><img alt="Work Order" class="screenshot" src="/files/manufacturing-flow-wo.png"/> </p>
+<p>The Work Order also helps generate the material requirements (Stock Entry) for the Item to be produced from its <strong>Bill of Materials</strong>.</p>
+<p>The <strong>Work Order</strong> can be generated from the <a href="/erpnext/v13/user/manual/en/manufacturing/production-plan">Production Plan</a> based on Sales Orders.</p>
+<p>To access the Work Order list, go to:</p>
+<blockquote>
+<p>Home &gt; Manufacturing &gt; Production &gt; Work Order</p>
+</blockquote>
+<h2 id="1-prerequisites">1. Prerequisites</h2>
+<p>Before creating and using a Work Order, it is advised that you create the following first:</p>
+<ul>
+<li><a onclick="loadContent('bill-of-materials.html')">Bill Of Materials</a></li>
+<li><a onclick="loadContent('operation.html')">Operation</a></li>
+<li><a onclick="loadContent('workstation.html')">Workstation</a></li>
+</ul>
+<h2 id="2-how-to-create-a-work-order">2. How to Create a Work Order</h2>
+<ol>
+<li>Go to the Work Order list, click on New.</li>
+<li>Select the Item to be manufactured.</li>
+<li>The default BOM for that item will be fetched by the system. You can also change the BOM.</li>
+<li>Enter the quantity to manufacture. Raw material Items will be fetched only when this is set.</li>
+<li>If the selected BOM has Operations mentioned in it, the system will fetch all Operations from BOM, these values can be changed. Refer <a onclick="loadContent('work-order#32-operations-table.html')">section 3.2</a> to know more.</li>
+<li>Set the Planned Start Date (an Estimated Date at which you want the Production to begin). <img alt="Work Order" class="screenshot" src="/files/work-order.png"/></li>
+<li><strong>Use Multi-Level BOM</strong>: This is enabled by default. If you want to plan materials for sub-assemblies of the Item you're manufacturing leave this enabled. If you plan and manufacture the sub-assemblies separately, you can disable this checkbox. To know more, visit <a onclick="loadContent('managing-multi-level-bom.html')">this page</a>.</li>
+<li><p>Select Warehouses:</p>
+<ol>
+<li><strong>Source Warehouses</strong>: Select this Warehouse in the Item row. The warehouse where you store your raw materials. Each required item can have a separate source warehouse. Group warehouse also can be selected as source warehouse. On submission of the Work Order, the raw materials will be reserved in these warehouses for production usage.</li>
+<li><strong>Work-in-Progress Warehouse</strong>: The warehouse where your Items will be transferred when you begin production. Group Warehouse can also be selected as a Work in Progress warehouse.</li>
+<li><strong>Target Warehouse</strong>: The warehouse where you store finished Items before they are shipped.</li>
+<li><strong>Scrap Warehouse</strong>: If the BOM results in Scrap material, the Scrap Warehouse needs to be selected.</li>
+</ol></li>
+<li><strong>Required Items</strong>: All the required items (raw materials) will be fetched from BOM and populated in this table. Here you can also change the Source Warehouse for any item. And during the production, you can track transferred raw materials from this table.</li>
+</ol>
+<blockquote>
+<p>Note: You can save a Work Order without selecting the Warehouses, but Warehouses are mandatory for submitting a Work Order.</p>
+</blockquote>
+<p>A Work Order can also be directly created from a <a href="/erpnext/v13/user/manual/en/selling/sales-order#214-after-submitting">Sales Order</a>.</p>
+<h3 id="21-additional-options-when-creating-a-work-order">2.1 Additional Options when Creating a Work Order</h3>
+<ul>
+<li><strong>Sales Order</strong>: If you create a Work Order from a Sales Order, it will be fetched here. You can also link an existing Sales Order which has the Item to be manufactured to this Work Order.</li>
+<li><strong>Project</strong>: Link the Work Order to a Project to track progress in cases like engineer to order.</li>
+<li><strong>Allow Alternative Item</strong>: Sometimes when manufacturing a finished good, specific materials may not be available. For example, using plastic beads instead of plastic crystals. The finished good itself could be different. Ticking this checkbox will allow you the select an Alternative Item. To know more, visit <a onclick="loadContent('item-alternative.html')">this page</a>.</li>
+<li><strong>Skip Material Transfer to WIP Warehouse</strong>: Usually, a Stock Entry is created when the raw materials are transferred to a Work In Progress Warehouse. In this case, the raw material is considered to be consumed hence the Stock Entry is skipped. The next option will be shown if you tick this checkbox.</li>
+<li><strong>Backflush Raw Materials From Work-in-Progress Warehouse</strong>: Ticking this checkbox will automatically create a Stock Entry with the type 'Manufacture'. This means that the raw materials were consumed from the Source Warehouse, used to manufacture finished goods and another Stock Entry was created for your Target Warehouse. <img alt="Options when creating WO" class="screenshot" src="/files/work-order-options.png"/></li>
+</ul>
+<h2 id="3-features">3. Features</h2>
+<h3 id="31-time">3.1 Time</h3>
+<p>The Planned Start Date and Expected Delivery Date can be set here. The default for Planned Start Date is the current date and time at the time of creating the Work Order.</p>
+<h3 id="32-required-items-table">3.2 Required Items table</h3>
+<p>The Source Warehouse can be changed for the raw material items used here. The default Warehouse can be set at the Item level in the <a href="/erpnext/v13/user/manual/en/stock/item#28-item-defaults">Item</a> master or globally in <a href="/erpnext/v13/user/manual/en/stock/stock-settings#23-default-warehouse">Stock Settings</a>.</p>
+<ul>
+<li><strong>Required Quantity</strong>: This will be calculated automatically based on the <a onclick="loadContent('bill-of-materials.html')">Bill Of Materials</a>.</li>
+<li><strong>Transferred Quantity</strong>: Once the Work Order starts and Job Cards are run, items are transferred from the Source Warehouse to Work In Progress Warehouse. This field shows the quantity in the WIP Warehouse. Note that if you tick on 'Skip Material Transfer to WIP Warehouse', this column will not be updated.</li>
+<li><strong>Consumed Quantity</strong>: When the Item from the WIP Warehouse is consumed and the finished product is manufactured, this field will be updated.</li>
+<li><strong>Allow Alternative Item</strong>: If a particular Item (raw material or sub-assembly) is not available, ticking this checkbox will allow you to select an alternative item defined in the Item Alternative list.</li>
+<li><strong>Skip Material Transfer</strong>: If you don't want to transfer the specific raw material to the work in progress warehouse then you need to enable this checkbox.</li>
+</ul>
+<p>Once uncheck this checkbox for an Item, you can still select it in the BOM and Work Order, but no Stock Entries will be created against it.</p>
+<p>Once the Work Order is saved the following two fields will also show the availability in the respective Warehouses in the Required Items table:</p>
+<ul>
+<li>Available Qty at Source Warehouse</li>
+<li>Available Qty at WIP Warehouse</li>
+</ul>
+<p><img alt="WO material Qty" class="screenshot" src="/files/work-order-material-qty.png"/> </p>
+<h3 id="32-operations-table">3.2 Operations table</h3>
+<p>Materials can be transferred against a Work Order or a Job Card. This is usually fetched from the <a href="/erpnext/v13/user/manual/en/manufacturing/bill-of-materials">Bill Of Materials</a>, but you can change it in the Work Order also.</p>
+<p>The following will be fetched from the BOM:</p>
+<ul>
+<li>In the Operations table: The Workstations where the Operations will be performed <img alt="PO Opeartions" class="screenshot" src="/files/PO-operations.png"/></li>
+<li>In the Items table: The Operations which will be performed on the Items <img alt="PO reassigning Operations" class="screenshot" src="/files/PO-reassigning-operations.png"/></li>
+</ul>
+<p>These values can also be changed.</p>
+<p>Once the Work Order is saved the following fields will be shown:</p>
+<ul>
+<li><strong>Completed Qty</strong>: The number of Items on which this Operation was performed.</li>
+<li><strong>Status</strong>: Whether the Operation is Pending, Work In Progress, or Completed. The status here is updated when the Job Cards are updated.</li>
+<li><strong>Operation Time</strong>: This is fetched from the BOM, but can be changed.</li>
+<li><strong>Planned Operating Cost</strong>: This is calculated based on the Operating Time, Hourly Rate, Quantity being manufactured, etc.</li>
+</ul>
+<p>The Actual Operation Time, Actual Operating Cost, Actual Start Time, and Actual End Time are updated when Job Cards are updated.</p>
+<h3 id="33-operation-cost">3.3 Operation Cost</h3>
+<p>In this section, the following are shown:</p>
+<ul>
+<li><strong>Planned Operating Cost</strong>: This is fetched as per the BOM and the Operations defined in it.</li>
+<li><strong>Actual Operating Cost</strong>: This is fetched from the Job Cards based on the Operations run on the Items.</li>
+<li><strong>Additional Operating Cost</strong>: Any additional expenses you may have incurred when manufacturing the Item can be added here.</li>
+<li><strong>Total Operating Cost</strong>: This is calculated as Actual Operating Cost + Additional Operating Cost.</li>
+</ul>
+<p>These values are calculated as per the Job Cards.</p>
+<p><img alt="Work Order Operation Costs" class="screenshot" src="/files/wo-operation-cost.png"/> </p>
+<h3 id="34-more-information">3.4 More Information</h3>
+<p>Here the Item Description and Stock UOM is shown for the Item being manufactured.</p>
+<p>When a Work Order is created from a <a href="/erpnext/v13/user/manual/en/stock/material-request">Material Request</a>, it'll be shown here.</p>
+<h3 id="35-transferring-materials-for-manufacturing">3.5 Transferring Materials for Manufacturing</h3>
+<ul>
+<li>Once you have submitted your Work Order, you need to Transfer the Raw Materials to initiate the Manufacturing Process.</li>
+<li>This will create a Stock Entry with all the Items required to complete this Work Order to be added to the WIP Warehouse. This will add the sub-assembly Items as is or explode them to show the raw materials depending on whether you ticked 'Use Multi-Level BOM' or not.</li>
+<li>Click on 'Start'. Once you click on Start, Job Cards will be created for the <a onclick="loadContent('job-card.html')">Operations</a> involved.</li>
+</ul>
+<p><img alt="Transfer Materials" class="screenshot" src="/files/PO-material-transfer.png"/>
+* Mention the quantity of materials to be transferred in this run.</p>
+<p><img alt="Material Transfer Qty" class="screenshot" src="/files/PO-material-transfer-qty.png"/>
+* You'll be taken to a Stock Entry for 'Material Transfer for Manufacture'. Submit it.
+* Material Transferred for Manufacturing will be updated in the Work Order based on the Stock Entry.</p>
+<p><img alt="Stock Entry for PO" class="screenshot" src="/files/PO-material-transfer-updated.png"/>
+* <strong>Note:</strong> User can only transfer items which has "Include Item In Manufacturing" enabled in the item master</p>
+<h3 id="36-material-transfer-through-stock-entry">3.6 Material Transfer through Stock Entry</h3>
+<p>Use cases for this option are:</p>
+<ul>
+<li>If a material transfer is done in bulk and/or is not required to be tracked against a particular Work Order.</li>
+<li>If the responsibility for Material Transfer and Production Entry lies with two separate Users.</li>
+</ul>
+<p>If this is the case, you can tick the 'Skip Material Transfer' checkbox, which will allow you to make the Stock Entry of type 'Manufacture' directly by clicking on the ‘Finish’ button.</p>
+<h3 id="37-creating-job-cards">3.7 Creating Job Cards</h3>
+<ul>
+<li>Progress in the Work Order can be tracked using Job Cards</li>
+<li>Drafts of Job Cards are created based on when a Work Order is Submitted.</li>
+<li>To create more Job Cards against a Work Order click on the plus sign next to Job Card on the Work Order dashboard.</li>
+</ul>
+<p>To know more about Job Cards, visit <a href="/erpnext/v13/user/manual/en/manufacturing/job-card">this page</a>.</p>
+<h3 id="38-updating-finished-goods">3.8 Updating Finished Goods</h3>
+<ul>
+<li>Once you are done with the Work Order you need to update the Finished Goods.</li>
+<li>This will create a Stock Entry that will deduct all the items and sub-assemblies from the WIP Warehouse and add them to the Finished Goods Warehouse.</li>
+<li>Click on 'Finish'.</li>
+</ul>
+<p><img alt="Update Finished Goods" class="screenshot" src="/files/PO-FG-update.png"/>
+* Mention the quantity of materials to be transferred.</p>
+<blockquote>
+<p>Tip: You can also partially complete a Work Order by updating the Finished Goods stock creating a Stock Entry.</p>
+</blockquote>
+<h3 id="39-capacity-planning-in-work-order">3.9 Capacity Planning in Work Order</h3>
+<ul>
+<li>When a Work Order is submitted, based on the Planned Start Date and the availability of the Workstations, the system schedules all operations for the Work Order (if Work Order has Operations specified).</li>
+<li>Drafts of Time Logs are also created based on the scheduled operations.</li>
+</ul>
+<p>On Submitting the Work Order, the system will reserve a slot for each of the Work Order Operations serially after the planned start date based on the Workstation availability. The Workstation availability depends on the Workstation timings, holiday list, and if some other Work Order Operation is scheduled in that slot.</p>
+<p>You can mention the number of days for the system to try scheduling the operations in the Manufacturing Settings. This is set to 30 Days by default. If the operation requires time exceeding the available slot, the system will ask you to break the operations. Once the scheduling is done the system will create Time Logs and save them. You can Modify them and submit them later.</p>
+<h3 id="40-stopping-a-work-order">4.0 Stopping a Work Order</h3>
+<p>When you stop a Work Order its status is changed to Stopped indicating that all production process against that Work Order has stopped. But before stopping the work order user has to make sure that the raw materials which were transferred to the Work In Progress warehouse have been returned or not. In case, if the user has tried to stop the work order without returning the raw materials then the system will throw the error and not allow the user to stop the work order.</p>
+<p>To stop a Work Order, click on the 'Stop' button.</p>
+<p><img alt="PO - stop" class="screenshot" src="/files/PO-stop.png"/> </p>
+<p>You can also re-open the stopped Work Order.</p>
+<p><img alt="Reopen Work Order" class="screenshot" src="/files/reopen-work-order.png"/> </p>
+<h3 id="41-return-non-consumed-materials-to-the-stores-from-wip-warehouse">4.1 Return Non Consumed Materials to the Stores from WIP Warehouse</h3>
+<p>If you have transferred extra materials to the Work In Progress warehouse and after completion of the work order you want to return it to the Store warehouse. Then you have to goto the Work Order and click on Return Components. After that system creates the return stock entry with type as Material Transfer for Manufacture.</p>
+<p><img alt="Return Components" class="screenshot" src="/files/return-components.png"/> </p>
+<p>You can also checks the returned components against the work order using Work Order Consumed Materials report</p>
+<p><img alt="Return Components Qty" class="screenshot" src="/files/work-order-consumed-materials-returned-qty.png"/> </p>
+<h2 id="4-video">4. Video</h2>
+<h2 id="5-related-topics">5. Related Topics</h2>
+<ol>
+<li><a onclick="loadContent('job-card.html')">Job Card</a></li>
+<li><a onclick="loadContent('pick-list#22-create-pick-list-from-work-order.html')">Pick List</a></li>
+</ol>
+</div>
+<input class="d-none" name="wiki-page-name" value="vgkjq2dido"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="revisionsModalTitle">Work Order</h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content">
+<h3>No Revisions</h3>
+</div>
+</div>
+</div></div></div></div></main>

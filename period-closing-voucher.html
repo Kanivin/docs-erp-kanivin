@@ -1,0 +1,81 @@
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title">Period Closing Voucher
+</h1>
+</div>
+<div class="wiki-content">
+<p><strong>A Period Closing Voucher indicates that the profit/loss for an accounting period has been balanced and the books can start fresh.</strong></p>
+<p>At the end of every year or (quarterly or maybe even monthly), after completing auditing, you can close your books of accounts. This means that you make all your special entries like:</p>
+<ul>
+<li>Depreciation</li>
+<li>Change in value of Assets</li>
+<li>Defer taxes and liabilities</li>
+<li>Update bad debts</li>
+</ul>
+<p>Then book your Profit or Loss.</p>
+<p>By doing this, your balance in your Income and Expense Accounts becomes zero. You start a new Fiscal Year (or period) with a balanced Balance Sheet and fresh Profit and Loss account. In KanivinERP after making all the special entries via Journal Entry for the current fiscal year, you should set all your Income and Expense accounts to zero via a Period Closing Voucher.</p>
+<p>To access the Period Closing Voucher list, go to:</p>
+<blockquote>
+<p>Home &gt; Accounting &gt; Opening and Closing &gt; Period Closing Voucher</p>
+</blockquote>
+<h2 id="1-how-to-create-a-period-closing-voucher">1. How to create a Period Closing Voucher</h2>
+<ol>
+<li>Go to the Period Closing Voucher list and click on New.</li>
+<li>Set a posting date.</li>
+<li>Select the account, usually this is the 'Reserves and Surplus' account.</li>
+<li>Enter any remarks.</li>
+<li>Save and Submit.
+<img alt="Period Closing Voucher" class="screenshot" src="/files/period-closing-voucher.png"/></li>
+</ol>
+<h3 id="12-the-fields-explained">1.2 The fields explained</h3>
+<ul>
+<li><strong>Transaction Date</strong> will be Period Closing Voucher's creation date.</li>
+<li><strong>Posting Date</strong> will be when this entry should be executed. If your Fiscal Year ends on 31st December, then that date should be selected as Posting Date in the Period Closing Voucher.</li>
+<li><strong>Closing Fiscal Year</strong> will be an year for which you are closing your financial statement.</li>
+<li><strong>Book Cost Center Wise Profit/Loss</strong> will book closing entries as per cost center of income &amp; expense accounting entries</li>
+</ul>
+<h3 id="13-what-happens-on-submitting">1.3 What happens on submitting?</h3>
+<p>The Period Closing Voucher will make accounting entries (GL Entry). This will make all your Income and Expense Accounts zero and transfer Profit/Loss balance to the Closing Account.</p>
+<p>You should select a liability account like Reserves and Surplus, or Any Revenue Reserve account or into Owners Capital account as Closing Account.</p>
+<p><img alt="Period Closing Voucher ledger" class="screenshot" src="/files/period-closing-voucher-ledger.png"/></p>
+<p>If <strong>Book Cost Center Wise Profit/Loss</strong> is enabled, the net profit &amp; loss will be booked according to the individual transaction's cost center. Below is the closing entry made for two sales transaction having different cost center.</p>
+<p><img alt="Cost Center-wise Period Closing Voucher" class="screenshot" src="/files/cost-center-wise-period-closing-voucher.png"/></p>
+<blockquote>
+<p><strong>Note:</strong> If accounting entries are made in a closing Fiscal Year, even after Period Closing Voucher was created for that Fiscal Year, you should create another Period Closing Voucher. Later voucher will only transfer the pending P&amp;L balance into Closing Account Head.</p>
+</blockquote>
+<h3 id="2-related-topics">2. Related Topics</h3>
+<ol>
+<li><a onclick="loadContent('fiscal-year.html')">Fiscal Year</a></li>
+<li><a onclick="loadContent('tax-withholding-category.html')">Tax Withholding Category</a></li>
+<li><a onclick="loadContent('accounting-period.html')">Accounting Period</a></li>
+</ol>
+</div>
+<input class="d-none" name="wiki-page-name" value="qksi7vsdqt"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="revisionsModalTitle">Period Closing Voucher
+</h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content">
+<h3>No Revisions</h3>
+</div>
+</div>
+</div></div></div></div></main>

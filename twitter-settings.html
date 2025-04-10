@@ -1,0 +1,63 @@
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title">Twitter Settings</h1>
+</div>
+<div class="wiki-content">
+<blockquote>
+<p>Note: This integration doesn't work anymore due to Twitter's API changes. This has been removed from KanivinERP starting from v15.</p>
+</blockquote>
+<p>Twitter related settings like OAuth can be configured here. KanivinERP needs access to the API through which the post is shared and achieved using OAuth 2.0 Authentication Protocol.</p>
+<h2 id="1-how-to-set-up-twitter-app">1. How to set up Twitter App</h2>
+<p>You must have Twitter App for your company. KanivinERP interacts with this App for sharing Tweet.</p>
+<h3 id="11-create-twitter-developer-app">1.1 Create Twitter Developer App</h3>
+<p>Create App by link <code>https://developer.twitter.com/</code> and check that the App has <strong>Read and write</strong> Access permission. <img alt="Twitter App Permission" class="screenshot" src="/files/twitter-app-permission.png"/> </p>
+<h3 id="12-configure-callback-url">1.2. Configure Callback URL</h3>
+<ol>
+<li>Select your App and go to <strong>App Details</strong>.</li>
+<li>Then go to <strong>Edit</strong> and click <strong>Edit Details</strong>.</li>
+<li>Add your website URL in <strong>Callback URLs</strong> like: <code>https://{yoursite}/api/method/erpnext.crm.doctype.twitter_settings.twitter_settings.callback</code></li>
+<li>Click <strong>Save</strong> to make changes.</li>
+</ol>
+<p><img alt="Twitter App Callback URL" class="screenshot" src="/files/twitter-callback-url.png"/> </p>
+<h2 id="2-how-to-set-up-twitter-settings">2. How to set up Twitter Settings</h2>
+<p>To access Twitter Settings, go to:</p>
+<blockquote>
+<p>Home &gt; CRM &gt; Settings &gt; Twitter Settings</p>
+</blockquote>
+<p><img alt="Twitter Settings" class="screenshot" src="/files/twitter-settings.png"/> </p>
+<h3 id="21-api-key-and-api-key-secret">2.1 API Key and API Key Secret</h3>
+<p>You get <strong>API Key</strong> and <strong>API Key Secret</strong> from your Twitter Developer account go to:</p>
+<blockquote>
+<p><code>https://developer.twitter.com/</code> &gt; My Apps &gt; <code>{Your App}</code> &gt; Keys and tokens</p>
+</blockquote>
+<p><img alt="Twitter Keys Tokens" class="screenshot" src="/files/twitter-key-token.png"/> </p>
+<p>Once you save the doc by filling <strong>API Key</strong> and <strong>API Key Secret</strong> it will redirect to Twitter's sign-in page by providing valid Twitter credentials and clicking <strong>Authorize app</strong>, the member approves your application's request to access their member data and interact with Twitter. <img alt="Twitter Authorize App" class="screenshot" src="/files/twitter-authorize-app.png"/> </p>
+</div>
+<input class="d-none" name="wiki-page-name" value="ote9sn6ah5"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="revisionsModalTitle">Twitter Settings</h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content">
+<h3>No Revisions</h3>
+</div>
+</div>
+</div></div></div></div></main>

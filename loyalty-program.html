@@ -1,0 +1,114 @@
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title">Loyalty Program
+</h1>
+</div>
+<div class="wiki-content">
+<p><strong>A Loyalty Program allows Customers to earn points by spending a certain amount and lets them redeem the points in future purchases.</strong></p>
+<p>A Customer Loyalty Program is a structured and long-term marketing effort that provides incentives to repeat Customers. Successful programs are designed to motivate Customers in a business's target market to return often, make frequent purchases, and shun competitors.</p>
+<p>To access the Loyalty Program list, go to:</p>
+<blockquote>
+<p>Home &gt; Retail &gt; Retail Operations &gt; Loyalty Program</p>
+</blockquote>
+<h2 id="1-prerequisites">1. Prerequisites</h2>
+<p>Before creating and using a Loyalty Program, it is advised to create the following first:</p>
+<ol>
+<li><a onclick="loadContent('customer.html')">Customer</a></li>
+<li><a onclick="loadContent('sales-invoice.html')">Sales Invoice</a></li>
+</ol>
+<h2 id="2-how-to-create-a-loyalty-program">2. How to Create a Loyalty Program</h2>
+<ol>
+<li>Go to the Loyalty Program list and click on New.</li>
+<li>Enter a Name for the Loyalty Program.</li>
+<li>Select whether the program is Single Tiered or Multi Tiered (gold, silver, etc).</li>
+<li>Set a start and end date for the program.</li>
+<li>Select the Customer Group and Territory for which this program is applicable, the default is all.</li>
+<li>For opting in all Customers by default, tick on 'Auto Opt In (For all customers)'. Otherwise, the program needs to be assigned from the <a onclick="loadContent('loyalty-program#22-loyalty-points-in-customer.html')">Customer master</a>.</li>
+<li>In the table, enter:
+<ol start="2">
+<li><strong>Tier name</strong>: To be assigned to a Customer based on his eligibility.</li>
+<li><strong>Collection Factor</strong>: How much amount needs to be spent to gain 1 Loyalty Point in KanivinERP.</li>
+<li><strong>Minimum Amount</strong>: Minimum amount to be spent to qualify into a tier.</li>
+</ol></li>
+<li>Set the Conversion Factor, eg: 10 USD = 1 point.</li>
+<li><p>Save.</p>
+<p><img alt="Loyalty Program" class="screenshot" src="/files/loyalty-program.png"/></p></li>
+</ol>
+<h3 id="21-redemption-section">2.1 Redemption section</h3>
+<ul>
+<li><p><strong>Conversion Factor</strong>: When redeeming loyalty points, this factor decides how much money is 1 Loyalty Point worth. For example, if a Customer has 100 Loyalty Points, and 1 Loyalty Point = 1 USD, then the Customer use Items up to 100 USD with their loyalty points for future purchases.</p></li>
+<li><p><strong>Expense Account</strong>: Set an Expense Account from where you'll offer the benefits. This is useful to track the benefits offered separately.</p></li>
+<li><p><strong>Expiry Duration (in days)</strong>: The collected loyalty points will expire after the number of days set in this field.</p></li>
+</ul>
+<h3 id="22-loyalty-points-in-customer">2.2 Loyalty Points in Customer</h3>
+<p>Set a Loyalty Program section in the Customer master to assign a Loyalty Program to a Customer.</p>
+<p><img alt="Loyalty Program in Customer" class="screenshot" src="/files/loyalty-program-in-customer.png"/></p>
+<p><strong>Loyalty points</strong> earned can be viewed in the Customer's dashboard.</p>
+<p><img alt="Loyalty Points" class="screenshot" src="/files/loyalty-points-in-customer.png"/></p>
+<h3 id="23-loyalty-point-entry">2.3 Loyalty Point Entry</h3>
+<p>Go to: <strong>Accounts &gt; Retail Operations &gt; Loyalty Point Entry</strong>.
+This acts as a log to give an overview of which Customer earned how many points against which Sales Invoice. It holds the data Invoice and Customer.</p>
+<p><img alt="Loyalty Program Entry" class="screenshot" src="/files/loyalty-program-entry.png"/></p>
+<h2 id="3-how-does-a-loyalty-program-work">3. How does a Loyalty Program work?</h2>
+<h3 id="31-earning-points">3.1 Earning Points</h3>
+<ul>
+<li>Firstly, a <strong>Loyalty Program</strong> needs to be created as explained in the first section.</li>
+<li>Assign this <strong>Loyalty Program</strong> to a <strong>Customer</strong>.</li>
+<li>Create a new Sales Invoice for the <strong>Customer</strong> to whom you have assigned <strong>Loyalty Program</strong>.</li>
+<li>For this example, an invoice is created with a grand total of 3,000 INR and according to the <strong>Loyalty Program</strong> for a minimum spent of 2,000 INR, the Silver Tier collection factor will be eligible and for each 300 INR spent, the <strong>Customer</strong> will receive 1 point (hence the total points earned on this transaction is 15).</li>
+<li>Upon submission of the invoice, a <strong>Loyalty Point Entry</strong> will be created for this invoice (as shown above under Loyalty Program Entry section).</li>
+<li>In our <strong>Loyalty Program</strong> upon minimum spent of 6,000, Gold Tier would be eligible. So, when another invoice is submitted with the same value, the total sales from this Customer becomes 6,000. So now, the <strong>Customer</strong> will be automatically upgraded to the Gold tier.</li>
+</ul>
+<blockquote>
+<p>Note: The minimum spent in Loyalty Program does not mean a minimum value for a single invoice. Rather it means the sum of amount of invoices for the Customer under a particular Loyalty Program scheme.</p>
+</blockquote>
+<h3 id="32-redeeming-points">3.2 Redeeming Points</h3>
+<ul>
+<li>Let's continue from the above example where we created 1 invoice and earned 15 points from it. When creating another invoice for the same Customer, go to the Loyalty Points section and enable the checkbox to 'Redeem Loyalty Points'.
+<img alt="Redeem Loyalty Points" class="screenshot" src="/files/redeem-loyalty-points.png"/></li>
+<li>The fields for 'Loyalty Point', 'Redemption Account' and 'Redemption Cost Center' will become visible under this section. The account and Cost Center will be fetched from the <strong>Loyalty Program</strong> assigned to the <strong>Customer</strong>.</li>
+<li>Since the Customer has earned 15 points, we can use all of it until expiry. If we try to use more than what we have an error will be thrown.</li>
+<li>In above example, we have used 6375 points to be redeemed. Doing so will enable another field that will display the amount calculated using (loyalty point * Conversion Factor). So, USD 6375 will be deducted from our the amount since our 'Conversion Factor' was '1'.</li>
+<li>When submitted, 2 <strong>Loyalty Point Entries</strong> will be created. One for redeemed, which will be a negative value and one for the current invoice.
+<img alt="Loyalty Point" class="screenshot" src="/files/loyalty-point-entry-redeem.png"/></li>
+</ul>
+<blockquote>
+<p>Note: For an invoice on which points have been earned, if a return invoice is created, it will delete the original Loyalty Point Entry and create a new one after subtracting the returned amount from the original amount. Also, when canceling an invoice, its subsequent Loyalty Point Entry will be deleted.</p>
+</blockquote>
+<h3 id="4-related-topics">4. Related Topics</h3>
+<ol>
+<li><a onclick="loadContent('cost-center.html')">Cost Center</a></li>
+<li><a onclick="loadContent('sales-invoice.html')">Sales Invoice</a></li>
+<li><a onclick="loadContent('customer.html')">Customer</a></li>
+<li><a onclick="loadContent('customer-group.html')">Customer Group</a></li>
+</ol>
+</div>
+<input class="d-none" name="wiki-page-name" value="9ka5uvvish"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="revisionsModalTitle">Loyalty Program
+</h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content">
+<h3>No Revisions</h3>
+</div>
+</div>
+</div></div></div></div></main>

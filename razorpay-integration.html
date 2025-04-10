@@ -1,128 +1,97 @@
-<main><div class="from-markdown markdown ">
-	<div class="alert alert-warning admin-banner hide" role="alert">
-		<div class="d-flex justify-content-between align-items-center">
-			<div>This space has
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
 				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
 				review.
 			</div>
-			<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
-		</div>
-	</div>
-	<div class="d-flex justify-content-between align-items-center">
-		<h1 class="wiki-title" id="razorpay-integration">RazorPay Integration
-<a class="no-underline" href="#razorpay-integration" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h1>
-	</div>
-	<div class="wiki-content">
-		<p>A payment gateway is an e-commerce application service provider service that authorises credit card payments for e-businesses, online retailers, bricks and clicks, or traditional brick and mortar.</p>
-
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title" id="razorpay-integration">RazorPay Integration
+<a aria-hidden="true" class="no-underline" href="#razorpay-integration">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h1>
+</div>
+<div class="wiki-content">
+<p>A payment gateway is an e-commerce application service provider service that authorises credit card payments for e-businesses, online retailers, bricks and clicks, or traditional brick and mortar.</p>
 <p>A payment gateway facilitates the transfer of information between a payment portal (such as a website, mobile phone or interactive voice response service) and the Front End Processor or acquiring bank.</p>
-
 <p>To setup RazorPay,</p>
-
 <p><code>Explore &gt; Integrations &gt; RazorPay Settings</code></p>
-
-<p><img src="/files/razorpay-api.gif" alt="Razorpay Settings" class="screenshot"></p>
-
-<h4 id="setup-razorpay">Setup RazorPay<a class="no-underline" href="#setup-razorpay" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h4>
-
+<p><img alt="Razorpay Settings" class="screenshot" src="/files/razorpay-api.gif"/></p>
+<h4 id="setup-razorpay">Setup RazorPay<a aria-hidden="true" class="no-underline" href="#setup-razorpay">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h4>
 <p>To enable RazorPay payment service, you need to configure parameters like API Key, API Secret</p>
-
-<p><img src="/files/razorpay_settings.png" alt="Razorpay Settings" class="screenshot"></p>
-
+<p><img alt="Razorpay Settings" class="screenshot" src="/files/razorpay_settings.png"/></p>
 <p>On enabling service, the system will create Payment Gateway record and Account head in the Chart of Account with account type as Bank.</p>
-
-<p><img src="/files/razorpay_coa.png" alt="Razorpay COA" class="screenshot"></p>
-
+<p><img alt="Razorpay COA" class="screenshot" src="/files/razorpay_coa.png"/></p>
 <p>Also, it will create Payment Gateway Account entry. Payment Gateway Account is configuration hub from this you can set account head from existing COA, default Payment Request email body template.</p>
-
-<p><img src="/files/payment_gateway_account_razorpay.png" alt="Payment Gateway Account" class="screenshot"></p>
-
+<p><img alt="Payment Gateway Account" class="screenshot" src="/files/payment_gateway_account_razorpay.png"/></p>
 <p>After enabling service and configuring Payment Gateway Account your system is able to accept online payments.</p>
-
-<h4 id="supporting-transaction-currencies">Supporting transaction currencies<a class="no-underline" href="#supporting-transaction-currencies" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h4>
-
+<h4 id="supporting-transaction-currencies">Supporting transaction currencies<a aria-hidden="true" class="no-underline" href="#supporting-transaction-currencies">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h4>
 <p>RazorPay will only work for the company having <code>INR (Indian Rupee)</code> as a Currency.</p>
-
-	</div>
-	<input value="tn9omq6dmb" class="d-none" name="wiki-page-name">
-	<div class="modal revisions-modal fade" id="revisionsModal" tabindex="-1" role="dialog" aria-labelledby="revisionsModalTitle" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <div class="d-flex flex-column">
-                    <h5 class="modal-title revision-title" id="razorpay-integration">RazorPay Integration
-<a class="no-underline" href="#razorpay-integration" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h5>
-                    <span class="small text-muted revision-time">administrator edited 4 months ago</span>
-                </div>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="revision-content wiki-content"><del class="diffmod">
-                    </del><h3 id="no-revisions"><del class="diffmod">No</del><ins class="diffmod">
-		</ins><p><ins class="diffmod">A</ins> <del class="diffmod">Revisions</del><ins class="diffmod">payment gateway is an e-commerce application service provider service that authorises credit card payments for e-businesses, online retailers, bricks and clicks, or traditional brick and mortar.</ins></p><ins class="diffmod">
-
+</div>
+<input class="d-none" name="wiki-page-name" value="tn9omq6dmb"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="razorpay-integration">RazorPay Integration
+<a aria-hidden="true" class="no-underline" href="#razorpay-integration">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content"><del class="diffmod">
+</del><h3 id="no-revisions"><del class="diffmod">No</del><ins class="diffmod">
+</ins><p><ins class="diffmod">A</ins> <del class="diffmod">Revisions</del><ins class="diffmod">payment gateway is an e-commerce application service provider service that authorises credit card payments for e-businesses, online retailers, bricks and clicks, or traditional brick and mortar.</ins></p><ins class="diffmod">
 </ins><p><ins class="diffmod">A payment gateway facilitates the transfer of information between a payment portal (such as a website, mobile phone or interactive voice response service) and the Front End Processor or acquiring bank.</ins></p><ins class="diffmod">
-
 </ins><p><ins class="diffmod">To setup RazorPay,</ins></p><ins class="diffmod">
-
 </ins><p><code><ins class="diffmod">Explore &gt; Integrations &gt; RazorPay Settings</ins></code></p><ins class="diffmod">
-
-</ins><p><ins class="diffmod"><img src="/files/razorpay-api.gif" alt="Razorpay Settings" class="screenshot"></ins></p><ins class="diffmod">
-
-</ins></h3><h4 id="setup-razorpay"><ins class="diffmod">Setup RazorPay</ins><a class="no-underline" href="#setup-razorpay" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h4><del class="diffmod">
-
-                </del><ins class="diffmod">
-
+</ins><p><ins class="diffmod"><img alt="Razorpay Settings" class="screenshot" src="/files/razorpay-api.gif"/></ins></p><ins class="diffmod">
+</ins></h3><h4 id="setup-razorpay"><ins class="diffmod">Setup RazorPay</ins><a aria-hidden="true" class="no-underline" href="#setup-razorpay">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h4><del class="diffmod">
+</del><ins class="diffmod">
 </ins><p><ins class="diffmod">To enable RazorPay payment service, you need to configure parameters like API Key, API Secret</ins></p><ins class="diffmod">
-
-</ins><p><ins class="diffmod"><img src="/files/razorpay_settings.png" alt="Razorpay Settings" class="screenshot"></ins></p><ins class="diffmod">
-
+</ins><p><ins class="diffmod"><img alt="Razorpay Settings" class="screenshot" src="/files/razorpay_settings.png"/></ins></p><ins class="diffmod">
 </ins><p><ins class="diffmod">On enabling service, the system will create Payment Gateway record and Account head in the Chart of Account with account type as Bank.</ins></p><ins class="diffmod">
-
-</ins><p><ins class="diffmod"><img src="/files/razorpay_coa.png" alt="Razorpay COA" class="screenshot"></ins></p><ins class="diffmod">
-
+</ins><p><ins class="diffmod"><img alt="Razorpay COA" class="screenshot" src="/files/razorpay_coa.png"/></ins></p><ins class="diffmod">
 </ins><p><ins class="diffmod">Also, it will create Payment Gateway Account entry. Payment Gateway Account is configuration hub from this you can set account head from existing COA, default Payment Request email body template.</ins></p><ins class="diffmod">
-
-</ins><p><ins class="diffmod"><img src="/files/payment_gateway_account_razorpay.png" alt="Payment Gateway Account" class="screenshot"></ins></p><ins class="diffmod">
-
+</ins><p><ins class="diffmod"><img alt="Payment Gateway Account" class="screenshot" src="/files/payment_gateway_account_razorpay.png"/></ins></p><ins class="diffmod">
 </ins><p><ins class="diffmod">After enabling service and configuring Payment Gateway Account your system is able to accept online payments.</ins></p><ins class="diffmod">
-
-</ins><h4 id="supporting-transaction-currencies"><ins class="diffmod">Supporting transaction currencies</ins><a class="no-underline" href="#supporting-transaction-currencies" aria-hidden="true"><ins class="diffmod">
-        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
-          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
-          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
-        </ins></svg><ins class="diffmod">
-      </ins></a></h4><ins class="diffmod">
-
-</ins><p><ins class="diffmod">RazorPay will only work for the company having </ins><code><ins class="diffmod">INR (Indian Rupee)</ins></code><ins class="diffmod">&nbsp;as a Currency.</ins></p><ins class="diffmod">
-
-	</ins></div>
-            </div>
-          </main>
+</ins><h4 id="supporting-transaction-currencies"><ins class="diffmod">Supporting transaction currencies</ins><a aria-hidden="true" class="no-underline" href="#supporting-transaction-currencies"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h4><ins class="diffmod">
+</ins><p><ins class="diffmod">RazorPay will only work for the company having </ins><code><ins class="diffmod">INR (Indian Rupee)</ins></code><ins class="diffmod"> as a Currency.</ins></p><ins class="diffmod">
+</ins></div>
+</div>
+</div></div></div></div></main>

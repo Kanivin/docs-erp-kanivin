@@ -1,0 +1,51 @@
+
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title">Role Permission for Page and Report
+</h1>
+</div>
+<div class="wiki-content">
+<p><strong>Access to different pages and reports can be controlled in Role Permission for Page and Report.</strong></p>
+<p>Document types are Sales Order, Customer, Supplier, etc. They are a <strong>document type</strong> meaning they can contain multiple documents of that type. A Page is a single page like <a href="/erpnext/v13/user/manual/en/selling/selling-settings">Selling Settings</a>. You cannot create multiple Selling Settings, but you can create multiple Sales Orders.</p>
+<p>In KanivinERP, user can make a custom user interface using Page and a custom report using <a href="/erpnext/v13/user/videos/learn/report-builder.html">Report Builder</a> or <a href="https://frappe.io/docs/v13/user/en/guides/reports-and-printing/how-to-make-query-report">Query Report</a>. KanivinERP has a <a href="/erpnext/v13/user/manual/en/setting-up/users-and-permissions/role-based-permissions">role-based permission system</a> where you can assign roles to the user. The same role can be assigned to the page and report to access them.</p>
+<p>If the user has enabled developer mode, then they can add the roles directly in the page and report record. In that case, the permissions will also be reflected in the JSON file for the page/report. Consider you want to restrict the roles that can access certain pages and reports in KanivinERP, this can be done via the Role Permission for Page and Report.</p>
+<p>To access Role Permission for Page and Report, go to:</p>
+<blockquote>
+<p>Home &gt; Users and Permissions &gt; Role Permission for Page and Report</p>
+</blockquote>
+<h2 id="1-how-to-use-role-permission-for-page-and-report-tool">1. How to use Role Permission for Page and Report Tool</h2>
+<p>If developer mode is disabled, the user can assign the roles to the page and report, using "Role Permission for Page and Report" page.</p>
+<p><img alt="Tools to assign custom roles to the page" class="screenshot" src="/files/role-permission-for-page-and-report.png"/></p>
+<h3 id="11-reset-to-defaults">1.1 Reset to defaults</h3>
+<p>Using the "Reset to Defaults" button, the user can remove the custom permissions applied on a page or report. Then default permissions will be applicable on that page or report.</p>
+<p><img alt="Reset the default roles" class="screenshot" src="/files/reset-roles-permission-for-page-report.png"/></p>
+<h2 id="setting-role-permissions-from-the-pagereport-as-a-developer">Setting Role Permissions from the Page/Report as a Developer</h2>
+<h3 id="role-permissions-for-page">Role Permissions For Page</h3>
+<ol>
+<li>Go to: Home &gt; Developer &gt; Page.</li>
+<li><p>Add a row and select which other roles can access the Page.</p>
+<p><img alt="Assign roles to the page" class="screenshot" src="/files/roles-for-page.png"/></p></li>
+</ol>
+<h3 id="role-permissions-for-report">Role Permissions For Report</h3>
+<ol>
+<li>Go to: Home &gt; Developer &gt; Report.</li>
+<li><p>Add rows with roles who can access the Report.</p>
+<p><img alt="Assign roles to the report" class="screenshot" src="/files/roles-for-report.png"/></p></li>
+</ol>
+<h3 id="3-related-topics">3. Related Topics</h3>
+<ol>
+<li><a onclick="loadContent('role-and-role-profile.html')">Role and Role Profile</a></li>
+<li><a onclick="loadContent('role-based-permissions.html')">Role Based Permissions</a></li>
+<li><a onclick="loadContent('user-permissions.html')">User Permissions</a></li>
+</ol>
+</div>
+</div></main>

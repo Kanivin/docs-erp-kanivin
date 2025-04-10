@@ -1,0 +1,280 @@
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title">Purchase Invoice</h1>
+</div>
+<div class="wiki-content">
+<p><strong>A Purchase Invoice is a bill you receive from your Suppliers against which you need to make the payment.</strong></p>
+<p>Purchase Invoice is the exact opposite of your Sales Invoice. Here you accrue expenses to your Supplier. Making a Purchase Invoice is very similar to making a Purchase Order.</p>
+<p>To access the Purchase Invoice list, go to:</p>
+<blockquote>
+<p>Home &gt; Accounting &gt; Accounts Payable &gt; Purchase Invoice</p>
+</blockquote>
+<p><img alt="PI Flow" class="screenshot" src="/files/pi-flow.png"/> </p>
+<h2 id="1-prerequisites">1. Prerequisites</h2>
+<p>Before creating and using a Purchase Invoice, it is advised to create the following first:</p>
+<ul>
+<li><a onclick="loadContent('item.html')">Item</a></li>
+<li><a onclick="loadContent('supplier.html')">Supplier</a></li>
+<li><a onclick="loadContent('purchase-order.html')">Purchase Order</a></li>
+<li><a onclick="loadContent('purchase-receipt.html')">Purchase Receipt</a> (optional)</li>
+</ul>
+<h2 id="2-how-to-create-a-purchase-invoice">2. How to create a Purchase Invoice:</h2>
+<p>A Purchase Invoice is usually created from a Purchase Order or a Purchase Receipt. The Supplier's Item details will be fetched into the Purchase Invoice. However, you can also create a Purchase Invoice directly.</p>
+<p>To fetch the details automatically in a Purchase Invoice, click on the <strong>Get Items from</strong>. The details can be fetched from a Purchase Order or Purchase Receipt.</p>
+<p>For manual creation, follow these steps:</p>
+<ol>
+<li>Go to the Purchase Invoice list, click on New.</li>
+<li>Select the Supplier.</li>
+<li>The posting date and time will be set to current, you can edit after you tick the checkbox below Posting Time.</li>
+<li>Set the Due Date for payment.</li>
+<li>Add Items and quantities in the Items table.</li>
+<li>The Rate and Amount will be fetched.</li>
+<li>Save and Submit.</li>
+</ol>
+<p><img alt="Purchase Invoice" class="screenshot" src="/files/purchase-invoice.png"/> </p>
+<h3 id="21-additional-options-when-creating-a-purchase-invoice">2.1 Additional options when creating a Purchase Invoice</h3>
+<ul>
+<li><strong>Is Paid</strong>: You can tick 'Is Paid' if the amount has already been paid via an <a onclick="loadContent('advance-payment-entry.html')">Advance Payment Entry</a>. This should be ticked if there is full or partial payment.</li>
+<li><strong>Is Return (Debit Note)</strong>: Tick this if the customer has returned the Items. To know more details, visit the <a onclick="loadContent('debit-note.html')">Debit Note</a> page.</li>
+<li><strong>Apply Tax Withholding Amount</strong>: If the selected Supplier has a Tax Withholding Category set, this checkbox will be enabled. For more information, visit the <a onclick="loadContent('tax-withholding-category.html')">Tax Withholding Category</a> page.</li>
+</ul>
+<h3 id="22-statuses">2.2 Statuses</h3>
+<ul>
+<li><strong>Draft</strong>: A draft is saved but yet to be submitted to the system.</li>
+<li><strong>Return</strong>: The Items have been returned to the Supplier.</li>
+<li><strong>Debit Note Issued</strong>: The Items have been returned and a <a onclick="loadContent('debit-note.html')">Debit Note</a> has been issued against the invoice.</li>
+<li><strong>Submitted</strong>: The Purchase Invoice has been submitted to the system and the general ledger has been updated.</li>
+<li><strong>Paid</strong>: Supplier has been fully paid the invoice amount and the corresponding <a onclick="loadContent('payment-entry.html')">Payment Entries</a> have been submitted.</li>
+<li><strong>Partly Paid</strong>: Supplier has been paid a part of the invoice amount and the corresponding <a onclick="loadContent('payment-entry.html')">Payment Entries</a> have been submitted.</li>
+<li><strong>Unpaid</strong>: The Purchase Invoice is yet to be paid.</li>
+<li><strong>Overdue</strong>: The due date has passed for payment.</li>
+<li><strong>Canceled</strong>: The invoice has been canceled due to some reason.</li>
+</ul>
+<h2 id="3-features">3. Features</h2>
+<h3 id="31-accounting-dimensions">3.1 Accounting Dimensions</h3>
+<p>Accounting Dimensions lets you tag transactions based on a specific Territory, Branch, Customer, etc. This helps in viewing accounting statements separately based on the criteria selected. To know more, visit the <a href="/erpnext/v13/user/manual/en/accounts/accounting-dimensions">Accounting Dimensions</a> page.</p>
+<blockquote>
+<p>Note: Project and Cost Center are treated as dimensions by default.</p>
+</blockquote>
+<h3 id="32-holding-the-invoice">3.2 Holding the Invoice</h3>
+<p>Sometimes you may need to hold an invoice from being submitted.</p>
+<p><strong>Hold Invoice</strong>: Enable this checkbox to put the Purchase Invoice on hold. This can be done only before submitting the invoice. Once 'Hold Invoice' is enabled and the Purchase Invoice is submitted, the status will change to 'Temporarily on Hold'.</p>
+<p><img alt="Purchase Invoice on Hold" class="screenshot" src="/files/purchase-invoice-on-hold.png"/> </p>
+<p>Once the purchase invoice gets submit and you want to change 'Release Date' then you can take the help of the 'Hold Invoice' button, which is available on the top right.</p>
+<p>If you want to hold submitted purchase invoice then you can hold using 'Block Invoice' option and If you want to unblock again then use 'Unblock Invoice' option.</p>
+<p><img alt="Block PI" class="screenshot" src="/files/purchase-invoice-block.png"/> </p>
+<p>This is invoice level holding, Suppliers can be put on hold. <a href="/erpnext/v13/user/manual/en/buying/supplier#23-credit-limit">Learn more here</a>.</p>
+<h3 id="33-supplier-invoice-details">3.3 Supplier Invoice Details</h3>
+<ul>
+<li><strong>Supplier Invoice No</strong>: The Supplier may identify this order with a number of his own. This is for reference.</li>
+<li><strong>Supplier Invoice Date</strong>: The date on which the Supplier placed/confirmed your order from his end.</li>
+</ul>
+<h3 id="34-address-and-contact">3.4 Address and Contact</h3>
+<ul>
+<li><strong>Supplier Address:</strong> This is the Billing Address of the Supplier.</li>
+<li><strong>Contact Person</strong>: If the Supplier is a Company, the person to be contacted is fetched in this field if set in the <a onclick="loadContent('supplier.html')">Supplier</a> form.</li>
+<li><strong>Shipping Address:</strong> Address where the items will be shipped to.</li>
+</ul>
+<p>For India, the following details can be recorded for GST purposes:</p>
+<ul>
+<li>Supplier GSTIN</li>
+<li>Place of Supply</li>
+<li>Company GSTIN</li>
+</ul>
+<h3 id="35-currency-and-price-list">3.5 Currency and Price list</h3>
+<p>You can set the currency in which the Purchase Invoice order is to be sent. This is fetched from the Purchase Order. If you set a Pricing List, then the item prices will be fetched from that list. Ticking on 'Ignore Pricing Rule' will ignore the <a href="/erpnext/v13/user/manual/en/accounts/pricing-rule">Pricing Rules</a> set in Accounts &gt; Pricing Rule.</p>
+<p><img alt="Purchase Invoice Price List" class="screenshot" src="/files/purchase-invoice-price-list.png"/> </p>
+<p>Read about <a href="/erpnext/v13/user/manual/en/stock/price-lists">Price Lists</a> and <a href="/erpnext/v13/user/manual/en/accounts/articles/managing-transactions-in-multiple-currency">Multi-Currency Transactions</a> to know more.</p>
+<h3 id="36-subcontracting-or-supply-raw-materials">3.6 Subcontracting or 'Supply Raw Materials'</h3>
+<p>Setting 'Supply Raw Materials' option is useful for subcontracting where you provide the raw materials for manufacturing an Item. To know more, visit the <a href="/erpnext/v13/user/manual/en/manufacturing/subcontracting">Subcontracting page</a>.</p>
+<h3 id="37-items-table">3.7 Items table</h3>
+<ul>
+<li><strong>scan barcode</strong>: You can add Items in the Items table by scanning their barcodes if you have a barcode scanner. Read documentation for <a onclick="loadContent('track-items-using-barcode.html')">tracking items using barcode</a> to know more.</li>
+<li>The Item Code, name, description, Image, and Manufacturer will be fetched from the <a onclick="loadContent('item.html')">Item master</a>.</li>
+<li><strong>Manufacturer</strong>: If the Item is manufactured by a specific manufacturer, it can be added here. This will be fetched if set in the Item master.</li>
+<li><strong>Quantity and Rate</strong>: When you select the Item code, its name, description, and UOM will be fetched. The 'UOM Conversion Factor' is set to 1 by default, you can change it depending on the UOM received from the seller, more in the next section.</li>
+</ul>
+<p>'Price List Rate' will be fetched if a Standard Buying rate is set. 'Last Purchase Rate' shows the rate of the item from your last Purchase Order. Rate is fetched if set in the item master. You can attach an Item Tax Template to apply a specific tax rate to the item.
+* <strong>Item weights</strong> will be fetched if set in the Item master else enter manually.
+* <strong>Discount on Price List Rate</strong>: You can apply a discount on individual Items percentage-wise or on the total amount of the Item. Read <a href="/erpnext/v13/user/manual/en/selling/articles/applying-discount">Applying Discount</a> for more details.
+* <strong>Item Weight</strong>: The Item Weight details per unit and Weight UOM are fetched if set in the Item master, else enter manually.
+* <strong>Accounting Details</strong>: The Expense account can be changed here you wish to.
+* <strong>Deferred Expense</strong>: If the expense for this Item will be billed over the coming months in parts, then tick on 'Enable Deferred Expense'. To know more, visit the <a href="/erpnext/v13/user/manual/en/accounts/deferred-expense">Deferred Expense page</a>.
+* <strong>Allow Zero Valuation Rate</strong>: Ticking on 'Allow Zero Valuation Rate' will allow submitting the Purchase Receipt even if the Valuation Rate of the Item is 0. This can be a sample item or due to a mutual understanding with your Supplier.
+* <strong>BOM</strong>: If there is a <a href="/erpnext/v13/user/manual/en/manufacturing/bill-of-materials">Bill of Materials</a> created for the Item, it'll be fetched here. This is useful for reference when <a href="/erpnext/v13/user/manual/en/manufacturing/subcontracting">subcontracting</a>.
+* <strong>Item Tax Template</strong>: You can set an Item Tax Template to apply a specific Tax amount to this particular Item. To know more, visit <a href="/erpnext/v13/user/manual/en/accounts/item-tax-template">this page</a>.
+* <strong>Page Break</strong> will create a page break just before this Item when printing.</p>
+<h4 id="update-stock">Update Stock</h4>
+<blockquote>
+<p>Note: From version-13 onwards we have introduced immutable ledger which changes the rules for cancellation of stock entries and posting backdated stock transactions in KanivinERP. <a href="/erpnext/v13/user/manual/en/accounts/articles/immutable-ledger-in-erpnext">Learn more here</a>.</p>
+</blockquote>
+<p>The <strong>Update Stock</strong> checkbox should be checked if you want KanivinERP to automatically update your inventory. Consequently, there will be no need for a Purchase Receipt.</p>
+<h3 id="38-taxes-and-charges">3.8 Taxes and charges</h3>
+<p>The Taxes and Charges will be fetched from the <a href="/erpnext/v13/user/manual/en/buying/purchase-order">Purchase Order</a> or <a href="/erpnext/v13/user/manual/en/stock/purchase-receipt">Purchase Receipt</a>.</p>
+<p><img alt="Purchase Invoice Tax" class="screenshot" src="/files/purchase-invoice-tax.png"/> </p>
+<p>Visit the <a href="/erpnext/v13/user/manual/en/buying/purchase-taxes-and-charges-template">Purchase Taxes and Charges Template</a> page to know more about taxes.</p>
+<p>The total taxes and charges will be displayed below the table.</p>
+<p>To add taxes automatically via a Tax Category, visit <a href="/erpnext/v13/user/manual/en/accounts/tax-category">this page</a>.</p>
+<p>Make sure to mark all your taxes in the Taxes and Charges table correctly for an accurate valuation.</p>
+<h4 id="shipping-rule">Shipping Rule</h4>
+<p>A Shipping Rule helps set the cost of shipping an Item. The cost will usually increase with the distance of shipping. To know more, visit the <a href="/erpnext/v13/user/manual/en/selling/shipping-rule">Shipping Rule</a> page.</p>
+<h3 id="39-additional-discount">3.9 Additional Discount</h3>
+<p>Any additional discounts to the whole Invoice can be set in this section. This discount could be based on the Grand Total i.e., post tax/charges or Net total i.e., pre tax/charges. The additional discount can be applied as a percentage or an amount.</p>
+<p><img alt="Purchase Invoice Discount" class="screenshot" src="/files/purchase-invoice-additional-discount.png"/> </p>
+<p>Visit the <a href="/erpnext/v13/user/manual/en/selling/articles/applying-discount">Applying Discount</a> page for more details.</p>
+<h3 id="310-advance-payment">3.10 Advance Payment</h3>
+<p>For high-value Items, the seller can request an advance payment before processing the order. The <strong>Get Advances Received</strong> button opens a popup from where you can fetch the orders where advance payment was made. To know more, visit the <a href="/erpnext/v13/user/manual/en/accounts/advance-payment-entry">Advance Payment Entry</a> page.</p>
+<h3 id="311-payment-terms">3.11 Payment Terms</h3>
+<p>The payment for an invoice may be made in parts depending on your understanding with the Supplier. This is fetched if set in the Purchase Order.</p>
+<p><img alt="Purchase Invoice Payment Terms" class="screenshot" src="/files/purchase-invoice-payment-terms.png"/> </p>
+<p>To know more, visit the <a href="/erpnext/v13/user/manual/en/accounts/payment-terms">Payment Terms</a> page.</p>
+<h3 id="312-write-off">3.12 Write Off</h3>
+<p>Write off happens when the Customer pays an amount less than the invoice amount. This may be a small difference like 0.50. Over several orders, this might add up to a big number. For accounting accuracy, this difference amount is 'written off'. To know more, visit the <a href="/erpnext/v13/user/manual/en/accounts/payment-entry#25-deductions-or-loss">Payment Terms</a> page.</p>
+<h3 id="313-terms-and-conditions">3.13 Terms and Conditions</h3>
+<p>In Sales/Purchase transactions there might be certain Terms and Conditions based on which the Supplier provides goods or services to the Customer. You can apply the Terms and Conditions to transactions to transactions and they will appear when printing the document. To know about Terms and Conditions, <a href="/erpnext/v13/user/manual/en/setting-up/print/terms-and-conditions">click here</a></p>
+<h3 id="314-printing-settings">3.14 Printing Settings</h3>
+<h4 id="letterhead">Letterhead</h4>
+<p>You can print your Purchase Invoice on your Company's letterhead. Know more <a href="/erpnext/v13/user/manual/en/setting-up/print/letter-head">here</a>.</p>
+<p>'Group same items' will group the same items added multiple times in the Items table. This can be seen when your print.</p>
+<h4 id="print-headings">Print Headings</h4>
+<p>Purchase Invoice headings can also be changed when printing the document. You can do this by selecting a <strong>Print Heading</strong>. To create new Print Headings go to: Home &gt; Settings &gt; Printing &gt; Print Heading. Know more <a href="/erpnext/v13/user/manual/en/setting-up/print/print-headings">here</a>.</p>
+<h3 id="315-gst-details-for-india">3.15 GST Details (for India)</h3>
+<p>The following details can be set for GST:</p>
+<ul>
+<li>GST Category</li>
+<li>Invoice Copy</li>
+<li>Reverse Charge</li>
+<li>E-commerce GSTIN</li>
+<li>Eligibility For ITC</li>
+<li>Availed ITC Integrated Tax</li>
+<li>Availed ITC Central Tax</li>
+<li>Availed ITC State/UT Tax</li>
+<li>Availed ITC Cess</li>
+</ul>
+<h3 id="316-more-information">3.16 More Information</h3>
+<ul>
+<li><strong>Is Opening Entry</strong>: If this is an opening entry to affect your accounts select 'Yes'. i.e. if you're migrating from another ERP to KanivinERP mid year, you might want to use an Opening Entry to update account balances in KanivinERP.</li>
+<li><strong>Remarks</strong>: Any additional remarks about the Purchase Invoice can be added here.</li>
+</ul>
+<h3 id="317-after-submitting">3.17 After Submitting</h3>
+<p>On submitting a Purchase Invoice, the following documents can be created against it:</p>
+<ol>
+<li><a onclick="loadContent('journal-entry.html')">Journal Entry</a></li>
+<li><a onclick="loadContent('payment-entry.html')">Payment Entry</a></li>
+<li><a onclick="loadContent('payment-request.html')">Payment Request</a></li>
+<li><a onclick="loadContent('landed-cost-voucher.html')">Landed Cost Voucher</a></li>
+<li><a onclick="loadContent('asset.html')">Asset</a></li>
+</ol>
+<p><img alt="PI Submit" class="screenshot" src="/files/purchase-invoice-post-submit.png"/> </p>
+<h2 id="4-more">4. More</h2>
+<h3 id="41-accounting-impact">4.1 Accounting Impact</h3>
+<p>Similar to a Sales Invoice, in a Purchase Invoice you have to enter an Expense or an Asset account for each row in your Items table. This helps to indicate if the Item is an Asset or an Expense. You can also change the Cost Center. These can also be set in the Item master. The Cost Center can be set at the Company level.</p>
+<p>The Purchase Invoice will affect your accounts as follows:</p>
+<ul>
+<li>Accounting entries (GL Entry) for a typical double entry “purchase”:</li>
+<li><p>Debits:</p>
+<ul>
+<li>Expense or Asset (net totals, excluding taxes)</li>
+<li>Taxes (/assets if VAT-type or expense again)</li>
+</ul></li>
+<li><p>Credits:</p>
+<ul>
+<li>Supplier</li>
+</ul></li>
+</ul>
+<p><img alt="Purchase Invoice Ledger" class="screenshot" src="/files/purchase-invoice-ledger.png"/> </p>
+<h3 id="42-accounting-when-is-paid-is-checked">4.2 Accounting When <strong>Is Paid</strong> is checked</h3>
+<p>If <strong>Is Paid</strong> is checked, KanivinERP will also make the following accounting entries:</p>
+<p>Debits:</p>
+<ul>
+<li>Supplier</li>
+</ul>
+<p>Credits:</p>
+<ul>
+<li>Bank/Cash Account</li>
+</ul>
+<p>To see entries in your Purchase Invoice after you “Submit”, click on “View Ledger”.</p>
+<h3 id="43-is-purchase-an-expense-or-an-asset">4.3 Is purchase an “Expense” or an “Asset”?</h3>
+<p>If the Item is consumed immediately on purchase, or if it is a service, then the purchase becomes an “Expense”. For example, a telephone bill or travel bill is an “Expense” - it is already consumed.</p>
+<p>For inventory Items, that have a value, these purchases are not yet “Expense”, because they still have a value while they remain in your stock. They are “Assets”. If they are raw-materials (used in a process), they will become “Expense” the moment they are consumed in the process. If they are to be sold to a Customer, they become “Expense” when you ship them to the Customer.</p>
+<h3 id="44-deducting-taxes-at-source">4.4 Deducting Taxes at Source</h3>
+<p>In many countries, the law may require you to deduct taxes, while paying your suppliers. These taxes could be based on a standard rate. Under these type of schemes, typically if a Supplier crosses a certain threshold of payment, and if the type of product is taxable, you may have to deduct some tax (which you pay back to your government, on your Supplier’s behalf).</p>
+<p>To do this, you will have to make a new Tax Account under “Tax Liabilities” or similar and credit this Account by the percent you are bound to deduct for every transaction.</p>
+<h3 id="45-hold-payments-for-a-purchase-invoice">4.5 Hold Payments For A Purchase Invoice</h3>
+<p>There are two ways to put a purchase invoice on hold:</p>
+<ul>
+<li>Date Span Hold</li>
+<li>Explicit Hold</li>
+</ul>
+<h4 id="explicit-hold">Explicit Hold</h4>
+<p>Explicit hold holds the purchase invoice indefinitely. To do it, in the "Hold Invoice" section of the purchase invoice form, simply check the "Hold Invoice" checkbox. In the "Reason For Putting On Hold" text field, type a comment explaining why the invoice is to be put on hold.</p>
+<p>If you need to hold a submitted invoice, click the "Make" button and click "Block Invoice". Also, add a comment explaining why the invoice is to be put on hold in the dialog that pops up and click "Save".</p>
+<h4 id="date-span-hold">Date Span Hold</h4>
+<p>Date span hold holds the purchase invoice until a specified date. To do it, in the "Hold Invoice" section of the purchase invoice form, check the "Hold Invoice" checkbox. Next, input the release date in the dialog that pops up and click "Save". The release date is the date that the hold on the document expires.</p>
+<p>After the invoice has been saved, you can change the release date by clicking on the "Hold Invoice" drop-down button and then "Change Release Date". This action will cause a dialog to appear.</p>
+<p><img alt="Purchase Invoice on hold" class="screenshot" src="/files/purchase-invoice-hold.png"/> </p>
+<p>Select the new release date and click "Save". You should also enter a comment in the "Reason For Putting On Hold" field.</p>
+<p>Take note of the following:</p>
+<ul>
+<li>All purchases that have been placed on hold will not be included in a Payment Entry's references table</li>
+<li>The release date cannot be in the past.</li>
+<li>You can only block or unblock a purchase invoice if it is unpaid.</li>
+<li>You can only change the release date if the invoice is unpaid.</li>
+</ul>
+<h3 id="46-provisional-accounting-for-expenses-only-for-non-stock-items">4.6 Provisional accounting for expenses (only for Non-Stock Items)</h3>
+<p>In many situations, a service is received and the expense is incurred but the Purchase Invoicing for that service is done in the subsequent month, so this expense doesn't flow into your monthly financial statements like Profit and Loss as invoicing is still pending. Provisional Accounting helps you address this problem. Below are the steps to set up provisional accounting.</p>
+<ol>
+<li>Enable provisional accounting in the company master and set the default provisional account</li>
+</ol>
+<p><img alt="" class="screenshot" src="https://docs.erpnext.com/files/enable-provisional-accounting.png"/> </p>
+<ol start="2">
+<li>Make a Purchase Receipt for a non-stock item</li>
+</ol>
+<p><img alt="" class="screenshot" src="https://docs.erpnext.com/files/pa-purchase-receipt.png"/> </p>
+<p>Accounting entries against the Purchase Receipt will be as follows</p>
+<p><img alt="" class="screenshot" src="https://docs.erpnext.com/files/pa-accounting-entry-pr.png"/> </p>
+<ol start="3">
+<li>Make a Purchase Invoice against the Purchase Receipt Accounting entries against the Purchase Invoice will be posted as usual</li>
+</ol>
+<p><img alt="" class="screenshot" src="https://docs.erpnext.com/files/pa-account-entries-pi.png"/> </p>
+<p>On posting a purchase invoice accounting entries against the purchase receipt will be reversed</p>
+<p><img alt="" class="screenshot" src="https://docs.erpnext.com/files/pa-accounting-entries-pr-reversed.png"/> </p>
+<h3 id="5-related-topics">5. Related Topics</h3>
+<ol>
+<li><a onclick="loadContent('sales-invoice.html')">Sales Invoice</a></li>
+<li><a onclick="loadContent('item-tax-template.html')">Item Wise Taxation</a></li>
+<li><a onclick="loadContent('payment-entry.html')">Payment Entry</a></li>
+<li><a onclick="loadContent('payment-request.html')">Payment Request</a></li>
+<li><a onclick="loadContent('request-for-quotation.html')">Request For Quotation</a></li>
+<li><a onclick="loadContent('purchase-order.html')">Purchase Order</a></li>
+<li><a onclick="loadContent('purchase-receipt.html')">Purchase Receipt</a></li>
+</ol>
+</div>
+<input class="d-none" name="wiki-page-name" value="e8s3pf4kgk"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="revisionsModalTitle">Purchase Invoice</h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content">
+<h3>No Revisions</h3>
+</div>
+</div>
+</div></div></div></div></main>

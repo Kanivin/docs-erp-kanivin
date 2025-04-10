@@ -1,0 +1,68 @@
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title">LinkedIn Settings</h1>
+</div>
+<div class="wiki-content">
+<blockquote>
+<p>Note: This integration is deprecated and will be removed in v15. </p>
+</blockquote>
+<p>LinkedIn related settings like OAuth can be configured here. KanivinERP needs access to the API through which the post is shared and achieved using OAuth 2.0 Authentication Protocol.</p>
+<h2 id="1-how-to-set-up-linkedin-developer-app">1. How to set up LinkedIn Developer App</h2>
+<p>You must have LinkedIn Developer App for your company. KanivinERP interacts with this App for sharing the post.</p>
+<h3 id="11-create-linkedin-developer-app">1.1 Create LinkedIn Developer App</h3>
+<p>Create App by link <code>https://www.linkedin.com/developers</code> fill all the details and verify it. And that App has the following products.</p>
+<ol>
+<li>Share on LinkedIn</li>
+<li>Sign In with LinkedIn</li>
+<li>Marketing Developer Platform <img alt="LinkedIn Developer App Product" class="screenshot" src="/files/linkedin-dev-products.png"/></li>
+</ol>
+<h3 id="12-configure-redirect-urls">1.2 Configure Redirect URLs:</h3>
+<ol>
+<li>Goto your LinkedIn Developers App then <strong>Auth</strong> tab.</li>
+<li>In <strong>OAuth 2.0 settings</strong> section add <strong>Redirect URLs</strong>: <code>https://{yoursite}/api/method/erpnext.crm.doctype.linkedin_settings.linkedin_settings.callback</code></li>
+<li>Click <strong>Update</strong> to make changes. <img alt="LinkedIn Redirect URL" class="screenshot" src="/files/linkedin-redirect-urls.png"/></li>
+</ol>
+<h2 id="2-how-to-set-up-linkedin-settings">2. How to set up LinkedIn Settings</h2>
+<p>To access LinkedIn Settings, go to:</p>
+<blockquote>
+<p>Home &gt; CRM &gt; Settings &gt; LinkedIn Settings</p>
+</blockquote>
+<p><img alt="LinkedIn Settings" class="screenshot" src="/files/linkedin-settings.png"/> </p>
+<h3 id="company-id">Company ID</h3>
+<p>You get the Company ID from your LinkedIn Company URL. <img alt="LinkedIn Company ID" class="screenshot" src="/files/linkedin-company-id.png"/> </p>
+<h3 id="consumer-key-and-consumer-secret">Consumer Key and Consumer Secret</h3>
+<p>You get <strong>Consumer Key</strong> and <strong>Consumer Secret</strong> from your LinkedIn Developer account go to:</p>
+<blockquote>
+<p><code>https://www.linkedin.com/developers/</code> &gt; My Apps &gt; <code>{Your App}</code> &gt; Auth</p>
+</blockquote>
+<p><img alt="LinkedIn Client" class="screenshot" src="/files/linkedin-client.png"/> </p>
+<p>Once you save the doc by filling <strong>Company ID</strong>, <strong>Consumer Key</strong>, and <strong>Consumer Secret</strong> it will redirect to LinkedIn's sign-in page by providing valid LinkedIn credentials and clicking Allow, the member approves your application's request to access their member data and interact with LinkedIn on their behalf. <img alt="Authorize LinkedIn" class="screenshot" src="/files/authorize-linkedin.jpg"/> </p>
+</div>
+<input class="d-none" name="wiki-page-name" value="t1fde16lhh"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="revisionsModalTitle">LinkedIn Settings</h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content">
+<h3>No Revisions</h3>
+</div>
+</div>
+</div></div></div></div></main>

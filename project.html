@@ -1,0 +1,192 @@
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title">Project
+</h1>
+</div>
+<div class="wiki-content">
+<p><strong>A Project is a planned piece of work that is designed to find information about something, to produce something new, or to improve something.</strong></p>
+<p>In KanivinERP, project management is task-driven. You can create a Project and divide it into multiple Tasks.</p>
+<p>A Project has a broad scope and hence can be divided into tasks. Think of coming up with a new smartphone for the next year as a Project. Then things like designing, prototyping, testing, delivery, etc. become tasks under the project.</p>
+<p>Whilst each task within a Project can be assigned to an individual or a group of individuals, the assignment can also be done at the project level.</p>
+<p>These Tasks can be created from a Project itself or a <a href="/erpnext/v13/user/manual/en/projects/tasks.html">Task</a> can be created separately as well.</p>
+<p>To access Projects, go to:</p>
+<blockquote>
+<p>Home &gt; Projects &gt; Projects &gt; Project</p>
+</blockquote>
+<p><img alt="Project" class="screenshot" src="/files/projects-project-intro7cb73c.png"/></p>
+<h2 id="1-how-to-create-a-project">1. How to Create a Project</h2>
+<ol>
+<li>Go to the Project list and click on New.</li>
+<li>Add the following details:</li>
+</ol>
+<ul>
+<li><strong>Project Name</strong>: Title of the Project.</li>
+<li><strong>Status</strong>: The default status of a Project is going to be 'Open' which can later be changed to 'Completed' or 'Cancelled'.</li>
+<li><strong>Expected End Date</strong>: Enter the date on which you aim to finish the project.</li>
+</ul>
+<ol start="3">
+<li>Save.</li>
+</ol>
+<h3 id="11-additional-options-while-creating-a-project">1.1 Additional Options while creating a Project</h3>
+<ol>
+<li><strong>From Template</strong>: If you have an existing <a onclick="loadContent('project-template.html')">Project Template</a>, you can choose to create your project using this template.</li>
+<li><strong>Expected Start Date</strong>: If you have a time-line fixed for the project, you can define both expected Start Date and Expected End Date in the form.</li>
+<li><strong>Project Type</strong>: You can classify your projects into different <a onclick="loadContent('project-type.html')">types</a>, e.g., Internal or External.</li>
+<li><strong>Priority</strong>: You can select the priority level of the Project based on how crucial it is. You can also add more priority levels.</li>
+<li><strong>Department</strong>: If the project belongs to, or is owned by a <a onclick="loadContent('department.html')">Department</a> in the organization, you can add that here.</li>
+<li><strong>Is Active</strong>: A Yes/No tab, which lets you change the active status of the project at any later stage.</li>
+<li><p><strong>Completion Method</strong>: You can track the % completion of your project based on one of the three methods, viz. <strong>Manual, Task Completion, Task Progress and Task Weight</strong>.</p>
+<p><img alt="Project 2" class="screenshot" src="/files/project-proj.png"/></p>
+<p>Some examples of how the Percentage Completion is calculated based on Tasks:</p>
+<table class="table table-bordered">
+<thead>
+<tr>
+<th style="text-align:center;">Project</th>
+<th style="text-align:center;">Activity</th>
+<th style="text-align:center;">% Progress</th>
+<th style="text-align:center;">Weight</th>
+<th style="text-align:center;">Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">SC001</td>
+<td style="text-align:center;">Build</td>
+<td style="text-align:center;">100</td>
+<td style="text-align:center;">0.4</td>
+<td style="text-align:center;">Completed</td>
+</tr>
+<tr>
+<td style="text-align:center;">SC001</td>
+<td style="text-align:center;">Operate</td>
+<td style="text-align:center;">100</td>
+<td style="text-align:center;">0.2</td>
+<td style="text-align:center;">Completed</td>
+</tr>
+<tr>
+<td style="text-align:center;">SC001</td>
+<td style="text-align:center;">Transfer</td>
+<td style="text-align:center;">50</td>
+<td style="text-align:center;">0.2</td>
+<td style="text-align:center;">Open</td>
+</tr>
+</tbody>
+</table>
+<table class="table table-bordered">
+<thead>
+<tr>
+<th style="text-align:center;">Method</th>
+<th style="text-align:center;">Formula</th>
+<th style="text-align:center;">Calculation</th>
+<th style="text-align:center;">% Task Completed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;"><strong>Manual</strong></td>
+<td style="text-align:center;">-</td>
+<td style="text-align:center;">-</td>
+<td style="text-align:center;">Manual</td>
+</tr>
+<tr>
+<td style="text-align:center;"><strong>Task Completion</strong></td>
+<td style="text-align:center;">Task completed / Total no. of Tasks</td>
+<td style="text-align:center;">2/3</td>
+<td style="text-align:center;">66.66</td>
+</tr>
+<tr>
+<td style="text-align:center;"><strong>Task Progress</strong></td>
+<td style="text-align:center;">Sum of % Progress of all Tasks / Total No. of Tasks</td>
+<td style="text-align:center;">(100+100+50)/3</td>
+<td style="text-align:center;">83.33</td>
+</tr>
+<tr>
+<td style="text-align:center;"><strong>Task Weight</strong></td>
+<td style="text-align:center;">Sum of (Task weight + % Progress)</td>
+<td style="text-align:center;">(0.4 * 100 + 0.2 * 100 + 0.2 * 100)</td>
+<td style="text-align:center;">70</td>
+</tr>
+</tbody>
+</table></li>
+</ol>
+<p><strong>Note:</strong> If the total weight of the Tasks is not 100, then the calculated result will be divided by the total weight.
+For example, if the total of task weights is 70, then percentage completed = (70/0.8)% = 87.5%.</p>
+<h2 id="2-features">2. Features</h2>
+<h3 id="21-customer-details-users-and-notes">2.1. Customer Details, Users and Notes</h3>
+<ul>
+<li><strong>Customer</strong>: If a Project is being carried out for a particular Customer, the details can be fed in here.</li>
+<li><strong>Sales Order</strong>: If a Project is based on a <a onclick="loadContent('sales-order.html')">Sales Order</a> from a Customer, you can fetch the details here. This would enable you to update the Customer on the Progress on the project as per the Sales Order issued.</li>
+<li><p><strong>Users</strong>: You can add any <a href="/erpnext/v13/user/manual/en/setting-up/users-and-permissions/adding-users">website user</a> to give them access to this Project. E.g., you can add your customer as a Website User, to enable them to have access to your project to monitor progress and/or give any inputs/remarks. Similarly, a Supplier or a Contractual Employee/Freelancer who is involved in the Project can be added as a User.</p>
+<p>Further, you can also expand the window and select if you want to send a Welcome Email to any particular user or give them Attachment Viewing rights.</p>
+<p>You can learn more about allowing users to view projects <a href="/erpnext/v13/user/manual/en/projects/project-customer-portal">here</a>.</p></li>
+<li><p><strong>Notes</strong>: You can add any additional notes to the project.</p>
+<p><img alt="Project - Costing" class="screenshot" src="/files/projects-customer-users-notes.png"/></p></li>
+</ul>
+<h3 id="22-start-and-end-dates">2.2. Start and End Dates</h3>
+<ul>
+<li><strong>Actual Start Date</strong>: Basis the Actual Start of the project, tracked via Timesheets, the Actual Start Date and Time of the Project will get recorded automatically.</li>
+<li><p><strong>Actual End Date</strong>: Basis the Actual End of the project, tracked via the last update of the Timesheet, the Actual End Date and Time of the Project will get recorded automatically. To know more about Timesheets, <a href="/erpnext/v13/user/manual/en/projects/timesheets/">click here</a>.</p>
+<p><img alt="Project - Costing" class="screenshot" src="/files/projects-start-time-end-time.png"/></p></li>
+</ul>
+<h3 id="23-costing-and-billing">2.3. Costing and Billing</h3>
+<ul>
+<li><strong>Estimated Cost</strong>: Enter the Estimated Cost of the Project.</li>
+<li><strong>Total Sales Amount</strong>: If you have already linked the Project with a Sales Order, the Total Sales Order Amount will be auto-populated here.</li>
+<li><strong>Total Costing Amount</strong>: The system will automatically fetch the Total Costing Amount from all the Timesheets linked to this project.</li>
+<li><strong>Total Billable Amount</strong>: The system will automatically fetch the Total Billable Amount from all the Timesheets linked to this project.</li>
+<li><strong>Total Expense Claim</strong>: Based on the expenses claimed by an <a onclick="loadContent('employee.html')">Employee</a> for the completion of the Project, the Total Expense Claim will be auto-calculated.</li>
+<li><strong>Total Billed Amount</strong>: The Total Billed Amount gets auto-populated in the system using the Sales Invoice created against the Sales Order.</li>
+<li><strong>Total Purchase Cost</strong>: The Total Purchase Cost of a Project is the cost fetched from the Purchase Invoices that get created against a Purchase Order issued for supply of Materials required for a Project.</li>
+<li><strong>Total Consumed Material Cost</strong>: Using the Stock Entry made as per the requirement of Materials in the Project, the Total Consumed Material Cost gets captured.</li>
+</ul>
+<h3 id="24-margin">2.4. Margin</h3>
+<ul>
+<li><p><strong>Gross Margin</strong>: Gross Margin would give you the margin you have between your Total Costing Amount and the Total Billed Amount.</p>
+<p><strong>Gross Margin = (Total Sales Amount + Total Billable Amount) - Total Costing Amount + Total Billable Amount + Total Expense Claim + Total Purchase Cost + Total Consumed Material Cost)</strong></p></li>
+<li><p><strong>Gross %</strong>: The percentage of the Total Billed Amount spent in the Total Costing Amount makes for the Gross %.</p>
+<p><strong>((Total Sales Amount + Total Billable Amount) - Total Costing Amount + Total Billable Amount + Total Expense Claim + Total Purchase Cost + Total Consumed Material Cost) / Total Sales Amount)* 100</strong></p>
+<p><img alt="Project - Costing" class="screenshot" src="/files/projects-costing-and-billing.png"/></p></li>
+</ul>
+<h3 id="25-monitor-progress">2.5. Monitor progress</h3>
+<p>When you enable the 'Collect Progress' option by checking the box, it will enable you to add monitoring details to the project. A report on the progress of the project shall be sent to all stakeholders of the project.</p>
+<ul>
+<li><strong>Holiday List</strong>: You can select the <a onclick="loadContent('holiday-list.html')">Holiday List</a> for your company. This will allow you to collect the Progress Reports only on the Working Days.</li>
+<li><p><strong>Frequency</strong>: You can set the frequency at which you wish to get the reports. It can be set to an hourly, twice daily, daily or on a weekly frequency.</p>
+<p><img alt="Project - Costing" class="screenshot" src="/files/projects-monitor-progress.png"/></p></li>
+</ul>
+<h2 id="3-related-topics">3. Related Topics</h2>
+<ol>
+<li><a onclick="loadContent('tasks.html')">Task</a></li>
+<li><a onclick="loadContent('project-type.html')">Project Type</a></li>
+<li><a onclick="loadContent('project-template.html')">Project Template</a></li>
+</ol>
+</div>
+<input class="d-none" name="wiki-page-name" value="p345m8ope4"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="revisionsModalTitle">Project
+</h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content">
+<h3>No Revisions</h3>
+</div>
+</div>
+</div></div></div></div></main>

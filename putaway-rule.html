@@ -1,0 +1,110 @@
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title">Putaway Rule
+</h1>
+</div>
+<div class="wiki-content">
+<p><strong>A Putaway Rule defines a Warehouse Assignment Strategy for incoming stock.</strong></p>
+<p>A Putaway Rule is uniquely defined for an Item-Warehouse combination in a Company. It takes Warehouse Capacity and Priority into consideration.</p>
+<p>In <strong>Purchase Receipts</strong> and <strong>Stock Entries</strong> (Material Receipt &amp; Material Transfer), the Putaway Rules are applied and Items are <strong>auto-assigned</strong> to Warehouses based on the given strategy.</p>
+<p>This is particularly useful for capacity management in large Warehouses with multiple locations.</p>
+<p>To access a Putaway Rule, go to:</p>
+<blockquote>
+<p>Home &gt; Stock &gt; Stock Transactions &gt; Putaway Rule</p>
+</blockquote>
+<h2 id="1-prerequisites">1. Prerequisites</h2>
+<p>Before creating and using a Putaway Rule, it is advised that you create the following first:</p>
+<ul>
+<li><a onclick="loadContent('item.html')">Stock Item</a></li>
+<li><a onclick="loadContent('warehouse.html')">Warehouse</a></li>
+</ul>
+<h2 id="2-how-to-create-a-putaway-rule">2. How to create a Putaway Rule</h2>
+<ol>
+<li><p>Go to the Putaway Rule list, click on New.
+<img alt="Unsaved Putaway Rule" class="screenshot" src="/files/unsaved-putaway-rule.png"/></p></li>
+<li><p>Set the Company and Select an Item.</p></li>
+<li>Select the Warehouse on which this rule is applicable.</li>
+<li><p>Set the Capacity. You can also select a UOM if you want to set the Capacity in a different UOM. The Capacity in Stock UOM will be set automatically.
+<img alt="Multi UOM Putaway Rule" class="screenshot" src="/files/multi-uom-putaway-rule.png"/></p></li>
+<li><p>Set the Priority. This can begin from 1 onwards, 1 being the highest priority.</p></li>
+<li>Save.</li>
+<li>You can additionally Disable a Putaway Rule as well.</li>
+</ol>
+<p>The rule is unique to each Item-Warehouse combination.</p>
+<h2 id="3-how-putaway-is-strategized">3. How Putaway is strategized</h2>
+<ol>
+<li>Here the strategy is purely based on <strong>Capacity</strong> and <strong>Priority</strong>.</li>
+<li>Warehouses will be auto-assigned until they reach full capacity.</li>
+<li>Priority will be considered first. Followed by free space. If two rules have the same priority, the rule with more free space available will be assigned.</li>
+<li>If you are running at full capacity (no free space in any Warehouse), KanivinERP will let you know.</li>
+</ol>
+<h2 id="4-how-it-works">4. How it works</h2>
+<p>As mentioned before, the Putaway Rules are applied on <strong>Purchase Receipts</strong> and <strong>Stock Entries</strong> (Material Receipt &amp; Material Transfer).</p>
+<p>A checkbox called <strong>Apply Putaway Rule</strong> will allocate items to Warehouses based on the Putaway Rules.
+ <img alt="Apply Putaway Rule checkbox" class="screenshot" src="/files/apply-putaway-rule.png"/></p>
+<p>Putaway Rules are applied on checking this checkbox. They are also re-applied on save if this checkbox is enabled.</p>
+<p>Let us see the same in action:</p>
+<ol>
+<li><p>Here is a Purchase Order with a requirement of 5 Cartons (60 Nos) of Mineral Water.
+<img alt="Purchase Order" class="screenshot" src="/files/po-putaway-demo.png"/></p></li>
+<li><p>Two active Putaway Rules have been created below with capacity 4 Cartons (48 Nos) each. One has a higher priority than the other.
+<img alt="Active Putaway Rules List" class="screenshot" src="/files/active-putaway-rules-list.png"/></p></li>
+<li><p>A Purchase Receipt is created from this Purchase Order.</p></li>
+<li><p>On checking <strong>Apply Putaway Rule</strong>, one row of 5 Cartons is split and assigned according to the rules.
+<img alt="Putaway Rules applied in a Purchase Receipt" class="screenshot" src="/files/pr-putaway-apply.gif"/></p></li>
+<li><p>First, 4 out of 5 Cartons are accommodated in the 'Finished Goods - UPI' Warehouse. Once this Warehouse is at capacity, it assigns the rest (1 Carton) to the 'Stores - UPI' Warehouse.</p></li>
+</ol>
+<h2 id="5-warehouse-capacity-summary">5. Warehouse Capacity Summary</h2>
+<p>The <strong>Warehouse Capacity Summary</strong> Report shows Warehouse capacities and their respective stock levels.</p>
+<p>Only Warehouses having Putaway Rules will be listed here. The <strong>Edit Capacity</strong> button gives provision to edit the Putaway Rule capacity.</p>
+<p><img alt="Warehouse Capacity Summary" class="screenshot" src="/files/warehouse-capacity-summary.png"/></p>
+<h2 id="6-types-of-putaway-application">6. Types of Putaway Application</h2>
+<h3 id="61-direct-putaway">6.1. Direct Putaway</h3>
+<ol>
+<li>The example in the previous section explains <strong>Direct Putaway</strong>.</li>
+<li>It is, essentially, directly assigning incoming stock to certain Warehouses based on a strategy.</li>
+<li>This can easily be exercised via a Purchase Receipt.</li>
+</ol>
+<h3 id="62-indirect-combined-putaway">6.2. Indirect (Combined) Putaway</h3>
+<ol>
+<li>Stock is often received into <strong>temporary</strong> or <strong>staging</strong> Warehouses first.</li>
+<li>From here it is placed into appropriate locations within the Warehouse.</li>
+<li>This is called <strong>Indirect or Combined</strong> Putaway.</li>
+<li>To simulate this within KanivinERP, a simple Purchase Receipt can be created into the temporary Warehouse, without Putaway applied.</li>
+<li>From here, a Stock Entry (Material Transfer) can be done, where Putaway Rules can be applied similar to Purchase Receipts.</li>
+</ol>
+<h2 id="7-related-topics">7. Related Topics</h2>
+<ol>
+<li><a onclick="loadContent('purchase-receipt.html')">Purchase Receipt</a></li>
+<li><a onclick="loadContent('stock-entry.html')">Stock Entry</a></li>
+</ol>
+</div>
+<input class="d-none" name="wiki-page-name" value="6m29ds06td"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="revisionsModalTitle">Putaway Rule
+</h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content">
+<h3>No Revisions</h3>
+</div>
+</div>
+</div></div></div></div></main>

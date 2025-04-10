@@ -1,0 +1,58 @@
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title">Multi-level BOM Creator</h1>
+</div>
+<div class="wiki-content">
+<p>The BOM Creator enables users to create multi-level BOMs using a single screen.</p>
+<p><img alt="bom&lt;em&gt;creator&lt;/em&gt;tree" class="screenshot" src="/files/bom_creator_tree.png" title="bom_creator_tree.png"/> </p>
+<h3 id="why-use-the-bom-creator">Why use the BOM Creator?</h3>
+<p>Users often question why a separate BOM Creator is needed to create BOMs. The answer lies in eliminating the need for unnecessary back and forth. With the standard BOM screen, users are required to create all sub-assembly BOMs first and then create the BOM for the final product. This process often involves a lot of back and forth. Additionally, sometimes it's challenging to visualize the complete hierarchy using the standard BOM.</p>
+<p>To address all of these problems, we have introduced the BOM Creator. Within the BOM Creator, users can construct a multi-level BOM using the tree component.</p>
+<p>Here's how it works:</p>
+<ul>
+<li>The user selects the Final Product and saves the record.</li>
+</ul>
+<p><img alt="bom-creator" class="screenshot" src="/files/bom-creator.png" title="bom-creator.png"/> </p>
+<ul>
+<li>In the form, users will find an option to add Raw Materials and Sub-assembly items related to the Final Product.</li>
+</ul>
+<p><img alt="toolbar&lt;em&gt;bom&lt;/em&gt;creator" class="screenshot" src="/files/toolbar_bom_creator.png" title="toolbar_bom_creator.png"/> </p>
+<ul>
+<li>If a user wants to convert Raw Materials into Sub-assembly items, they need to click on the item first and then click the "Convert to Sub-Assembly" button.</li>
+</ul>
+<p><img alt="convert&lt;em&gt;to&lt;/em&gt;sub_assembly" class="screenshot" src="/files/convert_to_sub_assembly.gif" title="convert_to_sub_assembly.gif"/> </p>
+<ul>
+<li>Users can edit the Quantity as needed.</li>
+</ul>
+<h3 id="final-step">Final Step</h3>
+<p>One the BOM structure has made using the tree component, user has to submit the BOM Creator. On Submission of the BOM Creator, system will generate the BOMs using the background job.</p>
+<p><img alt="submit-bom" class="screenshot" src="/files/submit-bom.gif" title="submit-bom.gif"/> </p>
+</div>
+<input class="d-none" name="wiki-page-name" value="f5nbhmvdtb"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="revisionsModalTitle">Multi-level BOM Creator</h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content">
+<h3>No Revisions</h3>
+</div>
+</div>
+</div></div></div></div></main>

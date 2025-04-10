@@ -1,0 +1,170 @@
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title">Purchase Order</h1>
+</div>
+<div class="wiki-content">
+<p><strong>A Purchase Order is a binding contract with your Supplier that you promise to buy a set of items under given conditions.</strong></p>
+<p>It is similar to a Sales Order but instead of sending it to an external party, you keep it for internal records.</p>
+<blockquote>
+<p>Home &gt; Buying &gt; Purchasing &gt; Purchase Order</p>
+</blockquote>
+<p><img alt="Buying Flow" class="screenshot" src="/files/buying_flow_po.png"/> </p>
+<h2 id="1-prerequisites">1. Prerequisites</h2>
+<p>Before creating and using a Purchase Order, it is advised that you create the following first:</p>
+<ul>
+<li><a onclick="loadContent('supplier.html')">Supplier</a></li>
+<li><a onclick="loadContent('item.html')">Item</a></li>
+</ul>
+<h2 id="2-how-to-create-a-purchase-order">2. How to create a Purchase Order</h2>
+<p>A Purchase Order can be automatically created from a Material Request or Supplier Quotation.</p>
+<ol>
+<li>Go to the Purchase Order list, click on New.</li>
+<li>Select the Supplier, required by date.</li>
+<li>In the items table, select the item by code, you can change the required by date for each item.</li>
+<li>Set the quantity and the price will be fetched automatically if set in the Item master.</li>
+<li>Set taxes.</li>
+<li>Save and Submit. <img alt="Purchase Order" class="screenshot" src="/files/purchase-order.png"/></li>
+</ol>
+<h3 id="21-setting-warehouses">2.1 Setting Warehouses</h3>
+<ul>
+<li><strong>Set Target Warehouse</strong>: Optionally, you can set the default target Warehouse where the purchased Items will be delivered. This will be fetched into the Item table rows.</li>
+</ul>
+<h3 id="22-fetching-items-from-open-material-requests">2.2 Fetching Items from Open Material Requests</h3>
+<p>Items can be fetched into the Purchase Order automatically from open <a href="/erpnext/v13/user/manual/en/stock/material-request">Material Requests</a>. For this to work, the following steps need to be done:</p>
+<ol>
+<li>Select a Supplier in the Purchase Order.</li>
+<li>Set default Supplier in the Item form under <a onclick="loadContent('item#39-item-defaults.html')">Item Defaults</a>.</li>
+<li>A <a onclick="loadContent('material-request.html')">Material Request</a> needs to be present of type 'Purchase'.</li>
+<li>Click on the <strong>Get Items from open Material Requests</strong> button below the Supplier name. Now a dialog will appear with Material Requests containing Items for which the default Supplier is the same as the one selected in the Purchase Order. On selecting the Material Requests and clicking on <strong>Get Items</strong>, the Items will be fetched from the Material Requests. <img alt="Get Items from Open Material Requests" class="screenshot" src="/files/get-items-from-open-mr.png"/></li>
+</ol>
+<blockquote>
+<p><strong>Note:</strong> The <strong>Get Items from Open Material Requests</strong> button is visible as long as the Items table is empty.</p>
+</blockquote>
+<h2 id="3-features">3. Features</h2>
+<h3 id="31-address-and-contact">3.1 Address and Contact</h3>
+<ul>
+<li><strong>Select Supplier Address</strong>: The Supplier's billing address.</li>
+<li><strong>Select Shipping Address</strong>: The Supplier's shipping address from which they'll be sending the items.</li>
+<li>Address, Shipping Address, Contact, Contact Email will be fetched if saved in the Supplier master.</li>
+</ul>
+<p>For India:</p>
+<ul>
+<li><strong>Supplier and Company GSTIN</strong>: The GST Identification Number of your Supplier and your company.</li>
+<li><strong>Place of Supply</strong>: For GST, Place of Supply is necessary. It consists of the state's name and number.</li>
+</ul>
+<h3 id="32-currency-and-price-list">3.2 Currency and Price List</h3>
+<p>You can set the currency in which the purchase order is to be stored. If you set a Pricing List, then the item prices will be fetched from that list. Ticking on Ignore Pricing Rule will ignore the Pricing Rules set in Accounts &gt; Pricing Rule.</p>
+<p>Read about <a href="/erpnext/v13/user/manual/en/stock/price-lists">Price Lists</a> and <a href="/erpnext/v13/user/manual/en/accounts/articles/managing-transactions-in-multiple-currency">Multi-Currency Transactions</a> to know more.</p>
+<h3 id="33-subcontracting-or-supply-raw-materials">3.3 Subcontracting or 'Supply Raw Materials'</h3>
+<p>Setting 'Supply Raw Materials' option is useful for subcontracting where you provide the raw materials for manufacturing an item. To know more, visit the <a href="/erpnext/v13/user/manual/en/manufacturing/subcontracting">Subcontracting page</a>.</p>
+<h3 id="34-the-items-table">3.4 The Items table</h3>
+<ul>
+<li><strong>Scan Barcode</strong>: You can add Items in the Items table by scanning their barcodes if you have a barcode scanner. Read documentation for <a onclick="loadContent('track-items-using-barcode.html')">tracking items using barcode</a> to know more.</li>
+<li><strong>Quantity and Rate</strong>: When you select the Item code, its name, description, and UOM will be fetched. The 'UOM Conversion Factor' is set to 1 by default, you can change it depending on the UOM received from the seller, more in the next section.</li>
+</ul>
+<p>'Price List Rate' will be fetched if a Standard Buying rate is set. 'Last Purchase Rate' shows the rate of the item from your last Purchase Order. Rate is fetched if set in the item master. You can attach an Item Tax Template to apply a specific tax rate to the item.
+* <strong>Item weights</strong> will be fetched if set in the Item master else enter manually.
+* <strong>Warehouse</strong>: The warehouse where the items will be delivered, will be auto filled if 'Set Target Warehouse' was set in the Purchase Order. Via Blanket Order, a Blanket Order can be linked, to know more <a href="/erpnext/v13/user/manual/en/selling/blanket-order">click here</a>. A 'Project' can be linked to track progress. A 'BOM' or Bill of Materials can also be linked to track progress.
+* 'Qty as per Stock UOM' will show the current stock as per the UOM set in the Item master. 'Received Qty' will be updated when the items are billed.
+* <strong>Accounting Details</strong>: This section is auto filled for a Purchase Order. 'Expense Account' is the account against which the PO is billed, and Cost Center is the CC against which the PO is charged.</p>
+<p>A “Required By” date on each Item: If you are expecting part delivery, your Supplier will know how much quantity to deliver at which date. This will help you from preventing over-supply. It will also help you to track how well your Supplier is doing on timeliness.</p>
+<p><strong>Allow Zero Valuation Rate</strong>: Ticking on 'Allow Zero Valuation Rate' will allow submitting the Purchase Receipt even if the Valuation Rate of the Item is 0. This can be a sample item or due to a mutual understanding with your Supplier.</p>
+<h3 id="35-raw-materials-supplied">3.5 Raw Materials Supplied</h3>
+<p>This section appears when 'Supply Raw Materials' supplied is set to 'Yes'. This section shows a table with the Items to be supplied to the Supplier for the subcontracting process.</p>
+<ul>
+<li><strong>Set Reserve Warehouse</strong>: When <a onclick="loadContent('subcontracting.html')">Subcontracting</a>, the raw materials can be reserved in a separate Warehouse. On selecting the Reserved Warehouse here, it'll be fetched into Item rows of the Raw Materials Supplied table.</li>
+</ul>
+<h4 id="supplied-items-table">Supplied Items Table</h4>
+<ul>
+<li><strong>Required Quantity</strong>: The count of Items required to complete the subcontracting as specified in the <a onclick="loadContent('bill-of-materials.html')">BOM</a>.</li>
+<li><strong>Supplied Quantity</strong>: This will be updated when you create Stock Entries to transfer materials to Supplier Warehouse from the Reserve Warehouse using the <strong>Transfer</strong> button. <img alt="Subcontract Transfer Material" class="screenshot" src="/files/subcontract-transfer-materials.gif"/></li>
+</ul>
+<h3 id="36-purchase-uom-and-stock-uom-conversion">3.6 Purchase UOM and Stock UOM Conversion</h3>
+<p>You can change your UOM as per your stock requirements in the Purchase Order.</p>
+<p>For example, if you have bought your raw material in large quantities with UOM - boxes and wish to stock them in UOM - Nos; you can do so while making your Purchase Order.</p>
+<ol>
+<li>Store UOM as Nos in the Item master. Note that the UOM in the Item master is the stock UOM.</li>
+<li>In the Purchase Order mention UOM as Box. (Since material arrives in Boxes)</li>
+<li>In the Warehouse and Reference section, the UOM will be pulled in as Nos (from the Item form):</li>
+</ol>
+<p><img alt="Purchase Order - UOM" class="screenshot" src="/files/purchase-order-uom.png"/>
+4. Mention the UOM conversion factor. For example, (1); If one box has 1 kilo.
+5. Notice that the stock quantity will be updated accordingly.</p>
+<p><img alt="Purchase Order - UOM" class="screenshot" src="/files/po-stock-uom.png"/></p>
+<h3 id="37-taxes-and-charges">3.7 Taxes and Charges</h3>
+<p>If your Supplier is going to charge you additional taxes or charge like a shipping or insurance charge, you can add it here. It will help you to accurately track your costs. Also, if some of these charges add to the value of the product you will have to mention them in the Taxes table.</p>
+<p>Visit the <a href="/erpnext/v13/user/manual/en/buying/purchase-taxes-and-charges-template">Purchase Taxes and Charges Template</a> page to know more about taxes.</p>
+<p>The total taxes and charges will be displayed below the table.</p>
+<p>To add taxes automatically via a Tax Category, visit <a href="/erpnext/v13/user/manual/en/accounts/tax-category">this page</a>.</p>
+<p>Make sure to mark all your taxes in the Taxes and Charges table correctly for an accurate valuation.</p>
+<h4 id="shipping-rule">Shipping Rule</h4>
+<p>A Shipping Rule helps set the cost of shipping an Item. The cost will usually increase with the distance of shipping. To know more, visit the <a href="/erpnext/v13/user/manual/en/selling/shipping-rule">Shipping Rule</a> page.</p>
+<p><img alt="Purchase Order Taxes" class="screenshot" src="/files/po-taxes.png"/> </p>
+<p>For example, you buy Items worth X and sell them for 1.3X. So, your Customer pays 1.3 times the tax you pay your Supplier. Since you have already paid tax to your Supplier for X, what you owe your government is only the tax on 0.3X.</p>
+<p>This is very easy to track in KanivinERP since each tax head is also an Account. Ideally you must create two Accounts for each type of VAT you pay and collect, “Purchase VAT-X” (asset) and “Sales VAT-X” (liability), or something to that effect.</p>
+<h3 id="38-additional-discount">3.8 Additional Discount</h3>
+<p>Other than recording discount per item, you can add a discount to the whole purchase order in this section. This discount could be based on the Grand Total i.e., post-tax/charges or Net total i.e., pre-tax/charges. The additional discount can be applied as a percentage or an amount.</p>
+<p>Read <a href="/erpnext/v13/user/manual/en/selling/articles/applying-discount">Applying Discount</a> for more details.</p>
+<h3 id="39-payment-terms">3.9 Payment Terms</h3>
+<p>Sometimes payment is not done all at once. Depending on the agreement, half of the payment may be made before shipment and the other half after receiving the goods/services. You can add a Payment Terms template or add the terms manually in this section.</p>
+<p>Read <a href="/erpnext/v13/user/manual/en/accounts/payment-terms">Payment Terms</a> to know more.</p>
+<h3 id="310-terms-and-conditions">3.10 Terms and Conditions</h3>
+<p>In Sales/Purchase transactions there might be certain Terms and Conditions based on which the Supplier provides goods or services to the Customer. You can apply the Terms and Conditions to transactions to transactions and they will appear when printing the document. To know about Terms and Conditions, <a href="/erpnext/v13/user/manual/en/setting-up/print/terms-and-conditions">click here</a></p>
+<h3 id="311-print-settings">3.11 Print Settings</h3>
+<h4 id="letterhead">Letterhead</h4>
+<p>You can print your request for quotation / purchase order on your company's letterhead. Know more <a href="/erpnext/v13/user/manual/en/setting-up/print/letter-head">here</a>.</p>
+<p>'Group same items' will group the same items added multiple times in the items table. This can be seen when your print.</p>
+<h4 id="print-headings">Print Headings</h4>
+<p>Titles of your documents can be changed. Know more <a href="/erpnext/v13/user/manual/en/setting-up/print/print-headings">here</a>.</p>
+<p>The seller's Additional Discount, Payment Terms, Terms and Conditions can be recorded in your Purchase Order.</p>
+<h3 id="312-more-information">3.12 More Information</h3>
+<p>This section shows the status of the Purchase Order, percentage of items received, and percentage of items billed. If this is an Inter-Company Order, the Sales Order can be linked here.</p>
+<h3 id="313-after-submitting">3.13 After Submitting</h3>
+<p>Once you “Submit” your Purchase Order, you can trigger actions these actions:</p>
+<ul>
+<li>You can Add, Update, Delete items in the Purchase Order by clicking on the <strong>Update Items</strong> button. However, you cannot delete items which has already been received.</li>
+<li>Status: Once submitted, you can hold a Purchase Order or Close it.</li>
+<li><p>Create: From a submitted Purchase Order, you can create the following:</p>
+<ul>
+<li><a onclick="loadContent('purchase-receipt.html')">Purchase Receipt</a> - A receipt indicating you've received the items.</li>
+<li><a onclick="loadContent('purchase-invoice.html')">Purchase Invoice</a> - An invoice/bill for the purchase order.</li>
+<li><a onclick="loadContent('payment-entry.html')">Payment Entry</a> - A payment entry indicates that payment has been made against a purchase order.</li>
+<li><a onclick="loadContent('journal-entry.html')">Journal Entry</a> - A Journal Entry is recorded in the general ledger.<img alt="Purchase Order post submitting" class="screenshot" src="/files/po-after-submit.png"/></li>
+</ul></li>
+</ul>
+<h3 id="4-related-topics">4. Related Topics</h3>
+<ol>
+<li><a onclick="loadContent('request-for-quotation.html')">Request For Quotation</a></li>
+<li><a onclick="loadContent('purchase-taxes-and-charges-template.html')">Purchase Taxes and Charges Template</a></li>
+<li><a onclick="loadContent('purchasing-in-different-unit.html')">Purchasing In Different Unit</a></li>
+<li><a onclick="loadContent('amending-purchase-order-after-submit.html')">Amending Purchase Order After Submit</a></li>
+</ol>
+</div>
+<input class="d-none" name="wiki-page-name" value="oiape34ual"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="revisionsModalTitle">Purchase Order</h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content">
+<h3>No Revisions</h3>
+</div>
+</div>
+</div></div></div></div></main>

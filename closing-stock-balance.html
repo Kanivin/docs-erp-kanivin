@@ -1,0 +1,63 @@
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title">Closing Stock Balance</h1>
+</div>
+<div class="wiki-content">
+<p>Note: In v16 the closing stock balance has renamed as <a href="https://docs.frappe.io/erpnext/stock-closing-entry">Stock Closing Entry</a></p>
+<h4 id="how-the-stock-balance-report-is-prepared">How the Stock Balance Report is Prepared</h4>
+<p>The Stock Balance report is a crucial tool for businesses to monitor their inventory levels and make informed decisions. It consists of four main columns: Opening Stock, In Stock, Out Stock, and Balance Stock. The Balance Stock is calculated using the formula Opening Stock + In Stock - Out Stock.</p>
+<p>One of the key challenges in preparing the Stock Balance report is the calculation of the Opening Stock. To determine the Opening Stock, the system reads all the rows in the Stock Ledger Entry table that come before the specified From Date filter. However, a potential issue arises when the filter for item code or warehouse is not set, and the Stock Ledger Entry table contains a vast number of records. This situation can significantly slow down the process and cause performance problems.</p>
+<h4 id="closing-stock-balance">Closing Stock Balance</h4>
+<p><img alt="" class="screenshot" src="/files/w1NEGok.png"/></p>
+<p>To address this issue, a solution has been introduced - the "Closing Stock Balance" feature. This feature allows the system to prepare the Opening Stock in advance, reducing the time taken to generate the Stock Balance report.</p>
+<p>Here's how to use the "Closing Stock Balance" feature effectively:</p>
+<ol>
+<li>Closing Stock Balance Creation: After the financial year has ended, and the necessary audits have been completed for that year (in this example, the financial year 2022-2023), you should create the Closing Stock Balance. This should be done for the specific end date of the financial year 2022-2023.</li>
+<li>Data Preparation: Once the Closing Stock Balance is submitted, the system will take some time to prepare the data. During this process, the Opening Stock values are calculated and stored for future use.</li>
+<li>Utilizing Closing Stock Balance: With the Closing Stock data prepared, the system will utilize this data to generate the Stock Balance report efficiently. Now, whenever a user opens the Stock Balance Report, the system can quickly read the necessary data from the Closing Stock Balance for the Opening Stock values.</li>
+<li>Annual Closing Stock Balance: It is essential to create the closing stock balance every year after the closing of the financial year. This ensures that the Opening Stock values are updated and accurate for each reporting period.</li>
+</ol>
+<p>By implementing the "Closing Stock Balance" feature and following the recommended steps, businesses can significantly improve the performance and efficiency of generating Stock Balance reports, even with a vast amount of data in the Stock Ledger Entry table. </p>
+</div>
+<input class="d-none" name="wiki-page-name" value="b5kd5bpjq9"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="revisionsModalTitle">Closing Stock Balance</h5>
+<span class="small text-muted revision-time">rohit edited 3 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content">
+<p>Edit: In v16 the closing stock balance has renamed as <a href="https://docs.frappe.io/erpnext/stock-closing-entry">Stock Closing Entry</a></p>
+<h4 id="how-the-stock-balance-report-is-prepared">How the Stock Balance Report is Prepared</h4>
+<p>The Stock Balance report is a crucial tool for businesses to monitor their inventory levels and make informed decisions. It consists of four main columns: Opening Stock, In Stock, Out Stock, and Balance Stock. The Balance Stock is calculated using the formula Opening Stock + In Stock - Out Stock.</p>
+<p>One of the key challenges in preparing the Stock Balance report is the calculation of the Opening Stock. To determine the Opening Stock, the system reads all the rows in the Stock Ledger Entry table that come before the specified From Date filter. However, a potential issue arises when the filter for item code or warehouse is not set, and the Stock Ledger Entry table contains a vast number of records. This situation can significantly slow down the process and cause performance problems.</p>
+<h4 id="closing-stock-balance">Closing Stock Balance</h4>
+<p><img alt="" class="screenshot" src="/files/w1NEGok.png"/></p>
+<p>To address this issue, a solution has been introduced - the "Closing Stock Balance" feature. This feature allows the system to prepare the Opening Stock in advance, reducing the time taken to generate the Stock Balance report.</p>
+<p>Here's how to use the "Closing Stock Balance" feature effectively:</p>
+<ol>
+<li>Closing Stock Balance Creation: After the financial year has ended, and the necessary audits have been completed for that year (in this example, the financial year 2022-2023), you should create the Closing Stock Balance. This should be done for the specific end date of the financial year 2022-2023.</li>
+<li>Data Preparation: Once the Closing Stock Balance is submitted, the system will take some time to prepare the data. During this process, the Opening Stock values are calculated and stored for future use.</li>
+<li>Utilizing Closing Stock Balance: With the Closing Stock data prepared, the system will utilize this data to generate the Stock Balance report efficiently. Now, whenever a user opens the Stock Balance Report, the system can quickly read the necessary data from the Closing Stock Balance for the Opening Stock values.</li>
+<li>Annual Closing Stock Balance: It is essential to create the closing stock balance every year after the closing of the financial year. This ensures that the Opening Stock values are updated and accurate for each reporting period.</li>
+</ol>
+<p>By implementing the "Closing Stock Balance" feature and following the recommended steps, businesses can significantly improve the performance and efficiency of generating Stock Balance reports, even with a vast amount of data in the Stock Ledger Entry table. </p>
+</div>
+</div>
+</div></div></div></div></main>

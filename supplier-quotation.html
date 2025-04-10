@@ -1,0 +1,102 @@
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title">Supplier Quotation
+</h1>
+</div>
+<div class="wiki-content">
+<p><strong>A Supplier Quotation is document by a potential supplier specifying the cost of goods or services they'll provide within a specified period.</strong></p>
+<p>A Supplier Quotation may also contain terms of sale, terms of payment, and warranties. Acceptance of quotation by the buyer can be considered as an agreement binding on both parties.</p>
+<p><img alt="Buying Flow" class="screenshot" src="/files/buying_flow_sq.png"/></p>
+<p>To access Supplier Quotation, go to:</p>
+<blockquote>
+<p>Home &gt; Buying &gt; Purchasing &gt; Supplier Quotation</p>
+</blockquote>
+<h2 id="1-prerequisites">1. Prerequisites</h2>
+<p>Before creating and using a Supplier Quotation, it is advised that you create the following first:</p>
+<ul>
+<li><a onclick="loadContent('supplier.html')">Supplier</a></li>
+<li><a onclick="loadContent('item.html')">Item</a></li>
+</ul>
+<h2 id="2-how-to-create-a-supplier-quotation">2. How to create a Supplier Quotation</h2>
+<h3 id="21-supplier-quotation-from-material-request">2.1 Supplier Quotation from Material Request</h3>
+<p>You can make a supplier quotation from a Material Request:
+<img alt="Supplier Quotation from Material Receipt" class="screenshot" src="/files/supplier-quotation-from-mr.png"/></p>
+<p>Or:</p>
+<p>A Supplier Quotation can be created from a <a href="/erpnext/v13/user/manual/en/buying/supplier">Supplier master</a>.</p>
+<p>Or:</p>
+<p>The supplier can submit you a quotation himself via KanivinERP. To know more about this, see section visit the <a href="/erpnext/v13/user/manual/en/buying/request-for-quotation#4-creating-a-supplier-quotation-after-rfq">Request for Quotation page</a>.</p>
+<h3 id="22-creating-a-supplier-quotation-manually">2.2 Creating a Supplier Quotation manually</h3>
+<ol>
+<li><p>You can also make a Supplier Quotation directly from:</p>
+<p><strong>Buying &gt; Purchasing &gt; Supplier Quotation &gt; New</strong>.</p></li>
+<li>Select the Supplier who sent you the quotation.</li>
+<li>The Address and Contact will be fetched if you've saved it in the supplier master.</li>
+<li>Enter the Item code, select the quantity. Rate will be fetched if you've set the Standard Buying rate for the item in <a onclick="loadContent('item-price.html')">Item Price</a>.
+<img alt="Supplier Quotation" class="screenshot" src="/files/supplier-quotation.png"/></li>
+</ol>
+<p>If you have multiple Suppliers who supply you with the same Item, you
+usually send out a <a href="/erpnext/v13/user/manual/en/buying/request-for-quotation">Request for Quotation</a> to various Suppliers. In
+many cases, especially if you have centralized buying, you may want to record all the quotes so that:</p>
+<ul>
+<li>You can easily compare prices in the future</li>
+<li>Audit whether all Suppliers were given the opportunity to quote.</li>
+</ul>
+<p>Supplier Quotations are not necessary for most small businesses. Always
+evaluate the cost of collecting information to the value it really provides!
+As a recommendation, you can do this only for high value items.</p>
+<h2 id="3-features">3. Features</h2>
+<h3 id="31-taxes-and-charges">3.1 Taxes and Charges</h3>
+<p>If your Supplier is going to charge you additional taxes or charge like a shipping or insurance charge, you can add it here. This will help you accurately track your costs. Also, if some of these charges add to the value of the product you will have to mention them in the Taxes table. You can also use templates for your taxes. For more information on setting up your taxes see the <a href="/erpnext/v13/user/manual/en/buying/purchase-taxes-and-charges-template">Purchase Taxes and Charges Template</a>.</p>
+<h3 id="32-more">3.2 More</h3>
+<p>There are fields for Tax Category, Shipping Rule, Purchase Taxes and Charges Template, Discount, Terms and Conditions, Quotation Number, Printing Settings. You can fill these fields for your record. Visit the <a href="/erpnext/v13/user/manual/en/selling/quotation">Quotation</a> page to know more about these sections. Note that the details like Shipping Rule, taxes, Discount, Terms and Conditions, Quotation Number, etc., are from your supplier and can be recorded for accurate tracking.</p>
+<p>Note:</p>
+<ul>
+<li>Tax Category will be fetched from supplier master if set</li>
+<li>Print settings is for making changes to the supplier quotation print</li>
+<li>The Terms and Conditions here are your supplier's</li>
+<li>The Supplier Quotation can be linked to a Material Request using the 'Link to material requests' button</li>
+</ul>
+<h3 id="33-after-submitting">3.3 After Submitting</h3>
+<p>The following records can be created after submitting a Supplier Quotation:</p>
+<ul>
+<li>Purchase Order - A Purchase Order if you agree with the supplier's quotation.</li>
+<li>Quotation - A quotation to your customer.</li>
+<li>Auto Repeat - Auto Repeat the supplier quotation at specified intervals.</li>
+</ul>
+<h3 id="4-related-topics">4. Related Topics</h3>
+<ol>
+<li><a onclick="loadContent('supplier.html')">Supplier</a></li>
+<li><a onclick="loadContent('supplier-group.html')">Supplier Group</a></li>
+<li><a onclick="loadContent('purchase-order.html')">Purchase Order</a></li>
+<li><a onclick="loadContent('request-for-quotation.html')">Request for Quotation</a></li>
+</ol>
+</div>
+<input class="d-none" name="wiki-page-name" value="recghjfj57"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="revisionsModalTitle">Supplier Quotation
+</h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content">
+<h3>No Revisions</h3>
+</div>
+</div>
+</div></div></div></div></main>

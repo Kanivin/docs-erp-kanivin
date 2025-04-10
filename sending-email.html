@@ -1,0 +1,113 @@
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title" id="sending-email-from-any-document">Sending Email from any Document<a aria-hidden="true" class="no-underline" href="#sending-email-from-any-document">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h1>
+</div>
+<div class="wiki-content">
+<p>In KanivinERP you can send any document as email (with a PDF attachment) by clicking on Menu &gt; Email after opening any document.</p>
+<p><img alt="Send Email" class="screenshot" src="/files/send-email.gif"/> </p>
+<p><strong>Note:</strong> You must have outgoing <a href="/erpnext/v13/user/manual/en/setting-up/email/email-account">Email Accounts</a> set up for this.</p>
+<p>After you click on send, the email gets added to the email queue. It will be in the Sending status until it is Sent. The status of the email is displayed in the queue, if sending has failed, it can be sent by clicking on Send Now.</p>
+<p><img alt="Email Queue" class="screenshot" src="/files/email-queue.png"/> </p>
+<p>The following options are available when sending an Email.</p>
+<ul>
+<li><strong>TO:</strong> Recipients of the email.</li>
+<li><strong>From:</strong> If user has access to multiple outgoing email accounts, the user can select which outgoing email account to use. Multiple outgoing email accounts can be configured from the User document by adding them to the "User Email" table.</li>
+<li><strong>CC</strong>: Carbon Copy of the email. Useful when you want to keep someone in the conversation loop but don't want to address the email directly to them.</li>
+<li><strong>BCC</strong>: Blind Carbon Copy is similar to CC but everyone else on the email thread cannot see that the mail was also sent to the BCC recipients. This is useful to hide the email address of certain people if you're sending the email to a lot of people who don't necessarily know each other.</li>
+<li><strong>Email Template</strong>: You can create preset templates to send out standard replies. Email Templates are already available in the system for Dispatch Notification, Leave Status Notification, and Leave Approval Notification. You can set a Default Email Template via <a onclick="loadContent('customize-form.html')">Customize Form</a>.</li>
+<li><strong>Send me a copy</strong>: This will send a copy to your email address. It's useful to ensure that the email was sent without any errors.</li>
+<li><strong>Send Read Receipt</strong>: Ticking this checkbox will send you a notification if the receiver has read the email. In case of multiple receivers, even if one has read the email, you'll get a notification.</li>
+<li><strong>Attach Document Print</strong>: Attach the PDF of the document you're sending via email.</li>
+<li><strong>Select Attachments</strong>: Any additional attachments can be added here.</li>
+</ul>
+<p>The following two fields are the fields which appear on the print screen:</p>
+<p><img alt="Email Print Options" class="screenshot" src="/files/email-print-options.png"/> </p>
+<ul>
+<li><strong>Select Print Format</strong>: The print format of the document. Know more about Print Format <a onclick="loadContent('print-format.html')">here</a>.</li>
+<li><strong>Select Languages</strong>: The language in which the PDF is to be generated.</li>
+</ul>
+<h3 id="related-topics">Related Topics<a aria-hidden="true" class="no-underline" href="#related-topics">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<ol>
+<li><a onclick="loadContent('email-domain.html')">Email Domain</a></li>
+<li><a onclick="loadContent('email-account.html')">Email Account</a></li>
+<li><a onclick="loadContent('email-inbox.html')">Email Inbox</a></li>
+</ol>
+</div>
+<input class="d-none" name="wiki-page-name" value="9jaiu8nb01"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="sending-email-from-any-document">Sending Email from any Document<a aria-hidden="true" class="no-underline" href="#sending-email-from-any-document">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content"><del class="diffmod">
+</del><ins class="diffmod">
+</ins><p><ins class="diffmod">In KanivinERP you can send any document as email (with a PDF attachment) by clicking on Menu &gt; Email after opening any document.</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod"><img alt="Send Email" class="screenshot" src="/files/send-email.gif"/> </ins></p><ins class="diffmod">
+</ins><p><strong><ins class="diffmod">Note:</ins></strong><ins class="diffmod"> You must have outgoing </ins><a href="/erpnext/v13/user/manual/en/setting-up/email/email-account"><ins class="diffmod">Email Accounts</ins></a><ins class="diffmod"> set up for this.</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod">After you click on send, the email gets added to the email queue. It will be in the Sending status until it is Sent. The status of the email is displayed in the queue, if sending has failed, it can be sent by clicking on Send Now.</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod"><img alt="Email Queue" class="screenshot" src="/files/email-queue.png"/> </ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod">The following options are available when sending an Email.</ins></p><ins class="diffmod">
+</ins><ul><ins class="diffmod">
+</ins><li><strong><ins class="diffmod">TO:</ins></strong><ins class="diffmod"> Recipients of the email.</ins></li><ins class="diffmod">
+</ins><li><strong><ins class="diffmod">From:</ins></strong><ins class="diffmod"> If user has access to multiple outgoing email accounts, the user can select which outgoing email account to use. Multiple outgoing email accounts can be configured from the User document by adding them to the "User Email" table.</ins></li><ins class="diffmod">
+</ins><li><strong><ins class="diffmod">CC</ins></strong><ins class="diffmod">: Carbon Copy of the email. Useful when you want to keep someone in the conversation loop but don't want to address the email directly to them.</ins></li><ins class="diffmod">
+</ins><li><strong><ins class="diffmod">BCC</ins></strong><ins class="diffmod">: Blind Carbon Copy is similar to CC but everyone else on the email thread cannot see that the mail was also sent to the BCC recipients. This is useful to hide the email address of certain people if you're sending the email to a lot of people who don't necessarily know each other.</ins></li><ins class="diffmod">
+</ins><li><strong><ins class="diffmod">Email Template</ins></strong><ins class="diffmod">: You can create preset templates to send out standard replies. Email Templates are already available in the system for Dispatch Notification, Leave Status Notification, and Leave Approval Notification. You can set a Default Email Template via </ins><a onclick="loadContent('customize-form.html')"><ins class="diffmod">Customize Form</ins></a><ins class="diffmod">.</ins></li><ins class="diffmod">
+</ins><li><strong><ins class="diffmod">Send me a copy</ins></strong><ins class="diffmod">: This will send a copy to your email address. It's useful to ensure that the email was sent without any errors.</ins></li><ins class="diffmod">
+</ins><li><strong><ins class="diffmod">Send Read Receipt</ins></strong><ins class="diffmod">: Ticking this checkbox will send you a notification if the receiver has read the email. In case of multiple receivers, even if one has read the email, you'll get a notification.</ins></li><ins class="diffmod">
+</ins><li><strong><ins class="diffmod">Attach Document Print</ins></strong><ins class="diffmod">: Attach the PDF of the document you're sending via email.</ins></li><ins class="diffmod">
+</ins><li><strong><ins class="diffmod">Select Attachments</ins></strong><ins class="diffmod">: Any additional attachments can be added here.</ins></li><ins class="diffmod">
+</ins></ul><ins class="diffmod">
+</ins><p><ins class="diffmod">The following two fields are the fields which appear on the print screen:</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod"><img alt="Email Print Options" class="screenshot" src="/files/email-print-options.png"/> </ins></p><ins class="diffmod">
+</ins><ul><ins class="diffmod">
+</ins><li><strong><ins class="diffmod">Select Print Format</ins></strong><ins class="diffmod">: The print format of the document. Know more about Print Format </ins><a onclick="loadContent('print-format.html')"><ins class="diffmod">here</ins></a><ins class="diffmod">.</ins></li><ins class="diffmod">
+</ins><li><strong><ins class="diffmod">Select Languages</ins></strong><ins class="diffmod">: The language in which the PDF is to be generated.</ins></li><ins class="diffmod">
+</ins></ul><ins class="diffmod">
+</ins><h3 id="related-topics"><del class="diffmod">No</del><ins class="diffmod">Related</ins> <del class="diffmod">Revisions</del><ins class="diffmod">Topics</ins><a aria-hidden="true" class="no-underline" href="#related-topics">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3><del class="diffmod">
+</del><ins class="diffmod">
+</ins><ol><ins class="diffmod">
+</ins><li><a onclick="loadContent('email-domain.html')"><ins class="diffmod">Email Domain</ins></a></li><ins class="diffmod">
+</ins><li><a onclick="loadContent('email-account.html')"><ins class="diffmod">Email Account</ins></a></li><ins class="diffmod">
+</ins><li><a onclick="loadContent('email-inbox.html')"><ins class="diffmod">Email Inbox</ins></a></li><ins class="diffmod">
+</ins></ol><ins class="diffmod">
+</ins></div>
+</div>
+</div></div></div></div></main>

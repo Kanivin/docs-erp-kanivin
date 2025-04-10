@@ -1,102 +1,83 @@
-<main><div class="from-markdown markdown ">
-	<div class="alert alert-warning admin-banner hide" role="alert">
-		<div class="d-flex justify-content-between align-items-center">
-			<div>This space has
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
 				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
 				review.
 			</div>
-			<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
-		</div>
-	</div>
-	<div class="d-flex justify-content-between align-items-center">
-		<h1 class="wiki-title" id="scrapping-an-asset">Scrapping an Asset
-<a class="no-underline" href="#scrapping-an-asset" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h1>
-	</div>
-	<div class="wiki-content">
-		<p><strong>When an asset is no longer usable, it is scrapped.</strong></p>
-
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title" id="scrapping-an-asset">Scrapping an Asset
+<a aria-hidden="true" class="no-underline" href="#scrapping-an-asset">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h1>
+</div>
+<div class="wiki-content">
+<p><strong>When an asset is no longer usable, it is scrapped.</strong></p>
 <p>You can scrap an asset anytime using the "Scrap Asset" button in the Asset record. You will be asked for confirmation, click on Yes and the asset will be scrapped.</p>
-
-<p><img src="/files/asset-scrapped.png" alt="Asset Scrapped" class="screenshot"></p>
-
+<p><img alt="Asset Scrapped" class="screenshot" src="/files/asset-scrapped.png"/></p>
 <p>The "Gain/Loss Account on Asset Disposal" account mentioned in the Company is debited by the Current Value (After Depreciation) of the asset.</p>
-
 <p>A Journal Entry will be created if you scrap an asset:</p>
-
-<p><img src="/files/scrap-journal-entry.png" alt="Asset" class="screenshot"></p>
-
+<p><img alt="Asset" class="screenshot" src="/files/scrap-journal-entry.png"/></p>
 <p>After scrapping, you can also restore the asset using "Restore Asset" button from the asset master.</p>
-
-<h4 id="related-topics">Related Topics<a class="no-underline" href="#related-topics" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h4>
-
+<h4 id="related-topics">Related Topics<a aria-hidden="true" class="no-underline" href="#related-topics">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h4>
 <ol>
-<li><a href="/erpnext/v13/user/manual/en/asset/asset-maintenance">Asset Maintenance</a></li>
-<li><a href="/erpnext/v13/user/manual/en/asset/asset-value-adjustment">Asset Value Adjustment</a></li>
-<li><a href="/erpnext/v13/user/manual/en/asset/asset-depreciation">Asset Depreciation</a></li>
+<li><a onclick="loadContent('asset-maintenance.html')">Asset Maintenance</a></li>
+<li><a onclick="loadContent('asset-value-adjustment.html')">Asset Value Adjustment</a></li>
+<li><a onclick="loadContent('asset-depreciation.html')">Asset Depreciation</a></li>
 </ol>
-
-	</div>
-	<input value="5rim12sjm4" class="d-none" name="wiki-page-name">
-	<div class="modal revisions-modal fade" id="revisionsModal" tabindex="-1" role="dialog" aria-labelledby="revisionsModalTitle" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <div class="d-flex flex-column">
-                    <h5 class="modal-title revision-title" id="scrapping-an-asset">Scrapping an Asset
-<a class="no-underline" href="#scrapping-an-asset" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h5>
-                    <span class="small text-muted revision-time">administrator edited 4 months ago</span>
-                </div>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="revision-content wiki-content"><del class="diffmod">
-                    </del><h3 id="no-revisions"><del class="diffmod">No</del><ins class="diffmod">
-		</ins><p><strong><ins class="diffmod">When</ins> <del class="diffmod">Revisions</del><ins class="diffmod">an asset is no longer usable, it is scrapped.</ins></strong></p><ins class="diffmod">
-
+</div>
+<input class="d-none" name="wiki-page-name" value="5rim12sjm4"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="scrapping-an-asset">Scrapping an Asset
+<a aria-hidden="true" class="no-underline" href="#scrapping-an-asset">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content"><del class="diffmod">
+</del><h3 id="no-revisions"><del class="diffmod">No</del><ins class="diffmod">
+</ins><p><strong><ins class="diffmod">When</ins> <del class="diffmod">Revisions</del><ins class="diffmod">an asset is no longer usable, it is scrapped.</ins></strong></p><ins class="diffmod">
 </ins><p><ins class="diffmod">You can scrap an asset anytime using the "Scrap Asset" button in the Asset record. You will be asked for confirmation, click on Yes and the asset will be scrapped.</ins></p><ins class="diffmod">
-
-</ins><p><ins class="diffmod"><img src="/files/asset-scrapped.png" alt="Asset Scrapped" class="screenshot"></ins></p><ins class="diffmod">
-
+</ins><p><ins class="diffmod"><img alt="Asset Scrapped" class="screenshot" src="/files/asset-scrapped.png"/></ins></p><ins class="diffmod">
 </ins><p><ins class="diffmod">The "Gain/Loss Account on Asset Disposal" account mentioned in the Company is debited by the Current Value (After Depreciation) of the asset.</ins></p><ins class="diffmod">
-
 </ins><p><ins class="diffmod">A Journal Entry will be created if you scrap an asset:</ins></p><ins class="diffmod">
-
-</ins><p><ins class="diffmod"><img src="/files/scrap-journal-entry.png" alt="Asset" class="screenshot"></ins></p><ins class="diffmod">
-
+</ins><p><ins class="diffmod"><img alt="Asset" class="screenshot" src="/files/scrap-journal-entry.png"/></ins></p><ins class="diffmod">
 </ins><p><ins class="diffmod">After scrapping, you can also restore the asset using "Restore Asset" button from the asset master.</ins></p><ins class="diffmod">
-
-</ins></h3><h4 id="related-topics"><ins class="diffmod">Related Topics</ins><a class="no-underline" href="#related-topics" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h4><del class="diffmod">
-
-                </del><ins class="diffmod">
-
+</ins></h3><h4 id="related-topics"><ins class="diffmod">Related Topics</ins><a aria-hidden="true" class="no-underline" href="#related-topics">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h4><del class="diffmod">
+</del><ins class="diffmod">
 </ins><ol><ins class="diffmod">
-</ins><li><a href="/erpnext/v13/user/manual/en/asset/asset-maintenance"><ins class="diffmod">Asset Maintenance</ins></a></li><ins class="diffmod">
-</ins><li><a href="/erpnext/v13/user/manual/en/asset/asset-value-adjustment"><ins class="diffmod">Asset Value Adjustment</ins></a></li><ins class="diffmod">
-</ins><li><a href="/erpnext/v13/user/manual/en/asset/asset-depreciation"><ins class="diffmod">Asset Depreciation</ins></a></li><ins class="diffmod">
+</ins><li><a onclick="loadContent('asset-maintenance.html')"><ins class="diffmod">Asset Maintenance</ins></a></li><ins class="diffmod">
+</ins><li><a onclick="loadContent('asset-value-adjustment.html')"><ins class="diffmod">Asset Value Adjustment</ins></a></li><ins class="diffmod">
+</ins><li><a onclick="loadContent('asset-depreciation.html')"><ins class="diffmod">Asset Depreciation</ins></a></li><ins class="diffmod">
 </ins></ol><ins class="diffmod">
-
-	</ins></div>
-            </div>
-           </main>
+</ins></div>
+</div>
+</div></div></div></div></main>

@@ -1,0 +1,113 @@
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title">Quality Inspection</h1>
+</div>
+<div class="wiki-content">
+<p>In KanivinERP, you can mark your incoming or outgoing products for Quality Inspection.</p>
+<p>To access this feature go to: </p>
+<blockquote>
+<p>Home &gt; Stock &gt; Tools &gt; Quality Inspection</p>
+</blockquote>
+<h2 id="1-prerequisites">1. Prerequisites</h2>
+<p>Before creating and using a Quality Inspection, it is advised that you do the following first:</p>
+<ul>
+<li><strong>Create an</strong> <a onclick="loadContent('item.html')"><strong>Item</strong></a>.</li>
+<li><strong>Enable Quality Inspection Criteria in the Item master</strong>. On enabling either checkboxes, <strong>submission</strong> of a stock delivery/receipt document will be allowed only after a Quality Inspection is done against it: <img alt="Enable Quality Inspection" class="screenshot" src="/files/quality-inspection-pre-requisite.png"/></li>
+<li>(Optional) <strong>Create a Quality Inspection Template</strong>. You can add inspection parameters and acceptance criteria in the template, which can be easily fetched into any Quality Inspection. After saving the template, you can set this template in the Item Master (as shown above). <img alt="Quality Inspection Template" class="screenshot" src="/files/quality-inspection-template.png"/></li>
+</ul>
+<h2 id="2-how-to-create-a-new-quality-inspection">2. How to create a new Quality Inspection</h2>
+<ol>
+<li>From a <strong>Draft</strong> Purchase/Subcontracting Receipt or Delivery Note, go to the Item table's Quality Inspection field and click on Create a New Quality Inspection. You can also create a Quality Inspection for Job Card in order to monitor the quality of in-process items. In this case, you can create a Quality Inspection for the Production Item in Job Card.</li>
+<li>Select the inspection type whether Incoming (Purchase), Outgoing (Sales), or In Process (Manufacturing).</li>
+<li>Select the Reference Document Type whether Purchase Receipt, Purchase Invoice, Delivery Note, Sales Invoice, Stock Entry, or Job Card.</li>
+<li>Select the Item and set the sample size which will be inspected. Note that only Items having Inspection Criteria enabled in the Item master, will be fetched.</li>
+<li>The Quality Inspection Template set in the Item master will be fetched.</li>
+<li>You can change who it's inspected by and also add who it's verified by.</li>
+<li>Any additional Remarks about the Inspection can be added.</li>
+<li>Save. Set the Status. Submit.</li>
+</ol>
+<p><img alt="Quality Inspection" class="screenshot" src="/files/quality-inspection-1.png"/> </p>
+<h2 id="3-features">3. Features</h2>
+<p>A single Quality Inspection consists of many Quality Checks (Parameters) within it. Each of these checks could be <a href="#31-numeric-quality-checks">Numeric</a>, <a href="#32-non-numeric-value-based-quality-checks">Non-numeric</a> or <a href="#33-formula-based-quality-checks">Formula Based</a>.</p>
+<h3 id="31-numeric-quality-checks">3.1 Numeric Quality Checks</h3>
+<p>Numeric Quality Checks include all checks that require number-based readings and acceptance criteria.</p>
+<p>E.g. checking if a reading is in a certain range.</p>
+<p>By default the checks are numeric. There are two fields: <strong>Minimum Value</strong> and <strong>Maximum Value</strong>, to define a range that <strong>each</strong> reading must be in. These fields can be set in the Quality Inspection Template once and be simply fetched into the Quality Inspection.</p>
+<p><img alt="Numeric Quality Check" class="screenshot" src="/files/quality-inspection-numeric-reading.png"/> </p>
+<p>If any of the readings entered are not within this range, the status on the row will be set to 'Rejected' automatically on Save.</p>
+<h3 id="32-non-numeric-value-based-quality-checks">3.2 Non-numeric (Value-Based) Quality Checks</h3>
+<p>Non-numeric Quality Checks include checks that require alphabetical values or those that do not require any mathematical calculations.</p>
+<p>E.g. checking if the color is white in a color quality check, Yes/No values for certain parameters, etc.</p>
+<p>For Non-numeric checks, enable the 'Non-numeric' checkbox. You will notice the field <strong>Acceptance Criteria Value</strong> and the section <strong>Value-Based Inspection</strong> are visible.</p>
+<p>Enter the field Reading Value. The Acceptance Criteria Value can be set in the Quality Inspection Template once and then be fetched into the Quality Inspection.</p>
+<p><img alt="Non-numeric Quality Check" class="screenshot" src="/files/quality-inspection-non-numeric-reading.png"/> </p>
+<p>If the Reading Value does not match the Acceptance Criteria Value, the status on the row will be set to 'Rejected' automatically on Save.</p>
+<h3 id="33-formula-based-quality-checks">3.3 Formula-Based Quality Checks</h3>
+<p>Formula-Based Quality Checks are useful for more complex scenarios where just specifying a range or an acceptance value is not enough.</p>
+<p>E.g. checking if the grade of a material is A/B/C, checking if the mean of some readings is within a certain range, etc.</p>
+<p>Formula-Based Quality Checks are applicable to Numeric and Non-numeric Quality Checks.</p>
+<p>Enable the 'Formula Based Criteria' checkbox to perform a Formula-Based Quality Check. You will then notice a field called <strong>Acceptance Criteria Formula</strong> where you can specify a formula that determines whether a certain check is Accepted or Rejected. This formula can be set in the Quality Inspection Template once and then be fetched into the Quality Inspection.</p>
+<p><img alt="Acceptance Criteria Formula" class="screenshot" src="/files/acceptance-criteria-formula.png"/> </p>
+<p>This formula depends on the many Reading fields in the Readings table.</p>
+<p>For Numeric readings, <code>reading_1</code>, <code>reading_2</code> and so on are accepted in the formula.</p>
+<p>For Non-numeric readings, only <code>reading_value</code> is accepted in the formula.</p>
+<p>Here are some examples of formulas:</p>
+<pre><code># Numeric
+(reading_1 + reading_2) &lt; 10 # sum of both readings is less than 10
+(reading_1 + reading_2) &lt;= 10 # sum of both readings is less than or equal to 10
+mean &lt; 15  # mean of non empty numeric readings is less than 15
+(reading_1 * 2) &lt; 20 # Reading 1 multiplied by 2 is less than 20
+(reading_1) / 2 &lt; 20 # Reading 1 divided by 2 is less than 20
+
+# Non-numeric
+reading_value in ("A", "B", "C") # Reading Value is either A / B / C
+reading_value != "Red" # Reading Value is not equal to Red
+
+
+</code></pre>
+<p>Update the readings and Save. The Status field in the Readings table rows is set automatically based on the formula for acceptance.</p>
+<h3 id="33-manual-inspection">3.3 Manual Inspection</h3>
+<p>So far, all the Quality Checks have automatic acceptance/rejection on Save. In the real world, there could be cases where a check is rejected but yet will be accepted because there is some tolerance.</p>
+<p>Such cases will require the user to determine the row-level status. To avoid any system interference in such checks, enable the 'Manual Inspection' checkbox. You can now set the status manually and it will be untouched on Save.</p>
+<p><img alt="Manual Inspection" class="screenshot" src="/files/quality-inspection-manual-reading.png"/> </p>
+<p>Here Reading 1 is outside the defined range, this check would be rejected. But, since it is not very far from 0.153 we accept it manually.</p>
+<p>The status for the entire Quality Inspection can then be decided by the user.</p>
+<h2 id="4-video">4. Video</h2>
+<h3 id="5-related-topics">5. Related Topics</h3>
+<ol>
+<li><a onclick="loadContent('purchase-receipt.html')">Purchase Receipt</a></li>
+<li><a onclick="loadContent('delivery-note.html')">Delivery Note</a></li>
+<li><a onclick="loadContent('stock-entry.html')">Stock Entry</a></li>
+<li><a onclick="loadContent('sales-invoice.html')">Sales Invoice</a></li>
+<li><a onclick="loadContent('purchase-invoice.html')">Purchase Invoice</a></li>
+<li><a onclick="loadContent('job-card.html')">Job Card</a></li>
+</ol>
+</div>
+<input class="d-none" name="wiki-page-name" value="2kaia194kh"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="revisionsModalTitle">Quality Inspection</h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content">
+<h3>No Revisions</h3>
+</div>
+</div>
+</div></div></div></div></main>

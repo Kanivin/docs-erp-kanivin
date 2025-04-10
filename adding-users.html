@@ -1,0 +1,243 @@
+
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title">Adding Users</h1>
+</div>
+<div class="wiki-content">
+<p>Users can be added by the System Manager. To add users go to: &gt; Home &gt; Users and Permissions &gt; User</p>
+<p>There are two main types of users:</p>
+<p><strong>Website users</strong>: Customers, Suppliers, Students, etc., who have access only to the portal and not to any modules. <strong>System Users</strong>: People using KanivinERP in the Company with access to modules, company data, etc.</p>
+<p>Read more about <a href="/erpnext/v13/user/manual/en/setting-up/articles/difference-between-system-user-and-website-user">difference between system and website user</a>.</p>
+<p>Under User, a lot of info can be entered. For the sake of usability, the information entered for web users is minimal: First Name and Email.</p>
+<p>An Email address is the unique key (ID) identifying the Users.</p>
+<h2 id="1-how-to-create-a-new-user">1. How to Create a New User</h2>
+<ol>
+<li>Go to the User list, click on New.</li>
+<li>Add an Email address and name of the user.</li>
+<li>Save.</li>
+</ol>
+<p><img alt="Add User Details" class="screenshot" src="/files/add-user-details.png"/></p>
+<p>Details like Username and Language can also be changed.</p>
+<h2 id="2-features">2. Features</h2>
+<h3 id="21-setting-roles">2.1 Setting Roles</h3>
+<p>After saving, you will see a list of roles and checkboxes next to them. Just check the roles you want the user to have and save the document. The roles have pre-defined permissions, to know more about roles, <a href="/erpnext/v13/user/manual/en/setting-up/users-and-permissions/role-based-permissions">click here</a>. You can set <a href="/erpnext/v13/user/manual/en/setting-up/users-and-permissions/role-and-role-profile">Role profiles</a> to use as a template which selects multiple roles together.</p>
+<p><img alt="User Roles" class="screenshot" src="/files/user-2.png"/> </p>
+<h3 id="22-more-information">2.2 More Information</h3>
+<p>More information about the employee can be set from this section:</p>
+<ul>
+<li>Gender</li>
+<li>Phone</li>
+<li>Mobile No</li>
+<li>Birth Date</li>
+<li>Location</li>
+<li>Interests</li>
+<li>Bio</li>
+<li>Banner Image</li>
+</ul>
+<p>Ticking on 'Mute Sounds' will mute sounds that play on interacting with documents. The user may need to do a Settings &gt; Reload for the changes to take place.</p>
+<h3 id="23-change-password">2.3 Change Password</h3>
+<ul>
+<li><strong>Set New Password</strong>: As a System Manager, you can set a new password for the user if it needs to be changed.</li>
+<li><strong>Send Password Update Notification</strong>: Send an email notification to the user that their password has been changed.</li>
+<li><strong>Log out from all devices while changing Password</strong>: When changing the user's password, this logs out the user from PC and any mobile device they may have logged into.</li>
+</ul>
+<h3 id="24-document-follow">2.4 Document Follow</h3>
+<p>With this option you can follow various documents in the system and get email notifications when they are updated. Know more <a href="/erpnext/v13/user/manual/en/setting-up/email/document-follow">here</a>.</p>
+<h3 id="25-email-settings">2.5 Email Settings</h3>
+<ul>
+<li><strong>Send Notifications for Email threads</strong>: The user will get notifications for Email conversations that take place in document types like Opportunities.</li>
+<li><strong>Send Me A Copy of Outgoing Emails</strong>: Sends the user a copy of the emails they send. This is useful for keeping track if the email got sent.</li>
+<li><strong>Allowed In Mentions</strong>: Allow this user's name to appear in thread conversations so that they can be mentioned using '@'.</li>
+<li><strong>Email Signature</strong>: Adding an email signature here will set it as default for all outgoing emails for the user. This is different from a footer which is set from the <a onclick="loadContent('company-setup.html')">Company master</a>.</li>
+</ul>
+<h3 id="26-email-inbox">2.6 Email Inbox</h3>
+<p>Subscribe the user to different mailing lists of your company from this section. Add a new row and select the mailing list to assign this user. For example, mailing lists can be jobs, support, sales, etc. To know more about Email Inbox, <a href="/erpnext/v13/user/manual/en/setting-up/email/email-inbox">click here</a>.</p>
+<h3 id="27-allow-module-access">2.7 Allow Module Access</h3>
+<p>Users will have access to all modules for which they have role-based access. If you want to restrict access of certain modules for this user, un-check the modules from this list.</p>
+<p><img alt="User Block Module" class="screenshot" src="/files/user-3.png"/> </p>
+<h4 id="271-module-profiles">2.7.1 Module Profiles</h4>
+<p>Role Profiles act as a template to store and select access to multiple modules. This Role Profile can then be assigned to a User. For example, HR Users will have access to multiple modules like HR, Payroll, etc. Role Profiles are useful to provide access to multiple modules at once when adding multiple users.</p>
+<p><img alt="Module Profile" class="screenshot" src="/files/module-profile.png"/> </p>
+<h3 id="28-security-settings">2.8 Security Settings</h3>
+<ul>
+<li><strong>Simultaneous Sessions</strong>: Simultaneous login sessions the user is allowed. You can use the same set of credentials for multiple users by allowing more sessions. This can be restricted from <a onclick="loadContent('system-settings#15-security.html')">System Settings</a> globally. For cloud account, the total number of simultaneous sessions cannot exceed the total number of subscribed users.</li>
+<li><strong>User Type</strong>: If the user has any role checked other than Customer, Supplier, Patient, or Student they automatically become a System User. This field is read-only.</li>
+<li><strong>Login After, Login Before</strong>: If you wish to give the user access to the system only between office hours, or during weekends, specify it here. For example, if office hours are from 10 am to 6 pm, set the Login After, Login Before hours as 10:00 and 18:00.</li>
+<li><strong>Restrict IP</strong>: Restrict user login to the IPs specified here. This can be used so that the user can log in only from office computers. Multiple IPs can be added separated by commas.</li>
+</ul>
+<p>This section also shows other details like Last Login, Last IP, and Last Active time for the user.</p>
+<h3 id="29-third-party-authentication">2.9 Third Party Authentication</h3>
+<p>This will allow users to use Facebook, Google, or GitHub to log in. To use this feature, signup for a developer account with Facebook, Google, GitHub, etc. Create an app on their console, specify an app name, the originating URL and callback URL, copy the client ID and client secret info here to start using.</p>
+<p>For more details, go to <a href="https://frappe.io/docs/v13/user/en/guides/deployment/how-to-enable-social-logins">this page</a>.</p>
+<h3 id="210-api-access">2.10 API Access</h3>
+<p>You can generate API Secret keys from this section using the Generate Keys button. This can be used to access your account's data from another application, for example, an offline POS system.</p>
+<h3 id="211-after-saving">2.11 After saving</h3>
+<p>After saving a user, these buttons will be seen on the dashboard area of the User master.</p>
+<p><img alt="User dashboard buttons" class="screenshot" src="/files/user-after-save.png"/> </p>
+<h4 id="permissions">Permissions</h4>
+<ul>
+<li><strong>Set User Permissions</strong>: Will take you to the <a onclick="loadContent('user-permissions.html')">User Permissions</a> page of Bruce from where you can restrict Bruce's access to documents.</li>
+<li><strong>View Permitted Documents</strong>: Will take you to the 'Permitted Documents For User' report for this user. Here you can see which documents does Bruce have access to. For example, on selected Sales Order, the list of Sales Orders Bruce has access to will be displayed.</li>
+</ul>
+<h4 id="password">Password</h4>
+<ul>
+<li><strong>Reset Password</strong>: An email with instructions to reset the user's password will be sent to the user's <a onclick="loadContent('email-account.html')">Email Account</a>.</li>
+<li><strong>Reset OTP Secret</strong>: Reset OTP Secret for logging in via Two Factor Authentication.</li>
+</ul>
+<p>Create User Email will let you create an <a href="/erpnext/v13/user/manual/en/setting-up/email/email-account">Email Account</a> for the user based on the email entered in the User master.</p>
+<h3 id="3-login-methods">3. Login Methods</h3>
+<p>In System Settings, under the Security section, if you check the 'Allow Login using Mobile No' checkbox, a mobile number can also be used to log in. While a Mobile No will be unique, it will not be treated as a user ID.</p>
+<p>Login with Email:</p>
+<p><img alt="Email Login" class="screenshot" src="/files/user-login-email.png"/> </p>
+<p>Login with Email or Mobile:</p>
+<p><img alt="Mobile No Login" class="screenshot" src="/files/user-login-mobile.png"/> </p>
+<p>After adding these details, save the user.</p>
+<h3 id="4-impersonating-a-user">4. Impersonating a user</h3>
+<blockquote>
+<p>New in version 15.</p>
+</blockquote>
+<p>Sometimes to understand a specific problem a user is facing, you might have to log in as that user. Administrator user can impersonate as any other user using the "Impersonate" button on the user document. </p>
+<p>Note:</p>
+<ul>
+<li>An activity log will be created whenever Administrators use "Impersonate" feature.</li>
+<li>Any document change where track changes are enabled will also indicate original user who impersonated someone else while modifying the document.</li>
+<li>The user you're impersonating will be notified.</li>
+</ul>
+<h3 id="5-related-topics">5. Related Topics</h3>
+<ol>
+<li><a onclick="loadContent('role-based-permissions.html')">Role Based Permissions</a></li>
+<li><a onclick="loadContent('user-permissions.html')">User Permissions</a></li>
+<li><a onclick="loadContent('document-follow.html')">Document Follow</a></li>
+</ol>
+</div>
+<input class="d-none" name="wiki-page-name" value="gpee004gta"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="revisionsModalTitle">Adding Users</h5>
+<span class="small text-muted revision-time">diptanil edited 1 week ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content">
+<p>Users can be added by the System Manager. To add users go to: &gt; Home &gt; Users and Permissions &gt; User</p>
+<p>There are two main types of users:</p>
+<p><strong>Website users</strong>: Customers, Suppliers, Students, etc., who have access only to the portal and not to any modules. <strong>System Users</strong>: People using KanivinERP in the Company with access to modules, company data, etc.</p>
+<p>Read more about <a href="/docs/v13/user/manual/en/setting-up/articles/difference-between-system-user-and-website-user">difference between system and website user</a>.</p>
+<p>Under User, a lot of info can be entered. For the sake of usability, the information entered for web users is minimal: First Name and Email.</p>
+<p>An Email address is the unique key (ID) identifying the Users.</p>
+<h2 id="1-how-to-create-a-new-user">1. How to Create a New User</h2>
+<ol>
+<li>Go to the User list, click on New.</li>
+<li>Add an Email address and name of the user.</li>
+<li>Save.</li>
+</ol>
+<p><img alt="Add User Details" class="screenshot" src="/files/add-user-details.png"/></p>
+<p>Details like Username and Language can also be changed.</p>
+<h2 id="2-features">2. Features</h2>
+<h3 id="21-setting-roles">2.1 Setting Roles</h3>
+<p>After saving, you will see a list of roles and checkboxes next to them. Just check the roles you want the user to have and save the document. The roles have pre-defined permissions, to know more about roles, <a href="/docs/v13/user/manual/en/setting-up/users-and-permissions/role-based-permissions">click here</a>. You can set <a href="/docs/v13/user/manual/en/setting-up/users-and-permissions/role-and-role-profile">Role profiles</a> to use as a template which selects multiple roles together.</p>
+<p><img alt="User Roles" class="screenshot" src="/files/user-2.png"/> </p>
+<h3 id="22-more-information">2.2 More Information</h3>
+<p>More information about the employee can be set from this section:</p>
+<ul>
+<li>Gender</li>
+<li>Phone</li>
+<li>Mobile No</li>
+<li>Birth Date</li>
+<li>Location</li>
+<li>Interests</li>
+<li>Bio</li>
+<li>Banner Image</li>
+</ul>
+<p>Ticking on 'Mute Sounds' will mute sounds that play on interacting with documents. The user may need to do a Settings &gt; Reload for the changes to take place.</p>
+<h3 id="23-change-password">2.3 Change Password</h3>
+<ul>
+<li><strong>Set New Password</strong>: As a System Manager, you can set a new password for the user if it needs to be changed.</li>
+<li><strong>Send Password Update Notification</strong>: Send an email notification to the user that their password has been changed.</li>
+<li><strong>Log out from all devices while changing Password</strong>: When changing the user's password, this logs out the user from PC and any mobile device they may have logged into.</li>
+</ul>
+<h3 id="24-document-follow">2.4 Document Follow</h3>
+<p>With this option you can follow various documents in the system and get email notifications when they are updated. Know more <a href="/docs/v13/user/manual/en/setting-up/email/document-follow">here</a>.</p>
+<h3 id="25-email-settings">2.5 Email Settings</h3>
+<ul>
+<li><strong>Send Notifications for Email threads</strong>: The user will get notifications for Email conversations that take place in document types like Opportunities.</li>
+<li><strong>Send Me A Copy of Outgoing Emails</strong>: Sends the user a copy of the emails they send. This is useful for keeping track if the email got sent.</li>
+<li><strong>Allowed In Mentions</strong>: Allow this user's name to appear in thread conversations so that they can be mentioned using '@'.</li>
+<li><strong>Email Signature</strong>: Adding an email signature here will set it as default for all outgoing emails for the user. This is different from a footer which is set from the <a href="/docs/v13/user/manual/en/setting-up/company-setup">Company master</a>.</li>
+</ul>
+<h3 id="26-email-inbox">2.6 Email Inbox</h3>
+<p>Subscribe the user to different mailing lists of your company from this section. Add a new row and select the mailing list to assign this user. For example, mailing lists can be jobs, support, sales, etc. To know more about Email Inbox, <a href="/docs/v13/user/manual/en/setting-up/email/email-inbox">click here</a>.</p>
+<h3 id="27-allow-module-access">2.7 Allow Module Access</h3>
+<p>Users will have access to all modules for which they have role-based access. If you want to restrict access of certain modules for this user, un-check the modules from this list.</p>
+<p><img alt="User Block Module" class="screenshot" src="/files/user-3.png"/> </p>
+<h4 id="271-module-profiles">2.7.1 Module Profiles</h4>
+<p>Role Profiles act as a template to store and select access to multiple modules. This Role Profile can then be assigned to a User. For example, HR Users will have access to multiple modules like HR, Payroll, etc. Role Profiles are useful to provide access to multiple modules at once when adding multiple users.</p>
+<p><img alt="Module Profile" class="screenshot" src="/files/module-profile.png"/> </p>
+<h3 id="28-security-settings">2.8 Security Settings</h3>
+<ul>
+<li><strong>Simultaneous Sessions</strong>: Simultaneous login sessions the user is allowed. You can use the same set of credentials for multiple users by allowing more sessions. This can be restricted from <a href="/docs/v13/user/manual/en/setting-up/settings/system-settings#15-security">System Settings</a> globally. For cloud account, the total number of simultaneous sessions cannot exceed the total number of subscribed users.</li>
+<li><strong>User Type</strong>: If the user has any role checked other than Customer, Supplier, Patient, or Student they automatically become a System User. This field is read-only.</li>
+<li><strong>Login After, Login Before</strong>: If you wish to give the user access to the system only between office hours, or during weekends, specify it here. For example, if office hours are from 10 am to 6 pm, set the Login After, Login Before hours as 10:00 and 18:00.</li>
+<li><strong>Restrict IP</strong>: Restrict user login to the IPs specified here. This can be used so that the user can log in only from office computers. Multiple IPs can be added separated by commas.</li>
+</ul>
+<p>This section also shows other details like Last Login, Last IP, and Last Active time for the user.</p>
+<h3 id="29-third-party-authentication">2.9 Third Party Authentication</h3>
+<p>This will allow users to use Facebook, Google, or GitHub to log in. To use this feature, signup for a developer account with Facebook, Google, GitHub, etc. Create an app on their console, specify an app name, the originating URL and callback URL, copy the client ID and client secret info here to start using.</p>
+<p>For more details, go to <a href="https://frappe.io/docs/v13/user/en/guides/deployment/how-to-enable-social-logins">this page</a>.</p>
+<h3 id="210-api-access">2.10 API Access</h3>
+<p>You can generate API Secret keys from this section using the Generate Keys button. This can be used to access your account's data from another application, for example, an offline POS system.</p>
+<h3 id="211-after-saving">2.11 After saving</h3>
+<p>After saving a user, these buttons will be seen on the dashboard area of the User master.</p>
+<p><img alt="User dashboard buttons" class="screenshot" src="/files/user-after-save.png"/> </p>
+<h4 id="permissions">Permissions</h4>
+<ul>
+<li><strong>Set User Permissions</strong>: Will take you to the <a href="/docs/v13/user/manual/en/setting-up/users-and-permissions/user-permissions">User Permissions</a> page of Bruce from where you can restrict Bruce's access to documents.</li>
+<li><strong>View Permitted Documents</strong>: Will take you to the 'Permitted Documents For User' report for this user. Here you can see which documents does Bruce have access to. For example, on selected Sales Order, the list of Sales Orders Bruce has access to will be displayed.</li>
+</ul>
+<h4 id="password">Password</h4>
+<ul>
+<li><strong>Reset Password</strong>: An email with instructions to reset the user's password will be sent to the user's <a href="/docs/v13/user/manual/en/setting-up/email/email-account">Email Account</a>.</li>
+<li><strong>Reset OTP Secret</strong>: Reset OTP Secret for logging in via Two Factor Authentication.</li>
+</ul>
+<p>Create User Email will let you create an <a href="/docs/v13/user/manual/en/setting-up/email/email-account">Email Account</a> for the user based on the email entered in the User master.</p>
+<h3 id="3-login-methods">3. Login Methods</h3>
+<p>In System Settings, under the Security section, if you check the 'Allow Login using Mobile No' checkbox, a mobile number can also be used to log in. While a Mobile No will be unique, it will not be treated as a user ID.</p>
+<p>Login with Email:</p>
+<p><img alt="Email Login" class="screenshot" src="/files/user-login-email.png"/> </p>
+<p>Login with Email or Mobile:</p>
+<p><img alt="Mobile No Login" class="screenshot" src="/files/user-login-mobile.png"/> </p>
+<p>After adding these details, save the user.</p>
+<h3 id="4-impersonating-a-user">4. Impersonating a user</h3>
+<blockquote>
+<p>New in version 15.</p>
+</blockquote>
+<p>Sometimes to understand a specific problem a user is facing, you might have to log in as that user. Administrator user can impersonate as any other user using the "Impersonate" button on the user document. </p>
+<p>Note:</p>
+<ul>
+<li>An activity log will be created whenever Administrators use "Impersonate" feature.</li>
+<li>Any document change where track changes are enabled will also indicate original user who impersonated someone else while modifying the document.</li>
+<li>The you're impersonating will be notified.</li>
+</ul>
+<h3 id="5-related-topics">5. Related Topics</h3>
+<ol>
+<li><a href="/docs/v13/user/manual/en/setting-up/users-and-permissions/role-based-permissions">Role Based Permissions</a></li>
+<li><a href="/docs/v13/user/manual/en/setting-up/users-and-permissions/user-permissions">User Permissions</a></li>
+<li><a href="/docs/v13/user/manual/en/setting-up/email/document-follow">Document Follow</a></li>
+</ol>
+</div>
+</div></div></div></div></div></main>

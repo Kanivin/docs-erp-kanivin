@@ -1,0 +1,232 @@
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title">Payment Entry</h1>
+</div>
+<div class="wiki-content">
+<p><strong>A Payment Entry is a record indicating that payment has been made for an invoice.</strong></p>
+<p>Payment Entry can be made against the following transactions.</p>
+<ul>
+<li>Sales Invoice</li>
+<li>Purchase Invoice</li>
+<li>Sales Order (Advance Payment)</li>
+<li>Purchase Order (Advance Payment)</li>
+<li>Expense Claim</li>
+<li>Internal Transfer</li>
+</ul>
+<p>In KanivinERP, there are two options through which User can capture the payment:</p>
+<ul>
+<li>Payment Entry (Default)</li>
+<li>Journal Entry</li>
+</ul>
+<p>Here are diagrams to understand the flow:</p>
+<p>In Sales: <img alt="Payment Sales" class="screenshot" src="/files/pe-sales.png"/> </p>
+<p>In Purchase: <img alt="Payment Purchase" class="screenshot" src="/files/pe-purchase.png"/> </p>
+<p>To access the Payment Entry list, go to:</p>
+<blockquote>
+<p>Home &gt; Accounting &gt; Accounts Receivable/Payable &gt; Payment Entry</p>
+</blockquote>
+<h2 id="1-prerequisites">1. Prerequisites</h2>
+<p>A Payment Entry can also be created directly then linked to an order/invoice later. Before creating and using Payment Entry, it is advised to create the following first:</p>
+<ol>
+<li><a onclick="loadContent('customer.html')">Customer</a></li>
+<li><a onclick="loadContent('supplier.html')">Supplier</a></li>
+<li><a onclick="loadContent('bank-account.html')">Bank Account</a></li>
+</ol>
+<p>If you're following the Sales/Purchase Cycle, you'd need the following:</p>
+<ol>
+<li><a onclick="loadContent('sales-order.html')">Sales Order</a> (Advance Payment)</li>
+<li><a onclick="loadContent('purchase-order.html')">Purchase Order</a> (Advance Payment)</li>
+<li><a onclick="loadContent('sales-invoice.html')">Sales Invoice</a></li>
+<li><a onclick="loadContent('purchase-invoice.html')">Purchase Invoice</a></li>
+</ol>
+<p>Set up:</p>
+<ol>
+<li><a onclick="loadContent('chart-of-accounts.html')">Chart Of Accounts</a></li>
+<li><a onclick="loadContent('company-setup.html')">Company</a> (for default accounts)</li>
+</ol>
+<h2 id="2-how-to-create-a-payment-entry">2. How to create a Payment Entry</h2>
+<p>On submitting a document against which Payment Entry can be made, you will find the Payment option under the <strong>Create</strong> button.</p>
+<p><img alt="Payment Entry from Sales Invoice" class="screenshot" src="/files/payment-entry-button-in-sales-invoice.png"/> </p>
+<ol>
+<li>Change the posting date.</li>
+<li>The Payment Type will be set based on the transaction you're coming from. The types are 'Receive', 'Pay', and 'Internal Transfer'.</li>
+<li>The Party Type, Party, Party Name will be fetched automatically.</li>
+<li>The Account Paid To and Account Paid From will be fetched as set in the <a onclick="loadContent('company-setup.html')">Company form</a>.</li>
+<li>The Amount Paid will be fetched from the Invoice.</li>
+<li>Save and Submit. <img alt="Payment Entry from SO" class="screenshot" src="/files/payment-entry-from-invoice.gif"/></li>
+</ol>
+<h3 id="21-creating-a-payment-manually">2.1 Creating a Payment Manually</h3>
+<p>A Payment Entry created manually will have no order/invoice linked to it. Payments made this will be recorded in the Customer's/Supplier's account and can be reconciled later using the <a href="/erpnext/v13/user/manual/en/accounts/payment-reconciliation">Payment Reconciliation Tool</a>.</p>
+<ol>
+<li>Go to the Payment Entry list and click on New.</li>
+<li>Select the Party Type and the respective Customer/Supplier.</li>
+<li>Select the Bank Account/Cash Account Paid To and Paid From. Enter the Cheque Number and date if bank transfer.</li>
+<li>Enter the Amount Paid.</li>
+<li>Save and Submit.</li>
+</ol>
+<h2 id="3-features">3. Features</h2>
+<h3 id="31-setting-mode-of-payment">3.1 Setting Mode of Payment</h3>
+<p><strong>Mode of Payment</strong>: Entering this helps classify Payment Entries based on the payment mode used. Modes of Payment can be Bank, Cash, Wire Transfer, etc.</p>
+<blockquote>
+<p><strong>Tip</strong>: In the <a href="/erpnext/v13/user/manual/en/accounts/mode-of-payment">Mode of Payment</a> master, default Account can be set. This default payment Account will be fetched into Payment Entries.</p>
+</blockquote>
+<h3 id="32-payment-fromto">3.2 Payment From/To</h3>
+<p><img alt="Payment Party" class="screenshot" src="/files/payment-from-to.png"/> </p>
+<ul>
+<li><strong>Party Type</strong>: Whether Customer, Supplier, Employee, Shareholder, Student, or NGO Member.</li>
+<li><strong>Party</strong>: The specific party for which the Payment Entry is made.</li>
+<li><strong>Party Name</strong>: The name of the party, this is fetched automatically.</li>
+<li><strong>Company Bank Account</strong>: Your Company's <a onclick="loadContent('bank-account.html')">Bank Account</a>.</li>
+<li><strong>Party Bank Account</strong>: The Party's <a onclick="loadContent('bank-account.html')">Bank Account</a>.</li>
+<li><strong>Contact</strong>: If the Party is an organization, a Contact person can be stored here.</li>
+</ul>
+<h3 id="33-accounts">3.3 Accounts</h3>
+<p><img alt="Payment Accounts" class="screenshot" src="/files/payment-accounts.png"/> </p>
+<ul>
+<li><strong>Party Balance</strong>: The overall amount receivable or payable from Customer or Supplier from Invoices set in the current Payment Entry. Paid amounts will be positive and if advance payments are made, they will be negative.</li>
+<li><strong>Account Paid From</strong>: The <a onclick="loadContent('chart-of-accounts.html')">Account</a> from which the amount will be deducted when Payment is submitted.</li>
+<li><strong>Account Paid To</strong>: The <a onclick="loadContent('chart-of-accounts.html')">CoA account</a> from which the amount will be added when Payment Entry is submitted.</li>
+<li><strong>Account Currency</strong>: The Currencies of these accounts will be fetched as set in the <a onclick="loadContent('chart-of-accounts.html')">Account</a> and cannot be edited here. To know about more about transactions in multiple currencies, <a onclick="loadContent('multi-currency-accounting.html')">visit this page</a>.</li>
+<li><strong>Account Balance</strong>: The total amount balance from all the invoices of the selected accounts.</li>
+</ul>
+<p><strong>Paid Amount</strong>: The <strong>total amount</strong> paid for the current Payment Entry is shown in this field.</p>
+<blockquote>
+<p><strong>Note</strong>: When making Payment Entries, the default bank account will be fetched in the following order if set:</p>
+</blockquote>
+<blockquote>
+<ul>
+<li>Company form</li>
+<li>Mode of Payment default account</li>
+<li>Customer/Supplier default bank account</li>
+<li>Select manually in Payment Entry</li>
+</ul>
+</blockquote>
+<h3 id="34-reference">3.4 Reference</h3>
+<h4 id="fetching-outstanding-invoices">Fetching outstanding Invoices</h4>
+<p>This can be used to make payments to multiple Sales Invoices using one Payment Entry. When creating a new Payment Entry, on clicking the <strong>Get Outstanding Invoices</strong> button or the <strong>Get Outstanding Orders</strong> button, all the outstanding Invoices and open Orders respectively will be fetched for the party. You need to enter the 'Paid Amount' to see this button. From here a date range and invoices to be fetched can be selected.</p>
+<p>If the Party has not made full payment, enter the amount paid in the 'Allocated' field.</p>
+<p>If creating Payment Entry for a Customer, the Payment Amount will be allocated against a Sales Invoice. On the same lines, when creating Payment Entry for a Supplier, Payment Amount will be allocated against a Purchase Invoice.</p>
+<h4 id="payment-references-table">Payment References table</h4>
+<ul>
+<li><strong>Type</strong>: Whether the payment is being made against a Sales Order, Sales Invoice, or a Journal Entry.</li>
+<li><strong>Name</strong>: The particular transaction ID is fetched/selected here.</li>
+<li><strong>Total Amount</strong>: The total amount of one Invoice/Journal Entry in the row.</li>
+<li><strong>Outstanding</strong>: The amount to receive/to pay for this invoice.</li>
+<li><strong>Allocated</strong>: If the Paid Amount is less than the invoice amount only the paid amount will be allocated to the invoice(s) fetched in the Payment Entry. The payment may be made in parts, for example, if there are three invoices of amounts 20, 20, 20, the Paid Amount is 60 then this Paid Amount will be distributed equally. <a onclick="loadContent('payment-terms.html')">Payment Terms</a> may also be involved.</li>
+</ul>
+<p><img alt="payment&lt;em&gt;entry&lt;/em&gt;get&lt;em&gt;outstanding&lt;/em&gt;buttons" class="screenshot" src="/files/payment_entry_get_outstanding_buttons.png" title="payment_entry_get_outstanding_buttons.png"/> </p>
+<h4 id="what-is-unallocated-amount">What is Unallocated Amount?</h4>
+<p>When a Payment Entry is made in KanivinERP and the Paid Amount is more than the total invoice amount, it is stored in the Customer's/Supplier's account. This amount is hence currently 'Unallocated'. Unallocated amount can be used against future invoices.</p>
+<p>For example, you create a Sales Invoice totaling 1,000 and the Customer paid 1,500. When another invoice is created for this Customer in the future for 1,000 again, the previously paid 500 can be used.</p>
+<h3 id="35-deductions-or-loss">3.5 Deductions or Loss</h3>
+<p>When a Payment Entry is created against an invoice, there could be some difference in the actual Paid Amount and the invoice outstanding amount. This difference could be due to rounding errors or changes in the currency exchange rate. You can set an Account here where this difference amount will be booked.</p>
+<p>The loss/deductions can be written off. Let's see an example here where the paid amount is 25 but the allocated amount is 30 since 30 is the amount to be collected as per the invoice. The 'Difference Amount' will be 5 in this case. This difference amount can occur due to discounts or Currency Exchange. The Difference Amount needs to be 0 in order to submit the Payment Entry. This can be adjusted using the <strong>Make Difference Entry</strong> button. The amount will be adjusted in the Write Off account.</p>
+<p><img alt="Writing Off" class="screenshot" src="/files/payment-write-off.gif"/> </p>
+<h3 id="36-write-off">3.6 Write Off</h3>
+<p>Write off happens when the paid amount is less than the allocated amount. I.e. the remaining amount is considered as lost in miscellaneous charges or that amount isn't going to be paid. This is considered as loss.</p>
+<h3 id="35-after-submitting">3.5 After Submitting</h3>
+<p>Save and Submit Payment Entry. On submission, outstanding will be updated in the Invoices.</p>
+<p><img alt="Invoice Status Updated To Paid" class="screenshot" src="/files/invoice-marked-paid-by-payment-entry.png"/> </p>
+<p>If payment entry was created against Sales Order or Purchase Order, the field 'Advance Paid' will be updated in them. When creating Invoice against those transactions, Payment Entry will be auto-updated in that Invoice so that you can allocate invoice amount against advance payment entry.</p>
+<p>For incoming payment, the accounts posting will be done as follows.</p>
+<ul>
+<li>Debit: Bank or Cash Account</li>
+<li>Credit: Customer (Debtor)</li>
+</ul>
+<p>For outgoing payment:</p>
+<ul>
+<li>Debit: Supplier (Creditor)</li>
+<li>Credit: Bank or Cash Account</li>
+</ul>
+<h2 id="4-other-cases">4. Other cases</h2>
+<h3 id="41-multi-currency-payment-entry">4.1 Multi Currency Payment Entry</h3>
+<p>If you want to maintain a receivable/payable account in foreign currency, then create accounts with foreign currency (different from Company currency) and link it in the party account. For example:</p>
+<p><img alt="Non-standard Currency in Receivable in Customer" class="screenshot" src="/files/non-standard-currency-receivable.png"/> </p>
+<p>KanivinERP allows you maintain accounts and invoicing in <a href="/erpnext/v13/user/manual/en/accounts/multi-currency-accounting">multiple currency</a>. If an invoice is made in the party currency, Currency Exchange Rate between the Company's base currency and party currency is also entered in the invoice.</p>
+<blockquote>
+<p>Note: A separate Debtor/Creditor account needs to be created and selected in the Sales Invoice/Order for currency exchange to work correctly. For example, if the Customer is from the US, create a receivable account called 'Debtors US'.</p>
+</blockquote>
+<p>When creating Payment Entry against that invoice, the current exchange rate will be fetched, but you can set the Currency Exchange Rate at the time of payment to match your records.</p>
+<p>Click on the <strong>Set Exchange Gain/Loss</strong> button to automatically add a row to write off the difference amount.</p>
+<p><img alt="Exchange Rate in Payment Entry" class="screenshot" src="/files/exchange-rate-in-payment-entry.png"/> </p>
+<p>Since Currency Exchange Rate fluctuates all the time, it can lead to a difference in the payment amount against invoice total. This difference amount can be booked in the Currency Exchange Gain/Loss Amount.</p>
+<p><img alt="Exchange Gain Loss Ledger" class="screenshot" src="/files/exchange-gain-loss-ledger.png"/> </p>
+<p>Payments can also be made independent of invoices by creating a new Payment Entry.</p>
+<p>To know more about managing transactions in multiple currencies <a href="/erpnext/v13/user/manual/en/accounts/articles/managing-transactions-in-multiple-currency">visit this page</a>.</p>
+<h3 id="42-internal-transfer">4.2 Internal Transfer</h3>
+<p>Internal Transfer is used in cases where the money is transferred between the same Company's accounts. For example, if a customer from the US using PayPal, transferring money from PayPal to a bank account can be considered as Internal Transfer.</p>
+<p>Following internal transfers can be managed from the Payment Entry.</p>
+<ol>
+<li>Bank - Cash</li>
+<li>Bank - Bank</li>
+<li>Cash - Cash</li>
+<li>Cash - Bank</li>
+</ol>
+<p><img alt="Internal Transfer via Payment Entry" class="screenshot" src="/files/payment-entry-internal-transfer.png"/> </p>
+<h3 id="43-managing-different-payment-scenarios">4.3 Managing Different Payment Scenarios</h3>
+<p>For an unpaid invoice, outstanding amount = grand total. When creating Payment Entries, the value in the outstanding amount will reduce.</p>
+<p>In most cases, apart from retail sales, billing and payments are separate activities. There are several combinations in which these payments are done. These cases apply to both Sales and Purchases.</p>
+<ul>
+<li>They can be upfront (100% in advance).</li>
+<li>Post shipment. Either on delivery or within a few days of delivery.</li>
+<li>Part in advance and part on or post delivery.</li>
+<li>Payments can be made together for a bunch of invoices.</li>
+<li>Advances can be given together for a bunch of invoices (and can be split across invoices).</li>
+</ul>
+<p>KanivinERP allows you to manage all these scenarios. All accounting entries (GL Entry) can be made against a Sales Invoice, Purchase Invoice or Payment Entry of advance payment (in special cases, an invoice can be made via a Sales Invoice too).</p>
+<p>The total outstanding amount against an invoice is the sum of all the accounting entries that are made “against” (or are linked to) that invoice. This way you can combine or split payments in Payment Entry to manage the scenarios.</p>
+<h3 id="44-difference-between-payment-entry-and-journal-entry">4.4 Difference between Payment Entry and Journal Entry</h3>
+<ol>
+<li>Using Journal Entry requires an understanding of which Account will get Debited or Credited. In the Payment Entry, it is managed in the backend, hence simpler for the User.</li>
+<li>Payment Entry is more efficient in managing payments in foreign currencies.</li>
+<li>Cheques can be printed from Payment Entries using the Cheque Print Format.</li>
+<li><p>Journal Entry can still be used for:</p>
+<ul>
+<li>Updating opening balance in Accounts.</li>
+<li>Fixed Asset Depreciation entry.</li>
+<li>For adjusting Credit Note against Sales Invoice and Debit Note against Purchase Invoice, in case there is no payment happening at all.</li>
+</ul></li>
+</ol>
+<h3 id="45-payments-using-journal-entry">4.5 Payments Using Journal Entry</h3>
+<p>To make payment using Journal Entry follow these steps:</p>
+<ol>
+<li>Activate Payment via Journal Entry. Go to <strong>Accounting &gt; Accounting Masters &gt; Accounts Settings</strong>, check the box 'Make Payment via Journal Entry'. <img alt="Enable Payment Entry via Journal ENtry" class="screenshot" src="/files/enable-payment-entry-via-journal-entry.png"/></li>
+<li>On submitting a document against which Journal Entry can be made, you will find the Payment under the <strong>Create</strong> button.</li>
+<li>Save and submit the journal entry to record the payment against the invoice</li>
+</ol>
+<h2 id="5-related-topics">5. Related Topics</h2>
+<ol>
+<li><a onclick="loadContent('payment-request.html')">Payment Request</a></li>
+<li><a onclick="loadContent('payment-terms.html')">Payment Terms</a></li>
+<li><a onclick="loadContent('sales-invoice.html')">Sales Invoice</a></li>
+<li><a onclick="loadContent('purchase-invoice.html')">Purchase Invoice</a></li>
+</ol>
+</div>
+<input class="d-none" name="wiki-page-name" value="kjkj6jrc98"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="revisionsModalTitle">Payment Entry</h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content">
+<h3>No Revisions</h3>
+</div>
+</div>
+</div></div></div></div></main>

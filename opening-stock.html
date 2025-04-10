@@ -1,0 +1,65 @@
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title">Opening Stock
+</h1>
+</div>
+<div class="wiki-content">
+<p><strong>Opening Stock is the amount and value of materials that a company has available for sale or use at the beginning of an accounting period.</strong></p>
+<p>The closing Stock of the previous accounting period becomes the opening Stock of the current accounting period.</p>
+<h2 id="1-prerequisites">1. Prerequisites</h2>
+<ul>
+<li>Create <a onclick="loadContent('warehouse.html')">Warehouses</a>.</li>
+<li>Link Warehouse to appropriate accounting ledgers.</li>
+</ul>
+<h2 id="2-opening-stock-for-non-serialized-items">2. Opening Stock for Non-serialized Items</h2>
+<p>To post opening stock visit the <a href="/erpnext/v13/user/manual/en/stock/stock-reconciliation">Stock Reconciliation</a> page.</p>
+<h2 id="3-opening-stock-for-serialized-and-batched-items">3. Opening Stock for Serialized and Batched Items</h2>
+<p>Create the <a href="/erpnext/v13/user/manual/en/stock/batch">Batch</a> and <a href="/erpnext/v13/user/manual/en/stock/serial-no">Serial No</a> records beforehand. To post opening stock for serialized and batched items:</p>
+<ol>
+<li>Go to <strong>Stock &gt; Stock Transactions &gt; Stock Entry &gt; New</strong>.</li>
+<li>Select 'Material Receipt' in 'Stock Entry Type'.</li>
+<li>Select the Warehouse in 'Default Target Warehouse'.</li>
+<li>In Items table select Item Code, Qty and Basic rate.</li>
+<li>For batched items select Batch No.</li>
+<li>For serialized items select Serial No.</li>
+<li>Save and Submit.</li>
+</ol>
+<h2 id="4-video">4. Video</h2>
+<iframe allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/nlHX0ZZ84Lw?end=120">
+</iframe>
+<h3 id="5-related-topics">5. Related Topics</h3>
+<ol>
+<li><a onclick="loadContent('accounting-of-inventory-stock.html')">Accounting Of Inventory Stock</a></li>
+<li><a onclick="loadContent('stock-entry.html')">Stock Entry</a></li>
+<li><a onclick="loadContent('stock-reconciliation.html')">Stock Reconciliation</a></li>
+</ol>
+</div>
+<input class="d-none" name="wiki-page-name" value="52re6l7oms"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="revisionsModalTitle">Opening Stock
+</h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content">
+<h3>No Revisions</h3>
+</div>
+</div>
+</div></div></div></div></main>

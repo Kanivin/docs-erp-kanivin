@@ -1,0 +1,83 @@
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title">Bank Account
+</h1>
+</div>
+<div class="wiki-content">
+<p>In KanivinERP, Bank Accounts can be created for a Company as well as other parties like Customers, Suppliers etc. Doing this lets you record all the bank transactions correctly for accounting accuracy.</p>
+<p>You can add Bank Accounts in KanivinERP for Company. Supplier, Customer, or any other party with whom transactions are carried out. Then the Bank Account can be chosen in <a href="/erpnext/v13/user/manual/en/accounts/payment-entry">Payment Entries</a> as a <a href="/erpnext/v13/user/manual/en/accounts/mode-of-payment">Mode of Payment</a>.</p>
+<p>To access Bank Account, go to:</p>
+<blockquote>
+<p>Home &gt; Accounting &gt; Bank Statement &gt; Bank Account</p>
+</blockquote>
+<p><img alt="Bank Account" class="screenshot" src="/files/bank-account.png"/></p>
+<h2 id="1-prerequisites">1. Prerequisites</h2>
+<p>Before creating and using Bank Account, it is advised to create the following first:</p>
+<ul>
+<li><a onclick="loadContent('bank.html')">Bank</a></li>
+</ul>
+<h2 id="2-how-to-create-a-bank-account">2. How to create a Bank Account</h2>
+<ol>
+<li>Enter an Account Name.</li>
+<li>Link the General Ledger account set in 'Bank Accounts' in the <a onclick="loadContent('chart-of-accounts.html')">Chart of Accounts</a>.</li>
+<li>Select a Bank.</li>
+<li>Save.</li>
+</ol>
+<h3 id="21-additional-options-when-creating-a-bank-account">2.1 Additional options when creating a Bank Account</h3>
+<ul>
+<li><strong>Is the Default Account</strong>: Enabling this will use this as the default bank account for all journal transactions.</li>
+<li><strong>Is Company Account</strong>: Enable if this Bank Account a Company account.</li>
+<li>An Account Type and Account Subtype can be set for further classification in reports etc.</li>
+</ul>
+<h2 id="3-features">3. Features</h2>
+<h3 id="31-party-details">3.1 Party Details</h3>
+<ul>
+<li><strong>Party Type</strong>: If this is not a company account, set who this account belongs to. The available options are: Customer, Employee, Member, Shareholder, Student, and Supplier.</li>
+<li><strong>Party</strong>: Select the specific Customer/Supplier, etc.</li>
+</ul>
+<h3 id="32-account-details">3.2 Account Details</h3>
+<p>For reference, the following details about a Bank Account can be stored in KanivinERP:</p>
+<ul>
+<li>IBAN</li>
+<li>Bank Account No</li>
+<li>Branch Code</li>
+<li>SWIFT number</li>
+</ul>
+<h3 id="33-address-and-contact">3.3 Address and Contact</h3>
+<ul>
+<li><strong>Address</strong>: A bank may have multiple in the same locality. The bank branch address can be set here.</li>
+<li><strong>Contact</strong>: A Contact Person can be linked here. Banks usually provide a dedicated contact person for corporate accounts, you can add that person's contact here.</li>
+<li><strong>Website</strong>: You can add the bank's website here.</li>
+</ul>
+<h3 id="34-integration-details">3.4 Integration Details</h3>
+<p><strong>Last Integration Date</strong>: If your bank supports <a href="/erpnext/v13/user/manual/en/erpnext_integration/plaid_integration">Plaid Integration</a>, setting a date here will synchronize on the set date. This will create Bank Transactions entries.</p>
+</div>
+<input class="d-none" name="wiki-page-name" value="j60kvgcih9"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="revisionsModalTitle">Bank Account
+</h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content">
+<h3>No Revisions</h3>
+</div>
+</div>
+</div></div></div></div></main>

@@ -1,0 +1,161 @@
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title" id="email-domain">Email Domain<a aria-hidden="true" class="no-underline" href="#email-domain">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h1>
+</div>
+<div class="wiki-content">
+<p><strong>The <code>Email Domain</code> is the display name of an email network/service account you're setting up for your email services in ERPNex and other Frappe apps.</strong></p>
+<p>You can skip to <a href="/erpnext/v13/user/manual/en/setting-up/email/email-account">Email Account</a> creation if you are using one of the services listed <a href="/erpnext/v13/user/manual/en/setting-up/email/email-inbox#2-create-an-email-domain">here</a>.</p>
+<p>You can configure Email Domains in KanivinERP for easy setup of all Email Accounts. To find Email Domain settings go to:</p>
+<blockquote>
+<p>Home &gt; Settings &gt; Email Domain</p>
+</blockquote>
+<p><strong>What is my Email Domain?:</strong> You might have purchased an Email service from your internet service provider or your IT services provider. For example, if you access your business mailbox with URL like http://mail.yourcompany.com, then yourcompany.com is expected to be used as your email domain. ERPnext tries to guess the <code>Email Domain</code> from your initially entered example <code>Email Address</code> if you started from there.</p>
+<p>If you want to send and receive emails on your KanivinERP account, you need to correctly setup an <code>Email Domain</code>. You may be using free mail services like GMail or Yahoo. In this case, you don't need to create a domain, instead select a service provider from the list. However, you might have to allow access to KanivinERP for your GMail account.</p>
+<p>KanivinERP creates a template <code>Email Domain</code> using example.com for your reference. You should add your new domain if you want to use it in your KanivinERP account.</p>
+<blockquote>
+<p><strong>IMPORTANT:</strong> If your actual mail account id differs from the work email address you use in the <code>Email Account</code>setup later, you need to use the option <code>Use different Email ID</code> when creating the different work mail accounts to communicate with your service and use the related password!</p>
+</blockquote>
+<p><img alt="Email Domain" class="screenshot" src="/files/email-domain.png"/></p>
+<h2 id="1-how-to-create-an-email-domain">1. How to create an Email Domain<a aria-hidden="true" class="no-underline" href="#1-how-to-create-an-email-domain">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h2>
+<ol>
+<li>Go to the Email Domain list, click on New.</li>
+<li>Enter the Example Email Address. This is where you enter your business email address. For example, if your email ID is yourname@yourcompanyname.com you should enter this.</li>
+<li>Email Server. This is the URL of your mail server or the email service that you have purchased. For example, it may be mail.yourcompany.com or imap.yourcompany.com.</li>
+<li><p>Use IMAP. IMAP and POP are two services used by most mail servers for incoming emails. If your Email server allows IMAP service for the incoming emails keep this checked. Otherwise, leave this unchecked.</p></li>
+<li><p>Use SSL. If your mail server uses SSL (Secure Socket Layer) communication keep this checked.</p>
+<p><strong>Do I have SSL?:</strong> You may have purchased SSL certificate from your IT service provider for SSL and they may have set up SSL for your mail server. If you're using 'https' while accessing mail server over browser then you might have SSL setup.</p></li>
+<li><p>Use SSL for Outgoing. If your mailserver uses SSL for outgoing, enable this to explicitly use SSL for outgoing emails. Defaults to port 465.</p></li>
+<li><p>Append Outgoing Email to Sent Folder. If you are not using standard mailservers provided by GMail and similar services, you might need to enable this option to append all outgoing emails to the email account's inbox. (Recommended for email servers like Zimbra and CPanel).</p></li>
+<li><p>Attachment Limit (MB). You can limit the size of file attachments in emails sent from KanivinERP.</p></li>
+<li><p>SMTP Server is the outgoing email service address of your email server.</p></li>
+<li><p>Tick Use TLS if your SMTP service supports TLS for security.</p></li>
+<li><p>Default port. SMTP service is usually set on port 25. If your email server is set up on a separate port number you can set that up here.</p></li>
+</ol>
+<h3 id="11-after-saving-the-domain">1.1 After saving the domain<a aria-hidden="true" class="no-underline" href="#11-after-saving-the-domain">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<p>Once you click on save, these settings are validated by KanivinERP and the Email Domain gets saved. Sometimes this could take a few seconds and you might have to wait. This email domain is then available in a dropdown called Domain in the Email Accounts screen.</p>
+<p><img alt="Email domain in email account" class="screenshot" src="/files/email-domain1.png"/></p>
+<h4 id="entered-everything-but-still-unable-to-setup-email-domain">Entered everything but still unable to setup Email Domain?<a aria-hidden="true" class="no-underline" href="#entered-everything-but-still-unable-to-setup-email-domain">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h4>
+<p>If you've entered and verified the above settings and are still unable to setup Email Domain, you can contact KanivinERP support within your account for help.</p>
+<h3 id="2-related-topics">2. Related Topics<a aria-hidden="true" class="no-underline" href="#2-related-topics">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<ol>
+<li><a onclick="loadContent('email-account.html')">Email Account</a></li>
+<li><a onclick="loadContent('email-inbox.html')">Email Inbox</a></li>
+</ol>
+</div>
+<input class="d-none" name="wiki-page-name" value="al12lghhcc"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="email-domain">Email Domain<a aria-hidden="true" class="no-underline" href="#email-domain">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content"><del class="diffmod">
+</del><ins class="diffmod">
+</ins><p><strong><ins class="diffmod">The </ins><code><ins class="diffmod">Email Domain</ins></code><ins class="diffmod"> is the display name of an email network/service account you're setting up for your email services in ERPNex and other Frappe apps.</ins></strong></p><ins class="diffmod">
+</ins><p><ins class="diffmod">You can skip to </ins><a href="/erpnext/v13/user/manual/en/setting-up/email/email-account"><ins class="diffmod">Email Account</ins></a><ins class="diffmod"> creation if you are using one of the services listed </ins><a href="/erpnext/v13/user/manual/en/setting-up/email/email-inbox#2-create-an-email-domain"><ins class="diffmod">here</ins></a><ins class="diffmod">.</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod">You can configure Email Domains in KanivinERP for easy setup of all Email Accounts. To find Email Domain settings go to:</ins></p><ins class="diffmod">
+</ins><blockquote><ins class="diffmod">
+</ins><p><ins class="diffmod">Home &gt; Settings &gt; Email Domain</ins></p><ins class="diffmod">
+</ins></blockquote><ins class="diffmod">
+</ins><p><strong><ins class="diffmod">What is my Email Domain?:</ins></strong><ins class="diffmod"> You might have purchased an Email service from your internet service provider or your IT services provider. For example, if you access your business mailbox with URL like http://mail.yourcompany.com, then yourcompany.com is expected to be used as your email domain. ERPnext tries to guess the </ins><code><ins class="diffmod">Email Domain</ins></code><ins class="diffmod"> from your initially entered example </ins><code><ins class="diffmod">Email Address</ins></code><ins class="diffmod"> if you started from there.</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod">If you want to send and receive emails on your KanivinERP account, you need to correctly setup an </ins><code><ins class="diffmod">Email Domain</ins></code><ins class="diffmod">. You may be using free mail services like GMail or Yahoo. In this case, you don't need to create a domain, instead select a service provider from the list. However, you might have to allow access to KanivinERP for your GMail account.</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod">KanivinERP creates a template </ins><code><ins class="diffmod">Email Domain</ins></code><ins class="diffmod"> using example.com for your reference. You should add your new domain if you want to use it in your KanivinERP account.</ins></p><ins class="diffmod">
+</ins><blockquote><ins class="diffmod">
+</ins><p><strong><ins class="diffmod">IMPORTANT:</ins></strong><ins class="diffmod"> If your actual mail account id differs from the work email address you use in the </ins><code><ins class="diffmod">Email Account</ins></code><ins class="diffmod">setup later, you need to use the option </ins><code><ins class="diffmod">Use different Email ID</ins></code><ins class="diffmod"> when creating the different work mail accounts to communicate with your service and use the related password!</ins></p><ins class="diffmod">
+</ins></blockquote><ins class="diffmod">
+</ins><p><ins class="diffmod"><img alt="Email Domain" class="screenshot" src="/files/email-domain.png"/></ins></p><ins class="diffmod">
+</ins><h2 id="1-how-to-create-an-email-domain"><ins class="diffmod">1. How to create an Email Domain</ins><a aria-hidden="true" class="no-underline" href="#1-how-to-create-an-email-domain"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h2><ins class="diffmod">
+</ins><ol><ins class="diffmod">
+</ins><li><ins class="diffmod">Go to the Email Domain list, click on New.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Enter the Example Email Address. This is where you enter your business email address. For example, if your email ID is yourname@yourcompanyname.com you should enter this.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Email Server. This is the URL of your mail server or the email service that you have purchased. For example, it may be mail.yourcompany.com or imap.yourcompany.com.</ins></li><ins class="diffmod">
+</ins><li><p><ins class="diffmod">Use IMAP. IMAP and POP are two services used by most mail servers for incoming emails. If your Email server allows IMAP service for the incoming emails keep this checked. Otherwise, leave this unchecked.</ins></p></li><ins class="diffmod">
+</ins><li><p><ins class="diffmod">Use SSL. If your mail server uses SSL (Secure Socket Layer) communication keep this checked.</ins></p><ins class="diffmod">
+</ins><p><strong><ins class="diffmod">Do I have SSL?:</ins></strong><ins class="diffmod"> You may have purchased SSL certificate from your IT service provider for SSL and they may have set up SSL for your mail server. If you're using 'https' while accessing mail server over browser then you might have SSL setup.</ins></p></li><ins class="diffmod">
+</ins><li><p><ins class="diffmod">Use SSL for Outgoing. If your mailserver uses SSL for outgoing, enable this to explicitly use SSL for outgoing emails. Defaults to port 465.</ins></p></li><ins class="diffmod">
+</ins><li><p><ins class="diffmod">Append Outgoing Email to Sent Folder. If you are not using standard mailservers provided by GMail and similar services, you might need to enable this option to append all outgoing emails to the email account's inbox. (Recommended for email servers like Zimbra and CPanel).</ins></p></li><ins class="diffmod">
+</ins><li><p><ins class="diffmod">Attachment Limit (MB). You can limit the size of file attachments in emails sent from KanivinERP.</ins></p></li><ins class="diffmod">
+</ins><li><p><ins class="diffmod">SMTP Server is the outgoing email service address of your email server.</ins></p></li><ins class="diffmod">
+</ins><li><p><ins class="diffmod">Tick Use TLS if your SMTP service supports TLS for security.</ins></p></li><ins class="diffmod">
+</ins><li><p><ins class="diffmod">Default port. SMTP service is usually set on port 25. If your email server is set up on a separate port number you can set that up here.</ins></p></li><ins class="diffmod">
+</ins></ol><ins class="diffmod">
+</ins><h3 id="11-after-saving-the-domain"><del class="diffmod">No</del><ins class="diffmod">1.1</ins> <del class="diffmod">Revisions</del><ins class="diffmod">After saving the domain</ins><a aria-hidden="true" class="no-underline" href="#11-after-saving-the-domain">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3><del class="diffmod">
+</del><ins class="diffmod">
+</ins><p><ins class="diffmod">Once you click on save, these settings are validated by KanivinERP and the Email Domain gets saved. Sometimes this could take a few seconds and you might have to wait. This email domain is then available in a dropdown called Domain in the Email Accounts screen.</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod"><img alt="Email domain in email account" class="screenshot" src="/files/email-domain1.png"/></ins></p><ins class="diffmod">
+</ins><h4 id="entered-everything-but-still-unable-to-setup-email-domain"><ins class="diffmod">Entered everything but still unable to setup Email Domain?</ins><a aria-hidden="true" class="no-underline" href="#entered-everything-but-still-unable-to-setup-email-domain"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h4><ins class="diffmod">
+</ins><p><ins class="diffmod">If you've entered and verified the above settings and are still unable to setup Email Domain, you can contact KanivinERP support within your account for help.</ins></p><ins class="diffmod">
+</ins><h3 id="2-related-topics"><ins class="diffmod">2. Related Topics</ins><a aria-hidden="true" class="no-underline" href="#2-related-topics"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h3><ins class="diffmod">
+</ins><ol><ins class="diffmod">
+</ins><li><a onclick="loadContent('email-account.html')"><ins class="diffmod">Email Account</ins></a></li><ins class="diffmod">
+</ins><li><a onclick="loadContent('email-inbox.html')"><ins class="diffmod">Email Inbox</ins></a></li><ins class="diffmod">
+</ins></ol><ins class="diffmod">
+</ins></div>
+</div>
+</div></div></div></div></main>

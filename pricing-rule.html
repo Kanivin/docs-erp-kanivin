@@ -1,0 +1,304 @@
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title">Pricing Rule																										</h1>
+</div>
+<div class="wiki-content">
+<p><strong>A Pricing Rule defines the discount/pricing rules that apply based on set conditions.</strong></p>
+<p>A Pricing Rule has many options using which you can control the pricing of an Item. Filters like quantity, date, groups, and other conditions can be set.</p>
+<p>A Pricing Rule is somewhat similar to a <a href="/erpnext/v13/user/manual/en/accounts/tax-rule">Tax Rule</a>.</p>
+<p>Following are the few cases which can be addressed using Pricing Rule:</p>
+<ul>
+<li>As per a promotional sale policy, if the Customer purchases more than 10 units of an item, he enjoys 20% discount.</li>
+<li>For Customer "XYZ", the selling price for the specific Item should be updated as ###.</li>
+<li>Items categorized under specific Item Group have same selling or buying price.</li>
+<li>Customers belonging to specific Customer Group should get ### selling price, or % of Discount on Items.</li>
+<li>Supplier categorized under specific Supplier Group should have ### buying rate applied.</li>
+</ul>
+<p>To have Discount and Price List Rate for an Item auto-applied, create Pricing Rules for it.</p>
+<p>To access the Pricing Rule list, go to:</p>
+<blockquote>
+<p>Home &gt; Accounting &gt; Pricing Rule</p>
+</blockquote>
+<h2 id="1-prerequisites">1. Prerequisites</h2>
+<p>Before creating and using a Pricing Rule, it is advisable to create the following first:</p>
+<ol>
+<li><a onclick="loadContent('item.html')">Item</a></li>
+<li><a onclick="loadContent('item-group.html')">Item Group</a></li>
+<li><a onclick="loadContent('customer.html')">Customer</a></li>
+<li><a onclick="loadContent('supplier.html')">Supplier</a></li>
+</ol>
+<h2 id="2-how-to-create-a-pricing-rule">2. How to create a Pricing Rule</h2>
+<ol>
+<li>Go to the Pricing Rule list and click on New.</li>
+<li>Set a title for the rule.</li>
+<li>Select what to Apply On from Item Code, Item Group, Brand, or Transaction.</li>
+<li><p>Select whether you want to apply Price discount or Product discount. If you want to give free products then select the product discount.
+<img alt="Pricing Rule" class="screenshot" src="/files/pricing-rule.png"/></p></li>
+<li><p>For a single item, select Item Code and select the items.</p></li>
+<li>If you want Pricing Rule to be applied on all the items, select 'Item Group' and select <strong>All Item Group</strong> (parent Item Group).</li>
+<li>Set the discount/price to be applied. To know more, <a onclick="loadContent('pricing-rule#35-price-discount-scheme.html')">go to this section</a>.</li>
+<li>Save.</li>
+</ol>
+<h3 id="21-additional-options-when-creating-a-pricing-rule">2.1 Additional options when creating a Pricing Rule</h3>
+<h4 id="warehouse">Warehouse</h4>
+<p>Setting a Warehouse here will cause the Pricing Rule to be applied only if the Item is selected from the Warehouse specified here.</p>
+<h4 id="apply-rule-on">Apply Rule On</h4>
+<p>Based on the attribute selected in the 'Apply On' field, you can set the Pricing Rule based on one of these:</p>
+<ul>
+<li><a onclick="loadContent('item.html')">Item</a></li>
+<li><a onclick="loadContent('item-group.html')">Item Group</a></li>
+<li>Brand</li>
+<li>Transaction (on the total amount of the transaction)</li>
+</ul>
+<p>In this table, you can select the specific Item/Item Group/Brand. For example, if you select Apply On 'Item Group' and select 'Raw Materials' in the table, this Pricing Rule will be applied only on Items that belong to the Group 'Raw Materials'.</p>
+<p><strong>UoM</strong>: The Pricing Rule will apply only if the UoM set here matches with the transaction.</p>
+<h4 id="condition">Condition</h4>
+<p>In this field you can add a condition in python to check against field values in the transaction doctype, like shown below for Sales Invoice:</p>
+<pre><code>customer=='Customer Name' and status!='Overdue'
+</code></pre>
+<p>Please note that only single line python conditions will work, using fieldnames of the target doctype.</p>
+<h4 id="mixed-conditions">Mixed Conditions</h4>
+<p>If you select two or more Items and set the Min and Max Quantity. The Pricing Rule will be applied only if the total sum of Items matches the set quantities. For example, you create a Pricing Rule on Item 1 and Item 2 and set the Min and Max Quantity as 30, the Pricing Rule will apply only if the total quantity is 30.</p>
+<h4 id="is-cumulative">Is Cumulative</h4>
+<p>Enabling this options allows the Pricing Rule to be applied cumulatively. You need to set the 'Min Amt' and 'Max Amt' for this.</p>
+<p>Consider a scenario where the Min Amt is 1,500 and Max Amt is 2,000. Now, if one transaction is created for 1,400 then Pricing Rule will not be applied. However, on creating a second invoice of amount 600, Pricing Rule will be applied. This happened since the total (cumulative) amount of the invoices added up to 2,000. Note that the discount will be applied only to the latest transaction that crosses the cumulative limit.</p>
+<p>This can be useful to give discounts if a Customer buys an Item multiple times and you want to reward him with discounts/special prices.</p>
+<h2 id="3-features">3. Features</h2>
+<h3 id="31-apply-rule-on-other">3.1 Apply Rule On Other</h3>
+<p>This feature checks condition on first Item but applies rule on another Item.</p>
+<p><img alt="Apply Pricing Rule on Other Item" class="screenshot" src="/files/pricing-rule-on-other-item.png"/></p>
+<p>For example, set Item1 and Item2 in the 'Apply Rule On' table and set 'Apply Rule On Other' on Item3. Now, if the transaction has Item1, Item2, and Item3, the Pricing Rule will apply on Item3 since the first two Items were present in the transaction.</p>
+<h3 id="32-party-information">3.2 Party Information</h3>
+<p>Set whether the Pricing Rule is for Selling of Buying the Item.</p>
+<p>Based on your selection you can set applicability to one of the following masters.</p>
+<ul>
+<li><a onclick="loadContent('customer.html')">Customer</a></li>
+<li><a onclick="loadContent('customer-group.html')">Customer Group</a></li>
+<li><a onclick="loadContent('territory.html')">Territory</a></li>
+<li><a onclick="loadContent('sales-partner.html')">Sales Partner</a></li>
+<li><a onclick="loadContent('campaign.html')">Campaign</a></li>
+<li><a onclick="loadContent('supplier.html')">Supplier</a></li>
+<li>Supplier Group</li>
+</ul>
+<h3 id="33-quantity-and-amount">3.3 Quantity and Amount</h3>
+<p>Specify minimum qty, maximum qty, minimum amount, or maximum amount of an Item when this Pricing Rule should be applied.</p>
+<p>Note that if the quantity or amount falls short or exceeds the limits set here, the Pricing Rule will not be applied at all. However, it will be applied if you have enabled the options Mixed Conditions or Cumulative.</p>
+<p><img alt="Pricing Rule Quantity and Amount" class="screenshot" src="/files/pricing-rule-quantity-and-amount.png"/></p>
+<h3 id="34-validity">3.4 Validity</h3>
+<p>You can also set a date interval for when the Pricing Rule will be valid. This is useful for a sales promotion. On leaving the dates blank the Pricing Rule will not have any time frame limit.</p>
+<p><img alt="Pricing Rule Period Settings" class="screenshot" src="/files/pricing-rule-period-settings.png"/></p>
+<h3 id="35-margin">3.5 Margin</h3>
+<p><img alt="Pricing Rule Margin" class="screenshot" src="/files/pricing-rule-margin.png"/></p>
+<ul>
+<li><p><strong>Margin Type</strong>: When selling an Item, you may sell it for a certain margin. If you don't want to add selling prices to Items every time and would like to automatically set a margin, it can be done with this feature.</p></li>
+<li><p><strong>Margin Rate or Amount</strong>: The margin set can be based on Percentage or Amount, eg: 5% margin or $50 fixed margin.</p></li>
+</ul>
+<p>Read <a href="/erpnext/v13/user/manual/en/selling/articles/adding-margin">adding margin</a> for more details.</p>
+<h3 id="36-price-discount-scheme">3.6 Price Discount Scheme</h3>
+<p>The actual rule to be applied is set in this section.</p>
+<p><img alt="Pricing Rule Discount" class="screenshot" src="/files/pricing-rule-discount-scheme.png"/></p>
+<ul>
+<li><strong>Rate</strong>: This will be the new rate for an Item. For example, if you sell an Item for 100 and want to sell it for 112 for a specific party, then select Rate and set the Rate as 112.</li>
+<li><strong>Discount Percentage</strong>: A specific discount percentage can be set. The discount percentage can be set to a specific <a onclick="loadContent('price-lists.html')">Price List</a>. Leaving the 'For Price List' blank will apply the Pricing Rule to all Price Lists.</li>
+<li><strong>Discount Amount</strong>: A fixed discount amount will be applied. For example if you sell an Item for 100 and want to sell it with a discount of 7, then this condition can be set using the Discount Amount option.</li>
+</ul>
+<h3 id="37-advanced-settings">3.7 Advanced Settings</h3>
+<p><img alt="Pricing Rule Advanced Settings" class="screenshot" src="/files/pricing-rule-advanced-settings.png"/></p>
+<ul>
+<li><p><strong>Threshold for Suggestion</strong>: This is the threshold based on which the system will notify you to adjust Item Quantity for discount. For example, if the Min Quantity is 10 and the Threshold is 9, the system will notify to add 1 more Item for the discount to be applicable. This also applies to the amount set.</p></li>
+<li><p><strong>Priority</strong>: Consider an Item Group, you want to set specific rules on one Item from the group. This can be done by creating a new Pricing Rule and setting a higher priority. This can also apply to Customer Group and Supplier Group.</p></li>
+<li><p><strong>Apply Multiple Pricing Rules</strong>: To understand this, consider an Item of Rate 500. There are two Pricing Rules on it P1 and P2. P1 applies 10% discount and P2 applies 5%. Enabling this option will apply a total of 15% on the Item Rate which gives 425.</p></li>
+<li><p><strong>Apply Discount on Rate</strong>: The discount will be compounded. Consider the same scenario as above. On enabling this option, 10% will be applied on 500 which will give 450, then 5% will be applied on 450 which will give 427.5.</p></li>
+<li><p><strong>Validate Applied Rule</strong>: Shows the entered validation message if the discount/rate set manually by you in a transaction does not match the Pricing Rule.</p>
+<p>This is useful when the top distributor in the hierarchy decides the discount/rate to be applied and you are only validating if the Pricing Rule is applied correctly.</p></li>
+</ul>
+<h2 id="4-pricing-rule-discount-types">4. Pricing Rule Discount Types</h2>
+<h3 id="41-price-discount">4.1 Price Discount</h3>
+<ol>
+<li><p>Under the Margin Type, you can set whether the margin is calculated as a percentage or an amount. Eg: 10% margin on supplier price list at the time of sales.</p></li>
+<li><p>Rate mentioned in Pricing Rule will be given priority over Item's Price List (Item Price) rate.</p>
+<p><img alt="Price Discount Scheme Rate" class="screenshot" src="/files/price-discount-scheme-rate.png"/></p></li>
+<li><p>Discount Percentage can be applied for a specific Price List (Selling or Buying). To apply it for both, leave the 'For Price List' field blank.</p>
+<p><img alt="Price Discount Scheme Discount" class="screenshot" src="/files/price-discount-scheme-discount.png"/></p></li>
+<li><p>Discount can also be set in terms of amount.</p>
+<p><img alt="Price Discount Scheme Amount" class="screenshot" src="/files/price-discount-scheme-amount.png"/></p></li>
+</ol>
+<h3 id="42-product-discount">4.2 Product Discount</h3>
+<ol>
+<li><p>"Buy 2 quantities get 1 free quantity of the same item." To configure such type of rules, set the Price or Product Discount as 'Product discount', tick the Same Item checkbox, and set the quantity.</p>
+<p><img alt="Pricing Rule Product Discount" class="screenshot" src="/files/pricing-rule-same-product-free.png"/></p></li>
+<li><p>"Buy 2 quantities get 1 free quantity of the another item." To configure such type of rules. Set the Price or Product Discount as Product discount, untick the 'Same Item' checkbox and set the 'Free Item' and quantity.</p>
+<p><img alt="Pricing Rule Other Product Free" class="screenshot" src="/files/pricing-rule-other-product-free.png"/></p></li>
+</ol>
+<p><strong>New Feature - Don't Enforce Free Item Qty</strong></p>
+<p>By default, KanivinERP enforces the Product Discount rules without any exceptions. Imagine a scenario where a Pricing Rule is set which says that for one item, five quantity of another item will be given for free. However, it is possible that you may only have 3 quantity of that item in stock instead of 5. With this default behaviour when you try to edit the quantity or remove the free item and try to save the document, the free item will be refetched again in the child table rendering you effectively unable to submit that document as an error citing insufficent stock will be thrown.</p>
+<p>Since free items are usually at discretion of the seller, a new option called "Don't Enforce Free Item Qty" has been introduced for Pricing Rule. When you have this option enabled, KanivinERP will fetch the free items only for the first time the item is added. You will then be free to edit the quantity of the free item or remove it entirely. The free item will no longer be fetched again when you save the document.</p>
+<h3 id="5-related-topics">5. Related Topics</h3>
+<ol>
+<li><a onclick="loadContent('promotional-scheme.html')">Promotional Scheme</a></li>
+<li><a onclick="loadContent('tax-rule.html')">Tax Rule</a></li>
+<li><a onclick="loadContent('supplier.html')">Supplier</a></li>
+<li><a onclick="loadContent('item.html')">Item</a></li>
+</ol>
+</div>
+<input class="d-none" name="wiki-page-name" value="n7vclc9edp"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="revisionsModalTitle">Pricing Rule																										</h5>
+<span class="small text-muted revision-time">mihir edited 2 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content">
+<p><strong>A Pricing Rule defines the discount/pricing rules that apply based on set conditions.</strong></p>
+<p>A Pricing Rule has many options using which you can control the pricing of an Item. Filters like quantity, date, groups, and other conditions can be set.</p>
+<p>A Pricing Rule is somewhat similar to a <a href="/docs/v13/user/manual/en/accounts/tax-rule">Tax Rule</a>.</p>
+<p>Following are the few cases which can be addressed using Pricing Rule:</p>
+<ul>
+<li>As per a promotional sale policy, if the Customer purchases more than 10 units of an item, he enjoys 20% discount.</li>
+<li>For Customer "XYZ", the selling price for the specific Item should be updated as ###.</li>
+<li>Items categorized under specific Item Group have same selling or buying price.</li>
+<li>Customers belonging to specific Customer Group should get ### selling price, or % of Discount on Items.</li>
+<li>Supplier categorized under specific Supplier Group should have ### buying rate applied.</li>
+</ul>
+<p>To have Discount and Price List Rate for an Item auto-applied, create Pricing Rules for it.</p>
+<p>To access the Pricing Rule list, go to:</p>
+<blockquote>
+<p>Home &gt; Accounting &gt; Pricing Rule</p>
+</blockquote>
+<h2 id="1-prerequisites">1. Prerequisites</h2>
+<p>Before creating and using a Pricing Rule, it is advisable to create the following first:</p>
+<ol>
+<li><a href="/docs/v13/user/manual/en/stock/item">Item</a></li>
+<li><a href="/docs/v13/user/manual/en/stock/item-group">Item Group</a></li>
+<li><a href="/docs/v13/user/manual/en/CRM/customer">Customer</a></li>
+<li><a href="/docs/v13/user/manual/en/buying/supplier">Supplier</a></li>
+</ol>
+<h2 id="2-how-to-create-a-pricing-rule">2. How to create a Pricing Rule</h2>
+<ol>
+<li>Go to the Pricing Rule list and click on New.</li>
+<li>Set a title for the rule.</li>
+<li>Select what to Apply On from Item Code, Item Group, Brand, or Transaction.</li>
+<li><p>Select whether you want to apply Price discount or Product discount. If you want to give free products then select the product discount.
+<img alt="Pricing Rule" class="screenshot" src="/files/pricing-rule.png"/></p></li>
+<li><p>For a single item, select Item Code and select the items.</p></li>
+<li>If you want Pricing Rule to be applied on all the items, select 'Item Group' and select <strong>All Item Group</strong> (parent Item Group).</li>
+<li>Set the discount/price to be applied. To know more, <a href="/docs/v13/user/manual/en/accounts/pricing-rule#35-price-discount-scheme">go to this section</a>.</li>
+<li>Save.</li>
+</ol>
+<h3 id="21-additional-options-when-creating-a-pricing-rule">2.1 Additional options when creating a Pricing Rule</h3>
+<h4 id="warehouse">Warehouse</h4>
+<p>Setting a Warehouse here will cause the Pricing Rule to be applied only if the Item is selected from the Warehouse specified here.</p>
+<h4 id="apply-rule-on">Apply Rule On</h4>
+<p>Based on the attribute selected in the 'Apply On' field, you can set the Pricing Rule based on one of these:</p>
+<ul>
+<li><a href="/docs/v13/user/manual/en/stock/item">Item</a></li>
+<li><a href="/docs/v13/user/manual/en/stock/item-group">Item Group</a></li>
+<li>Brand</li>
+<li>Transaction (on the total amount of the transaction)</li>
+</ul>
+<p>In this table, you can select the specific Item/Item Group/Brand. For example, if you select Apply On 'Item Group' and select 'Raw Materials' in the table, this Pricing Rule will be applied only on Items that belong to the Group 'Raw Materials'.</p>
+<p><strong>UoM</strong>: The Pricing Rule will apply only if the UoM set here matches with the transaction.</p>
+<h4 id="condition">Condition</h4>
+<p>In this field you can add a condition in python to check against field values in the transaction doctype, like shown below for Sales Invoice:</p>
+<pre><code>customer=='Customer Name' and status!='Overdue'
+</code></pre>
+<p>Please note that only single line python conditions will work, using fieldnames of the target doctype.</p>
+<h4 id="mixed-conditions">Mixed Conditions</h4>
+<p>If you select two or more Items and set the Min and Max Quantity. The Pricing Rule will be applied only if the total sum of Items matches the set quantities. For example, you create a Pricing Rule on Item 1 and Item 2 and set the Min and Max Quantity as 30, the Pricing Rule will apply only if the total quantity is 30.</p>
+<h4 id="is-cumulative">Is Cumulative</h4>
+<p>Enabling this options allows the Pricing Rule to be applied cumulatively. You need to set the 'Min Amt' and 'Max Amt' for this.</p>
+<p>Consider a scenario where the Min Amt is 1,500 and Max Amt is 2,000. Now, if one transaction is created for 1,400 then Pricing Rule will not be applied. However, on creating a second invoice of amount 600, Pricing Rule will be applied. This happened since the total (cumulative) amount of the invoices added up to 2,000. Note that the discount will be applied only to the latest transaction that crosses the cumulative limit.</p>
+<p>This can be useful to give discounts if a Customer buys an Item multiple times and you want to reward him with discounts/special prices.</p>
+<h2 id="3-features">3. Features</h2>
+<h3 id="31-apply-rule-on-other">3.1 Apply Rule On Other</h3>
+<p>This feature checks condition on first Item but applies rule on another Item.</p>
+<p><img alt="Apply Pricing Rule on Other Item" class="screenshot" src="/files/pricing-rule-on-other-item.png"/></p>
+<p>For example, set Item1 and Item2 in the 'Apply Rule On' table and set 'Apply Rule On Other' on Item3. Now, if the transaction has Item1, Item2, and Item3, the Pricing Rule will apply on Item3 since the first two Items were present in the transaction.</p>
+<h3 id="32-party-information">3.2 Party Information</h3>
+<p>Set whether the Pricing Rule is for Selling of Buying the Item.</p>
+<p>Based on your selection you can set applicability to one of the following masters.</p>
+<ul>
+<li><a href="/docs/v13/user/manual/en/CRM/customer">Customer</a></li>
+<li><a href="/docs/v13/user/manual/en/CRM/customer-group">Customer Group</a></li>
+<li><a href="/docs/v13/user/manual/en/selling/territory">Territory</a></li>
+<li><a href="/docs/v13/user/manual/en/selling/sales-partner">Sales Partner</a></li>
+<li><a href="/docs/v13/user/manual/en/CRM/campaign">Campaign</a></li>
+<li><a href="/docs/v13/user/manual/en/buying/supplier">Supplier</a></li>
+<li>Supplier Group</li>
+</ul>
+<h3 id="33-quantity-and-amount">3.3 Quantity and Amount</h3>
+<p>Specify minimum qty, maximum qty, minimum amount, or maximum amount of an Item when this Pricing Rule should be applied.</p>
+<p>Note that if the quantity or amount falls short or exceeds the limits set here, the Pricing Rule will not be applied at all. However, it will be applied if you have enabled the options Mixed Conditions or Cumulative.</p>
+<p><img alt="Pricing Rule Quantity and Amount" class="screenshot" src="/files/pricing-rule-quantity-and-amount.png"/></p>
+<h3 id="34-validity">3.4 Validity</h3>
+<p>You can also set a date interval for when the Pricing Rule will be valid. This is useful for a sales promotion. On leaving the dates blank the Pricing Rule will not have any time frame limit.</p>
+<p><img alt="Pricing Rule Period Settings" class="screenshot" src="/files/pricing-rule-period-settings.png"/></p>
+<h3 id="35-margin">3.5 Margin</h3>
+<p><img alt="Pricing Rule Margin" class="screenshot" src="/files/pricing-rule-margin.png"/></p>
+<ul>
+<li><p><strong>Margin Type</strong>: When selling an Item, you may sell it for a certain margin. If you don't want to add selling prices to Items every time and would like to automatically set a margin, it can be done with this feature.</p></li>
+<li><p><strong>Margin Rate or Amount</strong>: The margin set can be based on Percentage or Amount, eg: 5% margin or $50 fixed margin.</p></li>
+</ul>
+<p>Read <a href="/docs/v13/user/manual/en/selling/articles/adding-margin">adding margin</a> for more details.</p>
+<h3 id="36-price-discount-scheme">3.6 Price Discount Scheme</h3>
+<p>The actual rule to be applied is set in this section.</p>
+<p><img alt="Pricing Rule Discount" class="screenshot" src="/files/pricing-rule-discount-scheme.png"/></p>
+<ul>
+<li><strong>Rate</strong>: This will be the new rate for an Item. For example, if you sell an Item for 100 and want to sell it for 112 for a specific party, then select Rate and set the Rate as 112.</li>
+<li><strong>Discount Percentage</strong>: A specific discount percentage can be set. The discount percentage can be set to a specific <a href="/docs/v13/user/manual/en/stock/price-lists">Price List</a>. Leaving the 'For Price List' blank will apply the Pricing Rule to all Price Lists.</li>
+<li><strong>Discount Amount</strong>: A fixed discount amount will be applied. For example if you sell an Item for 100 and want to sell it with a discount of 7, then this condition can be set using the Discount Amount option.</li>
+</ul>
+<h3 id="37-advanced-settings">3.7 Advanced Settings</h3>
+<p><img alt="Pricing Rule Advanced Settings" class="screenshot" src="/files/pricing-rule-advanced-settings.png"/></p>
+<ul>
+<li><p><strong>Threshold for Suggestion</strong>: This is the threshold based on which the system will notify you to adjust Item Quantity for discount. For example, if the Min Quantity is 10 and the Threshold is 9, the system will notify to add 1 more Item for the discount to be applicable. This also applies to the amount set.</p></li>
+<li><p><strong>Priority</strong>: Consider an Item Group, you want to set specific rules on one Item from the group. This can be done by creating a new Pricing Rule and setting a higher priority. This can also apply to Customer Group and Supplier Group.</p></li>
+<li><p><strong>Apply Multiple Pricing Rules</strong>: To understand this, consider an Item of Rate 500. There are two Pricing Rules on it P1 and P2. P1 applies 10% discount and P2 applies 5%. Enabling this option will apply a total of 15% on the Item Rate which gives 425.</p></li>
+<li><p><strong>Apply Discount on Rate</strong>: The discount will be compounded. Consider the same scenario as above. On enabling this option, 10% will be applied on 500 which will give 450, then 5% will be applied on 450 which will give 427.5.</p></li>
+<li><p><strong>Validate Applied Rule</strong>: Shows the entered validation message if the discount/rate set manually by you in a transaction does not match the Pricing Rule.</p>
+<p>This is useful when the top distributor in the hierarchy decides the discount/rate to be applied and you are only validating if the Pricing Rule is applied correctly.</p></li>
+</ul>
+<h2 id="4-pricing-rule-discount-types">4. Pricing Rule Discount Types</h2>
+<h3 id="41-price-discount">4.1 Price Discount</h3>
+<ol>
+<li><p>Under the Margin Type, you can set whether the margin is calculated as a percentage or an amount. Eg: 10% margin on supplier price list at the time of sales.</p></li>
+<li><p>Rate mentioned in Pricing Rule will be given priority over Item's Price List (Item Price) rate.</p>
+<p><img alt="Price Discount Scheme Rate" class="screenshot" src="/files/price-discount-scheme-rate.png"/></p></li>
+<li><p>Discount Percentage can be applied for a specific Price List (Selling or Buying). To apply it for both, leave the 'For Price List' field blank.</p>
+<p><img alt="Price Discount Scheme Discount" class="screenshot" src="/files/price-discount-scheme-discount.png"/></p></li>
+<li><p>Discount can also be set in terms of amount.</p>
+<p><img alt="Price Discount Scheme Amount" class="screenshot" src="/files/price-discount-scheme-amount.png"/></p></li>
+</ol>
+<h3 id="42-product-discount">4.2 Product Discount</h3>
+<ol>
+<li><p>"Buy 2 quantities get 1 free quantity of the same item." To configure such type of rules, set the Price or Product Discount as 'Product discount', tick the Same Item checkbox, and set the quantity.</p>
+<p><img alt="Pricing Rule Product Discount" class="screenshot" src="/files/pricing-rule-same-product-free.png"/></p></li>
+<li><p>"Buy 2 quantities get 1 free quantity of the another item." To configure such type of rules. Set the Price or Product Discount as Product discount, untick the 'Same Item' checkbox and set the 'Free Item' and quantity.</p>
+<p><img alt="Pricing Rule Other Product Free" class="screenshot" src="/files/pricing-rule-other-product-free.png"/></p></li>
+</ol>
+<h3 id="5-related-topics">5. Related Topics</h3>
+<ol>
+<li><a href="/docs/v13/user/manual/en/accounts/promotional-scheme">Promotional Scheme</a></li>
+<li><a href="/docs/v13/user/manual/en/accounts/tax-rule">Tax Rule</a></li>
+<li><a href="/docs/v13/user/manual/en/buying/supplier">Supplier</a></li>
+<li><a href="/docs/v13/user/manual/en/stock/item">Item</a></li>
+</ol>
+</div>
+</div>
+</div></div></div></div></main>

@@ -1,0 +1,77 @@
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title">Accounting Dimensions
+</h1>
+</div>
+<div class="wiki-content">
+<blockquote>
+<p>Introduced in Version 12</p>
+</blockquote>
+<p>Dimensional accounting means tagging each transaction with appropriate dimensions like Branch, Business Unit, etc. This allows you to maintain each segment separately, thereby limiting the overall maintenance on GL accounts and your Chart of Accounts remains pure.</p>
+<p>Cost Center and Project are treated as dimensions by default in KanivinERP. On setting a field in Accounting Dimension, that field will be added in transactions reports where applicable.</p>
+<p>In KanivinERP you can create configurable accounting dimensions and use them in transactions and reports.</p>
+<p>To access the Accounting Dimension list, go to:</p>
+<blockquote>
+<p>Home &gt; Accounting &gt; Settings &gt; Accounting Dimensions</p>
+</blockquote>
+<h2 id="1-how-to-create-accounting-dimension-in-erpnext">1. How to create Accounting Dimension in KanivinERP.</h2>
+<ol>
+<li>Go to the Accounting Dimension list and click on New.</li>
+<li>Select the Reference Document which you want to use as a custom dimension. For example, if you select Department as Reference Document, the dimension will be based on Department.</li>
+<li>Enter the name of the dimension (This name will appear in the transactions for which dimensions are created).</li>
+<li>Inside the Dimension Defaults table you can mention company specific default dimensions as shown in the screenshot below. This dimension will be automatically fetched in the transaction against that specific company.</li>
+<li>Check "Mandatory" checkbox if you want the dimension to be mandatory in the transactions.</li>
+</ol>
+<p><img alt="Creating Accounting Dimension" class="screenshot" src="/files/accounting-dimension.png"/></p>
+<h2 id="2-features">2. Features</h2>
+<p>As you create the dimension, custom fields will be created using a background job for that specific dimension. You can see them in Accounting Dimensions section inside the transactions which have an impact on Accounting entries (GL Entry).</p>
+<h3 id="21-using-dimensions-in-transactions">2.1 Using dimensions in transactions</h3>
+<p>To tag a transaction with a dimension you can select the specific dimension in Accounting Dimensions section as shown in the screenshot below.</p>
+<p><img alt="Accounting Dimension in Sales Invoice" class="screenshot" src="/files/accounting-dimension-in-invoice.png"/></p>
+<h3 id="22-filtering-reports-based-on-dimensions">2.2 Filtering Reports based on dimensions</h3>
+<p>You can also filter various financial reports like Profit and Loss Statement, Balance Sheet, General Ledger based on these dimensions.</p>
+<p><img alt="Accounting Dimension in Reports" class="screenshot" src="/files/report-dimensions.png"/></p>
+<h3 id="23-making-accounting-dimensions-mandatory-for-profit-and-loss-and-balance-sheet-accounts">2.3 Making accounting dimensions mandatory for "Profit and Loss" and "Balance Sheet" Accounts</h3>
+<p>Profit and Loss is the group of Income and Expense accounts that represent your accounting transactions over a period.</p>
+<p>The Balance Sheet accounts are Application of Funds (Assets) and Sources of Funds (Liabilities) that signify the net-worth of your company at any given time.</p>
+<p>By selecting the check boxes 'Mandatory for Profit and Loss Account' or 'Mandatory for Balance Sheet' you can configure your dimensions to be mandatory for 'Profit and Loss' and 'Balance Sheet Accounts'.</p>
+<p><img alt="Accounting Dimension Mandatory in Transaction" class="screenshot" src="/files/dimension-mandatory.png"/></p>
+<h3 id="24-disabling-accounting-dimensions-when-no-longer-required">2.4 Disabling accounting dimensions when no longer required</h3>
+<p>You can also disable the dimensions if you don't require them anymore. The old transactions having accounting dimensions will remain intact.</p>
+<p><img alt="Disable Accounting Dimension" class="screenshot" src="/files/dimension-disable.png"/></p>
+<h3 id="related-topics">Related Topics</h3>
+<ol>
+<li><a onclick="loadContent('cost-center.html')">Cost Center</a></li>
+<li><a onclick="loadContent('budgeting.html')">Budgeting</a></li>
+<li><a onclick="loadContent('accounting-reports.html')">Accounting Reports</a></li>
+</ol>
+</div>
+<input class="d-none" name="wiki-page-name" value="ribj3hjmch"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="revisionsModalTitle">Accounting Dimensions
+</h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content">
+<h3>No Revisions</h3>
+</div>
+</div>
+</div></div></div></div></main>

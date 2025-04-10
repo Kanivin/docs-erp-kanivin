@@ -1,0 +1,99 @@
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title">Shipment
+</h1>
+</div>
+<div class="wiki-content">
+<p><strong>A Shipment is a document that keeps track of real-world Shipments created against a Delivery Note or independently.</strong></p>
+<blockquote>
+<p>Introduced in version 13</p>
+</blockquote>
+<p>Shipments are particularly useful for shippers who want to track all their Shipment information such as AWB Number, Shipment Status, Carrier, etc. within KanivinERP.</p>
+<p>To access the Shipment list, go to:</p>
+<blockquote>
+<p>Home &gt; Stock &gt; Stock Transactions &gt; Shipment</p>
+</blockquote>
+<h2 id="1-prerequisites">1. Prerequisites</h2>
+<p>Before creating and using a Shipment, it is advised that you create the following first:</p>
+<ul>
+<li>Company and Customer <a onclick="loadContent('address.html')">Address</a> with Postal Code, Email Address and Phone Number set.</li>
+<li>Customer <a onclick="loadContent('contact.html')">Contact</a>.</li>
+</ul>
+<h2 id="2-how-to-create-a-shipment">2. How to create a Shipment</h2>
+<p>A Shipment can be created manually or from a Delivery Note:</p>
+<h3 id="21-manual-shipment">2.1. Manual Shipment</h3>
+<p>To create a Shipment manually, follow these steps:</p>
+<ol>
+<li><p>Go to the Shipment list, click on New.</p>
+<p><img alt="Unsaved Shipment" class="screenshot" src="/files/unsaved-shipment.png"/></p></li>
+<li>Select an option in the <strong>Pickup from</strong> field. On selecting one of the three options, you will be prompted to select a Company/Supplier/Customer based on your selection.</li>
+<li>If you select 'Company' in the <strong>Pickup from</strong> field, along with the Address you must also select a <strong>Pickup Contact Person</strong> who will be a user from your organization, in KanivinERP. Make sure the Last Name, Email Address and Phone Number are set for this user.</li>
+<li>You can similarly fill the <strong>Delivery To</strong> section.</li>
+<li>Add Shipment Parcel Information in the <strong>Shipment Parcel</strong> table.</li>
+<li>Fill in the Value of Goods.</li>
+<li>Select a Pickup Date.</li>
+<li>Add a Description of Contents in this Shipment.</li>
+<li>You can optionally fill the Shipment Information section if you are tracking Shipments manually.</li>
+<li><p>Save and Submit.</p>
+<p><img alt="Submitted Shipment" class="screenshot" src="/files/shipment-submitted.png"/></p></li>
+</ol>
+<h3 id="21-shipment-from-delivery-note">2.1. Shipment from Delivery Note</h3>
+<p>To create a Shipment from a Delivery Note:</p>
+<ol>
+<li><p>Click on <strong>Create</strong> &gt; <strong>Shipment</strong> in the Delivery Note.</p>
+<p><img alt="Submitted Shipment" class="screenshot" src="/files/shipment-from-delivery-note.png"/></p></li>
+<li><p>Fill the form as mentioned in the previous section.</p></li>
+</ol>
+<h2 id="3-features">3. Features</h2>
+<h3 id="31-shipment-parcel">3.1. Shipment Parcel</h3>
+<p>You can specify the length, width, height and, weight of a parcel in the Shipment. If there are multiple parcels with identical dimensions, the <strong>count</strong> field can be set accordingly.</p>
+<p>To automatically fetch frequently used parcel dimensions, a Parcel Template can be created and set in the <strong>Parcel Template</strong> field. After adding the template, click on the <strong>Add template</strong> button.</p>
+<p><img alt="Submitted Shipment" class="screenshot" src="/files/shipment-parcel.png"/></p>
+<h3 id="32-shipment-information-details">3.2. Shipment Information / Details</h3>
+<p>The Shipment Information section is an <strong>optional</strong> section where a user can manually track Shipment information. Here are some of the fields:</p>
+<ol>
+<li><strong>Service Provider</strong> (optional): A Service Provider can be a third-party service that provides shipping services from various carriers.</li>
+<li><strong>Shipment ID</strong>: The unique Shipment ID on your Shipping platform.</li>
+<li><strong>Shipment Amount</strong>: Total cost incurred on Shipment</li>
+<li><strong>Carrier</strong>: The Carrier that handles your Shipment and delivers it.</li>
+<li><strong>Carrier Service</strong> (optional): The type/category of service provided by the carrier. E.g. some carriers have categories such as Economy, Express, etc.</li>
+<li><strong>AWB Number</strong>: An air waybill (AWB) accompanies <strong>international</strong> air cargo. It usually has a unique <strong>AWB Number</strong>, that makes it easy to identify and track an air courier.</li>
+<li><strong>Incoterm</strong>: They are a set of internationally recognized rules which define the responsibilities of sellers and buyers. <a href="https://iccwbo.org/resources-for-business/incoterms-rules/incoterms-2020/">Know more about it here.</a></li>
+</ol>
+<h3 id="33-automation">3.3 Automation</h3>
+<p>You can also automate rate comparison, label generation, tracking, etc. using our <a href="/erpnext/v13/user/manual/en/erpnext_integration/erpnext_shipping">Shipping Integration</a>.</p>
+<h3 id="4-related-topics">4. Related Topics</h3>
+<ol>
+<li><a onclick="loadContent('delivery-note.html')">Delivery Note</a></li>
+<li><a onclick="loadContent('packing-slip.html')">Packing Slip</a></li>
+</ol>
+</div>
+<input class="d-none" name="wiki-page-name" value="c5u4ip0h0a"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="revisionsModalTitle">Shipment
+</h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content">
+<h3>No Revisions</h3>
+</div>
+</div>
+</div></div></div></div></main>

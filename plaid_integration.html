@@ -1,184 +1,145 @@
-<main><div class="from-markdown markdown ">
-	<div class="alert alert-warning admin-banner hide" role="alert">
-		<div class="d-flex justify-content-between align-items-center">
-			<div>This space has
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
 				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
 				review.
 			</div>
-			<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
-		</div>
-	</div>
-	<div class="d-flex justify-content-between align-items-center">
-		<h1 class="wiki-title" id="plaid-integration">Plaid Integration
-<a class="no-underline" href="#plaid-integration" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h1>
-	</div>
-	<div class="wiki-content">
-		<p>KanivinERP offers the possibility to synchronize your bank accounts through a service called <a href="https://plaid.com/">Plaid</a>. Please check <a href="https://support-my.plaid.com/hc/en-us">the Plaid FAQ</a> to see if your country is supported.</p>
-
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title" id="plaid-integration">Plaid Integration
+<a aria-hidden="true" class="no-underline" href="#plaid-integration">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h1>
+</div>
+<div class="wiki-content">
+<p>KanivinERP offers the possibility to synchronize your bank accounts through a service called <a href="https://plaid.com/">Plaid</a>. Please check <a href="https://support-my.plaid.com/hc/en-us">the Plaid FAQ</a> to see if your country is supported.</p>
 <p>If your instance is connected to Plaid, you are able to synchronize your bank account transactions without having to manually import a CSV or XLSX file.</p>
-
-<h2 id="settings">Settings<a class="no-underline" href="#settings" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h2>
-
+<h2 id="settings">Settings<a aria-hidden="true" class="no-underline" href="#settings">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h2>
 <p>In order to give KanivinERP access to Plaid, you need to add the following three parameters to your <code>site_config.json</code> file.</p>
-
 <ul>
 <li><code>plaid_env</code></li>
 <li><code>plaid_public_key</code></li>
 <li><code>plaid_secret</code></li>
 </ul>
-
-<h2 id="activation">Activation<a class="no-underline" href="#activation" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h2>
-
+<h2 id="activation">Activation<a aria-hidden="true" class="no-underline" href="#activation">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h2>
 <p>In order to activate Plaid on an instance, click on the button "Enable" in the Plaid Settings DocType.</p>
-
-<p><img src="/files/plaid_enable.gif" alt="Enable Plaid" class="screenshot"></p>
-
+<p><img alt="Enable Plaid" class="screenshot" src="/files/plaid_enable.gif"/></p>
 <p>Once activated, you can create a new account directly from the Bank Reconciliation dashboard.</p>
-
-<h2 id="bank-account-creation">Bank account creation<a class="no-underline" href="#bank-account-creation" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h2>
-
+<h2 id="bank-account-creation">Bank account creation<a aria-hidden="true" class="no-underline" href="#bank-account-creation">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h2>
 <p>In order to link one of your existing bank accounts to KanivinERP, click on "Link a new bank account" and follow the steps proposed by Plaid.</p>
-
-<p><img src="/files/new_account_creation.gif" alt="Link your bank account" class="screenshot"></p>
-
-<h2 id="bank-synchronization">Bank synchronization<a class="no-underline" href="#bank-synchronization" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h2>
-
+<p><img alt="Link your bank account" class="screenshot" src="/files/new_account_creation.gif"/></p>
+<h2 id="bank-synchronization">Bank synchronization<a aria-hidden="true" class="no-underline" href="#bank-synchronization">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h2>
 <p>In order to synchronize a bank account with KanivinERP, select an account and click on the "Action" button to select "Synchronize this account".</p>
-
-<p><img src="/files/plaid_synchronization.gif" alt="Synchronize your bank account" class="screenshot"></p>
-
+<p><img alt="Synchronize your bank account" class="screenshot" src="/files/plaid_synchronization.gif"/></p>
 <p>The synchronization is based on the "Last integration date" available in the "Bank Account" doctype.</p>
-
 <p>If, for any reason, you want to redo a synchronization, you can change this date and synchronize the account again.
 Since all bank transactions are tagged with a specific transaction ID, the synchronization will only be incremental.</p>
-
-<h2 id="automatic-synchronization">Automatic Synchronization<a class="no-underline" href="#automatic-synchronization" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h2>
-
+<h2 id="automatic-synchronization">Automatic Synchronization<a aria-hidden="true" class="no-underline" href="#automatic-synchronization">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h2>
 <p>You can allow plaid to synchronize your bank account with ERPNex every hour by selecting "Synchronize all accounts every hour" in Plaid Settings.</p>
-
-	</div>
-	<input value="mr613qjvpb" class="d-none" name="wiki-page-name">
-	<div class="modal revisions-modal fade" id="revisionsModal" tabindex="-1" role="dialog" aria-labelledby="revisionsModalTitle" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <div class="d-flex flex-column">
-                    <h5 class="modal-title revision-title" id="plaid-integration">Plaid Integration
-<a class="no-underline" href="#plaid-integration" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h5>
-                    <span class="small text-muted revision-time">administrator edited 4 months ago</span>
-                </div>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="revision-content wiki-content"><del class="diffmod">
-                    </del><h3 id="no-revisions"><del class="diffmod">No</del><ins class="diffmod">
-		</ins><p><ins class="diffmod">KanivinERP</ins> <del class="diffmod">Revisions</del><ins class="diffmod">offers the possibility to synchronize your bank accounts through a service called </ins><a href="https://plaid.com/"><ins class="diffmod">Plaid</ins></a><ins class="diffmod">. Please check </ins><a href="https://support-my.plaid.com/hc/en-us"><ins class="diffmod">the Plaid FAQ</ins></a><ins class="diffmod">&nbsp;to see if your country is supported.</ins></p><ins class="diffmod">
-
+</div>
+<input class="d-none" name="wiki-page-name" value="mr613qjvpb"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="plaid-integration">Plaid Integration
+<a aria-hidden="true" class="no-underline" href="#plaid-integration">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content"><del class="diffmod">
+</del><h3 id="no-revisions"><del class="diffmod">No</del><ins class="diffmod">
+</ins><p><ins class="diffmod">KanivinERP</ins> <del class="diffmod">Revisions</del><ins class="diffmod">offers the possibility to synchronize your bank accounts through a service called </ins><a href="https://plaid.com/"><ins class="diffmod">Plaid</ins></a><ins class="diffmod">. Please check </ins><a href="https://support-my.plaid.com/hc/en-us"><ins class="diffmod">the Plaid FAQ</ins></a><ins class="diffmod"> to see if your country is supported.</ins></p><ins class="diffmod">
 </ins><p><ins class="diffmod">If your instance is connected to Plaid, you are able to synchronize your bank account transactions without having to manually import a CSV or XLSX file.</ins></p><ins class="diffmod">
-
-</ins></h3><h2 id="settings"><ins class="diffmod">Settings</ins><a class="no-underline" href="#settings" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg>
-      </a></h2><del class="diffmod">
-
-                </del><ins class="diffmod">
-
-</ins><p><ins class="diffmod">In order to give KanivinERP access to Plaid, you need to add the following three parameters to your </ins><code><ins class="diffmod">site_config.json</ins></code><ins class="diffmod">&nbsp;file.</ins></p><ins class="diffmod">
-
+</ins></h3><h2 id="settings"><ins class="diffmod">Settings</ins><a aria-hidden="true" class="no-underline" href="#settings">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h2><del class="diffmod">
+</del><ins class="diffmod">
+</ins><p><ins class="diffmod">In order to give KanivinERP access to Plaid, you need to add the following three parameters to your </ins><code><ins class="diffmod">site_config.json</ins></code><ins class="diffmod"> file.</ins></p><ins class="diffmod">
 </ins><ul><ins class="diffmod">
 </ins><li><code><ins class="diffmod">plaid_env</ins></code></li><ins class="diffmod">
 </ins><li><code><ins class="diffmod">plaid_public_key</ins></code></li><ins class="diffmod">
 </ins><li><code><ins class="diffmod">plaid_secret</ins></code></li><ins class="diffmod">
 </ins></ul><ins class="diffmod">
-
-</ins><h2 id="activation"><ins class="diffmod">Activation</ins><a class="no-underline" href="#activation" aria-hidden="true"><ins class="diffmod">
-        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
-          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
-          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
-        </ins></svg><ins class="diffmod">
-      </ins></a></h2><ins class="diffmod">
-
+</ins><h2 id="activation"><ins class="diffmod">Activation</ins><a aria-hidden="true" class="no-underline" href="#activation"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h2><ins class="diffmod">
 </ins><p><ins class="diffmod">In order to activate Plaid on an instance, click on the button "Enable" in the Plaid Settings DocType.</ins></p><ins class="diffmod">
-
-</ins><p><ins class="diffmod"><img src="/files/plaid_enable.gif" alt="Enable Plaid" class="screenshot"></ins></p><ins class="diffmod">
-
+</ins><p><ins class="diffmod"><img alt="Enable Plaid" class="screenshot" src="/files/plaid_enable.gif"/></ins></p><ins class="diffmod">
 </ins><p><ins class="diffmod">Once activated, you can create a new account directly from the Bank Reconciliation dashboard.</ins></p><ins class="diffmod">
-
-</ins><h2 id="bank-account-creation"><ins class="diffmod">Bank account creation</ins><a class="no-underline" href="#bank-account-creation" aria-hidden="true"><ins class="diffmod">
-        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
-          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
-          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
-        </ins></svg><ins class="diffmod">
-      </ins></a></h2><ins class="diffmod">
-
+</ins><h2 id="bank-account-creation"><ins class="diffmod">Bank account creation</ins><a aria-hidden="true" class="no-underline" href="#bank-account-creation"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h2><ins class="diffmod">
 </ins><p><ins class="diffmod">In order to link one of your existing bank accounts to KanivinERP, click on "Link a new bank account" and follow the steps proposed by Plaid.</ins></p><ins class="diffmod">
-
-</ins><p><ins class="diffmod"><img src="/files/new_account_creation.gif" alt="Link your bank account" class="screenshot"></ins></p><ins class="diffmod">
-
-</ins><h2 id="bank-synchronization"><ins class="diffmod">Bank synchronization</ins><a class="no-underline" href="#bank-synchronization" aria-hidden="true"><ins class="diffmod">
-        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
-          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
-          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
-        </ins></svg><ins class="diffmod">
-      </ins></a></h2><ins class="diffmod">
-
+</ins><p><ins class="diffmod"><img alt="Link your bank account" class="screenshot" src="/files/new_account_creation.gif"/></ins></p><ins class="diffmod">
+</ins><h2 id="bank-synchronization"><ins class="diffmod">Bank synchronization</ins><a aria-hidden="true" class="no-underline" href="#bank-synchronization"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h2><ins class="diffmod">
 </ins><p><ins class="diffmod">In order to synchronize a bank account with KanivinERP, select an account and click on the "Action" button to select "Synchronize this account".</ins></p><ins class="diffmod">
-
-</ins><p><ins class="diffmod"><img src="/files/plaid_synchronization.gif" alt="Synchronize your bank account" class="screenshot"></ins></p><ins class="diffmod">
-
+</ins><p><ins class="diffmod"><img alt="Synchronize your bank account" class="screenshot" src="/files/plaid_synchronization.gif"/></ins></p><ins class="diffmod">
 </ins><p><ins class="diffmod">The synchronization is based on the "Last integration date" available in the "Bank Account" doctype.</ins></p><ins class="diffmod">
-
 </ins><p><ins class="diffmod">If, for any reason, you want to redo a synchronization, you can change this date and synchronize the account again.
 Since all bank transactions are tagged with a specific transaction ID, the synchronization will only be incremental.</ins></p><ins class="diffmod">
-
-</ins><h2 id="automatic-synchronization"><ins class="diffmod">Automatic Synchronization</ins><a class="no-underline" href="#automatic-synchronization" aria-hidden="true"><ins class="diffmod">
-        </ins><svg xmlns="http://www.w3.org/2000/svg" style="width: 0.8em; height: 0.8em;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><ins class="diffmod">
-          </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
-          </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
-        </ins></svg><ins class="diffmod">
-      </ins></a></h2><ins class="diffmod">
-
+</ins><h2 id="automatic-synchronization"><ins class="diffmod">Automatic Synchronization</ins><a aria-hidden="true" class="no-underline" href="#automatic-synchronization"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h2><ins class="diffmod">
 </ins><p><ins class="diffmod">You can allow plaid to synchronize your bank account with ERPNex every hour by selecting "Synchronize all accounts every hour" in Plaid Settings.</ins></p><ins class="diffmod">
-
-	</ins></div>
-            </div>
-           </main>
+</ins></div>
+</div>
+</div></div></div></div></main>

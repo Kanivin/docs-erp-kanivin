@@ -1,0 +1,165 @@
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title" id="cheque-print-template">Cheque Print Template<a aria-hidden="true" class="no-underline" href="#cheque-print-template">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h1>
+</div>
+<div class="wiki-content">
+<p><strong>Cheque Print Template allows defining templates for bank cheques.</strong></p>
+<p>Business involves making payment to various parties like suppliers and employees. Payment can be made in various modes like cash, NEFT or cheque. If you are making a payment via a cheque, you can also create a Print Format for printing Cheques from KanivinERP based on the Payment Entry.</p>
+<p>To access Cheque Print Template, go to: &gt; Home &gt; Accounting &gt; Cheque Print Template</p>
+<p>Using the Cheque Print Template you can generate a new Print Format for cheques. It will be created based on the cheque format provided by your bank.</p>
+<p>A sample cheque:</p>
+<p><img alt="Sample Cheque" class="screenshot" src="/files/sample-cheque.jpg"/> </p>
+<h2 id="1-how-to-create-a-cheque-print-template">1. How to create a Cheque Print Template<a aria-hidden="true" class="no-underline" href="#1-how-to-create-a-cheque-print-template">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h2>
+<ol>
+<li>Go to the Cheque Print Template list, click on New.</li>
+<li>You can set the position of various items in the cheque.</li>
+<li>Save.</li>
+</ol>
+<p>In the Cheque Print Template, for each value (say Payee, Date), exact coordinates are provided based on where that value should be printed on a cheque. Co-ordinates are provided in centimeters. Here is a representation the structure:</p>
+<p><img alt="Sample Cheque" class="screenshot" src="/files/cheque-1.png"/> </p>
+<h3 id="11-new-format-by-scanning">1.1 New Format by Scanning<a aria-hidden="true" class="no-underline" href="#11-new-format-by-scanning">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<p>To speed up the creation of a new cheque printing format, you can upload a scanned image of the cheque. Considering the scanned image for the cheque, the system automatically updates co-ordinates for each value like party name, amount, date, the amount in words, etc.</p>
+<h3 id="12-new-print-format-manually">1.2 New Print Format manually<a aria-hidden="true" class="no-underline" href="#12-new-print-format-manually">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<p>If the preview looks good, click on the <strong>Create Print Format</strong> button to create a new Print Format for printing the cheque. Based on the values provided in the Cheque Print Template, the system will auto-generate an HTML script for the cheque’s Print Format.</p>
+<p>You can manually provide the co-ordinate for each value based on where you want it to be printed on the cheque and customize with HTML/CSS.</p>
+<h4 id="preview">Preview<a aria-hidden="true" class="no-underline" href="#preview">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h4>
+<p>Based on coordinates provided for all the values, a preview will be shown as to how the values will be printed on the cheque.</p>
+<p><img alt="Sample Cheque" class="screenshot" src="/files/cheque-2.png"/> </p>
+<h3 id="13-printing-cheques">1.3 Printing Cheques<a aria-hidden="true" class="no-underline" href="#13-printing-cheques">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<p>New print format generated for the cheque will be visible in the Payment Entry form. After creating the payment entry, you will be able to print transaction details on the cheque.</p>
+<p><img alt="Sample Cheque" class="screenshot" src="/files/cheque-3.gif"/> </p>
+<h3 id="2-related-topics">2. Related Topics<a aria-hidden="true" class="no-underline" href="#2-related-topics">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<ol>
+<li><a onclick="loadContent('address-template.html')">Address Template</a></li>
+<li><a onclick="loadContent('terms-and-conditions.html')">Terms and Conditions Template</a></li>
+</ol>
+</div>
+<input class="d-none" name="wiki-page-name" value="granm6ajnc"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="cheque-print-template">Cheque Print Template<a aria-hidden="true" class="no-underline" href="#cheque-print-template">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content"><del class="diffmod">
+</del><ins class="diffmod">
+</ins><p><strong><ins class="diffmod">Cheque Print Template allows defining templates for bank cheques.</ins></strong></p><ins class="diffmod">
+</ins><p><ins class="diffmod">Business involves making payment to various parties like suppliers and employees. Payment can be made in various modes like cash, NEFT or cheque. If you are making a payment via a cheque, you can also create a Print Format for printing Cheques from KanivinERP based on the Payment Entry.</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod">To access Cheque Print Template, go to: &gt; Home &gt; Accounting &gt; Cheque Print Template</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod">Using the Cheque Print Template you can generate a new Print Format for cheques. It will be created based on the cheque format provided by your bank.</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod">A sample cheque:</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod"><img alt="Sample Cheque" class="screenshot" src="/files/sample-cheque.jpg"/> </ins></p><ins class="diffmod">
+</ins><h2 id="1-how-to-create-a-cheque-print-template"><ins class="diffmod">1. How to create a Cheque Print Template</ins><a aria-hidden="true" class="no-underline" href="#1-how-to-create-a-cheque-print-template"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h2><ins class="diffmod">
+</ins><ol><ins class="diffmod">
+</ins><li><ins class="diffmod">Go to the Cheque Print Template list, click on New.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">You can set the position of various items in the cheque.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Save.</ins></li><ins class="diffmod">
+</ins></ol><ins class="diffmod">
+</ins><p><ins class="diffmod">In the Cheque Print Template, for each value (say Payee, Date), exact coordinates are provided based on where that value should be printed on a cheque. Co-ordinates are provided in centimeters. Here is a representation the structure:</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod"><img alt="Sample Cheque" class="screenshot" src="/files/cheque-1.png"/> </ins></p><ins class="diffmod">
+</ins><h3 id="11-new-format-by-scanning"><del class="diffmod">No</del><ins class="diffmod">1.1</ins> <del class="diffmod">Revisions</del><ins class="diffmod">New Format by Scanning</ins><a aria-hidden="true" class="no-underline" href="#11-new-format-by-scanning">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3><del class="diffmod">
+</del><ins class="diffmod">
+</ins><p><ins class="diffmod">To speed up the creation of a new cheque printing format, you can upload a scanned image of the cheque. Considering the scanned image for the cheque, the system automatically updates co-ordinates for each value like party name, amount, date, the amount in words, etc.</ins></p><ins class="diffmod">
+</ins><h3 id="12-new-print-format-manually"><ins class="diffmod">1.2 New Print Format manually</ins><a aria-hidden="true" class="no-underline" href="#12-new-print-format-manually"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h3><ins class="diffmod">
+</ins><p><ins class="diffmod">If the preview looks good, click on the </ins><strong><ins class="mod"><ins class="diffmod">Create Print Format</ins></ins></strong><ins class="diffmod"> button to create a new Print Format for printing the cheque. Based on the values provided in the Cheque Print Template, the system will auto-generate an HTML script for the cheque’s Print Format.</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod">You can manually provide the co-ordinate for each value based on where you want it to be printed on the cheque and customize with HTML/CSS.</ins></p><ins class="diffmod">
+</ins><h4 id="preview"><ins class="diffmod">Preview</ins><a aria-hidden="true" class="no-underline" href="#preview"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h4><ins class="diffmod">
+</ins><p><ins class="diffmod">Based on coordinates provided for all the values, a preview will be shown as to how the values will be printed on the cheque.</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod"><img alt="Sample Cheque" class="screenshot" src="/files/cheque-2.png"/> </ins></p><ins class="diffmod">
+</ins><h3 id="13-printing-cheques"><ins class="diffmod">1.3 Printing Cheques</ins><a aria-hidden="true" class="no-underline" href="#13-printing-cheques"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h3><ins class="diffmod">
+</ins><p><ins class="diffmod">New print format generated for the cheque will be visible in the Payment Entry form. After creating the payment entry, you will be able to print transaction details on the cheque.</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod"><img alt="Sample Cheque" class="screenshot" src="/files/cheque-3.gif"/> </ins></p><ins class="diffmod">
+</ins><h3 id="2-related-topics"><ins class="diffmod">2. Related Topics</ins><a aria-hidden="true" class="no-underline" href="#2-related-topics"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h3><ins class="diffmod">
+</ins><ol><ins class="diffmod">
+</ins><li><a onclick="loadContent('address-template.html')"><ins class="diffmod">Address Template</ins></a></li><ins class="diffmod">
+</ins><li><a onclick="loadContent('terms-and-conditions.html')"><ins class="diffmod">Terms and Conditions Template</ins></a></li><ins class="diffmod">
+</ins></ol><ins class="diffmod">
+</ins></div>
+</div>
+</div></div></div></div></main>

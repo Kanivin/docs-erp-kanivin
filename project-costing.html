@@ -1,0 +1,53 @@
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title">Project Costing</h1>
+</div>
+<div class="wiki-content">
+<p>Each project has multiple tasks associated with it. To track the actual cost of a Project, primarily in terms of services, a User has to create a Timesheet based on the time spent on a Task within a Project. You can track the service cost against a Project in the following ways.</p>
+<h2 id="activity-type">Activity Type</h2>
+<p><a href="/erpnext/v13/user/manual/en/projects/activity-type">Activity Type</a> is a master of services offered by your personnel. You can add a new Activity type from:</p>
+<blockquote>
+<p>Home &gt; Projects &gt; Activity Type &gt; New</p>
+</blockquote>
+<h2 id="activity-cost">Activity Cost</h2>
+<p>Activity Cost is a master where you can track billing and costing rate for each Employee, for each Activity Type.</p>
+<p><img alt="Activity Cost" class="screenshot" src="/files/projects-activity-cost.png"/> </p>
+<h2 id="timesheet">Timesheet</h2>
+<p>Based on the time spent on the Project-Task, an Employee will create a <a href="/erpnext/v13/user/manual/en/projects/timesheets">Timesheet</a>.</p>
+<p><img alt="Timesheet" class="screenshot" src="/files/projects-timesheet.png"/> </p>
+<p>On selection of the Activity Type in the Time Log, Billing and Costing Rate will be fetched for that Employee from the respective <a href="/erpnext/v13/user/manual/en/projects/activity-cost">Activity Cost</a>.</p>
+<p>Multiplying these rates with total no. of hours in the Time Log gives Costing Amount and Billing Amount for the specific Time Log.</p>
+<h2 id="costing-in-project-and-task">Costing in Project and Task</h2>
+<p>Based on all the Timesheets created for specific Tasks, its costing will be updated in the respective Task.</p>
+<p><img alt="Task" class="screenshot" src="/files/projects-task-costing.png"/> </p>
+<p>Same way, the Project cost will be updated based on Timesheets created against each of its associated tasks and the cost of the Project gets updated simultaneously.</p>
+<p><img alt="Project - Costing" class="screenshot" src="/files/projects-costing-and-billing.png"/> </p>
+</div>
+<input class="d-none" name="wiki-page-name" value="sjvf3ee6od"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="revisionsModalTitle">Project Costing</h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content">
+<h3>No Revisions</h3>
+</div>
+</div>
+</div></div></div></div></main>

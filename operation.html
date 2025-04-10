@@ -1,0 +1,66 @@
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title">Operation
+</h1>
+</div>
+<div class="wiki-content">
+<p><strong>An Operation refers to any manufacturing operation performed on the raw materials to process it further in the manufacturing path.</strong></p>
+<p>The Operation master stores a single manufacturing operation, its description and the Default Workstation for the Operation.</p>
+<p>To access the Operation list, go to:</p>
+<blockquote>
+<p>Home &gt; Manufacturing &gt; Bill of Materials &gt; Operation</p>
+</blockquote>
+<h2 id="1-prerequisites">1. Prerequisites</h2>
+<p>Before creating and using an Operation, it is advised that you create the following first:</p>
+<ul>
+<li><a onclick="loadContent('workstation.html')">Workstation</a></li>
+</ul>
+<h2 id="2-how-to-create-an-operation">2. How to create an Operation</h2>
+<ol>
+<li>Go to the Operation list, click on New.</li>
+<li>Enter a name for the Operation, for example, cutting.</li>
+<li>Select the Default Workstation where the Operation will be performed. This will be fetched in BOMs and Work Orders.</li>
+<li>Select a Quality Inspection Template for the operation in the Job Card section. It will be fetched on the Job Card for that particular operation when Work Order is created. When a new Quality Inspection is created from the Job card, then the same Quality Inspection Template is set for the Quality Inspection.</li>
+<li>Optionally, add a description to describe what the Operation involves.</li>
+<li>Save.</li>
+</ol>
+<p>Once saved, the following can be created against an Operation:
+<img alt="Operation" class="screenshot" src="/files/operation.png"/></p>
+<h2 id="3-video">3. Video</h2>
+<iframe allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/UVGfzwOOZC4?rel=0">
+</iframe>
+<h2 id="4-related-topics">4. Related Topics</h2>
+<ol>
+<li><a onclick="loadContent('routing.html')">Routing</a></li>
+<li><a onclick="loadContent('job-card.html')">Job Card</a></li>
+</ol>
+</div>
+<input class="d-none" name="wiki-page-name" value="hc8i5i334b"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="revisionsModalTitle">Operation
+</h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content">
+<h3>No Revisions</h3>
+</div>
+</div>
+</div></div></div></div></main>

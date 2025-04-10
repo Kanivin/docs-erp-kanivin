@@ -1,0 +1,83 @@
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title">Packing Slip
+</h1>
+</div>
+<div class="wiki-content">
+<p><strong>A packing slip is a document that lists the items in a shipment.</strong></p>
+<p>It is usually attached to the goods delivered.</p>
+<p>From a single Delivery Note, multiple Packing Slips can be created. It is useful when the shipment is packed in different boxes. Each box can have a weight and number of Items it contains. For example, if you're shipping 20 chairs in 4 boxes, each box can contain 5 chairs with different Packing Slips for each box.</p>
+<p>To access the Packing Slip list, go to:</p>
+<blockquote>
+<p>Home &gt; Stock &gt; Tools &gt; Packing Slip</p>
+</blockquote>
+<blockquote>
+<p>Note: In order to create Packing Slips from a Delivery Note, the Delivery Note needs to be in the Draft stage.</p>
+</blockquote>
+<h2 id="1-prerequisites">1. Prerequisites</h2>
+<p>Before creating and using a Packing Slip, it is advised that you create the following first:</p>
+<ul>
+<li><a onclick="loadContent('delivery-note.html')">Delivery Note</a></li>
+</ul>
+<h2 id="2-how-to-create-a-new-packing-slip">2. How to create a new Packing Slip</h2>
+<p>Usually, you should create a Packing Slip from a Delivery Note when it is in the Draft stage, however, if you want to create a Packing Slip manually, follow these steps.</p>
+<ol>
+<li>Go to the Packing Slip list, click on New.</li>
+<li>Select the Delivery Note.</li>
+<li>Enter the From Package No of this Packing Slip.</li>
+<li>Click on the Get Items button to fetch the Items and Quantities into the Items table.</li>
+<li>Save.</li>
+</ol>
+<p>Most of these details will be fetched if you create the Packing Slip from the Delivery Note.</p>
+<p><img alt="Packing Slip" class="screenshot" src="/files/packing-slip.png"/></p>
+<h3 id="11-additional-options-when-creating-a-packing-slip">1.1 Additional options when creating a Packing Slip</h3>
+<p><strong>To Package No</strong>: If there are multiple packages of the same type to be shipped at once then set the From and To Package numbers. For example, package numbers 1 to 5 in one Packing Slip, then package numbers 6 to 10 in the next Packing Slip and so on. This will be shown if you print then Packing Slip. Note that this will only work if you Shipment has that many quantities of the Items.</p>
+<h2 id="2-features">2. Features</h2>
+<h3 id="21-items-table">2.1 Items table</h3>
+<ul>
+<li>If this is a Batched Item, you'll have to select the Batch Number.</li>
+<li>The Quantity, UoM, Net Weight, and Weight UoM will be fetched from the Delivery Note.</li>
+<li>Page Break will create a page break just before this item when printing.</li>
+</ul>
+<h3 id="22-package-weight-details">2.2 Package weight details</h3>
+<p>These details will be shown when printing the Packing Slip.</p>
+<p><strong>Net Weight</strong>: This is calculated as the sum of weights of all Items in the table.
+<strong>Gross Weight</strong>: This is the final total weight including the weight of the packing materials used.
+<strong>Gross Weight UOM</strong>: A UoM can be set here for the final weight of the product.</p>
+<h3 id="23-letterhead">2.3 Letterhead</h3>
+<p>You can print your Packing Slip on your company's letterhead. Know more <a href="/erpnext/v13/user/manual/en/setting-up/print/letter-head">here</a>.</p>
+<h3 id="2-related-topics">2. Related Topics</h3>
+<ol>
+<li><a onclick="loadContent('quality-inspection.html')">Quality Inspection</a></li>
+<li><a onclick="loadContent('delivery-note.html')">Delivery Note</a></li>
+</ol>
+</div>
+<input class="d-none" name="wiki-page-name" value="jait3c593l"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="revisionsModalTitle">Packing Slip
+</h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content">
+<h3>No Revisions</h3>
+</div>
+</div>
+</div></div></div></div></main>

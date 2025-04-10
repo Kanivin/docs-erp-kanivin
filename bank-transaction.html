@@ -1,0 +1,81 @@
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title">Bank Transaction</h1>
+</div>
+<div class="wiki-content">
+<p>This form shows bank transactions in KanivinERP. </p>
+<h2 id="1-prerequisites">1. Prerequisites</h2>
+<p>Before using Bank Transaction Entry, it is advised that you create the following first:</p>
+<ol>
+<li><a onclick="loadContent('bank.html')">Bank</a></li>
+<li><a onclick="loadContent('bank-account.html')">Bank Account</a></li>
+</ol>
+<h2 id="2-how-to-use-bank-transaction">2. How to use Bank Transaction</h2>
+<p>A Bank Transaction Entry is not intended to be created manually. It is automatically created using:</p>
+<ol>
+<li><a onclick="loadContent('bank-reconciliation.html')">Bank Reconciliation</a>
+Or</li>
+<li><a onclick="loadContent('plaid_integration.html')">Plaid Integration</a> to sync with Banks</li>
+</ol>
+<h3 id="21-additional-fields-in-bank-transaction">2.1 Additional fields in Bank Transaction</h3>
+<ul>
+<li>Date</li>
+<li>Status:
+<ul>
+<li>Pending</li>
+<li>Settled</li>
+<li>Unreconciled</li>
+<li>Reconciled</li>
+</ul></li>
+<li><strong>Bank Account</strong>: The Bank Account from which the transactions were made.</li>
+</ul>
+<h2 id="3-featuresfields">3. Features/Fields</h2>
+<blockquote>
+<p>These fields are updated via Bank Reconciliation and are not intended to be modified from here.</p>
+</blockquote>
+<h3 id="31-currency-and-debitcredit">3.1 Currency and debit/credit</h3>
+<ul>
+<li><strong>Debit</strong>: The amount debited.</li>
+<li><strong>Credit</strong>: The amount credited.</li>
+<li><strong>Currency</strong>: The Currency in which the transaction was done.</li>
+<li><strong>Description:</strong> A description for the statement.</li>
+</ul>
+<h3 id="32-reference">3.2 Reference</h3>
+<p><strong>Reference Number</strong>: A cheque or other reference number.</p>
+<h3 id="33-payment-entries">3.3 Payment Entries</h3>
+<ul>
+<li><strong>Payment Document</strong>: The document against which the transaction was made whether a Sales Invoice, Expense Claim, Purchase Invoice, Payment Entry, or Journal Entry.</li>
+<li><strong>Payment Entry</strong>: The specific transaction. </li>
+<li><strong>Allocated Amount</strong>: The amount allocated for this particular transaction.</li>
+</ul>
+<p><strong>Allocated Amount</strong>: The total allocated amount.
+<strong>Unallocated Amount</strong>: The total unallocated amount.</p>
+</div>
+<input class="d-none" name="wiki-page-name" value="ni8h984hd0"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="revisionsModalTitle">Bank Transaction</h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content">
+<h3>No Revisions</h3>
+</div>
+</div>
+</div></div></div></div></main>

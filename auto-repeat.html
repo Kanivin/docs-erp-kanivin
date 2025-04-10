@@ -1,0 +1,309 @@
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title" id="auto-repeat">Auto Repeat
+<a aria-hidden="true" class="no-underline" href="#auto-repeat">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h1>
+</div>
+<div class="wiki-content">
+<p>Auto Repeat feature helps you create certain documents automatically in a given time period.</p>
+<p>From version 12, you can Customize any Form to make the documents <strong>repeatable</strong>.</p>
+<p>For Example: Assuming that you follow deferred expense system for some items. It requires you to create same Journal Entry every month to credit Deferred Expense account and debit Expense Account. You can create first Journal Entry manually for it, and then create auto-repeat transaction for it.</p>
+<p>To access Auto Repeat, go to:</p>
+<blockquote>
+<p>Home &gt; Settings &gt; Automation &gt; Auto Repeat</p>
+</blockquote>
+<h2 id="1-how-to-set-up-auto-repeat">1. How to set up Auto Repeat<a aria-hidden="true" class="no-underline" href="#1-how-to-set-up-auto-repeat">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h2>
+<h3 id="11-customize-the-form">1.1 Customize the Form<a aria-hidden="true" class="no-underline" href="#11-customize-the-form">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<ol>
+<li>Go to: <strong>Home &gt; Customization &gt; Form Customization &gt; Customize Form</strong>.</li>
+<li>Select the form in which you want to allow creation of repeatable documents.</li>
+<li><p>Check 'Allow Auto Repeat' to allow the creation of repeatable documents for that Form. This is necessary for the document type to show up in the Reference Document field under the Auto Repeat doctype.</p>
+<p><img alt="Allow Auto Repeat" class="screenshot" src="/files/allow-auto-repeat.png"/></p></li>
+</ol>
+<h3 id="12-set-up-auto-repeat">1.2 Set up Auto Repeat<a aria-hidden="true" class="no-underline" href="#12-set-up-auto-repeat">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<ol>
+<li>Go to <strong>Home &gt; Settings &gt; Automation &gt; Auto Repeat &gt; New</strong>.</li>
+<li>Select the Reference Document Type, like Journal Entry or Sales Invoice, etc.</li>
+<li>Select the Reference Document. This is the individual document that you want to repeat.</li>
+<li>Set the Start Date and End Date (optional).
+If End Date is not specified, recurring documents will be created, unless the Auto Repeat is disabled.</li>
+<li>Set the Frequency for creating repeatable documents
+(Daily, Weekly, Monthly, Quarterly, Half-yearly, Yearly).</li>
+<li>Save.</li>
+</ol>
+<h3 id="13-set-up-auto-repeat-directly-from-the-document">1.3 Set up Auto Repeat directly from the document<a aria-hidden="true" class="no-underline" href="#13-set-up-auto-repeat-directly-from-the-document">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<p>You can also set a document on Auto Repeat by clicking the <strong>Repeat</strong> option from the <strong>Menu</strong> in the Toolbar.</p>
+<p><strong>Note</strong>: If a document is already on Auto Repeat, the Repeat option is not available.</p>
+<p><img alt="Repeat in Transactions" class="screenshot" src="/files/repeat-option.png"/></p>
+<p>Once you click on Repeat, a prompt for Auto Repeat will show up. Fill in the details and click on Save.</p>
+<p><img alt="Auto Repeat Prompt" class="screenshot" src="/files/auto-repeat-prompt.png"/></p>
+<h2 id="2-features">2. Features<a aria-hidden="true" class="no-underline" href="#2-features">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h2>
+<h3 id="21-submit-on-creation">2.1 Submit on Creation<a aria-hidden="true" class="no-underline" href="#21-submit-on-creation">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<p>If the reference document type is submittable, you get an option called _Submit on Creation_. If this is checked, your document will be submitted on creation.</p>
+<p><img alt="Auto Repeat Submit on Creation" class="screenshot" src="/files/submit-on-creation.png"/></p>
+<h3 id="22-notify-by-email">2.2 Notify by Email<a aria-hidden="true" class="no-underline" href="#22-notify-by-email">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<p>If you want to notify certain contacts whenever the recurring documents are created, you can check 'Notify by Email' in the Notification section of Auto Repeat. This will send the auto-generated recurring documents to the specified Email Addresses. Fields for the same are explained below:</p>
+<ul>
+<li><strong>Recipients</strong>: Defines the Email IDs of the recipients for recurring document creation emails.</li>
+<li><strong>Get Contacts</strong>: This button will fetch the contacts linked to the document that is set on Auto Repeat and fill up the Recipients field with the same.</li>
+<li><strong>Template</strong>: You can choose an Email Template for the email. This will fill up the Subject and Message fields as well.</li>
+<li><strong>Subject</strong>: Subject for your Email (example: Recurring ToDo created successfully).</li>
+<li><strong>Message</strong>: Message to be sent in the Email.</li>
+<li><strong>Preview Message</strong>: This button will show a preview of the message.</li>
+<li><strong>Print Format</strong>: Select a print format to define document view which should be emailed to customer.</li>
+</ul>
+<blockquote>
+<p><strong>Note</strong>: If the document you are setting up Auto Repeat for, is submittable, ensure that "Allow Print for Draft" is enabled in <a href="/erpnext/v13/user/manual/en/setting-up/print/print-settings">Print Settings</a> to receive the new recurring document in Auto Repeat Notification Email. If this is not enabled, you will be notified about the recurring document creation without the document.</p>
+</blockquote>
+<h3 id="23-repeat-on-a-particular-day">2.3 Repeat on a particular day<a aria-hidden="true" class="no-underline" href="#23-repeat-on-a-particular-day">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<p>If the frequency is set as Monthly, Quarterly, Half-yearly or Yearly, then it will create recurring documents in the respective months on the same day as the 'Start Date' of Auto Repeat. If you want to create recurring documents on some other day then you can set one of the following:</p>
+<ul>
+<li><strong>Repeat on Day</strong>: Day of the month on which recurring document will be created. For example, if frequency is Monthly and you enter 7 then it will generate recurring document on 7th of the respective month.</li>
+<li><strong>Repeat on Last Day of the Month</strong>: This option is available as the last day of every month is different. For example, in a leap year last day of Feb is 29th, and it is 28th otherwise. If you check this option, it will create recurring documents on the last day of the respective months.</li>
+</ul>
+<h3 id="24-ability-to-select-weekdays-for-auto-repeat">2.4 Ability to select weekdays for Auto Repeat<a aria-hidden="true" class="no-underline" href="#24-ability-to-select-weekdays-for-auto-repeat">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<blockquote>
+<p>Introduced in version 13</p>
+</blockquote>
+<p>Auto Repeat with Weekly frequency allows you to select the days on which you want the recurring documents to be created.</p>
+<p><img alt="Auto Repeat Weekdays" class="screenshot" src="/files/auto-repeat-weekdays.png"/></p>
+<h3 id="25-dashboard">2.5 Dashboard<a aria-hidden="true" class="no-underline" href="#25-dashboard">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<p>You can see the Auto Repeat schedule in the Dashboard of Auto Repeat document. If you don't specify the End Date then the schedule will show only the Next Schedule Date.</p>
+<p><img alt="Auto Repeat Dashboard" class="screenshot" src="/files/auto-repeat-dashboard.png"/></p>
+<h3 id="26-auto-repeat-frequency-on-the-sidebar">2.6 Auto Repeat Frequency on the sidebar<a aria-hidden="true" class="no-underline" href="#26-auto-repeat-frequency-on-the-sidebar">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<p>When a document is set on Auto Repeat you can see the Auto Repeat frequency on the sidebar.
+You can click on the status to see the linked Auto Repeat document.</p>
+<p><img alt="Auto Repeat Frequency" class="screenshot" src="/files/auto-repeat-frequency.png"/></p>
+<h3 id="27-disable-auto-repeat">2.7 Disable Auto Repeat<a aria-hidden="true" class="no-underline" href="#27-disable-auto-repeat">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<p>If you check this field it will stop creating recurring documents and unlink the Auto Repeat document from the Reference Document.</p>
+</div>
+<input class="d-none" name="wiki-page-name" value="vd3pmb3k6k"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="auto-repeat">Auto Repeat
+<a aria-hidden="true" class="no-underline" href="#auto-repeat">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content"><del class="diffmod">
+</del><ins class="diffmod">
+</ins><p><ins class="diffmod">Auto Repeat feature helps you create certain documents automatically in a given time period.</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod">From version 12, you can Customize any Form to make the documents </ins><strong><ins class="mod"><ins class="diffmod">repeatable</ins></ins></strong><ins class="diffmod">.</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod">For Example: Assuming that you follow deferred expense system for some items. It requires you to create same Journal Entry every month to credit Deferred Expense account and debit Expense Account. You can create first Journal Entry manually for it, and then create auto-repeat transaction for it.</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod">To access Auto Repeat, go to:</ins></p><ins class="diffmod">
+</ins><blockquote><ins class="diffmod">
+</ins><p><ins class="diffmod">Home &gt; Settings &gt; Automation &gt; Auto Repeat</ins></p><ins class="diffmod">
+</ins></blockquote><ins class="diffmod">
+</ins><h2 id="1-how-to-set-up-auto-repeat"><ins class="diffmod">1. How to set up Auto Repeat</ins><a aria-hidden="true" class="no-underline" href="#1-how-to-set-up-auto-repeat"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h2><ins class="diffmod">
+</ins><h3 id="11-customize-the-form"><del class="diffmod">No</del><ins class="diffmod">1.1</ins> <del class="diffmod">Revisions</del><ins class="diffmod">Customize the Form</ins><a aria-hidden="true" class="no-underline" href="#11-customize-the-form">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3><del class="diffmod">
+</del><ins class="diffmod">
+</ins><ol><ins class="diffmod">
+</ins><li><ins class="diffmod">Go to: </ins><strong><ins class="mod"><ins class="diffmod">Home &gt; Customization &gt; Form Customization &gt; Customize Form</ins></ins></strong><ins class="diffmod">.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Select the form in which you want to allow creation of repeatable documents.</ins></li><ins class="diffmod">
+</ins><li><p><ins class="diffmod">Check 'Allow Auto Repeat' to allow the creation of repeatable documents for that Form. This is necessary for the document type to show up in the Reference Document field under the Auto Repeat doctype.</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod"><img alt="Allow Auto Repeat" class="screenshot" src="/files/allow-auto-repeat.png"/></ins></p></li><ins class="diffmod">
+</ins></ol><ins class="diffmod">
+</ins><h3 id="12-set-up-auto-repeat"><ins class="diffmod">1.2 Set up Auto Repeat</ins><a aria-hidden="true" class="no-underline" href="#12-set-up-auto-repeat"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h3><ins class="diffmod">
+</ins><ol><ins class="diffmod">
+</ins><li><ins class="diffmod">Go to </ins><strong><ins class="mod"><ins class="diffmod">Home &gt; Settings &gt; Automation &gt; Auto Repeat &gt; New</ins></ins></strong><ins class="diffmod">.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Select the Reference Document Type, like Journal Entry or Sales Invoice, etc.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Select the Reference Document. This is the individual document that you want to repeat.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Set the Start Date and End Date (optional).
+If End Date is not specified, recurring documents will be created, unless the Auto Repeat is disabled.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Set the Frequency for creating repeatable documents
+(Daily, Weekly, Monthly, Quarterly, Half-yearly, Yearly).</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Save.</ins></li><ins class="diffmod">
+</ins></ol><ins class="diffmod">
+</ins><h3 id="13-set-up-auto-repeat-directly-from-the-document"><ins class="diffmod">1.3 Set up Auto Repeat directly from the document</ins><a aria-hidden="true" class="no-underline" href="#13-set-up-auto-repeat-directly-from-the-document"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h3><ins class="diffmod">
+</ins><p><ins class="diffmod">You can also set a document on Auto Repeat by clicking the </ins><strong><ins class="mod"><ins class="diffmod">Repeat</ins></ins></strong><ins class="diffmod"> option from the </ins><strong><ins class="mod"><ins class="diffmod">Menu</ins></ins></strong><ins class="diffmod"> in the Toolbar.</ins></p><ins class="diffmod">
+</ins><p><strong><ins class="diffmod">Note</ins></strong><ins class="diffmod">: If a document is already on Auto Repeat, the Repeat option is not available.</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod"><img alt="Repeat in Transactions" class="screenshot" src="/files/repeat-option.png"/></ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod">Once you click on Repeat, a prompt for Auto Repeat will show up. Fill in the details and click on Save.</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod"><img alt="Auto Repeat Prompt" class="screenshot" src="/files/auto-repeat-prompt.png"/></ins></p><ins class="diffmod">
+</ins><h2 id="2-features"><ins class="diffmod">2. Features</ins><a aria-hidden="true" class="no-underline" href="#2-features"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h2><ins class="diffmod">
+</ins><h3 id="21-submit-on-creation"><ins class="diffmod">2.1 Submit on Creation</ins><a aria-hidden="true" class="no-underline" href="#21-submit-on-creation"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h3><ins class="diffmod">
+</ins><p><ins class="diffmod">If the reference document type is submittable, you get an option called _Submit on Creation_. If this is checked, your document will be submitted on creation.</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod"><img alt="Auto Repeat Submit on Creation" class="screenshot" src="/files/submit-on-creation.png"/></ins></p><ins class="diffmod">
+</ins><h3 id="22-notify-by-email"><ins class="diffmod">2.2 Notify by Email</ins><a aria-hidden="true" class="no-underline" href="#22-notify-by-email"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h3><ins class="diffmod">
+</ins><p><ins class="diffmod">If you want to notify certain contacts whenever the recurring documents are created, you can check 'Notify by Email' in the Notification section of Auto Repeat. This will send the auto-generated recurring documents to the specified Email Addresses. Fields for the same are explained below:</ins></p><ins class="diffmod">
+</ins><ul><ins class="diffmod">
+</ins><li><strong><ins class="diffmod">Recipients</ins></strong><ins class="diffmod">: Defines the Email IDs of the recipients for recurring document creation emails.</ins></li><ins class="diffmod">
+</ins><li><strong><ins class="diffmod">Get Contacts</ins></strong><ins class="diffmod">: This button will fetch the contacts linked to the document that is set on Auto Repeat and fill up the Recipients field with the same.</ins></li><ins class="diffmod">
+</ins><li><strong><ins class="diffmod">Template</ins></strong><ins class="diffmod">: You can choose an Email Template for the email. This will fill up the Subject and Message fields as well.</ins></li><ins class="diffmod">
+</ins><li><strong><ins class="diffmod">Subject</ins></strong><ins class="diffmod">: Subject for your Email (example: Recurring ToDo created successfully).</ins></li><ins class="diffmod">
+</ins><li><strong><ins class="diffmod">Message</ins></strong><ins class="diffmod">: Message to be sent in the Email.</ins></li><ins class="diffmod">
+</ins><li><strong><ins class="diffmod">Preview Message</ins></strong><ins class="diffmod">: This button will show a preview of the message.</ins></li><ins class="diffmod">
+</ins><li><strong><ins class="diffmod">Print Format</ins></strong><ins class="diffmod">: Select a print format to define document view which should be emailed to customer.</ins></li><ins class="diffmod">
+</ins></ul><ins class="diffmod">
+</ins><blockquote><ins class="diffmod">
+</ins><p><strong><ins class="diffmod">Note</ins></strong><ins class="diffmod">: If the document you are setting up Auto Repeat for, is submittable, ensure that "Allow Print for Draft" is enabled in </ins><a href="/erpnext/v13/user/manual/en/setting-up/print/print-settings"><ins class="diffmod">Print Settings</ins></a><ins class="diffmod"> to receive the new recurring document in Auto Repeat Notification Email. If this is not enabled, you will be notified about the recurring document creation without the document.</ins></p><ins class="diffmod">
+</ins></blockquote><ins class="diffmod">
+</ins><h3 id="23-repeat-on-a-particular-day"><ins class="diffmod">2.3 Repeat on a particular day</ins><a aria-hidden="true" class="no-underline" href="#23-repeat-on-a-particular-day"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h3><ins class="diffmod">
+</ins><p><ins class="diffmod">If the frequency is set as Monthly, Quarterly, Half-yearly or Yearly, then it will create recurring documents in the respective months on the same day as the 'Start Date' of Auto Repeat. If you want to create recurring documents on some other day then you can set one of the following:</ins></p><ins class="diffmod">
+</ins><ul><ins class="diffmod">
+</ins><li><strong><ins class="diffmod">Repeat on Day</ins></strong><ins class="diffmod">: Day of the month on which recurring document will be created. For example, if frequency is Monthly and you enter 7 then it will generate recurring document on 7th of the respective month.</ins></li><ins class="diffmod">
+</ins><li><strong><ins class="diffmod">Repeat on Last Day of the Month</ins></strong><ins class="diffmod">: This option is available as the last day of every month is different. For example, in a leap year last day of Feb is 29th, and it is 28th otherwise. If you check this option, it will create recurring documents on the last day of the respective months.</ins></li><ins class="diffmod">
+</ins></ul><ins class="diffmod">
+</ins><h3 id="24-ability-to-select-weekdays-for-auto-repeat"><ins class="diffmod">2.4 Ability to select weekdays for Auto Repeat</ins><a aria-hidden="true" class="no-underline" href="#24-ability-to-select-weekdays-for-auto-repeat"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h3><ins class="diffmod">
+</ins><blockquote><ins class="diffmod">
+</ins><p><ins class="diffmod">Introduced in version 13</ins></p><ins class="diffmod">
+</ins></blockquote><ins class="diffmod">
+</ins><p><ins class="diffmod">Auto Repeat with Weekly frequency allows you to select the days on which you want the recurring documents to be created.</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod"><img alt="Auto Repeat Weekdays" class="screenshot" src="/files/auto-repeat-weekdays.png"/></ins></p><ins class="diffmod">
+</ins><h3 id="25-dashboard"><ins class="diffmod">2.5 Dashboard</ins><a aria-hidden="true" class="no-underline" href="#25-dashboard"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h3><ins class="diffmod">
+</ins><p><ins class="diffmod">You can see the Auto Repeat schedule in the Dashboard of Auto Repeat document. If you don't specify the End Date then the schedule will show only the Next Schedule Date.</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod"><img alt="Auto Repeat Dashboard" class="screenshot" src="/files/auto-repeat-dashboard.png"/></ins></p><ins class="diffmod">
+</ins><h3 id="26-auto-repeat-frequency-on-the-sidebar"><ins class="diffmod">2.6 Auto Repeat Frequency on the sidebar</ins><a aria-hidden="true" class="no-underline" href="#26-auto-repeat-frequency-on-the-sidebar"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h3><ins class="diffmod">
+</ins><p><ins class="diffmod">When a document is set on Auto Repeat you can see the Auto Repeat frequency on the sidebar.
+You can click on the status to see the linked Auto Repeat document.</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod"><img alt="Auto Repeat Frequency" class="screenshot" src="/files/auto-repeat-frequency.png"/></ins></p><ins class="diffmod">
+</ins><h3 id="27-disable-auto-repeat"><ins class="diffmod">2.7 Disable Auto Repeat</ins><a aria-hidden="true" class="no-underline" href="#27-disable-auto-repeat"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h3><ins class="diffmod">
+</ins><p><ins class="diffmod">If you check this field it will stop creating recurring documents and unlink the Auto Repeat document from the Reference Document.</ins></p><ins class="diffmod">
+</ins></div>
+</div>
+</div></div></div></div></main>

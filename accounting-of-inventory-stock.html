@@ -1,0 +1,86 @@
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title">Accounting Of Inventory Stock
+</h1>
+</div>
+<div class="wiki-content">
+<p>The value of available inventory is treated as a Current Asset in the company's <a href="/erpnext/v13/user/manual/en/accounts/chart-of-accounts">Chart of
+Accounts</a>. To prepare a Balance Sheet, you should make the accounting entries for those assets. There are generally two different methods of
+accounting for inventory.</p>
+<h2 id="1-autoperpetual-inventory">1. Auto/Perpetual Inventory</h2>
+<p>In this process, for each stock transaction, the system posts relevant
+accounting entries to sync stock balance and accounting balance. This is the
+default setting in KanivinERP for new accounts. By default, Perpetual Inventory is enabled in the <a href="/erpnext/v13/user/manual/en/setting-up/company-setup#23-stock-settings">Company</a>.</p>
+<p>When you buy and receive items, those items are booked as the company’s assets
+(stock-in-hand). When you sell and deliver those items, an
+expense (Cost of Goods Sold) equal to the landed cost of the items is booked.
+General Ledger entries are created after every stock transaction. As a result,
+the value as per Stock Ledger always remains the same with the relevant account
+balance. This improves the accuracy of the Balance Sheet and the Profit and Loss
+statement.</p>
+<p>Read <a href="/erpnext/v13/user/manual/en/stock/perpetual-inventory">Perpetual Inventory documentation</a>
+to check accounting entries for a particular stock transaction.</p>
+<h3 id="12-advantages-of-perpetual-inventory">1.2 Advantages of Perpetual Inventory</h3>
+<p>Perpetual Inventory system will make it easier for you to maintain the accuracy of the company's asset and expense values. Stock balances will always be synced with relevant account balances, so no more periodic manual entry needs to be done to balance them.</p>
+<p>In case of new back-dated stock transactions or cancellation/amendment of an existing transaction, all the future Stock Ledger entries and GL Entries will
+be recalculated for all items of that transaction. The same is applicable if
+any cost is added to the submitted Purchase Receipt later through the Landed
+Cost Voucher.</p>
+<blockquote>
+<p>Note: Perpetual Inventory completely depends upon the item valuation rate.
+  Hence, you have to be more careful entering the valuation rate while making any
+  incoming stock transactions like Purchase Receipt, Material Receipt, or
+  Manufacturing/Repack.</p>
+</blockquote>
+<hr/>
+<h2 id="2-periodic-inventory">2. Periodic Inventory</h2>
+<p>In this method, accounting entries need to be created manually in order to sync stock balance and relevant account balance. The system does not create
+accounting entries automatically for assets at the time of material purchases
+or sales.</p>
+<p>In an accounting period, when you buy and receive items, an expense is booked
+in your accounting system. You sell and deliver some of these items.</p>
+<p>At the end of an accounting period, the total value of items to be sold, need
+to be booked as the company’s assets, often known as stock-in-hand.</p>
+<p>The difference between the value of the items remaining to be sold and the
+previous period’s stock-in-hand value can be positive or negative. If
+positive, this value is removed from expenses (Cost of Goods Sold) and is
+added to assets (stock-in-hand). If negative, a reverse entry
+is passed.</p>
+<p>This complete process is called <strong>Periodic Inventory</strong>.</p>
+<p>If you are an existing user using Periodic Inventory and want to use Perpetual
+Inventory, you need to follow <a href="/erpnext/v13/user/manual/en/stock/articles/migrate-to-perpetual-inventory">a few steps</a> to migrate.</p>
+<h3 id="3-related-topics">3. Related Topics</h3>
+<ol>
+<li><a onclick="loadContent('perpetual-inventory.html')">Perpetual Inventory</a></li>
+<li><a onclick="loadContent('migrate-to-perpetual-inventory.html')">Migrate to Perpetual Inventory</a></li>
+</ol>
+</div>
+<input class="d-none" name="wiki-page-name" value="fjmlpb967p"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="revisionsModalTitle">Accounting Of Inventory Stock
+</h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content">
+<h3>No Revisions</h3>
+</div>
+</div>
+</div></div></div></div></main>

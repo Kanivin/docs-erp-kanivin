@@ -1,0 +1,98 @@
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title">Serial and Batch Bundle</h1>
+</div>
+<div class="wiki-content">
+<blockquote>
+<p>NOTE: Users must create separate "Serial and Batch Bundles" for each stock transaction. They cannot use the same "Serial and Batch Bundle" across multiple stock transactions.</p>
+<p>Allow Negative Stock has removed for Serial / Batch Items from version 15. So from version 15 users won't be able to make negative stock transactions for serial /batch items even though Allow Negative Stock has enabled in the Stock Settings.</p>
+</blockquote>
+<hr/>
+<p>In version 15, we have introduced the Serial and Batch Bundle. This feature will be used to link Serial / Batch Nos in the Stock transactions.</p>
+<p>Before version 15 the Serial No field was a Small Text field. Which meant one column was holding more than one serial number. Because of this design, there were lot of a data integrity issues. So to solve this we have changed the Serial No field from Small Text to Link field in version 15. Since we can't add a child table inside a child table we have added a new doctype "Serial and Batch Bundle"</p>
+<p>to pick/dispatch multiple Serial / Batch numbers.</p>
+<p><img alt="Serial no Configure" class="screenshot" src="/files/serial-and-batch-bundle.png"/> </p>
+<h2 id="how-does-this-work">How does this work?</h2>
+<p>You need a Serial and Batch bundle to be created and linked to stock transactions whenever you have to deal with Serial / Batch numbers. The user needs to create a separate "Serial and Batch Bundle" for each transaction and they can't link the same "Serial and Batch Bundle" to multiple transactions.</p>
+<h3 id="auto-creation-of-serial-and-batch-bundle-for-inward-entry">Auto Creation of Serial and Batch Bundle for Inward Entry</h3>
+<p>If the user wants to create an auto "Serial and Batch Bundle" for the inward entry then they have to make sure that 'Serial Number Series' has been set for the item Serial Item and the 'Automatically Create New Batch' checkbox with 'Batch Number Series' has set for the Batch Item.</p>
+<h4 id="for-serial-no">For Serial No</h4>
+<p><img alt="Serial no Configure" class="screenshot" src="/files/auto-serial-creation.png"/> </p>
+<h4 id="for-batch-no">For Batch No</h4>
+<p><img alt="Batch no Configure" class="screenshot" src="/files/auto-batch-creation.png"/> </p>
+<p>After the configuration when the user creates the Purchase Receipt or Stock Entry with the Type "Material Receipt", the system will create the "Serial and Batch Bundle" for inward automatically on submission of the record.</p>
+<p><img alt="Auto Serial Batch Bundle Inward" class="screenshot" src="/files/auto-create-serial-batch-for-inward.gif"/> </p>
+<h3 id="auto-creation-of-serial-and-batch-bundle-for-outward-entry">Auto Creation of Serial and Batch Bundle for Outward Entry</h3>
+<p>If the user wants to create an auto "Serial and Batch Bundle" for the outward entry then they have to enable the checkbox "Auto Create Serial and Batch Bundle For Outward" in the stock settings. The user can also set "Pick Serial / Batch Based On" as "FIFO / LIFO / Expiry" in the stock settings.</p>
+<p><img alt="Auto Serial Batch Bundle Outward Configure" class="screenshot" src="/files/auto-outward-configuration.png"/> </p>
+<p>After the configuration when the user creates the Delivery Note or Stock Entry with the Type "Material Issue", the system will create the "Serial and Batch Bundle" for outward automatically on submission of the record.</p>
+<p><img alt="Auto Serial Batch Bundle Outward" class="screenshot" src="/files/auto-create-serial-batch-for-outward.gif"/> </p>
+<h3 id="manual-creation-of-serial-and-batch-bundle-for-inward-entry">Manual Creation of Serial and Batch Bundle for Inward Entry</h3>
+<p>For the "Serial and Batch Bundle", both serial / batch no needs to be present first in the system. So with the manual option user has to first create the Serial / Batch Nos in the system. The user has to use the CSV import option to make Serial / Batch Nos. The blank CSV template can be downloaded using the Serial and Batch Selector.</p>
+<p><img alt="create-using-csv" class="screenshot" src="/files/create-using-csv.png"/> </p>
+<p>Complete GIF for manual creation of Serial and Batch Bundle for inward entry is as follow</p>
+<p><img alt="manually-create-serial-no-inward" class="screenshot" src="/files/manually-create-serial-no-inward.gif"/> </p>
+<h3 id="manual-creation-of-serial-and-batch-bundle-for-outward-entry">Manual Creation of Serial and Batch Bundle for Outward Entry</h3>
+<p>Using the Serial and Batch Selector, the user can pick the Serial / Batch Nos based on the "FIFO / LIFO / Expiry" method.</p>
+<p><img alt="serial-batch-selector-outward" class="screenshot" src="/files/serial-batch-selector-outward.png"/> </p>
+<p>Complete GIF for manual creation of Serial and Batch Bundle for outward entry is as follow</p>
+<p><img alt="manually-create-serial-no-outtward" class="screenshot" src="/files/manually-create-serial-no-outtward.gif"/> </p>
+<h2 id="history-of-serial-numbers">History of Serial Numbers</h2>
+<p>To check the history of Serial Numbers, check the report "Serial No Ledger"</p>
+<p><img alt="Serial No Ledger" class="screenshot" src="/private/files/serial-no-ledger-report.png"/> </p>
+<h2 id="serial-batch-selector">Serial / Batch Selector</h2>
+<p>Is used to select Serial Nos / Batches manually, also this popup is used to create serial nos / batches automatically if they are not exists.</p>
+<p><img alt="serial-batch-selector" class="screenshot" src="/files/serial-batch-selector.gif"/> </p>
+<h2 id="disable-serial-batch-selector">Disable Serial / Batch Selector</h2>
+<p>If users don't want to use the Serial and Batch Selector (popup) then they can disable it through Stock Settings. To disable it, goto Stock Settings &gt; Serial and Batch Item (TAB) &gt; "<strong>Disable Serial No And Batch Selector</strong>" enable this checkbox and save.</p>
+<p><img alt="disable-serial-batch-selector" class="screenshot" src="/files/disable-serial-batch-selector.png"/> </p>
+<h2 id="old-serial-batch-fields">Old Serial / Batch Fields</h2>
+<p>Many customers have requested to retain the old serial and batch fields to address UX issues. In response to their demand, we have retained the old serial/batch fields. These fields are solely used for entering serial numbers and batches. The system will automatically create the Serial and Batch Bundle upon the submission of the stock transaction. To enable this feature, users must navigate to Stock Settings and enable the 'Use Serial / Batch Fields' option (see below image).</p>
+<p><img alt="use-serial-batch-fields-global" class="screenshot" src="/files/use-serial-batch-fields-global.png"/> </p>
+<p>After that when user create the stock transaction like delivery note, system will show the old Serial / Batch Fields. For more details please check the below GIF</p>
+<p><img alt="user-old-serial-batch-fieldsd" class="screenshot" src="/files/user-old-serial-batch-fieldsd.gif"/> </p>
+<p>User can disable old serial / batch fields at transaction level too.</p>
+<p><img alt="use-serial-batch-for-dn" class="screenshot" src="/files/use-serial-batch-for-dn.gif"/> </p>
+<h2 id="update-serial-batch-on-creation-of-auto-bundle">Update Serial / Batch on Creation of Auto Bundle</h2>
+<p>If user want to update the Serial No / Batch in the Serial / Batch fields automatically on creation of the Serial and Batch Bundle, then goto Stock Settings -&gt; disable "Do Not Update Serial / Batch on Creation of Auto Bundle".</p>
+<p><img alt="update-Serial-Batch-on-creation-of-auto-bundle" class="screenshot" src="/files/update-Serial-Batch-on-creation-of-auto-bundle.png"/> </p>
+<p>Case:</p>
+<ol>
+<li>User has enabled "Use Serial / Batch Fields" in the stock settings</li>
+<li>User want to create the serial and batch bundle per single batch</li>
+<li>User has set the auto create batch in the Item master.</li>
+<li>On submission of the Purchase Receipt, system has created auto Batch, Serial and Batch Bundle and set the Batch and Serial and Batch Bundle in the respective fields on the Purchase Receipt line item..</li>
+<li>Updating the value of batch takes time and if you want to skip this step, please enable "Do Not Update Serial / Batch on Creation of Auto Bundle" in the stock settings.</li>
+<li>With this the batch column remain blank but the serial and batch bundle will have the value of the auto created bundle.</li>
+</ol>
+<h2 id="how-to-use-serial-and-batch-bundle">How to Use Serial and Batch Bundle</h2>
+<p><a href="https://www.youtube.com/watch?v=-VjZvRtdjDQ&amp;t=820s">https://www.youtube.com/watch?v=-VjZvRtdjDQ&amp;t=820s</a></p>
+</div>
+<input class="d-none" name="wiki-page-name" value="6ah8igpvea"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="revisionsModalTitle">Serial and Batch Bundle</h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content">
+<h3>No Revisions</h3>
+</div>
+</div>
+</div></div></div></div></main>

@@ -1,0 +1,82 @@
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title">Brand
+</h1>
+</div>
+<div class="wiki-content">
+<p><strong>A Brand identifies items with a specific name.</strong></p>
+<p>Usually, a Brand is the manufacturer or packer of a specific product. For example, Apple is a brand that manufactures laptops. A Brand is not necessarily the <a href="/erpnext/v13/user/manual/en/stock/manufacturer">Manufacturer</a> of an Item, it's only the name under which a product is sold. For example, if you manufacture plastic cups, you may license it to a big brand so that they sell it under their Brand.</p>
+<p>In KanivinERP, Brands can be assigned to Items for identifying and assigning certain defaults.</p>
+<p>To access the Brand list, go to:</p>
+<blockquote>
+<p>Home &gt; Selling &gt; Sales &gt; Brand</p>
+</blockquote>
+<h2 id="1-how-to-create-a-brand">1. How to Create a Brand</h2>
+<ol>
+<li>Go to the Brand list and click on New.</li>
+<li>Enter a Brand name and enter a description if needed.</li>
+<li><p>Save.</p>
+<p><img alt="Brand" class="screenshot" src="/files/brand.png"/></p></li>
+</ol>
+<p>Now this Brand can be associated with different Items.</p>
+<p><img alt="Brand in Item" class="screenshot" src="/files/brand-in-item.png"/></p>
+<h2 id="2-features">2. Features</h2>
+<h3 id="21-setting-defaults-for-items-of-this-brand">2.1 Setting defaults for Items of this Brand</h3>
+<p><img alt="Brand Defaults" class="screenshot" src="/files/brand-defaults.png"/></p>
+<p>The following defaults can be set for a Brand. On assigning this brand to an Item, the set defaults will be fetched when performing Sales/Purchase transactions with Item of this Brand.</p>
+<ul>
+<li><strong>Default Warehouse</strong>: The Warehouse from which the Item will be sourced/stored depending on the transaction.</li>
+<li><strong>Default Price List</strong>: The Price List set here will be fetched in Purchase/Sales transactions.</li>
+</ul>
+<h4 id="purchase-defaults">Purchase Defaults</h4>
+<p>When performing Purchase transactions like Purchase Order, Purchase Receipt, or Purchase Invoice, the defaults set here will be fetched on selecting Item of this Brand.</p>
+<ul>
+<li>Default Buying Cost Center</li>
+<li>Default Supplier</li>
+<li>Default Expense Account</li>
+</ul>
+<h4 id="sales-defaults">Sales Defaults</h4>
+<p>When performing Sales transactions like Sales Order, Delivery Note, or Sales Invoice, the defaults set here will be fetched on selecting Item of this Brand.</p>
+<ul>
+<li>Default Selling Cost Center</li>
+<li>Default Income Account</li>
+</ul>
+<h2 id="3-related-topics">3. Related Topics</h2>
+<ol>
+<li><a onclick="loadContent('purchase-order.html')">Purchase Order</a></li>
+<li><a onclick="loadContent('sales-order.html')">Sales Order</a></li>
+<li><a onclick="loadContent('purchase-receipt.html')">Purchase Receipt</a></li>
+<li><a onclick="loadContent('delivery-note.html')">Delivery Note</a></li>
+<li><a onclick="loadContent('sales-invoice.html')">Sales Invoice</a></li>
+<li><a onclick="loadContent('purchase-invoice.html')">Purchase Invoice</a></li>
+</ol>
+</div>
+<input class="d-none" name="wiki-page-name" value="nmpu53fhhl"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="revisionsModalTitle">Brand
+</h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content">
+<h3>No Revisions</h3>
+</div>
+</div>
+</div></div></div></div></main>

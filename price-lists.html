@@ -1,0 +1,57 @@
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title">Price Lists</h1>
+</div>
+<div class="wiki-content">
+<p><strong>A Price List is a collection of Item Prices either Selling, Buying, or both.</strong></p>
+<p>KanivinERP lets you maintain multiple Selling and Buying <a href="/erpnext/v13/user/manual/en/stock/item-price">Item Prices</a> using Price Lists.</p>
+<p>Price Lists can be used in scenarios where you have different prices for different zones (based on the shipping costs), for different currencies, etc. An Item can have multiple prices based on customer, currency, region, shipping cost, etc, which can be stored as different rate plans.</p>
+<p>In KanivinERP, all the Item Prices are stored separately. Buying Price for an item is different from Selling Price and thus they're stored separately.</p>
+<p>To access a Price List go to:</p>
+<blockquote>
+<p>Home &gt; Selling/Buying/Stock &gt; Items and Pricing &gt; Price List</p>
+</blockquote>
+<p><img alt="Price List" class="screenshot" src="/files/price-list.png"/> </p>
+<h2 id="1-how-to-use-a-price-list">1. How to use a Price List</h2>
+<ul>
+<li>Price Lists will be used when creating an <a onclick="loadContent('item-price.html')">Item Prices</a> to track selling or buying price of an item.</li>
+<li>Specific countries can be assigned in the Price List.</li>
+<li>To disable specific Price List, untick the 'Enabled' checkbox. Disabled Price List will not be available for selection in the Sales and Purchase transactions.</li>
+<li><strong>Price Not UOM Dependent</strong>: Consider an item, Tomatoes which you buy in Boxes and sell in Kilos. 1 Box = 10 Kilos and 1 Kilo buying price is 10rs. If this Box is unchecked and you select 1 Box in your transaction, the price will show up only for a Kilo since that's the only Item Price saved.</li>
+</ul>
+<p>Now, if you tick this checkbox and make a transaction with a Box of Tomatoes, then the price will be automatically set as 100 since the price of 1 Box (10 Kilos) is 100.
+* Standard Buying and Selling Price Lists are created by default.</p>
+<p><strong>Note</strong>: If you have multiple Price Lists, you can select a Price List or tag it to a Customer (so that it is auto-selected). Your Item Prices will automatically be updated from the Price List.</p>
+<h3 id="related-topics">Related Topics</h3>
+<ol>
+<li><a onclick="loadContent('item-price.html')">Item Price</a></li>
+</ol>
+</div>
+<input class="d-none" name="wiki-page-name" value="o71ak1np25"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="revisionsModalTitle">Price Lists</h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content">
+<h3>No Revisions</h3>
+</div>
+</div>
+</div></div></div></div></main>

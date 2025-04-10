@@ -1,0 +1,70 @@
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title">Sales Return
+</h1>
+</div>
+<div class="wiki-content">
+<p><strong>A sold Item being returned is known as a Sales Return.</strong></p>
+<p>Businesses often return goods that are already sold. They could be returned by the customer due to quality issues, non-delivery on the agreed date, or any other reason.</p>
+<h2 id="1-prerequisites">1. Prerequisites</h2>
+<p>Before creating and using a Sales Return, it is advised that you create the following first:</p>
+<ul>
+<li><a onclick="loadContent('item.html')">Item</a></li>
+<li><a onclick="loadContent('sales-invoice.html')">Sales Invoice</a> or <a onclick="loadContent('delivery-note.html')">Delivery Note</a></li>
+</ul>
+<h2 id="2-how-to-create-a-sales-return">2. How to create a Sales Return</h2>
+<ol>
+<li><p>First open the original Delivery Note / Sales Invoice, against which Customer returned the Items.</p>
+<p><img alt="Original Delivery Note" class="screenshot" src="/files/sales-return-original-delivery-note.png"/></p></li>
+<li><p>Then click on 'Create &gt; Sales Return', it will open a new Delivery Note with 'Is Return' checked, Items, Rate, and taxes will negative numbers.</p>
+<p><img alt="Return Against Delivery Note" class="screenshot" src="/files/sales-return-against-delivery-note.png"/></p></li>
+<li><p>You can also create the return entry against the original Sales Invoice, to return stock along with credit note, check "Update Stock" option in Return Sales Invoice.</p>
+<p><img alt="Return Against Sales Invoice" class="screenshot" src="/files/sales-return-against-sales-invoice.png"/></p></li>
+<li><p>On submission of Return Delivery Note / Sales Invoice, the system will increase stock balance in the mentioned Warehouse. To maintain correct stock valuation, stock balance will go up according to the original purchase rate of the returned items.</p>
+<p><img alt="Return Stock Ledger" class="screenshot" src="/files/sales-return-stock-ledger.png"/></p></li>
+<li><p>In case of Return Sales Invoice, Customer account will be credited and associated income and tax account will be debited as shown in the Accounting Ledger.</p>
+<p><img alt="Return Stock Ledger" class="screenshot" src="/files/sales-return-general-ledger.png"/></p></li>
+</ol>
+<p>If Perpetual Inventory is enabled, the system will also post accounting entry against warehouse account to sync warehouse account balance with stock balance as per Stock Ledger.</p>
+<h2 id="3-impact-on-stock-return-via-delivery-note">3. Impact on Stock Return via Delivery Note</h2>
+<p>On Creating a Sales Return against a Delivery Note:</p>
+<ul>
+<li><p>The <strong>Returned Quantity</strong> in the original Delivery Note along with any Sales Order linked to it, is updated.</p></li>
+<li><p>The original Delivery Note's status is changed to <strong>Return Issued</strong> if 100% returned:
+<img alt="Return Issued" class="screenshot" src="/files/sales-return-issue.png"/></p></li>
+</ul>
+<h2 id="4-related-topics">4. Related Topics</h2>
+<ol>
+<li><a onclick="loadContent('purchase-return.html')">Purchase Return</a></li>
+<li><a onclick="loadContent('perpetual-inventory.html')">Perpetual Inventory</a></li>
+</ol>
+</div>
+<input class="d-none" name="wiki-page-name" value="nvfjtd78e0"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="revisionsModalTitle">Sales Return
+</h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content">
+<h3>No Revisions</h3>
+</div>
+</div>
+</div></div></div></div></main>

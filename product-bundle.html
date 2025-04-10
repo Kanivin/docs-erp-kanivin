@@ -1,0 +1,76 @@
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title">Product Bundle</h1>
+</div>
+<div class="wiki-content">
+<p><strong>A Product Bundle is a master where you can list existing items which are bundled together and sold as a set (or bundle).</strong></p>
+<p>For instance, when you sell a smartphone, you need to ensure that the charger, cable, and sim ejector pin are delivered with it and stock levels of these items get affected. To address this scenario, you can create a Product Bundle for the main item, i.e. smartphone. Then list deliverable items i.e. smartphone + charger + cable + sim ejector pin as so-called "Child Items".</p>
+<p>A Product Bundle can be seen as a "Bill-of-Materials" on the Sales side.</p>
+<p>Following are the steps to set up a Product Bundle and using it in sales transactions.</p>
+<p>To access product bundle, go to:</p>
+<blockquote>
+<p>Home &gt; Selling &gt; Items and Pricing &gt; Product Bundle</p>
+</blockquote>
+<h2 id="1-prerequisites">1. Prerequisites</h2>
+<p>Before creating and using a Product Bundle, it is advised that you create the following first:</p>
+<ul>
+<li><a onclick="loadContent('item.html')">Item</a></li>
+</ul>
+<h2 id="2-how-to-create-a-product-bundle">2. How to create a Product Bundle</h2>
+<ol>
+<li>Go to the Product Bundle list, click on Add Product Bundle.</li>
+<li>Select a Parent Item, create one if not already created. Make sure Maintain Stock unchecked when creating a Parent Item. eg: Dinner Set.</li>
+<li>Enter a price for the parent item, this will be fetched when making a transaction.</li>
+<li>You can enter a description for internal use.</li>
+<li>Enter the products to be bundled in the Items table and enter their quantities.</li>
+<li>Save.</li>
+</ol>
+<p><img alt="Screenshot 2024-08-29 at 11.41.56 AM" class="screenshot" src="/files/Screenshot 2024-08-29 at 11.41.56 AM.png"/> </p>
+<h3 id="21-selecting-parent-item">2.1 Selecting Parent Item</h3>
+<p>In Product Bundle master, there are two sections. The "Parent Item" and a List of items to be shipped (Child Items).</p>
+<p>The "Parent Item" should be seen more like a vessel or virtual item and not a physical product. The "Parent Item" must be a <strong>non-stock item</strong>. To create a <strong>non-stock item</strong> you have to unmark "Maintain Stock" in the Item Form. This is a non-stock item because there is no stock maintained for it but only for the "Child Items".</p>
+<p>If you want to maintain stock for the Parent Item, then you must create a regular Bill of Material (BOM) and package them using Stock Entry Transactions.</p>
+<h3 id="22-selecting-child-items">2.2 Selecting Child Items</h3>
+<p>In the Items table, you have to list all the child items for which we maintain stock and is delivered to customer. Remember: The "Parent Item" is just virtual, so your main product (a smartphone in our example here) also has to be listed on the List of Child (or Package) Items.</p>
+<h2 id="3-features">3. Features</h2>
+<h3 id="31-product-bundle-in-the-sales-transactions">3.1 Product Bundle in the Sales Transactions</h3>
+<p>When making Sales transactions (Sales Invoice, Sales Order, Delivery Note) the Parent Item will be selected in the main item table.</p>
+<p><img alt="Screenshot 2024-08-29 at 11.42.41 AM" class="screenshot" src="/files/Screenshot 2024-08-29 at 11.42.41 AM.png"/> </p>
+<p>On selection of a Parent Item in the main item table, its child items will be fetched in Packing List table of the transaction. If child item is the serialized item, you will be able to specify its Serial No. in packing List table itself. On submission of the transaction, the system will reduce the stock level of child items from warehouse specified in Packing List table.</p>
+<p><img alt="Screenshot 2024-08-29 at 11.44.47 AM" class="screenshot" src="/files/Screenshot 2024-08-29 at 11.44.47 AM.png"/> </p>
+<p><strong>Use Product Bundle to Manage Offers/Schemes:</strong><br/>
+This was discovered when a customer dealing into nutrition products asked for a feature to manage offers like "Buy One Get One Free".</p>
+<p>To manage the same, he created a non-stock item which was used as Parent Item. In description of item, he entered offer details with the item's image displaying the offer. The sellable product was selected in Package Item where qty was two. Hence every time they sold one qty of Parent item under this offer, the system deducted two quantities of product from Warehouse.</p>
+<h3 id="4-related-topics">4. Related Topics</h3>
+<ol>
+<li><a onclick="loadContent('item.html')">Item</a></li>
+</ol>
+</div>
+<input class="d-none" name="wiki-page-name" value="pkdsp8u299"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="revisionsModalTitle">Product Bundle</h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content">
+<h3>No Revisions</h3>
+</div>
+</div>
+</div></div></div></div></main>

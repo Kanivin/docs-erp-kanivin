@@ -1,0 +1,76 @@
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title">Item Price</h1>
+</div>
+<div class="wiki-content">
+<p><strong>Item Price is the record in which you can log the selling and buying rate of an item.</strong></p>
+<h2 id="1-how-to-create-item-price">1. How to create Item Price</h2>
+<ol>
+<li>There are two ways to reach a new Item Price form:</li>
+</ol>
+<p><strong>Selling/Buying/Stock &gt; Items and Pricing &gt; Item Price &gt; New</strong>.</p>
+<p>Or</p>
+<p><strong>Stock &gt; Item &gt; Click on "+" next to Item Price</strong>.
+2. Select the Item. The name, UoM and description will be fetched.
+3. Select the Price List whether Selling/Buying price or any other price list you may have created.
+4. Enter the actual rate in the Rate field.
+5. Save. <img alt="Item Price list" class="screenshot" src="/files/item-price-1.png"/></p>
+<h3 id="11-selecting-the-price-list">1.1 Selecting the Price List</h3>
+<p>You can create multiple Price Lists for one Item in KanivinERP to track Selling and Buying Price of an Item separately. Also if the Item's selling prices change based on Territory or due to other criteria, you can create multiple Selling Price Lists for it.</p>
+<p>On selection of Price List, its currency and applicability whether for selling/buying or both will be fetched as well. To have Item Price fetching in the sales or purchase transaction, you should have 'Price List' selected in the transaction under Currency and Price List.</p>
+<p>To check all Item Prices together, go to:</p>
+<p><strong>Stock &gt; Stock Reports &gt; Item Price Stock</strong></p>
+<p>Visit the <a href="/erpnext/v13/user/manual/en/stock/price-lists">Price Lists</a> page to know more.</p>
+<h2 id="2-features">2. Features</h2>
+<h3 id="21-unit-of-measurement-uom">2.1 Unit of Measurement (UOM)</h3>
+<p>A price is always specific to a certain UOM. For example, $1 <em>per KG</em> or $80 <em>per hour</em>. By default, the <strong>Item Price</strong> will fetch the item's <em>Default Unit of Measure</em>. You can change it to any UOM from the item's UOM table.</p>
+<p>For example, if Rice is sold in 1 KG and 500 grams packets, then you can mention the UOM ("KG" or "grams") in the <strong>Item Price</strong>, and the correct price will be applied based on the UOM selected in the transaction.</p>
+<h3 id="22-packing-unit">2.2 Packing Unit</h3>
+<p>This is the quantity that must be bought or sold per unit of measure. For example, if Packing Unit is two, and UOM is one, two items in quantity will be transacted. The default is 0, you can use non-integer UoM like 1.5Kg Oats for 1 Packing Unit. If you leave it as 0, it'll not affect any transaction.</p>
+<h3 id="23-minimum-quantity">2.3 Minimum quantity</h3>
+<p>This is the minimum quantity of items to be transacted for this price to be applicable and updated in the Item Price list.</p>
+<h3 id="24-applying-price-list-to-a-specific-customersupplier">2.4 Applying Price List to a specific Customer/Supplier</h3>
+<p>If you select a Selling Price list, a customer field will appear where you can assign this Item Price to a specific customer. Likewise, if you select a Buying Price List, a Supplier field will appear where you can select a specific Supplier</p>
+<h3 id="25-applying-price-list-to-a-specific-batch">2.5 Applying Price List to a specific Batch</h3>
+<p>You can also link a specific batch to an Item Price and on the selection of that batch in the transaction, the item price for that specific batch will be applied.</p>
+<h3 id="26-validity">2.6 Validity</h3>
+<p>There are two fields here—'Valid From' and 'Valid Upto'. Valid from is set to the date you created the Item Price, you can also set the Valid Upto date on which the Item Price will expire.</p>
+<h3 id="27-lead-time-in-days">2.7 Lead Time in days</h3>
+<p>The approximate number of days it takes the product to reach the warehouse. You can set different Item Prices based on how much time the same product will reach you from different vendors.</p>
+<h3 id="28-note">2.8 Note</h3>
+<p>You can add any note about the Item Price in this field.</p>
+<h2 id="3-video">3. Video</h2>
+<h3 id="4-related-topics">4. Related Topics</h3>
+<ol>
+<li><a onclick="loadContent('item.html')">Item</a></li>
+<li><a onclick="loadContent('applying-discount.html')">Applying Discount</a></li>
+</ol>
+</div>
+<input class="d-none" name="wiki-page-name" value="p70dlru5d1"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="revisionsModalTitle">Item Price</h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content">
+<h3>No Revisions</h3>
+</div>
+</div>
+</div></div></div></div></main>

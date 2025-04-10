@@ -1,0 +1,49 @@
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title">Stock Level Report</h1>
+</div>
+<div class="wiki-content">
+<p>Stock Level report list stock item's quantity available in a particular warehouse.</p>
+<p>There are multiple reports available you can check for item's stock level.</p>
+<h4 id="stock-projected-quantity-report">Stock Projected Quantity Report</h4>
+<p>This report list item wise - warehouse wise stock level of an item considering all the stock transactions. With Actual Quantity of an item, it also provide other details like:</p>
+<ol>
+<li>Actual Qty: Quantity available in the warehouse.</li>
+<li>Planned Qty: Quantity, for which, Work Order has been raised, but is pending to be manufactured.</li>
+<li>Requested Qty: Quantity requested for purchase, but not ordered.</li>
+<li>Ordered Qty: Quantity ordered for purchase, but not received.</li>
+<li>Reserved Qty: Quantity ordered for sale, but not delivered.</li>
+<li>Project Qty: Project Quantity is calculated as</li>
+</ol>
+<p>Projected Qty = Actual Qty + Planned Qty + Requested Qty + Ordered Qty - Reserved Qty</p>
+<p>The projected inventory is used by the planning system to monitor the reorder point and to determine the reorder quantity. The projected Quantity is used by the planning engine to monitor the safety stock levels. These levels are maintained to serve unexpected demands.</p>
+<p>Having a tight control of the projected inventory is crucial to determine shortages and to calculate the right order quantity.</p>
+</div>
+<input class="d-none" name="wiki-page-name" value="lig9nsk5o2"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="revisionsModalTitle">Stock Level Report</h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content">
+<h3>No Revisions</h3>
+</div>
+</div>
+</div></div></div></div></main>

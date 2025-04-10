@@ -1,0 +1,50 @@
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title">Common Party Accounting</h1>
+</div>
+<div class="wiki-content">
+<p>Common Party Accounting in KanivinERP involves accounting of unusual transactions like creating a Sales Invoice against a primary Supplier.</p>
+<p>Let's assume an KanivinERP user who has been making Purchase Invoices against a Supplier, wants to make a Sales Invoice against the same supplier and adjust this Sales Invoice against one of the previous purchases.</p>
+<p>The above can be achieved by enabling Common Party Accounting.</p>
+<p><strong>Steps:</strong></p>
+<ol>
+<li>Go to Accounts Settings and enable <em>Common Party Accounting</em>.</li>
+<li><p>Create a link between two parties</p>
+<ul>
+<li>If the primary role of the party is Supplier, then go to the Supplier Master and Click on Actions -&gt; Link with Customer</li>
+<li>If the primary role of the party is Customer, then go to the Customer Master and Click on Actions -&gt; Link with Supplier<img alt="Party Link" class="screenshot" src="/files/Party_Link.gif"/></li>
+</ul></li>
+<li>Create a Sales Invoice against the Customer that was set as Secondary Party in the 2nd step.</li>
+<li>On submitting the Sales Invoice, a Journal Entry will be posted automatically that will create an advance balance against the linked Supplier.</li>
+</ol>
+<p><img alt="Journal Entry" class="screenshot" src="/files/Journal-Entry.png"/>
+5. Now this Journal Entry advance can be then used to reconcile against a Purchase Invoice.</p>
+</div>
+<input class="d-none" name="wiki-page-name" value="nigggofcqj"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="revisionsModalTitle">Common Party Accounting</h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content">
+<h3>No Revisions</h3>
+</div>
+</div>
+</div></div></div></div></main>

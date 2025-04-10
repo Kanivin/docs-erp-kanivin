@@ -1,0 +1,108 @@
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title">Item Tax Template
+</h1>
+</div>
+<div class="wiki-content">
+<p><strong>Item Tax Template is useful for item wise taxation.</strong></p>
+<p>If some of your Items have tax rates different from the standard tax rate assigned in the Taxes and Charges table, then you can create an Item Tax Template and assign it to an <a href="/erpnext/v13/user/manual/en/stock/item">Item</a> or <a href="/erpnext/v13/user/manual/en/stock/item-group">Item Group</a>. The rate assigned in the Item Tax Template will get preference over the standard tax rate assigned in the Taxes and Charges table.</p>
+<p>For example, if tax GST 18% is added in the Taxes and Charges table in Sales Order, then it will be applied on all the items in that Sales Order. However, if you need to have different tax rate applied on some of the items, the steps are given below</p>
+<p>To access the Item Tax Template list, go to</p>
+<blockquote>
+<p>Home &gt; Accounting &gt; Taxes &gt; Item Tax Template</p>
+</blockquote>
+<p>Let's assume that we are creating a Sales Order. We have the <a href="/erpnext/v13/user/manual/en/selling/sales-taxes-and-charges-template">Sales Taxes and Charges Template</a> master for GST 9%. Out of all the Sales Items, on one Item, only 5% GST will be applied, while another item is exempted from tax (non taxable). You need to select the Account Head of the tax and set its overriding rate.</p>
+<h2 id="1-prerequisites">1. Prerequisites</h2>
+<p>Before creating and using an Item Tax Template, it is advised to create the following first:</p>
+<ol>
+<li><a onclick="loadContent('item.html')">Item</a></li>
+<li>Enable 'Automatically add Taxes and Charges from Item Tax Template' in <a onclick="loadContent('accounts-settings.html')">Account Settings</a></li>
+</ol>
+<h2 id="2-how-to-create-an-item-tax-template">2. How to create an Item Tax Template</h2>
+<ol>
+<li>Go to the Item Tax Template list and click on New.</li>
+<li>Enter a title for the Item Tax Template.</li>
+<li>Select an account and set the overriding rate. Add more rows if required.</li>
+<li>Save.</li>
+</ol>
+<p>Now the Item Tax Template is ready to be assigned to an Item. To do this, go the Item, Item Tax section and select an Item Tax Template:</p>
+<p><img alt="Item Tax In Item" class="screenshot" src="/files/item-tax-in-item.png"/></p>
+<blockquote>
+<p>Note: It is advised to not use the Sales/Purchase Template selected here in <a href="/erpnext/v13/user/manual/en/accounts/tax-rule">Tax Rule</a>, it may cause interference. If you want to use same tax rates for Tax Rule and Item Tax Template, use a different name for the Sales/Purchase Tax Templates.</p>
+</blockquote>
+<h3 id="21-mention-tax-applicable-in-the-item-master">2.1 Mention Tax Applicable in the Item master</h3>
+<p>Tax templates are preset with values. For items which have a different tax rate than the others, you need to change it in the Item master. Go to the tax table in the Item, add a row, select the tax type and change the rate. Now, this new rate will over ride the template when creating an order/invoice. For example, in the below screenshot you can see that the tax rate is set as 5 and that's the rate which will be applied in transactions.</p>
+<p><img alt="Item-wise Tax" class="screenshot" src="/files/item-wise-tax.png"/></p>
+<p>For the Item which is exempted from tax entirely, mention 0% as tax rate in the Item master.</p>
+<p><img alt="Tax Exempted Item" class="screenshot" src="/files/tax-exempted-item.png"/></p>
+<blockquote>
+<p>Note: For Item Tax Template to work, you need to ensure that the tax types (accounts) set in Item Tax Template (with changed tax rates) are present in the Sales Taxes and Charges Template.</p>
+</blockquote>
+<blockquote>
+<p>If you want to include multiple items with different tax rates, you need to have record them under different tax heads. For example, VAT 14%, VAT 5% etc.</p>
+</blockquote>
+<h3 id="22-tax-calculation-in-transaction">2.2 Tax Calculation in transaction</h3>
+<p>In sales transactions like Quotation, Sales Order, and Sales Invoice the taxes on items are calculated as per the Sales Taxes and Charges Template selected. However, if some items have an Item Tax Template linked, then the taxes are calculated on those items as per the rates mentioned in the Item Tax Template instead of the rates mentioned in the Sales Taxes and Charges Template.</p>
+<p>For example, in the following screenshot, you can see that taxes are calculated at 3% even though the rate as per Sales Taxes and Charges Template is 6.25%.</p>
+<p><img alt="Tax Calculation" class="screenshot" src="/files/tax-calculation.png"/></p>
+<h3 id="23-item-tax-template-for-each-items">2.3 Item Tax Template for each Items</h3>
+<p>You can also manually select a different Item Tax Template for each Item in a transaction:</p>
+<p><img alt="Slect Item Tax Template" class="screenshot" src="/files/select-item-tax-template.png"/></p>
+<h3 id="24-item-wise-tax-on-an-item-group">2.4 Item wise tax on an Item Group</h3>
+<p>You can assign the Item Tax Template to an Item Group by modifying the Item Tax table in the Item Tax section within the Item Group document.</p>
+<p><img alt="Item Tax Template in Item Group" class="screenshot" src="/files/item-tax-template-in-item-group.png"/></p>
+<p>Item Tax Template applied on an Item Group will apply to all Items in that group unless an individual Item in the Item Group has its own Item Tax Template assigned to it.</p>
+<h3 id="25-validity-of-item-taxes">2.5 Validity of Item Taxes</h3>
+<p><img alt="Item Tax in Item Group" class="screenshot" src="/files/item-tax-in-item.png"/></p>
+<p>You can also assign validity to tax templates as shown in the image above.</p>
+<ul>
+<li>Based on the posting date of the transaction, a valid tax template will be automatically fetched.</li>
+<li>If there are more than one valid tax templates then the first valid tax template from Item Tax table will be fetched.</li>
+<li>In case when there are no valid tax templates then the first tax template with no 'Valid From' date in the Item Tax table will be fetched.</li>
+</ul>
+<blockquote>
+<p>Note: While adding items in Purchase Invoice first preference will be given to 'Supplier Invoice Date' instead of 'Posting Date' for fetching valid Item Tax Template.</p>
+</blockquote>
+<h3 id="26-some-points-to-note">2.6 Some points to note</h3>
+<ul>
+<li><p>If you set the Tax Category as empty, the default Item Tax Template will be applied to Items in transactions.</p></li>
+<li><p>You can apply different Item Tax Templates for different Tax Categories.</p></li>
+<li><p>For an Item Tax Template to override taxes, there must be a row in the Taxes and Charges table with the same tax Account Head with a standard tax rate.</p></li>
+<li><p>If you wish to apply taxes only on the Items with an Item Tax Template then you can set the standard tax rate as 0.</p></li>
+</ul>
+<h3 id="3-related-topics">3. Related Topics</h3>
+<ol>
+<li><a onclick="loadContent('tax-rule.html')">Tax Rule</a></li>
+<li><a onclick="loadContent('sales-invoice.html')">Sales Invoice</a></li>
+<li><a onclick="loadContent('purchase-invoice.html')">Purchase Invoice</a></li>
+</ol>
+</div>
+<input class="d-none" name="wiki-page-name" value="0k1pu4knmo"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="revisionsModalTitle">Item Tax Template
+</h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content">
+<h3>No Revisions</h3>
+</div>
+</div>
+</div></div></div></div></main>

@@ -1,0 +1,78 @@
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title">Invoice Discounting
+</h1>
+</div>
+<div class="wiki-content">
+<p><strong>Invoice discounting is the practice of using a company's unpaid sales invoices as collateral for a short term loan, which is issued by a bank or a finance company.</strong></p>
+<p>To access the Invoice discounting list, go to:</p>
+<blockquote>
+<p>Home &gt; Accounting &gt; Banking and Payments &gt; Invoice Discounting</p>
+</blockquote>
+<h2 id="1-prerequisites">1. Prerequisites</h2>
+<p>You need to create following ledgers in order to post invoice discounting transactions.</p>
+<ul>
+<li><strong>Short Term Loan:</strong> A ledger under the 'Current Liabilities' &gt; 'Loans (Liabilities)' group for loan.</li>
+<li><strong>Bank Account Charges:</strong> An expense ledger for charges levied by the bank.</li>
+<li><strong>Accounts Receivable Credit Account:</strong> A control account of type receivable.</li>
+<li><strong>Accounts Receivable Discounted Account:</strong> A receivable account for invoices which have been discounted.</li>
+<li><strong>Accounts Receivable Unpaid Account:</strong> A receivable account for invoices which were discounted and remain unpaid even after the loan period is over.</li>
+</ul>
+<h2 id="2-how-to-post-an-invoice-discounting-transaction">2. How to Post an Invoice Discounting Transaction</h2>
+<ol>
+<li>Go to the Invoice Discounting list, click on New.</li>
+<li>Enter Posting Date and Loan Start Date. Enter the Loan Period in days.</li>
+<li>Select invoices either manually in the table or by clicking on the 'Get Invoices' button on the top right.</li>
+<li>Select Short Term Loan Account, Bank Account, and Bank Charges Account.</li>
+<li>Select Accounts Receivable Credit Account, Accounts Receivable Discounted Account and Accounts Receivable Unpaid Account.</li>
+<li>Click on Save then Submit.</li>
+<li><p>After submitting the Invoice Discounting form, click on the <strong>Disburse Loan</strong>.</p>
+<p><img alt="Disburse Loan in Invoice Discounting" class="screenshot" src="/files/invoice-discounting.png"/></p></li>
+<li><p>You'll be taken to a <a href="/erpnext/v13/user/manual/en/accounts/journal-entry">Journal Entry</a> screen. Save and Submit the Journal Entry.</p>
+<p><img alt="Journal Entry" class="screenshot" src="/files/invoice-discounting-journal-entry.png"/></p></li>
+</ol>
+<h2 id="2-features">2. Features</h2>
+<h3 id="21-import-invoices">2.1 Import Invoices</h3>
+<p>Click on 'Get Invoices' button to import invoices. You can import invoices by filtering on certain criteria.</p>
+<ul>
+<li>Invoices created against a specific Customer.</li>
+<li>Date range between which the invoices were raised.</li>
+<li>Minimum and maximum amount.</li>
+</ul>
+<p>You can also specify multiple of the above filters.</p>
+<h3 id="22-closing-the-loan">2.2 Closing the Loan</h3>
+<p>When you repay the loan at the end of the loan period or before that, you can update the same by clicking on 'Close Loan' button.
+ <img alt="Journal Entry" class="screenshot" src="/files/invoice-discounting-close-loan.png"/>
+System will prepare the Journal Entry. Review and Submit the it.</p>
+<h3 id="23-auto-update-of-ledgers-at-the-end-of-loan-period">2.3 Auto Update of Ledgers at the end of Loan Period</h3>
+<p>If the loan is not repaid at the end of loan period, system will create a Journal Entry via a scheduled job to shift value from 'Accounts Receivable Discounted Account' to 'Accounts Receivable Unpaid Account'. This will make it easy to trace the invoices which were discounted and remained unpaid at the end of the loan period.</p>
+</div>
+<input class="d-none" name="wiki-page-name" value="d4cn8q8qik"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="revisionsModalTitle">Invoice Discounting
+</h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content">
+<h3>No Revisions</h3>
+</div>
+</div>
+</div></div></div></div></main>

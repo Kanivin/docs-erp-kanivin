@@ -1,0 +1,207 @@
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title">Material Request</h1>
+</div>
+<div class="wiki-content">
+<p><strong>A Material Request is a simple document identifying a requirement of a set of Items (products or services) for a particular reason.</strong></p>
+<p>A Material Request can have the following purposes:</p>
+<ul>
+<li><strong>Purchase</strong>: If the material being requested is to be purchased.</li>
+<li><strong>Material Transfer</strong>: If the material being requested is to be shifted from one Warehouse to another.</li>
+<li><strong>Material Issue</strong>: If the material being requested is to be Issued for some purpose like manufacturing.</li>
+<li><strong>Manufacture:</strong> If the material being requested is to be produced.</li>
+<li><strong>Subcontracting:</strong> If the material being requested is to be subcontracted to a vendor.</li>
+<li><strong>Customer Provided</strong>: If the material being requested is to be provided by Customer. To know more about this, visit the <a onclick="loadContent('customer-provided-items.html')">Customer Provided Item</a> page.</li>
+</ul>
+<p><img alt="Material Request" class="screenshot" src="/files/material-request-flowchart.png"/> </p>
+<p>To access the Material Request list, go to:</p>
+<blockquote>
+<p>Home &gt; Stock &gt; Stock Transactions &gt; Material Request</p>
+</blockquote>
+<h2 id="1-how-to-create-a-material-request">1. How to create a Material Request</h2>
+<ol>
+<li>Go to the Material Request list, click on Add Material Request.</li>
+<li>Enter the Required By date.</li>
+<li>Select the appropriate purpose from the list.</li>
+<li>You can fetch Items from a BOM, Sales Order, or Product Bundle.</li>
+</ol>
+<p><img alt="Screenshot 2024-07-09 at 2.36.44 PM" class="screenshot" src="/files/Screenshot 2024-07-09 at 2.36.44 PM.png"/>
+5. Select the Item and set the quantity.
+6. Select the Warehouse for which Items are required.
+7. You can change the Required By date for individual Items in this table.
+8. Save and Submit.</p>
+<p><img alt="Screenshot 2024-07-09 at 2.40.52 PM" class="screenshot" src="/files/Screenshot 2024-07-09 at 2.40.52 PM.png"/> </p>
+<h3 id="11-alternate-ways-of-creating-a-material-request">1.1 Alternate ways of creating a Material Request</h3>
+<p>A Material Request can be generated automatically:</p>
+<ul>
+<li>From a <a onclick="loadContent('sales-order.html')">Sales Order</a>. While creating MR, user can choose to ignore or include Projected Quantity. Accordingly, Sales Order Items are fetched to MR.</li>
+<li>When the Projected Quantity of an Item in Stores (Warehouses) reaches a particular level.</li>
+<li>From your a <a onclick="loadContent('production-plan.html')">Production Plan</a> to plan your manufacturing activities.</li>
+</ul>
+<p>If your Items are inventory items, you must also mention the Warehouse where you expect these Items to be delivered. This helps to keep track of the <a href="/erpnext/v13/user/manual/en/stock/projected-quantity">Projected Quantity</a> for this Item.</p>
+<blockquote>
+<p>Info: Material Request is not mandatory. It is ideal if you have centralized buying so that you can collect this information from various departments.</p>
+</blockquote>
+<h3 id="12-statuses">1.2 Statuses</h3>
+<p>These are the statuses a Material Request can be in:</p>
+<ul>
+<li><strong>Draft</strong>: A draft is saved but yet to be submitted to the system.</li>
+<li><strong>Submitted</strong>: Document is submitted to the system.</li>
+<li><strong>Stopped</strong>: If no more materials are needed the Material Request can be stopped.</li>
+<li><strong>Canceled</strong>: The materials are not needed at all and the request is canceled.</li>
+<li><strong>Pending</strong>: The Purchase/Manufacture is pending to complete the Material Request.</li>
+<li><strong>Partially Ordered</strong>: Purchase Orders for some Items from the Material Request are made and some are pending.</li>
+<li><strong>Ordered</strong>: All Items in the Material Request are ordered via Purchase Orders.</li>
+<li><strong>Issued</strong>: The materials are issued using a Material Issue Stock Entry.</li>
+<li><strong>Transferred</strong>: The required materials are transferred from one Warehouse to another using a Stock Entry.</li>
+<li><strong>Received</strong>: The materials were ordered and have been received at your Warehouse using a Purchase Receipt.</li>
+</ul>
+<h2 id="2-features">2. Features</h2>
+<h3 id="21-items-table">2.1 Items table</h3>
+<ul>
+<li><strong>Barcode</strong>: You can track Items using <a onclick="loadContent('track-items-using-barcode.html')">barcodes</a>.</li>
+<li>The Item Code, name, description, Image, and Manufacturer will be fetched from the Item master.</li>
+<li><strong>Scan Barcode</strong>: You can add Items in the Items table by scanning their barcodes if you have a barcode scanner. Read documentation for <a onclick="loadContent('track-items-using-barcode.html')">tracking items using barcode</a> to know more.</li>
+<li>The UoM, Conversion Factor, and Amount will be fetched. You change the Warehouse for which the material is being requested.</li>
+<li>Accounting details like Expense Account and Accounting Dimensions can be set for the Items.</li>
+<li>Page Break will create a page break just before this item when printing.</li>
+</ul>
+<h3 id="22-setting-warehouses">2.2 Setting Warehouses</h3>
+<ul>
+<li><strong>Set Warehouse</strong>: Optionally, you can set the Warehouse where the requested Items will arrive. This will be fetched into the 'For Warehouse' fields in the Item table rows.</li>
+</ul>
+<h3 id="23-more-information">2.3 More Information</h3>
+<p>In the 'Job Card' and 'Work Order' fields, it sets a reference from where the Material Request was generated.</p>
+<h3 id="24-printing-details">2.4 Printing Details</h3>
+<h4 id="letterhead">Letterhead</h4>
+<p>You can print your Material Request on your company's letterhead. Read <a href="/erpnext/v13/user/manual/en/setting-up/print/letter-head">Letter head documentation</a> to learn more.</p>
+<h4 id="print-headings">Print Headings</h4>
+<p>Material Request headings can also be changed when printing the document. You can do this by selecting a <strong>Print Heading</strong>. To create new Print Headings go to: Home &gt; Settings &gt; Printing &gt; Print Heading. Know more <a href="/erpnext/v13/user/manual/en/setting-up/print/print-headings">here</a>.</p>
+<h3 id="25-terms-and-conditions">2.5 Terms and Conditions</h3>
+<p>In Sales/Purchase transactions there might be certain Terms and Conditions based on which the Supplier provides goods or services to the Customer. You can apply the Terms and Conditions to transactions to transactions and they will appear when printing the document. To know about Terms and Conditions, <a href="/erpnext/v13/user/manual/en/setting-up/print/terms-and-conditions">click here</a></p>
+<h3 id="26-after-submitting">2.6 After Submitting</h3>
+<p>You can create the following documents:</p>
+<ul>
+<li><a onclick="loadContent('request-for-quotation.html')">Request For Quotation</a></li>
+<li><a onclick="loadContent('purchase-order.html')">Purchase Order</a></li>
+<li><a onclick="loadContent('supplier-quotation.html')">Supplier Quotation</a></li>
+</ul>
+<p><img alt="Screenshot 2024-07-09 at 2.38.58 PM" class="screenshot" src="/files/Screenshot 2024-07-09 at 2.38.58 PM.png"/> </p>
+<h3 id="27-automatically-generate-material-requests">2.7 Automatically generate Material Requests</h3>
+<p>Material Requests can be generated automatically by enabling the setting in <a href="/erpnext/v13/user/manual/en/stock/stock-settings#9-automatic-material-request">Stock Settings</a> and setting the level in the <a href="/erpnext/v13/user/manual/en/stock/item#34-automatic-reordering">Item form</a>. When the stock level dips below a certain quantity, setting a reorder will automatically create material requests for the Item.</p>
+<h3 id="note">Note:</h3>
+<p>Material Request Purpose "Subcontracting" is newly added and only present in the develop branch of KanivinERP. It will be there by default in the next major release i.e v16</p>
+<p>A subcontracted Material Request enables the user to create a Subcontracted Purchase Order directly from the Material Request itself after submission.</p>
+</div>
+<input class="d-none" name="wiki-page-name" value="aqhk51pbb3"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="revisionsModalTitle">Material Request</h5>
+<span class="small text-muted revision-time">mihir edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content">
+<p><strong>A Material Request is a simple document identifying a requirement of a set of Items (products or services) for a particular reason.</strong></p>
+<p>A Material Request can have the following purposes:</p>
+<ul>
+<li><strong>Purchase</strong>: If the material being requested is to be purchased.</li>
+<li><strong>Material Transfer</strong>: If the material being requested is to be shifted from one Warehouse to another.</li>
+<li><strong>Material Issue</strong>: If the material being requested is to be Issued for some purpose like manufacturing.</li>
+<li><strong>Manufacture:</strong> If the material being requested is to be produced.</li>
+<li><strong>Customer Provided</strong>: If the material being requested is to be provided by Customer. To know more about this, visit the <a href="/docs/v13/user/manual/en/manufacturing/articles/customer-provided-items">Customer Provided Item</a> page.</li>
+</ul>
+<p><img alt="Material Request" class="screenshot" src="/files/material-request-flowchart.png"/> </p>
+<p>To access the Material Request list, go to:</p>
+<blockquote>
+<p>Home &gt; Stock &gt; Stock Transactions &gt; Material Request</p>
+</blockquote>
+<h2 id="1-how-to-create-a-material-request">1. How to create a Material Request</h2>
+<ol>
+<li>Go to the Material Request list, click on Add Material Request.</li>
+<li>Enter the Required By date.</li>
+<li>Select the appropriate purpose from the list.</li>
+<li>You can fetch Items from a BOM, Sales Order, or Product Bundle.</li>
+</ol>
+<p><img alt="Screenshot 2024-07-09 at 2.36.44 PM" class="screenshot" src="/files/Screenshot 2024-07-09 at 2.36.44 PM.png"/>
+5. Select the Item and set the quantity.
+6. Select the Warehouse for which Items are required.
+7. You can change the Required By date for individual Items in this table.
+8. Save and Submit.</p>
+<p><img alt="Screenshot 2024-07-09 at 2.40.52 PM" class="screenshot" src="/files/Screenshot 2024-07-09 at 2.40.52 PM.png"/> </p>
+<h3 id="11-alternate-ways-of-creating-a-material-request">1.1 Alternate ways of creating a Material Request</h3>
+<p>A Material Request can be generated automatically:</p>
+<ul>
+<li>From a <a href="/docs/v13/user/manual/en/selling/sales-order">Sales Order</a>. While creating MR, user can choose to ignore or include Projected Quantity. Accordingly, Sales Order Items are fetched to MR.</li>
+<li>When the Projected Quantity of an Item in Stores (Warehouses) reaches a particular level.</li>
+<li>From your a <a href="/docs/v13/user/manual/en/manufacturing/production-plan">Production Plan</a> to plan your manufacturing activities.</li>
+</ul>
+<p>If your Items are inventory items, you must also mention the Warehouse where you expect these Items to be delivered. This helps to keep track of the <a href="/docs/v13/user/manual/en/stock/projected-quantity">Projected Quantity</a> for this Item.</p>
+<blockquote>
+<p>Info: Material Request is not mandatory. It is ideal if you have centralized buying so that you can collect this information from various departments.</p>
+</blockquote>
+<h3 id="12-statuses">1.2 Statuses</h3>
+<p>These are the statuses a Material Request can be in:</p>
+<ul>
+<li><strong>Draft</strong>: A draft is saved but yet to be submitted to the system.</li>
+<li><strong>Submitted</strong>: Document is submitted to the system.</li>
+<li><strong>Stopped</strong>: If no more materials are needed the Material Request can be stopped.</li>
+<li><strong>Canceled</strong>: The materials are not needed at all and the request is canceled.</li>
+<li><strong>Pending</strong>: The Purchase/Manufacture is pending to complete the Material Request.</li>
+<li><strong>Partially Ordered</strong>: Purchase Orders for some Items from the Material Request are made and some are pending.</li>
+<li><strong>Ordered</strong>: All Items in the Material Request are ordered via Purchase Orders.</li>
+<li><strong>Issued</strong>: The materials are issued using a Material Issue Stock Entry.</li>
+<li><strong>Transferred</strong>: The required materials are transferred from one Warehouse to another using a Stock Entry.</li>
+<li><strong>Received</strong>: The materials were ordered and have been received at your Warehouse using a Purchase Receipt.</li>
+</ul>
+<h2 id="2-features">2. Features</h2>
+<h3 id="21-items-table">2.1 Items table</h3>
+<ul>
+<li><strong>Barcode</strong>: You can track Items using <a href="/docs/v13/user/manual/en/stock/articles/track-items-using-barcode">barcodes</a>.</li>
+<li>The Item Code, name, description, Image, and Manufacturer will be fetched from the Item master.</li>
+<li><strong>Scan Barcode</strong>: You can add Items in the Items table by scanning their barcodes if you have a barcode scanner. Read documentation for <a href="/docs/v13/user/manual/en/stock/articles/track-items-using-barcode">tracking items using barcode</a> to know more.</li>
+<li>The UoM, Conversion Factor, and Amount will be fetched. You change the Warehouse for which the material is being requested.</li>
+<li>Accounting details like Expense Account and Accounting Dimensions can be set for the Items.</li>
+<li>Page Break will create a page break just before this item when printing.</li>
+</ul>
+<h3 id="22-setting-warehouses">2.2 Setting Warehouses</h3>
+<ul>
+<li><strong>Set Warehouse</strong>: Optionally, you can set the Warehouse where the requested Items will arrive. This will be fetched into the 'For Warehouse' fields in the Item table rows.</li>
+</ul>
+<h3 id="23-more-information">2.3 More Information</h3>
+<p>In the 'Job Card' and 'Work Order' fields, it sets a reference from where the Material Request was generated.</p>
+<h3 id="24-printing-details">2.4 Printing Details</h3>
+<h4 id="letterhead">Letterhead</h4>
+<p>You can print your Material Request on your company's letterhead. Read <a href="/docs/v13/user/manual/en/setting-up/print/letter-head">Letter head documentation</a> to learn more.</p>
+<h4 id="print-headings">Print Headings</h4>
+<p>Material Request headings can also be changed when printing the document. You can do this by selecting a <strong>Print Heading</strong>. To create new Print Headings go to: Home &gt; Settings &gt; Printing &gt; Print Heading. Know more <a href="/docs/v13/user/manual/en/setting-up/print/print-headings">here</a>.</p>
+<h3 id="25-terms-and-conditions">2.5 Terms and Conditions</h3>
+<p>In Sales/Purchase transactions there might be certain Terms and Conditions based on which the Supplier provides goods or services to the Customer. You can apply the Terms and Conditions to transactions to transactions and they will appear when printing the document. To know about Terms and Conditions, <a href="/docs/v13/user/manual/en/setting-up/print/terms-and-conditions">click here</a></p>
+<h3 id="26-after-submitting">2.6 After Submitting</h3>
+<p>You can create the following documents:</p>
+<ul>
+<li><a href="/docs/v13/user/manual/en/buying/request-for-quotation">Request For Quotation</a></li>
+<li><a href="/docs/v13/user/manual/en/buying/purchase-order">Purchase Order</a></li>
+<li><a href="/docs/v13/user/manual/en/buying/supplier-quotation">Supplier Quotation</a></li>
+</ul>
+<p><img alt="Screenshot 2024-07-09 at 2.38.58 PM" class="screenshot" src="/files/Screenshot 2024-07-09 at 2.38.58 PM.png"/> </p>
+<h3 id="27-automatically-generate-material-requests">2.7 Automatically generate Material Requests</h3>
+<p>Material Requests can be generated automatically by enabling the setting in <a href="/docs/v13/user/manual/en/stock/stock-settings#9-automatic-material-request">Stock Settings</a> and setting the level in the <a href="/docs/v13/user/manual/en/stock/item#34-automatic-reordering">Item form</a>. When the stock level dips below a certain quantity, setting a reorder will automatically create material requests for the Item.</p>
+</div>
+</div>
+</div></div></div></div></main>

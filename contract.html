@@ -1,0 +1,107 @@
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title">Contract
+</h1>
+</div>
+<div class="wiki-content">
+<p><strong>A contract is a legally binding agreement between a Supplier and a Customer over the sale or products or services.</strong></p>
+<p>A contract is legally enforceable because it meets the requirements and approval of the law. An agreement typically involves the exchange of goods, services, money, or promises of any of those.</p>
+<p>To access the Contract list, go to:</p>
+<blockquote>
+<p>Home &gt; Sales Pipeline &gt; Contract</p>
+</blockquote>
+<h2 id="1-how-to-create-a-contract">1. How to Create a Contract</h2>
+<ol>
+<li>Go to the Contract list and click on New.</li>
+<li>Choose the Customer.</li>
+<li>Enter the Contract Terms. A template can also be created for easily fetching the terms.</li>
+<li>Save.
+<img alt="Contract" class="screenshot" src="/files/contract.png"/></li>
+</ol>
+<p><strong>Party User</strong>: The employee from your Company who is in contact with the Customer.</p>
+<h3 id="11-statuses">1.1 Statuses</h3>
+<ul>
+<li><strong>Unsigned</strong>: The Contract has not yet been signed by the Customer.</li>
+<li><strong>Active</strong>: The Contract has been signed and is active under the Contract Period.</li>
+<li><strong>Inactive</strong>: The Contract is out of the Contract Period and not valid anymore.</li>
+</ul>
+<h2 id="2-features">2. Features</h2>
+<h3 id="21-contract-period">2.1 Contract Period</h3>
+<p>The Start and End date within which the Contract is valid.</p>
+<h3 id="22-signee-details">2.2 Signee Details</h3>
+<p>This section will appear when the 'Signed' checkbox is ticked to indicate that the Customer has signed and accepted the Contract.</p>
+<p><img alt="Contract Signee" class="screenshot" src="/files/contract-signee.png"/></p>
+<ul>
+<li><strong>Signee</strong>: Enter the name of the person that has signed the Contract.</li>
+<li><strong>Signed On</strong>: The date on which the Contract was signed.</li>
+</ul>
+<h3 id="23-contract-details">2.3 Contract Details</h3>
+<p>Enter the terms of the Contract in the Contract Terms field. You can create a Contract Template and the template can be selected to fetch the Contract Terms.</p>
+<h3 id="24-fulfilment-details">2.4 Fulfilment Details</h3>
+<p>If the Contract requires some fulfilment from the Supplier's (your) end, their details can be recorded in the Fulfilment Terms table.</p>
+<p><img alt="Contract Fulfilment" class="screenshot" src="/files/contract-fulfilment.png"/></p>
+<ul>
+<li><strong>Requirement</strong>: Enter a requirement that needs to be fulfiled. For example, 'installation'.</li>
+<li><strong>Notes</strong>: Any notes about the requirement can be entered here.</li>
+</ul>
+<h3 id="25-contract-template">2.5 Contract Template</h3>
+<p>A contract template is a standardized outline of a contract without the specifics involved. You can create a new template by going to:</p>
+<blockquote>
+<p>Home &gt; CRM &gt; Contract Template</p>
+</blockquote>
+<p>You can create templates by using Jinja. Eg:</p>
+<pre><code>The parties enter into this contract on {{ start_date }}.
+</code></pre>
+<p>When you create a new contract using this template, the <code>{{ start_date }}</code> is replaced by the date entered into the field of the same name.</p>
+<p><img alt="Contract Template" class="screenshot" src="/files/contract-template-jinja.gif"/></p>
+<h3 id="26-references">2.6 References</h3>
+<p>If the Contract can be linked to a transaction in KanivinERP. Select the transaction type and the specific transaction. The documents that can be linked are:</p>
+<ul>
+<li>Quotation</li>
+<li>Project</li>
+<li>Sales Order</li>
+<li>Purchase Order</li>
+<li>Sales Invoice</li>
+<li>Purchase Invoice</li>
+</ul>
+<p><img alt="Contract References" class="screenshot" src="/files/contract-reference.png"/></p>
+<h3 id="3-related-topics">3. Related Topics</h3>
+<ol>
+<li><a onclick="loadContent('quotation.html')">Quotation</a></li>
+<li><a onclick="loadContent('purchase-order.html')">Purchase Order</a></li>
+<li><a onclick="loadContent('sales-order.html')">Sales Order</a></li>
+<li><a onclick="loadContent('purchase-receipt.html')">Purchase Receipt</a></li>
+<li><a onclick="loadContent('delivery-note.html')">Delivery Note</a></li>
+<li><a onclick="loadContent('sales-invoice.html')">Sales Invoice</a></li>
+<li><a onclick="loadContent('purchase-invoice.html')">Purchase Invoice</a></li>
+</ol>
+</div>
+<input class="d-none" name="wiki-page-name" value="92qmoh548h"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="revisionsModalTitle">Contract
+</h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content">
+<h3>No Revisions</h3>
+</div>
+</div>
+</div></div></div></div></main>

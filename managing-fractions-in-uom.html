@@ -1,0 +1,50 @@
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title">Managing Fractions in UOM
+</h1>
+</div>
+<div class="wiki-content">
+<p>UoM stands for Unit of Measurement. Few examples of UoM are Numbers (Nos), Kgs, Litre, Meter, Box, Carton etc.</p>
+<p>There are few UOMs which cannot have value in decimal places. For example, if we have television for an item, with Nos as its UoM, we cannot have 1.5 Nos. of television, or 3.7 Nos. of computer sets. The value of quantity for these items must be whole number.</p>
+<p>You can configure if particular UoM can have value in decimal place or no. By default, value in decimal places will be allowed for all the UOMs. To restrict decimal places or value in fraction for any UoM, you should follow these steps.</p>
+<h4 id="uom-list">UOM List</h4>
+<p>For UOM list, go to:</p>
+<p><code>Stock &gt; Setup &gt; UoM</code></p>
+<p>From the list of UOM, select UOM for which value in decimal place is to be restricted. Let's assume that UoM is Nos.</p>
+<h4 id="configure">Configure</h4>
+<p>In the UoOM master, you will find a field called "Must be whole number". Check this field to restrict user from enter value in decimal places in quantity field, for item having this UOM.</p>
+<p><img alt="UoM Must be Whole No" class="screenshot" src="/files/uom-fraction-1.png"/></p>
+<h4 id="validation">Validation</h4>
+<p>While creating transaction, if you enter value in fraction for item whose UOM has "Must be whole number" checked, you will get error message stating:</p>
+<p><code>Quantity cannot be a fraction at row #</code></p>
+<p><img alt="UoM Validation Message" class="screenshot" src="/files/uom-fraction-2.png"/></p>
+</div>
+<input class="d-none" name="wiki-page-name" value="i0dnr5vahm"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="revisionsModalTitle">Managing Fractions in UOM
+</h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content">
+<h3>No Revisions</h3>
+</div>
+</div>
+</div></div></div></div></main>

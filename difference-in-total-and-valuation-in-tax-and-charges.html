@@ -1,0 +1,53 @@
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title">Include Tax or Charge in Valuation or Total?</h1>
+</div>
+<div class="wiki-content">
+<p>Consider Tax or Charge field in Taxes and Charges table of purchase or sales transactions has three values.</p>
+<ul>
+<li>Total</li>
+<li>Valuation</li>
+<li>Total and Valuation</li>
+</ul>
+<p><img alt="Valuation And Total" class="screenshot" src="/files/valuation-and-total.png"/></p>
+<p>Let's consider an example to understand an effect of each charge type. We purchase ten units of item, at the rate of 800. total purchase amount is 800. Purchased item has 4% VAT applied on it, and INR 100 was incurred in transportation.</p>
+<h4 id="total">Total:</h4>
+<p>Tax or Charge categorized as <strong>Total</strong> will be included in the total of purchase transactions. But it will not have impact on the valuation of item purchased.</p>
+<p>If VAT 4% is applied on item, it will amount to INR 32 (at item's based rate is 800). Since VAT is the consumption tax, it should be added value of Purchase Order/Invoice, since it will be included in payable towards supplier. But it should not be added to the value of Purchased item.</p>
+<p>When Purchase Invoice is submitted, general ledger posting will be done for tax/charge categorized as Total.</p>
+<h4 id="valuation">Valuation:</h4>
+<p>Tax or charge categorized as <strong>Valuation</strong> will be added in the value of purchased item, but not in the total of that purchase transaction.</p>
+<p>Transportation charge of INR 100 should be categorized as valuation. With this, the value of purchased item will be increased from 800 to 900. Also, this charge will be not be added to the total of purchase transaction, because it is your expense, and should not be reflected to the supplier.</p>
+<p>Check <a href="/erpnext/v13/user/manual/en/stock/perpetual-inventory">here</a> to learn general posting done for expense categorized as Valuation.</p>
+<h4 id="total-and-valuation">Total and Valuation:</h4>
+<p>Tax or Charge categorized as for <strong>Total and Valuation</strong> will be added in the valuation of item, as well as in the totals of purchase transactions.</p>
+<p>Let's assume that transportion is arranged by our supplier, but we need to pay transportation charges to them. In that case, for transportation charges, category selected should be Total and Valuation. With this, INR 100 transportation charge will be added to the actual purchase amount 800. Also, INR 100 will reflect in the total, as it will be payable for us towards supplier.</p>
+</div>
+<input class="d-none" name="wiki-page-name" value="0rodhc40ei"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="revisionsModalTitle">Include Tax or Charge in Valuation or Total?</h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content">
+<h3>No Revisions</h3>
+</div>
+</div>
+</div></div></div></div></main>

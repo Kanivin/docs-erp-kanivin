@@ -1,0 +1,205 @@
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title" id="assignment-rule">Assignment Rule
+<a aria-hidden="true" class="no-underline" href="#assignment-rule">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h1>
+</div>
+<div class="wiki-content">
+<blockquote>
+<p>Introduced in Version 12</p>
+</blockquote>
+<p><strong>An Assignment Rule lets you set up automatic assignment of documents to Users.</strong></p>
+<p>To assign the support tickets automatically amongst the employees who work on support, an Assignment Rule can be used.</p>
+<p>To access Assignment Rule, go to:</p>
+<blockquote>
+<p>Home &gt; Settings &gt; Assignment Rule</p>
+</blockquote>
+<h2 id="1-how-to-create-an-assignment-rule">1. How to create an Assignment Rule<a aria-hidden="true" class="no-underline" href="#1-how-to-create-an-assignment-rule">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h2>
+<p>To set up an automatic assignment:</p>
+<ol>
+<li>Go to the Assignment Rule list, click on New.</li>
+<li>Select the Document Type you want to assign automatically (for example <strong>Issue</strong>).</li>
+<li>Write the "Description" that will be added to the To Do.</li>
+<li><p>Select the condition for the assignment.
+You can write simple Python expressions for automatic assignment in the <code>Assign Rule</code>, <code>Close Rule</code> and <code>Unassign Rule</code>. You will have access to all the properties of the document and can use operators like &gt;, &lt;, ==, etc and also multiple conditions like <code>and</code> and <code>or</code>.</p>
+<p>Examples:</p>
+<ul>
+<li><code>status == "Open"</code></li>
+<li><code>issue_type == "Technical" and priority=="High" and status == "Open"</code></li>
+</ul></li>
+<li><p>Select the assignment rule.</p>
+<p><img alt="Assignment Rule" class="screenshot" src="/files/assignment-rule-select.png"/></p>
+<ul>
+<li><strong>Round Robin</strong>: Assign each document to a User in sequence.</li>
+<li><strong>Load Balancing</strong>: Assign new documents to the User who has the least number of assignments.</li>
+</ul>
+<p>Select the list of Users to whom this Assignment Rule will apply:
+<img alt="Users in Assignment Rule" class="screenshot" src="/files/auto-assign-2.png"/></p>
+<ul>
+<li><strong>Based on Field</strong>: Introduced in v13, this rule can be used to assign a document to the User that is set in the configured field.</li>
+</ul>
+<p>Select the User link field which will determine to whom this Assignment Rule will apply:
+<img alt="Field Assign" class="screenshot" src="/files/field-auto-assign.png"/></p></li>
+<li><p>Save.</p></li>
+</ol>
+<p>You can use properties of the document in the Description field that will be part of the assignment. Higher 'Priority' Assignment Rules will be applied first.</p>
+<p>Example:</p>
+<p>High Priority Issue <em>File Upload not working</em> has been assigned to you.</p>
+<h3 id="11-multiple-assignment-rules">1.1 Multiple Assignment Rules<a aria-hidden="true" class="no-underline" href="#11-multiple-assignment-rules">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<p>You can also set up multiple auto assignments for each Document Type, the one with the highest Priority will be applied first.</p>
+<p><img alt="Assignment Rule with Higher Priority" class="screenshot" src="/files/assignment-rule-with-higher-priority.png"/></p>
+<p>assignment-rule-with-higher-priority</p>
+<h3 id="12-setting-due-date-for-assignment">1.2 Setting Due Date for assignment<a aria-hidden="true" class="no-underline" href="#12-setting-due-date-for-assignment">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<p>You can auto set due dates for assignments based on the date field in the reference document.</p>
+<p>Example:</p>
+<p>If you want to set a due date on Issue assignment based on the "Resolution By" date of the Issue, you can do so by selecting "Resolution By" field in <code>Due Date Based On</code> option in Assignment Rule.</p>
+<p><img alt="Due Date Based On" class="screenshot" src="/files/assignment-rule-due-date-based-on.png"/></p>
+<p><strong>Note:</strong></p>
+<ul>
+<li>"Due Date Based On" option will not be available if "Document Type" is not yet selected or if the selected Document Type does not have any "Date" or "Datetime" field.</li>
+<li>Due Date in the assignment/ToDo will be updated whenever the "Due Date Based On" field value is updated in the reference document.</li>
+</ul>
+<h3 id="2-related-topics">2. Related Topics<a aria-hidden="true" class="no-underline" href="#2-related-topics">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3>
+<ol>
+<li><a onclick="loadContent('workflows.html')">Workflows</a></li>
+<li><a onclick="loadContent('workflow-actions.html')">Workflow Actions</a></li>
+</ol>
+</div>
+<input class="d-none" name="wiki-page-name" value="scng1ju7dd"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="assignment-rule">Assignment Rule
+<a aria-hidden="true" class="no-underline" href="#assignment-rule">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content"><del class="diffmod">
+</del><ins class="diffmod">
+</ins><blockquote><ins class="diffmod">
+</ins><p><ins class="diffmod">Introduced in Version 12</ins></p><ins class="diffmod">
+</ins></blockquote><ins class="diffmod">
+</ins><p><strong><ins class="diffmod">An Assignment Rule lets you set up automatic assignment of documents to Users.</ins></strong></p><ins class="diffmod">
+</ins><p><ins class="diffmod">To assign the support tickets automatically amongst the employees who work on support, an Assignment Rule can be used.</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod">To access Assignment Rule, go to:</ins></p><ins class="diffmod">
+</ins><blockquote><ins class="diffmod">
+</ins><p><ins class="diffmod">Home &gt; Settings &gt; Assignment Rule</ins></p><ins class="diffmod">
+</ins></blockquote><ins class="diffmod">
+</ins><h2 id="1-how-to-create-an-assignment-rule"><ins class="diffmod">1. How to create an Assignment Rule</ins><a aria-hidden="true" class="no-underline" href="#1-how-to-create-an-assignment-rule"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h2><ins class="diffmod">
+</ins><p><ins class="diffmod">To set up an automatic assignment:</ins></p><ins class="diffmod">
+</ins><ol><ins class="diffmod">
+</ins><li><ins class="diffmod">Go to the Assignment Rule list, click on New.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Select the Document Type you want to assign automatically (for example </ins><strong><ins class="mod"><ins class="diffmod">Issue</ins></ins></strong><ins class="diffmod">).</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Write the "Description" that will be added to the To Do.</ins></li><ins class="diffmod">
+</ins><li><p><ins class="diffmod">Select the condition for the assignment.
+You can write simple Python expressions for automatic assignment in the </ins><code><ins class="diffmod">Assign Rule</ins></code><ins class="diffmod">, </ins><code><ins class="diffmod">Close Rule</ins></code><ins class="diffmod"> and </ins><code><ins class="diffmod">Unassign Rule</ins></code><ins class="diffmod">. You will have access to all the properties of the document and can use operators like &gt;, &lt;, ==, etc and also multiple conditions like </ins><code><ins class="diffmod">and</ins></code><ins class="diffmod"> and </ins><code><ins class="diffmod">or</ins></code><ins class="diffmod">.</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod">Examples:</ins></p><ins class="diffmod">
+</ins><ul><ins class="diffmod">
+</ins><li><code><ins class="diffmod">status == "Open"</ins></code></li><ins class="diffmod">
+</ins><li><code><ins class="diffmod">issue_type == "Technical" and priority=="High" and status == "Open"</ins></code></li><ins class="diffmod">
+</ins></ul></li><ins class="diffmod">
+</ins><li><p><ins class="diffmod">Select the assignment rule.</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod"><img alt="Assignment Rule" class="screenshot" src="/files/assignment-rule-select.png"/></ins></p><ins class="diffmod">
+</ins><ul><ins class="diffmod">
+</ins><li><strong><ins class="diffmod">Round Robin</ins></strong><ins class="diffmod">: Assign each document to a User in sequence.</ins></li><ins class="diffmod">
+</ins><li><strong><ins class="diffmod">Load Balancing</ins></strong><ins class="diffmod">: Assign new documents to the User who has the least number of assignments.</ins></li><ins class="diffmod">
+</ins></ul><ins class="diffmod">
+</ins><p><ins class="diffmod">Select the list of Users to whom this Assignment Rule will apply:
+<img alt="Users in Assignment Rule" class="screenshot" src="/files/auto-assign-2.png"/></ins></p><ins class="diffmod">
+</ins><ul><ins class="diffmod">
+</ins><li><strong><ins class="diffmod">Based on Field</ins></strong><ins class="diffmod">: Introduced in v13, this rule can be used to assign a document to the User that is set in the configured field.</ins></li><ins class="diffmod">
+</ins></ul><ins class="diffmod">
+</ins><p><ins class="diffmod">Select the User link field which will determine to whom this Assignment Rule will apply:
+<img alt="Field Assign" class="screenshot" src="/files/field-auto-assign.png"/></ins></p></li><ins class="diffmod">
+</ins><li><p><ins class="diffmod">Save.</ins></p></li><ins class="diffmod">
+</ins></ol><ins class="diffmod">
+</ins><p><ins class="diffmod">You can use properties of the document in the Description field that will be part of the assignment. Higher 'Priority' Assignment Rules will be applied first.</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod">Example:</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod">High Priority Issue </ins><em><ins class="mod"><ins class="diffmod">File Upload not working</ins></ins></em><ins class="diffmod"> has been assigned to you.</ins></p><ins class="diffmod">
+</ins><h3 id="11-multiple-assignment-rules"><del class="diffmod">No</del><ins class="diffmod">1.1</ins> <del class="diffmod">Revisions</del><ins class="diffmod">Multiple Assignment Rules</ins><a aria-hidden="true" class="no-underline" href="#11-multiple-assignment-rules">
+<svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a></h3><del class="diffmod">
+</del><ins class="diffmod">
+</ins><p><ins class="diffmod">You can also set up multiple auto assignments for each Document Type, the one with the highest Priority will be applied first.</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod"><img alt="Assignment Rule with Higher Priority" class="screenshot" src="/files/assignment-rule-with-higher-priority.png"/></ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod">assignment-rule-with-higher-priority</ins></p><ins class="diffmod">
+</ins><h3 id="12-setting-due-date-for-assignment"><ins class="diffmod">1.2 Setting Due Date for assignment</ins><a aria-hidden="true" class="no-underline" href="#12-setting-due-date-for-assignment"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h3><ins class="diffmod">
+</ins><p><ins class="diffmod">You can auto set due dates for assignments based on the date field in the reference document.</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod">Example:</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod">If you want to set a due date on Issue assignment based on the "Resolution By" date of the Issue, you can do so by selecting "Resolution By" field in </ins><code><ins class="diffmod">Due Date Based On</ins></code><ins class="diffmod"> option in Assignment Rule.</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod"><img alt="Due Date Based On" class="screenshot" src="/files/assignment-rule-due-date-based-on.png"/></ins></p><ins class="diffmod">
+</ins><p><strong><ins class="diffmod">Note:</ins></strong></p><ins class="diffmod">
+</ins><ul><ins class="diffmod">
+</ins><li><ins class="diffmod">"Due Date Based On" option will not be available if "Document Type" is not yet selected or if the selected Document Type does not have any "Date" or "Datetime" field.</ins></li><ins class="diffmod">
+</ins><li><ins class="diffmod">Due Date in the assignment/ToDo will be updated whenever the "Due Date Based On" field value is updated in the reference document.</ins></li><ins class="diffmod">
+</ins></ul><ins class="diffmod">
+</ins><h3 id="2-related-topics"><ins class="diffmod">2. Related Topics</ins><a aria-hidden="true" class="no-underline" href="#2-related-topics"><ins class="diffmod">
+</ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
+</ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
+</ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
+</ins></svg><ins class="diffmod">
+</ins></a></h3><ins class="diffmod">
+</ins><ol><ins class="diffmod">
+</ins><li><a onclick="loadContent('workflows.html')"><ins class="diffmod">Workflows</ins></a></li><ins class="diffmod">
+</ins><li><a onclick="loadContent('workflow-actions.html')"><ins class="diffmod">Workflow Actions</ins></a></li><ins class="diffmod">
+</ins></ol><ins class="diffmod">
+</ins></div>
+</div>
+</div></div></div></div></main>

@@ -1,0 +1,239 @@
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title">Point of Sale</h1>
+</div>
+<div class="wiki-content">
+<p><strong>A Point of Sale refers to the time and place where a retail transaction takes place.</strong></p>
+<p>For retail operations, the delivery of goods, accrual of sale and payment all happens in one event, that is usually called the 'Point of Sale' (POS).</p>
+<p>In KanivinERP Sales Invoices can be generated from the POS. There are two steps to set up POS:</p>
+<p>To access POS, go to:</p>
+<blockquote>
+<p>Home &gt; Retail &gt; Retail Operations &gt; POS</p>
+</blockquote>
+<h2 id="1-prerequisites">1. Prerequisites</h2>
+<p>Before creating and using Point of Sale, it is advisable to create the following first:</p>
+<ol>
+<li><a onclick="loadContent('pos-profile.html')">POS Profile</a></li>
+</ol>
+<h2 id="2-how-to-create-a-pos-invoice">2. How to create a POS Invoice</h2>
+<p>Once you set up a POS profile, you can start billing on POS.</p>
+<ol>
+<li>Go to POS and select a Customer.</li>
+<li>Add Items from the list displayed on the right by clicking on them.</li>
+<li>Ensure that the Item has a Selling Price set in the Item Price list.</li>
+<li>Edit the quantities as needed.</li>
+<li>In order to edit Rate and Discount, you need to enable them in the POS Profile.</li>
+<li>A default Warehouse needs to be set to complete the transaction. If Warehouse is set in both Item and POS profile, the one in POS Profile will be given preference.</li>
+<li>Do note that you need to have Items in your Warehouse before you can sell. If Items are not available, a red dot will be shown next to the Item when selected. <img alt="POS Screen" class="screenshot" src="/files/pos-screen.png"/></li>
+<li>When all Items are added, cross check the net and grand totals and also the total quantity in the summary at the bottom. <img alt="POS Totals Summary" class="screenshot" src="/files/totals display.gif"/></li>
+<li>Select the payment mode and click on Complete Order. You'll be asked to submit the Sales Invoice.</li>
+<li>You can then print the POS invoice. <img alt="POS Checkout" class="screenshot" src="/files/pos-checkout.gif"/></li>
+</ol>
+<p>After the Sales Invoice is submitted, you can either print or email it directly to the customer.</p>
+<h3 id="22-adding-an-item">2.2 Adding an Item</h3>
+<p>At the billing counter, the retailer needs to select Items which the Customer buys. In the POS interface you can select an Item by two methods. One, is by clicking on the Item image and the other, is through the Barcode / Serial No.</p>
+<ol>
+<li><strong>Select Item</strong>: To select a product click on the Item image and add it into the cart. A cart is an area that prepares a customer for checkout by allowing to edit product information, adjust taxes and add discounts.</li>
+<li><strong>Barcode / Serial No</strong>: A Barcode / Serial No is an optical machine-readable representation of data relating to the object to which it is attached.</li>
+<li><img alt="" class="screenshot" src="/files/BczEpbC.png"/></li>
+<li>Enter Barcode / Serial No in the box as shown in the image below and pause for a second, the item will be automatically added to the cart.</li>
+</ol>
+<blockquote>
+<p>Tip: To change the quantity of an Item, enter your desired quantity in the quantity box. These are mostly used if the same Item is purchased in bulk.</p>
+</blockquote>
+<p>If your product list is very long use the Search field, type the product name in Search box.</p>
+<h3 id="23-removing-an-item-from-the-cart">2.3 Removing an Item from the Cart</h3>
+<ol>
+<li>Select row in the cart and click on 'Remove' button in the numeric keypad</li>
+<li><img alt="Remove Item From POS" class="screenshot" src="/files/remove-item-from-pos.png"/></li>
+<li>Set Qty as zero to remove Item from the POS invoice. There are two ways to remove an Item.</li>
+<li>If Item's Qty is 1, click on a minus sign to make it zero.</li>
+<li>Manually enter 0 (zero) quantity.</li>
+</ol>
+<h3 id="24-change-amount">2.4 Change Amount</h3>
+<p>POS calculates the extra amount paid by the customer, which user can return from the cash account. User has to set the account for the change amount on the POS profile.</p>
+<p><img alt="Change Amount in POS" class="screenshot" src="/files/change-amount-in-pos.png"/></p>
+<h2 id="3-features">3. Features</h2>
+<h3 id="31-adding-a-new-customer">3.1 Adding a new Customer</h3>
+<p>In POS, user can select the existing Customer during making an order or create a new customer. This feature works in the offline mode also. User can also add the customer details like contact number, address details, etc on the form. The Customer which has been created from the POS will be synced when the internet connection is active.</p>
+<p><img alt="Add New Customer in POS" class="screenshot" src="/files/pos-add-new-customer.gif"/></p>
+<h3 id="32-accounting-entries-gl-entry-for-a-point-of-sale">3.2 Accounting entries (GL Entry) for a Point of Sale:</h3>
+<p>Debits:</p>
+<ol>
+<li>Customer (grand total)</li>
+<li>Bank/Cash (payment)</li>
+</ol>
+<p>Credits:</p>
+<ol>
+<li>Income (net total, minus taxes for each Item)</li>
+<li>Taxes (liabilities to be paid to the government)</li>
+<li>Customer (payment)</li>
+<li>Write Off (optional)</li>
+<li>Account for Change Amount (optional)</li>
+</ol>
+<p>To see entries after submitting the <a href="/erpnext/v13/user/manual/en/accounts/sales-invoice">Sales Invoice</a>, click on <strong>View Ledger</strong>.</p>
+<h3 id="33-email">3.3 Email</h3>
+<p>You can also send the receipt via email.</p>
+<p><img alt="Send Email WIth POS Receipt" class="screenshot" src="/files/pos-email.png"/></p>
+<h3 id="34-create-return-credit-note">3.4 Create Return Credit Note</h3>
+<p>You can also create a return credit note against a POS Invoice in case of return of items or the entire order. Below are the steps for issuing a credit note against an invoice:</p>
+<ol>
+<li><p>Click on menu (3 dots) and then click on <strong>Toggle Recent Orders</strong>. Keyboard shortcut for the same is <strong>⌘+O</strong>.
+<img alt="POS Return Credit Open Recent Orders" class="screenshot" src="/files/pos-return-credit-1.png"/></p></li>
+<li><p>All the invoices from recent POS transactions will be displayed under the <strong>Recent Orders</strong> pane. You can either search for the invoice directly with its name or filter search results as per the status of the invoice which can be <strong>Paid, Consolidated, Draft, Return</strong>.</p></li>
+<li><p>Select the invoice against which you need to create the credit note after which you will see the invoice details and the options to Print, Email the receipt and an option to make a Return. Click on <strong>'Return'</strong>. 
+<img alt="POS Return Credit Select Invoice" class="screenshot" src="/files/pos-return-credit-2.png"/></p></li>
+<li><p>The POS screen will display the items in the invoice, along with respective negative quantities and totals in the Item Cart which indicates that it is a return credit note.
+<img alt="POS Return Credit Item Cart Screen" class="screenshot" src="/files/pos-return-credit-3.png"/></p></li>
+<li><p>Once you checkout, you'll see the Grand Total, Paid Amount and Taxes too if applicable.</p></li>
+<li><p>Clicking on <strong>Complete Order</strong> will complete the process and create the final return credit invoice and display the bill on the screen like a normal order
+<img alt="POS Return Credit Final Bill" class="screenshot" src="/files/pos-return-credit-4.png"/></p></li>
+</ol>
+<h3 id="35-pos-closing-voucher">3.5 POS Closing Voucher</h3>
+<p>At the end of the day, the cashier can close his/her PoS by creating a POS Closing Voucher. Click on the Menu and select 'Close the POS'. Select the period, your POS Profile and your user to retrieve all sales registered.
+At the end of the day, the cashier can close his/her shift by creating a POS Closing Voucher.</p>
+<p>Click on the Menu and select 'Close the POS'. Select the period, your POS Profile and your user to retrieve all sales registered.</p>
+<p>On creating a POS Closing Voucher, all the POS invoices fetched for the selected period will be consolidated into one final Sales Invoice. The status of all the POS invoices will change from 'Paid' to 'Consolidated' once they are successfully consolidated into a sales invoice on closing.</p>
+<p><img alt="POS Closing Entry" class="screenshot" src="/files/pos-closing-entry.png"/></p>
+<p>If there are more than 10 invoices while closing a POS, consolidation of the invoices will take place in a background job and would be subitted after the background job gets completed. The Accounting Ledgers would be affected only after the Closing Voucher is submitted successfully and the consolidated sales invoices are created.</p>
+<h3 id="4-upcoming-features">4. Upcoming Features</h3>
+<ul>
+<li>Sales Invoice integration with POS.</li>
+</ul>
+<h3 id="5-related-topics">5. Related Topics</h3>
+<ol>
+<li><a onclick="loadContent('sales-invoice.html')">Sales Invoice</a></li>
+<li><a onclick="loadContent('purchase-order.html')">Purchase Order</a></li>
+<li><a onclick="loadContent('payment-entry.html')">Payment Entry</a></li>
+<li><a onclick="loadContent('payment-request.html')">Payment Request</a></li>
+</ol>
+</div>
+<input class="d-none" name="wiki-page-name" value="to2of0uu8o"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="revisionsModalTitle">Point of Sale</h5>
+<span class="small text-muted revision-time">diptanil edited 3 days ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content">
+<p><strong>A Point of Sale refers to the time and place where a retail transaction takes place.</strong></p>
+<p>For retail operations, the delivery of goods, accrual of sale and payment all happens in one event, that is usually called the 'Point of Sale' (POS).</p>
+<p>In KanivinERP Sales Invoices can be generated from the POS. There are two steps to set up POS:</p>
+<p>To access POS, go to:</p>
+<blockquote>
+<p>Home &gt; Retail &gt; Retail Operations &gt; POS</p>
+</blockquote>
+<h2 id="1-prerequisites">1. Prerequisites</h2>
+<p>Before creating and using Point of Sale, it is advisable to create the following first:</p>
+<ol>
+<li><a onclick="loadContent('pos-profile.html')">POS Profile</a></li>
+</ol>
+<h2 id="2-how-to-create-a-pos-invoice">2. How to create a POS Invoice</h2>
+<p>Once you set up a POS profile, you can start billing on POS.</p>
+<ol>
+<li>Go to POS and select a Customer.</li>
+<li>Add Items from the list displayed on the right by clicking on them.</li>
+<li>Ensure that the Item has a Selling Price set in the Item Price list.</li>
+<li>Edit the quantities as needed.</li>
+<li>In order to edit Rate and Discount, you need to enable them in the POS Profile.</li>
+<li>A default Warehouse needs to be set to complete the transaction. If Warehouse is set in both Item and POS profile, the one in POS Profile will be given preference.</li>
+<li>Do note that you need to have Items in your Warehouse before you can sell. If Items are not available, a red dot will be shown next to the Item when selected. <img alt="POS Screen" class="screenshot" src="/files/pos-screen.png"/></li>
+<li>When all Items are added, cross check the net and grand totals and also the total quantity in the summary at the bottom. <img alt="POS Totals Summary" class="screenshot" src="/files/totals display.gif"/></li>
+<li>Select the payment mode and click on Complete Order. You'll be asked to submit the Sales Invoice.</li>
+<li>You can then print the POS invoice. <img alt="POS Checkout" class="screenshot" src="/files/pos-checkout.gif"/></li>
+</ol>
+<p>After the Sales Invoice is submitted, you can either print or email it directly to the customer.</p>
+<h3 id="22-adding-an-item">2.2 Adding an Item</h3>
+<p>At the billing counter, the retailer needs to select Items which the Customer buys. In the POS interface you can select an Item by two methods. One, is by clicking on the Item image and the other, is through the Barcode / Serial No.</p>
+<ol>
+<li><strong>Select Item</strong>: To select a product click on the Item image and add it into the cart. A cart is an area that prepares a customer for checkout by allowing to edit product information, adjust taxes and add discounts.</li>
+<li><strong>Barcode / Serial No</strong>: A Barcode / Serial No is an optical machine-readable representation of data relating to the object to which it is attached.</li>
+<li><img alt="" class="screenshot" src="/files/BczEpbC.png"/></li>
+<li>Enter Barcode / Serial No in the box as shown in the image below and pause for a second, the item will be automatically added to the cart.</li>
+</ol>
+<blockquote>
+<p>Tip: To change the quantity of an Item, enter your desired quantity in the quantity box. These are mostly used if the same Item is purchased in bulk.</p>
+</blockquote>
+<p>If your product list is very long use the Search field, type the product name in Search box.</p>
+<h3 id="23-removing-an-item-from-the-cart">2.3 Removing an Item from the Cart</h3>
+<ol>
+<li>Select row in the cart and click on 'Remove' button in the numeric keypad</li>
+<li><img alt="Remove Item From POS" class="screenshot" src="/files/remove-item-from-pos.png"/></li>
+<li>Set Qty as zero to remove Item from the POS invoice. There are two ways to remove an Item.</li>
+<li>If Item's Qty is 1, click on a minus sign to make it zero.</li>
+<li>Manually enter 0 (zero) quantity.</li>
+</ol>
+<h3 id="24-change-amount">2.4 Change Amount</h3>
+<p>POS calculates the extra amount paid by the customer, which user can return from the cash account. User has to set the account for the change amount on the POS profile.</p>
+<p><img alt="Change Amount in POS" class="screenshot" src="/files/change-amount-in-pos.png"/></p>
+<h2 id="3-features">3. Features</h2>
+<h3 id="31-adding-a-new-customer">3.1 Adding a new Customer</h3>
+<p>In POS, user can select the existing Customer during making an order or create a new customer. This feature works in the offline mode also. User can also add the customer details like contact number, address details, etc on the form. The Customer which has been created from the POS will be synced when the internet connection is active.</p>
+<p><img alt="Add New Customer in POS" class="screenshot" src="/files/pos-add-new-customer.gif"/></p>
+<h3 id="32-accounting-entries-gl-entry-for-a-point-of-sale">3.2 Accounting entries (GL Entry) for a Point of Sale:</h3>
+<p>Debits:</p>
+<ol>
+<li>Customer (grand total)</li>
+<li>Bank/Cash (payment)</li>
+</ol>
+<p>Credits:</p>
+<ol>
+<li>Income (net total, minus taxes for each Item)</li>
+<li>Taxes (liabilities to be paid to the government)</li>
+<li>Customer (payment)</li>
+<li>Write Off (optional)</li>
+<li>Account for Change Amount (optional)</li>
+</ol>
+<p>To see entries after submitting the <a href="/erpnext/v13/user/manual/en/accounts/sales-invoice">Sales Invoice</a>, click on <strong>View Ledger</strong>.</p>
+<h3 id="33-email">3.3 Email</h3>
+<p>You can also send the receipt via email.</p>
+<p><img alt="Send Email WIth POS Receipt" class="screenshot" src="/files/pos-email.png"/></p>
+<h3 id="34-create-return-credit-note">3.4 Create Return Credit Note</h3>
+<p>You can also create a return credit note against a POS Invoice in case of return of items or the entire order. Below are the steps for issuing a credit note against an invoice:</p>
+<ol>
+<li><p>Click on menu (3 dots) and then click on <strong>Toggle Recent Orders</strong>. Keyboard shortcut for the same is <strong>⌘+O</strong>.
+<img alt="POS Return Credit Open Recent Orders" class="screenshot" src="/files/pos-return-credit-1.png"/></p></li>
+<li><p>All the invoices from recent POS transactions will be displayed under the <strong>Recent Orders</strong> pane. You can either search for the invoice directly with its name or filter search results as per the status of the invoice which can be <strong>Paid, Consolidated, Draft, Return</strong>.</p></li>
+<li><p>Select the invoice against which you need to create the credit note after which you will see the invoice details and the options to Print, Email the receipt and an option to make a Return. Click on <strong>'Return'</strong>. 
+<img alt="POS Return Credit Select Invoice" class="screenshot" src="/files/pos-return-credit-2.png"/></p></li>
+<li><p>The POS screen will display the items in the invoice, along with respective negative quantities and totals in the Item Cart which indicates that it is a return credit note.
+<img alt="POS Return Credit Item Cart Screen" class="screenshot" src="/files/pos-return-credit-3.png"/></p></li>
+<li><p>Once you checkout, you'll see the Grand Total, Paid Amount and Taxes too if applicable.</p></li>
+<li><p>Clicking on <strong>Complete Order</strong> will complete the process and create the final return credit invoice and display the bill on the screen like a normal order
+<img alt="POS Return Credit Final Bill" class="screenshot" src="/files/pos-return-credit-4.png"/></p></li>
+</ol>
+<h3 id="35-pos-closing-voucher">3.5 POS Closing Voucher</h3>
+<p>At the end of the day, the cashier can close his/her PoS by creating a POS Closing Voucher. Click on the Menu and select 'Close the POS'. Select the period, your POS Profile and your user to retrieve all sales registered.
+At the end of the day, the cashier can close his/her shift by creating a POS Closing Voucher.</p>
+<p>Click on the Menu and select 'Close the POS'. Select the period, your POS Profile and your user to retrieve all sales registered.</p>
+<p>On creating a POS Closing Voucher, all the POS invoices fetched for the selected period will be consolidated into one final Sales Invoice. The status of all the POS invoices will change from 'Paid' to 'Consolidated' once they are successfully consolidated into a sales invoice on closing.</p>
+<p><img alt="POS Closing Entry" class="screenshot" src="/files/pos-closing-entry.png"/></p>
+<p>If there are more than 10 invoices while closing a POS, consolidation of the invoices will take place in a background job and would be subitted after the background job gets completed. The Accounting Ledgers would be affected only after the Closing Voucher is submitted successfully and the consolidated sales invoices are created.</p>
+<h3 id="4-upcoming-feature">4. Upcoming Feature</h3>
+<p>Sales Invoice integration with POS.</p>
+<h3 id="5-related-topics">5. Related Topics</h3>
+<ol>
+<li><a onclick="loadContent('sales-invoice.html')">Sales Invoice</a></li>
+<li><a onclick="loadContent('purchase-order.html')">Purchase Order</a></li>
+<li><a onclick="loadContent('payment-entry.html')">Payment Entry</a></li>
+<li><a onclick="loadContent('payment-request.html')">Payment Request</a></li>
+</ol>
+</div>
+</div>
+</div></div></div></div></main>

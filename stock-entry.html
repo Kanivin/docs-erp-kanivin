@@ -1,0 +1,245 @@
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title">Stock Entry</h1>
+</div>
+<div class="wiki-content">
+<p><strong>A Stock Entry lets you record Item movement between Warehouses.</strong></p>
+<p>To access the Stock Entry list, go to: </p>
+<blockquote>
+<p>Home &gt; Stock &gt; Stock Transactions &gt; Stock Entry</p>
+</blockquote>
+<p>Stock Entries can be made for the following purposes:</p>
+<ul>
+<li><strong>Material Issue</strong>: If the material is being issued to someone in or outside the company (<strong>Outgoing Material)</strong>. The Items will be deducted from the Warehouse set under Source Warehouse.</li>
+<li><strong>Material Receipt</strong>: If the material is being received (Incoming Material). The Items will be added to the Warehouse set under Target Warehouse.</li>
+<li><strong>Material Transfer</strong>: If the material is being moved from one internal Warehouse to another.</li>
+<li><strong>Material Transfer for Manufacturing</strong>: If raw materials are being transferred for manufacturing. The transfer can happen against a <a onclick="loadContent('work-order.html')">Work Order</a> or a <a onclick="loadContent('job-card.html')">Job Card</a>. To know more, visit the <a onclick="loadContent('bill-of-materials.html')">Bill Of Materials</a> page.</li>
+<li><strong>Material Consumption for Manufacture</strong>: There can be multiple consumption stock entries against a manufacturing Work Order. <a onclick="loadContent('material_consumption.html')">Refer this link for more details</a></li>
+<li><strong>Manufacture</strong>: If the Material is being received from a Manufacturing/Production Operation.</li>
+<li><strong>Repack</strong>: If the Original item/items are being repacked into new item/items.</li>
+<li><strong>Send to Subcontractor</strong>: If the Material is being issued for a sub-contract activity. This entry is made from a Purchase Order. To know more, visit the <a onclick="loadContent('subcontracting.html')">subcontracting</a> page.</li>
+</ul>
+<p>To know more in detail about the stock entry purpose, <a href="/erpnext/user/manual/en/stock-entry-purpose">visit this page</a>.</p>
+<h2 id="1-prerequisites">1. Prerequisites</h2>
+<p>Before creating and using a Stock Entry, it is advised that you create the following first:</p>
+<ul>
+<li><a onclick="loadContent('warehouse.html')">Warehouse</a></li>
+<li><a onclick="loadContent('item.html')">Item</a></li>
+</ul>
+<h2 id="2-how-to-create-a-stock-entry">2. How to create a Stock Entry</h2>
+<p>Stock Entries for Manufacturing purposes are usually created from a <a href="/erpnext/v13/user/manual/en/manufacturing/work-order">Work Order</a>. To create a Stock Entry manually for other purposes, follow these steps:</p>
+<ol>
+<li>Go to the Stock Entry list, click on New.</li>
+<li>Select the Stock Entry Purpose from the ones listed above.</li>
+<li>If you set the Default Source or Target Warehouses, they'll be automatically filled for the rows in the Items table.</li>
+<li>Source/Target Warehouses will be available as per the Stock Entry Purpose you selected.</li>
+<li>Select Items and enter a quantity.</li>
+<li>The basic rate will be fetched and the amount will be calculated automatically.</li>
+<li>Save and Submit.</li>
+</ol>
+<p><img alt="Stock Entry" class="screenshot" src="/files/stock-entry.png"/></p>
+<p>Usually, "Source Warehouse" and "Target Warehouse" both are set for recording a movement.</p>
+<h3 id="21-additional-options-when-creating-a-stock-entry">2.1 Additional options when creating a Stock Entry</h3>
+<ul>
+<li><strong>Work Order</strong>: If this is a Manufacturing entry, the Work Order will be shown in this field.</li>
+<li><strong>Edit Posting Date and Time</strong>: Will allow you to edit the Stock Entry's date and time.</li>
+<li><strong>Inspection Required</strong>: If a <a onclick="loadContent('quality-inspection.html')">Quality Inspection</a> needs to be performed on the Items before submitting the Stock Entry.</li>
+<li><strong>From BOM</strong>: If this is a Manufacturing entry, the associated BOM for the Item being manufactured will be shown.</li>
+</ul>
+<h3 id="22-stock-entry-type">2.2 Stock Entry Type</h3>
+<p>You can also create a Stock Entry Type where only the name will be different, for example 'Scrap Entry'. The purpose will be Material Transfer but the name will be different. This is useful if you want certain Users to have access only to specific actions related to stock.</p>
+<p><img alt="Stock Entry Type" class="screenshot" src="/files/stock-entry-type.png"/> </p>
+<h2 id="3-features">3. Features</h2>
+<h3 id="31-the-items-table">3.1 The Items table</h3>
+<p>Details about the Item, Rate, Quantity, etc. will be shown here.</p>
+<p>Ticking on 'Allow Zero Valuation Rate' will allow submitting the Purchase Receipt even if the Valuation Rate of the Item is 0. This can be a sample item or due to a mutual understanding with your Supplier.</p>
+<p>Different Source and Target Warehouses can be set for different Items.</p>
+<p><img alt="Stock Entry" class="screenshot" src="/private/files/stock_entry_item.png"/> </p>
+<h3 id="32-scrap-and-process-loss">3.2 Scrap and Process Loss</h3>
+<ul>
+<li><strong>Scrap Item</strong>: Scrap items are the by-product and can be treated as products. The scrap items will have the valuation rate and they will be added to the scrap warehouse. Users can set the valuation rate for the scrap item manually in the Basic Rate field.</li>
+<li><strong>Process Loss</strong>: Process Loss has no impact on the stock, this will reduce the number of FG Items. Check the below image, the user has planned to produce 100 FG Items but after the manufacturing process, the quantity has been produced as 80. To produce 80 FG Items, the user has used all raw material quantity. So here 20 quantity has been produced so therefore the system has marked it as Process Loss Qty. The process loss cost of 20 quantities has been added to the 80 quantities of FG Item.</li>
+</ul>
+<p><img alt="Stock Entry" class="screenshot" src="/private/files/ste_manufacture_process_loss.png"/> </p>
+<h3 id="33-additional-costs">3.3 Additional Costs</h3>
+<p>If the stock entry is an incoming entry i.e any item is receiving at a target warehouse, you can add related additional costs (like Shipping Charges, Customs Duty, Operating Costs, etc) associated with the process. The additional costs will be considered to calculate the Valuation Rate of the items.</p>
+<p>To add additional costs:</p>
+<ol>
+<li>Select the Expense Account to which the expense from this Stock Entry will be recorded.</li>
+<li>Enter the description and amount of the cost in the Additional Costs table.</li>
+</ol>
+<p><img alt="Stock Entry Additional Costs" class="screenshot" src="/files/additional-costs-table.png"/> </p>
+<p>The added Additional Costs will be distributed among the receiving items (where the Target Warehouse mentioned) proportionately based on the Basic Amount of the items. And the distributed additional cost will be added to the basic rate of the item, to calculate Valuation Rate.</p>
+<p>Quantity and Rate is shown as follows when you expand the Items table. <img alt="Stock Entry Item Valuation Rate" class="screenshot" src="/files/stock-entry-item-valuation-rate.png"/> </p>
+<h3 id="34-accounting-dimensions">3.4 Accounting Dimensions</h3>
+<p>You can tag different transactions based on different dimensions. By default, <a href="/erpnext/v13/user/manual/en/projects/project">Projects</a> can be considered as a dimension as it is a common practice to track costs of different projects. To know more about Accounting Dimensions, <a href="/erpnext/v13/user/manual/en/accounts/accounting-dimensions">visit this page</a>.</p>
+<h3 id="35-printing-settings">3.5 Printing Settings</h3>
+<h4 id="letterhead">Letterhead</h4>
+<p>You can print your Purchase Receipt on your company's letterhead. Know more <a href="/erpnext/v13/user/manual/en/setting-up/print/letter-head">here</a>.</p>
+<h4 id="print-headings">Print Headings</h4>
+<p>Purchase Receipt headings can also be changed when printing the document. You can do this by selecting a <strong>Print Heading</strong>. To create new Print Headings go to: Home &gt; Settings &gt; Printing &gt; Print Heading. Know more <a href="/erpnext/v13/user/manual/en/setting-up/print/print-headings">here</a>.</p>
+<h3 id="36-more-information">3.6 More Information</h3>
+<ul>
+<li><strong>Is Opening</strong>: If this entry is the opening stock entry for the Items.</li>
+<li><strong>Remarks</strong>: Any additional remarks about the Item.</li>
+<li><strong>Percentage Transferred</strong>: The percentage of Items transferred depending on Stock Entry purpose.</li>
+<li><strong>Total Amount</strong>: The total amount of Items transferred.</li>
+</ul>
+<h3 id="37-perpetual-inventory">3.7 Perpetual Inventory</h3>
+<p>If the perpetual inventory system is enabled, additional costs will be booked in Expense Account mentioned in the Additional Costs table .</p>
+<p><img alt="Additional Costs General Ledger" class="screenshot" src="/files/stock-entry-additional-cost.png"/> <img alt="Additional Costs General Ledger" class="screenshot" src="/files/additional-costs-general-ledger.png"/> </p>
+<h3 id="38-after-submitting">3.8 After Submitting</h3>
+<p>After submitting a Stock Entry, you can go to the stock ledger or the accounting ledger from the dashboard.</p>
+<p><img alt="Additional Costs General Ledger" class="screenshot" src="/files/stock-entry-submit.png"/> </p>
+<h2 id="4-add-to-transit">4. Add to Transit</h2>
+<p>If you want to transfer materials from one warehouse to another and you want to make two entries for that then use "Add to Transit" feature.</p>
+<p>To use "Add to Transit" feature, make stock entry with type as "Material Transfer" and enable "Add to Transit" checkbox. Next you need to select the source warehouse from where you want to issue the material and then select the warehouse of type "Transit" in the target warehouse. To make transit warehouse you can goto the Warehouse master and select the warehouse type as "Transit". After that add items in the stock entry which needs to be transfer and submit it.</p>
+<p><img alt="Add to Transit" class="screenshot" src="/private/files/add_to_transit_entry.png"/> </p>
+<p>To make second stock entry at the destination warehouse, users has two options. Either they can open the Original Stock Entry and click on "End Transit" or they can create new stock entry and click on "Get Items From" -&gt; "Transit Stock Entry". System will fetch items from the original stock entry with the source warehouse (Transit warehouse) same as traget warehouse from the original stock entry. User has to set the target warehouse and save.</p>
+<p><img alt="End Transit" class="screenshot" src="/private/files/end_transit_entry.png"/> </p>
+<h2 id="5-how-to-update-a-stock-entry">5. How to update a Stock Entry</h2>
+<p>Once a stock entry is submitted, it can be updated by cancelling and amending the entry</p>
+<h2 id="6-video">6. Video</h2>
+<h3 id="5-related-topics">5. Related Topics</h3>
+<ol>
+<li><a onclick="loadContent('stock-entry-purpose.html')">Stock Entry Purpose</a></li>
+<li><a onclick="loadContent('stock-reconciliation.html')">Stock Reconciliation</a></li>
+<li><a onclick="loadContent('opening-stock-balance-entry-for-serialized-and-batch-item.html')">Opening Stock Balance Entry For Serialized And Batch Item</a></li>
+<li><a onclick="loadContent('stock-reconciliation.html')">Stock Reconciliation</a></li>
+<li><a onclick="loadContent('work-order.html')">Work Order</a></li>
+<li><a onclick="loadContent('production-plan.html')">Production Plan</a></li>
+<li><a onclick="loadContent('job-card.html')">Job Card</a></li>
+</ol>
+</div>
+<input class="d-none" name="wiki-page-name" value="t9juuf5vps"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="revisionsModalTitle">Stock Entry</h5>
+<span class="small text-muted revision-time">administrator edited 3 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content">
+<p><strong>A Stock Entry lets you record Item movement between Warehouses.</strong></p>
+<p>To access the Stock Entry list, go to: </p>
+<blockquote>
+<p>Home &gt; Stock &gt; Stock Transactions &gt; Stock Entry</p>
+</blockquote>
+<p>Stock Entries can be made for the following purposes:</p>
+<ul>
+<li><strong>Material Issue</strong>: If the material is being issued to someone in or outside the company (<strong>Outgoing Material)</strong>. The Items will be deducted from the Warehouse set under Source Warehouse.</li>
+<li><strong>Material Receipt</strong>: If the material is being received (Incoming Material). The Items will be added to the Warehouse set under Target Warehouse.</li>
+<li><strong>Material Transfer</strong>: If the material is being moved from one internal Warehouse to another.</li>
+<li><strong>Material Transfer for Manufacturing</strong>: If raw materials are being transferred for manufacturing. The transfer can happen against a <a href="/docs/v13/user/manual/en/manufacturing/work-order">Work Order</a> or a <a href="/docs/v13/user/manual/en/manufacturing/job-card">Job Card</a>. To know more, visit the <a href="/docs/v13/user/manual/en/manufacturing/bill-of-materials">Bill Of Materials</a> page.</li>
+<li><strong>Material Consumption for Manufacture</strong>: There can be multiple consumption stock entries against a manufacturing Work Order. <a href="/docs/v13/user/manual/en/manufacturing/articles/material_consumption">Refer this link for more details</a></li>
+<li><strong>Manufacture</strong>: If the Material is being received from a Manufacturing/Production Operation.</li>
+<li><strong>Repack</strong>: If the Original item/items are being repacked into new item/items.</li>
+<li><strong>Send to Subcontractor</strong>: If the Material is being issued for a sub-contract activity. This entry is made from a Purchase Order. To know more, visit the <a href="/docs/v13/user/manual/en/manufacturing/subcontracting">subcontracting</a> page.</li>
+</ul>
+<p>To know more in detail about the stock entry purpose, <a href="docs/user/manual/en/stock-entry-purpose">visit this page</a>.</p>
+<h2 id="1-prerequisites">1. Prerequisites</h2>
+<p>Before creating and using a Stock Entry, it is advised that you create the following first:</p>
+<ul>
+<li><a href="/docs/v13/user/manual/en/stock/warehouse">Warehouse</a></li>
+<li><a href="/docs/v13/user/manual/en/stock/item">Item</a></li>
+</ul>
+<h2 id="2-how-to-create-a-stock-entry">2. How to create a Stock Entry</h2>
+<p>Stock Entries for Manufacturing purposes are usually created from a <a href="/docs/v13/user/manual/en/manufacturing/work-order">Work Order</a>. To create a Stock Entry manually for other purposes, follow these steps:</p>
+<ol>
+<li>Go to the Stock Entry list, click on New.</li>
+<li>Select the Stock Entry Purpose from the ones listed above.</li>
+<li>If you set the Default Source or Target Warehouses, they'll be automatically filled for the rows in the Items table.</li>
+<li>Source/Target Warehouses will be available as per the Stock Entry Purpose you selected.</li>
+<li>Select Items and enter a quantity.</li>
+<li>The basic rate will be fetched and the amount will be calculated automatically.</li>
+<li>Save and Submit.</li>
+</ol>
+<p><img alt="Stock Entry" class="screenshot" src="/files/stock-entry.png"/></p>
+<p>Usually, "Source Warehouse" and "Target Warehouse" both are set for recording a movement.</p>
+<h3 id="21-additional-options-when-creating-a-stock-entry">2.1 Additional options when creating a Stock Entry</h3>
+<ul>
+<li><strong>Work Order</strong>: If this is a Manufacturing entry, the Work Order will be shown in this field.</li>
+<li><strong>Edit Posting Date and Time</strong>: Will allow you to edit the Stock Entry's date and time.</li>
+<li><strong>Inspection Required</strong>: If a <a href="/docs/v13/user/manual/en/stock/quality-inspection">Quality Inspection</a> needs to be performed on the Items before submitting the Stock Entry.</li>
+<li><strong>From BOM</strong>: If this is a Manufacturing entry, the associated BOM for the Item being manufactured will be shown.</li>
+</ul>
+<h3 id="22-stock-entry-type">2.2 Stock Entry Type</h3>
+<p>You can also create a Stock Entry Type where only the name will be different, for example 'Scrap Entry'. The purpose will be Material Transfer but the name will be different. This is useful if you want certain Users to have access only to specific actions related to stock.</p>
+<p><img alt="Stock Entry Type" class="screenshot" src="/files/stock-entry-type.png"/> </p>
+<h2 id="3-features">3. Features</h2>
+<h3 id="31-the-items-table">3.1 The Items table</h3>
+<p>Details about the Item, Rate, Quantity, etc. will be shown here.</p>
+<p>Ticking on 'Allow Zero Valuation Rate' will allow submitting the Purchase Receipt even if the Valuation Rate of the Item is 0. This can be a sample item or due to a mutual understanding with your Supplier.</p>
+<p>Different Source and Target Warehouses can be set for different Items.</p>
+<p><img alt="Stock Entry" class="screenshot" src="/private/files/stock_entry_item.png"/> </p>
+<h3 id="32-scrap-and-process-loss">3.2 Scrap and Process Loss</h3>
+<ul>
+<li><strong>Scrap Item</strong>: Scrap items are the by-product and can be treated as products. The scrap items will have the valuation rate and they will be added to the scrap warehouse. Users can set the valuation rate for the scrap item manually in the Basic Rate field.</li>
+<li><strong>Process Loss</strong>: Process Loss has no impact on the stock, this will reduce the number of FG Items. Check the below image, the user has planned to produce 100 FG Items but after the manufacturing process, the quantity has been produced as 80. To produce 80 FG Items, the user has used all raw material quantity. So here 20 quantity has been produced so therefore the system has marked it as Process Loss Qty. The process loss cost of 20 quantities has been added to the 80 quantities of FG Item.</li>
+</ul>
+<p><img alt="Stock Entry" class="screenshot" src="/private/files/ste_manufacture_process_loss.png"/> </p>
+<h3 id="33-additional-costs">3.3 Additional Costs</h3>
+<p>If the stock entry is an incoming entry i.e any item is receiving at a target warehouse, you can add related additional costs (like Shipping Charges, Customs Duty, Operating Costs, etc) associated with the process. The additional costs will be considered to calculate the Valuation Rate of the items.</p>
+<p>To add additional costs:</p>
+<ol>
+<li>Select the Expense Account to which the expense from this Stock Entry will be recorded.</li>
+<li>Enter the description and amount of the cost in the Additional Costs table.</li>
+</ol>
+<p><img alt="Stock Entry Additional Costs" class="screenshot" src="/files/additional-costs-table.png"/> </p>
+<p>The added Additional Costs will be distributed among the receiving items (where the Target Warehouse mentioned) proportionately based on the Basic Amount of the items. And the distributed additional cost will be added to the basic rate of the item, to calculate Valuation Rate.</p>
+<p>Quantity and Rate is shown as follows when you expand the Items table. <img alt="Stock Entry Item Valuation Rate" class="screenshot" src="/files/stock-entry-item-valuation-rate.png"/> </p>
+<h3 id="34-accounting-dimensions">3.4 Accounting Dimensions</h3>
+<p>You can tag different transactions based on different dimensions. By default, <a href="/docs/v13/user/manual/en/projects/project">Projects</a> can be considered as a dimension as it is a common practice to track costs of different projects. To know more about Accounting Dimensions, <a href="/docs/v13/user/manual/en/accounts/accounting-dimensions">visit this page</a>.</p>
+<h3 id="35-printing-settings">3.5 Printing Settings</h3>
+<h4 id="letterhead">Letterhead</h4>
+<p>You can print your Purchase Receipt on your company's letterhead. Know more <a href="/docs/v13/user/manual/en/setting-up/print/letter-head">here</a>.</p>
+<h4 id="print-headings">Print Headings</h4>
+<p>Purchase Receipt headings can also be changed when printing the document. You can do this by selecting a <strong>Print Heading</strong>. To create new Print Headings go to: Home &gt; Settings &gt; Printing &gt; Print Heading. Know more <a href="/docs/v13/user/manual/en/setting-up/print/print-headings">here</a>.</p>
+<h3 id="36-more-information">3.6 More Information</h3>
+<ul>
+<li><strong>Is Opening</strong>: If this entry is the opening stock entry for the Items.</li>
+<li><strong>Remarks</strong>: Any additional remarks about the Item.</li>
+<li><strong>Percentage Transferred</strong>: The percentage of Items transferred depending on Stock Entry purpose.</li>
+<li><strong>Total Amount</strong>: The total amount of Items transferred.</li>
+</ul>
+<h3 id="37-perpetual-inventory">3.7 Perpetual Inventory</h3>
+<p>If the perpetual inventory system is enabled, additional costs will be booked in Expense Account mentioned in the Additional Costs table .</p>
+<p><img alt="Additional Costs General Ledger" class="screenshot" src="/files/stock-entry-additional-cost.png"/> <img alt="Additional Costs General Ledger" class="screenshot" src="/files/additional-costs-general-ledger.png"/> </p>
+<h3 id="38-after-submitting">3.8 After Submitting</h3>
+<p>After submitting a Stock Entry, you can go to the stock ledger or the accounting ledger from the dashboard.</p>
+<p><img alt="Additional Costs General Ledger" class="screenshot" src="/files/stock-entry-submit.png"/> </p>
+<h2 id="4-add-to-transit">4. Add to Transit</h2>
+<p>If you want to transfer materials from one warehouse to another and you want to make two entries for that then use "Add to Transit" feature.</p>
+<p>To use "Add to Transit" feature, make stock entry with type as "Material Transfer" and enable "Add to Transit" checkbox. Next you need to select the source warehouse from where you want to issue the material and then select the warehouse of type "Transit" in the target warehouse. To make transit warehouse you can goto the Warehouse master and select the warehouse type as "Transit". After that add items in the stock entry which needs to be transfer and submit it.</p>
+<p><img alt="Add to Transit" class="screenshot" src="/private/files/add_to_transit_entry.png"/> </p>
+<p>To make second stock entry at the destination warehouse, users has two options. Either they can open the Original Stock Entry and click on "End Transit" or they can create new stock entry and click on "Get Items From" -&gt; "Transit Stock Entry". System will fetch items from the original stock entry with the source warehouse (Transit warehouse) same as traget warehouse from the original stock entry. User has to set the target warehouse and save.</p>
+<p><img alt="End Transit" class="screenshot" src="/private/files/end_transit_entry.png"/> </p>
+<h2 id="5-video">5. Video</h2>
+<h3 id="5-related-topics">5. Related Topics</h3>
+<ol>
+<li><a href="/docs/v13/user/manual/en/stock/articles/stock-entry-purpose">Stock Entry Purpose</a></li>
+<li><a href="/docs/v13/user/manual/en/stock/stock-reconciliation">Stock Reconciliation</a></li>
+<li><a href="/docs/v13/user/manual/en/stock/articles/opening-stock-balance-entry-for-serialized-and-batch-item">Opening Stock Balance Entry For Serialized And Batch Item</a></li>
+<li><a href="/docs/v13/user/manual/en/stock/stock-reconciliation">Stock Reconciliation</a></li>
+<li><a href="/docs/v13/user/manual/en/manufacturing/work-order">Work Order</a></li>
+<li><a href="/docs/v13/user/manual/en/manufacturing/production-plan">Production Plan</a></li>
+<li><a href="/docs/v13/user/manual/en/manufacturing/job-card">Job Card</a></li>
+</ol>
+</div>
+</div>
+</div></div></div></div></main>

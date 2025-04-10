@@ -1,0 +1,70 @@
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title">Deferred Expense
+</h1>
+</div>
+<div class="wiki-content">
+<p><strong>Deferred expense is a cost that has already been incurred, but which has not yet been consumed.</strong></p>
+<p>The cost is recorded as an asset until such time as the underlying goods or services are consumed; at that point, the cost is charged to expense. A Deferred Expense is initially recorded as an asset, so that it appears on the balance sheet (usually as a Current Asset, since it is not used as of now and will probably be consumed within one year).</p>
+<h2 id="1-configuring-deferred-accounting">1. Configuring Deferred Accounting</h2>
+<blockquote>
+<p>Introduced in Version 13</p>
+</blockquote>
+<p>Before you start using deferred accounting you should be aware of the below settings which will give you more control over how you manage your deferred accounting</p>
+<p><img alt="Deferred Accounting Settings" class="screenshot" src="/files/deferred-accounting-settings.png"/></p>
+<ol>
+<li><p><strong>Automatically Process Deferred Accounting Entry:</strong> This setting is enabled by default. In case you don't want the deferred accounting entries to be posted automatically, you can disable this setting. If this setting is disabled, deferred accounting will have to be processed manually using <a href="/erpnext/v13/user/manual/en/accounts/process-deferred-accounting">Process Deferred Accounting</a></p></li>
+<li><p><strong>Book Deferred Entries Based On:</strong> Deferred expense amount can be booked based on two criteria. The default option here is "Days". If "Days" is selected, the deferred expense amount will be booked based on the number of days in each month and if "Months" is selected then it will be booked based on the number of months. <strong>For Eg:</strong> If "Days" is selected and $12000 expense has to be deferred over a period of 12 months, then $986.30 will be for the month having 30 days and $1019.17 will be booked for the month having 31 days. If "Months" is selected, $1000 deferred expense will be booked each month irrespective of the number of days in a month.</p></li>
+<li><p><strong>Book Deferred Entries Via Journal Entry:</strong> By default Ledger Entries are posted directly to book deferred expense against an invoice. In order to book this deferred amount posting via Journal Entry, this option can be enabled.</p></li>
+<li><p><strong>Submit Journal Entries:</strong> This option is applicable only if deferred accounting entries are posted via Journal Entry. By default, the Journal Entries for deferred posting are kept in Draft state and a user has to verify those entries and submit them manually. If this option is enabled, Journal Entries will be automatically submitted without any user intervention.</p></li>
+</ol>
+<h2 id="2-how-to-use-deferred-expense">2. How to use Deferred Expense</h2>
+<p>As an example of a Deferred Expense, Unico Plastics pays $10,000 in April for its May rent. It defers this cost at the point of payment (in April) in the prepaid rent asset account. In May, Unico Plastics has now consumed the prepaid asset, so it credits the prepaid rent asset account and debits the rent expense account.</p>
+<p>Other examples of Deferred Expenses are:</p>
+<ul>
+<li>Interest costs that are capitalized as part of a fixed asset for which the costs were incurred</li>
+<li>Insurance paid in advance for coverage in future months</li>
+<li>The cost of a fixed asset that is charged to expense over its useful life in the form of depreciation</li>
+<li>The cost incurred to register the issuance of a debt instrument</li>
+<li>The cost of an intangible asset that is charged to expense over its useful life as amortization</li>
+<li>For an Internet Subscription, the amount is paid upfront and service is delivered every month. So it is Deferred Expense for the Customer.</li>
+</ul>
+<p>Following is how you can configure Deferred Expense accounting in KanivinERP to automate the process.</p>
+<h3 id="21-item">2.1 Item</h3>
+<p>In the Item master, under Deferred Expense section, check field <strong>Enable Deferred Expense</strong>. In this section, you can also select a Deferred Expense account (Asset Account, preferably Current Asset) for this particular item and no. of months.</p>
+<p><img alt="Item With Deferred Expense" class="screenshot" src="/files/deferred-item-expense.png"/></p>
+<h3 id="22-purchase-invoice">2.2 Purchase Invoice</h3>
+<p>On creation of Purchase Invoice for the Deferred Expense Item, instead of posting in the Expense Account, Deferred Expense account (Asset account) is Credited by the purchase amount. Let's consider a simple example of an Internet subscription here:</p>
+<p><img alt="Invoice With Deferred Expense" class="screenshot" src="/files/deferred-purchase-invoice.gif"/></p>
+<h3 id="23-journal-entry">2.3 Journal Entry</h3>
+<p>Based on the From Date and To Date set in the Purchase Invoice Item table, Journal Entries are created automatically at the end of each month. It debits the value from Deferred Expense account and credits Expense Account selected for an Item in the Purchase Invoice.</p>
+</div>
+<input class="d-none" name="wiki-page-name" value="kfgsmiqojq"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="revisionsModalTitle">Deferred Expense
+</h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content">
+<h3>No Revisions</h3>
+</div>
+</div>
+</div></div></div></div></main>

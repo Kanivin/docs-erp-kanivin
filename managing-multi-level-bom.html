@@ -1,0 +1,67 @@
+<main><div class="from-markdown markdown">
+<div class="alert alert-warning admin-banner hide" role="alert">
+<div class="d-flex justify-content-between align-items-center">
+<div>This space has
+				<strong id="pending-patches-count">{{ pending_patches_count }}</strong> change(s) pending for
+				review.
+			</div>
+<button class="btn btn-sm btn-warning review-changes-btn">Review changes</button>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="wiki-title">Managing Multi-level BOM</h1>
+</div>
+<div class="wiki-content">
+<p>Consider a scenario where your manufacturing process involves producing sub-assembly items before the final product. In this case, how should you manage the BOM?</p>
+<p>First of all, you need to have BOMs for the sub-assemblies, then these BOMs should be linked to the BOM of the final finished product. In the following screenshot, you can see that the BOM for Brush Bristles (subassembly) is linked to the BOM of the Shaving Brush (final product). This is seen in the Materials table in the Bill of Materials master.</p>
+<p><img alt="Multi-level BOM" class="screenshot" src="/files/multi-bom.png"/></p>
+<p>The 'Materials' table will only show the sub-assemblies while the 'Materials Required (Exploded)' table will show all the raw materials required to manufacture the final product.</p>
+<p>BOM materials table where sub-assembly is shown:
+<img alt="Multi-level BOM" class="screenshot" src="/files/bom-materials.png"/></p>
+<p>In the exploded view only the raw materials are shown:
+<img alt="Multi-level BOM" class="screenshot" src="/files/bom-materials-exploded.png"/></p>
+<p>To use multi-level BOM in a Work Order, enable the 'Use Multi-Level BOM' checkbox. This is enabled by default. If you want to plan materials for sub-assemblies of the Item you're manufacturing leave this enabled. If you plan and manufacture the sub-assemblies separately disable this checkbox.</p>
+<p>Let's consider another example to understand this better where a computer is being assembled. The hard disk and DVD drive are also being manufactured and are the sub-assemblies. The multi-level or nested BOM will look like this:</p>
+<ul>
+<li>Personal Computer (FG Item)
+<ul>
+<li>Mother Board</li>
+<li>SMTP</li>
+<li>Accessories and wires</li>
+<li>Hard Disk (sub-assembly)</li>
+<li>Item A</li>
+<li>Item B</li>
+<li>Item C</li>
+<li>DVD Drive (sub-assembly)</li>
+<li>Item X</li>
+<li>Item Y</li>
+<li>Item Z</li>
+</ul></li>
+</ul>
+<h2 id="caution">Caution</h2>
+<p>Exercise caution when updating the BOM of a sub-assembly. The part which includes the sub assembly with an updated BOM will need to be updated to reference the updated BOM for that part. The practical outcome of this is that changing a screw on a low level assembly will lead to a ripple of updated Bills of Material up through the BOM structure.</p>
+<p>Using the example of the personal computer above.
+Personal Computer (PC-001 with BOM-PC-001) uses Hard Disk (HDD-001 with BOM-HDD-001).
+BOM-HDD-001 includes the three items shown (Item A, B and C).</p>
+<p>If we need to exchange Item C for a new item (Item D) then we must update create BOM-HDD-002 (with Items A, B and D). The Hard Disk (HDD-001) is then updated to reference the new BOM-HDD-002. But, BOM-PC-001 is still referencing HDD-001 with BOM-HDD-001. The change from Item C to Item D will not be updated in the Exploded BOM for PC-001.</p>
+<p>BOM-PC-002 must be created referencing HDD-001 with BOM-HDD-002 to make this update.</p>
+</div>
+<input class="d-none" name="wiki-page-name" value="718lbkd16e"/>
+<div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<div class="d-flex flex-column">
+<h5 class="modal-title revision-title" id="revisionsModalTitle">Managing Multi-level BOM</h5>
+<span class="small text-muted revision-time">administrator edited 4 months ago</span>
+</div>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="revision-content wiki-content">
+<h3>No Revisions</h3>
+</div>
+</div>
+</div></div></div></div></main>
