@@ -18,7 +18,7 @@
 <p>Bank accounts in foreign currencies can be for other branches of your own company or Debtors/Creditors account for foreign Customers/Suppliers.</p>
 <h2 id="1-setup">1. Setup</h2>
 <h3 id="11-set-currency-in-chart-of-accounts">1.1 Set currency in Chart of Accounts</h3>
-<p>To get started with multi-currency accounting, you need to assign accounting currency in the Account record. You can define Currency from <a href="/erpnext/v13/user/manual/en/accounts/chart-of-accounts">Chart of Accounts</a> while creating an Account.</p>
+<p>To get started with multi-currency accounting, you need to assign accounting currency in the Account record. You can define Currency from <a href="/kanvinerp/v13/user/manual/en/accounts/chart-of-accounts">Chart of Accounts</a> while creating an Account.</p>
 <p><img alt="Set Currency in Account" class="screenshot" src="/files/set-default-currency-in-ledger.png"/></p>
 <h3 id="12-new-account-with-different-currency">1.2 New account with different currency</h3>
 <p>You can also assign/modify the currency by opening specific Account records for existing Accounts.</p>
@@ -34,7 +34,7 @@
 </blockquote>
 <p>You can change accounting currency in Party/Account record before you make any transactions against them. After making accounting entries, the system will not allow you to change the currency for both Party/Account records. In case of multi-company setup, the accounting currency of the party must be the same for all the companies.</p>
 <h2 id="2-exchange-rates">2. Exchange Rates</h2>
-<p>When dealing with multiple currencies, KanivinERP has the Currency Exchange page for managing exchange rates. It allows you to save the exchange rate quotes you require. To know more, visit the <a href="/erpnext/v13/user/manual/en/accounts/currency-exchange">Currency Exchange</a> page.</p>
+<p>When dealing with multiple currencies, KanivinERP has the Currency Exchange page for managing exchange rates. It allows you to save the exchange rate quotes you require. To know more, visit the <a href="/kanvinerp/v13/user/manual/en/accounts/currency-exchange">Currency Exchange</a> page.</p>
 <p>For foreign currency transactions, KanivinERP checks exchange rates from:</p>
 <ol>
 <li>From the Currency Exchange for any matching record (if created by a User).</li>
@@ -42,12 +42,12 @@
 <li><strong>NOTE</strong>: Starting from KanivinERP version 13.10.0, Frankfurter is replaced by a new service called <a href="https://exchangerate.host">exchangerate.host</a>.</li>
 <li>If this still fails, then the exchange rate will have to be entered manually.</li>
 </ol>
-<p>The rates in the Currency Exchange master are fetched based on whether 'Allow Stale Exchange Rate' is enabled in Accounts Settings. To know more, visit the <a href="/erpnext/v13/user/manual/en/accounts/accounts-settings">Accounts Settings</a> page.</p>
+<p>The rates in the Currency Exchange master are fetched based on whether 'Allow Stale Exchange Rate' is enabled in Accounts Settings. To know more, visit the <a href="/kanvinerp/v13/user/manual/en/accounts/accounts-settings">Accounts Settings</a> page.</p>
 <h2 id="3-transactions">3. Transactions</h2>
 <h3 id="31-sales-invoice">3.1 Sales Invoice</h3>
 <p>In a Sales Invoice, transaction currency must be the same as the accounting currency of Customer if Customer's accounting currency is different from Company currency. Otherwise, you can select any currency in a Sales Invoice. On selection of Customer, system will fetch a Receivable account from Customer/Company. The Currency of the receivable account must be the same as the Customer's accounting currency.</p>
 <p>Now, in Invoice, Paid Amount will be entered in transaction currency, instead of earlier Company Currency. Write Off Amount will also be entered in the transaction currency.</p>
-<p>Outstanding Amount and Advance Amount will always be calculated and shown in Customer's Account Currency. The paid amounts will be reflected in the <a href="/erpnext/v13/user/manual/en/accounts/payment-entry">Payment Entry</a>:</p>
+<p>Outstanding Amount and Advance Amount will always be calculated and shown in Customer's Account Currency. The paid amounts will be reflected in the <a href="/kanvinerp/v13/user/manual/en/accounts/payment-entry">Payment Entry</a>:</p>
 <p><img alt="Multi-currency in Payment Entry" class="screenshot" src="/files/multi-currency-in-payment-entry.png"/></p>
 <h3 id="32-purchase-invoice">3.2 Purchase Invoice</h3>
 <p>Similarly, in a Purchase Invoice, accounting entries will be made based on Supplier's accounting currency. Outstanding Amount and Advance Amount will also be shown in the supplier's accounting currency. Write Off Amount will now be entered in the transaction currency.</p>

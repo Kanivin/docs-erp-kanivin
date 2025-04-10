@@ -27,11 +27,11 @@
 * <strong>Document Types:</strong> Each type of document, master or transaction, has a separate list of role-based permissions as seen in the preceding screenshot.</p>
 <p>Examples of Document Types are Sales Invoice, Leave Application, Stock Entry, etc.
 * <strong>Permission Levels:</strong> In each document, you can group fields by "levels". Each group of fields is denoted by a unique number (0 to 9). A separate set of permission rules can be applied to each field group. By default, all fields are of level 0.</p>
-<p>Permission "Level" connects fields with level X to a permission rule with level X. To know more click <a href="/erpnext/v13/user/manual/en/setting-up/articles/managing-perm-level">here</a>.
+<p>Permission "Level" connects fields with level X to a permission rule with level X. To know more click <a href="/kanvinerp/v13/user/manual/en/setting-up/articles/managing-perm-level">here</a>.
 * <strong>Document Stages:</strong> Permissions are applied on each stage of the document like Creation, Saving, Submission, Cancellation, and Amendment. A role can be permitted to Print, Email, Import or Export data, access Reports, or define User Permissions.
 * <strong>User Permissions:</strong> Using User Permissions in KanivinERP a user can be restricted to access only specific Documents for that Document Type. Eg: Only one Territory from all Territories. User Permissions defined for other Document Types also get applied if they are related to the current Document Type through Link Fields.</p>
 <p>For example, a Customer is a link field in a Sales Order or Quotation. In the Role Permissions Manager, User Permissions can be set using the 'Set User Permissions' button.</p>
-<p>To set User Permissions based on documents/fields go to: &gt; Home &gt; Users and Permissions &gt; Permissions &gt; <a href="/erpnext/v13/user/manual/en/setting-up/users-and-permissions/user-permissions">User Permissions</a>
+<p>To set User Permissions based on documents/fields go to: &gt; Home &gt; Users and Permissions &gt; Permissions &gt; <a href="/kanvinerp/v13/user/manual/en/setting-up/users-and-permissions/user-permissions">User Permissions</a>
 * <strong>Add a New Rule</strong>: In the Role Permissions Manager, to add a new rule, click on the <strong>Add a New Rule</strong> button and a pop-up box will ask you to select a Role and a Permission Level. Once you select this and click on 'Add', this will add a new row to your rules table.</p>
 <h2 id="2-how-role-based-permissions-work">2. How Role Based Permissions Work</h2>
 <p>Leave Application is a good example that encompasses all areas of a Permission System.</p>
@@ -51,7 +51,7 @@
 <p><img alt="Limiting read access for a set of fields to certain Roles" class="screenshot" src="/files/setting-up-permissions-level-1.png"/>
 * <strong>HR User</strong> should be able to delegate Leave Applications to his/her subordinates. HR User is given the right to Set User Permissions. A User with HR User role would be able to define User Permissions on Leave Application for other users.</p>
 <p><img alt="Let HR User delegate access to Leave Applications by checking 'Set User Permissions'. This will allow HR User to access User Permissions Manager for 'Leave Application'" class="screenshot" src="/files/setting-up-permissions-hr-user-role.png"/></p>
-<p>In case you have correctly assigned the roles but still you're getting errors when accessing documents, refer <a href="/erpnext/v13/user/manual/en/setting-up/articles/report-permission-error">this page</a>.</p>
+<p>In case you have correctly assigned the roles but still you're getting errors when accessing documents, refer <a href="/kanvinerp/v13/user/manual/en/setting-up/articles/report-permission-error">this page</a>.</p>
 <h3 id="3-related-topics">3. Related Topics</h3>
 <ol>
 <li><a onclick="loadContent('user-permissions.html')">User Permissions</a></li>

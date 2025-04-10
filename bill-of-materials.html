@@ -15,7 +15,7 @@
 <div class="wiki-content">
 <p><strong>A Bill of Materials is a list of items and sub-assemblies with quantities required to manufacture an Item.</strong></p>
 <p>A BOM may also contain the manufacturing operations required to manufacture the Item.</p>
-<p>A <strong>Bill of Materials</strong> (BOM) is at the heart of the Manufacturing system and the most important document that will help to create other document types like Work Orders and Job Cards. KanivinERP supports multi-level BOM. To know more, visit <a href="/erpnext/v13/user/manual/en/manufacturing/articles/managing-multi-level-bom">this page</a>.</p>
+<p>A <strong>Bill of Materials</strong> (BOM) is at the heart of the Manufacturing system and the most important document that will help to create other document types like Work Orders and Job Cards. KanivinERP supports multi-level BOM. To know more, visit <a href="/kanvinerp/v13/user/manual/en/manufacturing/articles/managing-multi-level-bom">this page</a>.</p>
 <p>The <strong>BOM</strong> is a list of all materials (either bought or made) and operations
 that go into manufacturing a finished product or sub-assembly. In KanivinERP, each item (sub-assembly) could
 have its own BOM hence forming a tree of Items with multiple levels.</p>
@@ -57,7 +57,7 @@ have its own BOM hence forming a tree of Items with multiple levels.</p>
 <p>In the Items table, you'll see an option 'Include Item in Manufacturing'. Raw Materials need to have this checkbox ticked. In case there are Operations or services you need to include in the BOM that are not necessarily an Item used for manufacturing, uncheck this checkbox. For example, treating the plastic with a chemical involves some cost but it is not an Item and the cost needs to be tracked.</p>
 <p><img alt="Task" class="screenshot" src="/files/bom-item-include.png"/></p>
 <h3 id="21-bill-of-materials-with-operations">2.1 Bill of Materials with Operations</h3>
-<p>To add <a href="/erpnext/v13/user/manual/en/manufacturing/operation">Operations</a> tick the 'With Operations' checkbox. Now, an Operations table can be seen. This option is useful for tracking the costing of various Operations performed to manufacture the <a href="/erpnext/v13/user/manual/en/stock/item">Item</a>. Operations can be added easily by setting a template with the <a href="/erpnext/v13/user/manual/en/manufacturing/routing">Routing</a> master.</p>
+<p>To add <a href="/kanvinerp/v13/user/manual/en/manufacturing/operation">Operations</a> tick the 'With Operations' checkbox. Now, an Operations table can be seen. This option is useful for tracking the costing of various Operations performed to manufacture the <a href="/kanvinerp/v13/user/manual/en/stock/item">Item</a>. Operations can be added easily by setting a template with the <a href="/kanvinerp/v13/user/manual/en/manufacturing/routing">Routing</a> master.</p>
 <p><img alt="Task" class="screenshot" src="/files/bom-operations.png"/></p>
 <ol>
 <li>In the “Operations” table, add the operations that need to be performed to manufacture this particular Item.</li>
@@ -65,9 +65,9 @@ have its own BOM hence forming a tree of Items with multiple levels.</p>
 <li>Enter the Operating Hourly Rate, Operation Time in minutes, and the Batch Size created with the Operation. The Operating Cost will be calculated based on these values.</li>
 </ol>
 <blockquote>
-<p>Note: Workstations are defined only for product costing and Work Order Operations scheduling purposes not tracking inventory. Inventory is tracked in <a href="/erpnext/v13/user/manual/en/stock/warehouse">Warehouses</a> set in the Items table of the BOM.</p>
+<p>Note: Workstations are defined only for product costing and Work Order Operations scheduling purposes not tracking inventory. Inventory is tracked in <a href="/kanvinerp/v13/user/manual/en/stock/warehouse">Warehouses</a> set in the Items table of the BOM.</p>
 </blockquote>
-<p>Transfer Material Against needs to be set for a BOM With Operations. Materials can be transferred against a <a href="/erpnext/v13/user/manual/en/manufacturing/work-order">Work Order</a> in bulk or individual <a href="/erpnext/v13/user/manual/en/manufacturing/job-card">Job Cards</a>. Changing this affects whether the 'Material Transfer for Manufacture' is done against the Work Order at once or multiple times against the individual Job Cards. Setting this option depends on factors like time taken to manufacture the item, value of the items manufactured, number of parts used in manufacturing, the skill of your labor involved, etc.</p>
+<p>Transfer Material Against needs to be set for a BOM With Operations. Materials can be transferred against a <a href="/kanvinerp/v13/user/manual/en/manufacturing/work-order">Work Order</a> in bulk or individual <a href="/kanvinerp/v13/user/manual/en/manufacturing/job-card">Job Cards</a>. Changing this affects whether the 'Material Transfer for Manufacture' is done against the Work Order at once or multiple times against the individual Job Cards. Setting this option depends on factors like time taken to manufacture the item, value of the items manufactured, number of parts used in manufacturing, the skill of your labor involved, etc.</p>
 <p><img alt="BOM transfer materials against" class="screenshot" src="/files/bom-transfer-materials.png"/></p>
 <h3 id="22-additional-options-when-creating-a-bill-of-materials">2.2 Additional options when creating a Bill of Materials</h3>
 <ul>
@@ -111,8 +111,8 @@ For more details, visit <a onclick="loadContent('valuation-based-on-field-in-bom
 Now while preparing the BOM for the Laptop in the KanivinERP, they don't want to Explode the BOM of the item Motherboard but they want to Explode the BOM of the item Keyboard. Therefore we have added the checkbox "Do Not Explode" for the BOM Item. With this user will enable the checkbox "Do Not Explode" for the item Motherboard and not for the item Keyboard.</p>
 <p><img alt="Exploded Section" class="screenshot" src="/files/dont_explode_items.png"/></p>
 <h3 id="33-project-and-website">3.3 Project and Website</h3>
-<p>The BOM can be linked to a <a href="/erpnext/v13/user/manual/en/projects">Project</a> to track progress, Project costing, etc. In case of engineer to order, every order could be a <a href="/erpnext/v13/user/manual/en/projects/project">Project</a> and the sub-assemblies would be <a href="/erpnext/v13/user/manual/en/projects/tasks">Tasks</a>. The completion can be tracked by linking to a Project in that case.</p>
-<p>The BOM can also be shown in the <a href="/erpnext/v13/user/manual/en/website">Website</a> for Open-source hardware products. Open-source hardware is similar to open-source where the product specifications are listed publicly.</p>
+<p>The BOM can be linked to a <a href="/kanvinerp/v13/user/manual/en/projects">Project</a> to track progress, Project costing, etc. In case of engineer to order, every order could be a <a href="/kanvinerp/v13/user/manual/en/projects/project">Project</a> and the sub-assemblies would be <a href="/kanvinerp/v13/user/manual/en/projects/tasks">Tasks</a>. The completion can be tracked by linking to a Project in that case.</p>
+<p>The BOM can also be shown in the <a href="/kanvinerp/v13/user/manual/en/website">Website</a> for Open-source hardware products. Open-source hardware is similar to open-source where the product specifications are listed publicly.</p>
 <h3 id="34-bom-template">3.4 BOM Template</h3>
 <p><img alt="BOM Template" class="screenshot" src="/files/bom-template.png"/></p>
 <p>With BOM template you can create BOMs for template items (against which you create variant items). These BOMs can be used as the default BOM while making Work Orders against the template Item's variants. You can also add the template items as raw materials in the template BOM. While making Work Order from the BOM Template, KanivinERP gives provision to select the Item Variant against the template Item, for more details check following screenshot.</p>

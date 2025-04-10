@@ -13,7 +13,7 @@
 </div>
 <div class="wiki-content">
 <p><strong>A customer, who is sometimes known as a client, buyer, or purchaser is the one who receives goods, services, products, or ideas, from a seller for a monetary consideration.</strong></p>
-<p>Every customer needs to be assigned a unique id. Customer name itself can be the id or you can set a naming series for ids to be generated in <a href="/erpnext/v13/user/manual/en/selling/selling-settings">Selling Settings</a>.</p>
+<p>Every customer needs to be assigned a unique id. Customer name itself can be the id or you can set a naming series for ids to be generated in <a href="/kanvinerp/v13/user/manual/en/selling/selling-settings">Selling Settings</a>.</p>
 <p>To access the Customer list, go to:</p>
 <blockquote>
 <p>Home &gt; CRM &gt; Sales Pipeline</p>
@@ -35,9 +35,9 @@
 <p><img alt="Screenshot 2024-07-09 at 3.46.54 PM" class="screenshot" src="/files/Screenshot 2024-07-09 at 3.46.54 PM.png"/></p>
 <p>You can disallow sales orders and sales invoices against a customer by clicking on 'Disabled'.</p>
 <blockquote>
-<p>Advanced Tip: If the customer represents one of your own companies then check 'Is Internal Customer'. Check <a href="/erpnext/v13/user/manual/en/accounts/inter-company-invoices">Inter Company Invoices</a> for more details.</p>
+<p>Advanced Tip: If the customer represents one of your own companies then check 'Is Internal Customer'. Check <a href="/kanvinerp/v13/user/manual/en/accounts/inter-company-invoices">Inter Company Invoices</a> for more details.</p>
 </blockquote>
-<p>You can also upload customer details via the <a href="/erpnext/v13/user/manual/en/setting-up/data/data-import">Data Import Tool</a>.</p>
+<p>You can also upload customer details via the <a href="/kanvinerp/v13/user/manual/en/setting-up/data/data-import">Data Import Tool</a>.</p>
 <h2 id="2-features">2. Features</h2>
 <p>General flow of transactions for a customer is as following:</p>
 <p><img alt="Sales Flowchart" class="screenshot" src="/files/customer-to selling-flowchart.jpeg"/> </p>
@@ -45,43 +45,43 @@
 <p>Note: Customers are separate from Contacts and Addresses. A Customer can have multiple Contacts and Addresses.</p>
 </blockquote>
 <h3 id="21-multiple-contacts-and-addresses">2.1 Multiple Contacts and Addresses</h3>
-<p><a href="/erpnext/v13/user/manual/en/CRM/contact">Contacts</a> and <a href="/erpnext/v13/user/manual/en/CRM/address">Addresses</a> are stored separately so that you can attach multiple Contacts or Addresses to the customer.</p>
+<p><a href="/kanvinerp/v13/user/manual/en/CRM/contact">Contacts</a> and <a href="/kanvinerp/v13/user/manual/en/CRM/address">Addresses</a> are stored separately so that you can attach multiple Contacts or Addresses to the customer.</p>
 <h3 id="22-allow-creation-of-sales-invoice-without-sales-order-and-delivery-note">2.2 Allow creation of Sales Invoice without Sales Order and Delivery Note</h3>
-<p>If the "Delivery Note Required" or "Sales Order Required" option is configured as "Yes" in <a href="/erpnext/v13/user/manual/en/selling/selling-settings">Selling Settings</a>, it can be overridden for a particular customer by enabling the "Allow Sales Invoice Creation Without Sales Order" or "Allow Sales Invoice Creation Without Delivery Note" in the Customer Master.</p>
+<p>If the "Delivery Note Required" or "Sales Order Required" option is configured as "Yes" in <a href="/kanvinerp/v13/user/manual/en/selling/selling-settings">Selling Settings</a>, it can be overridden for a particular customer by enabling the "Allow Sales Invoice Creation Without Sales Order" or "Allow Sales Invoice Creation Without Delivery Note" in the Customer Master.</p>
 <p><img alt="Screenshot 2024-07-09 at 3.47.48 PM" class="screenshot" src="/files/Screenshot 2024-07-09 at 3.47.48 PM.png"/> </p>
 <h3 id="23-set-tax-withholding-category">2.3 Set Tax Withholding Category</h3>
-<p>You can set the Tax Withholding Category to set up TCS against eligible customers. For more information, visit the <a href="/erpnext/v13/user/manual/en/accounts/tax-withholding-category">Tax Withholding Category</a> page.</p>
+<p>You can set the Tax Withholding Category to set up TCS against eligible customers. For more information, visit the <a href="/kanvinerp/v13/user/manual/en/accounts/tax-withholding-category">Tax Withholding Category</a> page.</p>
 <h3 id="24-default-currency-and-price-list">2.4 Default Currency and Price List</h3>
-<p>KanivinERP supports <a href="/erpnext/v13/user/manual/en/accounts/multi-currency-accounting">Multiple Currencies</a> and <a href="/erpnext/v13/user/manual/en/stock/price-lists">Price Lists</a>.</p>
+<p>KanivinERP supports <a href="/kanvinerp/v13/user/manual/en/accounts/multi-currency-accounting">Multiple Currencies</a> and <a href="/kanvinerp/v13/user/manual/en/stock/price-lists">Price Lists</a>.</p>
 <p>You can set the default currency to be used for this customer in sales orders and sales invoices by selecting the appropriate currency in Billing Currency.</p>
 <p>Similarly, you can set the default price list to be used for this customer in sales orders and sales invoices by selecting the appropriate currency in Default Price List.</p>
 <h3 id="25-integration-with-accounts">2.5 Integration with Accounts</h3>
 <p>Unlike many accounting software, you need not create a separate accounting ledger for each customer. By default a unified ledger named <strong>Debtors</strong> is created.</p>
-<p>However if you specifically need a separate ledger for a customer, first create the ledger under Accounts Receivable in the <a href="/erpnext/v13/user/manual/en/accounts/chart-of-accounts.html">Chart of Accounts</a> and then add it in ACCOUNTING section of the customer.</p>
+<p>However if you specifically need a separate ledger for a customer, first create the ledger under Accounts Receivable in the <a href="/kanvinerp/v13/user/manual/en/accounts/chart-of-accounts.html">Chart of Accounts</a> and then add it in ACCOUNTING section of the customer.</p>
 <blockquote>
-<p>Advanced Tip: KanivinERP supports <a href="/erpnext/v13/user/manual/en/accounts/inter-company-journal-entry">Multi-company Accounting</a>. You can use the same customer records in multiple companies. Since an accounting ledger is company specific, you need to select the company and the corresponding ledger in ACCOUNTING section if you decide have separate accounting ledger for a customer.</p>
+<p>Advanced Tip: KanivinERP supports <a href="/kanvinerp/v13/user/manual/en/accounts/inter-company-journal-entry">Multi-company Accounting</a>. You can use the same customer records in multiple companies. Since an accounting ledger is company specific, you need to select the company and the corresponding ledger in ACCOUNTING section if you decide have separate accounting ledger for a customer.</p>
 </blockquote>
 <h3 id="26-credit-limit-and-payment-terms">2.6 Credit Limit and Payment Terms</h3>
-<p>You can set the credit limit by entering the amount in 'Credit Limit' field. Read <a href="/erpnext/v13/user/manual/en/accounts/credit-limit">Credit Limit</a> for more details.</p>
-<p>You can select the default <a href="/erpnext/v13/user/manual/en/accounts/payment-terms">Payment Terms</a> to be applied in sales orders and sales invoices in 'Default Payment Terms Template' field.</p>
+<p>You can set the credit limit by entering the amount in 'Credit Limit' field. Read <a href="/kanvinerp/v13/user/manual/en/accounts/credit-limit">Credit Limit</a> for more details.</p>
+<p>You can select the default <a href="/kanvinerp/v13/user/manual/en/accounts/payment-terms">Payment Terms</a> to be applied in sales orders and sales invoices in 'Default Payment Terms Template' field.</p>
 <h3 id="27-sales-team-and-sales-partner">2.7 Sales Team and Sales Partner</h3>
-<p>If you have one or more <a href="/erpnext/v13/user/manual/en/CRM/sales-person">Sales Person</a> to manage the sales to the customer, you can add them in SALES TEAM section. If multiple sales person are involved you can split the contribution among them. Make sure that the sum of all sales persons contribution equals to 100%.</p>
-<p>Check <a href="/erpnext/v13/user/manual/en/selling/articles/sales-persons-in-the-sales-transactions">Sales Persons in Sales Transaction</a> for more details.</p>
-<p>A <a href="/erpnext/v13/user/manual/en/selling/sales-partner">Sales Partner</a> is a third party distributor / dealer / commission agent / affiliate / reseller who facilitates your products/services sales, for a commission. If you sell your products/services to the customer through a sales partner you can set it in 'Sales Partner' field and mention the 'Commission Rate' for calculation of commission.</p>
+<p>If you have one or more <a href="/kanvinerp/v13/user/manual/en/CRM/sales-person">Sales Person</a> to manage the sales to the customer, you can add them in SALES TEAM section. If multiple sales person are involved you can split the contribution among them. Make sure that the sum of all sales persons contribution equals to 100%.</p>
+<p>Check <a href="/kanvinerp/v13/user/manual/en/selling/articles/sales-persons-in-the-sales-transactions">Sales Persons in Sales Transaction</a> for more details.</p>
+<p>A <a href="/kanvinerp/v13/user/manual/en/selling/sales-partner">Sales Partner</a> is a third party distributor / dealer / commission agent / affiliate / reseller who facilitates your products/services sales, for a commission. If you sell your products/services to the customer through a sales partner you can set it in 'Sales Partner' field and mention the 'Commission Rate' for calculation of commission.</p>
 <h3 id="28-loyalty-program">2.8 Loyalty Program</h3>
-<p>If you would like offer a <a href="/erpnext/v13/user/manual/en/accounts/loyalty-program">Loyalty Program</a> to the customer, select the same in Loyalty Program field.</p>
+<p>If you would like offer a <a href="/kanvinerp/v13/user/manual/en/accounts/loyalty-program">Loyalty Program</a> to the customer, select the same in Loyalty Program field.</p>
 <h3 id="29-view-accounting-ledger-and-accounts-receivable">2.9 View Accounting Ledger and Accounts Receivable</h3>
 <p>Click on Accounting Ledger button to view all accounting transactions with the customer.</p>
 <p>Click on Accounts Receivable button to view the details of all outstanding invoices.</p>
 <h3 id="210-set-customer-id-default-customer-group-territory-and-price-list">2.10 Set Customer Id, Default Customer Group, Territory, and Price List</h3>
-<p>You can set how a unique id should be generated each the customer in <a href="/erpnext/v13/user/manual/en/selling/selling-settings">Selling Settings</a>.</p>
+<p>You can set how a unique id should be generated each the customer in <a href="/kanvinerp/v13/user/manual/en/selling/selling-settings">Selling Settings</a>.</p>
 <ul>
 <li><strong>Naming Series</strong>: If you would like a unique id to be generated for each customer based on the naming series select 'Naming Series' in Customer Naming By.</li>
 <li><strong>Customer Name</strong>: If customer name itself should be used as an id then select 'Customer Name' in Customer Naming By. In this case, if you create two customers with identical names, <strong>- 1</strong> will be suffixed to the second customer.</li>
 </ul>
 <p><img alt="Screenshot 2024-07-09 at 3.49.07 PM" class="screenshot" src="/files/Screenshot 2024-07-09 at 3.49.07 PM.png"/> </p>
-<p>You can set the default customer group, territory and price list in <a href="/erpnext/v13/user/manual/en/selling/selling-settings">Selling Settings</a>.</p>
-<p>You can customize the Customer DocType using <a href="/erpnext/v13/user/manual/en/customize-erpnext/custom-field">Customize Form</a> tool.</p>
+<p>You can set the default customer group, territory and price list in <a href="/kanvinerp/v13/user/manual/en/selling/selling-settings">Selling Settings</a>.</p>
+<p>You can customize the Customer DocType using <a href="/kanvinerp/v13/user/manual/en/customize-kanvinerp/custom-field">Customize Form</a> tool.</p>
 <h3 id="3-related-topics">3. Related Topics</h3>
 <ol>
 <li><a onclick="loadContent('customer-group.html')">Customer Group</a></li>

@@ -28,7 +28,7 @@ inventory. The Delivery Note is an optional step and a Sales Invoice can be crea
 <li><a onclick="loadContent('sales-order.html')">Sales Order</a></li>
 </ul>
 <blockquote>
-<p>Note: From version-13 onwards we have introduced immutable ledger which changes the rules for cancellation of stock entries and posting backdated stock transactions in KanivinERP. <a href="/erpnext/v13/user/manual/en/accounts/articles/immutable-ledger-in-erpnext">Learn more here</a>.</p>
+<p>Note: From version-13 onwards we have introduced immutable ledger which changes the rules for cancellation of stock entries and posting backdated stock transactions in KanivinERP. <a href="/kanvinerp/v13/user/manual/en/accounts/articles/immutable-ledger-in-kanvinerp">Learn more here</a>.</p>
 </blockquote>
 <h2 id="2-how-to-create-a-delivery-note">2. How to create a Delivery Note</h2>
 <p>The entry of the Delivery Note is very similar to a Purchase Receipt. It is usually created from a “Submitted” Sales Order (that is not shipped) by clicking on Create &gt; Delivery.</p>
@@ -76,11 +76,11 @@ If a Pick List Item is not linked to a Sales Order(added manually by user), a se
 <li>Company GSTIN</li>
 <li>Company Address Name</li>
 </ul>
-<p><a href="/erpnext/v13/user/manual/en/CRM/contact">Contacts</a> and <a href="/erpnext/v13/user/manual/en/CRM/address">Addresses</a> are stored separately so that you can attach multiple Contacts or Addresses to the customer.</p>
+<p><a href="/kanvinerp/v13/user/manual/en/CRM/contact">Contacts</a> and <a href="/kanvinerp/v13/user/manual/en/CRM/address">Addresses</a> are stored separately so that you can attach multiple Contacts or Addresses to the customer.</p>
 <h3 id="33-currency-and-price-list">3.3 Currency and Price List</h3>
 <p>You can set the currency in which the Deliver Note is to be sent. This is usually fetched if set in the Sales Order. If you set a Pricing List, then the item prices will be fetched from that list. Ticking on Ignore Pricing Rule will ignore the Pricing Rules set in Accounts &gt; Pricing Rule.</p>
-<p>Read about <a href="/erpnext/v13/user/manual/en/stock/price-lists">Price Lists</a>
-and <a href="/erpnext/v13/user/manual/en/accounts/articles/managing-transactions-in-multiple-currency">Multi-Currency Transactions</a>
+<p>Read about <a href="/kanvinerp/v13/user/manual/en/stock/price-lists">Price Lists</a>
+and <a href="/kanvinerp/v13/user/manual/en/accounts/articles/managing-transactions-in-multiple-currency">Multi-Currency Transactions</a>
 to know more.</p>
 <h3 id="34-warehouses">3.4 Warehouses</h3>
 <ul>
@@ -89,40 +89,40 @@ to know more.</p>
 </ul>
 <h3 id="35-items-table">3.5 Items Table</h3>
 <ul>
-<li><p><strong>Barcode</strong>: You can track Items using <a href="/erpnext/v13/user/manual/en/stock/articles/track-items-using-barcode">barcodes</a>.</p></li>
-<li><p>The Item Code, name, description, Image, and Manufacturer will be fetched from the <a href="/erpnext/v13/user/manual/en/stock/item">Item master</a>.</p></li>
-<li><p><strong>Scan Barcode</strong>: You can add Items in the Items table by scanning their barcodes if you have a barcode scanner. Read documentation for <a href="/erpnext/v13/user/manual/en/stock/articles/track-items-using-barcode">tracking items using barcode</a> to know more.</p></li>
-<li><p><strong>Discount and Margin</strong>: You can apply a discount on individual Items percentage-wise or the total amount of the Item. Read <a href="/erpnext/v13/user/manual/en/selling/articles/applying-discount">Applying Discount</a> for more details.</p></li>
-<li><p><strong>Rate</strong>: The Rate is fetched if set in the <a href="/erpnext/v13/user/manual/en/stock/price-lists">Price List</a> and the total Amount is calculated.</p></li>
-<li><p><strong>Item Tax Template</strong>: You can set an Item Tax Template to apply a specific Tax amount to this particular Item. To know more, visit <a href="/erpnext/v13/user/manual/en/accounts/item-tax-template">this page</a>.</p></li>
+<li><p><strong>Barcode</strong>: You can track Items using <a href="/kanvinerp/v13/user/manual/en/stock/articles/track-items-using-barcode">barcodes</a>.</p></li>
+<li><p>The Item Code, name, description, Image, and Manufacturer will be fetched from the <a href="/kanvinerp/v13/user/manual/en/stock/item">Item master</a>.</p></li>
+<li><p><strong>Scan Barcode</strong>: You can add Items in the Items table by scanning their barcodes if you have a barcode scanner. Read documentation for <a href="/kanvinerp/v13/user/manual/en/stock/articles/track-items-using-barcode">tracking items using barcode</a> to know more.</p></li>
+<li><p><strong>Discount and Margin</strong>: You can apply a discount on individual Items percentage-wise or the total amount of the Item. Read <a href="/kanvinerp/v13/user/manual/en/selling/articles/applying-discount">Applying Discount</a> for more details.</p></li>
+<li><p><strong>Rate</strong>: The Rate is fetched if set in the <a href="/kanvinerp/v13/user/manual/en/stock/price-lists">Price List</a> and the total Amount is calculated.</p></li>
+<li><p><strong>Item Tax Template</strong>: You can set an Item Tax Template to apply a specific Tax amount to this particular Item. To know more, visit <a href="/kanvinerp/v13/user/manual/en/accounts/item-tax-template">this page</a>.</p></li>
 <li><p>The Item Weight details per unit and Weight UOM are fetched if set in the Item master.</p></li>
 <li><p><strong>Warehouse and Reference</strong>: The Warehouse from which the Items are sent to the Customer is shown. Also, a Sales Order will be shown if this Delivery Note was the creation flow: 'Sales Order &gt; Deliver Note'.</p></li>
-<li><p><strong>Batch No and Serial No</strong>: If your Item is serialized or batched, you will have to enter <a href="/erpnext/v13/user/manual/en/stock/serial-no">Serial Number</a> and <a href="/erpnext/v13/user/manual/en/stock/batch">Batch</a> in the Items table. You are allowed to enter multiple Serial Numbers in one row (each on a separate line) and you must enter the same number of Serial Numbers as the quantity.</p>
-<p>The 'Available Qty at From Warehouse', 'Available Batch Qty at From Warehouse', and 'Installed Qty' will be shown. To know more about installation, visit the <a href="/erpnext/v13/user/manual/en/stock/installation-note">Installation Note</a> page.</p>
+<li><p><strong>Batch No and Serial No</strong>: If your Item is serialized or batched, you will have to enter <a href="/kanvinerp/v13/user/manual/en/stock/serial-no">Serial Number</a> and <a href="/kanvinerp/v13/user/manual/en/stock/batch">Batch</a> in the Items table. You are allowed to enter multiple Serial Numbers in one row (each on a separate line) and you must enter the same number of Serial Numbers as the quantity.</p>
+<p>The 'Available Qty at From Warehouse', 'Available Batch Qty at From Warehouse', and 'Installed Qty' will be shown. To know more about installation, visit the <a href="/kanvinerp/v13/user/manual/en/stock/installation-note">Installation Note</a> page.</p>
 <p><strong>Note</strong>: The Item has to be serialized or batched for these features to work. If the Item is serialized a popup will appear where you can enter the Serial Numbers.</p></li>
 <li><p>Expense Account is the account from which the amount will be debited. Ticking on 'Allow Zero Valuation Rate' will allow submitting the Delivery Note even if the Valuation Rate of the Item is 0. This can be a sample item or due to a mutual understanding with your Supplier.</p></li>
-<li><p>Accounting Dimensions help to tag each transaction with different Dimensions without the need for creating new Cost Centers. You need to create Accounting Dimensions first, to know more, visit <a href="/erpnext/v13/user/manual/en/accounts/accounting-dimensions">this page</a>.</p></li>
+<li><p>Accounting Dimensions help to tag each transaction with different Dimensions without the need for creating new Cost Centers. You need to create Accounting Dimensions first, to know more, visit <a href="/kanvinerp/v13/user/manual/en/accounts/accounting-dimensions">this page</a>.</p></li>
 <li><p><strong>Page Break</strong> will create a page break just before this Item when printing.</p></li>
 </ul>
 <h3 id="36-tracking-quality-inspection">3.6 Tracking Quality Inspection</h3>
 <p>If for certain Items, it is mandatory to record Quality Inspections (if you have set it in your Item master), you will need to update the “Quality Inspection" field. The system will only allow you to “Submit” the
 Delivery Note if you update the “Quality Inspection”.</p>
-<p>After enabling Inspection Criteria in the <a href="/erpnext/v13/user/manual/en/stock/item#216-inspection-criteria">Item form</a> for Sales and attaching a Quality Inspection Template there, Quality Inspections can be recorded in Delivery Notes.</p>
+<p>After enabling Inspection Criteria in the <a href="/kanvinerp/v13/user/manual/en/stock/item#216-inspection-criteria">Item form</a> for Sales and attaching a Quality Inspection Template there, Quality Inspections can be recorded in Delivery Notes.</p>
 <h3 id="37-taxes-and-charges">3.7 Taxes and Charges</h3>
-<p>The Taxes and Charges will be fetched from the <a href="/erpnext/v13/user/manual/en/buying/purchase-order">Sales Order</a>.</p>
-<p>Visit the <a href="/erpnext/v13/user/manual/en/selling/sales-taxes-and-charges-template">Sales Taxes and Charges Template</a> page to know more about taxes.</p>
+<p>The Taxes and Charges will be fetched from the <a href="/kanvinerp/v13/user/manual/en/buying/purchase-order">Sales Order</a>.</p>
+<p>Visit the <a href="/kanvinerp/v13/user/manual/en/selling/sales-taxes-and-charges-template">Sales Taxes and Charges Template</a> page to know more about taxes.</p>
 <p>The total taxes and charges will be displayed below the table.</p>
-<p>To add taxes automatically via a Tax Category, visit <a href="/erpnext/v13/user/manual/en/accounts/tax-category">this page</a>.</p>
+<p>To add taxes automatically via a Tax Category, visit <a href="/kanvinerp/v13/user/manual/en/accounts/tax-category">this page</a>.</p>
 <p>Make sure to mark all your taxes in the Taxes and Charges table correctly for an accurate valuation.</p>
 <h4 id="shipping-rule">Shipping Rule</h4>
-<p>A Shipping Rule helps set the cost of shipping an Item. The cost will usually increase with the distance of shipping. To know more, visit the <a href="/erpnext/v13/user/manual/en/selling/shipping-rule">Shipping Rule</a> page.</p>
+<p>A Shipping Rule helps set the cost of shipping an Item. The cost will usually increase with the distance of shipping. To know more, visit the <a href="/kanvinerp/v13/user/manual/en/selling/shipping-rule">Shipping Rule</a> page.</p>
 <h3 id="38-additional-discount">3.8 Additional Discount</h3>
 <p>Any additional discounts to the whole order can be set in this section. This discount could be based on the Grand Total i.e., post tax/charges or Net total i.e., pre tax/charges. The additional discount can be applied as a percentage or an amount.
-Read <a href="/erpnext/v13/user/manual/en/selling/articles/applying-discount">Applying Discount</a> for more details.</p>
+Read <a href="/kanvinerp/v13/user/manual/en/selling/articles/applying-discount">Applying Discount</a> for more details.</p>
 <h3 id="39-terms-and-conditions">3.9 Terms and Conditions</h3>
-<p>In Sales/Purchase transactions there might be certain Terms and Conditions based on which the Supplier provides goods or services to the Customer. You can apply the Terms and Conditions to transactions to transactions and they will appear when printing the document. To know about Terms and Conditions, <a href="/erpnext/v13/user/manual/en/setting-up/print/terms-and-conditions">click here</a></p>
+<p>In Sales/Purchase transactions there might be certain Terms and Conditions based on which the Supplier provides goods or services to the Customer. You can apply the Terms and Conditions to transactions to transactions and they will appear when printing the document. To know about Terms and Conditions, <a href="/kanvinerp/v13/user/manual/en/setting-up/print/terms-and-conditions">click here</a></p>
 <h3 id="310-transporter-information">3.10 Transporter Information</h3>
-<p>If you outsource transporting Items to their delivery location, the transporter details can be added. This is not the same as <a href="/erpnext/v13/user/manual/en/selling/articles/drop-shipping">drop shipping</a>.</p>
+<p>If you outsource transporting Items to their delivery location, the transporter details can be added. This is not the same as <a href="/kanvinerp/v13/user/manual/en/selling/articles/drop-shipping">drop shipping</a>.</p>
 <ul>
 <li><strong>Transporter</strong>: The Supplier who will transport the Item to your Customer. The transporter feature should be enabled in the Supplier master to select the <a onclick="loadContent('supplier.html')">Supplier</a> here.</li>
 <li><strong>Driver</strong>: You can add a Driver here who will drive the mode of transport.</li>
@@ -150,10 +150,10 @@ The GST Vehicle Type can be changed</li>
 </ul>
 <h3 id="311-printing-settings">3.11 Printing Settings</h3>
 <h4 id="letterhead">Letterhead</h4>
-<p>You can print your Delivery Note on your company's letterhead. Know more <a href="/erpnext/v13/user/manual/en/setting-up/print/letter-head">here</a>.</p>
+<p>You can print your Delivery Note on your company's letterhead. Know more <a href="/kanvinerp/v13/user/manual/en/setting-up/print/letter-head">here</a>.</p>
 <p>'Group same items' will group the same items added multiple times in the Items table. This can be seen when your print.</p>
 <h4 id="print-headings">Print Headings</h4>
-<p>Purchase Receipt headings can also be changed when printing the document. You can do this by selecting a <strong>Print Heading</strong>. To create new Print Headings go to: Home &gt; Settings &gt; Printing &gt; Print Heading. Know more <a href="/erpnext/v13/user/manual/en/setting-up/print/print-headings">here</a>.</p>
+<p>Purchase Receipt headings can also be changed when printing the document. You can do this by selecting a <strong>Print Heading</strong>. To create new Print Headings go to: Home &gt; Settings &gt; Printing &gt; Print Heading. Know more <a href="/kanvinerp/v13/user/manual/en/setting-up/print/print-headings">here</a>.</p>
 <p>There are additional checkboxes for printing the Delivery Note without the amount, this might be useful when the Item is of high value. You can also group the same Items in one row when printing.</p>
 <h3 id="312-status">3.12 Status</h3>
 <p>The status of the document and installation percentage is shown here. Any additional instructions for delivery can be entered here.</p>
@@ -164,12 +164,12 @@ The GST Vehicle Type can be changed</li>
 <p>This is usually fetched from a Sales Order, for example:</p>
 <p><img alt="Sales Team in Sales Order" class="screenshot" src="/files/so-sales-team.png"/></p>
 <h3 id="315-shipping-packets-or-items-with-product-bundle">3.15 Shipping Packets or Items with Product Bundle</h3>
-<p>If you are shipping Items that have a <a href="/erpnext/v13/user/manual/en/selling/product-bundle">Product Bundle</a>, KanivinERP will automatically create a “Packing List” table for you based on the sub-Items in that Item.</p>
+<p>If you are shipping Items that have a <a href="/kanvinerp/v13/user/manual/en/selling/product-bundle">Product Bundle</a>, KanivinERP will automatically create a “Packing List” table for you based on the sub-Items in that Item.</p>
 <p>If your Items are serialized, then for Product Bundle type of Items, you will have
 to update the Serial Number in the “Packing List” table.</p>
 <h3 id="316-packing-items-into-cases-for-container-shipment">3.16 Packing Items into Cases, for Container Shipment</h3>
 <p>If you are doing making the delivery via container shipment or by weight, then you can use the Packing
-Slip to break up your Delivery Note into smaller units. To know more about a Packing Slip, visit <a href="/erpnext/v13/user/manual/en/stock/packing-slip">this page</a>.
+Slip to break up your Delivery Note into smaller units. To know more about a Packing Slip, visit <a href="/kanvinerp/v13/user/manual/en/stock/packing-slip">this page</a>.
 go to:</p>
 <p>You can create multiple Packing Slips for your Delivery Note and KanivinERP will
 ensure that the quantities in the Packing Slip do not exceed the quantities in
@@ -189,9 +189,9 @@ Quantity in the Sales Order is updated (if applicable).</p>
 <p>Tip: To disallow the creation of Delivery Notes without a Sales Order against it:</p>
 </blockquote>
 <h3 id="318-returning-a-sales-order">3.18 Returning a Sales Order</h3>
-<p>Once you've delivered a Sales Order using a Delivery Note, you can create a return entry in case the <a href="/erpnext/v13/user/manual/en/CRM/customer">Customer</a> returns the Item. To know more, visit the <a href="/erpnext/v13/user/manual/en/stock/sales-return">Sales Return</a> page.</p>
+<p>Once you've delivered a Sales Order using a Delivery Note, you can create a return entry in case the <a href="/kanvinerp/v13/user/manual/en/CRM/customer">Customer</a> returns the Item. To know more, visit the <a href="/kanvinerp/v13/user/manual/en/stock/sales-return">Sales Return</a> page.</p>
 <h3 id="319-skipping-delivery-note">3.19 Skipping Delivery Note</h3>
-<p>If you don't want to create a Delivery Note after a Sales Order and directly want to create a Sales Invoice, enable the feature for it in <a href="/erpnext/v13/user/manual/en/selling/selling-settings#32-delivery-note-required">Selling Settings</a>.</p>
+<p>If you don't want to create a Delivery Note after a Sales Order and directly want to create a Sales Invoice, enable the feature for it in <a href="/kanvinerp/v13/user/manual/en/selling/selling-settings#32-delivery-note-required">Selling Settings</a>.</p>
 <h3 id="4-related-topics">4. Related Topics</h3>
 <ol>
 <li><a onclick="loadContent('warehouse.html')">Warehouse</a></li>

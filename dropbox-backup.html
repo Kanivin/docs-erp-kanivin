@@ -52,7 +52,7 @@
 </svg>
 </a></h4>
 <p><code>https://{yourwebsite.com}/api/method/frappe.integrations.doctype.dropbox_settings.dropbox_settings.dropbox_auth_finish</code> <img alt="Set Redirect URL" class="screenshot" src="/files/dropbox_redirect_uri.png"/> </p>
-<h4 id="step-5-in-a-new-window-open-the-dropbox-settings-page-in-your-erpnext-installation">Step 5: In a new window, open the Dropbox Settings page in your ERPnext installation<a aria-hidden="true" class="no-underline" href="#step-5-in-a-new-window-open-the-dropbox-settings-page-in-your-erpnext-installation">
+<h4 id="step-5-in-a-new-window-open-the-dropbox-settings-page-in-your-kanvinerp-installation">Step 5: In a new window, open the Dropbox Settings page in your kanvinerp installation<a aria-hidden="true" class="no-underline" href="#step-5-in-a-new-window-open-the-dropbox-settings-page-in-your-kanvinerp-installation">
 <svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
 <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
@@ -71,7 +71,7 @@
 <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
 </svg>
 </a></h4>
-<p>From your Dropbox App page, enter the app key and (unhidden) app secret into the ERPnext Dropbox settings page.</p>
+<p>From your Dropbox App page, enter the app key and (unhidden) app secret into the kanvinerp Dropbox settings page.</p>
 <p>Alternatively, you can enter it manually in <code>sites/{sitename}/site_config.json</code> as follows,</p>
 <pre><button class="btn copy-btn" data-toggle="tooltip" title="Copy Code"><svg class="feather feather-clipboard" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect height="4" rx="1" ry="1" width="8" x="8" y="2"></rect></svg></button><code class="hljs json">       {
  <span class="hljs-attr">"db_name"</span>: <span class="hljs-string">"demo"</span>,
@@ -108,10 +108,10 @@
 <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
 </svg>
 </a></h4>
-<p>From the ERPnext Dropbox page, click <code>Take Backup Now</code> and then go to you Dropbox files view. You should see a new folder in Dropbox named <code>Apps</code> and inside of it your {New App} folder. Inside of it should be backup folders for both files and database. So for an app named <code>erpnext</code>, following are the folder locations:</p>
-<pre><button class="btn copy-btn" data-toggle="tooltip" title="Copy Code"><svg class="feather feather-clipboard" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect height="4" rx="1" ry="1" width="8" x="8" y="2"></rect></svg></button><code class="hljs javascript">Database files: <span class="hljs-regexp">/Apps/</span>erpnext/database
-Public files: <span class="hljs-regexp">/Apps/</span>erpnext/files
-Private files: <span class="hljs-regexp">/Apps/</span>erpnext/private/files
+<p>From the kanvinerp Dropbox page, click <code>Take Backup Now</code> and then go to you Dropbox files view. You should see a new folder in Dropbox named <code>Apps</code> and inside of it your {New App} folder. Inside of it should be backup folders for both files and database. So for an app named <code>kanvinerp</code>, following are the folder locations:</p>
+<pre><button class="btn copy-btn" data-toggle="tooltip" title="Copy Code"><svg class="feather feather-clipboard" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect height="4" rx="1" ry="1" width="8" x="8" y="2"></rect></svg></button><code class="hljs javascript">Database files: <span class="hljs-regexp">/Apps/</span>kanvinerp/database
+Public files: <span class="hljs-regexp">/Apps/</span>kanvinerp/files
+Private files: <span class="hljs-regexp">/Apps/</span>kanvinerp/private/files
 
 
 </code></pre>
@@ -176,7 +176,7 @@ Private files: <span class="hljs-regexp">/Apps/</span>erpnext/private/files
 </ins></svg><ins class="diffmod">
 </ins></a></h4><ins class="diffmod">
 </ins><p><code><ins class="diffmod">https://{yourwebsite.com}/api/method/frappe.integrations.doctype.dropbox_settings.dropbox_settings.dropbox_auth_finish</ins></code><ins class="diffmod"> <img alt="Set Redirect URL" class="screenshot" src="/files/dropbox_redirect_uri.png"/> </ins></p><ins class="diffmod">
-</ins><h4 id="step-5-in-a-new-window-open-the-dropbox-settings-page-in-your-erpnext-installation"><ins class="diffmod">Step 5: In a new window, open the Dropbox Settings page in your ERPnext installation</ins><a aria-hidden="true" class="no-underline" href="#step-5-in-a-new-window-open-the-dropbox-settings-page-in-your-erpnext-installation"><ins class="diffmod">
+</ins><h4 id="step-5-in-a-new-window-open-the-dropbox-settings-page-in-your-kanvinerp-installation"><ins class="diffmod">Step 5: In a new window, open the Dropbox Settings page in your kanvinerp installation</ins><a aria-hidden="true" class="no-underline" href="#step-5-in-a-new-window-open-the-dropbox-settings-page-in-your-kanvinerp-installation"><ins class="diffmod">
 </ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
 </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
 </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
@@ -195,7 +195,7 @@ Private files: <span class="hljs-regexp">/Apps/</span>erpnext/private/files
 </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
 </ins></svg><ins class="diffmod">
 </ins></a></h4><ins class="diffmod">
-</ins><p><ins class="diffmod">From your Dropbox App page, enter the app key and (unhidden) app secret into the ERPnext Dropbox settings page.</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod">From your Dropbox App page, enter the app key and (unhidden) app secret into the kanvinerp Dropbox settings page.</ins></p><ins class="diffmod">
 </ins><p><ins class="diffmod">Alternatively, you can enter it manually in </ins><code><ins class="diffmod">sites/{sitename}/site_config.json</ins></code><ins class="diffmod"> as follows,</ins></p><ins class="diffmod">
 </ins><pre><button class="btn copy-btn" data-toggle="tooltip" title="Copy Code"><svg class="feather feather-clipboard" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect height="4" rx="1" ry="1" width="8" x="8" y="2"></rect></svg></button><code class="hljs json"><ins class="diffmod">       {
  <span class="hljs-attr">"db_name"</span>: <span class="hljs-string">"demo"</span>,
@@ -232,10 +232,10 @@ Private files: <span class="hljs-regexp">/Apps/</span>erpnext/private/files
 </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
 </ins></svg><ins class="diffmod">
 </ins></a></h4><ins class="diffmod">
-</ins><p><ins class="diffmod">From the ERPnext Dropbox page, click </ins><code><ins class="diffmod">Take Backup Now</ins></code><ins class="diffmod"> and then go to you Dropbox files view. You should see a new folder in Dropbox named </ins><code><ins class="diffmod">Apps</ins></code><ins class="diffmod"> and inside of it your {New App} folder. Inside of it should be backup folders for both files and database. So for an app named </ins><code><ins class="diffmod">erpnext</ins></code><ins class="diffmod">, following are the folder locations:</ins></p><ins class="diffmod">
-</ins><pre><button class="btn copy-btn" data-toggle="tooltip" title="Copy Code"><svg class="feather feather-clipboard" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect height="4" rx="1" ry="1" width="8" x="8" y="2"></rect></svg></button><code class="hljs javascript"><ins class="diffmod">Database files: <span class="hljs-regexp">/Apps/</span>erpnext/database
-Public files: <span class="hljs-regexp">/Apps/</span>erpnext/files
-Private files: <span class="hljs-regexp">/Apps/</span>erpnext/private/files
+</ins><p><ins class="diffmod">From the kanvinerp Dropbox page, click </ins><code><ins class="diffmod">Take Backup Now</ins></code><ins class="diffmod"> and then go to you Dropbox files view. You should see a new folder in Dropbox named </ins><code><ins class="diffmod">Apps</ins></code><ins class="diffmod"> and inside of it your {New App} folder. Inside of it should be backup folders for both files and database. So for an app named </ins><code><ins class="diffmod">kanvinerp</ins></code><ins class="diffmod">, following are the folder locations:</ins></p><ins class="diffmod">
+</ins><pre><button class="btn copy-btn" data-toggle="tooltip" title="Copy Code"><svg class="feather feather-clipboard" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect height="4" rx="1" ry="1" width="8" x="8" y="2"></rect></svg></button><code class="hljs javascript"><ins class="diffmod">Database files: <span class="hljs-regexp">/Apps/</span>kanvinerp/database
+Public files: <span class="hljs-regexp">/Apps/</span>kanvinerp/files
+Private files: <span class="hljs-regexp">/Apps/</span>kanvinerp/private/files
 
 
 </ins></code></pre><ins class="diffmod">

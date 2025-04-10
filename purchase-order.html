@@ -39,7 +39,7 @@
 <li><strong>Set Target Warehouse</strong>: Optionally, you can set the default target Warehouse where the purchased Items will be delivered. This will be fetched into the Item table rows.</li>
 </ul>
 <h3 id="22-fetching-items-from-open-material-requests">2.2 Fetching Items from Open Material Requests</h3>
-<p>Items can be fetched into the Purchase Order automatically from open <a href="/erpnext/v13/user/manual/en/stock/material-request">Material Requests</a>. For this to work, the following steps need to be done:</p>
+<p>Items can be fetched into the Purchase Order automatically from open <a href="/kanvinerp/v13/user/manual/en/stock/material-request">Material Requests</a>. For this to work, the following steps need to be done:</p>
 <ol>
 <li>Select a Supplier in the Purchase Order.</li>
 <li>Set default Supplier in the Item form under <a onclick="loadContent('item#39-item-defaults.html')">Item Defaults</a>.</li>
@@ -63,9 +63,9 @@
 </ul>
 <h3 id="32-currency-and-price-list">3.2 Currency and Price List</h3>
 <p>You can set the currency in which the purchase order is to be stored. If you set a Pricing List, then the item prices will be fetched from that list. Ticking on Ignore Pricing Rule will ignore the Pricing Rules set in Accounts &gt; Pricing Rule.</p>
-<p>Read about <a href="/erpnext/v13/user/manual/en/stock/price-lists">Price Lists</a> and <a href="/erpnext/v13/user/manual/en/accounts/articles/managing-transactions-in-multiple-currency">Multi-Currency Transactions</a> to know more.</p>
+<p>Read about <a href="/kanvinerp/v13/user/manual/en/stock/price-lists">Price Lists</a> and <a href="/kanvinerp/v13/user/manual/en/accounts/articles/managing-transactions-in-multiple-currency">Multi-Currency Transactions</a> to know more.</p>
 <h3 id="33-subcontracting-or-supply-raw-materials">3.3 Subcontracting or 'Supply Raw Materials'</h3>
-<p>Setting 'Supply Raw Materials' option is useful for subcontracting where you provide the raw materials for manufacturing an item. To know more, visit the <a href="/erpnext/v13/user/manual/en/manufacturing/subcontracting">Subcontracting page</a>.</p>
+<p>Setting 'Supply Raw Materials' option is useful for subcontracting where you provide the raw materials for manufacturing an item. To know more, visit the <a href="/kanvinerp/v13/user/manual/en/manufacturing/subcontracting">Subcontracting page</a>.</p>
 <h3 id="34-the-items-table">3.4 The Items table</h3>
 <ul>
 <li><strong>Scan Barcode</strong>: You can add Items in the Items table by scanning their barcodes if you have a barcode scanner. Read documentation for <a onclick="loadContent('track-items-using-barcode.html')">tracking items using barcode</a> to know more.</li>
@@ -73,7 +73,7 @@
 </ul>
 <p>'Price List Rate' will be fetched if a Standard Buying rate is set. 'Last Purchase Rate' shows the rate of the item from your last Purchase Order. Rate is fetched if set in the item master. You can attach an Item Tax Template to apply a specific tax rate to the item.
 * <strong>Item weights</strong> will be fetched if set in the Item master else enter manually.
-* <strong>Warehouse</strong>: The warehouse where the items will be delivered, will be auto filled if 'Set Target Warehouse' was set in the Purchase Order. Via Blanket Order, a Blanket Order can be linked, to know more <a href="/erpnext/v13/user/manual/en/selling/blanket-order">click here</a>. A 'Project' can be linked to track progress. A 'BOM' or Bill of Materials can also be linked to track progress.
+* <strong>Warehouse</strong>: The warehouse where the items will be delivered, will be auto filled if 'Set Target Warehouse' was set in the Purchase Order. Via Blanket Order, a Blanket Order can be linked, to know more <a href="/kanvinerp/v13/user/manual/en/selling/blanket-order">click here</a>. A 'Project' can be linked to track progress. A 'BOM' or Bill of Materials can also be linked to track progress.
 * 'Qty as per Stock UOM' will show the current stock as per the UOM set in the Item master. 'Received Qty' will be updated when the items are billed.
 * <strong>Accounting Details</strong>: This section is auto filled for a Purchase Order. 'Expense Account' is the account against which the PO is billed, and Cost Center is the CC against which the PO is charged.</p>
 <p>A “Required By” date on each Item: If you are expecting part delivery, your Supplier will know how much quantity to deliver at which date. This will help you from preventing over-supply. It will also help you to track how well your Supplier is doing on timeliness.</p>
@@ -102,29 +102,29 @@
 <p><img alt="Purchase Order - UOM" class="screenshot" src="/files/po-stock-uom.png"/></p>
 <h3 id="37-taxes-and-charges">3.7 Taxes and Charges</h3>
 <p>If your Supplier is going to charge you additional taxes or charge like a shipping or insurance charge, you can add it here. It will help you to accurately track your costs. Also, if some of these charges add to the value of the product you will have to mention them in the Taxes table.</p>
-<p>Visit the <a href="/erpnext/v13/user/manual/en/buying/purchase-taxes-and-charges-template">Purchase Taxes and Charges Template</a> page to know more about taxes.</p>
+<p>Visit the <a href="/kanvinerp/v13/user/manual/en/buying/purchase-taxes-and-charges-template">Purchase Taxes and Charges Template</a> page to know more about taxes.</p>
 <p>The total taxes and charges will be displayed below the table.</p>
-<p>To add taxes automatically via a Tax Category, visit <a href="/erpnext/v13/user/manual/en/accounts/tax-category">this page</a>.</p>
+<p>To add taxes automatically via a Tax Category, visit <a href="/kanvinerp/v13/user/manual/en/accounts/tax-category">this page</a>.</p>
 <p>Make sure to mark all your taxes in the Taxes and Charges table correctly for an accurate valuation.</p>
 <h4 id="shipping-rule">Shipping Rule</h4>
-<p>A Shipping Rule helps set the cost of shipping an Item. The cost will usually increase with the distance of shipping. To know more, visit the <a href="/erpnext/v13/user/manual/en/selling/shipping-rule">Shipping Rule</a> page.</p>
+<p>A Shipping Rule helps set the cost of shipping an Item. The cost will usually increase with the distance of shipping. To know more, visit the <a href="/kanvinerp/v13/user/manual/en/selling/shipping-rule">Shipping Rule</a> page.</p>
 <p><img alt="Purchase Order Taxes" class="screenshot" src="/files/po-taxes.png"/> </p>
 <p>For example, you buy Items worth X and sell them for 1.3X. So, your Customer pays 1.3 times the tax you pay your Supplier. Since you have already paid tax to your Supplier for X, what you owe your government is only the tax on 0.3X.</p>
 <p>This is very easy to track in KanivinERP since each tax head is also an Account. Ideally you must create two Accounts for each type of VAT you pay and collect, “Purchase VAT-X” (asset) and “Sales VAT-X” (liability), or something to that effect.</p>
 <h3 id="38-additional-discount">3.8 Additional Discount</h3>
 <p>Other than recording discount per item, you can add a discount to the whole purchase order in this section. This discount could be based on the Grand Total i.e., post-tax/charges or Net total i.e., pre-tax/charges. The additional discount can be applied as a percentage or an amount.</p>
-<p>Read <a href="/erpnext/v13/user/manual/en/selling/articles/applying-discount">Applying Discount</a> for more details.</p>
+<p>Read <a href="/kanvinerp/v13/user/manual/en/selling/articles/applying-discount">Applying Discount</a> for more details.</p>
 <h3 id="39-payment-terms">3.9 Payment Terms</h3>
 <p>Sometimes payment is not done all at once. Depending on the agreement, half of the payment may be made before shipment and the other half after receiving the goods/services. You can add a Payment Terms template or add the terms manually in this section.</p>
-<p>Read <a href="/erpnext/v13/user/manual/en/accounts/payment-terms">Payment Terms</a> to know more.</p>
+<p>Read <a href="/kanvinerp/v13/user/manual/en/accounts/payment-terms">Payment Terms</a> to know more.</p>
 <h3 id="310-terms-and-conditions">3.10 Terms and Conditions</h3>
-<p>In Sales/Purchase transactions there might be certain Terms and Conditions based on which the Supplier provides goods or services to the Customer. You can apply the Terms and Conditions to transactions to transactions and they will appear when printing the document. To know about Terms and Conditions, <a href="/erpnext/v13/user/manual/en/setting-up/print/terms-and-conditions">click here</a></p>
+<p>In Sales/Purchase transactions there might be certain Terms and Conditions based on which the Supplier provides goods or services to the Customer. You can apply the Terms and Conditions to transactions to transactions and they will appear when printing the document. To know about Terms and Conditions, <a href="/kanvinerp/v13/user/manual/en/setting-up/print/terms-and-conditions">click here</a></p>
 <h3 id="311-print-settings">3.11 Print Settings</h3>
 <h4 id="letterhead">Letterhead</h4>
-<p>You can print your request for quotation / purchase order on your company's letterhead. Know more <a href="/erpnext/v13/user/manual/en/setting-up/print/letter-head">here</a>.</p>
+<p>You can print your request for quotation / purchase order on your company's letterhead. Know more <a href="/kanvinerp/v13/user/manual/en/setting-up/print/letter-head">here</a>.</p>
 <p>'Group same items' will group the same items added multiple times in the items table. This can be seen when your print.</p>
 <h4 id="print-headings">Print Headings</h4>
-<p>Titles of your documents can be changed. Know more <a href="/erpnext/v13/user/manual/en/setting-up/print/print-headings">here</a>.</p>
+<p>Titles of your documents can be changed. Know more <a href="/kanvinerp/v13/user/manual/en/setting-up/print/print-headings">here</a>.</p>
 <p>The seller's Additional Discount, Payment Terms, Terms and Conditions can be recorded in your Purchase Order.</p>
 <h3 id="312-more-information">3.12 More Information</h3>
 <p>This section shows the status of the Purchase Order, percentage of items received, and percentage of items billed. If this is an Inter-Company Order, the Sales Order can be linked here.</p>

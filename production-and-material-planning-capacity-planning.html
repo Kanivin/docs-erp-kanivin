@@ -27,10 +27,10 @@
 <li><a onclick="loadContent('workstation.html')">Workstation</a></li>
 <li><a onclick="loadContent('work-order.html')">Work Order</a></li>
 </ul>
-<h2 id="2-how-capacity-planning-works-in-erpnext">2. How Capacity Planning Works in KanivinERP</h2>
-<p>The user has to define the number of days in the "Capacity Planning For" field under manufacturing settings to plan the upcoming work orders. For example, if you have kept the Capacity Planning For 30 days and to make 1 finished good it requires 5 days then on the current date user can only accept the 6 work orders (30/5 = 6). You can take the next Work Order when your <a href="/erpnext/v13/user/manual/en/manufacturing/workstation">Workstation</a> gets free.</p>
+<h2 id="2-how-capacity-planning-works-in-kanvinerp">2. How Capacity Planning Works in KanivinERP</h2>
+<p>The user has to define the number of days in the "Capacity Planning For" field under manufacturing settings to plan the upcoming work orders. For example, if you have kept the Capacity Planning For 30 days and to make 1 finished good it requires 5 days then on the current date user can only accept the 6 work orders (30/5 = 6). You can take the next Work Order when your <a href="/kanvinerp/v13/user/manual/en/manufacturing/workstation">Workstation</a> gets free.</p>
 <h3 id="21-create-work-order-with-operations">2.1 Create Work Order With Operations</h3>
-<p>User needs to create the Work Orders with Operations so that the system will track the <a href="/erpnext/v13/user/manual/en/manufacturing/job-card">Job Card</a> timings against the Work Order.</p>
+<p>User needs to create the Work Orders with Operations so that the system will track the <a href="/kanvinerp/v13/user/manual/en/manufacturing/job-card">Job Card</a> timings against the Work Order.</p>
 <p><img alt="Work Order" class="screenshot" src="/files/work_order_with_operations.png"/></p>
 <p>Once the user submits the Work Order, system will generate the Job Card with the available Workstation's time details. If 'Allow Overtime' is disabled in Manufacturing Settings then the system schedules the job as per the timings defined in the Workstation. If "Allow Production on Holidays" is disabled then the system schedules job only on working days.</p>
 <h3 id="22-workstations-production-capacity">2.2 Workstation's Production Capacity</h3>
@@ -40,7 +40,7 @@
 <p>The system will auto-create the Job Card with timing against each operation based upon the time required to complete that operation and Workstation's availability. The user has to set the planned start date and based on the operation time, system calculates the planned end date.</p>
 <p><img alt="Work Order" class="screenshot" src="/files/job_card_timing.png"/></p>
 <h3 id="24-work-order-planned-start-date-and-end-date">2.4 Work Order Planned Start Date and End Date</h3>
-<p>Based on the planned start date and end date, users can calculate the capacity of their work stations. Also, they can track the status of the work order using the <a href="/erpnext/v13/user/manual/en/using-erpnext/calendar">Calendar</a>.</p>
+<p>Based on the planned start date and end date, users can calculate the capacity of their work stations. Also, they can track the status of the work order using the <a href="/kanvinerp/v13/user/manual/en/using-kanvinerp/calendar">Calendar</a>.</p>
 <p>To view calendar, goto:</p>
 <blockquote>
 <p>Work Order List &gt; Calendar &gt; Default</p>

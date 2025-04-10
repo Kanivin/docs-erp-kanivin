@@ -23,7 +23,7 @@
 </blockquote>
 <p><strong>Sending a string of commands to a printer directly in its native language is called Raw Printing.</strong></p>
 <p>Many thermal printers need these raw commands sent to them in order to perform functions like barcode printing, receipt printing, label printing, etc. Raw Printing bypasses the printer's drivers in most cases, making them very fast and reliable. Raw Printing is also capable of doing some advanced features such as cutting receipt paper, kicking out cash drawers, etc.</p>
-<h2 id="1-setting-up-raw-printing-in-erpnext">1. Setting up Raw Printing in KanivinERP<a aria-hidden="true" class="no-underline" href="#1-setting-up-raw-printing-in-erpnext">
+<h2 id="1-setting-up-raw-printing-in-kanvinerp">1. Setting up Raw Printing in KanivinERP<a aria-hidden="true" class="no-underline" href="#1-setting-up-raw-printing-in-kanvinerp">
 <svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
 <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
@@ -43,7 +43,7 @@
 <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
 </svg>
 </a></h3>
-<p>To be able to send raw commands to a printer you need to first create a print format in raw commands. Jinja Templating Language is used in raw commands just like in the <a href="/erpnext/v13/user/manual/en/customize-erpnext/print-format">HTML custom print format</a>.</p>
+<p>To be able to send raw commands to a printer you need to first create a print format in raw commands. Jinja Templating Language is used in raw commands just like in the <a href="/kanvinerp/v13/user/manual/en/customize-kanvinerp/print-format">HTML custom print format</a>.</p>
 <p>To create a new print format for Raw Printing:</p>
 <ol>
 <li>Go to print format list: <strong>Home &gt; Settings &gt; Printing &gt; Print Format</strong></li>
@@ -67,7 +67,7 @@
 <li>Check the <strong>Enable Raw Printing</strong> option.</li>
 <li>Save.</li>
 </ol>
-<h2 id="2-methods-to-utilize-raw-printing-in-erpnext">2. Methods to utilize raw printing in KanivinERP<a aria-hidden="true" class="no-underline" href="#2-methods-to-utilize-raw-printing-in-erpnext">
+<h2 id="2-methods-to-utilize-raw-printing-in-kanvinerp">2. Methods to utilize raw printing in KanivinERP<a aria-hidden="true" class="no-underline" href="#2-methods-to-utilize-raw-printing-in-kanvinerp">
 <svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
 <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
@@ -104,7 +104,7 @@
 <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
 </svg>
 </a></h3>
-<p>It is often a requirement that a print command has to be issued on a certain event (like submit, save, amend, etc.). It is possible to write a <a href="/erpnext/v13/user/manual/en/customize-erpnext/client-scripts">client script</a> to do this for you.</p>
+<p>It is often a requirement that a print command has to be issued on a certain event (like submit, save, amend, etc.). It is possible to write a <a href="/kanvinerp/v13/user/manual/en/customize-kanvinerp/client-scripts">client script</a> to do this for you.</p>
 <p>Following are the relevant Raw Print functions:</p>
 <ol>
 <li>function: <code>frappe.ui.form.qz_connect</code>
@@ -188,7 +188,7 @@
 </ins></blockquote><ins class="diffmod">
 </ins><p><strong><ins class="diffmod">Sending a string of commands to a printer directly in its native language is called Raw Printing.</ins></strong></p><ins class="diffmod">
 </ins><p><ins class="diffmod">Many thermal printers need these raw commands sent to them in order to perform functions like barcode printing, receipt printing, label printing, etc. Raw Printing bypasses the printer's drivers in most cases, making them very fast and reliable. Raw Printing is also capable of doing some advanced features such as cutting receipt paper, kicking out cash drawers, etc.</ins></p><ins class="diffmod">
-</ins><h2 id="1-setting-up-raw-printing-in-erpnext"><ins class="diffmod">1. Setting up Raw Printing in KanivinERP</ins><a aria-hidden="true" class="no-underline" href="#1-setting-up-raw-printing-in-erpnext"><ins class="diffmod">
+</ins><h2 id="1-setting-up-raw-printing-in-kanvinerp"><ins class="diffmod">1. Setting up Raw Printing in KanivinERP</ins><a aria-hidden="true" class="no-underline" href="#1-setting-up-raw-printing-in-kanvinerp"><ins class="diffmod">
 </ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
 </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
 </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
@@ -209,7 +209,7 @@
 </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
 </ins></svg><ins class="diffmod">
 </ins></a></h3><ins class="diffmod">
-</ins><p><ins class="diffmod">To be able to send raw commands to a printer you need to first create a print format in raw commands. Jinja Templating Language is used in raw commands just like in the </ins><a href="/erpnext/v13/user/manual/en/customize-erpnext/print-format"><ins class="diffmod">HTML custom print format</ins></a><ins class="diffmod">.</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod">To be able to send raw commands to a printer you need to first create a print format in raw commands. Jinja Templating Language is used in raw commands just like in the </ins><a href="/kanvinerp/v13/user/manual/en/customize-kanvinerp/print-format"><ins class="diffmod">HTML custom print format</ins></a><ins class="diffmod">.</ins></p><ins class="diffmod">
 </ins><p><ins class="diffmod">To create a new print format for Raw Printing:</ins></p><ins class="diffmod">
 </ins><ol><ins class="diffmod">
 </ins><li><ins class="diffmod">Go to print format list: </ins><strong><ins class="mod"><ins class="diffmod">Home &gt; Settings &gt; Printing &gt; Print Format</ins></ins></strong></li><ins class="diffmod">
@@ -233,7 +233,7 @@
 </ins><li><ins class="diffmod">Check the </ins><strong><ins class="mod"><ins class="diffmod">Enable Raw Printing</ins></ins></strong><ins class="diffmod"> option.</ins></li><ins class="diffmod">
 </ins><li><ins class="diffmod">Save.</ins></li><ins class="diffmod">
 </ins></ol><ins class="diffmod">
-</ins><h2 id="2-methods-to-utilize-raw-printing-in-erpnext"><ins class="diffmod">2. Methods to utilize raw printing in KanivinERP</ins><a aria-hidden="true" class="no-underline" href="#2-methods-to-utilize-raw-printing-in-erpnext"><ins class="diffmod">
+</ins><h2 id="2-methods-to-utilize-raw-printing-in-kanvinerp"><ins class="diffmod">2. Methods to utilize raw printing in KanivinERP</ins><a aria-hidden="true" class="no-underline" href="#2-methods-to-utilize-raw-printing-in-kanvinerp"><ins class="diffmod">
 </ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
 </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
 </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
@@ -270,7 +270,7 @@
 </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">
 </ins></svg><ins class="diffmod">
 </ins></a></h3><ins class="diffmod">
-</ins><p><ins class="diffmod">It is often a requirement that a print command has to be issued on a certain event (like submit, save, amend, etc.). It is possible to write a </ins><a href="/erpnext/v13/user/manual/en/customize-erpnext/client-scripts"><ins class="diffmod">client script</ins></a><ins class="diffmod"> to do this for you.</ins></p><ins class="diffmod">
+</ins><p><ins class="diffmod">It is often a requirement that a print command has to be issued on a certain event (like submit, save, amend, etc.). It is possible to write a </ins><a href="/kanvinerp/v13/user/manual/en/customize-kanvinerp/client-scripts"><ins class="diffmod">client script</ins></a><ins class="diffmod"> to do this for you.</ins></p><ins class="diffmod">
 </ins><p><ins class="diffmod">Following are the relevant Raw Print functions:</ins></p><ins class="diffmod">
 </ins><ol><ins class="diffmod">
 </ins><li><ins class="diffmod">function: </ins><code><ins class="diffmod">frappe.ui.form.qz_connect</ins></code><ins class="diffmod">

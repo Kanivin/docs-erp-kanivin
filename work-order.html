@@ -15,7 +15,7 @@
 <p><strong>A Work Order is a document given to the manufacturing shop floor by the Production Planner as a signal to manufacture a certain quantity of a certain Item.</strong></p>
 <p><img alt="Work Order" class="screenshot" src="/files/manufacturing-flow-wo.png"/> </p>
 <p>The Work Order also helps generate the material requirements (Stock Entry) for the Item to be produced from its <strong>Bill of Materials</strong>.</p>
-<p>The <strong>Work Order</strong> can be generated from the <a href="/erpnext/v13/user/manual/en/manufacturing/production-plan">Production Plan</a> based on Sales Orders.</p>
+<p>The <strong>Work Order</strong> can be generated from the <a href="/kanvinerp/v13/user/manual/en/manufacturing/production-plan">Production Plan</a> based on Sales Orders.</p>
 <p>To access the Work Order list, go to:</p>
 <blockquote>
 <p>Home &gt; Manufacturing &gt; Production &gt; Work Order</p>
@@ -48,7 +48,7 @@
 <blockquote>
 <p>Note: You can save a Work Order without selecting the Warehouses, but Warehouses are mandatory for submitting a Work Order.</p>
 </blockquote>
-<p>A Work Order can also be directly created from a <a href="/erpnext/v13/user/manual/en/selling/sales-order#214-after-submitting">Sales Order</a>.</p>
+<p>A Work Order can also be directly created from a <a href="/kanvinerp/v13/user/manual/en/selling/sales-order#214-after-submitting">Sales Order</a>.</p>
 <h3 id="21-additional-options-when-creating-a-work-order">2.1 Additional Options when Creating a Work Order</h3>
 <ul>
 <li><strong>Sales Order</strong>: If you create a Work Order from a Sales Order, it will be fetched here. You can also link an existing Sales Order which has the Item to be manufactured to this Work Order.</li>
@@ -61,7 +61,7 @@
 <h3 id="31-time">3.1 Time</h3>
 <p>The Planned Start Date and Expected Delivery Date can be set here. The default for Planned Start Date is the current date and time at the time of creating the Work Order.</p>
 <h3 id="32-required-items-table">3.2 Required Items table</h3>
-<p>The Source Warehouse can be changed for the raw material items used here. The default Warehouse can be set at the Item level in the <a href="/erpnext/v13/user/manual/en/stock/item#28-item-defaults">Item</a> master or globally in <a href="/erpnext/v13/user/manual/en/stock/stock-settings#23-default-warehouse">Stock Settings</a>.</p>
+<p>The Source Warehouse can be changed for the raw material items used here. The default Warehouse can be set at the Item level in the <a href="/kanvinerp/v13/user/manual/en/stock/item#28-item-defaults">Item</a> master or globally in <a href="/kanvinerp/v13/user/manual/en/stock/stock-settings#23-default-warehouse">Stock Settings</a>.</p>
 <ul>
 <li><strong>Required Quantity</strong>: This will be calculated automatically based on the <a onclick="loadContent('bill-of-materials.html')">Bill Of Materials</a>.</li>
 <li><strong>Transferred Quantity</strong>: Once the Work Order starts and Job Cards are run, items are transferred from the Source Warehouse to Work In Progress Warehouse. This field shows the quantity in the WIP Warehouse. Note that if you tick on 'Skip Material Transfer to WIP Warehouse', this column will not be updated.</li>
@@ -77,7 +77,7 @@
 </ul>
 <p><img alt="WO material Qty" class="screenshot" src="/files/work-order-material-qty.png"/> </p>
 <h3 id="32-operations-table">3.2 Operations table</h3>
-<p>Materials can be transferred against a Work Order or a Job Card. This is usually fetched from the <a href="/erpnext/v13/user/manual/en/manufacturing/bill-of-materials">Bill Of Materials</a>, but you can change it in the Work Order also.</p>
+<p>Materials can be transferred against a Work Order or a Job Card. This is usually fetched from the <a href="/kanvinerp/v13/user/manual/en/manufacturing/bill-of-materials">Bill Of Materials</a>, but you can change it in the Work Order also.</p>
 <p>The following will be fetched from the BOM:</p>
 <ul>
 <li>In the Operations table: The Workstations where the Operations will be performed <img alt="PO Opeartions" class="screenshot" src="/files/PO-operations.png"/></li>
@@ -104,7 +104,7 @@
 <p><img alt="Work Order Operation Costs" class="screenshot" src="/files/wo-operation-cost.png"/> </p>
 <h3 id="34-more-information">3.4 More Information</h3>
 <p>Here the Item Description and Stock UOM is shown for the Item being manufactured.</p>
-<p>When a Work Order is created from a <a href="/erpnext/v13/user/manual/en/stock/material-request">Material Request</a>, it'll be shown here.</p>
+<p>When a Work Order is created from a <a href="/kanvinerp/v13/user/manual/en/stock/material-request">Material Request</a>, it'll be shown here.</p>
 <h3 id="35-transferring-materials-for-manufacturing">3.5 Transferring Materials for Manufacturing</h3>
 <ul>
 <li>Once you have submitted your Work Order, you need to Transfer the Raw Materials to initiate the Manufacturing Process.</li>
@@ -131,7 +131,7 @@
 <li>Drafts of Job Cards are created based on when a Work Order is Submitted.</li>
 <li>To create more Job Cards against a Work Order click on the plus sign next to Job Card on the Work Order dashboard.</li>
 </ul>
-<p>To know more about Job Cards, visit <a href="/erpnext/v13/user/manual/en/manufacturing/job-card">this page</a>.</p>
+<p>To know more about Job Cards, visit <a href="/kanvinerp/v13/user/manual/en/manufacturing/job-card">this page</a>.</p>
 <h3 id="38-updating-finished-goods">3.8 Updating Finished Goods</h3>
 <ul>
 <li>Once you are done with the Work Order you need to update the Finished Goods.</li>

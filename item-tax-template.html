@@ -14,13 +14,13 @@
 </div>
 <div class="wiki-content">
 <p><strong>Item Tax Template is useful for item wise taxation.</strong></p>
-<p>If some of your Items have tax rates different from the standard tax rate assigned in the Taxes and Charges table, then you can create an Item Tax Template and assign it to an <a href="/erpnext/v13/user/manual/en/stock/item">Item</a> or <a href="/erpnext/v13/user/manual/en/stock/item-group">Item Group</a>. The rate assigned in the Item Tax Template will get preference over the standard tax rate assigned in the Taxes and Charges table.</p>
+<p>If some of your Items have tax rates different from the standard tax rate assigned in the Taxes and Charges table, then you can create an Item Tax Template and assign it to an <a href="/kanvinerp/v13/user/manual/en/stock/item">Item</a> or <a href="/kanvinerp/v13/user/manual/en/stock/item-group">Item Group</a>. The rate assigned in the Item Tax Template will get preference over the standard tax rate assigned in the Taxes and Charges table.</p>
 <p>For example, if tax GST 18% is added in the Taxes and Charges table in Sales Order, then it will be applied on all the items in that Sales Order. However, if you need to have different tax rate applied on some of the items, the steps are given below</p>
 <p>To access the Item Tax Template list, go to</p>
 <blockquote>
 <p>Home &gt; Accounting &gt; Taxes &gt; Item Tax Template</p>
 </blockquote>
-<p>Let's assume that we are creating a Sales Order. We have the <a href="/erpnext/v13/user/manual/en/selling/sales-taxes-and-charges-template">Sales Taxes and Charges Template</a> master for GST 9%. Out of all the Sales Items, on one Item, only 5% GST will be applied, while another item is exempted from tax (non taxable). You need to select the Account Head of the tax and set its overriding rate.</p>
+<p>Let's assume that we are creating a Sales Order. We have the <a href="/kanvinerp/v13/user/manual/en/selling/sales-taxes-and-charges-template">Sales Taxes and Charges Template</a> master for GST 9%. Out of all the Sales Items, on one Item, only 5% GST will be applied, while another item is exempted from tax (non taxable). You need to select the Account Head of the tax and set its overriding rate.</p>
 <h2 id="1-prerequisites">1. Prerequisites</h2>
 <p>Before creating and using an Item Tax Template, it is advised to create the following first:</p>
 <ol>
@@ -37,7 +37,7 @@
 <p>Now the Item Tax Template is ready to be assigned to an Item. To do this, go the Item, Item Tax section and select an Item Tax Template:</p>
 <p><img alt="Item Tax In Item" class="screenshot" src="/files/item-tax-in-item.png"/></p>
 <blockquote>
-<p>Note: It is advised to not use the Sales/Purchase Template selected here in <a href="/erpnext/v13/user/manual/en/accounts/tax-rule">Tax Rule</a>, it may cause interference. If you want to use same tax rates for Tax Rule and Item Tax Template, use a different name for the Sales/Purchase Tax Templates.</p>
+<p>Note: It is advised to not use the Sales/Purchase Template selected here in <a href="/kanvinerp/v13/user/manual/en/accounts/tax-rule">Tax Rule</a>, it may cause interference. If you want to use same tax rates for Tax Rule and Item Tax Template, use a different name for the Sales/Purchase Tax Templates.</p>
 </blockquote>
 <h3 id="21-mention-tax-applicable-in-the-item-master">2.1 Mention Tax Applicable in the Item master</h3>
 <p>Tax templates are preset with values. For items which have a different tax rate than the others, you need to change it in the Item master. Go to the tax table in the Item, add a row, select the tax type and change the rate. Now, this new rate will over ride the template when creating an order/invoice. For example, in the below screenshot you can see that the tax rate is set as 5 and that's the rate which will be applied in transactions.</p>

@@ -67,7 +67,7 @@
 * Click on Start Import to start the import process. The Bank Transactions will be created via a background job, although the progress will be shown here <img alt="Reconcile bank transactions" class="screenshot" src="/files/bank_transaction_upload.gif"/>
 * The mapping that is done is stored in the Bank document linked to the corresponding Bank Account. In the next upload, the mapping is taken from here but the system allows the user to change it if needed. The changed mapping is updated in the Bank document too. <img alt="Reconcile bank transactions" class="screenshot" src="/files/bank_configuration.png"/></p>
 <h4 id="322-bank-account-synchronisation">3.2.2 Bank Account Synchronisation</h4>
-<p>You can use Plaid (see <a href="/erpnext/v14/user/manual/en/erpnext_integration/plaid_integration">Plaid Integrations page</a>) to automatically synchronise your bank account with KanivinERP. All your bank transactions will be automatically imported into KanivinERP. </p>
+<p>You can use Plaid (see <a href="/kanvinerp/v14/user/manual/en/kanvinerp_integration/plaid_integration">Plaid Integrations page</a>) to automatically synchronise your bank account with KanivinERP. All your bank transactions will be automatically imported into KanivinERP. </p>
 <h4 id="323-automatic-party-matching-for-bank-transactions">3.2.3 Automatic Party Matching for Bank Transactions</h4>
 <p>You can optionally enable automatic party matching so that a party is auto set (if matched) in the Bank Transaction. To enable this, go to: </p>
 <blockquote>
@@ -76,7 +76,7 @@
 <p><img alt="Screenshot 2023-06-19 at 5.58.51 PM" class="screenshot" src="/files/Screenshot 2023-06-19 at 5.58.51 PM.png" title="Screenshot 2023-06-19 at 5.58.51 PM.png"/></p>
 <p>You can additionally check <strong>Enable Fuzzy Matching</strong> where, the Party Name/Description in the Bank Transaction is <strong>approximately</strong> matched with all the parties in the system. This is useful when the party's Bank Account is not registered in the system.</p>
 <p>Once enabled, party matching will automatically happen on <strong>submitting</strong> the Bank Transaction. </p>
-<p>To aid the mapping, you can easily store <strong>Customer</strong>, <strong>Supplier</strong> and <strong>Employee</strong> bank data by creating a <a href="/erpnext/v14/user/manual/en/accounts/bank-account">Bank Account</a> against individual parties. <strong>After Submission</strong>, the Party Type and Party in the Bank Transaction will be automatically set and can be corrected/updated. </p>
+<p>To aid the mapping, you can easily store <strong>Customer</strong>, <strong>Supplier</strong> and <strong>Employee</strong> bank data by creating a <a href="/kanvinerp/v14/user/manual/en/accounts/bank-account">Bank Account</a> against individual parties. <strong>After Submission</strong>, the Party Type and Party in the Bank Transaction will be automatically set and can be corrected/updated. </p>
 <blockquote>
 <p>The fuzzy matching results depend on the nature of the party data there is in the system. It may fail to be accurate where multiple parties with extremely similar names exist.   </p>
 <p>It would be best to test this feature out first by:<br/>

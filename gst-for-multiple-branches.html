@@ -13,7 +13,7 @@
 </div>
 <div class="wiki-content">
 <p>This will help you automate GST calculation if your company has different branches with separate GSTIN. </p>
-<p>This is an extension to the blog: <a href="https://erpnext.com/blog/erpnext-features/5-steps-to-automate-indian-gst-in-erpnext">5 Steps to automate Indian GST in KanivinERP</a></p>
+<p>This is an extension to the blog: <a href="https://kanvinerp.com/blog/kanvinerp-features/5-steps-to-automate-indian-gst-in-kanvinerp">5 Steps to automate Indian GST in KanivinERP</a></p>
 <ol>
 <li><strong>Update your Company’s branch-wise addresses</strong></li>
 <li><strong>Configure State-wise GST Accounts</strong> <strong><em>(Optional)</em></strong></li>
@@ -23,27 +23,27 @@
 </ol>
 <h3 id="step-1-update-your-companys-branch-wise-billing-addresses">Step 1- Update your Company’s branch-wise billing addresses</h3>
 <p>The very first step is to update your company’s branch wise Address with appropriate GSTIN as it will differ <em>(if in different states)</em> frombranch to branch. </p>
-<p><img alt="" class="screenshot" src="https://erpnext.com/files/RU29P7U.png"/></p>
+<p><img alt="" class="screenshot" src="https://kanvinerp.com/files/RU29P7U.png"/></p>
 <p>﻿</p>
 <p>Now, make sure that your Customer's and Supplier's addresses have <em>GST State</em> and <em>Party GSTIN</em> configured properly.</p>
-<p>﻿<img alt="" class="screenshot" src="https://erpnext.com/files/LdjEDNd.png"/></p>
+<p>﻿<img alt="" class="screenshot" src="https://kanvinerp.com/files/LdjEDNd.png"/></p>
 <h3 id="-1"> </h3>
 <h3 id="step-2-configure-state-wise-gst-accounts-optional">﻿Step 2 - Configure State-wise GST Accounts <strong><em>(Optional)</em></strong></h3>
 <p>To configure, go to Chart of Accounts, create a state-wise set of GST accounts <em>(CGST, SGST &amp; IGST)</em> as seen in the screenshot below.</p>
 <p>﻿</p>
-<p>﻿<img alt="" class="screenshot" src="https://erpnext.com/files/BVg9U1f.png"/></p>
+<p>﻿<img alt="" class="screenshot" src="https://kanvinerp.com/files/BVg9U1f.png"/></p>
 <p>Add these newly created accounts in <em>GST Accounts</em> table from <strong>GST Settings</strong>, to include this in all GST Reports.</p>
-<p><img alt="" class="screenshot" src="https://erpnext.com/files/JBtVopQ.png"/></p>
+<p><img alt="" class="screenshot" src="https://kanvinerp.com/files/JBtVopQ.png"/></p>
 <p> </p>
 <h3 id="step-3-item-wise-gst-setup">Step 3 - Item-wise GST setup</h3>
 <p>a. Create <strong>Item Tax Template</strong> for different rates and add all the <em>GST Accounts</em> we have created in previous step.</p>
 <p>b. Define the rates.</p>
 <p>This helps system know which GST Accounts and Tax Rates to apply in the Invoices.</p>
 <p>Your Item Tax Template should look like this: </p>
-<p><img alt="" class="screenshot" src="https://erpnext.com/files/MuMGvEa.png"/></p>
+<p><img alt="" class="screenshot" src="https://kanvinerp.com/files/MuMGvEa.png"/></p>
 <p><strong>The same way you can create different Item Tax Templates for different GST Rates.</strong> </p>
 <p>After the creation of Item Tax Templates, you can start with assigning these templates to their respective Items from the Item Master.</p>
-<p><img alt="" class="screenshot" src="https://erpnext.com/files/qhXeg1d.png"/></p>
+<p><img alt="" class="screenshot" src="https://kanvinerp.com/files/qhXeg1d.png"/></p>
 <p> </p>
 <h3 id="step-4-classification-of-inter-state-and-intra-state-taxes">Step 4 - Classification of Inter-State and Intra-State Taxes</h3>
 <p>We are nearly there.</p>
@@ -51,9 +51,9 @@
 <p>Each state will have two Tax Categories, one for Inter State and other for Out State transactions. </p>
 <p><strong>For ‘Out State’ Tax Categories, mark ‘Is Inter State’ checkbox as enabled.</strong> </p>
 <p><em>IN State Tax Category for Delhi:</em> </p>
-<p><img alt="" class="screenshot" src="https://erpnext.com/files/qJiylOa.png"/></p>
+<p><img alt="" class="screenshot" src="https://kanvinerp.com/files/qJiylOa.png"/></p>
 <p><em>﻿OUT State Tax Category for Delhi:</em> </p>
-<p><img alt="" class="screenshot" src="https://erpnext.com/files/vL7KwMs.png"/></p>
+<p><img alt="" class="screenshot" src="https://kanvinerp.com/files/vL7KwMs.png"/></p>
 <p> </p>
 <p><strong>Create for other States the same way as shown above.</strong></p>
 <h3 id="step-5-configuring-our-invoice-templates">Step 5 - Configuring our Invoice Templates</h3>
@@ -61,9 +61,9 @@
 <p><strong>﻿</strong></p>
 <p>Go to Sales Taxes and Charges Template, and define a set of two templates for each state (as seen in the screenshot below for Maharashtra)</p>
 <p><em>For IN State template, choose the IN State Tax Category and appropriate CGST &amp; SGST account in</em> <strong><em>Account Head.</em></strong> </p>
-<p><img alt="" class="screenshot" src="https://erpnext.com/files/Jv8R3fX.png"/></p>
+<p><img alt="" class="screenshot" src="https://kanvinerp.com/files/Jv8R3fX.png"/></p>
 <p><em>For OUT State template, choose the OUT State Tax Category and appropriate IGST account in</em> <strong><em>Account Head.</em></strong> </p>
-<p><img alt="" class="screenshot" src="https://erpnext.com/files/lwQVAOr.png"/></p>
+<p><img alt="" class="screenshot" src="https://kanvinerp.com/files/lwQVAOr.png"/></p>
 <p><strong>Note: Enter our <em>Tax Accounts</em> in <em>Account Heads</em> and leave <em>rest as '0'</em> - since the tax rates will be fetched from the Item Master.</strong></p>
 <p>Repeat the same process to configure <strong>Purchase Taxes and Charges Template</strong> and for other <strong>States</strong> as well. </p>
 <h3 id="we-enjoy-the-fruits-of-our-labour">We enjoy the fruits of our labour:</h3>
@@ -76,14 +76,14 @@
 </ol>
 <h3 id="example-1">Example 1:</h3>
 <p>Here I have selected a <strong>Customer from Maharashtra and Company's Address as Maharashtra</strong> too, it should fetch the IN State template we created above.</p>
-<p><img alt="" class="screenshot" src="https://erpnext.com/files/KOv2bSi.png"/></p>
+<p><img alt="" class="screenshot" src="https://kanvinerp.com/files/KOv2bSi.png"/></p>
 <p>It auto-fetched the following Taxes and Charges Template:</p>
-<p><img alt="" class="screenshot" src="https://erpnext.com/files/Kz3m5ux.png"/></p>
+<p><img alt="" class="screenshot" src="https://kanvinerp.com/files/Kz3m5ux.png"/></p>
 <h3 id="example-2">Example 2:</h3>
 <p>Here I have selected a <strong>Customer from Maharashtra and Company's Address as Delhi</strong>, it should fetch the OUT State template we created above.</p>
-<p><img alt="" class="screenshot" src="https://erpnext.com/files/edIsIvn.png"/></p>
+<p><img alt="" class="screenshot" src="https://kanvinerp.com/files/edIsIvn.png"/></p>
 <p>It auto-fetched the following Taxes and Charges Template:</p>
-<p><img alt="" class="screenshot" src="https://erpnext.com/files/0DvILkB.png"/></p>
+<p><img alt="" class="screenshot" src="https://kanvinerp.com/files/0DvILkB.png"/></p>
 </div>
 <input class="d-none" name="wiki-page-name" value="5ol74a6km6"/>
 <div aria-hidden="true" aria-labelledby="revisionsModalTitle" class="modal revisions-modal fade" id="revisionsModal" role="dialog" tabindex="-1">

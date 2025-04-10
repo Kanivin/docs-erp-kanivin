@@ -27,10 +27,10 @@ Required as “No” in Buying Settings.</p>
 <li><a onclick="loadContent('purchase-order.html')">Purchase Order</a></li>
 </ul>
 <blockquote>
-<p>Note: From version-13 onwards we have introduced immutable ledger which changes the rules for cancellation of stock entries and posting backdated stock transactions in KanivinERP. <a href="/erpnext/v13/user/manual/en/accounts/articles/immutable-ledger-in-erpnext">Learn more here</a>.</p>
+<p>Note: From version-13 onwards we have introduced immutable ledger which changes the rules for cancellation of stock entries and posting backdated stock transactions in KanivinERP. <a href="/kanvinerp/v13/user/manual/en/accounts/articles/immutable-ledger-in-kanvinerp">Learn more here</a>.</p>
 </blockquote>
 <h2 id="2-how-to-create-a-purchase-receipt">2. How to create a Purchase Receipt</h2>
-<p>A Purchase Receipt is usually created from a <a href="/erpnext/v13/user/manual/en/buying/purchase-order">Purchase Order</a>. In the Purchase Order, click on Create &gt; Purchase Receipt.</p>
+<p>A Purchase Receipt is usually created from a <a href="/kanvinerp/v13/user/manual/en/buying/purchase-order">Purchase Order</a>. In the Purchase Order, click on Create &gt; Purchase Receipt.</p>
 <p>To create a Purchase Receipt _manually_ (not recommended), follow these steps:</p>
 <ol>
 <li>Go to the Purchase Receipt list, click on New.</li>
@@ -60,8 +60,8 @@ Using the 'Edit Posting Date and Time' checkbox you can edit the posting time an
 <h3 id="31-currency-and-price-list">3.1 Currency and Price List</h3>
 <p>The currency of the Purchase Receipt is shown in this section, it is fetched from the Purchase Order. The item prices will be fetched from the set Price list. Ticking on Ignore Pricing Rule will ignore the Pricing Rules set in Accounts &gt; Pricing Rule.</p>
 <p>Since the incoming Item affects the value of your inventory, it is important to convert it into your base currency if you have ordered in another Currency. You will need to update the Currency Conversion Rate if applicable.</p>
-<p>Read about <a href="/erpnext/v13/user/manual/en/stock/price-lists">Price Lists</a>
-and <a href="/erpnext/v13/user/manual/en/accounts/articles/managing-transactions-in-multiple-currency">Multi-Currency Transactions</a>
+<p>Read about <a href="/kanvinerp/v13/user/manual/en/stock/price-lists">Price Lists</a>
+and <a href="/kanvinerp/v13/user/manual/en/accounts/articles/managing-transactions-in-multiple-currency">Multi-Currency Transactions</a>
 to know more.</p>
 <h3 id="32-warehouse-details">3.2 Warehouse details</h3>
 <p>The following Warehouses set will apply to all Items in the Items table of the Purchase Receipt. You can change the Warehouses for individual Items via the table.</p>
@@ -75,13 +75,13 @@ to know more.</p>
 </ul>
 <h3 id="33-items-table">3.3 Items table</h3>
 <ul>
-<li><p><strong>Barcode</strong>: You can track Items using <a href="/erpnext/v13/user/manual/en/stock/articles/track-items-using-barcode">barcodes</a>.</p></li>
-<li><p><strong>Scan Barcode</strong>: You can add Items in the Items table by scanning their barcodes if you have a barcode scanner. Read documentation for <a href="/erpnext/v13/user/manual/en/stock/articles/track-items-using-barcode">tracking items using barcode</a> to know more.</p></li>
+<li><p><strong>Barcode</strong>: You can track Items using <a href="/kanvinerp/v13/user/manual/en/stock/articles/track-items-using-barcode">barcodes</a>.</p></li>
+<li><p><strong>Scan Barcode</strong>: You can add Items in the Items table by scanning their barcodes if you have a barcode scanner. Read documentation for <a href="/kanvinerp/v13/user/manual/en/stock/articles/track-items-using-barcode">tracking items using barcode</a> to know more.</p></li>
 <li><p>The Item Code, name, description, Image, and Manufacturer will be fetched from the Item master.</p></li>
 <li><p><strong>Received and Accepted</strong>: Set the received, accepted and rejected quantity. The UoM is fetched from the Item master. You will need to update the “UOM Conversion Factor” if your Purchase Order for an Item is in a different Unit of Measure (UOM) than what you stock (Stock UOM).</p>
 <p><img alt="Purchase Receipt Items table" class="screenshot" src="/files/purchase-receipt-item.png"/></p></li>
-<li><p><strong>Rate</strong>: The Rate is fetched if set in the <a href="/erpnext/v13/user/manual/en/stock/price-lists">Price List</a> and the total Amount is calculated.</p></li>
-<li><p><strong>Item Tax Template</strong>: You can set an Item Tax Template to apply a specific Tax amount to this particular Item. To know more, visit <a href="/erpnext/v13/user/manual/en/accounts/item-tax-template">this page</a>.</p></li>
+<li><p><strong>Rate</strong>: The Rate is fetched if set in the <a href="/kanvinerp/v13/user/manual/en/stock/price-lists">Price List</a> and the total Amount is calculated.</p></li>
+<li><p><strong>Item Tax Template</strong>: You can set an Item Tax Template to apply a specific Tax amount to this particular Item. To know more, visit <a href="/kanvinerp/v13/user/manual/en/accounts/item-tax-template">this page</a>.</p></li>
 <li><p>The Item Weight details per unit and Weight UOM are fetched if set in the Item master.</p></li>
 <li><p><strong>Warehouse and Reference</strong>: You can set the accepted and rejected Warehouses and also add a Quality Inspection, see next section.</p></li>
 <li><p><strong>Serial No, Batch No, and BOM</strong>: If your Item is serialized or batched, you will have to enter Serial Number
@@ -90,16 +90,16 @@ in one row (each on a separate line) and you must enter the same number of
 Serial Numbers as the quantity.</p>
 <p>There are separate fields for entering Serial Numbers of both accepted and rejected Items here. A Batch Number can also be set if you're storing a batch of plastic medicines for example.</p>
 <p>Ticking on 'Allow Zero Valuation Rate' will allow submitting the Purchase Receipt even if the Valuation Rate of the Item is 0. This can be a sample item or due to a mutual understanding with your Supplier.</p></li>
-<li><p>You can link a BOM here if the Item is being <a href="/erpnext/v13/user/manual/en/manufacturing/subcontracting">subcontracted</a>. Linking the BOM here will affect the Stock ledger, i.e. the raw material stock will be deducted from the Supplier Warehouse.</p>
+<li><p>You can link a BOM here if the Item is being <a href="/kanvinerp/v13/user/manual/en/manufacturing/subcontracting">subcontracted</a>. Linking the BOM here will affect the Stock ledger, i.e. the raw material stock will be deducted from the Supplier Warehouse.</p>
 <p><strong>Note</strong>: The Item has to be serialized or batched for these features to work. If the Item is serialized a popup will appear where you can enter the Serial Numbers.</p></li>
-<li><p>Accounting Dimensions help to tag each transaction with different Dimensions without the need for creating new Cost Centers. You need to create Accounting Dimensions first, to know more, visit <a href="/erpnext/v13/user/manual/en/accounts/accounting-dimensions">this page</a>.</p></li>
+<li><p>Accounting Dimensions help to tag each transaction with different Dimensions without the need for creating new Cost Centers. You need to create Accounting Dimensions first, to know more, visit <a href="/kanvinerp/v13/user/manual/en/accounts/accounting-dimensions">this page</a>.</p></li>
 <li><p>Page Break will create a page break just before this item when printing.</p></li>
 </ul>
 <h3 id="34-tracking-quality-inspection">3.4 Tracking Quality Inspection</h3>
 <p>If for certain Items, it is mandatory to record Quality Inspections (if you have set it in your Item master), you will need to update the “Quality Inspection" field. The system will only allow you to “Submit” the
 Purchase Receipt if you update the “Quality Inspection”.</p>
-<p>After enabling Inspection Criteria in the <a href="/erpnext/v13/user/manual/en/stock/item#216-inspection-criteria">Item form</a> for Purchase and attaching a Quality Inspection Template there, Quality Inspections can be recorded in Purchase Receipts.</p>
-<p>To know more, visit the <a href="/erpnext/v13/user/manual/en/stock/quality-inspection">Quality Inspection</a> page.</p>
+<p>After enabling Inspection Criteria in the <a href="/kanvinerp/v13/user/manual/en/stock/item#216-inspection-criteria">Item form</a> for Purchase and attaching a Quality Inspection Template there, Quality Inspections can be recorded in Purchase Receipts.</p>
+<p>To know more, visit the <a href="/kanvinerp/v13/user/manual/en/stock/quality-inspection">Quality Inspection</a> page.</p>
 <p><img alt="Quality Inspection" class="screenshot" src="/files/quality-inspection.png"/></p>
 <h3 id="35-raw-materials-consumed">3.5 Raw Materials Consumed</h3>
 <ul>
@@ -108,24 +108,24 @@ Purchase Receipt if you update the “Quality Inspection”.</p>
 <img alt="Purchase Receipt" class="screenshot" src="/files/purchase-receipt-consumed-items.png"/></li>
 </ul>
 <h3 id="36-taxes-and-valuation">3.6 Taxes and Valuation</h3>
-<p>The Taxes and Charges will be fetched from the <a href="/erpnext/v13/user/manual/en/buying/purchase-order">Purchase Order</a>.</p>
-<p>Visit the <a href="/erpnext/v13/user/manual/en/buying/purchase-taxes-and-charges-template">Purchase Taxes and Charges Template</a> page to know more about taxes.</p>
+<p>The Taxes and Charges will be fetched from the <a href="/kanvinerp/v13/user/manual/en/buying/purchase-order">Purchase Order</a>.</p>
+<p>Visit the <a href="/kanvinerp/v13/user/manual/en/buying/purchase-taxes-and-charges-template">Purchase Taxes and Charges Template</a> page to know more about taxes.</p>
 <p>The total taxes and charges will be displayed below the table.</p>
-<p>To add taxes automatically via a Tax Category, visit <a href="/erpnext/v13/user/manual/en/accounts/tax-category">this page</a>.</p>
+<p>To add taxes automatically via a Tax Category, visit <a href="/kanvinerp/v13/user/manual/en/accounts/tax-category">this page</a>.</p>
 <p>Make sure to mark all your taxes in the Taxes and Charges table correctly for an accurate valuation.</p>
 <h4 id="shipping-rule">Shipping Rule</h4>
-<p>A Shipping Rule helps set the cost of shipping an Item. The cost will usually increase with the distance of shipping. To know more, visit the <a href="/erpnext/v13/user/manual/en/selling/shipping-rule">Shipping Rule</a> page.</p>
+<p>A Shipping Rule helps set the cost of shipping an Item. The cost will usually increase with the distance of shipping. To know more, visit the <a href="/kanvinerp/v13/user/manual/en/selling/shipping-rule">Shipping Rule</a> page.</p>
 <h3 id="37-additional-discount">3.7 Additional Discount</h3>
 <p>Any additional discounts to the whole order can be set in this section.
-Read <a href="/erpnext/v13/user/manual/en/selling/articles/applying-discount">Applying Discount</a> for more details.</p>
+Read <a href="/kanvinerp/v13/user/manual/en/selling/articles/applying-discount">Applying Discount</a> for more details.</p>
 <h3 id="38-more-information">3.8 More Information</h3>
-<p>The Status of the Purchase Receipt is shown here and at the top. The various statuses are: Draft, To Bill, Completed, Canceled, and Closed. This section also shows % Amount Billed, i.e. the percentage of amount for which <a href="/erpnext/v13/user/manual/en/accounts/sales-invoice">Sales Invoices</a> are created.</p>
+<p>The Status of the Purchase Receipt is shown here and at the top. The various statuses are: Draft, To Bill, Completed, Canceled, and Closed. This section also shows % Amount Billed, i.e. the percentage of amount for which <a href="/kanvinerp/v13/user/manual/en/accounts/sales-invoice">Sales Invoices</a> are created.</p>
 <h3 id="39-printing-settings">3.9 Printing Settings</h3>
 <h4 id="letterhead">Letterhead</h4>
-<p>You can print your Purchase Receipt on your company's letterhead. Know more <a href="/erpnext/v13/user/manual/en/setting-up/print/letter-head">here</a>.</p>
+<p>You can print your Purchase Receipt on your company's letterhead. Know more <a href="/kanvinerp/v13/user/manual/en/setting-up/print/letter-head">here</a>.</p>
 <p>'Group same items' will group the same items added multiple times in the items table. This can be seen when your print.</p>
 <h4 id="print-headings">Print Headings</h4>
-<p>Purchase Receipt headings can also be changed when printing the document. You can do this by selecting a <strong>Print Heading</strong>. To create new Print Headings go to: Home &gt; Settings &gt; Printing &gt; Print Heading. Know more <a href="/erpnext/v13/user/manual/en/setting-up/print/print-headings">here</a>.</p>
+<p>Purchase Receipt headings can also be changed when printing the document. You can do this by selecting a <strong>Print Heading</strong>. To create new Print Headings go to: Home &gt; Settings &gt; Printing &gt; Print Heading. Know more <a href="/kanvinerp/v13/user/manual/en/setting-up/print/print-headings">here</a>.</p>
 <h3 id="310-after-submitting">3.10 After Submitting</h3>
 <p>A Stock Ledger Entry is created for each Item adding the Item in the Warehouse
 by the “Accepted Quantity” If you have rejections, a Stock Ledger Entry is
@@ -140,16 +140,16 @@ Order.</p>
 </ul>
 <p><img alt="Purchase Receipt submit" class="screenshot" src="/files/purchase-receipt-submit.png"/></p>
 <h3 id="311-returning-a-purchase-order">3.11 Returning a Purchase Order</h3>
-<p>Once you've received a Purchase Order using a Purchase Receipt, you can create a return entry in case the Item needs to be returned to the <a href="/erpnext/v13/user/manual/en/buying/supplier">Supplier</a>. To know more, visit the <a href="/erpnext/v13/user/manual/en/stock/purchase-return">Purchase Return</a> page.</p>
+<p>Once you've received a Purchase Order using a Purchase Receipt, you can create a return entry in case the Item needs to be returned to the <a href="/kanvinerp/v13/user/manual/en/buying/supplier">Supplier</a>. To know more, visit the <a href="/kanvinerp/v13/user/manual/en/stock/purchase-return">Purchase Return</a> page.</p>
 <h3 id="312-skipping-purchase-receipt">3.12 Skipping Purchase Receipt</h3>
-<p>If you don't want to create a Purchase Receipt after a Purchase Order and directly want to create a Purchase Invoice, enable the feature for it in <a href="/erpnext/v13/user/manual/en/buying/buying-settings#23-purchase-receipt-required">Buying Settings</a>.</p>
+<p>If you don't want to create a Purchase Receipt after a Purchase Order and directly want to create a Purchase Invoice, enable the feature for it in <a href="/kanvinerp/v13/user/manual/en/buying/buying-settings#23-purchase-receipt-required">Buying Settings</a>.</p>
 <hr/>
 <h4 id="changing-the-value-of-items-post-purchase-receipt">Changing the value of Items post Purchase Receipt:</h4>
 <p>Sometimes, certain expenses that add to the total of your purchased Items are known
 only after a while. Common example is, if you are importing the Items, you
 will come to know of Customs Duty, etc only when your “Clearing Agent” sends
 you a bill. If you want to attribute this cost to your purchased Items, you
-will have to use the <a href="/erpnext/v13/user/manual/en/stock/landed-cost-voucher">Landed Cost Voucher</a>. Why “Landed Cost”? Because it represents the charges that you paid when it landed in your possession.</p>
+will have to use the <a href="/kanvinerp/v13/user/manual/en/stock/landed-cost-voucher">Landed Cost Voucher</a>. Why “Landed Cost”? Because it represents the charges that you paid when it landed in your possession.</p>
 <h2 id="4-related-topics">4. Related Topics</h2>
 <ol>
 <li><a onclick="loadContent('delivery-note.html')">Delivery Note</a></li>

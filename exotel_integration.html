@@ -46,17 +46,17 @@
 <li>Create a new App for a new flow.</li>
 <li>Setup the flow as you wish it to be.</li>
 <li>In your connect API under "Create popup..." and paste following URL:
-<code>https://&lt;your-site&gt;/api/method/erpnext.erpnext_integrations.exotel_integration.handle_incoming_call</code></li>
+<code>https://&lt;your-site&gt;/api/method/kanvinerp.kanvinerp_integrations.exotel_integration.handle_incoming_call</code></li>
 </ul>
 <p><img alt="Connect Applet" class="screenshot" src="/files/connect_applet.png"/>
 <img alt="Call Popup Section" class="screenshot" src="/files/create_popup_section.png"/></p>
 <blockquote>
-<p><strong>Note:</strong> Replace <code>&lt;your-site&gt;</code> in URL with your site name. For example, if the site name is <strong>frappe.erpnext.com</strong> then the URL will be:
-  <code>https://frappe.erpnext.com/api/method/erpnext.erpnext_integrations.exotel_integration.handle_incoming_call</code></p>
+<p><strong>Note:</strong> Replace <code>&lt;your-site&gt;</code> in URL with your site name. For example, if the site name is <strong>frappe.kanvinerp.com</strong> then the URL will be:
+  <code>https://frappe.kanvinerp.com/api/method/kanvinerp.kanvinerp_integrations.exotel_integration.handle_incoming_call</code></p>
 </blockquote>
 <ul>
 <li>After that add a Passthru applet under "After Call Conversation ends" and paste following URL:
-<code>https://&lt;your-site&gt;/api/method/erpnext.erpnext_integrations.exotel_integration.handle_end_call</code></li>
+<code>https://&lt;your-site&gt;/api/method/kanvinerp.kanvinerp_integrations.exotel_integration.handle_end_call</code></li>
 </ul>
 <p><img alt="After Conversation Ends Section" class="screenshot" src="/files/after_conversation_ends_section.png"/></p>
 <p><img alt="After call ends section" class="screenshot" src="/files/passthru_end_call.png"/></p>
@@ -65,7 +65,7 @@
 </blockquote>
 <ul>
 <li>Similary, add a Passthru applet under "If nobody answers..." section and paste following URL:
-<code>https://&lt;your-site&gt;/api/method/erpnext.erpnext_integrations.exotel_integration.handle_missed_call</code></li>
+<code>https://&lt;your-site&gt;/api/method/kanvinerp.kanvinerp_integrations.exotel_integration.handle_missed_call</code></li>
 </ul>
 <p><img alt="No Response Section" class="screenshot" src="/files/no_response.png"/></p>
 <p><img alt="After call ends section" class="screenshot" src="/files/passthru_missed_call.png"/></p>
@@ -76,7 +76,7 @@
 <li>Save the flow.</li>
 <li>Now assign this newly created app to your ExoPhone from which you receive your business calls.</li>
 </ul>
-<h3 id="22-setup-in-erpnext">2.2 Setup in KanivinERP<a aria-hidden="true" class="no-underline" href="#22-setup-in-erpnext">
+<h3 id="22-setup-in-kanvinerp">2.2 Setup in KanivinERP<a aria-hidden="true" class="no-underline" href="#22-setup-in-kanvinerp">
 <svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
 <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
@@ -140,17 +140,17 @@
 </ins><li><ins class="diffmod">Create a new App for a new flow.</ins></li><ins class="diffmod">
 </ins><li><ins class="diffmod">Setup the flow as you wish it to be.</ins></li><ins class="diffmod">
 </ins><li><ins class="diffmod">In your connect API under "Create popup..." and paste following URL:
-</ins><code><ins class="diffmod">https://&lt;your-site&gt;/api/method/erpnext.erpnext_integrations.exotel_integration.handle_incoming_call</ins></code></li><ins class="diffmod">
+</ins><code><ins class="diffmod">https://&lt;your-site&gt;/api/method/kanvinerp.kanvinerp_integrations.exotel_integration.handle_incoming_call</ins></code></li><ins class="diffmod">
 </ins></ul><ins class="diffmod">
 </ins><p><ins class="diffmod"><img alt="Connect Applet" class="screenshot" src="/files/connect_applet.png"/>
 <img alt="Call Popup Section" class="screenshot" src="/files/create_popup_section.png"/></ins></p><ins class="diffmod">
 </ins><blockquote><ins class="diffmod">
-</ins><p><strong><ins class="diffmod">Note:</ins></strong><ins class="diffmod"> Replace </ins><code><ins class="diffmod">&lt;your-site&gt;</ins></code><ins class="diffmod"> in URL with your site name. For example, if the site name is </ins><strong><ins class="mod"><ins class="diffmod">frappe.erpnext.com</ins></ins></strong><ins class="diffmod"> then the URL will be:
-  </ins><code><ins class="diffmod">https://frappe.erpnext.com/api/method/erpnext.erpnext_integrations.exotel_integration.handle_incoming_call</ins></code></p><ins class="diffmod">
+</ins><p><strong><ins class="diffmod">Note:</ins></strong><ins class="diffmod"> Replace </ins><code><ins class="diffmod">&lt;your-site&gt;</ins></code><ins class="diffmod"> in URL with your site name. For example, if the site name is </ins><strong><ins class="mod"><ins class="diffmod">frappe.kanvinerp.com</ins></ins></strong><ins class="diffmod"> then the URL will be:
+  </ins><code><ins class="diffmod">https://frappe.kanvinerp.com/api/method/kanvinerp.kanvinerp_integrations.exotel_integration.handle_incoming_call</ins></code></p><ins class="diffmod">
 </ins></blockquote><ins class="diffmod">
 </ins><ul><ins class="diffmod">
 </ins><li><ins class="diffmod">After that add a Passthru applet under "After Call Conversation ends" and paste following URL:
-</ins><code><ins class="diffmod">https://&lt;your-site&gt;/api/method/erpnext.erpnext_integrations.exotel_integration.handle_end_call</ins></code></li><ins class="diffmod">
+</ins><code><ins class="diffmod">https://&lt;your-site&gt;/api/method/kanvinerp.kanvinerp_integrations.exotel_integration.handle_end_call</ins></code></li><ins class="diffmod">
 </ins></ul><ins class="diffmod">
 </ins><p><ins class="diffmod"><img alt="After Conversation Ends Section" class="screenshot" src="/files/after_conversation_ends_section.png"/></ins></p><ins class="diffmod">
 </ins><p><ins class="diffmod"><img alt="After call ends section" class="screenshot" src="/files/passthru_end_call.png"/></ins></p><ins class="diffmod">
@@ -159,7 +159,7 @@
 </ins></blockquote><ins class="diffmod">
 </ins><ul><ins class="diffmod">
 </ins><li><ins class="diffmod">Similary, add a Passthru applet under "If nobody answers..." section and paste following URL:
-</ins><code><ins class="diffmod">https://&lt;your-site&gt;/api/method/erpnext.erpnext_integrations.exotel_integration.handle_missed_call</ins></code></li><ins class="diffmod">
+</ins><code><ins class="diffmod">https://&lt;your-site&gt;/api/method/kanvinerp.kanvinerp_integrations.exotel_integration.handle_missed_call</ins></code></li><ins class="diffmod">
 </ins></ul><ins class="diffmod">
 </ins><p><ins class="diffmod"><img alt="No Response Section" class="screenshot" src="/files/no_response.png"/></ins></p><ins class="diffmod">
 </ins><p><ins class="diffmod"><img alt="After call ends section" class="screenshot" src="/files/passthru_missed_call.png"/></ins></p><ins class="diffmod">
@@ -170,7 +170,7 @@
 </ins><li><ins class="diffmod">Save the flow.</ins></li><ins class="diffmod">
 </ins><li><ins class="diffmod">Now assign this newly created app to your ExoPhone from which you receive your business calls.</ins></li><ins class="diffmod">
 </ins></ul><ins class="diffmod">
-</ins><h3 id="22-setup-in-erpnext"><ins class="diffmod">2.2 Setup in KanivinERP</ins><a aria-hidden="true" class="no-underline" href="#22-setup-in-erpnext"><ins class="diffmod">
+</ins><h3 id="22-setup-in-kanvinerp"><ins class="diffmod">2.2 Setup in KanivinERP</ins><a aria-hidden="true" class="no-underline" href="#22-setup-in-kanvinerp"><ins class="diffmod">
 </ins><svg class="feather feather-link" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width: 0.8em; height: 0.8em;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><ins class="diffmod">
 </ins><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><ins class="diffmod">
 </ins><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path><ins class="diffmod">

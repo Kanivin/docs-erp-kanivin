@@ -64,7 +64,7 @@
 <li><strong>Description</strong>: Description of the item. The text from the Item Code will be fetched by default. <img alt="Item brand and description" class="screenshot" src="/files/item-brand-description.png"/></li>
 </ul>
 <h3 id="32-barcodes">3.2 Barcodes</h3>
-<p>Barcodes can be recorded in Items to quickly scan and add them in transactions. In the Barcodes table you can add an Item's <a href="/erpnext/v13/user/manual/en/stock/articles/track-items-using-barcode">barcode for scanning</a>. There are two types of barcodes in KanivinERP:</p>
+<p>Barcodes can be recorded in Items to quickly scan and add them in transactions. In the Barcodes table you can add an Item's <a href="/kanvinerp/v13/user/manual/en/stock/articles/track-items-using-barcode">barcode for scanning</a>. There are two types of barcodes in KanivinERP:</p>
 <ul>
 <li><strong>EAN</strong>: The European Article Number is a 13 digit number. EAN is used internationally and recognized by more POS systems.</li>
 <li><strong>UPC</strong>: The Universal Product Code is a 12 digit number. UPC is generally used only in USA and Canada.</li>
@@ -80,10 +80,10 @@
 * <strong>Weight UOM</strong>: The Unit of Measure for the item. This can be Nos, Kilo, etc. The Weight UoM which you use internally can be different from the purchase UoM.
 * <strong>Weight Per Unit</strong>: The actual weight per unit of the item. Eg: 1 kilo biscuits or 10 biscuits per pack.
 * <strong>Default Material Request Type</strong>: When you create a new Material Request for this item, the field set here will be selected by default in the new Material Request. This is also known as an 'indent'.
-* <strong>Valuation Method</strong>: Select the Valuation Method whether FIFO or Moving Average. Read <a href="/erpnext/v13/user/manual/en/stock/articles/calculation-of-valuation-rate-in-fifo-and-moving-average">Item Valuation methods</a> to know more.
+* <strong>Valuation Method</strong>: Select the Valuation Method whether FIFO or Moving Average. Read <a href="/kanvinerp/v13/user/manual/en/stock/articles/calculation-of-valuation-rate-in-fifo-and-moving-average">Item Valuation methods</a> to know more.
 * <strong>Allow negative stock</strong>: When checked the item will be allowed to go negative even if negative stock is disabled from Stock Settings. This is useful if you don't want to enable negative stock on high value items but few select low value items are allowed to go negative for few days.</p>
 <h3 id="34-automatic-reordering">3.4 Automatic Reordering</h3>
-<p>When the stock of an item dips under a certain quantity, you can set an automatic reorder under 'Auto Reorder' section. This should be enabled in <a href="/erpnext/v13/user/manual/en/stock/stock-settings#9-automatic-material-request">Stock Settings</a>. This will raise a <a href="/erpnext/v13/user/manual/en/stock/material-request">Material Request</a> for the Item. The user with roles Purchase Manager and Stock Manager will be <strong>notified</strong> when the Material Request is created.</p>
+<p>When the stock of an item dips under a certain quantity, you can set an automatic reorder under 'Auto Reorder' section. This should be enabled in <a href="/kanvinerp/v13/user/manual/en/stock/stock-settings#9-automatic-material-request">Stock Settings</a>. This will raise a <a href="/kanvinerp/v13/user/manual/en/stock/material-request">Material Request</a> for the Item. The user with roles Purchase Manager and Stock Manager will be <strong>notified</strong> when the Material Request is created.</p>
 <ul>
 <li><strong>Check in (group)</strong>: In which group warehouses to check the quantity of the item.</li>
 <li><strong>Request for</strong>: Which warehouse to stock the item reorder.</li>
@@ -91,13 +91,13 @@
 <li><strong>Re-order Qty</strong>: The number of units to be reordered so that the sum of ordering cost and holding cost is at its minimum. The re-order quantity is based on the 'Minimum Order Qty' specified by the supplier and many other factors.</li>
 </ul>
 <p>For example, If reorder level is 100 items, your reorder quantity may not necessarily be 100 items. The Reorder quantity can be greater than or equal to the reorder level. It may depend upon lead time, discount, transportation and average daily consumption.
-* <strong>Material Request Type</strong>: The <a href="/erpnext/v13/user/manual/en/stock/material-request">Material Request</a> type with which the stock will be reordered. This depends whether you buy the Item, manufacture it yourself or transfer it between Warehouses.</p>
+* <strong>Material Request Type</strong>: The <a href="/kanvinerp/v13/user/manual/en/stock/material-request">Material Request</a> type with which the stock will be reordered. This depends whether you buy the Item, manufacture it yourself or transfer it between Warehouses.</p>
 <p><img alt="Item Reorder" class="screenshot" src="/files/item-reorder.png"/></p>
 <blockquote>
 <p><strong>Note</strong>: The Material Request is created at 12 midnight depending on the set reorder level.</p>
 </blockquote>
 <h3 id="35-multiple-units-of-measure">3.5 Multiple Units of Measure</h3>
-<p>You can add alternate UoMs for an Item. If the default UoM in which you sell is numbers (NoS) but you receive it in Kilos, you can set an additional UoM with an appropriate conversion factor. For example, 500 Nos of screws = 1 Kilogram, so select Kilogram/Litre as UOM and set the conversion factor as 500. To know more about selling in different UoM, visit <a href="/erpnext/v13/user/manual/en/selling/articles/Selling-in-different-UOM">this page</a>.</p>
+<p>You can add alternate UoMs for an Item. If the default UoM in which you sell is numbers (NoS) but you receive it in Kilos, you can set an additional UoM with an appropriate conversion factor. For example, 500 Nos of screws = 1 Kilogram, so select Kilogram/Litre as UOM and set the conversion factor as 500. To know more about selling in different UoM, visit <a href="/kanvinerp/v13/user/manual/en/selling/articles/Selling-in-different-UOM">this page</a>.</p>
 <h3 id="36-serial-numbers">3.6 Serial Numbers</h3>
 <blockquote>
 <p>Allow Negative Stock has removed for Serial / Batch Items from version 15. So from version 15 users won't be able to make negative stock transactions for serial /batch items even though Allow Negative Stock has enabled in the Stock Settings.</p>
@@ -126,9 +126,9 @@
 <blockquote>
 <p><strong>Note</strong>: Once you mark an item as serialized or batched or neither, you cannot change it after you have made a Stock Entry.</p>
 </blockquote>
-<p>To know more, visit the <a href="/erpnext/v13/user/manual/en/stock/stock-reconciliation">Stock Reconciliation</a> page.</p>
+<p>To know more, visit the <a href="/kanvinerp/v13/user/manual/en/stock/stock-reconciliation">Stock Reconciliation</a> page.</p>
 <h3 id="38-variants">3.8 Variants</h3>
-<p>An Item Variant is a different version of a Item. To learn more about managing variants see <a href="/erpnext/v13/user/manual/en/stock/item-variants">Item Variants</a>.</p>
+<p>An Item Variant is a different version of a Item. To learn more about managing variants see <a href="/kanvinerp/v13/user/manual/en/stock/item-variants">Item Variants</a>.</p>
 <h3 id="39-item-defaults">3.9 Item Defaults</h3>
 <p>In this section, you can define Company-wide transaction-related defaults for this Item.</p>
 <ul>
@@ -150,9 +150,9 @@
 <li><strong>Safety Stock</strong>: “Safety Stock” is used in the report “Itemwise Recommended Reorder Level”. Based on Safety Stock, average daily consumption and the lead time, the system suggests Reorder Level of an item.</li>
 </ul>
 <p>Reorder Level = Safety Stock + (Average Daily Consumption * Lead Time)
-* <strong>Last Purchase Rate</strong>: The rate at which you last purchased this item using a <a href="/erpnext/v13/user/manual/en/accounts/purchase-invoice">Purchase Invoice</a> will be displayed here.
+* <strong>Last Purchase Rate</strong>: The rate at which you last purchased this item using a <a href="/kanvinerp/v13/user/manual/en/accounts/purchase-invoice">Purchase Invoice</a> will be displayed here.
 * <strong>Is Purchase Item:</strong> If unticked, you won't be able to use this item in purchase transactions.
-* <strong>Is Customer Provided Item:</strong> Checked if Item is provided by a customer and received through <strong>Stock Entry &gt; Material Receipt</strong>. If Checked, <strong>Customer</strong> field is Mandatory as the default customer for <strong>Material Request</strong>. To know more visit <a href="/erpnext/v13/user/manual/en/manufacturing/articles/customer-provided-items">this page</a>.
+* <strong>Is Customer Provided Item:</strong> Checked if Item is provided by a customer and received through <strong>Stock Entry &gt; Material Receipt</strong>. If Checked, <strong>Customer</strong> field is Mandatory as the default customer for <strong>Material Request</strong>. To know more visit <a href="/kanvinerp/v13/user/manual/en/manufacturing/articles/customer-provided-items">this page</a>.
 * <strong>Lead time days:</strong> Lead time days are the number of days between ordering the Item and it to reach the Warehouse.</p>
 <p><img alt="Purchase details" class="screenshot" src="/files/item-purchase-details.png"/></p>
 <h3 id="311-supplier-details">3.11 Supplier Details</h3>
@@ -179,9 +179,9 @@
 <p>You can enable deferred revenue or expense from the item. Once you tick the checkbox, you'll see options to set the Deferred Expense Account and the number of months through which the revenue/expense is deferred.</p>
 <p>For example, consider a yearly gym membership, you pay the money upfront at once but the service is given throughout the year. For the gym owner, this is deferred revenue and for the customer, it is a deferred expense.</p>
 <p><img alt="Deferred Revenue" class="screenshot" src="/files/deferred-revenue.png"/> </p>
-<p>Check out the pages on <a href="/erpnext/v13/user/manual/en/accounts/deferred-revenue">Deferred Revenue</a> for more details.</p>
+<p>Check out the pages on <a href="/kanvinerp/v13/user/manual/en/accounts/deferred-revenue">Deferred Revenue</a> for more details.</p>
 <h3 id="315-customer-details">3.15 Customer Details</h3>
-<p>The Customer may identify an Item with a different Item Code. this is Similar to <a href="/erpnext/v13/user/manual/en/stock/item#311-supplier-details">Supplier Code</a>.</p>
+<p>The Customer may identify an Item with a different Item Code. this is Similar to <a href="/kanvinerp/v13/user/manual/en/stock/item#311-supplier-details">Supplier Code</a>.</p>
 <ul>
 <li><strong>Customer Name</strong>: Select a customer here.</li>
 <li><strong>Customer Group</strong>: This will be fetched based on the Customer you selected in the previous field.</li>
@@ -189,9 +189,9 @@
 </ul>
 <h3 id="316-item-tax">3.16 Item Tax</h3>
 <p>These settings are required only if a particular Item has a different tax rate than the rate defined in the standard tax Account.</p>
-<p>You need to create a new 'Item Tax Template' or choose an existing one. For example, if you have a tax Account, “VAT 14%” and this particular Item is exempted from tax, then you select “VAT 14%” in the first column, and set “0” as the tax rate in the second column. Visit the <a href="/erpnext/v13/user/manual/en/accounts/item-tax-template">Item Tax Template</a> page for more details.</p>
+<p>You need to create a new 'Item Tax Template' or choose an existing one. For example, if you have a tax Account, “VAT 14%” and this particular Item is exempted from tax, then you select “VAT 14%” in the first column, and set “0” as the tax rate in the second column. Visit the <a href="/kanvinerp/v13/user/manual/en/accounts/item-tax-template">Item Tax Template</a> page for more details.</p>
 <p><img alt="Item tax template" class="screenshot" src="/files/item-tax-template.png"/> </p>
-<p>You can also set a <a href="/erpnext/v13/user/manual/en/accounts/tax-category">Tax Category</a> for this Item.</p>
+<p>You can also set a <a href="/kanvinerp/v13/user/manual/en/accounts/tax-category">Tax Category</a> for this Item.</p>
 <h3 id="317-inspection-criteria">3.17 Inspection Criteria</h3>
 <ul>
 <li><strong>Inspection Required before Purchase</strong>: If an inspection is mandatory before the item is purchased, i.e., before you generate Purchase Receipt, tick this checkbox.</li>
@@ -199,7 +199,7 @@
 <li><strong>Quality Inspection Template</strong>: If a Quality Inspection is prepared for this Item, then this template of criteria will automatically be updated in the Quality Inspection table of the Quality Inspection. Examples of Criteria are: Weight, Length, Finish, etc.</li>
 </ul>
 <p>Quality Inspection can be done with Quick View and you need not go to a different page to update the details inspection in KanivinERP.</p>
-<p>Read <a href="/erpnext/v13/user/manual/en/stock/quality-inspection">Quality Inspection</a> to know more.</p>
+<p>Read <a href="/kanvinerp/v13/user/manual/en/stock/quality-inspection">Quality Inspection</a> to know more.</p>
 <h3 id="318-manufacturing">3.18 Manufacturing</h3>
 <ul>
 <li><strong>Default BOM</strong>: The default <a onclick="loadContent('bill-of-materials.html')">Bill of Materials</a> used to manufacture this Item.</li>
@@ -220,12 +220,12 @@
 </ul>
 <p><img alt="Manufaturing details" class="screenshot" src="/files/item-manufacturing-website.png"/>
 * <strong>Weightage</strong>: Items with higher weight will be displayed first on the website. The limit for the number you can enter here is very high.
-* <strong>Slideshow</strong>: A slideshow can be displayed at the top of the page. Visit the <a href="/erpnext/v13/user/manual/en/website/homepage">Homepage</a> page in Website module to know more.
+* <strong>Slideshow</strong>: A slideshow can be displayed at the top of the page. Visit the <a href="/kanvinerp/v13/user/manual/en/website/homepage">Homepage</a> page in Website module to know more.
 * <strong>Image</strong>: You can attach an image instead of a Slideshow.
 * <strong>Website Warehouse</strong>: Select an existing or create a new warehouse for transactions via your website. This Warehouse will be different from your offline Warehouses. Stock for any online transactions will be deducted from the Warehouses set under Website Warehouse.
-* <strong>Website Item Groups</strong>: In this table you can select existing or create new <a href="/erpnext/v13/user/manual/en/stock/item-group">Item Groups</a> to classify items on your website.
-* <strong>Set Meta Tags</strong>: Meta tags help with SEO. See <a href="/erpnext/v13/user/manual/en/website/web-page">Web Page</a> to know how to add them.</p>
-<p>Visit <a href="/erpnext/v13/user/manual/en/manufacturing">Manufacturing</a> and <a href="/erpnext/v13/user/manual/en/website">Website</a> to understand these topics in detail.</p>
+* <strong>Website Item Groups</strong>: In this table you can select existing or create new <a href="/kanvinerp/v13/user/manual/en/stock/item-group">Item Groups</a> to classify items on your website.
+* <strong>Set Meta Tags</strong>: Meta tags help with SEO. See <a href="/kanvinerp/v13/user/manual/en/website/web-page">Web Page</a> to know how to add them.</p>
+<p>Visit <a href="/kanvinerp/v13/user/manual/en/manufacturing">Manufacturing</a> and <a href="/kanvinerp/v13/user/manual/en/website">Website</a> to understand these topics in detail.</p>
 <h3 id="320-website-specifications">3.20 Website Specifications</h3>
 <p>This section is for configuring other details about the item.</p>
 <ul>
